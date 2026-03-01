@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ACM Air Charter ist ein integrierter Business-Aviation-Betreiber mit Charter, Aircraft Management und zertifizierter Wartung unter einem Dach.">
+  <meta name="robots" content="index, follow">
+  <title>ACM Air Charter – Unternehmen, Geschichte & Betriebsstruktur</title>
+  <link rel="icon" href="Fotos/Favicon_xs.png" type="image/png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            '6xl': '100rem',
+          },
+          colors: {
+            cream: '#FAF9F7',
+            olive: {
+              DEFAULT: '#001441',
+              dark: '#000d2b',
+              light: '#0a2a5c',
+              lighter: '#E8EEF4'
+            },
+            accent: {
+              DEFAULT: '#001441',
+              hover: '#000d2b',
+              light: '#E8EEF4'
+            },
+            sand: {
+              50: '#FDFCFA',
+              100: '#FAF8F5',
+              200: '#F5F2ED'
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          letterSpacing: {
+            'wider-custom': '0.15em'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    :root {
+      --color-accent: #001441;
+      --color-accent-hover: #000d2b;
+      --color-olive: #001441;
+      --color-olive-dark: #000d2b;
+      --color-sand: #FAF8F5;
+      --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    /* Scrollbar – an Website-Design angepasst */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 20, 65, 0.35) #f5f5f4;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f5f5f4;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 20, 65, 0.35);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 20, 65, 0.5);
+    }
+    ::-webkit-scrollbar-thumb:active {
+      background: var(--color-olive);
+    }
+    
+    .section-emblem {
+      height: 35px;
+      width: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+      filter: brightness(0) saturate(100%) invert(9%) sepia(45%) saturate(5000%) hue-rotate(208deg);
+    }
+    .section-emblem-on-dark {
+      filter: brightness(0) invert(1);
+    }
+    .section-emblem-left {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    section h2 {
+      font-size: 48px !important;
+      line-height: 1 !important;
+    }
+    
+    h3 {
+      font-size: 2.3rem;
+    }
+    
+    .heading-23rem {
+      font-size: 2.3rem !important;
+    }
+    
+    .section-number {
+      font-size: 1.3rem !important;
+    }
+    
+    .section-label {
+      font-size: 12px !important;
+    }
+    
+    .cert-title {
+      font-size: 1.5rem !important;
+      margin-bottom: 16px !important;
+    }
+    
+    .max-w-xl {
+      max-width: 56rem;
+      padding: 0;
+      overflow: visible;
+    }
+    
+    .content-box-outer {
+      padding-left: 7rem;
+      padding-right: 7rem;
+      overflow: visible;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      border-width: 0 !important;
+      border-style: none !important;
+    }
+    img,
+    input,
+    select,
+    textarea,
+    a,
+    .card-hover,
+    [class*="border"] {
+      border: none !important;
+      border-width: 0 !important;
+    }
+    button:not(.btn-filled):not(.btn-outline):not(.btn-primary):not(.btn-filled-white):not(.btn-outline-white) {
+      border: none !important;
+      border-width: 0 !important;
+    }
+    
+    *,
+    *::before,
+    *::after,
+    img,
+    button,
+    input,
+    select,
+    textarea,
+    a,
+    .card-hover,
+    .btn-primary,
+    [class*="rounded"] {
+      border-radius: 0 !important;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #777777;
+      letter-spacing: 0.01em;
+      background-color: #FDFCFA;
+    }
+    p {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px !important;
+      font-weight: 400 !important;
+      color: #777777 !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6,
+    .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+    
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+    }
+    
+    *:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    
+    .hero-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(28, 25, 23, 0.7) 0%,
+        rgba(28, 25, 23, 0.3) 40%,
+        rgba(28, 25, 23, 0.1) 100%
+      );
+    }
+    
+    #header {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.12) 60%, transparent 100%);
+      border-bottom: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #hero {
+      margin-top: 0;
+      padding-top: 0;
+      position: relative;
+    }
+    
+    main {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    
+    #hero img {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0;
+    }
+    
+    img:not(.acm-logo):not(.section-emblem) {
+      filter: saturate(0.88) brightness(1.06) contrast(0.97);
+    }
+    
+    img:not(.acm-logo):not(svg *) {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
+      will-change: transform;
+    }
+    
+    .header-scrolled {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .header-top-right {
+      color: rgba(255, 255, 255, 0.95);
+      transition: color 0.4s ease;
+    }
+    .header-scrolled .header-top-right {
+      color: rgba(28, 25, 23, 0.85);
+    }
+    .header-lang-link {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      opacity: 0.85;
+      transition: opacity 0.25s ease, color 0.4s ease;
+    }
+    .header-lang-link.header-lang-active {
+      font-weight: 700;
+      opacity: 1;
+      color: var(--color-olive) !important;
+    }
+    .header-lang-link:hover {
+      opacity: 1;
+    }
+    .header-lang-sep {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .header-divider-line {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.35) 15%, rgba(255, 255, 255, 0.35) 85%, transparent 100%);
+      transition: background 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    }
+    .header-scrolled .header-divider-line {
+      background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.08) 15%, rgba(0, 0, 0, 0.08) 85%, transparent 100%);
+    }
+    #header.header-scrolled .header-nav-row {
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+    }
+    #header.header-scrolled .header-divider-line {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .header-nav-link {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+      text-transform: none;
+    }
+    .header-scrolled .header-nav-link {
+      color: rgba(28, 25, 23, 0.8);
+    }
+    .header-nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .header-nav-link:hover {
+      color: white;
+    }
+    .header-scrolled .header-nav-link:hover {
+      color: rgb(28, 25, 23);
+    }
+    .header-nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .header-link-button {
+      color: white;
+      font-weight: 400;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      position: relative;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      height: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .header-link-button:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      transform: translateY(-1px);
+    }
+    .header-scrolled .header-link-button {
+      color: rgba(28, 25, 23, 0.85);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(28, 25, 23, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+    .header-scrolled .header-link-button:hover {
+      color: rgb(28, 25, 23);
+      background: rgba(255, 255, 255, 0.75);
+      border-color: rgba(28, 25, 23, 0.15);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transform: translateY(-1px);
+    }
+    
+    .header-desktop-menu-btn {
+      color: rgb(28, 25, 23);
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .header-desktop-menu-btn:hover {
+      background: transparent;
+      box-shadow: none;
+    }
+    #header.header-scrolled .header-desktop-menu-btn {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    
+    .header-logo-row {
+      transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #header.header-scrolled .header-logo-row {
+      height: 3.5rem !important;
+    }
+    #header.header-scrolled .acm-logo {
+      height: 2.5rem !important;
+      max-width: 140px !important;
+    }
+    #desktop-nav {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    #header.header-scrolled #desktop-nav {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    
+    #desktop-menu {
+      height: 100vh;
+      height: 100dvh;
+      top: 0;
+      left: 0;
+      box-shadow: none !important;
+      border: none !important;
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #desktop-menu.show {
+      transform: translateX(0) !important;
+      opacity: 1;
+    }
+    #desktop-menu .desktop-menu-nav .desktop-menu-link {
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.3s ease, transform 0.3s ease, padding-left 0.25s ease;
+    }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(1) { transition-delay: 0.05s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(2) { transition-delay: 0.1s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(3) { transition-delay: 0.15s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(4) { transition-delay: 0.2s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(5) { transition-delay: 0.25s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(6) { transition-delay: 0.3s; }
+    #desktop-menu-backdrop {
+      pointer-events: none;
+      height: 100vh;
+      height: 100dvh;
+    }
+    #desktop-menu-backdrop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #desktop-menu .desktop-menu-link {
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      font-size: 1rem;
+    }
+    .desktop-menu-link:hover {
+      padding-left: 0.5rem;
+    }
+    
+    .header-mobile-btn {
+      color: white;
+      transition: opacity 0.4s ease, visibility 0.4s ease, color 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    #header.header-scrolled .header-mobile-btn {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      color: rgb(28, 25, 23);
+    }
+    
+    #mobile-menu {
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      opacity: 0;
+      transform: translateY(-12px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    #mobile-menu.mobile-menu-open {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .mobile-menu-nav .mobile-menu-link {
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      color: rgba(28, 25, 23, 0.8);
+      font-weight: 400;
+    }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(1) { transition-delay: 0.04s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(2) { transition-delay: 0.08s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(3) { transition-delay: 0.12s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(4) { transition-delay: 0.16s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(5) { transition-delay: 0.2s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(6) { transition-delay: 0.24s; }
+    .mobile-menu-link:hover {
+      color: rgb(28, 25, 23);
+      padding-left: 0.75rem;
+    }
+    
+    .acm-logo {
+      filter: brightness(0) invert(1);
+      transition: filter 0.4s ease, opacity 0.4s ease;
+      object-fit: contain;
+      height: auto;
+      max-height: 64px;
+    }
+    .header-scrolled .acm-logo {
+      filter: brightness(0) invert(0);
+    }
+    @media (max-width: 1024px) {
+      .acm-logo { max-height: 56px; }
+    }
+    @media (max-width: 640px) {
+      .acm-logo { max-height: 48px; }
+    }
+    .acm-logo:hover {
+      opacity: 0.8;
+    }
+    
+    .header-logo-text {
+      color: white;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: color 0.4s ease;
+    }
+    .header-scrolled .header-logo-text {
+      color: rgb(28, 25, 23);
+    }
+    .header-logo-subtext {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      transition: color 0.4s ease;
+    }
+    .header-scrolled .header-logo-subtext {
+      color: rgba(28, 25, 23, 0.7);
+    }
+    .header-logo-bg {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    
+    #scroll-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 3rem;
+      height: 3rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(28, 25, 23, 0.1);
+      border-radius: 0.5rem;
+      color: rgb(28, 25, 23);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1rem);
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, box-shadow 0.3s ease;
+      z-index: 9999 !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    #scroll-to-top.visible {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+    }
+    #scroll-to-top:hover {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-2px);
+    }
+    #scroll-to-top svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke-width: 2;
+    }
+    
+    .footer-safe {
+      padding-bottom: max(2rem, env(safe-area-inset-bottom, 0));
+    }
+    .footer-copyright {
+      display: block;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: rgb(120 113 108);
+      padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0));
+    }
+    
+    button,
+    .btn-primary,
+    a[class*="btn"],
+    a[class*="button"],
+    .header-button,
+    .header-link-button,
+    .header-desktop-menu-btn,
+    .header-mobile-btn,
+    .language-btn,
+    .modal-close {
+      border-radius: 0 !important;
+    }
+    
+    img:not(.acm-logo):not(svg *) {
+      border-radius: 0.5rem;
+    }
+    #hero img {
+      border-radius: 0;
+    }
+    
+    .btn-primary,
+    .btn-outline,
+    .btn-filled {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 14rem;
+      padding: 15px 2rem;
+      background: transparent !important;
+      color: var(--color-olive) !important;
+      border: 1px solid var(--color-olive) !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      box-shadow: none;
+    }
+    .btn-primary:hover,
+    .btn-outline:hover,
+    .btn-filled:hover {
+      background: transparent !important;
+      color: var(--color-olive-dark) !important;
+      border-color: var(--color-olive-dark) !important;
+      opacity: 0.85;
+      box-shadow: 0 4px 14px rgba(0, 20, 65, 0.15);
+    }
+    .btn-primary:active,
+    .btn-outline:active,
+    .btn-filled:active {
+      transform: scale(0.98);
+    }
+    
+    .btn-outline-white,
+    .btn-filled-white {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 14rem;
+      padding: 15px 2rem;
+      background: transparent !important;
+      color: white !important;
+      border: 1px solid rgba(255,255,255,0.7) !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      box-shadow: none;
+    }
+    .btn-outline-white:hover,
+    .btn-filled-white:hover {
+      background: transparent !important;
+      color: white !important;
+      border-color: white !important;
+      opacity: 0.88;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-overlay-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 2rem;
+      background: white !important;
+      color: #292524 !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+    .btn-overlay-white:hover {
+      background: #f5f5f4 !important;
+    }
+    
+    .btn-primary,
+    .btn-outline,
+    .btn-filled,
+    .btn-outline-white,
+    .btn-filled-white,
+    a.btn-primary,
+    .header-link-button {
+      transition: opacity 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    }
+    
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-olive);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .link-arrow:hover { opacity: 0.7; }
+    .link-arrow svg { transition: transform 0.3s ease; }
+    .link-arrow:hover svg { transform: translateX(4px); }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+    }
+    .fade-in-up-delay-1 { animation-delay: 0.1s; }
+    .fade-in-up-delay-2 { animation-delay: 0.2s; }
+    .fade-in-up-delay-3 { animation-delay: 0.3s; }
+    
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Bressay Display', 'Old Standard TT', Georgia, serif;
+      letter-spacing: -0.02em;
+      font-feature-settings: "kern" 1;
+    }
+    
+    section {
+      position: relative;
+    }
+    
+    .language-btn {
+      color: rgb(120, 113, 108);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 0.5rem;
+    }
+    .language-btn:hover {
+      color: var(--color-olive);
+    }
+    .language-btn.active {
+      color: var(--color-olive) !important;
+      font-weight: 600;
+      background: transparent;
+    }
+    
+    .header-scrolled {
+      top: 0 !important;
+    }
+    #header {
+      transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Stromlinien – Kondensstreifen-Effekt */
+    .streamlines-container {
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+    }
+    .streamline {
+      position: absolute;
+      width: 120%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.2) 90%, transparent 100%);
+      filter: blur(1px);
+      transform-origin: left center;
+      opacity: 0;
+    }
+    .streamline-1 { top: 15%; left: -20%; transform: rotate(12deg); animation: streamMove 25s linear infinite; animation-delay: 0s; }
+    .streamline-2 { top: 30%; left: -20%; transform: rotate(-8deg); animation: streamMove 28s linear infinite; animation-delay: 5s; }
+    .streamline-3 { top: 50%; left: -20%; transform: rotate(10deg); animation: streamMove 26s linear infinite; animation-delay: 10s; }
+    .streamline-4 { top: 70%; left: -20%; transform: rotate(-12deg); animation: streamMove 30s linear infinite; animation-delay: 15s; }
+    .streamline-5 { top: 85%; left: -20%; transform: rotate(6deg); animation: streamMove 27s linear infinite; animation-delay: 20s; }
+    @keyframes streamMove {
+      0% { left: -20%; opacity: 0; }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% { left: 120%; opacity: 0; }
+    }
+    @media (max-width: 768px) {
+      .streamline { opacity: 0.6; }
+    }
+    /* Stromlinien auf hellem Hintergrund (CTA) – dunklere Linien */
+    .streamlines-dark .streamline {
+      background: linear-gradient(90deg, transparent 0%, rgba(120, 113, 108, 0.25) 10%, rgba(120, 113, 108, 0.45) 50%, rgba(120, 113, 108, 0.25) 90%, transparent 100%);
+    }
+    
+    /* ── Horizontal Timeline ── */
+    .htl-section {
+      position: relative;
+      overflow: hidden;
+      cursor: grab;
+    }
+    .htl-section:active {
+      cursor: grabbing;
+    }
+    .htl-viewport {
+      overflow: hidden;
+      position: relative;
+    }
+    .htl-viewport::before,
+    .htl-viewport::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 10vw;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .htl-viewport::before {
+      left: 0;
+      background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+    }
+    .htl-viewport::after {
+      right: 0;
+      background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+    }
+    .htl-track {
+      display: flex;
+      will-change: transform;
+      transition: transform 1.25s cubic-bezier(0.2, 0.5, 0.35, 1);
+    }
+    .htl-card {
+      flex: 0 0 auto;
+      width: 420px;
+      padding: 0 40px;
+      box-sizing: border-box;
+      opacity: 0.45;
+      transition: opacity 0.8s ease;
+    }
+    .htl-card.htl-active {
+      opacity: 1;
+    }
+    .htl-card-year {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+      margin-bottom: 12px;
+    }
+    .htl-card-title {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #1c1917;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .htl-card-text {
+      font-size: 0.938rem;
+      line-height: 1.7;
+      color: #78716c;
+    }
+
+    /* Line + dots */
+    .htl-line-wrap {
+      position: relative;
+      height: 32px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+    }
+    .htl-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(0, 20, 65, 0.12);
+      transform: translateY(-50%);
+    }
+    .htl-dots {
+      display: flex;
+      will-change: transform;
+      transition: transform 1.25s cubic-bezier(0.2, 0.5, 0.35, 1);
+    }
+    .htl-dot {
+      flex: 0 0 auto;
+      width: 420px;
+      display: flex;
+      justify-content: center;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .htl-dot-inner {
+      width: 14px;
+      height: 14px;
+      border-radius: 50% !important;
+      border: 2px solid var(--color-olive) !important;
+      background: transparent;
+      transition: background 0.35s ease, transform 0.35s ease;
+      position: relative;
+      z-index: 2;
+    }
+    .htl-dot.htl-dot-active .htl-dot-inner {
+      background: var(--color-olive);
+      transform: scale(1.15);
+    }
+
+    /* Progress indicator */
+    .htl-progress {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 2px;
+      background: var(--color-olive);
+      transform: translateY(-50%);
+      transition: width 1.25s cubic-bezier(0.2, 0.5, 0.35, 1);
+      z-index: 1;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .htl-card {
+        width: 300px;
+        padding: 0 24px;
+      }
+      .htl-dot {
+        width: 300px;
+        padding: 0 24px;
+      }
+      .htl-card-title {
+        font-size: 1.25rem;
+      }
+      .htl-line-wrap {
+        margin-bottom: 32px;
+      }
+    }
+
+    /* Keyboard focus */
+    .htl-card:focus-visible {
+      outline: 2px solid var(--color-olive);
+      outline-offset: 8px;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-stone-800 antialiased">
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 w-full">
+    <div class="w-full px-6 sm:px-8 lg:px-10">
+      <div class="flex items-center justify-center h-16 lg:h-20 header-logo-row relative transition-all duration-400">
+        <button id="desktop-menu-btn" class="hidden lg:block absolute left-0 p-2 header-desktop-menu-btn" aria-label="Open menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <div class="header-top-right hidden lg:flex absolute right-0 items-center gap-6">
+          <div class="header-lang-switcher flex items-center gap-1 text-sm">
+            <a href="?lang=de" class="header-lang-link header-lang-active" data-lang="de">DE</a>
+            <span class="header-lang-sep" aria-hidden="true">|</span>
+            <a href="?lang=en" class="header-lang-link" data-lang="en">EN</a>
+          </div>
+          <a href="#contact" class="header-link-button whitespace-nowrap">Kontakt aufnehmen</a>
+        </div>
+        <a href="index.html" class="acm-logo-link hidden lg:block" aria-label="ACM Air Charter Home">
+          <img id="header-logo-img" src="logo.png" alt="ACM Air Charter Logo" class="acm-logo h-12 lg:h-14 w-auto transition-opacity duration-300" style="object-fit: contain; max-width: 160px;" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback'); if(f) f.style.display='flex';">
+          <div id="header-logo-fallback" class="flex items-center gap-2" style="display: none;">
+            <div class="header-logo-bg w-10 h-10 flex items-center justify-center">
+              <span class="header-logo-text font-serif text-2xl">A</span>
+            </div>
+            <div class="hidden sm:block">
+              <span class="header-logo-text font-serif text-lg tracking-wide block leading-tight">ACM</span>
+              <span class="header-logo-subtext text-[9px] font-light tracking-wider uppercase block mt-0.5">Air Charter</span>
+            </div>
+          </div>
+        </a>
+        <a href="index.html" class="acm-logo-link lg:hidden" aria-label="ACM Air Charter Home">
+          <img id="header-logo-img-mobile" src="logo.png" alt="ACM Air Charter Logo" class="acm-logo h-10 sm:h-12 w-auto transition-opacity duration-300" style="object-fit: contain;" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback-mobile'); if(f) f.style.display='flex';">
+          <div id="header-logo-fallback-mobile" class="flex items-center gap-2" style="display: none;">
+            <div class="header-logo-bg w-8 h-8 flex items-center justify-center">
+              <span class="header-logo-text font-serif text-xl">A</span>
+            </div>
+          </div>
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden absolute right-0 p-2 header-mobile-btn" aria-label="Open menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <div class="header-divider-line" aria-hidden="true"></div>
+      <div class="flex items-center justify-center h-14 lg:h-16 relative header-nav-row transition-all duration-400">
+        <nav id="desktop-nav" class="hidden lg:flex items-center gap-[10rem] justify-center header-nav-visible" aria-label="Main navigation">
+          <a href="index.html#about" class="header-nav-link">That's ACM</a>
+          <a href="index.html#charter" class="header-nav-link">Charter</a>
+          <a href="index.html#management" class="header-nav-link">Aircraft Management</a>
+          <a href="index.html#maintenance" class="header-nav-link">Maintenance</a>
+          <a href="index.html#handling" class="header-nav-link">Aircraft Handling</a>
+          <a href="index.html#careers" class="header-nav-link">Careers</a>
+        </nav>
+      </div>
+    </div>
+
+    <div id="desktop-menu" class="hidden lg:block fixed top-0 left-0 h-screen w-80 bg-white z-[100] transform -translate-x-full">
+      <div class="h-screen overflow-y-auto">
+        <div class="p-6 flex items-center justify-between">
+          <img src="logo.png" alt="ACM Air Charter Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+          <button id="desktop-menu-close" class="p-2 hover:bg-stone-100 rounded-lg transition-colors" aria-label="Close menu">
+            <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <nav class="p-6 space-y-1 desktop-menu-nav">
+          <a href="index.html#about" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">That's ACM</a>
+          <a href="index.html#charter" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Charter</a>
+          <a href="index.html#management" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Aircraft Management</a>
+          <a href="index.html#maintenance" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Maintenance</a>
+          <a href="index.html#handling" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Aircraft Handling</a>
+          <a href="index.html#careers" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Careers</a>
+        </nav>
+      </div>
+    </div>
+    <div id="desktop-menu-backdrop" class="hidden lg:block fixed top-0 left-0 right-0 bottom-0 bg-black/20 backdrop-blur-sm z-[99] opacity-0 transition-opacity duration-300"></div>
+
+    <div id="mobile-menu" class="lg:hidden hidden">
+      <nav class="max-w-7xl mx-auto px-6 py-6 space-y-1 mobile-menu-nav">
+        <a href="index.html#about" class="mobile-menu-link block py-3">That's ACM</a>
+        <a href="index.html#charter" class="mobile-menu-link block py-3">Charter</a>
+        <a href="index.html#management" class="mobile-menu-link block py-3">Aircraft Management</a>
+        <a href="index.html#maintenance" class="mobile-menu-link block py-3">Maintenance</a>
+        <a href="index.html#handling" class="mobile-menu-link block py-3">Aircraft Handling</a>
+        <a href="index.html#careers" class="mobile-menu-link block py-3">Careers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================
+         1. HERO SECTION
+         ============================================ -->
+    <section id="hero" class="relative w-full h-[70vh] min-h-[500px] max-h-[750px] overflow-hidden">
+      <img 
+        src="Fotos/ACM_building_banner2.jpg" 
+        alt="ACM Air Charter Gebäude am Baden-Airpark"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+      <div class="hero-overlay absolute inset-0 z-10"></div>
+      <!-- Stromlinien -->
+      <div class="streamlines-container absolute inset-0 pointer-events-none" style="z-index: 15;">
+        <div class="streamline streamline-1"></div>
+        <div class="streamline streamline-2"></div>
+        <div class="streamline streamline-3"></div>
+        <div class="streamline streamline-4"></div>
+        <div class="streamline streamline-5"></div>
+      </div>
+      <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light mb-6 fade-in-up" style="font-size: 56px !important; line-height: 1 !important;">
+          Das ist ACM
+        </h1>
+        <p class="text-white/85 text-lg sm:text-xl max-w-2xl mb-10 fade-in-up fade-in-up-delay-1" style="color: rgba(255,255,255,0.85) !important; font-size: 1.125rem !important;">
+          Integrierte Business Aviation aus einer Hand.
+        </p>
+        <a href="#contact" class="btn-overlay-white fade-in-up fade-in-up-delay-2">
+          Kontakt aufnehmen
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================
+         2. INTRODUCTION – COMPANY POSITIONING
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32 bg-sand-50">
+      <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Unternehmen</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 font-light mb-10">
+            Integrierte Aviation<br>unter einem Dach
+          </h2>
+          <p class="text-stone-500 leading-relaxed max-w-3xl mx-auto mb-6">
+            ACM Air Charter ist seit 1992 als integrierter Business-Aviation-Betreiber tätig. Vom Baden-Airpark (FKB) in Süddeutschland aus vereint ACM Charterflüge, Aircraft Management, EASA Part-145 zertifizierte Wartung und CAMO in einer einzigen Organisationsstruktur.
+          </p>
+          <p class="text-stone-500 leading-relaxed max-w-3xl mx-auto">
+            Mit über 30 Jahren operativer Erfahrung, eigenen Hangars und einem In-House-Team von mehr als 100 Fachkräften betreibt ACM eine Flotte aus Bombardier Global und Challenger Flugzeugen. Alle Leistungen werden vor Ort erbracht – für direkte Kontrolle, kürzere Durchlaufzeiten und durchgängige Qualität in jedem Bereich.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fullwidth Image Break – Hangar mit CTA -->
+    <section class="relative h-[45vh] sm:h-[55vh] overflow-hidden">
+      <img 
+        src="Fotos/ACM - Allgemein/_MKA1988.jpg" 
+        alt="ACM Hangaranlage am Baden-Airpark"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        onerror="this.src='Fotos/Hangar/ACM - Hangar Baden-Baden.jpg'"
+      >
+      <div class="absolute inset-0 opacity-100" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light">
+          Unsere Flotten
+        </h2>
+        <a href="#contact" class="btn-overlay-white mt-4 inline-flex">
+          Kontakt aufnehmen
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================
+         3. HISTORY – HORIZONTAL TIMELINE
+         ============================================ -->
+    <section id="htl-section" class="htl-section py-20 sm:py-28 lg:py-32 bg-white px-[5rem]" aria-label="Unternehmensgeschichte">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center mb-16 lg:mb-20 scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Geschichte</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 font-light">
+            Unsere Entwicklung
+          </h2>
+        </div>
+      </div>
+
+      <!-- Timeline module -->
+      <div id="htl-root" class="htl-viewport" role="region" aria-roledescription="Timeline" aria-label="ACM Unternehmensgeschichte">
+
+        <!-- Dot line -->
+        <div class="htl-line-wrap">
+          <div class="htl-line"></div>
+          <div class="htl-progress" id="htl-progress"></div>
+          <div class="htl-dots" id="htl-dots">
+            <div class="htl-dot htl-dot-active" data-index="0"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="1"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="2"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="3"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="4"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="5"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="6"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="7"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="8"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="9"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="10"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="11"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="12"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="13"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="14"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="15"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="16"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="17"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="18"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="19"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="20"><div class="htl-dot-inner"></div></div>
+            <div class="htl-dot" data-index="21"><div class="htl-dot-inner"></div></div>
+          </div>
+        </div>
+
+        <!-- Content cards -->
+        <div class="htl-track" id="htl-track">
+          <article class="htl-card htl-active" tabindex="0" role="group" aria-label="1964 – Gründung Flugdienst Kühl" data-index="0">
+            <div class="htl-card-year">1964</div>
+            <h3 class="htl-card-title">Die Anfänge</h3>
+            <p class="htl-card-text">Claus Kühl gründet auf dem Flugplatz Baden-Baden-Oos ein kleines Luftfahrtunternehmen mit Flugschule. Als Cessna-Vertragshändler kommt ein luftfahrttechnischer Betrieb dazu. Für Schulung, Vermietung und Taxiflüge stehen 20 bis 25 ein- und zweimotorige Flugzeuge zur Verfügung.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="1990 – Umstrukturierung" data-index="1">
+            <div class="htl-card-year">1990</div>
+            <h3 class="htl-card-title">Fokus Business Aviation</h3>
+            <p class="htl-card-text">Die Flugdienst Kühl GmbH stellt die Flugschule ein und richtet die Aktivitäten ausschließlich auf Business Aviation mit Turboprop-Flugzeugen aus. Der Einsatzradius vergrößert sich deutlich.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="1992 – ACM AIR CHARTER" data-index="2">
+            <div class="htl-card-year">1992</div>
+            <h3 class="htl-card-title">ACM AIR CHARTER Minninger GmbH</h3>
+            <p class="htl-card-text">Erstmals wird ein kleiner Business Jet in Betrieb genommen. Hannelore Kühl-Minninger und Thomas Minninger beantragen die Betriebslizenz unter der neu gegründeten ACM AIR CHARTER Minninger GmbH.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="1993 – AOC" data-index="3">
+            <div class="htl-card-year">1993</div>
+            <h3 class="htl-card-title">Air Operator Certificate</h3>
+            <p class="htl-card-text">Im April erhält ACM die Lizenz durch das Luftfahrt-Bundesamt für gewerbliche Flüge und startet, zunächst im Verbund mit Flugdienst Kühl, mit einer Cessna Citation V.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="1997 – Umzug Baden-Airpark" data-index="4">
+            <div class="htl-card-year">1997</div>
+            <h3 class="htl-card-title">Umzug zum Baden-Airpark</h3>
+            <p class="htl-card-text">Der Firmensitz wechselt vom Flugplatz Baden-Oos zum Flughafen Karlsruhe/Baden-Baden. Dr. Andreas Schirmeisen tritt als Mitgesellschafter und Geschäftsführer ein. Der Firmenname wird ACM AIR CHARTER Luftfahrtgesellschaft mbH. Mit der Citation VII ist der Schritt zum Midsize-Jet bereits vollzogen.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="1998 – Maintenance & Challenger 604" data-index="5">
+            <div class="htl-card-year">1998</div>
+            <h3 class="htl-card-title">Maintenance & Challenger 604</h3>
+            <p class="htl-card-text">ACM erhält die Genehmigung für Instandhaltungsarbeiten und baut mit der Maintenance-Abteilung ein weiteres Standbein auf. Die erste in Deutschland gewerblich zugelassene Challenger 604 geht bei ACM in Betrieb und öffnet den Markt für Langstreckenflüge.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="1999 – Citation X & Handling" data-index="6">
+            <div class="htl-card-year">1999</div>
+            <h3 class="htl-card-title">Citation X & ACM Handling</h3>
+            <p class="htl-card-text">Die Flotte wird um die erste in Europa zugelassene Citation X erweitert – den weltweit schnellsten Business Jet. Der Geschäftsbereich ACM Handling wächst mit der zunehmenden Frequentierung des Baden-Airport.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2003 – Ausbau" data-index="7">
+            <div class="htl-card-year">2003</div>
+            <h3 class="htl-card-title">Ausbau und Modernisierung</h3>
+            <p class="htl-card-text">Ausbau und Modernisierung der ACM-Gebäude schaffen die Grundlagen für die Erweiterung von Maintenance, Handling und personellem Bedarf für den wachsenden Flugzeugpark.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2006 – Vorfeldfläche" data-index="8">
+            <div class="htl-card-year">2006</div>
+            <h3 class="htl-card-title">Vorfeldfläche</h3>
+            <p class="htl-card-text">Die Erweiterung der ACM-Vorfeldfläche um 7.000 Quadratmeter führt zu größerer Abstell-Kapazität und weiteren Komfort-Verbesserungen.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2007 – Falcon 2000EX" data-index="9">
+            <div class="htl-card-year">2007</div>
+            <h3 class="htl-card-title">Dassault Falcon 2000EX EASy</h3>
+            <p class="htl-card-text">ACM übernimmt erstmals die Halterschaft für ein Flugzeug der Marke Dassault und erweitert die Genehmigung für eine Falcon 2000EX EASy.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2008 – Global Express XRS" data-index="10">
+            <div class="htl-card-year">2008</div>
+            <h3 class="htl-card-title">Erster Ultra-Langstrecken-Jet</h3>
+            <p class="htl-card-text">Der Bombardier Global Express XRS geht in Betrieb und ermöglicht nonstop Transatlantik-Flüge in beide Richtungen.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2009 – Zweiter Hangar" data-index="11">
+            <div class="htl-card-year">2009</div>
+            <h3 class="htl-card-title">Zweiter Hangar</h3>
+            <p class="htl-card-text">Erwerb des zweiten Flugzeughangars am Baden-Airport.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2010 – Falcon 7X" data-index="12">
+            <div class="htl-card-year">2010</div>
+            <h3 class="htl-card-title">Dassault Falcon 7X</h3>
+            <p class="htl-card-text">Erweiterung der Unternehmensgenehmigung für den Betrieb der ersten in Deutschland gewerblich zugelassenen Dassault Falcon 7X – ein weiterer Ultra-Langstrecken-Jet der modernsten Cockpit-Generation.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2011 – Zweiter Global XRS" data-index="13">
+            <div class="htl-card-year">2011</div>
+            <h3 class="htl-card-title">Acht Flugzeuge</h3>
+            <p class="htl-card-text">Ein zweiter Global Express XRS erweitert die Flotte auf 8 Flugzeuge.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2012 – Global 6000" data-index="14">
+            <div class="htl-card-year">2012</div>
+            <h3 class="htl-card-title">Bombardier Global 6000</h3>
+            <p class="htl-card-text">Der dritte Ultra-Langstrecken-Jet wird mit einem neuen Bombardier Global 6000 in die Flotte aufgenommen.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2014 – Boeing BBJ2" data-index="15">
+            <div class="htl-card-year">2014</div>
+            <h3 class="htl-card-title">Boeing BBJ2</h3>
+            <p class="htl-card-text">Mit der Inbetriebnahme von zwei neuen Boeing BBJ2 Flugzeugen ist ACM AIR CHARTER auch im Segment der VIP-Airliner präsent.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2016 – IS-BAO" data-index="16">
+            <div class="htl-card-year">2016</div>
+            <h3 class="htl-card-title">IS-BAO Zertifizierung</h3>
+            <p class="htl-card-text">ACM AIR CHARTER erneuert die höchstmögliche IS-BAO Zertifizierung.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2017 – Embraer Phenom 300" data-index="17">
+            <div class="htl-card-year">2017</div>
+            <h3 class="htl-card-title">Embraer Phenom 300</h3>
+            <p class="htl-card-text">ACM übernimmt den operativen Betrieb einer nicht gewerblich genutzten Embraer Phenom 300 (Part-NCC) und erweitert damit erneut die Flotte.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2018 – Falcon 2000EX" data-index="18">
+            <div class="htl-card-year">2018</div>
+            <h3 class="htl-card-title">Weitere Dassault Falcon 2000EX</h3>
+            <p class="htl-card-text">Eine weitere Dassault Falcon 2000EX wird in die Flotte aufgenommen.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2018 – Vier Bombardier Global" data-index="19">
+            <div class="htl-card-year">2018</div>
+            <h3 class="htl-card-title">Vier Bombardier Global</h3>
+            <p class="htl-card-text">Mit der Aufnahme eines weiteren Global Express besteht die Flotte nun aus insgesamt vier Bombardier Global.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2021 – Global 7500" data-index="20">
+            <div class="htl-card-year">2021</div>
+            <h3 class="htl-card-title">Global 7500 & reine Global-Flotte</h3>
+            <p class="htl-card-text">Das neueste Flagschiff von Bombardier, die Global 7500, wird Teil der ACM-Flotte. Seit diesem Jahr betreibt ACM eine reine Bombardier Global Flotte.</p>
+          </article>
+          <article class="htl-card" tabindex="0" role="group" aria-label="2024 – Starlink" data-index="21">
+            <div class="htl-card-year">2024</div>
+            <h3 class="htl-card-title">Starlink</h3>
+            <p class="htl-card-text">ACM AIR CHARTER integriert Starlink erfolgreich in selbst operierte Flugzeuge der Flotte und setzt als autorisierter Starlink-Händler in Deutschland neue Maßstäbe in der Konnektivität.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         4. OPERATIONAL STRUCTURE
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32 bg-sand-50">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center mb-16 lg:mb-20 scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Struktur</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 font-light">
+            Operatives Fundament
+          </h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-x-16 gap-y-20 lg:gap-x-24 lg:gap-y-24">
+          <div class="scroll-reveal">
+            <span class="section-number text-olive font-medium tracking-[0.2em] uppercase mb-4 block">01</span>
+            <h3 class="font-serif text-2xl text-stone-800 font-normal mb-4">Geschäftsführung</h3>
+            <p class="text-stone-500 leading-relaxed">
+              Das Management-Team steuert alle operativen Bereiche von einem Standort aus. Strategische Entscheidungen werden mit direktem Einblick in Flugbetrieb, Wartungsplanung und Flottensteuerung getroffen – für Abstimmung über alle Geschäftsbereiche hinweg.
+            </p>
+          </div>
+          
+          <div class="scroll-reveal">
+            <span class="section-number text-olive font-medium tracking-[0.2em] uppercase mb-4 block">02</span>
+            <h3 class="font-serif text-2xl text-stone-800 font-normal mb-4">Flight Operations</h3>
+            <p class="text-stone-500 leading-relaxed">
+              Eigene Dispatch-, Crew-Scheduling- und Flugplanungsteams organisieren den globalen Betrieb rund um die Uhr. Crews werden festen Flugzeugen zugewiesen – für Kontinuität, Vertrautheit mit dem Muster und zuverlässige Leistung.
+            </p>
+          </div>
+          
+          <div class="scroll-reveal">
+            <span class="section-number text-olive font-medium tracking-[0.2em] uppercase mb-4 block">03</span>
+            <h3 class="font-serif text-2xl text-stone-800 font-normal mb-4">Ground Operations</h3>
+            <p class="text-stone-500 leading-relaxed">
+              Das In-House-Handling am Baden-Airpark umfasst Flugzeugabstellung, Enteisen, Betankungskoordination und Passagierabfertigung. Die direkte Kontrolle über Bodenprozesse reduziert Abhängigkeiten und unterstützt pünktliche Abflüge.
+            </p>
+          </div>
+          
+          <div class="scroll-reveal">
+            <span class="section-number text-olive font-medium tracking-[0.2em] uppercase mb-4 block">04</span>
+            <h3 class="font-serif text-2xl text-stone-800 font-normal mb-4">Vertrieb & Kundenbetreuung</h3>
+            <p class="text-stone-500 leading-relaxed">
+              Ein eigenes Charter-Vertriebs- und Owner-Relations-Team steht Kunden direkt zur Verfügung. Anfragen werden intern ohne Vermittler bearbeitet – das ermöglicht schnelle Reaktionszeiten und transparente Kommunikation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fullwidth Image Break – Unsere Flotten mit Overlay -->
+    <section class="relative h-[45vh] sm:h-[55vh] overflow-hidden">
+      <img 
+        src="Fotos/ACM - Allgemein/_MKA1481.jpg"
+        alt="ACM Piloten im Cockpit während des Flugbetriebs"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      >
+      <div class="absolute inset-0 opacity-100" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light">
+          Unsere Flotten
+        </h2>
+        <a href="#contact" class="btn-overlay-white mt-4 inline-flex">
+          Kontakt aufnehmen
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================
+         5. SAFETY & COMPLIANCE
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center mb-16 lg:mb-20 scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Sicherheit & Compliance</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 font-light">
+            Zertifizierte Standards
+          </h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+          <!-- IS-BAO -->
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">IS-BAO Stage III</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  International Standard for Business Aircraft Operations. Unabhängiges Drittaudit, das ein strukturiertes Sicherheitsmanagementsystem über alle operativen Bereiche hinweg bestätigt.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- EASA Part-145 -->
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.42 15.17l-5.384-3.19A.75.75 0 016 11.32V4.5a.75.75 0 01.364-.643l5.384-3.19a.75.75 0 01.764 0l5.384 3.19A.75.75 0 0118 4.5v6.82a.75.75 0 01-.364.643l-5.384 3.19a.75.75 0 01-.764 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">EASA Part-145</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Instandhaltungsbetriebsgenehmigung der Europäischen Agentur für Flugsicherheit. Berechtigt ACM zur Durchführung von Line- und Base-Maintenance an den betreuten Flugzeugmustern in eigener Werkstatt.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- CAMO -->
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">CAMO</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Continuing Airworthiness Management Organisation. Verwaltet Instandhaltungsprogramme, Lufttüchtigkeitsprüfungen und die regulatorische Compliance jedes Flugzeugs der Flotte.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- German AOC -->
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">AOC D-057</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Deutsches Luftverkehrsbetreiberzeugnis, ausgestellt durch das LBA (Luftfahrt-Bundesamt). Berechtigt ACM zur Durchführung gewerblicher Lufttransporte nach EASA-Vorschriften.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- SMS -->
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">Safety Management System</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Strukturiertes SMS mit Gefährdungsermittlung, Risikobewertung und kontinuierlicher Überwachung. Betriebsdaten werden systematisch ausgewertet, um potenzielle Risiken zu erkennen und zu minimieren.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Audit Compliance -->
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">Kontinuierliche Audit-Compliance</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Regelmäßige interne und externe Audits über alle Abteilungen hinweg. Feststellungen werden dokumentiert, nachverfolgt und über definierte Korrekturmaßnahmen behoben.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         6. IN-HOUSE CAPABILITIES
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32 bg-sand-50">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center mb-16 lg:mb-20 scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Leistungen</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 font-light">
+            Infrastruktur & Leistungen
+          </h2>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center mb-20 scroll-reveal">
+          <div>
+            <img 
+              src="Fotos/Hangar/acm_03.jpg" 
+              alt="ACM Wartungshangar mit Business Jet"
+              class="w-full h-[400px] lg:h-[550px] object-cover"
+              loading="lazy"
+            >
+          </div>
+          <div>
+            <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Wartungsbasis</span>
+            <h3 class="heading-23rem font-serif text-stone-800 font-light mb-6">
+              Zertifizierte Wartungseinrichtung
+            </h3>
+            <p class="text-stone-500 leading-relaxed mb-4">
+              Die Part-145 zugelassene Wartungsbasis von ACM am Baden-Airpark bietet Line- und Base-Maintenance für Bombardier Global und Challenger Baureihen. Zu den Leistungen gehören planmäßige Inspektionen, Avionik, Kabinenrenovierung und AOG-Einsätze.
+            </p>
+            <p class="text-stone-500 leading-relaxed">
+              Die hauseigene Wartung eliminiert externe Überführungsflüge und reduziert Standzeiten. Die Wartungsplanung wird direkt mit dem Flugbetrieb und der CAMO abgestimmt, um die Verfügbarkeit zu optimieren.
+            </p>
+          </div>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center mb-20 scroll-reveal">
+          <div class="lg:order-2">
+            <img 
+              src="Fotos/Hangar/acm_05.jpg" 
+              alt="ACM Betrieb und Crew im Hangar"
+              class="w-full h-[400px] lg:h-[550px] object-cover"
+              loading="lazy"
+            >
+          </div>
+          <div class="lg:order-1">
+            <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">CAMO & Aufsicht</span>
+            <h3 class="heading-23rem font-serif text-stone-800 font-light mb-6">
+              Lufttüchtigkeitsmanagement
+            </h3>
+            <p class="text-stone-500 leading-relaxed mb-4">
+              Die CAMO von ACM verwaltet die fortlaufende Lufttüchtigkeit aller Flugzeuge der Flotte. Dies umfasst die Verwaltung von Instandhaltungsprogrammen, Lufttüchtigkeitsprüfungen, Komponentenverfolgung und AD/SB-Compliance-Monitoring.
+            </p>
+            <p class="text-stone-500 leading-relaxed">
+              CAMO und Part-145 unter einem Dach ermöglichen koordinierte Planung und direkte technische Aufsicht – weniger Verwaltungsaufwand und bessere Planbarkeit der Wartungsdurchläufe.
+            </p>
+          </div>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center scroll-reveal">
+          <div>
+            <img 
+              src="Fotos/ACM - Allgemein/Cockpit.jpg" 
+              alt="ACM Business Jet Cockpit und Dispatch"
+              class="w-full h-[400px] lg:h-[550px] object-cover"
+              loading="lazy"
+            >
+          </div>
+          <div>
+            <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Operations Control</span>
+            <h3 class="heading-23rem font-serif text-stone-800 font-light mb-6">
+              Dispatch & Koordination
+            </h3>
+            <p class="text-stone-500 leading-relaxed mb-4">
+              Das Operations Control Centre von ACM steuert Flugplanung, Crew-Scheduling, Genehmigungskoordination und Echtzeit-Flugüberwachung. Alle Dispatch-Funktionen werden intern abgewickelt.
+            </p>
+            <p class="text-stone-500 leading-relaxed">
+              Die abteilungsübergreifende Integration ermöglicht schnelle Reaktion auf Planänderungen, Wetterumleitungen oder Wartungsanforderungen – ohne Abhängigkeit von Dritten und bei durchgehender Betriebskontinuität.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         7. LOCATION & HOMEBASE (wie Aircraft Management Startseite)
+         ============================================ -->
+    <section class="relative overflow-visible">
+      <div class="grid lg:grid-cols-2 min-h-[600px] lg:min-h-[700px]">
+        <!-- Content Side -->
+        <div class="content-box-outer bg-white py-16 lg:py-20 flex items-center order-2 lg:order-1">
+          <div class="max-w-xl">
+            <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Heimatbasis</span>
+            <h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">
+              Zuhause am Baden-Airpark
+            </h2>
+            <p class="text-stone-700 leading-relaxed mb-10">
+              ACM hat seinen Hauptsitz am Flughafen Karlsruhe/Baden-Baden (FKB) in Rheinmünster, Süddeutschland. Der Flughafen bietet eigene Business-Aviation-Infrastruktur mit direktem Airside-Zugang zu ACMs Hangars und Terminal.
+            </p>
+            <p class="text-stone-700 leading-relaxed mb-10">
+              Zentral in Europa gelegen, bietet der Baden-Airpark strategische Anbindung an europäische Metropolen und dient als effizienter Startpunkt für Interkontinentalflüge. Die Betriebszeiten und geringe Auslastung ermöglichen flexible Planung.
+            </p>
+            <p class="text-stone-700 leading-relaxed mb-10">
+              Alle ACM-Bereiche – Flugbetrieb, Wartung, CAMO, Handling und Verwaltung – arbeiten von diesem einen integrierten Standort aus. Das ermöglicht direkte Abstimmung und sofortigen Zugriff auf alle Ressourcen.
+            </p>
+            <a href="#contact" class="btn-primary inline-flex items-center justify-center">
+              Kontakt aufnehmen
+            </a>
+          </div>
+        </div>
+        <!-- Image Side – komplette rechte Hälfte -->
+        <div class="relative h-[400px] lg:h-auto order-1 lg:order-2">
+          <img 
+            src="Fotos/ACM - Allgemein/ACM_Hangar_2021.jpg" 
+            alt="ACM-Anlage am Baden-Airpark mit Hangar und Flotte"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         8. CLOSING CTA
+         ============================================ -->
+    <section id="contact" class="py-20 sm:py-28 lg:py-32 relative overflow-hidden" style="background-color: rgb(250 248 245);">
+      <!-- Stromlinien (dunkel für hellen Hintergrund) -->
+      <div class="streamlines-container streamlines-dark absolute inset-0 pointer-events-none z-0">
+        <div class="streamline streamline-1"></div>
+        <div class="streamline streamline-2"></div>
+        <div class="streamline streamline-3"></div>
+        <div class="streamline streamline-4"></div>
+        <div class="streamline streamline-5"></div>
+      </div>
+      <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
+        <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-900 font-light mb-6 scroll-reveal">
+          Sprechen Sie mit ACM
+        </h2>
+        <p class="text-stone-600 mb-10 max-w-2xl mx-auto text-lg leading-relaxed scroll-reveal">
+          Ob Charter, Aircraft Management oder Wartung – unser Team steht Ihnen für ein direktes Gespräch zur Verfügung.
+        </p>
+        <div class="scroll-reveal">
+          <a href="mailto:info@acm.aero" class="btn-primary">
+            Kontakt aufnehmen
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 mb-14 lg:mb-16">
+        <div class="lg:max-w-sm">
+          <img src="logo.png" alt="ACM Air Charter Logo" class="h-10 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div style="display: none;">
+            <span class="font-serif text-2xl text-stone-900 tracking-wide">ACM Air Charter</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed">
+            Integrierte Business Aviation – Charter, Management, Wartung unter einem Dach.
+          </p>
+        </div>
+        <div class="lg:text-right">
+          <address class="not-italic text-sm leading-relaxed text-stone-600 mb-4">
+            ACM Air Charter GmbH<br>
+            Am Flughafen 12, 77836 Rheinmünster
+          </address>
+          <div class="space-y-1 text-sm">
+            <a href="tel:+497229304050" class="block text-olive hover:text-olive-dark transition-colors">+49 7229 30405-0</a>
+            <a href="mailto:info@acm.aero" class="block text-olive hover:text-olive-dark transition-colors">info@acm.aero</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-12 py-10 border-t border-stone-200">
+        <div>
+          <h4 class="text-stone-900 font-serif text-lg mb-4">Leistungen</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="index.html#charter" class="hover:text-olive transition-colors">Charter</a></li>
+            <li><a href="index.html#management" class="hover:text-olive transition-colors">Owner Management</a></li>
+            <li><a href="index.html#maintenance" class="hover:text-olive transition-colors">Maintenance</a></li>
+            <li><a href="index.html#handling" class="hover:text-olive transition-colors">Handling</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-stone-900 font-serif text-lg mb-4">Unternehmen</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="thats-acm.html" class="hover:text-olive transition-colors">Das ist ACM</a></li>
+            <li><a href="index.html#careers" class="hover:text-olive transition-colors">Karriere</a></li>
+            <li><a href="index.html#news" class="hover:text-olive transition-colors">News</a></li>
+            <li><a href="#contact" class="hover:text-olive transition-colors">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-stone-900 font-serif text-lg mb-4">Rechtliches</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#" class="hover:text-olive transition-colors">Impressum</a></li>
+            <li><a href="#" class="hover:text-olive transition-colors">Datenschutz</a></li>
+            <li><a href="#" class="hover:text-olive transition-colors">AGB</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-stone-900 font-serif text-lg mb-4">Folgen Sie uns</h4>
+          <div class="flex items-center gap-4 mb-6">
+            <a href="#" class="text-stone-400 hover:text-olive transition-colors" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-stone-400 hover:text-olive transition-colors" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="mb-6">
+            <img src="is-bao-registered-company-stages3-01.png" alt="IS-BAO Registered Company Stage 3" class="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300" title="IS-BAO Registered Company Stage 3" onerror="this.style.display='none';">
+          </div>
+          <div class="flex items-center gap-2 text-sm">
+            <button id="lang-de" class="language-btn active px-2 py-1 transition-all duration-200" onclick="switchLanguage('de')" aria-label="Deutsche Sprache">DE</button>
+            <span class="text-stone-400">|</span>
+            <button id="lang-en" class="language-btn px-2 py-1 transition-all duration-200" onclick="switchLanguage('en')" aria-label="English Language">EN</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-stone-200">
+        <p class="text-center text-stone-500 text-sm">
+          &copy; 2026 ACM Air Charter GmbH. Alle Rechte vorbehalten.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const desktopMenuBtn = document.getElementById('desktop-menu-btn');
+    const desktopMenuClose = document.getElementById('desktop-menu-close');
+    const desktopMenu = document.getElementById('desktop-menu');
+    const desktopMenuBackdrop = document.getElementById('desktop-menu-backdrop');
+
+    function openDesktopMenu() {
+      if (!desktopMenu || !desktopMenuBackdrop) return;
+      desktopMenu.classList.remove('hidden');
+      desktopMenuBackdrop.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          desktopMenu.classList.add('show');
+          desktopMenuBackdrop.classList.add('show');
+        });
+      });
+      desktopMenuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDesktopMenu() {
+      if (!desktopMenu || !desktopMenuBackdrop) return;
+      desktopMenu.classList.remove('show');
+      desktopMenuBackdrop.classList.remove('show');
+      desktopMenuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        desktopMenu.classList.add('hidden');
+        desktopMenuBackdrop.classList.add('hidden');
+      }, 350);
+    }
+
+    if (desktopMenuBtn) desktopMenuBtn.addEventListener('click', openDesktopMenu);
+    if (desktopMenuClose) desktopMenuClose.addEventListener('click', closeDesktopMenu);
+    if (desktopMenuBackdrop) desktopMenuBackdrop.addEventListener('click', closeDesktopMenu);
+    if (desktopMenu) {
+      desktopMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => closeDesktopMenu());
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && desktopMenu && desktopMenu.classList.contains('show')) closeDesktopMenu();
+    });
+
+    const header = document.getElementById('header');
+    function updateHeader() {
+      if (window.pageYOffset > 20) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+        if (desktopMenu && desktopMenu.classList.contains('show')) closeDesktopMenu();
+      }
+    }
+    window.addEventListener('scroll', updateHeader);
+    updateHeader();
+
+    (function setActiveLang() {
+      const params = new URLSearchParams(window.location.search);
+      const lang = (params.get('lang') || 'en').toLowerCase();
+      document.querySelectorAll('.header-lang-link').forEach(function (a) {
+        if ((a.getAttribute('data-lang') || '').toLowerCase() === lang) {
+          a.classList.add('header-lang-active');
+        } else {
+          a.classList.remove('header-lang-active');
+        }
+      });
+    })();
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          mobileMenu.classList.remove('mobile-menu-open');
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          }, 300);
+        } else {
+          mobileMenu.classList.remove('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'true');
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              mobileMenu.classList.add('mobile-menu-open');
+            });
+          });
+        }
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('mobile-menu-open');
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          }, 300);
+        });
+      });
+    }
+
+    function switchLanguage(lang) {
+      const deBtn = document.getElementById('lang-de');
+      const enBtn = document.getElementById('lang-en');
+      if (lang === 'de') {
+        deBtn.classList.add('active');
+        enBtn.classList.remove('active');
+      } else if (lang === 'en') {
+        enBtn.classList.add('active');
+        deBtn.classList.remove('active');
+      }
+      localStorage.setItem('preferred-language', lang);
+    }
+    const savedLang = localStorage.getItem('preferred-language');
+    if (savedLang) switchLanguage(savedLang);
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const headerHeight = header.offsetHeight;
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20, behavior: 'smooth' });
+        }
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+    }
+
+    function initScrollToTop() {
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+      if (!scrollToTopBtn) return;
+      function toggleScrollToTop() {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      }
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      window.addEventListener('scroll', toggleScrollToTop, { passive: true });
+      toggleScrollToTop();
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initScrollToTop);
+    } else {
+      initScrollToTop();
+    }
+  </script>
+
+  <!-- Horizontal Timeline Logic -->
+  <script>
+  (function() {
+    const section   = document.getElementById('htl-section');
+    const track     = document.getElementById('htl-track');
+    const dotsWrap  = document.getElementById('htl-dots');
+    const progress  = document.getElementById('htl-progress');
+    if (!section || !track || !dotsWrap) return;
+
+    const cards     = Array.from(track.querySelectorAll('.htl-card'));
+    const dots      = Array.from(dotsWrap.querySelectorAll('.htl-dot'));
+    const total       = cards.length;
+    let active        = 0;
+    let locked        = false;
+    let scrollAccum   = 0;
+    let transitioning = false;
+    const THRESHOLD   = 120;
+    const DURATION_MS = 1250;
+
+    function getCardWidth() {
+      return cards[0] ? cards[0].offsetWidth : 420;
+    }
+
+    function getInitialOffset() {
+      const vw = document.getElementById('htl-root').offsetWidth;
+      return Math.round((vw / 2) - (getCardWidth() / 2));
+    }
+
+    function goTo(idx, instant) {
+      idx = Math.max(0, Math.min(total - 1, idx));
+      active = idx;
+      const cw = getCardWidth();
+      const offset = getInitialOffset();
+      const tx = offset - (idx * cw);
+      const dur = instant ? '0s' : '1.25s';
+      const easing = 'cubic-bezier(0.2,0.5,0.35,1)';
+      track.style.transition = 'transform ' + dur + ' ' + easing;
+      dotsWrap.style.transition = 'transform ' + dur + ' ' + easing;
+      track.style.transform   = 'translateX(' + tx + 'px)';
+      dotsWrap.style.transform = 'translateX(' + tx + 'px)';
+
+      cards.forEach(function(c, i) {
+        c.classList.toggle('htl-active', i === idx);
+      });
+      dots.forEach(function(d, i) {
+        d.classList.toggle('htl-dot-active', i === idx);
+      });
+
+      var lineLeft = offset + (idx * cw) + (cw / 2);
+      progress.style.width = lineLeft + 'px';
+
+      if (!instant) {
+        transitioning = true;
+        scrollAccum = 0;
+        setTimeout(function() { transitioning = false; }, DURATION_MS);
+      }
+    }
+
+    goTo(0, true);
+
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() { goTo(active, true); }, 120);
+    });
+
+    /* ── Scroll hijack (desktop) ── */
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting && e.intersectionRatio > 0.3) {
+          locked = true;
+        } else {
+          locked = false;
+        }
+      });
+    }, { threshold: [0, 0.3, 0.6, 1] });
+    io.observe(section);
+
+    window.addEventListener('wheel', function(e) {
+      var sRect = section.getBoundingClientRect();
+      var mouseInSection = e.clientX >= sRect.left && e.clientX <= sRect.right && e.clientY >= sRect.top && e.clientY <= sRect.bottom;
+      if (!mouseInSection) return;
+
+      if (!locked) return;
+      if (transitioning) {
+        e.preventDefault();
+        return;
+      }
+
+      var inView = sRect.top < window.innerHeight * 0.5 && sRect.bottom > window.innerHeight * 0.5;
+      if (!inView) { locked = false; return; }
+
+      var atStart = active === 0 && e.deltaY < 0;
+      var atEnd   = active === total - 1 && e.deltaY > 0;
+      if (atStart || atEnd) {
+        locked = false;
+        return;
+      }
+
+      e.preventDefault();
+      scrollAccum += e.deltaY;
+
+      if (Math.abs(scrollAccum) >= THRESHOLD) {
+        goTo(active + (scrollAccum > 0 ? 1 : -1));
+      }
+    }, { passive: false });
+
+    /* ── Mouse drag: Timeline folgt der Maus in Echtzeit, beim Loslassen Snap ── */
+    var dragStartX = 0;
+    var dragBaseTranslate = 0;
+    var isDragging = false;
+
+    function applyDragTranslate(tx) {
+      var cw = getCardWidth();
+      var offset = getInitialOffset();
+      var minTx = offset - (total - 1) * cw;
+      var maxTx = offset;
+      tx = Math.max(minTx, Math.min(maxTx, tx));
+      track.style.transition = 'none';
+      dotsWrap.style.transition = 'none';
+      track.style.transform = 'translateX(' + tx + 'px)';
+      dotsWrap.style.transform = 'translateX(' + tx + 'px)';
+      var activeIndex = Math.round((offset - tx) / cw);
+      activeIndex = Math.max(0, Math.min(total - 1, activeIndex));
+      active = activeIndex;
+      cards.forEach(function(c, i) {
+        c.classList.toggle('htl-active', i === activeIndex);
+      });
+      dots.forEach(function(d, i) {
+        d.classList.toggle('htl-dot-active', i === activeIndex);
+      });
+      progress.style.transition = 'none';
+      progress.style.width = (offset + activeIndex * cw + cw / 2) + 'px';
+    }
+
+    function onMouseMove(e) {
+      if (!isDragging) return;
+      var deltaX = e.clientX - dragStartX;
+      applyDragTranslate(dragBaseTranslate + deltaX);
+    }
+
+    function onMouseUp(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+      document.body.style.userSelect = '';
+      document.body.style.cursor = '';
+      goTo(active);
+    }
+
+    section.addEventListener('mousedown', function(e) {
+      if (e.button !== 0) return;
+      var cw = getCardWidth();
+      var offset = getInitialOffset();
+      isDragging = true;
+      dragStartX = e.clientX;
+      dragBaseTranslate = offset - (active * cw);
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+      document.body.style.userSelect = 'none';
+      document.body.style.cursor = 'grabbing';
+    });
+
+    /* ── Touch (mobile) ── */
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var touchMoved   = false;
+
+    section.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchMoved = false;
+    }, { passive: true });
+
+    section.addEventListener('touchmove', function(e) {
+      var dx = e.touches[0].clientX - touchStartX;
+      var dy = e.touches[0].clientY - touchStartY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 20) {
+        touchMoved = true;
+      }
+    }, { passive: true });
+
+    section.addEventListener('touchend', function(e) {
+      if (!touchMoved) return;
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) {
+        goTo(active + (dx < 0 ? 1 : -1));
+      }
+    }, { passive: true });
+
+    /* ── Keyboard ── */
+    section.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goTo(active + 1); }
+      if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   { e.preventDefault(); goTo(active - 1); }
+    });
+
+    /* ── Click on dot ── */
+    dots.forEach(function(d) {
+      d.addEventListener('click', function() {
+        goTo(parseInt(d.dataset.index, 10));
+      });
+      d.style.cursor = 'pointer';
+    });
+  })();
+  </script>
+
+  <button id="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+    </svg>
+  </button>
+
+</body>
+</html>
