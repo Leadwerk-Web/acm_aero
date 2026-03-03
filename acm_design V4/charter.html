@@ -151,9 +151,9 @@
     .hero-overlay {
       background: linear-gradient(
         to top,
-        rgba(28, 25, 23, 0.7) 0%,
-        rgba(28, 25, 23, 0.3) 40%,
-        rgba(28, 25, 23, 0.1) 100%
+        rgba(28, 25, 23, 0.75) 0%,
+        rgba(28, 25, 23, 0.45) 40%,
+        rgba(28, 25, 23, 0.25) 100%
       );
     }
 
@@ -413,6 +413,12 @@
       background: rgba(0, 20, 65, 0.1);
     }
     .process-step:last-child::after { display: none; }
+
+    /* Punkttitel (Operative Kompetenz) und Prozessschritte: einheitlich 1.5rem */
+    .space-y-6.mb-10 h4.font-serif,
+    .process-step h4 {
+      font-size: 1.5rem !important;
+    }
 
     @media (max-width: 768px) {
       .content-box-outer { padding-left: 2rem; padding-right: 2rem; }
@@ -712,7 +718,6 @@
           <a href="charter.html" class="header-nav-link">Charter</a>
           <a href="aircraft-management.html" class="header-nav-link">Aircraft Management</a>
           <a href="maintenance.html" class="header-nav-link">Maintenance</a>
-          <a href="https://www.acmhandling.de/en/" class="header-nav-link" target="_blank" rel="noopener noreferrer">Aircraft Handling</a>
           <a href="karriere.html" class="header-nav-link">Careers</a>
         </nav>
       </div>
@@ -733,7 +738,6 @@
           <a href="charter.html" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Charter</a>
           <a href="aircraft-management.html" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Aircraft Management</a>
           <a href="maintenance.html" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Maintenance</a>
-          <a href="https://www.acmhandling.de/en/" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer">Aircraft Handling</a>
           <a href="karriere.html" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Careers</a>
         </nav>
       </div>
@@ -746,7 +750,6 @@
         <a href="charter.html" class="mobile-menu-link block py-3">Charter</a>
         <a href="aircraft-management.html" class="mobile-menu-link block py-3">Aircraft Management</a>
         <a href="maintenance.html" class="mobile-menu-link block py-3">Maintenance</a>
-        <a href="https://www.acmhandling.de/en/" class="mobile-menu-link block py-3" target="_blank" rel="noopener noreferrer">Aircraft Handling</a>
         <a href="karriere.html" class="mobile-menu-link block py-3">Careers</a>
       </nav>
     </div>
@@ -778,10 +781,10 @@
       </div>
 
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20" style="padding-bottom: 5rem;">
-        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light mb-6 fade-in-up fade-in-up-delay-1" style="font-size: 56px !important; line-height: 1.1 !important;">
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light mb-6 fade-in-up fade-in-up-delay-1" style="font-size: 56px !important; line-height: 1.1 !important; text-shadow: 0 2px 16px rgba(0,0,0,0.45), 0 0 40px rgba(0,0,0,0.2);">
           Private Jet Charter. Direkt operiert.
         </h1>
-        <p class="text-white/80 text-lg max-w-2xl mx-auto mb-10 leading-relaxed fade-in-up fade-in-up-delay-1" style="font-size: 17px !important; color: rgba(255,255,255,0.8) !important;">
+        <p class="text-white/80 text-lg max-w-2xl mx-auto mb-10 leading-relaxed fade-in-up fade-in-up-delay-1" style="font-size: 17px !important; color: rgba(255,255,255,0.85) !important; text-shadow: 0 1px 10px rgba(0,0,0,0.4), 0 0 30px rgba(0,0,0,0.15);">
           ACM operiert unter eigenem AOC mit einer Langstreckenflotte aus Bombardier Globals – weltweit, mit eigenen Crews, eigener Flugplanung und diskreter Abwicklung.
         </p>
         <div class="flex flex-wrap justify-center gap-4 fade-in-up fade-in-up-delay-2">
@@ -844,7 +847,7 @@
           </div>
           <div class="scroll-reveal">
             <img
-              src="Fotos/ACM - Allgemein/CockpitPiloten.jpg"
+              src="Fotos/D-APLC/70046_04_9905.jpg"
               alt="ACM Piloten im Cockpit – eigene Crews"
               class="w-full h-[400px] lg:h-[550px] object-cover"
               loading="lazy"
@@ -882,7 +885,7 @@
                   <svg class="w-5 h-5 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
                 <div>
-                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.1rem;">24/7 Dispatch</h4>
+                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.5rem;">24/7 Dispatch</h4>
                   <p class="text-stone-500 leading-relaxed">Permanente Einsatzbereitschaft – auch kurzfristig und außerhalb regulärer Zeiten.</p>
                 </div>
               </div>
@@ -891,7 +894,7 @@
                   <svg class="w-5 h-5 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 003 12c0-1.605.42-3.113 1.157-4.418"/></svg>
                 </div>
                 <div>
-                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.1rem;">Internationale Flugplanung</h4>
+                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.5rem;">Internationale Flugplanung</h4>
                   <p class="text-stone-500 leading-relaxed">Überflug-, Lande- und Startgenehmigungen weltweit. Routenoptimierung nach Effizienz und Sicherheit.</p>
                 </div>
               </div>
@@ -900,7 +903,7 @@
                   <svg class="w-5 h-5 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg>
                 </div>
                 <div>
-                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.1rem;">Slot- & Permit-Handling</h4>
+                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.5rem;">Slot- & Permit-Handling</h4>
                   <p class="text-stone-500 leading-relaxed">Koordination aller behördlichen Freigaben, Slots und Bodenabfertigung.</p>
                 </div>
               </div>
@@ -909,7 +912,7 @@
                   <svg class="w-5 h-5 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/></svg>
                 </div>
                 <div>
-                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.1rem;">Individuelle Routenplanung</h4>
+                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.5rem;">Individuelle Routenplanung</h4>
                   <p class="text-stone-500 leading-relaxed">Maßgeschneiderte Flugprofile – angepasst an Zeitvorgaben, Wetter und operative Rahmenbedingungen.</p>
                 </div>
               </div>
@@ -918,7 +921,7 @@
                   <svg class="w-5 h-5 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
                 </div>
                 <div>
-                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.1rem;">Crew-Kontinuität</h4>
+                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.5rem;">Crew-Kontinuität</h4>
                   <p class="text-stone-500 leading-relaxed">Eigene, fest angestellte Crews mit Typen-Rating auf der gesamten Flotte.</p>
                 </div>
               </div>
@@ -927,7 +930,7 @@
                   <svg class="w-5 h-5 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"/></svg>
                 </div>
                 <div>
-                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.1rem;">Diskrete Abwicklung</h4>
+                  <h4 class="font-serif text-stone-800 font-normal" style="font-size: 1.5rem;">Diskrete Abwicklung</h4>
                   <p class="text-stone-500 leading-relaxed">Vertrauliche Passagierdaten, separate Abfertigung und individuelle Ground-Handling-Koordination.</p>
                 </div>
               </div>
@@ -1013,6 +1016,7 @@
       <img src="Fotos/D-AMPG/70245 - DELIVERY Photos - IMG_0008.jpg" alt="ACM Bombardier Global – Langstreckenflotte" class="w-full h-full object-cover" loading="lazy">
       <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+        <img src="Fotos/Emblem.svg" alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" width="auto" height="35">
         <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light">
           Drei Globals. Eine Operation.
         </h2>
@@ -1455,6 +1459,7 @@
       <img src="Fotos/ACM - Allgemein/_MKA1466.jpg" alt="ACM – Präzision in jeder Phase" class="w-full h-full object-cover" loading="lazy">
       <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+        <img src="Fotos/Emblem.svg" alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" width="auto" height="35">
         <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light">
           Struktur schafft Sicherheit.
         </h2>
@@ -1482,23 +1487,23 @@
           </div>
           <div class="scroll-reveal space-y-10">
             <div class="process-step" data-step="01">
-              <h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.1rem;">Anfrage & Bedarfsklärung</h4>
+              <h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.5rem;">Anfrage & Bedarfsklärung</h4>
               <p class="text-stone-500 leading-relaxed">Reiseziel, Zeitrahmen, Passagierzahl und besondere Anforderungen werden erfasst und bewertet.</p>
             </div>
             <div class="process-step" data-step="02">
-              <h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.1rem;">Flugplanung & Angebot</h4>
+              <h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.5rem;">Flugplanung & Angebot</h4>
               <p class="text-stone-500 leading-relaxed">Routenplanung, Flugzeugzuordnung, Slot-Prüfung und verbindliches Angebot innerhalb definierter Fristen.</p>
             </div>
             <div class="process-step" data-step="03">
-              <h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.1rem;">Operative Vorbereitung</h4>
+              <h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.5rem;">Operative Vorbereitung</h4>
               <p class="text-stone-500 leading-relaxed">Crew-Briefing, Permit-Handling, Fuel-Planung, Catering-Abstimmung und Ground-Handling-Koordination.</p>
             </div>
             <div class="process-step" data-step="04">
-              <h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.1rem;">Durchführung</h4>
+              <h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.5rem;">Durchführung</h4>
               <p class="text-stone-500 leading-relaxed">Überwachung durch 24/7 Dispatch. Echtzeit-Kommunikation zwischen Crew, Operations und Auftraggeber.</p>
             </div>
             <div class="process-step" data-step="05">
-              <h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.1rem;">Nachbereitung</h4>
+              <h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.5rem;">Nachbereitung</h4>
               <p class="text-stone-500 leading-relaxed">Dokumentation, Abrechnung und Feedback – strukturiert und transparent.</p>
             </div>
           </div>
@@ -1610,7 +1615,6 @@
             <li><a href="charter.html" class="hover:text-olive transition-colors">Charter</a></li>
             <li><a href="aircraft-management.html" class="hover:text-olive transition-colors">Aircraft Management</a></li>
             <li><a href="maintenance.html" class="hover:text-olive transition-colors">Maintenance</a></li>
-            <li><a href="https://www.acmhandling.de/en/" class="hover:text-olive transition-colors" target="_blank" rel="noopener noreferrer">Handling</a></li>
           </ul>
         </div>
         <div>
