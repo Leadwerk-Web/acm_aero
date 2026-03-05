@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="de">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>A GİT FOLDER — Leadwerk</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A GİT FOLDER — Leadwerk</title>
 </head>
 
 <body style="
@@ -21,8 +22,9 @@
     radial-gradient(900px 500px at 85% 90%, rgba(255,255,255,.08), transparent 60%),
     linear-gradient(180deg, #070b18 0%, #0b1226 45%, #070b18 100%);
 ">
-
-  <main style="
+    <canvas id="bg-canvas"
+        style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;"></canvas>
+    <main style="
     width:min(980px, 92vw);
     padding:44px 30px;
     border-radius:22px;
@@ -31,9 +33,9 @@
     box-shadow: 0 18px 60px rgba(0,0,0,.55);
     backdrop-filter: blur(10px);
   ">
-    <header style="display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between;">
-      <div style="display:flex; flex-direction:column; gap:10px;">
-        <div style="
+        <header style="display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between;">
+            <div style="display:flex; flex-direction:column; gap:10px;">
+                <div style="
           display:inline-flex;
           align-items:center;
           gap:10px;
@@ -45,16 +47,16 @@
           letter-spacing:.25px;
           color: rgba(238,242,255,.88);
         ">
-          <span style="
+                    <span style="
             width:10px;height:10px;border-radius:50%;
             background:#ff7a18;
             box-shadow: 0 0 0 6px rgba(255,122,24,.18);
             display:inline-block;
           "></span>
-          Leadwerk • Inline-CSS • Einzelseite
-        </div>
+                    Leadwerk • Inline-CSS • Einzelseite
+                </div>
 
-        <h1 style="
+                <h1 style="
           margin:0;
           font-size: clamp(34px, 5vw, 56px);
           line-height: 1.05;
@@ -62,22 +64,24 @@
           font-weight: 850;
         ">A GİT FOLDER</h1>
 
-        <p style="
+                <p style="
           margin:0;
           max-width: 68ch;
           font-size:16px;
           line-height:1.65;
           color: rgba(238,242,255,.78);
         ">
-          Diese Seite ist vollständig als <strong style="color:#ffffff;">Inline-HTML</strong> umgesetzt und nutzt ausschließlich
-          <strong style="color:#ffffff;">Inline-CSS</strong> – passend im Leadwerk-Look (dunkel, klar, mit Akzent).
-        </p>
-      </div>
+                    Diese Seite ist vollständig als <strong style="color:#ffffff;">Inline-HTML</strong> umgesetzt und
+                    nutzt ausschließlich
+                    <strong style="color:#ffffff;">Inline-CSS</strong> – passend im Leadwerk-Look (dunkel, klar, mit
+                    Akzent).
+                </p>
+            </div>
 
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <button type="button"
-          onclick="document.getElementById('status').textContent='✅ Erfolgreich! Die Seite läuft und reagiert wie erwartet.'"
-          style="
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <button type="button"
+                    onclick="document.getElementById('status').textContent='✅ Erfolgreich! Die Seite läuft und reagiert wie erwartet.'"
+                    style="
             cursor:pointer;
             border:none;
             padding:12px 16px;
@@ -89,17 +93,14 @@
             box-shadow: 0 12px 28px rgba(0,0,0,.45);
             transition: transform .12s ease;
             user-select:none;
-          "
-          onmousedown="this.style.transform='scale(.98)'"
-          onmouseup="this.style.transform='scale(1)'"
-          onmouseleave="this.style.transform='scale(1)'"
-        >
-          Test starten
-        </button>
+          " onmousedown="this.style.transform='scale(.98)'" onmouseup="this.style.transform='scale(1)'"
+                    onmouseleave="this.style.transform='scale(1)'">
+                    Test starten
+                </button>
 
-        <a href="#"
-          onclick="document.getElementById('status').textContent='ℹ️ Hinweis: Link ist ein Platzhalter (Demo).'; return false;"
-          style="
+                <a href="#"
+                    onclick="document.getElementById('status').textContent='ℹ️ Hinweis: Link ist ein Platzhalter (Demo).'; return false;"
+                    style="
             display:inline-flex;
             align-items:center;
             justify-content:center;
@@ -110,60 +111,60 @@
             color: rgba(238,242,255,.92);
             background: rgba(255,255,255,.08);
             border: 1px solid rgba(255,255,255,.14);
-          "
-        >
-          Mehr erfahren
-        </a>
-      </div>
-    </header>
+          ">
+                    Mehr erfahren
+                </a>
+            </div>
+        </header>
 
-    <section style="
+        <section style="
       margin-top:22px;
       display:grid;
       grid-template-columns: repeat(12, 1fr);
       gap:14px;
     ">
-      <div style="
+            <div style="
         grid-column: span 7;
         padding:18px 18px;
         border-radius:18px;
         background: rgba(0,0,0,.22);
         border: 1px solid rgba(255,255,255,.10);
       ">
-        <div style="font-weight:800; margin-bottom:8px; letter-spacing:.2px;">Status</div>
-        <div id="status" style="color: rgba(238,242,255,.86); font-size:14px; line-height:1.6;">
-          Noch kein Test ausgeführt.
-        </div>
+                <div style="font-weight:800; margin-bottom:8px; letter-spacing:.2px;">Status</div>
+                <div id="status" style="color: rgba(238,242,255,.86); font-size:14px; line-height:1.6;">
+                    Noch kein Test ausgeführt.
+                </div>
 
-        <div style="margin-top:14px; font-size:13px; line-height:1.6; color: rgba(238,242,255,.65);">
-          Tipp: Speichere diese Datei als <span style="color:#fff; font-weight:700;">index.html</span> und öffne sie im Browser.
-          Alles ist in einer Datei enthalten.
-        </div>
-      </div>
+                <div style="margin-top:14px; font-size:13px; line-height:1.6; color: rgba(238,242,255,.65);">
+                    Tipp: Speichere diese Datei als <span style="color:#fff; font-weight:700;">index.html</span> und
+                    öffne sie im Browser.
+                    Alles ist in einer Datei enthalten.
+                </div>
+            </div>
 
-      <div style="
+            <div style="
         grid-column: span 5;
         padding:18px 18px;
         border-radius:18px;
         background: rgba(255,255,255,.06);
         border: 1px solid rgba(255,255,255,.12);
       ">
-        <div style="font-weight:800; margin-bottom:10px; letter-spacing:.2px;">Kurze Checkliste</div>
+                <div style="font-weight:800; margin-bottom:10px; letter-spacing:.2px;">Kurze Checkliste</div>
 
-        <ul style="
+                <ul style="
           margin:0;
           padding-left:18px;
           color: rgba(238,242,255,.78);
           font-size:14px;
           line-height:1.75;
         ">
-          <li>Nur Inline-CSS (keine externen Dateien)</li>
-          <li>Leadwerk-Farbstimmung (Dark + Orange-Akzent)</li>
-          <li>Deutschsprachige Texte</li>
-          <li>Responsives Layout</li>
-        </ul>
+                    <li>Nur Inline-CSS (keine externen Dateien)</li>
+                    <li>Leadwerk-Farbstimmung (Dark + Orange-Akzent)</li>
+                    <li>Deutschsprachige Texte</li>
+                    <li>Responsives Layout</li>
+                </ul>
 
-        <div style="
+                <div style="
           margin-top:14px;
           padding:12px 12px;
           border-radius:14px;
@@ -173,12 +174,12 @@
           font-size:13px;
           line-height:1.6;
         ">
-          Akzentfarbe: <strong style="color:#fff;">#ff7a18</strong> (Buttons/Highlights)
-        </div>
-      </div>
-    </section>
+                    Akzentfarbe: <strong style="color:#fff;">#ff7a18</strong> (Buttons/Highlights)
+                </div>
+            </div>
+        </section>
 
-    <footer style="
+        <footer style="
       margin-top:18px;
       display:flex;
       flex-wrap:wrap;
@@ -188,10 +189,141 @@
       color: rgba(238,242,255,.55);
       font-size: 12px;
     ">
-      <span>© 2026 • Leadwerk Stilseite</span>
-      <span style="opacity:.9;">Ein Datei • Inline CSS • Dark UI</span>
-    </footer>
-  </main>
+            <span>© 2026 • Leadwerk Stilseite</span>
+            <span style="opacity:.9;">Ein Datei • Inline CSS • Dark UI</span>
+        </footer>
+    </main>
 
+    <script>
+        (function () {
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d');
+
+            let width, height;
+            let mouse = { x: null, y: null };
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+            window.addEventListener('mouseout', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+            resize();
+
+            const colors = [
+                'rgba(255, 122, 24, 0.3)',   // orange
+                'rgba(255, 177, 90, 0.2)',   // light orange
+                'rgba(238, 242, 255, 0.1)',  // white
+                'rgba(238, 242, 255, 0.05)'  // light white
+            ];
+
+            class Particle {
+                constructor() {
+                    this.reset();
+                    this.y = Math.random() * height; // distribute initially
+                }
+
+                reset() {
+                    this.x = Math.random() * width;
+                    this.y = height + Math.random() * 200 + 50;
+                    this.size = Math.random() * 20 + 8;
+                    this.vx = (Math.random() - 0.5) * 0.3;
+                    this.vy = -(Math.random() * 0.5 + 0.1);
+                    this.angle = Math.random() * Math.PI * 2;
+                    this.vAngle = (Math.random() - 0.5) * 0.015;
+                    this.type = Math.floor(Math.random() * 4);
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.depth = Math.random() * 0.8 + 0.2;
+                }
+
+                update() {
+                    this.x += this.vx * this.depth;
+                    this.y += this.vy * this.depth;
+                    this.angle += this.vAngle;
+
+                    // subtle mouse repel
+                    if (mouse.x !== null) {
+                        let dx = mouse.x - this.x;
+                        let dy = mouse.y - this.y;
+                        let dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 200) {
+                            let force = (200 - dist) / 200;
+                            this.x -= (dx / dist) * force * 1.5;
+                            this.y -= (dy / dist) * force * 1.5;
+                        }
+                    }
+
+                    if (this.y < -this.size * 2 || this.x < -this.size * 2 || this.x > width + this.size * 2) {
+                        this.reset();
+                        this.y = height + this.size * 2;
+                    }
+                }
+
+                draw(ctx) {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(this.angle);
+
+                    ctx.beginPath();
+                    if (this.type === 0) {
+                        // filled circle
+                        ctx.fillStyle = this.color;
+                        ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else if (this.type === 1) {
+                        // hollow square
+                        ctx.strokeStyle = this.color;
+                        ctx.lineWidth = 1.5;
+                        ctx.rect(-this.size, -this.size, this.size * 2, this.size * 2);
+                        ctx.stroke();
+                    } else if (this.type === 2) {
+                        // triangle
+                        ctx.fillStyle = this.color;
+                        ctx.moveTo(0, -this.size);
+                        ctx.lineTo(this.size, this.size);
+                        ctx.lineTo(-this.size, this.size);
+                        ctx.fill();
+                    } else if (this.type === 3) {
+                        // cross
+                        ctx.strokeStyle = this.color;
+                        ctx.lineWidth = 1.5;
+                        ctx.moveTo(-this.size, 0);
+                        ctx.lineTo(this.size, 0);
+                        ctx.moveTo(0, -this.size);
+                        ctx.lineTo(0, this.size);
+                        ctx.stroke();
+                    }
+                    ctx.closePath();
+
+                    ctx.restore();
+                }
+            }
+
+            const particles = [];
+            let numParticles = Math.min(Math.floor(window.innerWidth / 20), 80);
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(new Particle());
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw(ctx);
+                });
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        })();
+    </script>
 </body>
+
 </html>
