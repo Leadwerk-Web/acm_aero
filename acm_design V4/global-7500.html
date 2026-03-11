@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bombardier Global 7500 – Das Flaggschiff der Business Aviation. Größte Reichweite, vier Kabinenzonen, direkt operiert von ACM AIR CHARTER unter eigenem AOC.">
+  <meta name="robots" content="index, follow">
+  <title>Bombardier Global 7500 | ACM AIR CHARTER</title>
+  <link rel="icon" href="Fotos/Favicon_xs.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: { '6xl': '100rem' },
+          colors: {
+            cream: '#FAF9F7',
+            olive: { DEFAULT: '#001441', dark: '#000d2b', light: '#0a2a5c', lighter: '#E8EEF4' },
+            accent: { DEFAULT: '#001441', hover: '#000d2b', light: '#E8EEF4' },
+            sand: { 50: '#FDFCFA', 100: '#FAF8F5', 200: '#F5F2ED' }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          letterSpacing: { 'wider-custom': '0.15em' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --color-accent: #001441;
+      --color-accent-hover: #000d2b;
+      --color-olive: #001441;
+      --color-olive-dark: #000d2b;
+      --color-sand: #FAF8F5;
+      --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    html { scrollbar-width: thin; scrollbar-color: rgba(0, 20, 65, 0.35) #f5f5f4; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f5f5f4; }
+    ::-webkit-scrollbar-thumb { background: rgba(0, 20, 65, 0.35); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(0, 20, 65, 0.5); }
+    ::-webkit-scrollbar-thumb:active { background: var(--color-olive); }
+
+    .section-emblem {
+      height: 35px; width: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 1rem;
+      filter: brightness(0) saturate(100%) invert(9%) sepia(45%) saturate(5000%) hue-rotate(208deg);
+    }
+    .section-emblem-on-dark { filter: brightness(0) invert(1); }
+    .section-emblem-left { margin-left: 0; margin-right: 0; }
+
+    section h2 { font-size: 48px !important; line-height: 1 !important; }
+    h3 { font-size: 2.3rem; }
+    .heading-23rem { font-size: 2.3rem !important; }
+    .section-number { font-size: 1.3rem !important; }
+    .section-label { font-size: 12px !important; }
+    .cert-title { font-size: 1.5rem !important; line-height: 1.2 !important; margin-bottom: 16px !important; }
+
+    .max-w-xl { max-width: 56rem; padding: 0; overflow: visible; }
+    .content-box-outer { padding-left: 7rem; padding-right: 7rem; overflow: visible; }
+
+    *, *::before, *::after { border-width: 0 !important; border-style: none !important; }
+    img, input, select, textarea, a, .card-hover, [class*="border"] { border: none !important; border-width: 0 !important; }
+    button:not(.btn-filled):not(.btn-outline):not(.btn-primary):not(.btn-filled-white):not(.btn-outline-white) { border: none !important; border-width: 0 !important; }
+    *, *::before, *::after, img, button, input, select, textarea, a, .card-hover, .btn-primary, [class*="rounded"] { border-radius: 0 !important; }
+
+    html { scroll-behavior: smooth; }
+
+    body { font-family: 'Inter', system-ui, sans-serif; font-size: 15px; font-weight: 400; color: #777777; letter-spacing: 0.01em; background-color: #FDFCFA; }
+    p { font-family: 'Inter', system-ui, sans-serif; font-size: 15px !important; font-weight: 400 !important; color: #777777 !important; }
+    h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; letter-spacing: 0.02em; }
+    .section-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-olive); }
+    *:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+    .hero-overlay { background: linear-gradient(to top, rgba(28, 25, 23, 0.75) 0%, rgba(28, 25, 23, 0.45) 40%, rgba(28, 25, 23, 0.25) 100%); }
+
+    #header { background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.12) 60%, transparent 100%); border-bottom: none; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    #hero { margin-top: 0; padding-top: 0; position: relative; }
+    main { margin-top: 0; padding-top: 0; }
+    #hero img { top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 0; }
+
+    img:not(.acm-logo):not(.section-emblem) { filter: saturate(0.88) brightness(1.06) contrast(0.97); }
+    img:not(.acm-logo):not(svg *) { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease; will-change: transform; }
+
+    .header-scrolled { background: rgba(255, 255, 255, 0.95) !important; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+    .header-top-right { color: rgba(255, 255, 255, 0.95); transition: color 0.4s ease; }
+    .header-scrolled .header-top-right { color: rgba(28, 25, 23, 0.85); }
+    .header-lang-link { color: inherit; text-decoration: none; font-weight: 400; letter-spacing: 0.02em; opacity: 0.85; transition: opacity 0.25s ease, color 0.4s ease; }
+    .header-lang-link.header-lang-active { font-weight: 700; opacity: 1; color: var(--color-olive) !important; }
+    .header-lang-link:hover { opacity: 1; }
+    .header-lang-sep { opacity: 0.5; pointer-events: none; }
+    .header-divider-line { height: 1px; width: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.35) 15%, rgba(255, 255, 255, 0.35) 85%, transparent 100%); transition: background 0.4s ease, height 0.4s ease, opacity 0.4s ease; }
+    .header-scrolled .header-divider-line { background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.08) 15%, rgba(0, 0, 0, 0.08) 85%, transparent 100%); }
+    #header.header-scrolled .header-nav-row { height: 0; overflow: hidden; opacity: 0; visibility: hidden; }
+    #header.header-scrolled .header-divider-line { height: 0; opacity: 0; overflow: hidden; margin: 0; padding: 0; }
+
+    .header-nav-link { color: rgba(255, 255, 255, 0.9); font-weight: 400; font-size: 0.875rem; letter-spacing: 0.02em; position: relative; padding: 0.5rem 0; transition: color 0.3s ease; text-transform: none; }
+    .header-scrolled .header-nav-link { color: rgba(28, 25, 23, 0.8); }
+    .header-nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .header-nav-link:hover { color: white; }
+    .header-scrolled .header-nav-link:hover { color: rgb(28, 25, 23); }
+    .header-nav-link:hover::after { width: 100%; }
+
+    .header-link-button { color: white; font-weight: 400; font-size: 0.875rem; letter-spacing: 0.02em; position: relative; padding: 0.5rem 1.25rem; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); height: auto; display: inline-flex; align-items: center; justify-content: center; }
+    .header-link-button:hover { background: rgba(255, 255, 255, 0.18); border-color: rgba(255, 255, 255, 0.25); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); transform: translateY(-1px); }
+    .header-scrolled .header-link-button { color: rgba(28, 25, 23, 0.85); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(28, 25, 23, 0.1); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); }
+    .header-scrolled .header-link-button:hover { color: rgb(28, 25, 23); background: rgba(255, 255, 255, 0.75); border-color: rgba(28, 25, 23, 0.15); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); transform: translateY(-1px); }
+
+    .header-desktop-menu-btn { color: rgb(28, 25, 23); background: transparent; backdrop-filter: none; border: none; box-shadow: none; transition: opacity 0.4s ease, visibility 0.4s ease; opacity: 0; visibility: hidden; pointer-events: none; }
+    .header-desktop-menu-btn:hover { background: transparent; box-shadow: none; }
+    #header.header-scrolled .header-desktop-menu-btn { opacity: 1; visibility: visible; pointer-events: auto; }
+
+    .header-logo-row { transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    #header.header-scrolled .header-logo-row { height: 3.5rem !important; }
+    #header.header-scrolled .acm-logo { height: 2.5rem !important; max-width: 140px !important; }
+    #desktop-nav { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 0.4s ease, visibility 0.4s ease; }
+    #header.header-scrolled #desktop-nav { opacity: 0; visibility: hidden; pointer-events: none; }
+
+    #desktop-menu { height: 100vh; height: 100dvh; top: 0; left: 0; box-shadow: none !important; border: none !important; opacity: 0; transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+    #desktop-menu.show { transform: translateX(0) !important; opacity: 1; }
+    #desktop-menu .desktop-menu-nav .desktop-menu-link { opacity: 0; transform: translateX(-8px); transition: opacity 0.3s ease, transform 0.3s ease, padding-left 0.25s ease; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link { opacity: 1; transform: translateX(0); }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(1) { transition-delay: 0.05s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(2) { transition-delay: 0.1s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(3) { transition-delay: 0.15s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(4) { transition-delay: 0.2s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(5) { transition-delay: 0.25s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(6) { transition-delay: 0.3s; }
+    #desktop-menu-backdrop { pointer-events: none; height: 100vh; height: 100dvh; }
+    #desktop-menu-backdrop.show { opacity: 1; pointer-events: auto; }
+    #desktop-menu .desktop-menu-link { font-weight: 300; letter-spacing: 0.01em; font-size: 1rem; }
+    .desktop-menu-link:hover { padding-left: 0.5rem; }
+
+    .header-mobile-btn { color: white; transition: opacity 0.4s ease, visibility 0.4s ease, color 0.4s ease; opacity: 0; visibility: hidden; pointer-events: none; }
+    #header.header-scrolled .header-mobile-btn { opacity: 1; visibility: visible; pointer-events: auto; color: rgb(28, 25, 23); }
+
+    #mobile-menu { border-top: 1px solid rgba(0, 0, 0, 0.05); background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); opacity: 0; transform: translateY(-12px); transition: opacity 0.3s ease, transform 0.3s ease; }
+    #mobile-menu.mobile-menu-open { opacity: 1; transform: translateY(0); }
+    .mobile-menu-nav .mobile-menu-link { opacity: 0; transform: translateY(-8px); transition: opacity 0.25s ease, transform 0.25s ease; color: rgba(28, 25, 23, 0.8); font-weight: 400; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link { opacity: 1; transform: translateY(0); }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(1) { transition-delay: 0.04s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(2) { transition-delay: 0.08s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(3) { transition-delay: 0.12s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(4) { transition-delay: 0.16s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(5) { transition-delay: 0.2s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(6) { transition-delay: 0.24s; }
+    .mobile-menu-link:hover { color: rgb(28, 25, 23); padding-left: 0.75rem; }
+
+    .acm-logo { filter: brightness(0) invert(1); transition: filter 0.4s ease, opacity 0.4s ease; object-fit: contain; height: auto; max-height: 64px; }
+    .header-scrolled .acm-logo { filter: brightness(0) invert(0); }
+    @media (max-width: 1024px) { .acm-logo { max-height: 56px; } }
+    @media (max-width: 640px) { .acm-logo { max-height: 48px; } }
+    .acm-logo:hover { opacity: 0.8; }
+
+    .header-logo-text { color: white; font-weight: 400; letter-spacing: 0.02em; transition: color 0.4s ease; }
+    .header-scrolled .header-logo-text { color: rgb(28, 25, 23); }
+    .header-logo-subtext { color: rgba(255, 255, 255, 0.85); font-weight: 300; letter-spacing: 0.05em; transition: color 0.4s ease; }
+    .header-scrolled .header-logo-subtext { color: rgba(28, 25, 23, 0.7); }
+    .header-logo-bg { background: transparent; border: none; box-shadow: none; }
+
+    #scroll-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 3rem; height: 3rem; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(28, 25, 23, 0.1); border-radius: 0.5rem; color: rgb(28, 25, 23); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(1rem); transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, box-shadow 0.3s ease; z-index: 9999 !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+    #scroll-to-top.visible { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
+    #scroll-to-top:hover { background: rgba(255, 255, 255, 1); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); transform: translateY(-2px); }
+    #scroll-to-top svg { width: 1.25rem; height: 1.25rem; stroke-width: 2; }
+
+    .footer-safe { padding-bottom: max(2rem, env(safe-area-inset-bottom, 0)); }
+
+    button, .btn-primary, a[class*="btn"], a[class*="button"], .header-button, .header-link-button, .header-desktop-menu-btn, .header-mobile-btn, .language-btn, .modal-close { border-radius: 0 !important; }
+    img:not(.acm-logo):not(svg *) { border-radius: 0.5rem; }
+    #hero img { border-radius: 0; }
+
+    .btn-primary, .btn-outline, .btn-filled {
+      display: inline-flex; justify-content: center; align-items: center; min-width: 14rem; padding: 15px 2rem;
+      background: transparent !important; color: var(--color-olive) !important; border: 1px solid var(--color-olive) !important;
+      font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.075rem; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; transition: all 0.5s ease; box-shadow: none;
+    }
+    .btn-primary:hover, .btn-outline:hover, .btn-filled:hover {
+      background: transparent !important; color: var(--color-olive-dark) !important; border-color: var(--color-olive-dark) !important;
+      opacity: 0.85; box-shadow: 0 4px 14px rgba(0, 20, 65, 0.15);
+    }
+    .btn-primary:active, .btn-outline:active, .btn-filled:active { transform: scale(0.98); }
+
+    .btn-overlay-white {
+      display: inline-flex; align-items: center; justify-content: center; padding: 15px 2rem;
+      background: white !important; color: #292524 !important; font-family: 'Inter', sans-serif; font-size: 0.875rem;
+      font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+    .btn-overlay-white:hover { background: #f5f5f4 !important; }
+
+    .btn-outline-white {
+      display: inline-flex; justify-content: center; align-items: center; min-width: 14rem; padding: 15px 2rem;
+      background: transparent !important; color: white !important; border: 1px solid rgba(255,255,255,0.7) !important;
+      font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.075rem; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; transition: all 0.5s ease; box-shadow: none;
+    }
+    .btn-outline-white:hover { background: transparent !important; color: white !important; border-color: white !important; opacity: 0.88; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2); }
+
+    .link-arrow { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-olive); font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.075rem; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; }
+    .link-arrow:hover { opacity: 0.7; }
+    .link-arrow svg { transition: transform 0.3s ease; }
+    .link-arrow:hover svg { transform: translateX(4px); }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; opacity: 0; }
+    .fade-in-up-delay-1 { animation-delay: 0.1s; }
+    .fade-in-up-delay-2 { animation-delay: 0.2s; }
+    .fade-in-up-delay-3 { animation-delay: 0.3s; }
+
+    .scroll-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+    .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    .streamlines-container { opacity: 1; width: 100%; height: 100%; }
+    .streamline { position: absolute; width: 120%; height: 2px; background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.2) 90%, transparent 100%); filter: blur(1px); transform-origin: left center; opacity: 0; }
+    .streamline-1 { top: 15%; left: -20%; transform: rotate(12deg); animation: streamMove 25s linear infinite; animation-delay: 0s; }
+    .streamline-2 { top: 30%; left: -20%; transform: rotate(-8deg); animation: streamMove 28s linear infinite; animation-delay: 5s; }
+    .streamline-3 { top: 50%; left: -20%; transform: rotate(10deg); animation: streamMove 26s linear infinite; animation-delay: 10s; }
+    .streamline-4 { top: 70%; left: -20%; transform: rotate(-12deg); animation: streamMove 30s linear infinite; animation-delay: 15s; }
+    .streamline-5 { top: 85%; left: -20%; transform: rotate(6deg); animation: streamMove 27s linear infinite; animation-delay: 20s; }
+    @keyframes streamMove {
+      0% { left: -20%; opacity: 0; }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% { left: 120%; opacity: 0; }
+    }
+    .streamlines-dark .streamline { background: linear-gradient(90deg, transparent 0%, rgba(120, 113, 108, 0.25) 10%, rgba(120, 113, 108, 0.45) 50%, rgba(120, 113, 108, 0.25) 90%, transparent 100%); }
+
+    .header-scrolled { top: 0 !important; }
+    #header { transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    @media (max-width: 768px) {
+      .content-box-outer { padding-left: 2rem; padding-right: 2rem; }
+    }
+
+    .mobile-sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+      padding: 0.75rem 1.5rem; background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.06);
+    }
+    @media (max-width: 1024px) { .mobile-sticky-cta.visible { display: block; } }
+
+    /* Seatplan Day/Night Slider */
+    .seatplan-slider-container {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+    }
+    .seatplan-slider-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+    }
+    .seatplan-overlay-night {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+    }
+    .seatplan-overlay-night img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .seatplan-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--color-olive);
+      cursor: ew-resize;
+      z-index: 10;
+    }
+    .seatplan-handle::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      background: var(--color-olive);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .seatplan-handle::after {
+      content: '◀ ▶';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 10px;
+      letter-spacing: 2px;
+      white-space: nowrap;
+      z-index: 11;
+    }
+    .seatplan-label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      z-index: 5;
+      transition: opacity 0.3s ease;
+    }
+    .seatplan-label svg {
+      width: 28px;
+      height: 28px;
+      stroke-width: 2.25;
+    }
+    .seatplan-label-day {
+      left: 1rem;
+      color: var(--color-olive);
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0, 20, 65, 0.15);
+    }
+    .seatplan-label-night {
+      right: 1rem;
+      color: white;
+      background: var(--color-olive);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Carousel */
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      padding: 2rem 0;
+    }
+    .carousel-fullwidth {
+      max-width: none;
+      width: 100%;
+    }
+    .carousel-track {
+      position: relative;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 768px) {
+      .carousel-track { height: 320px; }
+    }
+    .carousel-slide {
+      position: absolute;
+      overflow: hidden;
+      transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: pointer;
+      top: 0;
+      left: 20%;
+      width: 60%;
+      height: 100%;
+      opacity: 0;
+      z-index: 1;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .carousel-slide.active {
+      width: 60%;
+      height: 100%;
+      top: 0;
+      left: 20%;
+      z-index: 3;
+      opacity: 1;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+    .carousel-slide.prev {
+      width: 30%;
+      height: 75%;
+      top: 12.5%;
+      left: 2%;
+      z-index: 2;
+      opacity: 0.55;
+      filter: brightness(0.8);
+    }
+    .carousel-slide.next {
+      width: 30%;
+      height: 75%;
+      top: 12.5%;
+      left: 68%;
+      z-index: 2;
+      opacity: 0.55;
+      filter: brightness(0.8);
+    }
+    .carousel-slide.hidden-left {
+      width: 20%;
+      height: 55%;
+      top: 22.5%;
+      left: -10%;
+      z-index: 1;
+      opacity: 0;
+    }
+    .carousel-slide.hidden-right {
+      width: 20%;
+      height: 55%;
+      top: 22.5%;
+      left: 90%;
+      z-index: 1;
+      opacity: 0;
+    }
+    .carousel-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 20, 65, 0.05);
+      color: var(--color-olive);
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .carousel-btn:hover {
+      background: rgba(0, 20, 65, 0.1);
+      transform: scale(1.05);
+    }
+    .carousel-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      background: rgba(0, 20, 65, 0.15);
+      cursor: pointer;
+      transition: background 0.3s ease, width 0.3s ease;
+    }
+    .carousel-dot.active {
+      width: 24px;
+      background: var(--color-olive);
+    }
+
+    /* Technische Daten – Gruppenüberschriften */
+    .spec-group-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #0f3d7a;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      background-image: linear-gradient(rgba(15, 61, 122, 0.12), rgba(15, 61, 122, 0.12));
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+
+    /* Spec grid */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 768px) {
+      .spec-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .spec-grid { grid-template-columns: 1fr; }
+    }
+    .spec-item {
+      padding: 1.5rem 0;
+    }
+    .spec-value {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--color-olive);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .spec-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(0, 20, 65, 0.45);
+    }
+
+    /* Fleet link cards */
+    .fleet-link-card {
+      background: white;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .fleet-link-card:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+      transform: translateY(-2px);
+    }
+    .fleet-link-card img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .fleet-link-card:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.92);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s ease;
+    }
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .lightbox-close:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+    .lightbox-img-wrap {
+      max-width: 95vw;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-img-wrap img {
+      max-width: 100%;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: none;
+    }
+
+    /* Four-zone cabin feature cards */
+    .zone-card {
+      padding: 2rem 0;
+      transition: background 0.3s ease;
+    }
+    .zone-card-number {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(0, 20, 65, 0.08);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .zone-card-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--color-olive);
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-stone-800 antialiased">
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 w-full">
+    <div class="w-full px-6 sm:px-8 lg:px-10">
+      <div class="flex items-center justify-center h-16 lg:h-20 header-logo-row relative transition-all duration-400">
+        <button id="desktop-menu-btn" class="hidden lg:block absolute left-0 p-2 header-desktop-menu-btn" aria-label="Open menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <div class="header-top-right hidden lg:flex absolute right-0 items-center gap-6">
+          <div class="header-lang-switcher flex items-center gap-1 text-sm">
+            <a href="?lang=de" class="header-lang-link header-lang-active" data-lang="de">DE</a>
+            <span class="header-lang-sep" aria-hidden="true">|</span>
+            <a href="?lang=en" class="header-lang-link" data-lang="en">EN</a>
+          </div>
+          <a href="#contact" class="header-link-button whitespace-nowrap">Flug anfragen</a>
+        </div>
+        <a href="index.html" class="acm-logo-link hidden lg:block" aria-label="ACM AIR CHARTER Home">
+          <img id="header-logo-img" src="logo.png" alt="ACM AIR CHARTER Logo" class="acm-logo h-12 lg:h-14 w-auto transition-opacity duration-300" style="object-fit: contain; max-width: 160px;" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback'); if(f) f.style.display='flex';">
+          <div id="header-logo-fallback" class="flex items-center gap-2" style="display: none;">
+            <div class="header-logo-bg w-10 h-10 flex items-center justify-center">
+              <span class="header-logo-text font-serif text-2xl">A</span>
+            </div>
+            <div class="hidden sm:block">
+              <span class="header-logo-text font-serif text-lg tracking-wide block leading-tight">ACM</span>
+              <span class="header-logo-subtext text-[9px] font-light tracking-wider uppercase block mt-0.5">Air Charter</span>
+            </div>
+          </div>
+        </a>
+        <a href="index.html" class="acm-logo-link lg:hidden" aria-label="ACM AIR CHARTER Home">
+          <img id="header-logo-img-mobile" src="logo.png" alt="ACM AIR CHARTER Logo" class="acm-logo h-10 sm:h-12 w-auto transition-opacity duration-300" style="object-fit: contain;" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback-mobile'); if(f) f.style.display='flex';">
+          <div id="header-logo-fallback-mobile" class="flex items-center gap-2" style="display: none;">
+            <div class="header-logo-bg w-8 h-8 flex items-center justify-center">
+              <span class="header-logo-text font-serif text-xl">A</span>
+            </div>
+          </div>
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden absolute right-0 p-2 header-mobile-btn" aria-label="Open menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <div class="header-divider-line" aria-hidden="true"></div>
+      <div class="flex items-center justify-center h-14 lg:h-16 relative header-nav-row transition-all duration-400">
+        <nav id="desktop-nav" class="hidden lg:flex items-center gap-[10rem] justify-center header-nav-visible" aria-label="Main navigation">
+          <a href="thats-acm.html" class="header-nav-link">That's ACM</a>
+          <a href="charter.html" class="header-nav-link">Charter</a>
+          <a href="aircraft-management.html" class="header-nav-link">Aircraft Management</a>
+          <a href="maintenance.html" class="header-nav-link">Maintenance</a>
+          <a href="kontakt.html" class="header-nav-link">Kontakt</a>
+          <a href="karriere.html" class="header-nav-link">Careers</a>
+        </nav>
+      </div>
+    </div>
+
+    <div id="desktop-menu" class="hidden lg:block fixed top-0 left-0 h-screen w-80 bg-white z-[100] transform -translate-x-full">
+      <div class="h-screen overflow-y-auto">
+        <div class="p-6 flex items-center justify-between">
+          <img src="logo.png" alt="ACM AIR CHARTER Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+          <button id="desktop-menu-close" class="p-2 hover:bg-stone-100 rounded-lg transition-colors" aria-label="Close menu">
+            <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <nav class="p-6 space-y-1 desktop-menu-nav">
+          <a href="thats-acm.html" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">That's ACM</a>
+          <a href="charter.html" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Charter</a>
+          <a href="global-7500.html" class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" style="font-size: 0.85rem;">Bombardier Global 7500</a>
+          <a href="global-6000.html" class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" style="font-size: 0.85rem;">Bombardier Global 6000</a>
+          <a href="global-xrs.html" class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" style="font-size: 0.85rem;">Bombardier Global XRS</a>
+          <a href="aircraft-management.html" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Aircraft Management</a>
+          <a href="maintenance.html" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Maintenance</a>
+          <a href="kontakt.html" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Kontakt</a>
+          <a href="karriere.html" class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors">Careers</a>
+        </nav>
+      </div>
+    </div>
+    <div id="desktop-menu-backdrop" class="hidden lg:block fixed top-0 left-0 right-0 bottom-0 bg-black/20 backdrop-blur-sm z-[99] opacity-0 transition-opacity duration-300"></div>
+
+    <div id="mobile-menu" class="lg:hidden hidden">
+      <nav class="max-w-7xl mx-auto px-6 py-6 space-y-1 mobile-menu-nav">
+        <a href="thats-acm.html" class="mobile-menu-link block py-3">That's ACM</a>
+        <a href="charter.html" class="mobile-menu-link block py-3">Charter</a>
+        <a href="aircraft-management.html" class="mobile-menu-link block py-3">Aircraft Management</a>
+        <a href="maintenance.html" class="mobile-menu-link block py-3">Maintenance</a>
+        <a href="kontakt.html" class="mobile-menu-link block py-3">Kontakt</a>
+        <a href="karriere.html" class="mobile-menu-link block py-3">Careers</a>
+      </nav>
+    </div>
+  </header>
+
+  <button id="scroll-to-top" aria-label="Nach oben scrollen">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <main>
+
+    <!-- ============================================
+         1. HERO
+         ============================================ -->
+    <section id="hero" class="relative w-full h-[80vh] min-h-[540px] max-h-[850px] overflow-hidden">
+      <img
+        src="Fotos/D-APLC/70046_04_9905.jpg"
+        alt="Bombardier Global 7500 – ACM AIR CHARTER"
+        class="absolute inset-0 w-full h-full object-cover"
+      >
+      <div class="hero-overlay absolute inset-0"></div>
+      <div class="streamlines-container absolute inset-0 pointer-events-none" style="z-index: 15;">
+        <div class="streamline streamline-1"></div>
+        <div class="streamline streamline-2"></div>
+        <div class="streamline streamline-3"></div>
+        <div class="streamline streamline-4"></div>
+        <div class="streamline streamline-5"></div>
+      </div>
+
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20" style="padding-bottom: 5rem;">
+        <p class="text-white/70 text-sm uppercase tracking-[0.2em] mb-4 fade-in-up" style="font-size: 12px !important; color: rgba(255,255,255,0.7) !important;">Charter · Flotte</p>
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light mb-6 fade-in-up fade-in-up-delay-1" style="font-size: 56px !important; line-height: 1.1 !important; text-shadow: 0 2px 16px rgba(0,0,0,0.45), 0 0 40px rgba(0,0,0,0.2);">
+          Bombardier Global 7500
+        </h1>
+        <p class="text-white/80 text-lg max-w-2xl mx-auto mb-10 leading-relaxed fade-in-up fade-in-up-delay-1" style="font-size: 17px !important; color: rgba(255,255,255,0.85) !important; text-shadow: 0 1px 10px rgba(0,0,0,0.4), 0 0 30px rgba(0,0,0,0.15);">
+          Das Flaggschiff der Business Aviation. Maximale Reichweite, vier Kabinenzonen, direkt operiert unter eigenem AOC.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 fade-in-up fade-in-up-delay-2">
+          <a href="#contact" class="btn-overlay-white">Flug anfragen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         2. AIRCRAFT HIGHLIGHTS
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32 bg-white">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center mb-16 lg:mb-20 scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Highlights</span>
+          <h2 class="font-serif text-stone-900 font-light">
+            Auf einen Blick
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">14.260 km Nonstop</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Die weltweit größte Reichweite eines Business Jets. Nonstop von Europa nach Asien, Südamerika oder die US-Westküste.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">Mach 0.925</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Der schnellste Business Jet seiner Klasse. Maximale Geschwindigkeit für zeitkritische interkontinentale Verbindungen.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">Vier Kabinenzonen</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Club Suite, Conference Suite, Entertainment-Zone und Privatsuite mit Bett – vier getrennte Bereiche für jede Reiseanforderung.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">Bis zu 19 Passagiere</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Die größte Kabine in der Business Aviation. Platz für Delegationen, Familien und Arbeitsgruppen auf Langstrecken.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">Direkt operiert</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Betrieb unter dem AOC von ACM AIR CHARTER (D-057). Eigene Crews, eigene Wartung, eigene Dispatch-Koordination.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-reveal">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+                <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+              </div>
+              <div>
+                <h3 class="cert-title font-serif text-stone-800 font-normal">Nuage-Sitze &amp; Pũr Air</h3>
+                <p class="text-stone-500 leading-relaxed">
+                  Die erste neue Sitzarchitektur seit 30 Jahren. Dazu HEPA-Luftfilterung, die 99,99 % aller Allergene und Bakterien entfernt.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         3. AIRCRAFT OVERVIEW / STORY
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32" style="background-color: rgb(250 248 245);">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center">
+          <div class="scroll-reveal">
+            <img
+              src="Fotos/D-APLC/70046_05_9901.jpg"
+              alt="Bombardier Global 7500 Exterieur"
+              class="w-full h-[400px] lg:h-[550px] object-cover"
+              loading="lazy"
+            >
+          </div>
+          <div class="scroll-reveal">
+            <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Flugzeug</span>
+            <h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">
+              Der Bombardier Global 7500.
+            </h2>
+            <p class="text-stone-500 leading-relaxed mb-6">
+              Der Bombardier Global 7500 ist das Flaggschiff der Business Aviation und der größte zweckgebaute Business Jet der Welt. Mit einer Nonstop-Reichweite von 14.260 Kilometern verbindet er europäische Standorte direkt mit der US-Westküste, Südamerika, dem Nahen Osten und Asien – ohne Zwischenstopp.
+            </p>
+            <p class="text-stone-500 leading-relaxed mb-6">
+              Die Kabine bietet Platz für bis zu 19 Passagiere in vier separaten Zonen – konfiguriert für konzentriertes Arbeiten, vertrauliche Konferenzen, Unterhaltung und erholsamen Schlaf auf Ultralangstrecken. Die revolutionären Nuage-Sitze und das Pũr Air-Filtersystem setzen neue Maßstäbe für Komfort in der Luft.
+            </p>
+            <p class="text-stone-500 leading-relaxed">
+              ACM operiert den Global 7500 unter eigenem AOC. Crews, Wartung, Flugplanung und Bodenkoordination werden vollständig intern gesteuert – für eine durchgängig kontrollierte operative Kette.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         4. CABIN – Vier Zonen. Ein Flugzeug.
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32 bg-white">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center">
+          <div class="scroll-reveal lg:order-2">
+            <img
+              src="Fotos/D-APLC/70046_06_9937.jpg"
+              alt="Bombardier Global 7500 – Kabine"
+              class="w-full h-[400px] lg:h-[550px] object-cover"
+              loading="lazy"
+            >
+          </div>
+          <div class="scroll-reveal lg:order-1">
+            <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Kabine</span>
+            <h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">
+              Vier Zonen. Ein Flugzeug.
+            </h2>
+            <p class="text-stone-500 leading-relaxed mb-6">
+              Die Kabine des Global 7500 ist in vier funktionale Bereiche gegliedert: die Club Suite für entspanntes Reisen, die Conference Suite für Besprechungen, eine Entertainment-Zone und eine private Suite mit vollwertigem Bett.
+            </p>
+            <p class="text-stone-500 leading-relaxed mb-6">
+              Die branchenweit größte Kabine bietet 16,59 m Länge, 2,44 m Breite und 1,88 m Stehhöhe. Die patentierten Nuage-Sitze ermöglichen eine Zero-Gravity-Position für maximale Erholung auf Langstrecken.
+            </p>
+            <p class="text-stone-500 leading-relaxed">
+              Eine vollausgestattete Galley mit Doppelöfen, ein separater Crew-Ruhebereich und Ka-Band-Breitband-Internet sorgen für einen durchgehend erstklassigen Service auf Ultralangstrecken.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         5. FOUR ZONES DETAIL
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32" style="background-color: rgb(250 248 245);">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center mb-16 lg:mb-20 scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Kabinenkonzept</span>
+          <h2 class="font-serif text-stone-900 font-light">
+            Vier Welten an Bord
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          <div class="zone-card scroll-reveal">
+            <div class="zone-card-number">01</div>
+            <div class="zone-card-title">Club Suite</div>
+            <p class="text-stone-500 leading-relaxed">
+              Einladender Bereich mit Nuage-Sitzen und übergroßen Fenstern. Für Gespräche, Lektüre und ruhiges Arbeiten.
+            </p>
+          </div>
+
+          <div class="zone-card scroll-reveal">
+            <div class="zone-card-number">02</div>
+            <div class="zone-card-title">Conference Suite</div>
+            <p class="text-stone-500 leading-relaxed">
+              Platz für sechs Personen an einem Konferenztisch. Für Geschäftsessen, Meetings und kollaboratives Arbeiten.
+            </p>
+          </div>
+
+          <div class="zone-card scroll-reveal">
+            <div class="zone-card-number">03</div>
+            <div class="zone-card-title">Entertainment</div>
+            <p class="text-stone-500 leading-relaxed">
+              Lounge-Bereich mit Ottomane und Bildschirm. Für Unterhaltung, Entspannung und informellen Austausch.
+            </p>
+          </div>
+
+          <div class="zone-card scroll-reveal">
+            <div class="zone-card-number">04</div>
+            <div class="zone-card-title">Privatsuite</div>
+            <p class="text-stone-500 leading-relaxed">
+              Abgetrenntes Schlafzimmer mit vollwertigem Bett und eigener Tür. Für erholsamen Schlaf auf Ultralangstrecken.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         VIDEO BANNER – Direkt operiert. Weltweit einsatzbereit.
+         ============================================ -->
+    <section class="relative w-full h-[45vh] sm:h-[55vh] overflow-hidden">
+      <video
+        id="video-banner"
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay muted playsinline loop preload="auto"
+        poster="Fotos/D-APLC/70046_07_9964.jpg"
+      >
+        <source src="Fotos/D-APLC/acm-global7500.mp4" type="video/mp4">
+      </video>
+      <img
+        src="Fotos/D-APLC/70046_07_9964.jpg"
+        alt="Bombardier Global 7500 – Interieur"
+        class="absolute inset-0 w-full h-full object-cover video-fallback"
+        id="video-fallback"
+        style="display: none;"
+      >
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.3) 0%, rgba(0, 20, 65, 0.45) 50%, rgba(0, 13, 43, 0.55) 100%);"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light" style="text-shadow: 0 2px 20px rgba(0,0,0,0.3);">
+          Direkt operiert. Weltweit einsatzbereit.
+        </h2>
+      </div>
+    </section>
+
+    <!-- ============================================
+         6. IMAGE GALLERY – CAROUSEL
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32 bg-white">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 mb-12 lg:mb-16">
+        <div class="text-center scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Galerie</span>
+          <h2 class="font-serif text-stone-900 font-light">
+            Impressionen
+          </h2>
+        </div>
+      </div>
+
+      <div class="carousel-wrapper carousel-fullwidth scroll-reveal w-full">
+        <div class="carousel-track" id="carousel-track">
+          <div class="carousel-slide" data-index="0">
+            <img src="Fotos/D-APLC/70046_08_0001.jpg" alt="Bombardier Global 7500 – Kabine" loading="lazy">
+          </div>
+          <div class="carousel-slide" data-index="1">
+            <img src="Fotos/D-APLC/70046_09_0043.jpg" alt="Bombardier Global 7500 – Sitzbereich" loading="lazy">
+          </div>
+          <div class="carousel-slide" data-index="2">
+            <img src="Fotos/D-APLC/70046_10_0019.jpg" alt="Bombardier Global 7500 – Kabinendetail" loading="lazy">
+          </div>
+          <div class="carousel-slide" data-index="3">
+            <img src="Fotos/D-APLC/70046_11_9871.jpg" alt="Bombardier Global 7500 – Interieur" loading="lazy">
+          </div>
+          <div class="carousel-slide" data-index="4">
+            <img src="Fotos/D-APLC/70046_06_9937.jpg" alt="Bombardier Global 7500 – Exterieur" loading="lazy">
+          </div>
+        </div>
+        <div class="carousel-nav px-6 sm:px-8 lg:px-12">
+          <button class="carousel-btn" id="carousel-prev" aria-label="Vorheriges Bild">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <div class="carousel-dots" id="carousel-dots"></div>
+          <button class="carousel-btn" id="carousel-next" aria-label="Nächstes Bild">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         7. FLOORPLAN
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32" style="background-color: rgb(250 248 245);">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center mb-16 lg:mb-20 scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Sitzplan</span>
+          <h2 class="font-serif text-stone-900 font-light">
+            Kabinenlayout
+          </h2>
+        </div>
+
+        <div class="scroll-reveal">
+          <div class="mx-auto" style="max-width: 1000px;">
+            <img
+              src="Fotos/bombardier7500-sitzplan.png"
+              alt="Bombardier Global 7500 – Sitzplan"
+              class="w-full"
+            >
+          </div>
+          <p class="text-center mt-6" style="font-size: 12px !important; color: #aaa !important;">
+            Die dargestellte Kabinenkonfiguration dient der Orientierung.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         8. TECHNICAL DATA
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32 bg-white">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center mb-16 lg:mb-20 scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Spezifikationen</span>
+          <h2 class="font-serif text-stone-900 font-light">
+            Technische Daten
+          </h2>
+        </div>
+
+        <!-- Performance -->
+        <div class="scroll-reveal mb-14">
+          <h3 class="spec-group-title">Flugleistung</h3>
+          <div class="spec-grid">
+            <div class="spec-item">
+              <div class="spec-value">14.260 km</div>
+              <div class="spec-label">Reichweite (7.700 NM)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">Mach 0.925</div>
+              <div class="spec-label">Maximale Geschwindigkeit</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">Mach 0.90</div>
+              <div class="spec-label">Hohe Reisegeschwindigkeit</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">15.545 m</div>
+              <div class="spec-label">Max. Flughöhe (FL510)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">Mach 0.85</div>
+              <div class="spec-label">Typische Reisegeschwindigkeit</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">1.756 m</div>
+              <div class="spec-label">Startstrecke (MTOW, ISA, MSL)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cabin -->
+        <div class="scroll-reveal mb-14">
+          <h3 class="spec-group-title">Kabine</h3>
+          <div class="spec-grid">
+            <div class="spec-item">
+              <div class="spec-value">19</div>
+              <div class="spec-label">Max. Passagiere</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">16,59 m</div>
+              <div class="spec-label">Kabinenlänge</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">2,44 m</div>
+              <div class="spec-label">Kabinenbreite</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">1,88 m</div>
+              <div class="spec-label">Kabinenhöhe</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">5,52 m³</div>
+              <div class="spec-label">Gepäckvolumen</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">4 Zonen</div>
+              <div class="spec-label">Separate Kabinenbereiche</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weights & Engines -->
+        <div class="scroll-reveal mb-14">
+          <h3 class="spec-group-title">Gewichte &amp; Triebwerke</h3>
+          <div class="spec-grid">
+            <div class="spec-item">
+              <div class="spec-value">48.194 kg</div>
+              <div class="spec-label">Max. Startgewicht (MTOW)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">38.919 kg</div>
+              <div class="spec-label">Max. Landegewicht</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">682 m</div>
+              <div class="spec-label">Landestrecke (SL, ISA, typisch)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">2 × GE Passport</div>
+              <div class="spec-label">General Electric Passport 20</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">2 × 84,2 kN</div>
+              <div class="spec-label">Schub je Triebwerk</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">Fly-by-Wire</div>
+              <div class="spec-label">Flugsteuerungssystem</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dimensions -->
+        <div class="scroll-reveal">
+          <h3 class="spec-group-title">Außenmaße</h3>
+          <div class="spec-grid">
+            <div class="spec-item">
+              <div class="spec-value">33,8 m</div>
+              <div class="spec-label">Gesamtlänge</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">31,7 m</div>
+              <div class="spec-label">Spannweite</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-value">8,2 m</div>
+              <div class="spec-label">Gesamthöhe</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center mt-12 scroll-reveal" style="font-size: 11px !important; color: #bbb !important;">
+          Alle Angaben basieren auf Herstellerangaben. Tatsächliche Werte variieren je nach Konfiguration und Betriebsbedingungen.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================
+         9. OTHER AIRCRAFT
+         ============================================ -->
+    <section class="py-20 sm:py-28 lg:py-32" style="background-color: rgb(250 248 245);">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center mb-16 lg:mb-20 scroll-reveal">
+          <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+          <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Flotte</span>
+          <h2 class="font-serif text-stone-900 font-light">
+            Weitere Flugzeuge unserer Flotte
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 scroll-reveal">
+          <a href="global-6000.html" class="fleet-link-card block overflow-hidden">
+            <div class="overflow-hidden">
+              <img
+                src="Fotos/D-ABAY/DSC_0533.jpg"
+                alt="Bombardier Global 6000"
+                class="w-full h-[250px] lg:h-[300px] object-cover"
+                loading="lazy"
+              >
+            </div>
+            <div class="p-6 lg:p-8">
+              <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-2 block" style="font-size: 10px !important;">Langstrecke</span>
+              <h3 class="font-serif text-stone-900 font-light mb-3" style="font-size: 1.8rem;">Bombardier Global 6000</h3>
+              <p class="text-stone-500 leading-relaxed mb-4">
+                Bewährter Langstreckenjet für interkontinentale Geschäftsreisen. Über 11.000 km Reichweite mit drei Kabinenzonen.
+              </p>
+              <span class="link-arrow">
+                Zum Flugzeug
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="global-xrs.html" class="fleet-link-card block overflow-hidden">
+            <div class="overflow-hidden">
+              <img
+                src="Fotos/D-AGJP (alt)/SL7_7893-Bearbeitet.jpg"
+                alt="Bombardier Global XRS"
+                class="w-full h-[250px] lg:h-[300px] object-cover"
+                loading="lazy"
+              >
+            </div>
+            <div class="p-6 lg:p-8">
+              <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-2 block" style="font-size: 10px !important;">Langstrecke</span>
+              <h3 class="font-serif text-stone-900 font-light mb-3" style="font-size: 1.8rem;">Bombardier Global XRS</h3>
+              <p class="text-stone-500 leading-relaxed mb-4">
+                Zuverlässiger Langstreckenjet mit bewährter Technik. Ideal für transatlantische und transkontinentale Missionen.
+              </p>
+              <span class="link-arrow">
+                Zum Flugzeug
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         10. CHARTER CTA
+         ============================================ -->
+    <section id="contact" class="py-20 sm:py-28 lg:py-32 relative overflow-hidden bg-white">
+      <div class="streamlines-container streamlines-dark absolute inset-0 pointer-events-none z-0">
+        <div class="streamline streamline-1"></div>
+        <div class="streamline streamline-2"></div>
+        <div class="streamline streamline-3"></div>
+        <div class="streamline streamline-4"></div>
+        <div class="streamline streamline-5"></div>
+      </div>
+      <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
+        <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
+        <h2 class="font-serif text-stone-900 font-light mb-6 scroll-reveal">
+          Planen wir Ihren nächsten Flug.
+        </h2>
+        <p class="text-stone-600 mb-10 max-w-2xl mx-auto text-lg leading-relaxed scroll-reveal">
+          Für individuelle Routen, Terminplanung und diskrete Abwicklung steht Ihnen unser Charter-Team direkt zur Verfügung.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 scroll-reveal">
+          <a href="mailto:charter@acm.aero" class="btn-primary">
+            Flug anfragen
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Mobile Sticky CTA -->
+  <div id="mobile-sticky-cta" class="mobile-sticky-cta">
+    <a href="mailto:charter@acm.aero" class="btn-primary w-full text-center" style="min-width: 0;">Flug anfragen</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 mb-14 lg:mb-16">
+        <div class="lg:max-w-sm">
+          <img src="logo.png" alt="ACM AIR CHARTER Logo" class="h-10 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div style="display: none;">
+            <span class="font-serif text-2xl text-stone-900 tracking-wide">ACM AIR CHARTER</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed">
+            Integrierte Business Aviation – Charter, Management, Wartung unter einem Dach.
+          </p>
+        </div>
+        <div class="lg:text-right">
+          <address class="not-italic text-sm leading-relaxed text-stone-600 mb-4">
+            ACM AIR CHARTER Luftfahrtgesellschaft mbH<br>
+            Montreal Ave. D415<br>
+            77836 Rheinmünster
+          </address>
+          <div class="space-y-1 text-sm">
+            <a href="tel:+49722930220" class="block text-olive hover:text-olive-dark transition-colors">+49 7229 3022-0</a>
+            <a href="mailto:info@acm.aero" class="block text-olive hover:text-olive-dark transition-colors">info@acm.aero</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-12 py-10 border-t border-stone-200">
+        <div>
+          <h4 class="text-stone-900 font-serif text-lg mb-4">Leistungen</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="charter.html" class="hover:text-olive transition-colors">Charter</a></li>
+            <li><a href="aircraft-management.html" class="hover:text-olive transition-colors">Aircraft Management</a></li>
+            <li><a href="maintenance.html" class="hover:text-olive transition-colors">Maintenance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-stone-900 font-serif text-lg mb-4">Unternehmen</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="thats-acm.html" class="hover:text-olive transition-colors">Das ist ACM</a></li>
+            <li><a href="karriere.html" class="hover:text-olive transition-colors">Karriere</a></li>
+            <li><a href="index.html#news" class="hover:text-olive transition-colors">News</a></li>
+            <li><a href="kontakt.html" class="hover:text-olive transition-colors">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-stone-900 font-serif text-lg mb-4">Flotte</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="global-7500.html" class="hover:text-olive transition-colors">Global 7500</a></li>
+            <li><a href="global-6000.html" class="hover:text-olive transition-colors">Global 6000</a></li>
+            <li><a href="global-xrs.html" class="hover:text-olive transition-colors">Global XRS</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-stone-900 font-serif text-lg mb-4">Rechtliches</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#" class="hover:text-olive transition-colors">Impressum</a></li>
+            <li><a href="#" class="hover:text-olive transition-colors">Datenschutz</a></li>
+            <li><a href="#" class="hover:text-olive transition-colors">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-stone-200">
+        <p class="text-center text-stone-500 text-sm">
+          &copy; 2026 ACM AIR CHARTER GmbH. Alle Rechte vorbehalten.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Galerie -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Bild in voller Größe">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Lightbox schließen">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div class="lightbox-img-wrap" id="lightbox-img-wrap">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+  </div>
+
+  <script>
+    // Desktop menu
+    const desktopMenuBtn = document.getElementById('desktop-menu-btn');
+    const desktopMenuClose = document.getElementById('desktop-menu-close');
+    const desktopMenu = document.getElementById('desktop-menu');
+    const desktopMenuBackdrop = document.getElementById('desktop-menu-backdrop');
+
+    function openDesktopMenu() {
+      if (!desktopMenu || !desktopMenuBackdrop) return;
+      desktopMenu.classList.remove('hidden');
+      desktopMenuBackdrop.classList.remove('hidden');
+      requestAnimationFrame(() => { requestAnimationFrame(() => { desktopMenu.classList.add('show'); desktopMenuBackdrop.classList.add('show'); }); });
+      desktopMenuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDesktopMenu() {
+      if (!desktopMenu || !desktopMenuBackdrop) return;
+      desktopMenu.classList.remove('show'); desktopMenuBackdrop.classList.remove('show');
+      desktopMenuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      setTimeout(() => { desktopMenu.classList.add('hidden'); desktopMenuBackdrop.classList.add('hidden'); }, 350);
+    }
+    if (desktopMenuBtn) desktopMenuBtn.addEventListener('click', openDesktopMenu);
+    if (desktopMenuClose) desktopMenuClose.addEventListener('click', closeDesktopMenu);
+    if (desktopMenuBackdrop) desktopMenuBackdrop.addEventListener('click', closeDesktopMenu);
+    if (desktopMenu) { desktopMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => closeDesktopMenu()); }); }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && desktopMenu && desktopMenu.classList.contains('show')) closeDesktopMenu(); });
+
+    // Header scroll
+    const header = document.getElementById('header');
+    function updateHeader() {
+      if (window.pageYOffset > 20) { header.classList.add('header-scrolled'); } else { header.classList.remove('header-scrolled'); if (desktopMenu && desktopMenu.classList.contains('show')) closeDesktopMenu(); }
+    }
+    window.addEventListener('scroll', updateHeader);
+    updateHeader();
+
+    // Language
+    (function setActiveLang() {
+      const params = new URLSearchParams(window.location.search);
+      const lang = (params.get('lang') || 'de').toLowerCase();
+      document.querySelectorAll('.header-lang-link').forEach(function (a) {
+        if ((a.getAttribute('data-lang') || '').toLowerCase() === lang) { a.classList.add('header-lang-active'); } else { a.classList.remove('header-lang-active'); }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          mobileMenu.classList.remove('mobile-menu-open');
+          setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenuBtn.setAttribute('aria-expanded', 'false'); }, 300);
+        } else {
+          mobileMenu.classList.remove('hidden'); mobileMenuBtn.setAttribute('aria-expanded', 'true');
+          requestAnimationFrame(() => { requestAnimationFrame(() => { mobileMenu.classList.add('mobile-menu-open'); }); });
+        }
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.remove('mobile-menu-open'); setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenuBtn.setAttribute('aria-expanded', 'false'); }, 300); }); });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href'); if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) { e.preventDefault(); const headerHeight = header.offsetHeight; window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20, behavior: 'smooth' }); }
+      });
+    });
+
+    // Scroll reveal
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+    }
+
+    // Scroll to top
+    function initScrollToTop() {
+      const scrollToTopBtn = document.getElementById('scroll-to-top'); if (!scrollToTopBtn) return;
+      function toggleScrollToTop() { if (window.scrollY > 300) { scrollToTopBtn.classList.add('visible'); } else { scrollToTopBtn.classList.remove('visible'); } }
+      scrollToTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      window.addEventListener('scroll', toggleScrollToTop, { passive: true }); toggleScrollToTop();
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initScrollToTop); } else { initScrollToTop(); }
+
+    // Mobile sticky CTA visibility
+    (function() {
+      const stickyCta = document.getElementById('mobile-sticky-cta');
+      if (!stickyCta) return;
+      const heroSection = document.getElementById('hero');
+      const contactSection = document.getElementById('contact');
+      function updateStickyVisibility() {
+        if (!heroSection || !contactSection) return;
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        const contactTop = contactSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (heroBottom < 0 && contactTop > windowHeight) { stickyCta.classList.add('visible'); } else { stickyCta.classList.remove('visible'); }
+      }
+      window.addEventListener('scroll', updateStickyVisibility, { passive: true });
+      updateStickyVisibility();
+    })();
+
+    // Video fallback to poster image
+    (function() {
+      const video = document.getElementById('video-banner');
+      const fallback = document.getElementById('video-fallback');
+      if (!video || !fallback) return;
+      video.addEventListener('error', function() {
+        video.style.display = 'none';
+        fallback.style.display = 'block';
+      });
+      const src = video.querySelector('source');
+      if (src) {
+        src.addEventListener('error', function() {
+          video.style.display = 'none';
+          fallback.style.display = 'block';
+        });
+      }
+    })();
+
+    // Image Carousel
+    (function() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dotsContainer = document.getElementById('carousel-dots');
+      const prevBtn = document.getElementById('carousel-prev');
+      const nextBtn = document.getElementById('carousel-next');
+      if (!slides.length || !dotsContainer) return;
+
+      const total = slides.length;
+      let current = 0;
+      let autoplayTimer;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function getPosition(offset) {
+        if (offset === 0) return 'active';
+        if (offset === 1 || offset === -(total - 1)) return 'next';
+        if (offset === -1 || offset === (total - 1)) return 'prev';
+        if (offset === 2 || offset === -(total - 2)) return 'hidden-right';
+        return 'hidden-left';
+      }
+
+      function update() {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active', 'prev', 'next', 'hidden-left', 'hidden-right');
+          let offset = i - current;
+          if (offset > Math.floor(total / 2)) offset -= total;
+          if (offset < -Math.floor(total / 2)) offset += total;
+          slide.classList.add(getPosition(offset));
+        });
+        dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === current);
+        });
+      }
+
+      function goTo(idx) {
+        current = ((idx % total) + total) % total;
+        update();
+        resetAutoplay();
+      }
+
+      function resetAutoplay() {
+        clearInterval(autoplayTimer);
+        autoplayTimer = setInterval(() => goTo(current + 1), 5000);
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+      let touchStartX = 0;
+      const track = document.getElementById('carousel-track');
+      if (track) {
+        track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', (e) => {
+          const diff = touchStartX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+        });
+      }
+
+      update();
+      resetAutoplay();
+
+      // Lightbox on carousel image click
+      slides.forEach((slide) => {
+        slide.addEventListener('click', () => {
+          const img = slide.querySelector('img');
+          if (!img) return;
+          const lightbox = document.getElementById('lightbox');
+          const lightboxImg = document.getElementById('lightbox-img');
+          if (!lightbox || !lightboxImg) return;
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || 'Bild in voller Größe';
+          lightbox.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+    })();
+
+    // Lightbox close
+    (function() {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxClose = document.getElementById('lightbox-close');
+      if (!lightbox) return;
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+      });
+    })();
+  </script>
+</body>
+</html>
