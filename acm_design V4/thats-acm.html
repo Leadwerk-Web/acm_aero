@@ -256,9 +256,10 @@
       border-radius: 0;
     }
     
-    img:not(.acm-logo):not(.section-emblem) {
+    img:not(.acm-logo):not(.section-emblem):not(.img-no-filter) {
       filter: saturate(0.88) brightness(1.06) contrast(0.97);
     }
+    img.img-no-filter { filter: none; }
     
     img:not(.acm-logo):not(svg *) {
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
@@ -1128,11 +1129,7 @@
          1. HERO SECTION
          ============================================ -->
     <section id="hero" class="relative w-full h-[80vh] min-h-[540px] max-h-[850px] overflow-hidden">
-      <img 
-        src="Fotos/ACM_building_banner2.jpg" 
-        alt="ACM AIR CHARTER Gebäude am Baden-Airpark"
-        class="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
+      <img src="Fotos/Neu/Thats ACM.jpg" alt="ACM AIR CHARTER – Das ist ACM" class="absolute top-0 left-0 w-full h-full object-cover z-0" width="1920" height="1080" decoding="async" fetchpriority="high">
       <div class="hero-overlay absolute inset-0 z-10"></div>
       <!-- Stromlinien -->
       <div class="streamlines-container absolute inset-0 pointer-events-none" style="z-index: 15;">
@@ -1175,13 +1172,7 @@
 
     <!-- Fullwidth Image Break – Hangar mit CTA -->
     <section class="relative h-[45vh] sm:h-[55vh] overflow-hidden">
-      <img 
-        src="Fotos/ACM - Allgemein/MKA1988.jpg" 
-        alt="ACM Hangaranlage am Baden-Airpark"
-        class="w-full h-full object-cover"
-        loading="lazy"
-        onerror="this.src='Fotos/Hangar/ACM - Hangar Baden-Baden.jpg'"
-      >
+      <img src="Fotos/Neu/Detail_Flugzeug.jpg" alt="ACM – Business Aviation im Detail" class="w-full h-full object-cover" width="1920" height="1080" decoding="async" loading="lazy">
       <div class="absolute inset-0 opacity-100" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
         <img src="Fotos/Emblem.svg" alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" width="auto" height="35">
@@ -1475,12 +1466,7 @@
 
     <!-- Fullwidth Image Break – Sprechen Sie mit uns -->
     <section class="relative h-[45vh] sm:h-[55vh] overflow-hidden">
-      <img 
-        src="Fotos/ACM - Allgemein/MKA1481.jpg"
-        alt="ACM Piloten im Cockpit während des Flugbetriebs"
-        class="w-full h-full object-cover"
-        loading="lazy"
-      >
+      <img src="Fotos/ACM - Allgemein/MKA1481.jpg" alt="ACM Piloten im Cockpit während des Flugbetriebs" class="w-full h-full object-cover" width="1920" height="1080" decoding="async" loading="lazy">
       <div class="absolute inset-0 opacity-100" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
         <img src="Fotos/Emblem.svg" alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" width="auto" height="35">
@@ -1508,12 +1494,7 @@
         
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center mb-20 scroll-reveal">
           <div>
-            <img 
-              src="Fotos/Hangar/acm_03.jpg" 
-              alt="ACM Wartungshangar mit Business Jet"
-              class="w-full h-[400px] lg:h-[550px] object-cover"
-              loading="lazy"
-            >
+            <img src="Fotos/Neu/Wartungsbasis.jpg" alt="ACM Wartungsbasis am Baden-Airpark" class="img-no-filter w-full h-[400px] lg:h-[550px] object-cover" width="1920" height="1080" decoding="async" loading="lazy">
           </div>
           <div>
             <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Wartungsbasis</span>
@@ -1531,13 +1512,7 @@
         
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center mb-20 scroll-reveal">
           <div class="lg:order-2">
-            <img 
-              src="Fotos/737-Wartung.jpg" 
-              alt="Boeing 737 Wartung"
-              class="w-full h-[400px] lg:h-[550px] object-cover"
-              loading="lazy"
-              onerror="this.src='Fotos/Hangar/acm_03.jpg'; this.alt='ACM Wartung';"
-            >
+            <img src="Fotos/Neu/Line_Maintenance.jpg" alt="ACM Line Maintenance" class="img-no-filter w-full h-[400px] lg:h-[550px] object-cover" width="1920" height="1080" decoding="async" loading="lazy">
           </div>
           <div class="lg:order-1">
             <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">LINE MAINTENANCE</span>
@@ -1552,12 +1527,7 @@
         
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center mb-20 scroll-reveal">
           <div>
-            <img 
-              src="Fotos/Hangar/acm_05.jpg" 
-              alt="ACM Betrieb und Crew im Hangar"
-              class="w-full h-[400px] lg:h-[550px] object-cover"
-              loading="lazy"
-            >
+            <img src="Fotos/Neu/Camo_Aufsicht.jpg" alt="ACM CAMO & Aufsicht – Lufttüchtigkeitsmanagement" class="img-no-filter w-full h-[400px] lg:h-[550px] object-cover" width="1920" height="1080" decoding="async" loading="lazy">
           </div>
           <div>
             <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">CAMO & Aufsicht</span>
@@ -1575,12 +1545,7 @@
         
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center scroll-reveal">
           <div class="lg:order-2">
-            <img 
-              src="Fotos/Just/cockpit.jpg" 
-              alt="ACM Business Jet Cockpit und Dispatch"
-              class="w-full h-[400px] lg:h-[550px] object-cover"
-              loading="lazy"
-            >
+            <img src="Fotos/Neu/Operations_Control.jpg" alt="ACM Operations Control – Dispatch & Koordination" class="img-no-filter w-full h-[400px] lg:h-[550px] object-cover" width="1920" height="1080" decoding="async" loading="lazy">
           </div>
           <div class="lg:order-1">
             <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Operations Control</span>
@@ -1626,12 +1591,7 @@
         </div>
         <!-- Image Side – linke Hälfte -->
         <div class="relative h-[400px] lg:h-auto order-1 lg:order-1">
-          <img 
-            src="Fotos/ACM - Allgemein/ACM_Hangar_2021.jpg" 
-            alt="ACM-Anlage am Baden-Airpark mit Hangar und Flotte"
-            class="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-          >
+          <img src="Fotos/Neu/Heimatbasis.jpg" alt="ACM Heimatbasis am Baden-Airpark" class="img-no-filter absolute inset-0 w-full h-full object-cover" loading="lazy">
         </div>
       </div>
     </section>
