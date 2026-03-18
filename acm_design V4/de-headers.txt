@@ -1,0 +1,16 @@
+HTTP/1.1 302 Found
+Date: Wed, 18 Mar 2026 12:23:32 GMT
+Server: Apache
+Link: <https://www.acm.aero/wp-json/>; rel="https://api.w.org/", <https://www.acm.aero/wp-json/wp/v2/pages/44>; rel="alternate"; title="JSON"; type="application/json", <https://www.acm.aero/?p=44>; rel=shortlink
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Set-Cookie: PHPSESSID=a620d88ff2a97fb9f5ece5543eab40c7; path=/
+Strict-Transport-Security: max-age=600000
+Upgrade: h2,h2c
+Connection: Upgrade
+Location: https://www.acm.aero/en
+Vary: User-Agent
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
