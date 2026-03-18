@@ -991,6 +991,10 @@
 
     /* Mobile adjustments */
     @media (max-width: 768px) {
+      .htl-viewport::before,
+      .htl-viewport::after {
+        display: none;
+      }
       .htl-card {
         width: 300px;
         padding: 0 24px;
@@ -1013,7 +1017,8 @@
       outline-offset: 8px;
       opacity: 1;
     }
-  </style>
+</style>
+<link href="../mobile-qa.css" rel="stylesheet"/>
 </head>
 <body class="font-sans text-stone-800 antialiased">
 <!-- HEADER -->
@@ -1133,7 +1138,7 @@
 <div class="streamline streamline-5"></div>
 </div>
 <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
-<h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light mb-6 fade-in-up" style="font-size: 56px !important; line-height: 1 !important;">
+<h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light mb-6 fade-in-up">
           This is ACM
         </h1>
 <p class="text-white/85 text-lg sm:text-xl max-w-2xl fade-in-up fade-in-up-delay-1" style="color: rgba(255,255,255,0.85) !important; font-size: 1.125rem !important;">
@@ -1731,6 +1736,7 @@
     }
     window.addEventListener('scroll', updateHeader);
     updateHeader();
+    // Language switcher state follows the rendered locale.
     // Language switcher state follows the rendered locale.
     // Language switcher state follows the rendered locale.
     // Language switcher state follows the rendered locale.
