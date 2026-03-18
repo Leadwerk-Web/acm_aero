@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Bombardier Global 7500 &ndash; Das Flaggschiff der Business Aviation. Gr&ouml;&szlig;te Reichweite, vier Kabinenzonen, direkt operiert von ACM AIR CHARTER unter eigenem AOC." name="description"/><link href="/global-7500.html" rel="canonical"/><link href="/global-7500.html" hreflang="de" rel="alternate"/><link href="/en/global-7500.html" hreflang="en" rel="alternate"/>
+<meta content="Bombardier Global 6000 &ndash; long-haul jet for intercontinental business trips. Directly operated by ACM AIR CHARTER under its own AOC." name="description"/><link href="/en/global-6000.html" rel="canonical"/><link href="/global-6000.html" hreflang="de" rel="alternate"/><link href="/en/global-6000.html" hreflang="en" rel="alternate"/>
 <meta content="index, follow" name="robots"/>
-<title>Bombardier Global 7500 | ACM AIR CHARTER</title>
-<link href="Fotos/Favicon_xs.png" rel="icon" type="image/png"/>
+<title>Bombardier Global 6000 | ACM AIR CHARTER</title>
+<link href="../Fotos/Favicon_xs.png" rel="icon" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
@@ -476,7 +476,7 @@
       background: var(--color-olive);
     }
 
-    /* Technische Daten – Gruppenüberschriften */
+    /* Technische Daten – Gruppenüberschriften (blau hervorgehoben) */
     .spec-group-title {
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
@@ -540,6 +540,27 @@
       transform: scale(1.03);
     }
 
+    /* Cabin zone cards */
+    .zone-card {
+      padding: 2rem 0;
+      transition: background 0.3s ease;
+    }
+    .zone-card-number {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 3.25rem;
+      font-weight: 400;
+      color: rgba(0, 20, 65, 0.28);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .zone-card-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--color-olive);
+      margin-bottom: 0.5rem;
+    }
+
     /* Lightbox */
     .lightbox {
       position: fixed;
@@ -595,27 +616,6 @@
       object-fit: contain;
       filter: none;
     }
-
-    /* Four-zone cabin feature cards */
-    .zone-card {
-      padding: 2rem 0;
-      transition: background 0.3s ease;
-    }
-    .zone-card-number {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 3.25rem;
-      font-weight: 400;
-      color: rgba(0, 20, 65, 0.28);
-      line-height: 1;
-      margin-bottom: 0.75rem;
-    }
-    .zone-card-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: var(--color-olive);
-      margin-bottom: 0.5rem;
-    }
   </style>
 </head>
 <body class="font-sans text-stone-800 antialiased">
@@ -630,14 +630,14 @@
 </button>
 <div class="header-top-right hidden lg:flex absolute right-0 items-center gap-6">
 <div class="header-lang-switcher flex items-center gap-1 text-sm">
-<a class="header-lang-link header-lang-active" data-lang="de" href="global-7500.html">DE</a>
+<a class="header-lang-link" data-lang="de" href="../global-6000.html">DE</a>
 <span aria-hidden="true" class="header-lang-sep">|</span>
-<a class="header-lang-link" data-lang="en" href="en/global-7500.html">EN</a>
+<a class="header-lang-link header-lang-active" data-lang="en" href="global-6000.html">EN</a>
 </div>
-<a class="header-link-button whitespace-nowrap" href="kontakt.html#sales-operations">Flug anfragen</a>
+<a class="header-link-button whitespace-nowrap" href="kontakt.html#sales-operations">Request a flight</a>
 </div>
 <a aria-label="ACM AIR CHARTER Home" class="acm-logo-link hidden lg:block" href="index.html">
-<img alt="ACM AIR CHARTER Logo" class="acm-logo h-12 lg:h-14 w-auto transition-opacity duration-300" id="header-logo-img" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback'); if(f) f.style.display='flex';" src="logo.png" style="object-fit: contain; max-width: 160px;"/>
+<img alt="ACM AIR CHARTER logo" class="acm-logo h-12 lg:h-14 w-auto transition-opacity duration-300" id="header-logo-img" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback'); if(f) f.style.display='flex';" src="../logo.png" style="object-fit: contain; max-width: 160px;"/>
 <div class="flex items-center gap-2" id="header-logo-fallback" style="display: none;">
 <div class="header-logo-bg w-10 h-10 flex items-center justify-center">
 <span class="header-logo-text font-serif text-2xl">A</span>
@@ -649,7 +649,7 @@
 </div>
 </a>
 <a aria-label="ACM AIR CHARTER Home" class="acm-logo-link lg:hidden" href="index.html">
-<img alt="ACM AIR CHARTER Logo" class="acm-logo h-10 sm:h-12 w-auto transition-opacity duration-300" id="header-logo-img-mobile" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback-mobile'); if(f) f.style.display='flex';" src="logo.png" style="object-fit: contain;"/>
+<img alt="ACM AIR CHARTER logo" class="acm-logo h-10 sm:h-12 w-auto transition-opacity duration-300" id="header-logo-img-mobile" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback-mobile'); if(f) f.style.display='flex';" src="../logo.png" style="object-fit: contain;"/>
 <div class="flex items-center gap-2" id="header-logo-fallback-mobile" style="display: none;">
 <div class="header-logo-bg w-8 h-8 flex items-center justify-center">
 <span class="header-logo-text font-serif text-xl">A</span>
@@ -668,7 +668,7 @@
 <a class="header-nav-link" href="thats-acm.html">That's ACM</a>
 <div class="header-nav-charter-wrap">
 <a class="header-nav-link" href="charter.html">Charter</a>
-<div aria-label="Charter Untermen&uuml;" class="header-nav-dropdown">
+<div aria-label="Charter submenu" class="header-nav-dropdown">
 <a href="charter.html">Charter</a>
 <a href="global-7500.html">Global 7500</a>
 <a href="global-6000.html">Global 6000</a>
@@ -677,7 +677,7 @@
 </div>
 <a class="header-nav-link" href="aircraft-management.html">Aircraft Management</a>
 <a class="header-nav-link" href="maintenance.html">Maintenance</a>
-<a class="header-nav-link" href="kontakt.html">Kontakt</a>
+<a class="header-nav-link" href="kontakt.html">Contact</a>
 <a class="header-nav-link" href="karriere.html">Careers</a>
 </nav>
 </div>
@@ -685,7 +685,7 @@
 <div class="hidden lg:block fixed top-0 left-0 h-screen w-80 bg-white z-[100] transform -translate-x-full" id="desktop-menu">
 <div class="h-screen overflow-y-auto">
 <div class="p-6 flex items-center justify-between">
-<img alt="ACM AIR CHARTER Logo" class="h-10 w-auto" onerror="this.style.display='none'" src="logo.png"/>
+<img alt="ACM AIR CHARTER logo" class="h-10 w-auto" onerror="this.style.display='none'" src="../logo.png"/>
 <button aria-label="Close menu" class="p-2 hover:bg-stone-100 rounded-lg transition-colors" id="desktop-menu-close">
 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
 <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -700,7 +700,7 @@
 <a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="global-xrs.html" style="font-size: 0.85rem;">Bombardier Global XRS</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="aircraft-management.html">Aircraft Management</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="maintenance.html">Maintenance</a>
-<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="kontakt.html">Kontakt</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="kontakt.html">Contact</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="karriere.html">Careers</a>
 </nav>
 </div>
@@ -715,12 +715,12 @@
 <a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="global-xrs.html" style="font-size: 0.9rem;">Global XRS</a>
 <a class="mobile-menu-link block py-3" href="aircraft-management.html">Aircraft Management</a>
 <a class="mobile-menu-link block py-3" href="maintenance.html">Maintenance</a>
-<a class="mobile-menu-link block py-3" href="kontakt.html">Kontakt</a>
+<a class="mobile-menu-link block py-3" href="kontakt.html">Contact</a>
 <a class="mobile-menu-link block py-3" href="karriere.html">Careers</a>
 </nav>
 </div>
 </header>
-<button aria-label="Nach oben scrollen" id="scroll-to-top">
+<button aria-label="Scroll to top" id="scroll-to-top">
 <svg fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 15l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </button>
 <main>
@@ -728,7 +728,7 @@
          1. HERO
          ============================================ -->
 <section class="relative w-full h-[80vh] min-h-[540px] max-h-[850px] overflow-hidden" id="hero">
-<img alt="Bombardier Global 7500 &ndash; ACM AIR CHARTER" class="absolute inset-0 w-full h-full object-cover" decoding="async" fetchpriority="high" height="1080" src="Fotos/Neu/7500_hero.jpg" width="1920"/>
+<img alt="Bombardier Global 6000 &ndash; ACM AIR CHARTER" class="absolute inset-0 w-full h-full object-cover" decoding="async" fetchpriority="high" height="1080" src="../Fotos/D-ABAY/DSC_0533.jpg" width="1920"/>
 <div class="hero-overlay absolute inset-0"></div>
 <div class="streamlines-container absolute inset-0 pointer-events-none" style="z-index: 15;">
 <div class="streamline streamline-1"></div>
@@ -738,15 +738,15 @@
 <div class="streamline streamline-5"></div>
 </div>
 <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20" style="padding-bottom: 5rem;">
-<p class="text-white/70 text-sm uppercase tracking-[0.2em] mb-4 fade-in-up" style="font-size: 12px !important; color: rgba(255,255,255,0.7) !important;">Charter &middot; Flotte</p>
+<p class="text-white/70 text-sm uppercase tracking-[0.2em] mb-4 fade-in-up" style="font-size: 12px !important; color: rgba(255,255,255,0.7) !important;">Charter &middot; Fleet</p>
 <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light mb-6 fade-in-up fade-in-up-delay-1" style="font-size: 56px !important; line-height: 1.1 !important; text-shadow: 0 2px 16px rgba(0,0,0,0.45), 0 0 40px rgba(0,0,0,0.2);">
-          Bombardier Global 7500
+          Bombardier Global 6000
         </h1>
 <p class="text-white/80 text-lg max-w-2xl mx-auto mb-10 leading-relaxed fade-in-up fade-in-up-delay-1" style="font-size: 17px !important; color: rgba(255,255,255,0.85) !important; text-shadow: 0 1px 10px rgba(0,0,0,0.4), 0 0 30px rgba(0,0,0,0.15);">
-          Das Flaggschiff der Business Aviation. Maximale Reichweite, vier Kabinenzonen, direkt operiert unter eigenem AOC.
+          Long-haul jet for intercontinental business trips. Directly operates under its own AOC.
         </p>
 <div class="flex flex-wrap justify-center gap-4 fade-in-up fade-in-up-delay-2">
-<a class="btn-overlay-white" href="kontakt.html#sales-operations">Flug anfragen</a>
+<a class="btn-overlay-white" href="kontakt.html#sales-operations">Request a flight</a>
 </div>
 </div>
 </section>
@@ -756,10 +756,10 @@
 <section class="py-20 sm:py-28 lg:py-32 bg-white">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="text-center mb-16 lg:mb-20 scroll-reveal">
-<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="../Fotos/Emblem.svg" width="auto"/>
 <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Highlights</span>
 <h2 class="font-serif text-stone-900 font-light">
-            Auf einen Blick
+            At a glance
           </h2>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
@@ -769,9 +769,9 @@
 <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </div>
 <div>
-<h3 class="cert-title font-serif text-stone-800 font-normal">14.260 km Nonstop</h3>
+<h3 class="cert-title font-serif text-stone-800 font-normal">Intercontinental reach</h3>
 <p class="text-stone-500 leading-relaxed">
-                  Die weltweit gr&ouml;&szlig;te Reichweite eines Business Jets. Nonstop von Europa nach Asien, S&uuml;damerika oder die US-Westk&uuml;ste.
+                  Over 11,000 km non-stop range. Europe to North America, the Middle East or Asia without a stopover.
                 </p>
 </div>
 </div>
@@ -782,22 +782,9 @@
 <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </div>
 <div>
-<h3 class="cert-title font-serif text-stone-800 font-normal">Mach 0.925</h3>
+<h3 class="cert-title font-serif text-stone-800 font-normal">Do 0.89</h3>
 <p class="text-stone-500 leading-relaxed">
-                  Der schnellste Business Jet seiner Klasse. Maximale Geschwindigkeit f&uuml;r zeitkritische interkontinentale Verbindungen.
-                </p>
-</div>
-</div>
-</div>
-<div class="scroll-reveal">
-<div class="flex items-start gap-4 mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
-<svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-</div>
-<div>
-<h3 class="cert-title font-serif text-stone-800 font-normal">Vier Kabinenzonen</h3>
-<p class="text-stone-500 leading-relaxed">
-                  Club Suite, Conference Suite, Entertainment-Zone und Privatsuite mit Bett &ndash; vier getrennte Bereiche f&uuml;r jede Reiseanforderung.
+                  High travel speed for time-critical connections. Reduced block times on long-haul routes.
                 </p>
 </div>
 </div>
@@ -808,9 +795,9 @@
 <svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </div>
 <div>
-<h3 class="cert-title font-serif text-stone-800 font-normal">Bis zu 13 Passagiere</h3>
+<h3 class="cert-title font-serif text-stone-800 font-normal">Up to 17 passengers</h3>
 <p class="text-stone-500 leading-relaxed">
-                  Die gr&ouml;&szlig;te Kabine in der Business Aviation. Platz f&uuml;r Delegationen, Familien und Arbeitsgruppen auf Langstrecken.
+                  Spacious cabin with three separate areas. Space for delegations and working groups.
                 </p>
 </div>
 </div>
@@ -818,12 +805,38 @@
 <div class="scroll-reveal">
 <div class="flex items-start gap-4 mb-4">
 <div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
-<svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </div>
 <div>
-<h3 class="cert-title font-serif text-stone-800 font-normal">Nuage-Sitze &amp; P&utilde;r Air</h3>
+<h3 class="cert-title font-serif text-stone-800 font-normal">Proven platform</h3>
 <p class="text-stone-500 leading-relaxed">
-                  Die erste neue Sitzarchitektur seit 30 Jahren. Dazu HEPA-Luftfilterung, die 99,99 % aller Allergene und Bakterien entfernt.
+                  In use worldwide for years. High reliability, extensive maintenance experience and global spare parts supply.
+                </p>
+</div>
+</div>
+</div>
+<div class="scroll-reveal">
+<div class="flex items-start gap-4 mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+<svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div>
+<h3 class="cert-title font-serif text-stone-800 font-normal">Operated directly</h3>
+<p class="text-stone-500 leading-relaxed">
+                  Operating under the AOC from ACM AIR CHARTER (D-057). Own crews, own maintenance, own dispatch coordination.
+                </p>
+</div>
+</div>
+</div>
+<div class="scroll-reveal">
+<div class="flex items-start gap-4 mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-olive/5 shrink-0">
+<svg class="w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div>
+<h3 class="cert-title font-serif text-stone-800 font-normal">Connectivity</h3>
+<p class="text-stone-500 leading-relaxed">
+                  Broadband internet on board for constant accessibility. Work, communicate and stream at cruising altitude.
                 </p>
 </div>
 </div>
@@ -838,92 +851,85 @@
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center">
 <div class="scroll-reveal">
-<img alt="Bombardier Global 7500 Exterieur" class="w-full h-[400px] lg:h-[550px] object-cover object-left" decoding="async" height="1080" loading="lazy" src="Fotos/Neu/7500_Flugzeug.jpg" width="1920"/>
+<img alt="Bombardier Global 6000 Exterior" class="w-full h-[400px] lg:h-[550px] object-cover" loading="lazy" src="../Fotos/D-ABAY/DSC_0511.jpg"/>
 </div>
 <div class="scroll-reveal">
-<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Flugzeug</span>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Airplane</span>
 <h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">
-              Der Bombardier Global 7500.
+              The Bombardier Global 6000.
             </h2>
 <p class="text-stone-500 leading-relaxed mb-6">
-              Der Bombardier Global 7500 ist das Flaggschiff der Business Aviation und der gr&ouml;&szlig;te zweckgebaute Business Jet der Welt. Mit einer Nonstop-Reichweite von 14.260 Kilometern verbindet er europ&auml;ische Standorte direkt mit der US-Westk&uuml;ste, S&uuml;damerika, dem Nahen Osten und Asien &ndash; ohne Zwischenstopp.
+              The Bombardier Global 6000 is a proven long-haul jet for demanding intercontinental business trips. With a non-stop range of over 11,000 kilometers, it connects European locations directly with North America, the Middle East and parts of Asia.
             </p>
 <p class="text-stone-500 leading-relaxed mb-6">
-              Die Kabine bietet Platz f&uuml;r bis zu 13 Passagiere in vier separaten Zonen &ndash; konfiguriert f&uuml;r konzentriertes Arbeiten, vertrauliche Konferenzen, Unterhaltung und erholsamen Schlaf auf Ultralangstrecken. Die revolution&auml;ren Nuage-Sitze und das P&utilde;r Air-Filtersystem setzen neue Ma&szlig;st&auml;be f&uuml;r Komfort in der Luft.
+              The spacious cabin offers space for up to 17 passengers in three separate areas - configured for concentrated work, confidential conversations and relaxation on long journeys. A low cabin altitude of less than 6,000 feet reduces physical stress on flights longer than eight hours.
             </p>
 <p class="text-stone-500 leading-relaxed">
-              ACM operiert den Global 7500 unter eigenem AOC. Crews, Wartung, Flugplanung und Bodenkoordination werden vollst&auml;ndig intern gesteuert &ndash; f&uuml;r eine durchg&auml;ngig kontrollierte operative Kette.
+              ACM operates the Global 6000 under its own AOC. Crews, maintenance, flight planning and ground coordination are managed completely internally - for a consistently controlled operational chain.
             </p>
 </div>
 </div>
 </div>
 </section>
 <!-- ============================================
-         4. CABIN – Vier Zonen. Ein Flugzeug.
+         4. CABIN EXPERIENCE
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32 bg-white">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center">
 <div class="scroll-reveal lg:order-2">
-<img alt="Bombardier Global 7500 &ndash; Kabine" class="w-full h-[400px] lg:h-[550px] object-cover" decoding="async" height="1080" loading="lazy" src="Fotos/Neu/7500_Kabine.jpg" width="1920"/>
+<img alt="Bombardier Global 6000 &ndash; Cabin" class="w-full h-[400px] lg:h-[550px] object-cover" loading="lazy" src="../Fotos/D-AGJP (alt)/SL7_7980-Bearbeitet.jpg"/>
 </div>
 <div class="scroll-reveal lg:order-1">
-<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Kabine</span>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">cabin</span>
 <h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">
-              Vier Zonen. Ein Flugzeug.
+              Three zones. A plane.
             </h2>
 <p class="text-stone-500 leading-relaxed mb-6">
-              Die Kabine des Global 7500 ist in vier funktionale Bereiche gegliedert: die Club Suite f&uuml;r entspanntes Reisen, die Conference Suite f&uuml;r Besprechungen, eine Entertainment-Zone und eine private Suite mit vollwertigem Bett.
+              The cabin of the Global 6000 is divided into three functional areas: a front conference and work area, a middle lounge zone and a rear relaxation area with seats that fold completely flat.
             </p>
 <p class="text-stone-500 leading-relaxed mb-6">
-              Die branchenweit gr&ouml;&szlig;te Kabine bietet 16,59 m L&auml;nge, 2,44 m Breite und 1,88 m Stehh&ouml;he. Die patentierten Nuage-Sitze erm&ouml;glichen eine Zero-Gravity-Position f&uuml;r maximale Erholung auf Langstrecken.
+              Each area is configured so that passengers can work, discuss or rest undisturbed on long journeys. The cabin altitude is under 6,000 feet - meaning less fatigue and greater ability to concentrate after landing.
             </p>
 <p class="text-stone-500 leading-relaxed">
-              Eine vollausgestattete Galley mit Doppel&ouml;fen, ein separater Crew-Ruhebereich und Ka-Band-Breitband-Internet sorgen f&uuml;r einen durchgehend erstklassigen Service auf Ultralangstrecken.
+              A fully equipped galley and a separate crew rest area enable consistently discreet service on long-haul routes. Broadband connectivity ensures accessibility throughout the flight.
             </p>
 </div>
 </div>
 </div>
 </section>
 <!-- ============================================
-         5. FOUR ZONES DETAIL
+         CABIN ZONES – Drei Welten an Bord
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32" style="background-color: rgb(250 248 245);">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="text-center mb-16 lg:mb-20 scroll-reveal">
-<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
-<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Kabinenkonzept</span>
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="../Fotos/Emblem.svg" width="auto"/>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Cabin concept</span>
 <h2 class="font-serif text-stone-900 font-light">
-            Vier Welten an Bord
+            Three worlds on board
           </h2>
 </div>
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+<div class="grid md:grid-cols-3 gap-8 lg:gap-10">
 <div class="zone-card scroll-reveal">
 <div class="zone-card-number">01</div>
-<div class="zone-card-title">Club Suite</div>
+<div class="zone-card-title">Conference &amp; work</div>
 <p class="text-stone-500 leading-relaxed">
-              Einladender Bereich mit Nuage-Sitzen und &uuml;bergro&szlig;en Fenstern. F&uuml;r Gespr&auml;che, Lekt&uuml;re und ruhiges Arbeiten.
+              Forward cabin area with facing seats and work table. For concentrated work and confidential meetings.
             </p>
 </div>
 <div class="zone-card scroll-reveal">
 <div class="zone-card-number">02</div>
-<div class="zone-card-title">Conference Suite</div>
+<div class="zone-card-title">Lounge</div>
 <p class="text-stone-500 leading-relaxed">
-              Platz f&uuml;r sechs Personen an einem Konferenztisch. F&uuml;r Gesch&auml;ftsessen, Meetings und kollaboratives Arbeiten.
+              Middle area with club seating and ottoman. For informal exchange, reading and relaxed travel.
             </p>
 </div>
 <div class="zone-card scroll-reveal">
 <div class="zone-card-number">03</div>
-<div class="zone-card-title">Entertainment</div>
+<div class="zone-card-title">Rest area</div>
 <p class="text-stone-500 leading-relaxed">
-              Lounge-Bereich mit Ottomane und Bildschirm. F&uuml;r Unterhaltung, Entspannung und informellen Austausch.
-            </p>
-</div>
-<div class="zone-card scroll-reveal">
-<div class="zone-card-number">04</div>
-<div class="zone-card-title">Privatsuite</div>
-<p class="text-stone-500 leading-relaxed">
-              Abgetrenntes Schlafzimmer mit vollwertigem Bett und eigener T&uuml;r. F&uuml;r erholsamen Schlaf auf Ultralangstrecken.
+              Rear area with seats that fold completely flat. For restful sleep on long journeys of over eight hours.
             </p>
 </div>
 </div>
@@ -933,244 +939,253 @@
          VIDEO BANNER – Direkt operiert. Weltweit einsatzbereit.
          ============================================ -->
 <section class="relative w-full h-[45vh] sm:h-[55vh] overflow-hidden">
-<img alt="Bombardier Global 7500 &ndash; Ohne Grenzen" class="absolute inset-0 w-full h-full object-cover" decoding="async" height="1080" loading="lazy" src="Fotos/Neu/7500_banner.jpg" width="1920"/>
+<video autoplay="" class="absolute inset-0 w-full h-full object-cover" id="video-banner" loop="" muted="" playsinline="" poster="../Fotos/D-ABAY/DSC_0546.jpg" preload="auto">
+<source src="../Fotos/D-ABAY/acm-global6000.mp4" type="video/mp4"/>
+</video>
+<img alt="Bombardier Global 6000 &ndash; Interior" class="absolute inset-0 w-full h-full object-cover video-fallback" id="video-fallback" src="../Fotos/D-ABAY/DSC_0546.jpg" style="display: none;"/>
 <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.3) 0%, rgba(0, 20, 65, 0.45) 50%, rgba(0, 13, 43, 0.55) 100%);"></div>
 <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
 <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light" style="text-shadow: 0 2px 20px rgba(0,0,0,0.3);">
-          Ohne Grenzen. Ohne Kompromisse.
+          Long distance. Without detours.
         </h2>
 </div>
 </section>
 <!-- ============================================
-         6. IMAGE GALLERY – CAROUSEL
+         IMAGE GALLERY – CAROUSEL (volle Breite)
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32 bg-white">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 mb-12 lg:mb-16">
 <div class="text-center scroll-reveal">
-<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
-<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Galerie</span>
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="../Fotos/Emblem.svg" width="auto"/>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">gallery</span>
 <h2 class="font-serif text-stone-900 font-light">
-            Impressionen
+            Impressions
           </h2>
 </div>
 </div>
 <div class="carousel-wrapper carousel-fullwidth scroll-reveal w-full">
 <div class="carousel-track" id="carousel-track">
 <div class="carousel-slide" data-index="0">
-<img alt="Bombardier Global 7500 &ndash; Kabine" loading="lazy" src="Fotos/D-APLC/70046_08_0001.jpg"/>
+<img alt="Bombardier Global 6000 &ndash; Cabin" loading="lazy" src="../Fotos/D-ABAY/DSC_0538.jpg"/>
 </div>
 <div class="carousel-slide" data-index="1">
-<img alt="Bombardier Global 7500 &ndash; Sitzbereich" loading="lazy" src="Fotos/D-APLC/70046_09_0043.jpg"/>
+<img alt="Bombardier Global 6000 &ndash; Seating area" loading="lazy" src="../Fotos/D-ABAY/DSC_0514.jpg"/>
 </div>
 <div class="carousel-slide" data-index="2">
-<img alt="Bombardier Global 7500 &ndash; Kabinendetail" loading="lazy" src="Fotos/D-APLC/70046_10_0019.jpg"/>
+<img alt="Bombardier Global 6000 &ndash; Cabin detail" loading="lazy" src="../Fotos/D-ABAY/DSC_0521.jpg"/>
 </div>
 <div class="carousel-slide" data-index="3">
-<img alt="Bombardier Global 7500 &ndash; Interieur" loading="lazy" src="Fotos/D-APLC/70046_11_9871.jpg"/>
+<img alt="Bombardier Global 6000 &ndash; Interior" loading="lazy" src="../Fotos/D-ABAY/DSC_0546.jpg"/>
 </div>
 <div class="carousel-slide" data-index="4">
-<img alt="Bombardier Global 7500 &ndash; Exterieur" loading="lazy" src="Fotos/D-APLC/70046_06_9937.jpg"/>
+<img alt="Bombardier Global 6000 &ndash; Exterior" loading="lazy" src="../Fotos/D-ABAY/IMG_9804.jpeg"/>
 </div>
 </div>
 <div class="carousel-nav px-6 sm:px-8 lg:px-12">
-<button aria-label="Vorheriges Bild" class="carousel-btn" id="carousel-prev">
+<button aria-label="Previous image" class="carousel-btn" id="carousel-prev">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </button>
 <div class="carousel-dots" id="carousel-dots"></div>
-<button aria-label="N&auml;chstes Bild" class="carousel-btn" id="carousel-next">
+<button aria-label="Next picture" class="carousel-btn" id="carousel-next">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </button>
 </div>
 </div>
 </section>
 <!-- ============================================
-         7. FLOORPLAN
+         FLOORPLAN – DAY / NIGHT SLIDER
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32" style="background-color: rgb(250 248 245);">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="text-center mb-16 lg:mb-20 scroll-reveal">
-<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
-<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Sitzplan</span>
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="../Fotos/Emblem.svg" width="auto"/>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Seating plan</span>
 <h2 class="font-serif text-stone-900 font-light">
-            Kabinenlayout
+            Day &amp; night configuration
           </h2>
 </div>
 <div class="scroll-reveal">
-<div class="mx-auto" style="max-width: 1000px;">
-<img alt="Bombardier Global 7500 &ndash; Sitzplan" class="w-full" src="Fotos/bombardier7500-sitzplan.png"/>
+<div class="seatplan-slider-container relative mx-auto" id="seatplan-slider" style="max-width: 1000px;">
+<span aria-label="Tag configuration" class="seatplan-label seatplan-label-day">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+</span>
+<span aria-label="Night configuration" class="seatplan-label seatplan-label-night">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"></path></svg>
+</span>
+<img alt="Bombardier Global 6000 &ndash; Seating plan day configuration" class="w-full" src="../Fotos/bombardier6000-sitzplan-tag.png"/>
+<div class="seatplan-overlay-night" id="seatplan-overlay" style="clip-path: inset(0 0 0 50%);">
+<img alt="Bombardier Global 6000 &ndash; Seating map night configuration" src="../Fotos/bombardier6000-sitzplan-nacht.png"/>
+</div>
+<div class="seatplan-handle" id="seatplan-handle" style="left: 50%;"></div>
 </div>
 <p class="text-center mt-6" style="font-size: 12px !important; color: #aaa !important;">
-            Die dargestellte Kabinenkonfiguration dient der Orientierung.
+            The cabin configuration shown is for orientation purposes.
           </p>
 </div>
 </div>
 </section>
 <!-- ============================================
-         8. TECHNICAL DATA
+         7. TECHNICAL DATA
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32 bg-white">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="text-center mb-16 lg:mb-20 scroll-reveal">
-<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
-<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Spezifikationen</span>
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="../Fotos/Emblem.svg" width="auto"/>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Specifications</span>
 <h2 class="font-serif text-stone-900 font-light">
-            Technische Daten
+            Technical data
           </h2>
 </div>
 <!-- Performance -->
 <div class="scroll-reveal mb-14">
-<h3 class="spec-group-title">Flugleistung</h3>
+<h3 class="spec-group-title">Flight performance</h3>
 <div class="spec-grid">
 <div class="spec-item">
-<div class="spec-value">14.260 km</div>
-<div class="spec-label">Reichweite (7.700 NM)</div>
+<div class="spec-value">11,112 km</div>
+<div class="spec-label">Range (NBAA IFR, 8 Pax)</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">Mach 0.925</div>
-<div class="spec-label">Maximale Geschwindigkeit</div>
+<div class="spec-value">Do 0.89</div>
+<div class="spec-label">Maximum speed</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">Mach 0.90</div>
-<div class="spec-label">Hohe Reisegeschwindigkeit</div>
+<div class="spec-value">Do 0.85</div>
+<div class="spec-label">Typical cruising speed</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">15.545 m</div>
-<div class="spec-label">Max. Flugh&ouml;he (FL510)</div>
+<div class="spec-value">15,545 m</div>
+<div class="spec-label">Max. flight altitude (FL510)</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">Mach 0.85</div>
-<div class="spec-label">Typische Reisegeschwindigkeit</div>
+<div class="spec-value">1,020 m/min</div>
+<div class="spec-label">climbing performance</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">1.756 m</div>
-<div class="spec-label">Startstrecke (MTOW, ISA, MSL)</div>
+<div class="spec-value">1,974 m</div>
+<div class="spec-label">Takeoff distance (MTOW, ISA, MSL)</div>
 </div>
 </div>
 </div>
 <!-- Cabin -->
 <div class="scroll-reveal mb-14">
-<h3 class="spec-group-title">Kabine</h3>
+<h3 class="spec-group-title">cabin</h3>
 <div class="spec-grid">
 <div class="spec-item">
-<div class="spec-value">13</div>
-<div class="spec-label">Max. Passagiere</div>
+<div class="spec-value">17</div>
+<div class="spec-label">Max. passengers</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">16,59 m</div>
-<div class="spec-label">Kabinenl&auml;nge</div>
+<div class="spec-value">13.18 m</div>
+<div class="spec-label">Cabin length</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">2,44 m</div>
-<div class="spec-label">Kabinenbreite</div>
+<div class="spec-value">2.41m</div>
+<div class="spec-label">Cab width</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">1,88 m</div>
-<div class="spec-label">Kabinenh&ouml;he</div>
+<div class="spec-value">1.88 m</div>
+<div class="spec-label">Cab height</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">5,52 m&sup3;</div>
-<div class="spec-label">Gep&auml;ckvolumen</div>
+<div class="spec-value">5.5 m&sup3;</div>
+<div class="spec-label">Luggage volume</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">4 Zonen</div>
-<div class="spec-label">Separate Kabinenbereiche</div>
+<div class="spec-value">3 zones</div>
+<div class="spec-label">Separate cabin areas</div>
 </div>
 </div>
 </div>
 <!-- Weights & Engines -->
 <div class="scroll-reveal mb-14">
-<h3 class="spec-group-title">Gewichte &amp; Triebwerke</h3>
+<h3 class="spec-group-title">Weights &amp; engines</h3>
 <div class="spec-grid">
 <div class="spec-item">
-<div class="spec-value">48.194 kg</div>
-<div class="spec-label">Max. Startgewicht (MTOW)</div>
+<div class="spec-value">45,132 kg</div>
+<div class="spec-label">Max. Takeoff Weight (MTOW)</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">38.919 kg</div>
-<div class="spec-label">Max. Landegewicht</div>
+<div class="spec-value">35,652 kg</div>
+<div class="spec-label">Max. landing weight</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">682 m</div>
-<div class="spec-label">Landestrecke (SL, ISA, typisch)</div>
+<div class="spec-value">2,617 kg</div>
+<div class="spec-label">Max. payload</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">2 &times; GE Passport</div>
-<div class="spec-label">General Electric Passport 20</div>
+<div class="spec-value">2 &times; RR BR710</div>
+<div class="spec-label">Rolls Royce BR710A2-20</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">2 &times; 84,2 kN</div>
-<div class="spec-label">Schub je Triebwerk</div>
-</div>
-<div class="spec-item">
-<div class="spec-value">Fly-by-Wire</div>
-<div class="spec-label">Flugsteuerungssystem</div>
+<div class="spec-value">2 &times; 65.6 kN</div>
+<div class="spec-label">Thrust per engine</div>
 </div>
 </div>
 </div>
 <!-- Dimensions -->
 <div class="scroll-reveal">
-<h3 class="spec-group-title">Au&szlig;enma&szlig;e</h3>
+<h3 class="spec-group-title">External dimensions</h3>
 <div class="spec-grid">
 <div class="spec-item">
-<div class="spec-value">33,8 m</div>
-<div class="spec-label">Gesamtl&auml;nge</div>
+<div class="spec-value">30.3 m</div>
+<div class="spec-label">Total length</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">31,7 m</div>
-<div class="spec-label">Spannweite</div>
+<div class="spec-value">28.7m</div>
+<div class="spec-label">span</div>
 </div>
 <div class="spec-item">
-<div class="spec-value">8,2 m</div>
-<div class="spec-label">Gesamth&ouml;he</div>
+<div class="spec-value">7.8m</div>
+<div class="spec-label">Total height</div>
 </div>
 </div>
 </div>
 <p class="text-center mt-12 scroll-reveal" style="font-size: 11px !important; color: #bbb !important;">
-          Alle Angaben basieren auf Herstellerangaben. Tats&auml;chliche Werte variieren je nach Konfiguration und Betriebsbedingungen.
+          All information is based on manufacturer information. Actual values &ZeroWidthSpace;&ZeroWidthSpace;vary depending on configuration and operating conditions.
         </p>
 </div>
 </section>
 <!-- ============================================
-         9. OTHER AIRCRAFT
+         8. OTHER AIRCRAFT
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32" style="background-color: rgb(250 248 245);">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="text-center mb-16 lg:mb-20 scroll-reveal">
-<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
-<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Flotte</span>
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="../Fotos/Emblem.svg" width="auto"/>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Fleet</span>
 <h2 class="font-serif text-stone-900 font-light">
-            Weitere Flugzeuge unserer Flotte
+            More aircraft in our fleet
           </h2>
 </div>
 <div class="grid md:grid-cols-2 gap-8 lg:gap-12 scroll-reveal">
-<a class="fleet-link-card block overflow-hidden" href="global-6000.html">
+<a class="fleet-link-card block overflow-hidden" href="global-7500.html">
 <div class="overflow-hidden">
-<img alt="Bombardier Global 6000" class="w-full h-[250px] lg:h-[300px] object-cover" loading="lazy" src="Fotos/D-ABAY/DSC_0533.jpg"/>
+<img alt="Bombardier Global 7500" class="w-full h-[250px] lg:h-[300px] object-cover" loading="lazy" src="../Fotos/D-APLC/70046_04_9905.jpg"/>
 </div>
 <div class="p-6 lg:p-8">
-<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-2 block" style="font-size: 10px !important;">Langstrecke</span>
-<h3 class="font-serif text-stone-900 font-light mb-3" style="font-size: 1.8rem;">Bombardier Global 6000</h3>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-2 block" style="font-size: 10px !important;">Long distance</span>
+<h3 class="font-serif text-stone-900 font-light mb-3" style="font-size: 1.8rem;">Bombardier Global 7500</h3>
 <p class="text-stone-500 leading-relaxed mb-4">
-                Bew&auml;hrter Langstreckenjet f&uuml;r interkontinentale Gesch&auml;ftsreisen. &Uuml;ber 11.000 km Reichweite mit drei Kabinenzonen.
+                The flagship of the Bombardier fleet. Maximum range, four cabin zones and highest cruising speed.
               </p>
 <span class="link-arrow">
-                Zum Flugzeug
+                To the plane
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </span>
 </div>
 </a>
 <a class="fleet-link-card block overflow-hidden" href="global-xrs.html">
 <div class="overflow-hidden">
-<img alt="Bombardier Global XRS" class="w-full h-[250px] lg:h-[300px] object-cover" loading="lazy" src="Fotos/D-AGJP (alt)/SL7_7893-Bearbeitet.jpg"/>
+<img alt="Bombardier Global XRS" class="w-full h-[250px] lg:h-[300px] object-cover" loading="lazy" src="../Fotos/D-AGJP (alt)/SL7_7893-Bearbeitet.jpg"/>
 </div>
 <div class="p-6 lg:p-8">
-<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-2 block" style="font-size: 10px !important;">Langstrecke</span>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-2 block" style="font-size: 10px !important;">Long distance</span>
 <h3 class="font-serif text-stone-900 font-light mb-3" style="font-size: 1.8rem;">Bombardier Global XRS</h3>
 <p class="text-stone-500 leading-relaxed mb-4">
-                Zuverl&auml;ssiger Langstreckenjet mit bew&auml;hrter Technik. Ideal f&uuml;r transatlantische und transkontinentale Missionen.
+                Reliable long-haul jet with proven technology. Ideal for transatlantic and transcontinental missions.
               </p>
 <span class="link-arrow">
-                Zum Flugzeug
+                To the plane
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </span>
 </div>
@@ -1179,7 +1194,7 @@
 </div>
 </section>
 <!-- ============================================
-         10. CHARTER CTA
+         9. CHARTER CTA – Ihr nächster Flug startet hier.
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32 relative overflow-hidden bg-white" id="contact">
 <div class="streamlines-container streamlines-dark absolute inset-0 pointer-events-none z-0">
@@ -1190,16 +1205,16 @@
 <div class="streamline streamline-5"></div>
 </div>
 <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
-<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="../Fotos/Emblem.svg" width="auto"/>
 <h2 class="font-serif text-stone-900 font-light mb-6 scroll-reveal">
-          Bereit f&uuml;r Ihren n&auml;chsten Flug?
+          Your next flight starts here.
         </h2>
 <p class="text-stone-600 mb-10 max-w-2xl mx-auto text-lg leading-relaxed scroll-reveal">
-          F&uuml;r individuelle Routen, Terminplanung und diskrete Abwicklung steht Ihnen unser Charter-Team direkt zur Verf&uuml;gung.
+          Our charter team is directly at your disposal for individual routes, appointment planning and discreet processing.
         </p>
 <div class="flex flex-wrap justify-center gap-4 scroll-reveal">
 <a class="btn-primary" href="kontakt.html#sales-operations">
-            Flug anfragen
+            Request a flight
           </a>
 </div>
 </div>
@@ -1207,24 +1222,24 @@
 </main>
 <!-- Mobile Sticky CTA -->
 <div class="mobile-sticky-cta" id="mobile-sticky-cta">
-<a class="btn-primary w-full text-center" href="kontakt.html#sales-operations" style="min-width: 0;">Flug anfragen</a>
+<a class="btn-primary w-full text-center" href="kontakt.html#sales-operations" style="min-width: 0;">Request a flight</a>
 </div>
 <!-- FOOTER -->
 <footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe">
 <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 mb-14 lg:mb-16">
 <div class="lg:max-w-sm">
-<img alt="ACM AIR CHARTER Logo" class="h-14 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="logo.png"/>
+<img alt="ACM AIR CHARTER logo" class="h-14 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="../logo.png"/>
 <div style="display: none;">
 <span class="font-serif text-2xl text-stone-900 tracking-wide">ACM AIR CHARTER</span>
 </div>
 <p class="text-stone-500 text-sm leading-relaxed">
-            Integrierte Business Aviation &ndash; Charter, Management, Wartung unter einem Dach.
+            Integrated Business Aviation &ndash; charter, management, maintenance under one roof.
           </p>
 </div>
 <div class="lg:text-right">
 <address class="not-italic text-sm leading-relaxed text-stone-600 mb-4">
-            ACM AIR CHARTER Luftfahrtgesellschaft mbH<br/>
+            ACM AIR CHARTER Flugzeuggesellschaft mbH<br/>
             Montreal Ave. D415<br/>
             77836 Rheinm&uuml;nster
           </address>
@@ -1236,7 +1251,7 @@
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-12 py-10 border-t border-stone-200">
 <div>
-<h4 class="text-stone-900 font-serif text-lg mb-4">Leistungen</h4>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Services</h4>
 <ul class="space-y-2.5 text-sm">
 <li><a class="hover:text-olive transition-colors" href="charter.html">Charter</a></li>
 <li><a class="hover:text-olive transition-colors" href="aircraft-management.html">Aircraft Management</a></li>
@@ -1244,16 +1259,16 @@
 </ul>
 </div>
 <div>
-<h4 class="text-stone-900 font-serif text-lg mb-4">Unternehmen</h4>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Company</h4>
 <ul class="space-y-2.5 text-sm">
-<li><a class="hover:text-olive transition-colors" href="thats-acm.html">Das ist ACM</a></li>
-<li><a class="hover:text-olive transition-colors" href="karriere.html">Karriere</a></li>
+<li><a class="hover:text-olive transition-colors" href="thats-acm.html">This is ACM</a></li>
+<li><a class="hover:text-olive transition-colors" href="karriere.html">Careers</a></li>
 <li><a class="hover:text-olive transition-colors" href="index.html#news">News</a></li>
-<li><a class="hover:text-olive transition-colors" href="kontakt.html">Kontakt</a></li>
+<li><a class="hover:text-olive transition-colors" href="kontakt.html">Contact</a></li>
 </ul>
 </div>
 <div>
-<h4 class="text-stone-900 font-serif text-lg mb-4">Flotte</h4>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Fleet</h4>
 <ul class="space-y-2.5 text-sm">
 <li><a class="hover:text-olive transition-colors" href="global-7500.html">Global 7500</a></li>
 <li><a class="hover:text-olive transition-colors" href="global-6000.html">Global 6000</a></li>
@@ -1261,24 +1276,24 @@
 </ul>
 </div>
 <div>
-<h4 class="text-stone-900 font-serif text-lg mb-4">Rechtliches</h4>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Legal</h4>
 <ul class="space-y-2.5 text-sm">
-<li><a class="hover:text-olive transition-colors" href="#">Impressum</a></li>
-<li><a class="hover:text-olive transition-colors" href="#">Datenschutz</a></li>
-<li><a class="hover:text-olive transition-colors" href="#">AGB</a></li>
+<li><a class="hover:text-olive transition-colors" href="#">Legal Notice</a></li>
+<li><a class="hover:text-olive transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-olive transition-colors" href="#">Terms &amp; Conditions</a></li>
 </ul>
 </div>
 </div>
 <div class="pt-8 border-t border-stone-200">
 <p class="text-center text-stone-500 text-sm">
-          &copy; 2026 ACM AIR CHARTER GmbH. Alle Rechte vorbehalten.
+          &copy; 2026 ACM AIR CHARTER GmbH. All rights reserved.
         </p>
 </div>
 </div>
 </footer>
 <!-- Lightbox Galerie -->
-<div aria-label="Bild in voller Gr&ouml;&szlig;e" aria-modal="true" class="lightbox" id="lightbox" role="dialog">
-<button aria-label="Lightbox schlie&szlig;en" class="lightbox-close" id="lightbox-close" type="button">
+<div aria-label="Full size image" aria-modal="true" class="lightbox" id="lightbox" role="dialog">
+<button aria-label="Close lightbox" class="lightbox-close" id="lightbox-close" type="button">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </button>
 <div class="lightbox-img-wrap" id="lightbox-img-wrap">
@@ -1393,6 +1408,36 @@
       updateStickyVisibility();
     })();
 
+    // Seatplan Day/Night Slider
+    (function() {
+      const container = document.getElementById('seatplan-slider');
+      const overlay = document.getElementById('seatplan-overlay');
+      const handle = document.getElementById('seatplan-handle');
+      if (!container || !overlay || !handle) return;
+
+      let isDragging = false;
+
+      function updatePosition(clientX) {
+        const rect = container.getBoundingClientRect();
+        let x = clientX - rect.left;
+        x = Math.max(0, Math.min(x, rect.width));
+        const pct = (x / rect.width) * 100;
+        handle.style.left = pct + '%';
+        overlay.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+      }
+
+      handle.addEventListener('mousedown', (e) => { isDragging = true; e.preventDefault(); });
+      handle.addEventListener('touchstart', (e) => { isDragging = true; }, { passive: true });
+
+      document.addEventListener('mousemove', (e) => { if (isDragging) updatePosition(e.clientX); });
+      document.addEventListener('touchmove', (e) => { if (isDragging) updatePosition(e.touches[0].clientX); }, { passive: true });
+
+      document.addEventListener('mouseup', () => { isDragging = false; });
+      document.addEventListener('touchend', () => { isDragging = false; });
+
+      container.addEventListener('click', (e) => { updatePosition(e.clientX); });
+    })();
+
     // Video fallback to poster image
     (function() {
       const video = document.getElementById('video-banner');
@@ -1411,7 +1456,7 @@
       }
     })();
 
-    // Image Carousel
+    // Image Carousel – aktuelles Bild groß vorn, andere versetzt im Hintergrund
     (function() {
       const slides = document.querySelectorAll('.carousel-slide');
       const dotsContainer = document.getElementById('carousel-dots');
@@ -1478,7 +1523,7 @@
       update();
       resetAutoplay();
 
-      // Lightbox on carousel image click
+      // Lightbox: Klick auf Karussell-Bild
       slides.forEach((slide) => {
         slide.addEventListener('click', () => {
           const img = slide.querySelector('img');
@@ -1494,10 +1539,11 @@
       });
     })();
 
-    // Lightbox close
+    // Lightbox schließen
     (function() {
       const lightbox = document.getElementById('lightbox');
       const lightboxClose = document.getElementById('lightbox-close');
+      const lightboxImgWrap = document.getElementById('lightbox-img-wrap');
       if (!lightbox) return;
 
       function closeLightbox() {
@@ -1515,6 +1561,6 @@
     })();
   
 </script>
-<script defer="" src="nav-active.js"></script>
+<script defer="" src="../nav-active.js"></script>
 </body>
 </html>
