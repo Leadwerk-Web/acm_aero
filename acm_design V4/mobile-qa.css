@@ -183,9 +183,57 @@
   .btn-overlay-white,
   a.btn-primary,
   .header-link-button {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    min-width: min(100%, 14rem) !important;
+    min-height: 3.25rem;
+    padding: 0.85rem 1rem !important;
+    box-sizing: border-box;
+    font-size: clamp(0.67rem, 2.4vw, 0.76rem) !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.06rem !important;
+    text-align: center;
+    white-space: normal !important;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    flex-shrink: 0;
+  }
+
+  .btn-primary svg,
+  .btn-outline svg,
+  .btn-filled svg,
+  .btn-outline-white svg,
+  .btn-filled-white svg,
+  .btn-overlay-white svg,
+  a.btn-primary svg,
+  .header-link-button svg {
+    flex-shrink: 0;
+  }
+
+  :is(.btn-primary, .btn-outline, .btn-filled, .btn-outline-white, .btn-filled-white, .btn-overlay-white, a.btn-primary).w-full,
+  .mobile-sticky-cta :is(.btn-primary, .btn-outline, .btn-filled, .btn-outline-white, .btn-filled-white, .btn-overlay-white, a.btn-primary),
+  #hero .flex.flex-wrap.justify-center.gap-4 > :is(.btn-primary, .btn-outline, .btn-filled, .btn-outline-white, .btn-filled-white, .btn-overlay-white, a.btn-primary),
+  .flex.flex-wrap.gap-4 > :is(.btn-primary, .btn-outline, .btn-filled, .btn-outline-white, .btn-filled-white, .btn-overlay-white, a.btn-primary):only-child,
+  .flex.flex-wrap.justify-center.gap-4 > :is(.btn-primary, .btn-outline, .btn-filled, .btn-outline-white, .btn-filled-white, .btn-overlay-white, a.btn-primary):only-child {
+    width: 100% !important;
     min-width: 0 !important;
-    padding: 0.95rem 1.25rem !important;
+  }
+
+  .homepage-cta-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem !important;
+    width: 100%;
+    max-width: min(100%, 32rem);
+    margin-inline: auto;
+    overflow: visible !important;
+  }
+
+  .homepage-cta-grid > :is(.btn-primary, .btn-outline, .btn-filled, .btn-outline-white, .btn-filled-white, .btn-overlay-white, a.btn-primary) {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 3.5rem;
   }
 
   .anchor-nav {
