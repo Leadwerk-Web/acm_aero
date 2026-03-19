@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Rheinm&uuml;nster, Germany &ndash; The first Bombardier Global 7500 has now been added to the managed aircraft fleet. The jet was delivered in January 2021 and was&hellip;" name="description"/><link href="/en/news/global-7500-erweitert-die-acm-air-charter-flotte.html" rel="canonical"/><link href="/news/global-7500-erweitert-die-acm-air-charter-flotte.html" hreflang="de" rel="alternate"/><link href="/en/news/global-7500-erweitert-die-acm-air-charter-flotte.html" hreflang="en" rel="alternate"/>
+<meta content="index, follow" name="robots"/>
+<title>Global 7500 expands the ACM AIR CHARTER fleet | ACM AIR CHARTER</title>
+<link href="../../Fotos/Favicon_xs.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: { '6xl': '100rem' },
+          colors: {
+            cream: '#FAF9F7',
+            olive: { DEFAULT: '#001441', dark: '#000d2b', light: '#0a2a5c', lighter: '#E8EEF4' },
+            accent: { DEFAULT: '#001441', hover: '#000d2b', light: '#E8EEF4' },
+            sand: { 50: '#FDFCFA', 100: '#FAF8F5', 200: '#F5F2ED' }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          letterSpacing: { 'wider-custom': '0.15em' }
+        }
+      }
+    }
+  </script>
+<style>
+    :root {
+      --color-accent: #001441;
+      --color-accent-hover: #000d2b;
+      --color-olive: #001441;
+      --color-olive-dark: #000d2b;
+      --color-sand: #FAF8F5;
+      --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 20, 65, 0.35) #f5f5f4;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f5f5f4; }
+    ::-webkit-scrollbar-thumb { background: rgba(0, 20, 65, 0.35); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(0, 20, 65, 0.5); }
+
+    .section-emblem {
+      height: 35px; width: auto; display: block;
+      margin-left: auto; margin-right: auto; margin-bottom: 1rem;
+      filter: brightness(0) saturate(100%) invert(9%) sepia(45%) saturate(5000%) hue-rotate(208deg);
+    }
+    .section-emblem-on-dark { filter: brightness(0) invert(1); }
+
+    section h2 { font-size: 48px !important; line-height: 1 !important; }
+    .section-label { font-size: 12px !important; }
+
+    .max-w-xl { max-width: 56rem; padding: 0; overflow: visible; }
+    .content-box-outer { padding-left: 7rem; padding-right: 7rem; overflow: visible; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+
+    .hero-overlay {
+      background: linear-gradient(to bottom,
+        rgba(0, 13, 43, 0.45) 0%,
+        rgba(0, 13, 43, 0.35) 40%,
+        rgba(0, 13, 43, 0.5) 70%,
+        rgba(0, 13, 43, 0.65) 100%);
+      z-index: 1;
+    }
+
+    #hero { margin-top: 0; padding-top: 0; position: relative; }
+    #hero img { top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 0; }
+
+    .fade-in-up { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.7s ease forwards; }
+    .fade-in-up-delay-1 { animation-delay: 0.15s; }
+    .fade-in-up-delay-2 { animation-delay: 0.3s; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    /* Hero: Stromlinien wie Charter / Karriere / Maintenance */
+    .streamlines-container { opacity: 1; width: 100%; height: 100%; }
+    .streamline {
+      position: absolute;
+      width: 120%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.2) 90%, transparent 100%);
+      filter: blur(1px);
+      transform-origin: left center;
+      opacity: 0;
+    }
+    .streamline-1 { top: 15%; left: -20%; transform: rotate(12deg); animation: streamMove 25s linear infinite; animation-delay: 0s; }
+    .streamline-2 { top: 30%; left: -20%; transform: rotate(-8deg); animation: streamMove 28s linear infinite; animation-delay: 5s; }
+    .streamline-3 { top: 50%; left: -20%; transform: rotate(10deg); animation: streamMove 26s linear infinite; animation-delay: 10s; }
+    .streamline-4 { top: 70%; left: -20%; transform: rotate(-12deg); animation: streamMove 30s linear infinite; animation-delay: 15s; }
+    .streamline-5 { top: 85%; left: -20%; transform: rotate(6deg); animation: streamMove 27s linear infinite; animation-delay: 20s; }
+    @keyframes streamMove {
+      0% { left: -20%; opacity: 0; }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% { left: 120%; opacity: 0; }
+    }
+    @media (max-width: 768px) {
+      .streamline { opacity: 0.6; }
+    }
+    .streamlines-dark .streamline {
+      background: linear-gradient(90deg, transparent 0%, rgba(120, 113, 108, 0.25) 10%, rgba(120, 113, 108, 0.45) 50%, rgba(120, 113, 108, 0.25) 90%, transparent 100%);
+    }
+
+    /* Header */
+    .header-logo-row { transition: height 0.4s ease, background 0.4s ease; }
+    .header-nav-row { transition: height 0.4s ease, opacity 0.4s ease; }
+    header { background: transparent; transition: background 0.4s ease, backdrop-filter 0.4s ease; }
+    .header-scrolled { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06); }
+    .header-scrolled .header-logo-row { height: 3.5rem; }
+    .header-scrolled .header-nav-row { height: 0; opacity: 0; overflow: hidden; pointer-events: none; }
+    .header-scrolled .header-divider-line { opacity: 0; }
+    .header-divider-line { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.15) 80%, transparent); transition: opacity 0.4s ease; }
+    .header-scrolled .header-divider-line { background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06) 20%, rgba(0,0,0,0.06) 80%, transparent); }
+
+    .acm-logo { transition: opacity 0.3s ease; }
+    .acm-logo:hover { opacity: 0.8; }
+    .header-logo-bg { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border-radius: 6px; }
+    .header-scrolled .header-logo-bg { background: rgba(0, 20, 65, 0.06); }
+    .header-logo-text { color: white; }
+    .header-scrolled .header-logo-text { color: rgb(28, 25, 23); }
+    .header-logo-subtext { color: rgba(255,255,255,0.7); }
+    .header-scrolled .header-logo-subtext { color: rgba(28, 25, 23, 0.5); }
+
+    .header-nav-link { color: rgba(255,255,255,0.9); font-weight: 400; font-size: 0.875rem; letter-spacing: 0.02em; position: relative; padding: 0.5rem 0; transition: color 0.3s ease; }
+    .header-scrolled .header-nav-link { color: rgba(28,25,23,0.8); }
+    .header-nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s cubic-bezier(0.4,0,0.2,1); }
+    .header-nav-link:hover { color: white; }
+    .header-scrolled .header-nav-link:hover { color: rgb(28,25,23); }
+    .header-nav-link:hover::after { width: 100%; }
+
+    .header-nav-charter-wrap { position: relative; }
+    .header-nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.5rem; min-width: 11rem; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-radius: 6px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; z-index: 50; }
+    .header-nav-charter-wrap:hover .header-nav-dropdown { opacity: 1; visibility: visible; }
+    .header-nav-dropdown a { display: block; padding: 0.5rem 1rem; font-size: 0.8125rem; color: rgba(28,25,23,0.85); transition: color 0.2s ease, background 0.2s ease; white-space: nowrap; }
+    .header-nav-dropdown a:hover { color: var(--color-olive); background: rgba(0,0,0,0.04); }
+    .header-nav-dropdown a:first-child { font-weight: 500; color: rgb(28,25,23); }
+
+    .header-link-button { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); padding: 0.375rem 1rem; transition: all 0.3s ease; }
+    .header-link-button:hover { color: white; border-color: rgba(255,255,255,0.5); }
+    .header-scrolled .header-link-button { color: rgba(28,25,23,0.6); border-color: rgba(28,25,23,0.2); }
+    .header-scrolled .header-link-button:hover { color: rgb(28,25,23); border-color: rgba(28,25,23,0.4); }
+
+    .header-desktop-menu-btn svg, .header-mobile-btn svg { color: white; transition: color 0.3s ease; }
+    .header-scrolled .header-desktop-menu-btn svg, .header-scrolled .header-mobile-btn svg { color: rgb(28,25,23); }
+
+    .header-lang-link { font-size: 0.6875rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); transition: color 0.3s ease; }
+    .header-lang-active { color: rgba(255,255,255,0.9) !important; }
+    .header-scrolled .header-lang-link { color: rgba(28,25,23,0.35); }
+    .header-scrolled .header-lang-active { color: rgb(28,25,23) !important; }
+    .header-lang-sep { color: rgba(255,255,255,0.2); font-size: 0.6875rem; }
+    .header-scrolled .header-lang-sep { color: rgba(28,25,23,0.2); }
+
+    .header-top-right { transition: opacity 0.4s ease; }
+    .header-scrolled .header-top-right { opacity: 0; pointer-events: none; }
+
+    /* Desktop flyout */
+    #desktop-menu { transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
+    #desktop-menu.show { transform: translateX(0); }
+    #desktop-menu-backdrop { pointer-events: none; }
+    #desktop-menu-backdrop.show { opacity: 1; pointer-events: auto; }
+    #desktop-menu .desktop-menu-nav .desktop-menu-link { opacity: 0; transform: translateX(-10px); transition: opacity 0.25s ease, transform 0.25s ease, color 0.2s ease; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link { opacity: 1; transform: translateX(0); }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(1) { transition-delay: 0.05s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(2) { transition-delay: 0.1s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(3) { transition-delay: 0.15s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(4) { transition-delay: 0.2s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(5) { transition-delay: 0.25s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(6) { transition-delay: 0.3s; }
+    .desktop-menu-link { font-size: 0.9375rem; }
+    .desktop-menu-link:hover { color: var(--color-olive) !important; }
+
+    /* Mobile */
+    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, opacity 0.3s ease; opacity: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); }
+    #mobile-menu.mobile-menu-open { max-height: 500px; opacity: 1; }
+    .mobile-menu-link { font-size: 0.9375rem; color: rgb(28,25,23); transition: color 0.2s ease; }
+    .mobile-menu-link:hover { color: var(--color-olive); }
+    @media (max-width: 1024px) { #mobile-menu:not(.hidden) { display: block; } }
+
+    /* Buttons */
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 2rem; background: var(--color-olive); color: white; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.05em; transition: var(--transition-base); min-width: 200px; text-align: center; }
+    .btn-primary:hover { background: var(--color-olive-dark); }
+    .btn-outline { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 2rem; border: 1px solid rgba(28,25,23,0.2); color: rgb(28,25,23); font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.05em; transition: var(--transition-base); min-width: 200px; text-align: center; }
+    .btn-outline:hover { border-color: var(--color-olive); color: var(--color-olive); }
+    .btn-overlay-white { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 2rem; border: 1px solid rgba(255,255,255,0.4); color: white; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.05em; transition: var(--transition-base); backdrop-filter: blur(4px); background: rgba(255,255,255,0.05); }
+    .btn-overlay-white:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.6); }
+
+    .link-arrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.03em; color: var(--color-olive); transition: gap 0.3s ease, color 0.3s ease; }
+    .link-arrow:hover { gap: 0.75rem; color: var(--color-olive-dark); }
+
+    /* Scroll to top */
+    #scroll-to-top { position: fixed; bottom: 2rem; right: 2rem; z-index: 40; width: 44px; height: 44px; background: white; border: 1px solid rgba(0,0,0,0.08); color: var(--color-olive); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    #scroll-to-top svg { width: 18px; height: 18px; stroke-width: 2; }
+    #scroll-to-top.visible { opacity: 1; visibility: visible; }
+    #scroll-to-top:hover { background: var(--color-olive); color: white; border-color: var(--color-olive); }
+
+    /* Footer */
+    .language-btn { color: rgba(28,25,23,0.4); font-size: 0.8125rem; letter-spacing: 0.05em; }
+    .language-btn.active { color: var(--color-olive); font-weight: 600; }
+    .footer-safe { padding-bottom: env(safe-area-inset-bottom); }
+
+    /* News-specific */
+    .news-card {
+      background: white;
+      border: 1px solid rgba(0, 20, 65, 0.08);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    }
+    .news-card-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+    @media (min-width: 640px) {
+      .news-card-body {
+        padding: 1.625rem 1.75rem 1.875rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .news-card-body {
+        padding: 1.75rem 2rem 2rem;
+      }
+    }
+    .news-featured-body {
+      padding: 2rem 0 0;
+    }
+    @media (min-width: 1024px) {
+      .news-featured-body {
+        padding: 1rem 0.5rem 1rem 0;
+      }
+    }
+    .news-card:hover {
+      border-color: rgba(0, 20, 65, 0.12);
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
+    }
+    .news-card img {
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .news-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .news-category-pill {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+      border: 1px solid rgba(0, 20, 65, 0.15);
+      padding: 0.25rem 0.75rem;
+      transition: var(--transition-base);
+    }
+
+    .filter-btn {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(28, 25, 23, 0.5);
+      border: 1px solid rgba(28, 25, 23, 0.12);
+      padding: 0.375rem 1rem;
+      transition: var(--transition-base);
+      cursor: pointer;
+      background: transparent;
+    }
+    .filter-btn:hover {
+      color: var(--color-olive);
+      border-color: var(--color-olive);
+    }
+    .filter-btn.active {
+      color: white;
+      background: var(--color-olive);
+      border-color: var(--color-olive);
+    }
+
+    .news-date {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(28, 25, 23, 0.4);
+      font-weight: 500;
+    }
+
+    @media (max-width: 767px) {
+      .content-box-outer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      #hero img { border-radius: 0; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .content-box-outer { padding-left: 3rem; padding-right: 3rem; }
+    }
+</style>
+<link href="../../mobile-qa.css" rel="stylesheet"/>
+<style id="acm-news-single-styles">.article-shell h1,
+.article-shell h2,
+.article-shell h3 {
+  letter-spacing: 0.02em;
+}
+.article-lead p,
+.article-copy p {
+  color: #57534e;
+}
+.article-lead p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #44403c;
+}
+.article-copy p {
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+.article-copy p + p {
+  margin-top: 1.25rem;
+}
+.article-copy a,
+.article-lead a {
+  color: var(--color-olive);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.article-copy a:hover,
+.article-lead a:hover {
+  color: var(--color-olive-dark);
+}
+.article-figure {
+  width: 100%;
+  border: 1px solid rgba(0, 20, 65, 0.08);
+  background: white;
+}
+.article-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  color: var(--color-olive);
+}
+.article-back-link:hover {
+  color: var(--color-olive-dark);
+}</style></head>
+<body class="font-sans text-stone-800 antialiased"><!-- Generated by scripts/import_acm_news.py -->
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 z-50 w-full" id="header">
+<div class="w-full px-6 sm:px-8 lg:px-10">
+<div class="flex items-center justify-center h-16 lg:h-20 header-logo-row relative transition-all duration-400">
+<button aria-expanded="false" aria-label="Open menu" class="hidden lg:block absolute left-0 p-2 header-desktop-menu-btn" id="desktop-menu-btn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div class="header-top-right hidden lg:flex absolute right-0 items-center gap-6">
+<div class="header-lang-switcher flex items-center gap-1 text-sm">
+<a class="header-lang-link" data-lang="de" href="../../news/global-7500-erweitert-die-acm-air-charter-flotte.html">DE</a>
+<span aria-hidden="true" class="header-lang-sep">|</span>
+<a class="header-lang-link header-lang-active" data-lang="en" href="global-7500-erweitert-die-acm-air-charter-flotte.html">EN</a>
+</div>
+<a class="header-link-button whitespace-nowrap" href="../kontakt.html#zentrale">Get in touch</a>
+</div>
+<a aria-label="ACM AIR CHARTER Home" class="acm-logo-link hidden lg:block" href="../index.html">
+<img alt="ACM AIR CHARTER logo" class="acm-logo h-12 lg:h-14 w-auto transition-opacity duration-300" id="header-logo-img" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback'); if(f) f.style.display='flex';" src="../../logo.png" style="object-fit: contain; max-width: 160px;"/>
+<div class="flex items-center gap-2" id="header-logo-fallback" style="display: none;">
+<div class="header-logo-bg w-10 h-10 flex items-center justify-center">
+<span class="header-logo-text font-serif text-2xl">A</span>
+</div>
+<div class="hidden sm:block">
+<span class="header-logo-text font-serif text-lg tracking-wide block leading-tight">ACM</span>
+<span class="header-logo-subtext text-[9px] font-light tracking-wider uppercase block mt-0.5">Air Charter</span>
+</div>
+</div>
+</a>
+<a aria-label="ACM AIR CHARTER Home" class="acm-logo-link lg:hidden" href="../index.html">
+<img alt="ACM AIR CHARTER logo" class="acm-logo h-10 sm:h-12 w-auto transition-opacity duration-300" id="header-logo-img-mobile" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback-mobile'); if(f) f.style.display='flex';" src="../../logo.png" style="object-fit: contain;"/>
+<div class="flex items-center gap-2" id="header-logo-fallback-mobile" style="display: none;">
+<div class="header-logo-bg w-8 h-8 flex items-center justify-center">
+<span class="header-logo-text font-serif text-xl">A</span>
+</div>
+</div>
+</a>
+<button aria-expanded="false" aria-label="Open menu" class="lg:hidden absolute right-0 p-2 header-mobile-btn" id="mobile-menu-btn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<div aria-hidden="true" class="header-divider-line"></div>
+<div class="flex items-center justify-center h-14 lg:h-16 relative header-nav-row transition-all duration-400">
+<nav aria-label="Main navigation" class="hidden lg:flex items-center gap-[10rem] justify-center header-nav-visible" id="desktop-nav">
+<a class="header-nav-link" href="../thats-acm.html">That's ACM</a>
+<div class="header-nav-charter-wrap">
+<a class="header-nav-link" href="../charter.html">Charter</a>
+<div aria-label="Charter submenu" class="header-nav-dropdown">
+<a href="../charter.html">Charter</a>
+<a href="../global-7500.html">Global 7500</a>
+<a href="../global-6000.html">Global 6000</a>
+<a href="../global-xrs.html">Global XRS</a>
+</div>
+</div>
+<a class="header-nav-link" href="../aircraft-management.html">Aircraft Management</a>
+<a class="header-nav-link" href="../maintenance.html">Maintenance</a>
+<a class="header-nav-link" href="../kontakt.html">Contact</a>
+<a class="header-nav-link" href="../karriere.html">Careers</a>
+</nav>
+</div>
+</div>
+<div class="hidden lg:block fixed top-0 left-0 h-screen w-80 bg-white z-[100] transform -translate-x-full" id="desktop-menu">
+<div class="h-screen overflow-y-auto">
+<div class="p-6 flex items-center justify-between">
+<img alt="ACM AIR CHARTER logo" class="h-10 w-auto" onerror="this.style.display='none'" src="../../logo.png"/>
+<button aria-label="Close menu" class="p-2 hover:bg-stone-100 rounded-lg transition-colors" id="desktop-menu-close">
+<svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<nav class="p-6 space-y-1 desktop-menu-nav">
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="../thats-acm.html">That's ACM</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="../charter.html">Charter</a>
+<a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="../global-7500.html" style="font-size: 0.85rem;">Bombardier Global 7500</a>
+<a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="../global-6000.html" style="font-size: 0.85rem;">Bombardier Global 6000</a>
+<a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="../global-xrs.html" style="font-size: 0.85rem;">Bombardier Global XRS</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="../aircraft-management.html">Aircraft Management</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="../maintenance.html">Maintenance</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="../karriere.html">Careers</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="../news.html">News</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="../kontakt.html">Contact</a>
+</nav>
+</div>
+</div>
+<div class="hidden lg:block fixed top-0 left-0 right-0 bottom-0 bg-black/20 backdrop-blur-sm z-[99] opacity-0 transition-opacity duration-300" id="desktop-menu-backdrop"></div>
+<div class="lg:hidden hidden" id="mobile-menu">
+<nav class="max-w-7xl mx-auto px-6 py-6 space-y-1 mobile-menu-nav">
+<a class="mobile-menu-link block py-3" href="../thats-acm.html">That's ACM</a>
+<a class="mobile-menu-link block py-3" href="../charter.html">Charter</a>
+<a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="../global-7500.html" style="font-size: 0.9rem;">Global 7500</a>
+<a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="../global-6000.html" style="font-size: 0.9rem;">Global 6000</a>
+<a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="../global-xrs.html" style="font-size: 0.9rem;">Global XRS</a>
+<a class="mobile-menu-link block py-3" href="../aircraft-management.html">Aircraft Management</a>
+<a class="mobile-menu-link block py-3" href="../maintenance.html">Maintenance</a>
+<a class="mobile-menu-link block py-3" href="../karriere.html">Careers</a>
+<a class="mobile-menu-link block py-3" href="../news.html">News</a>
+<a class="mobile-menu-link block py-3" href="../kontakt.html">Contact</a>
+<div class="pt-4 mt-2 border-t border-stone-100 flex items-center">
+<a class="text-sm font-semibold text-stone-500 hover:text-olive transition-colors" href="../../news.html">DE</a>
+</div>
+</nav>
+</div>
+</header>
+<!-- Scroll to Top -->
+<button aria-label="Scroll to top" id="scroll-to-top">
+<svg fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 15l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+<main class="article-shell pt-32 lg:pt-40">
+<section class="pb-6 sm:pb-8">
+<div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+<a class="article-back-link scroll-reveal" href="../news.html">
+<span aria-hidden="true">&larr;</span>
+<span>Back to the news overview</span>
+</a>
+</div>
+</section>
+<section class="pb-8 sm:pb-10 lg:pb-12">
+<div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+<p class="section-label mb-4 scroll-reveal">News &middot; Archive story &middot; Fleet</p>
+<h1 class="font-serif text-stone-900 font-light text-3xl sm:text-4xl lg:text-[3.2rem] leading-[1.08] scroll-reveal">Global 7500 expands the ACM AIR CHARTER fleet</h1>
+<div class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-stone-500 scroll-reveal">
+<time datetime="2021-03-19">March 19, 2021</time>
+</div>
+</div>
+</section>
+<section class="pb-14 lg:pb-16">
+<div class="max-w-3xl mx-auto px-6 sm:px-8 lg:px-12">
+<figure class="article-figure overflow-hidden scroll-reveal">
+<div class="aspect-[21/9] overflow-hidden bg-stone-200">
+<img alt="Global 7500 expands the ACM AIR CHARTER fleet" class="w-full h-full object-cover object-center" fetchpriority="high" src="../../Fotos/news/global-7500-erweitert-die-acm-air-charter-flotte.jpg"/>
+</div>
+</figure>
+</div>
+</section>
+<section class="pb-20 lg:pb-24">
+<article class="max-w-3xl mx-auto px-6 sm:px-8 lg:px-12">
+<div class="article-lead scroll-reveal">
+<p>Rheinm&uuml;nster, Germany &ndash; The first Bombardier Global 7500 has now been added to the managed aircraft fleet. The jet was delivered in January 2021 and was today approved for charter flights by the Federal Aviation Office (LBA) on the AOC (Aircraft Operating Certificate).</p>
+</div>
+<div class="article-copy mt-10 scroll-reveal">
+<p>The Global 7500 is the new flagship of the Business Aviation. The aircraft is an industry leader with a range of 14,200 kilometers. The top speed of 980 km/h and &ndash; thanks to a new wing design &ndash; exceptionally good performance on short runways are just two aspects that are unparalleled in business aviation.</p><p>&ldquo;We have many years of experience in operating Bombardier Global XRS and Global 6000 and are very pleased to now be adding the innovative Global 7500 as the sixth aircraft of this Bombardier type to our fleet,&rdquo; says Thomas Minninger, CEO of ACM AIR CHARTER.</p><p>The special quality of the Global 7500 lies particularly in its comfort. The cabin is 3.43 meters longer than the original Global model. This makes it the only business jet that has four real living areas, including a master suite with a double bed, a crew suite and a kitchen.</p>
+</div>
+</article>
+</section>
+<section class="py-16 lg:py-20 bg-stone-100/80 border-y border-stone-200/80">
+<div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center scroll-reveal">
+<h2 class="font-serif text-stone-900 text-3xl lg:text-4xl font-light mb-4">Contact our team.</h2>
+<p class="text-stone-500 mb-10 max-w-2xl mx-auto leading-relaxed">Our team is available directly for questions about charter, aircraft management or maintenance.</p>
+<div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+<a class="btn-primary" href="../kontakt.html#zentrale">Get in touch</a>
+<a class="btn-outline" href="../charter.html">Request charter</a>
+</div>
+</div>
+</section>
+<section class="py-16 lg:py-24 bg-white">
+<div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+<h2 class="font-serif text-stone-900 text-3xl font-light mb-12 text-center scroll-reveal">More from the archive</h2>
+<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
+<article class="news-card scroll-reveal flex flex-col overflow-hidden">
+<a class="block" href="is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.html">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="IS-BAH Stage 2 certification from ACM Business Aviation Handling GmbH" class="w-full h-full object-cover" loading="lazy" src="../../Fotos/news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.jpg"/>
+</div>
+</a>
+<div class="news-card-body">
+<div class="flex items-center gap-3 mb-3">
+<span class="news-category-pill">Handling</span>
+<span class="news-date">March 19, 2024</span>
+</div>
+<h3 class="font-serif text-stone-900 font-light mb-3" style="font-size: 1.45rem; line-height: 1.25;">
+<a class="hover:text-olive transition-colors" href="is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.html">IS-BAH Stage 2 certification from ACM Business Aviation Handling GmbH</a>
+</h3>
+<p class="text-stone-500 text-sm leading-relaxed mb-5 line-clamp-3 flex-1">On March 5th, our partner company, ACM Business Aviation Handling GmbH, successfully received the IS-BAH Stage 2 certification.</p>
+<a class="link-arrow mt-auto" href="is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.html">Read more <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a>
+</div>
+</article>
+<article class="news-card scroll-reveal flex flex-col overflow-hidden">
+<a class="block" href="acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.html">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="ACM engineering successfully completes the first 120-month inspection of a Bombardier Global Express aircraft" class="w-full h-full object-cover" loading="lazy" src="../../Fotos/news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.jpg"/>
+</div>
+</a>
+<div class="news-card-body">
+<div class="flex items-center gap-3 mb-3">
+<span class="news-category-pill">Maintenance</span>
+<span class="news-date">February 20, 2023</span>
+</div>
+<h3 class="font-serif text-stone-900 font-light mb-3" style="font-size: 1.45rem; line-height: 1.25;">
+<a class="hover:text-olive transition-colors" href="acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.html">ACM engineering successfully completes the first 120-month inspection of a Bombardier Global Express aircraft</a>
+</h3>
+<p class="text-stone-500 text-sm leading-relaxed mb-5 line-clamp-3 flex-1">For the Bombardier Global XRS, the 10-year check is the largest and most comprehensive maintenance event performed on this aircraft type. This inspection, also known as a 120-month check or 8C check, includes a comprehensive inspection of the aircraft's airframe and structure as well as all systems and components.</p>
+<a class="link-arrow mt-auto" href="acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.html">Read more <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a>
+</div>
+</article>
+<article class="news-card scroll-reveal flex flex-col overflow-hidden">
+<a class="block" href="zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte.html">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="Second Bombardier Global 7500 expands the ACM AIR CHARTER fleet" class="w-full h-full object-cover" loading="lazy" src="../../Fotos/news/zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte.jpg"/>
+</div>
+</a>
+<div class="news-card-body">
+<div class="flex items-center gap-3 mb-3">
+<span class="news-category-pill">Fleet</span>
+<span class="news-date">January 20, 2023</span>
+</div>
+<h3 class="font-serif text-stone-900 font-light mb-3" style="font-size: 1.45rem; line-height: 1.25;">
+<a class="hover:text-olive transition-colors" href="zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte.html">Second Bombardier Global 7500 expands the ACM AIR CHARTER fleet</a>
+</h3>
+<p class="text-stone-500 text-sm leading-relaxed mb-5 line-clamp-3 flex-1">ACM operates the largest fleet in the &ldquo;Long Range&rdquo; aircraft category in Germany</p>
+<a class="link-arrow mt-auto" href="zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte.html">Read more <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a>
+</div>
+</article>
+</div>
+<p class="text-center mt-12 scroll-reveal">
+<a class="article-back-link" href="../news.html">
+<span aria-hidden="true">&larr;</span>
+<span>Back to the news overview</span>
+</a>
+</p>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 mb-14 lg:mb-16">
+<div class="lg:max-w-sm">
+<img alt="ACM AIR CHARTER logo" class="h-14 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="../../logo.png"/>
+<div style="display: none;">
+<span class="font-serif text-2xl text-stone-900 tracking-wide">ACM AIR CHARTER</span>
+</div>
+<p class="text-stone-500 text-sm leading-relaxed">
+            Integrated Business Aviation &ndash; charter, management, maintenance under one roof.
+          </p>
+</div>
+<div class="lg:text-right">
+<address class="not-italic text-sm leading-relaxed text-stone-600 mb-4">
+            ACM AIR CHARTER GmbH<br/>
+            Am Flughafen 12, 77836 Rheinm&uuml;nster
+          </address>
+<div class="space-y-1 text-sm">
+<a class="block text-olive hover:text-olive-dark transition-colors" href="tel:+497229304050">+49 7229 30405-0</a>
+<a class="block text-olive hover:text-olive-dark transition-colors" href="mailto:info@acm.aero">info@acm.aero</a>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-12 py-10 border-t border-stone-200">
+<div>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Services</h4>
+<ul class="space-y-2.5 text-sm">
+<li><a class="hover:text-olive transition-colors" href="../charter.html">Charter</a></li>
+<li><a class="hover:text-olive transition-colors" href="../aircraft-management.html">Aircraft Management</a></li>
+<li><a class="hover:text-olive transition-colors" href="../maintenance.html">Maintenance</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Company</h4>
+<ul class="space-y-2.5 text-sm">
+<li><a class="hover:text-olive transition-colors" href="../thats-acm.html">This is ACM</a></li>
+<li><a class="hover:text-olive transition-colors" href="../karriere.html">Careers</a></li>
+<li><a class="hover:text-olive transition-colors" href="../news.html">News</a></li>
+<li><a class="hover:text-olive transition-colors" href="../kontakt.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Legal</h4>
+<ul class="space-y-2.5 text-sm">
+<li><a class="hover:text-olive transition-colors" href="#">Legal Notice</a></li>
+<li><a class="hover:text-olive transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-olive transition-colors" href="#">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Follow us</h4>
+<div class="flex items-center gap-4 mb-6">
+<a aria-label="LinkedIn" class="text-stone-400 hover:text-olive transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<a aria-label="Instagram" class="text-stone-400 hover:text-olive transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+<div class="mb-6">
+<img alt="IS-BAO Registered Company Stage 3" class="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300" onerror="this.style.display='none';" src="../../is-bao-registered-company-stages3-01.png" title="IS-BAO Registered Company Stage 3"/>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<a aria-label="German language" class="language-btn px-2 py-1 transition-all duration-200" data-lang="de" href="../../news/global-7500-erweitert-die-acm-air-charter-flotte.html" id="lang-de">DE</a>
+<span class="text-stone-400">|</span>
+<a aria-label="English language" class="language-btn px-2 py-1 transition-all duration-200 active" data-lang="en" href="global-7500-erweitert-die-acm-air-charter-flotte.html" id="lang-en">EN</a>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-stone-200">
+<p class="text-center text-stone-500 text-sm">
+          &copy; 2026 ACM AIR CHARTER GmbH. All rights reserved.
+        </p>
+</div>
+</div>
+</footer>
+<script>    /* Header: scroll, menus, language */
+    const desktopMenuBtn = document.getElementById('desktop-menu-btn');
+    const desktopMenuClose = document.getElementById('desktop-menu-close');
+    const desktopMenu = document.getElementById('desktop-menu');
+    const desktopMenuBackdrop = document.getElementById('desktop-menu-backdrop');
+
+    function openDesktopMenu() {
+      if (!desktopMenu || !desktopMenuBackdrop) return;
+      desktopMenu.classList.remove('hidden');
+      desktopMenuBackdrop.classList.remove('hidden');
+      requestAnimationFrame(() => { requestAnimationFrame(() => { desktopMenu.classList.add('show'); desktopMenuBackdrop.classList.add('show'); }); });
+      desktopMenuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDesktopMenu() {
+      if (!desktopMenu || !desktopMenuBackdrop) return;
+      desktopMenu.classList.remove('show'); desktopMenuBackdrop.classList.remove('show');
+      desktopMenuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      setTimeout(() => { desktopMenu.classList.add('hidden'); desktopMenuBackdrop.classList.add('hidden'); }, 350);
+    }
+    if (desktopMenuBtn) desktopMenuBtn.addEventListener('click', openDesktopMenu);
+    if (desktopMenuClose) desktopMenuClose.addEventListener('click', closeDesktopMenu);
+    if (desktopMenuBackdrop) desktopMenuBackdrop.addEventListener('click', closeDesktopMenu);
+    if (desktopMenu) { desktopMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => closeDesktopMenu()); }); }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && desktopMenu && desktopMenu.classList.contains('show')) closeDesktopMenu(); });
+
+    const header = document.getElementById('header');
+    function updateHeader() {
+      if (window.pageYOffset > 20) { header.classList.add('header-scrolled'); } else { header.classList.remove('header-scrolled'); if (desktopMenu && desktopMenu.classList.contains('show')) closeDesktopMenu(); }
+    }
+    window.addEventListener('scroll', updateHeader);
+    updateHeader();
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    (function setActiveLang() {
+      const lang = (document.documentElement.lang || 'de').toLowerCase().startsWith('en') ? 'en' : 'de';
+      document.querySelectorAll('.header-lang-link').forEach(function (a) {
+        if ((a.getAttribute('data-lang') || '').toLowerCase() === lang) {
+          a.classList.add('header-lang-active');
+        } else {
+          a.classList.remove('header-lang-active');
+        }
+      });
+    })();
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          mobileMenu.classList.remove('mobile-menu-open');
+          setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenuBtn.setAttribute('aria-expanded', 'false'); }, 300);
+        } else {
+          mobileMenu.classList.remove('hidden'); mobileMenuBtn.setAttribute('aria-expanded', 'true');
+          requestAnimationFrame(() => { requestAnimationFrame(() => { mobileMenu.classList.add('mobile-menu-open'); }); });
+        }
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.remove('mobile-menu-open'); setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenuBtn.setAttribute('aria-expanded', 'false'); }, 300); }); });
+    }
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href'); if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) { e.preventDefault(); const headerHeight = header.offsetHeight; window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20, behavior: 'smooth' }); }
+      });
+    });
+
+    /* Scroll-reveal */
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+    }
+
+    /* Scroll to top */
+    function initScrollToTop() {
+      const scrollToTopBtn = document.getElementById('scroll-to-top'); if (!scrollToTopBtn) return;
+      function toggleScrollToTop() { if (window.scrollY > 300) { scrollToTopBtn.classList.add('visible'); } else { scrollToTopBtn.classList.remove('visible'); } }
+      scrollToTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      window.addEventListener('scroll', toggleScrollToTop, { passive: true }); toggleScrollToTop();
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initScrollToTop); } else { initScrollToTop(); }
+
+    /* Category filter + Load more */
+    (function initNewsGrid() {
+      const filterBtns = document.querySelectorAll('#news-filters .filter-btn');
+      const articles = () => document.querySelectorAll('#news-articles article');
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      const loadMoreWrap = document.getElementById('load-more-wrap');
+      const LOAD_BATCH = 3;
+      let revealObserver = null;
+      if ('IntersectionObserver' in window) {
+        revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      }
+
+      function applyNewsFilter() {
+        const active = document.querySelector('#news-filters .filter-btn.active');
+        const filter = active ? active.getAttribute('data-filter') : 'all';
+        articles().forEach(article => {
+          if (article.classList.contains('news-load-more-item') && article.classList.contains('hidden')) {
+            article.style.display = 'none';
+            return;
+          }
+          const match = filter === 'all' || article.getAttribute('data-category') === filter;
+          article.style.display = match ? '' : 'none';
+        });
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          applyNewsFilter();
+        });
+      });
+
+      function pendingLoadMore() {
+        return Array.from(document.querySelectorAll('#news-articles article.news-load-more-item.hidden'));
+      }
+
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function () {
+          const batch = pendingLoadMore().slice(0, LOAD_BATCH);
+          batch.forEach(article => {
+            article.classList.remove('hidden');
+            if (revealObserver) {
+              article.classList.remove('revealed');
+              revealObserver.observe(article);
+            } else {
+              article.classList.add('revealed');
+            }
+          });
+          applyNewsFilter();
+          if (pendingLoadMore().length === 0) {
+            if (loadMoreWrap) loadMoreWrap.classList.add('hidden');
+          } else {
+            loadMoreBtn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      }
+    })();
+  
+</script>
+<script defer="" src="../../nav-active.js"></script>
+<!-- ACM NEWS ARCHIVE SCRIPT START -->
+<script id="acm-news-archive-script">
+  (function initArchiveLoadMore() {
+    const archive = document.getElementById('news-archive-section');
+    if (!archive) return;
+
+    const loadMoreBtn = document.getElementById('news-archive-load-more-btn');
+    const loadMoreWrap = document.getElementById('news-archive-load-more-wrap');
+    if (!loadMoreBtn) return;
+
+    const LOAD_BATCH = 3;
+    let revealObserver = null;
+    if ('IntersectionObserver' in window) {
+      revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }
+
+    function pendingItems() {
+      return Array.from(document.querySelectorAll('#news-archive-articles article.archive-load-more-item.hidden'));
+    }
+
+    loadMoreBtn.addEventListener('click', function () {
+      const batch = pendingItems().slice(0, LOAD_BATCH);
+      batch.forEach((article) => {
+        article.classList.remove('hidden');
+        if (revealObserver) {
+          article.classList.remove('revealed');
+          revealObserver.observe(article);
+        } else {
+          article.classList.add('revealed');
+        }
+      });
+
+      if (pendingItems().length === 0 && loadMoreWrap) {
+        loadMoreWrap.classList.add('hidden');
+      } else {
+        loadMoreBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  })();
+</script>
+<!-- ACM NEWS ARCHIVE SCRIPT END -->
+</body>
+</html>

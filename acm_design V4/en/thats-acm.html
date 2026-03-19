@@ -63,7 +63,7 @@
       --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.07);
     }
 
-    /* Scrollbar – an Website-Design angepasst */
+    /* Scrollbar â€“ an Website-Design angepasst */
     html {
       scrollbar-width: thin;
       scrollbar-color: rgba(0, 20, 65, 0.35) #f5f5f4;
@@ -827,7 +827,7 @@
       transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    /* Stromlinien – Kondensstreifen-Effekt */
+    /* Stromlinien â€“ Kondensstreifen-Effekt */
     .streamlines-container {
       opacity: 1;
       width: 100%;
@@ -858,12 +858,12 @@
     @media (max-width: 768px) {
       .streamline { opacity: 0.6; }
     }
-    /* Stromlinien auf hellem Hintergrund (CTA) – dunklere Linien */
+    /* Stromlinien auf hellem Hintergrund (CTA) â€“ dunklere Linien */
     .streamlines-dark .streamline {
       background: linear-gradient(90deg, transparent 0%, rgba(120, 113, 108, 0.25) 10%, rgba(120, 113, 108, 0.45) 50%, rgba(120, 113, 108, 0.25) 90%, transparent 100%);
     }
     
-    /* ── Horizontal Timeline ── */
+    /* â”€â”€ Horizontal Timeline â”€â”€ */
     .htl-section {
       position: relative;
       overflow: hidden;
@@ -1150,7 +1150,7 @@
 </div>
 </section>
 <!-- ============================================
-         2. INTRODUCTION – COMPANY POSITIONING
+         2. INTRODUCTION â€“ COMPANY POSITIONING
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32 bg-sand-50">
 <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -1169,7 +1169,7 @@
 </div>
 </div>
 </section>
-<!-- Fullwidth Image Break – Hangar mit CTA -->
+<!-- Fullwidth Image Break â€“ Hangar mit CTA -->
 <section class="relative h-[45vh] sm:h-[55vh] overflow-hidden">
 <img alt="ACM &ndash; Business Aviation in detail" class="w-full h-full object-cover" decoding="async" height="1080" loading="lazy" src="../Fotos/Neu/Detail_Flugzeug.jpg" width="1920"/>
 <div class="absolute inset-0 opacity-100" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
@@ -1181,7 +1181,7 @@
 </div>
 </section>
 <!-- ============================================
-         3. HISTORY – HORIZONTAL TIMELINE
+         3. HISTORY â€“ HORIZONTAL TIMELINE
          ============================================ -->
 <section aria-label="Company history" class="htl-section py-20 sm:py-28 lg:py-32 bg-white px-[5rem]" id="htl-section">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -1451,7 +1451,7 @@
 </div>
 </div>
 </section>
-<!-- Fullwidth Image Break – Sprechen Sie mit uns -->
+<!-- Fullwidth Image Break â€“ Sprechen Sie mit uns -->
 <section class="relative h-[45vh] sm:h-[55vh] overflow-hidden">
 <img alt="ACM Pilots in the cockpit during flight operations" class="w-full h-full object-cover" decoding="async" height="1080" loading="lazy" src="../Fotos/ACM - Allgemein/MKA1481.jpg" width="1920"/>
 <div class="absolute inset-0 opacity-100" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
@@ -1570,7 +1570,7 @@
             </a>
 </div>
 </div>
-<!-- Image Side – linke Hälfte -->
+<!-- Image Side â€“ linke HÃ¤lfte -->
 <div class="relative h-[400px] lg:h-auto order-1 lg:order-1">
 <img alt="ACM home base at Baden-Airpark" class="img-no-filter absolute inset-0 w-full h-full object-cover" loading="lazy" src="../Fotos/Neu/Heimatbasis.jpg"/>
 </div>
@@ -1580,7 +1580,7 @@
          8. CLOSING CTA
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32 relative overflow-hidden" id="contact" style="background-color: rgb(250 248 245);">
-<!-- Stromlinien (dunkel für hellen Hintergrund) -->
+<!-- Stromlinien (dunkel fÃ¼r hellen Hintergrund) -->
 <div class="streamlines-container streamlines-dark absolute inset-0 pointer-events-none z-0">
 <div class="streamline streamline-1"></div>
 <div class="streamline streamline-2"></div>
@@ -1900,7 +1900,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       resizeTimer = setTimeout(function() { goTo(active, true); }, 120);
     });
 
-    /* ── Scroll hijack (desktop) ── */
+    /* â”€â”€ Scroll hijack (desktop) â”€â”€ */
     var io = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (e.isIntersecting && e.intersectionRatio > 0.3) {
@@ -1941,7 +1941,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       }
     }, { passive: false });
 
-    /* ── Mouse drag: Timeline folgt der Maus in Echtzeit, beim Loslassen Snap ── */
+    /* â”€â”€ Mouse drag: Timeline folgt der Maus in Echtzeit, beim Loslassen Snap â”€â”€ */
     var dragStartX = 0;
     var dragBaseTranslate = 0;
     var isDragging = false;
@@ -1998,7 +1998,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       document.body.style.cursor = 'grabbing';
     });
 
-    /* ── Touch (mobile) ── */
+    /* â”€â”€ Touch (mobile) â”€â”€ */
     var touchStartX = 0;
     var touchStartY = 0;
     var touchMoved   = false;
@@ -2025,13 +2025,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       }
     }, { passive: true });
 
-    /* ── Keyboard ── */
+    /* â”€â”€ Keyboard â”€â”€ */
     section.addEventListener('keydown', function(e) {
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goTo(active + 1); }
       if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   { e.preventDefault(); goTo(active - 1); }
     });
 
-    /* ── Click on dot ── */
+    /* â”€â”€ Click on dot â”€â”€ */
     dots.forEach(function(d) {
       d.addEventListener('click', function() {
         goTo(parseInt(d.dataset.index, 10));
@@ -2045,6 +2045,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 <path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
 </button>
-<script defer="" src="../nav-active.js"></script>
+<script defer="" src="../nav-active.js?v=20260319"></script>
 </body>
 </html>
