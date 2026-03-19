@@ -1,0 +1,65 @@
+{
+  "base_url": "https://www.acm.aero",
+  "output_dir": "en",
+  "legacy_files": [
+    "ajax1.html",
+    "de-news.html"
+  ],
+  "pages": [
+    {
+      "filename": "index.html",
+      "public_de": "/index.html",
+      "public_en": "/en/index.html"
+    },
+    {
+      "filename": "charter.html",
+      "public_de": "/charter.html",
+      "public_en": "/en/charter.html"
+    },
+    {
+      "filename": "aircraft-management.html",
+      "public_de": "/aircraft-management.html",
+      "public_en": "/en/aircraft-management.html"
+    },
+    {
+      "filename": "maintenance.html",
+      "public_de": "/maintenance.html",
+      "public_en": "/en/maintenance.html"
+    },
+    {
+      "filename": "thats-acm.html",
+      "public_de": "/thats-acm.html",
+      "public_en": "/en/thats-acm.html"
+    },
+    {
+      "filename": "karriere.html",
+      "public_de": "/karriere.html",
+      "public_en": "/en/karriere.html"
+    },
+    {
+      "filename": "kontakt.html",
+      "public_de": "/kontakt.html",
+      "public_en": "/en/kontakt.html"
+    },
+    {
+      "filename": "news.html",
+      "public_de": "/news.html",
+      "public_en": "/en/news.html"
+    },
+    {
+      "filename": "global-7500.html",
+      "public_de": "/global-7500.html",
+      "public_en": "/en/global-7500.html"
+    },
+    {
+      "filename": "global-6000.html",
+      "public_de": "/global-6000.html",
+      "public_en": "/en/global-6000.html"
+    },
+    {
+      "filename": "global-xrs.html",
+      "public_de": "/global-xrs.html",
+      "public_en": "/en/global-xrs.html"
+    }
+  ]
+}

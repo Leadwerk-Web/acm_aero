@@ -6,3 +6,4 @@ Disallow: /BILDER-ANLEITUNG.md
 # Hauptseite erlauben
 Allow: /index.html
 Allow: /
+Sitemap: https://www.acm.aero/page-sitemap.xml

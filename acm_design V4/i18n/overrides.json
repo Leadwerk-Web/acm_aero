@@ -1,0 +1,29 @@
+{
+  "html_replacements": [
+    [
+      "Aircraft management",
+      "Aircraft Management"
+    ],
+    [
+      "Business aviation",
+      "Business Aviation"
+    ],
+    [
+      "Owner services",
+      "Owner Services"
+    ]
+  ],
+  "pages": {
+    "index.html": {
+      "text_exact": {
+        "Integrierte Business Aviation – Charter, Management, Wartung unter einem Dach.": "Integrated Business Aviation: charter, management and maintenance under one roof."
+      }
+    },
+    "karriere.html": {
+      "text_exact": {
+        "Business Aviation mit Struktur, Präzision und internationaler Reichweite – Operations, Maintenance, CAMO und Administration an einem der spezialisiertesten Standorte Deutschlands.": "Business Aviation with structure, precision and international reach: operations, maintenance, CAMO and administration at one of Germany's most specialized locations."
+      }
+    }
+  },
+  "text_exact": {}
+}
