@@ -29,7 +29,7 @@
 | `Fotos/Neu/Detail_Flugzeug.jpg` | JPG | thats-acm | Content |
 | `Fotos/Neu/Wartungsbasis.jpg` | JPG | thats-acm | Content |
 | `Fotos/Neu/Line_Maintenance.jpg` | JPG | thats-acm | Content |
-| `Fotos/Neu/Camo_Aufsicht.jpg` | JPG | thats-acm | Content |
+| `Fotos/Neu/Camo_Aufsicht.png` | PNG | thats-acm | Content |
 | `Fotos/Neu/Operations_Control.jpg` | JPG | thats-acm | Content |
 | `Fotos/Neu/Heimatbasis.jpg` | JPG | thats-acm | Content |
 | `Fotos/ACM - Allgemein/MKA1770.jpg` | JPG | karriere Banner | Banner |
@@ -43,7 +43,7 @@
 | `Fotos/D-APLC/*.jpg` | JPG | global-7500, charter, global-6000/xrs | Hero/Content/Galerie |
 | `Fotos/D-ABAY/*.jpg|.png` | JPG/PNG | global-6000, index, charter, karriere | Hero/Content/Flotte |
 | `Fotos/D-AGJP (alt)/*.jpg` | JPG | global-xrs, global-7500/6000 Flotte | Hero/Content/Galerie |
-| `Fotos/D-AMPG/*.jpg|.png` | JPG/PNG | index, charter | Content |
+| `Fotos/D-AMPG-7500/*.jpg|.png` | JPG/PNG | index, charter | Content |
 | `Fotos/Hangar/*.jpg|.png` | JPG/PNG | index, charter, maintenance, aircraft-management, kontakt | Content/Banner |
 | `Fotos/Just/*.png` | PNG | aircraft-management | Content |
 | `Fotos/Kontakt/*.jpg|.png` | JPG/PNG | kontakt (Profilbilder) | Content |
