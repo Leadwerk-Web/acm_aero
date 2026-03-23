@@ -8,7 +8,7 @@
 <meta content="index, follow" name="robots"/>
 <title>ACM AIR CHARTER | Private flights &amp; owner services from a single source</title>
 <link href="../Fotos/Favicon_xs.png" rel="icon" type="image/png"/>
-<!-- Google Fonts: Cormorant Garamond (Jumeirah-Style) + Inter für Body -->
+<!-- Google Fonts: Cormorant Garamond (Jumeirah-Style) + Inter fÃ¼r Body -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
@@ -66,7 +66,7 @@
       --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.07);
     }
     
-    /* Emblem über h2 – 35px Höhe, Olive (vorgegebene Farbe) */
+    /* Emblem Ã¼ber h2 â€“ 35px HÃ¶he, Olive (vorgegebene Farbe) */
     .section-emblem {
       height: 35px;
       width: auto;
@@ -90,7 +90,7 @@
       line-height: 1 !important;
     }
     
-    /* Hero Statement – eigene Schriftgröße */
+    /* Hero Statement â€“ eigene SchriftgrÃ¶ÃŸe */
     .hero-statement-section p {
       font-size: 40px !important;
     }
@@ -129,13 +129,13 @@
       border-width: 0 !important;
     }
     footer { border: none !important; background: linear-gradient(to right, transparent 0%, #e7e5e4 10vw, #e7e5e4 90vw, transparent 100%) no-repeat top / 100% 1px, #ffffff !important; }
-    /* Buttons: nur Standard-Buttons zurücksetzen, CTA-Buttons ausnehmen */
+    /* Buttons: nur Standard-Buttons zurÃ¼cksetzen, CTA-Buttons ausnehmen */
     button:not(.btn-filled):not(.btn-outline):not(.btn-primary):not(.btn-filled-white):not(.btn-outline-white) {
       border: none !important;
       border-width: 0 !important;
     }
     
-    /* Alle Abrundungen auf 0 – keine rounded corners (Bilder, Buttons, Cards, etc.) */
+    /* Alle Abrundungen auf 0 â€“ keine rounded corners (Bilder, Buttons, Cards, etc.) */
     *,
     *::before,
     *::after,
@@ -156,7 +156,7 @@
       scroll-behavior: smooth;
     }
     
-    /* Fließtext: einheitlich Inter 15px, 400, #666666 */
+    /* FlieÃŸtext: einheitlich Inter 15px, 400, #666666 */
     body {
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 15px;
@@ -207,7 +207,7 @@
     }
     
     /* Jumeirah-Style Header - Minimalistisch & Clean - Fixed Overlay */
-    /* Leichter dunkler Verlauf von oben nach unten für bessere Lesbarkeit des Textes */
+    /* Leichter dunkler Verlauf von oben nach unten fÃ¼r bessere Lesbarkeit des Textes */
     #header {
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.12) 60%, transparent 100%);
       border-bottom: none;
@@ -227,7 +227,7 @@
       padding-top: 0;
     }
     
-    /* Video/Bild muss wirklich bis ganz oben – Hero ohne Radius (Full Bleed) */
+    /* Video/Bild muss wirklich bis ganz oben â€“ Hero ohne Radius (Full Bleed) */
     #hero video,
     #hero img {
       top: 0;
@@ -249,18 +249,18 @@
       opacity: 1;
     }
     
-    /* Santorini-Stil: einheitlicher Filter über alle Bilder (weich, hell, mediterran) */
+    /* Santorini-Stil: einheitlicher Filter Ã¼ber alle Bilder (weich, hell, mediterran) */
     img:not(.acm-logo):not(.section-emblem) {
       filter: saturate(0.88) brightness(1.06) contrast(0.97);
     }
     
-    /* Image Zoom Effect - Subtle Hover Zoom für alle Bilder */
+    /* Image Zoom Effect - Subtle Hover Zoom fÃ¼r alle Bilder */
     img:not(.acm-logo):not(svg *) {
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
       will-change: transform;
     }
     
-    /* Zoom-Effekt für Bilder in Containern mit Overflow */
+    /* Zoom-Effekt fÃ¼r Bilder in Containern mit Overflow */
     .relative img:not(.acm-logo),
     section img:not(.acm-logo),
     article img:not(.acm-logo),
@@ -268,7 +268,7 @@
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    /* Container mit Overflow für Zoom-Effekt */
+    /* Container mit Overflow fÃ¼r Zoom-Effekt */
     .image-zoom-container {
       overflow: hidden;
       position: relative;
@@ -282,7 +282,7 @@
       transform: scale(1.05);
     }
     
-    /* Spezielle Hover-Effekte für verschiedene Bereiche */
+    /* Spezielle Hover-Effekte fÃ¼r verschiedene Bereiche */
     .aircraft-card:hover .aircraft-card-image {
       transform: scale(1.08);
     }
@@ -332,12 +332,12 @@
       transform: scale(1.05);
     }
     
-    /* Allgemeine Regel für alle Bilder in relative Containern */
+    /* Allgemeine Regel fÃ¼r alle Bilder in relative Containern */
     .relative img:not(.acm-logo) {
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    /* Services-Karten: Zoom nur bei Mouse-over über dem jeweiligen Bild */
+    /* Services-Karten: Zoom nur bei Mouse-over Ã¼ber dem jeweiligen Bild */
     #services img {
       transition: transform 0.5s ease;
       transform: none;
@@ -752,7 +752,7 @@
       }
     }
     
-    /* Header beim Scrollen - Sehr subtiler weißer Hintergrund + Schmaler */
+    /* Header beim Scrollen - Sehr subtiler weiÃŸer Hintergrund + Schmaler */
     .header-scrolled {
       background: rgba(255, 255, 255, 0.95) !important;
       backdrop-filter: blur(20px);
@@ -765,7 +765,7 @@
       border-bottom-color: rgba(0, 0, 0, 0.05);
     }
     
-    /* Header: Rechtsbündig Sprachauswahl + CTA (gleiche Höhe wie Logo) */
+    /* Header: RechtsbÃ¼ndig Sprachauswahl + CTA (gleiche HÃ¶he wie Logo) */
     .header-top-right {
       color: rgba(255, 255, 255, 0.95);
       transition: color 0.4s ease;
@@ -793,7 +793,7 @@
       opacity: 0.5;
       pointer-events: none;
     }
-    /* Dünne Linie zwischen Logo-Zeile und Navigation – nach links/rechts transparent */
+    /* DÃ¼nne Linie zwischen Logo-Zeile und Navigation â€“ nach links/rechts transparent */
     .header-divider-line {
       height: 1px;
       width: 100%;
@@ -904,13 +904,13 @@
       display: block;
       font-size: 0.875rem;
       line-height: 1.5;
-      color: rgb(120 113 108); /* stone-500 – gut lesbar auf hellem Grund */
+      color: rgb(120 113 108); /* stone-500 â€“ gut lesbar auf hellem Grund */
       padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0));
     }
     @media (max-width: 640px) {
       .footer-copyright {
-        font-size: 0.9375rem; /* etwas größer auf Mobile */
-        color: rgb(87 83 78); /* stone-600 – auf Mobile deutlicher sichtbar */
+        font-size: 0.9375rem; /* etwas grÃ¶ÃŸer auf Mobile */
+        color: rgb(87 83 78); /* stone-600 â€“ auf Mobile deutlicher sichtbar */
       }
     }
     
@@ -945,15 +945,15 @@
     
     /* ACM Logo Styles */
     .acm-logo {
-      filter: brightness(0) invert(1); /* Logo weiß machen für transparenten Header */
+      filter: brightness(0) invert(1); /* Logo weiÃŸ machen fÃ¼r transparenten Header */
       transition: filter 0.4s ease, opacity 0.4s ease;
     }
     
     .header-scrolled .acm-logo {
-      filter: brightness(0) invert(0); /* Logo dunkel machen für gescrollten Header */
+      filter: brightness(0) invert(0); /* Logo dunkel machen fÃ¼r gescrollten Header */
     }
     
-    /* Logo Aspect Ratio schützen */
+    /* Logo Aspect Ratio schÃ¼tzen */
     .acm-logo {
       object-fit: contain;
       height: auto;
@@ -1084,7 +1084,7 @@
       transform: translateY(-1px);
     }
     
-    /* Beim Scrollen - Dezenter Glossy-Effekt für gescrollten Header */
+    /* Beim Scrollen - Dezenter Glossy-Effekt fÃ¼r gescrollten Header */
     .header-scrolled .header-link-button {
       color: rgba(28, 25, 23, 0.85);
       background: rgba(255, 255, 255, 0.6);
@@ -1122,7 +1122,7 @@
       box-shadow: none;
     }
     
-    /* Burger-Menü-Button anzeigen wenn Header sticky wird (gescrollt) */
+    /* Burger-MenÃ¼-Button anzeigen wenn Header sticky wird (gescrollt) */
     #header.header-scrolled .header-desktop-menu-btn {
       opacity: 1;
       visibility: visible;
@@ -1159,10 +1159,10 @@
       pointer-events: none;
     }
     
-    /* Desktop Menu Styles – dezentes Einblenden beim Öffnen */
+    /* Desktop Menu Styles â€“ dezentes Einblenden beim Ã–ffnen */
     #desktop-menu {
       height: 100vh;
-      height: 100dvh; /* Dynamic viewport height für mobile Browser */
+      height: 100dvh; /* Dynamic viewport height fÃ¼r mobile Browser */
       top: 0;
       left: 0;
       box-shadow: none !important;
@@ -1177,7 +1177,7 @@
       opacity: 1;
     }
     
-    /* Inhalt des Burger-Menüs gestaffelt einblenden */
+    /* Inhalt des Burger-MenÃ¼s gestaffelt einblenden */
     #desktop-menu .desktop-menu-nav .desktop-menu-link {
       opacity: 0;
       transform: translateX(-8px);
@@ -1199,7 +1199,7 @@
     #desktop-menu-backdrop {
       pointer-events: none;
       height: 100vh;
-      height: 100dvh; /* Dynamic viewport height für mobile Browser */
+      height: 100dvh; /* Dynamic viewport height fÃ¼r mobile Browser */
     }
     
     #desktop-menu-backdrop.show {
@@ -1207,7 +1207,7 @@
       pointer-events: auto;
     }
     
-    /* Schrift im Burger-Menü dünner, dezenter */
+    /* Schrift im Burger-MenÃ¼ dÃ¼nner, dezenter */
     #desktop-menu,
     #desktop-menu .desktop-menu-link {
       font-weight: 300;
@@ -1223,7 +1223,7 @@
       padding-left: 0.5rem;
     }
     
-    /* Mobile Menu Button – vor Scrollen ausgeblendet, beim Scrollen sichtbar mit dunkler Farbe wie Desktop */
+    /* Mobile Menu Button â€“ vor Scrollen ausgeblendet, beim Scrollen sichtbar mit dunkler Farbe wie Desktop */
     .header-mobile-btn {
       color: white;
       transition: opacity 0.4s ease, visibility 0.4s ease, color 0.4s ease;
@@ -1239,7 +1239,7 @@
       color: rgb(28, 25, 23);
     }
     
-    /* Mobile Menu Styles – dezent Top-to-Down Einblendeffekt beim Aufklappen */
+    /* Mobile Menu Styles â€“ dezent Top-to-Down Einblendeffekt beim Aufklappen */
     #mobile-menu {
       border-top: 1px solid rgba(0, 0, 0, 0.05);
       background: rgba(255, 255, 255, 0.98);
@@ -1259,7 +1259,7 @@
       background: transparent;
     }
     
-    /* Menü-Links gestaffelt von oben nach unten einblenden */
+    /* MenÃ¼-Links gestaffelt von oben nach unten einblenden */
     .mobile-menu-nav .mobile-menu-link {
       opacity: 0;
       transform: translateY(-8px);
@@ -1315,7 +1315,7 @@
       border-radius: 0.5rem 0.5rem 0 0;
     }
     
-    /* Padding für Meta-Informationen und Überschrift */
+    /* Padding fÃ¼r Meta-Informationen und Ãœberschrift */
     #news .card-hover > a > div:not(:first-child) {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
@@ -1382,7 +1382,7 @@
       border-radius: 0.5rem;
     }
     
-    /* Relative-Wrapper für Section-Bilder */
+    /* Relative-Wrapper fÃ¼r Section-Bilder */
     #about .relative,
     #maintenance .relative,
     #management .relative,
@@ -1397,7 +1397,7 @@
       border-radius: 0.5rem;
     }
     
-    /* Alle Buttons: nur Rahmen, keine Füllung – Jumeirah Style */
+    /* Alle Buttons: nur Rahmen, keine FÃ¼llung â€“ Jumeirah Style */
     .btn-primary,
     .btn-outline,
     .btn-filled {
@@ -1434,7 +1434,7 @@
       transform: scale(0.98);
     }
     
-    /* Weiße Outline-Buttons (auf dunklem Hintergrund) – nur Rahmen */
+    /* WeiÃŸe Outline-Buttons (auf dunklem Hintergrund) â€“ nur Rahmen */
     .btn-outline-white,
     .btn-filled-white {
       display: inline-flex;
@@ -1486,7 +1486,7 @@
       background: #f5f5f4 !important;
     }
     
-    /* Einheitlicher dezenter Hover: weiche Übergänge für alle Buttons */
+    /* Einheitlicher dezenter Hover: weiche ÃœbergÃ¤nge fÃ¼r alle Buttons */
     .btn-primary,
     .btn-outline,
     .btn-filled,
@@ -1498,7 +1498,7 @@
       transition: opacity 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
     }
     
-    /* Dezenter CTA – Text Link Style */
+    /* Dezenter CTA â€“ Text Link Style */
     .cta-subtle {
       display: inline-flex;
       align-items: center;
@@ -1602,7 +1602,7 @@
       animation-delay: 0.3s;
     }
     
-    /* Intersection Observer für Scroll-Animationen */
+    /* Intersection Observer fÃ¼r Scroll-Animationen */
     .scroll-reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -1614,7 +1614,7 @@
       transform: translateY(0);
     }
     
-    /* Überschriften: Bressay Display, Old Standard TT, serif */
+    /* Ãœberschriften: Bressay Display, Old Standard TT, serif */
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Bressay Display', 'Old Standard TT', Georgia, serif;
       letter-spacing: -0.02em;
@@ -1649,7 +1649,7 @@
       border-radius: 0;
     }
     
-    /* Scroll-basierte Animation für Logo-Watermark */
+    /* Scroll-basierte Animation fÃ¼r Logo-Watermark */
     .acm-logo-watermark.scroll-reveal {
       opacity: 0;
       transform: translateY(60px) scale(0.95);
@@ -1661,7 +1661,7 @@
       filter: grayscale(100%) opacity(0.12);
     }
     
-    /* Verschiedene Positionen und Größen für Logo-Watermarks */
+    /* Verschiedene Positionen und GrÃ¶ÃŸen fÃ¼r Logo-Watermarks */
     .acm-logo-watermark.top-left {
       top: 5%;
       left: 5%;
@@ -1726,7 +1726,7 @@
       will-change: transform;
     }
     
-    /* Für dunkle Hintergründe */
+    /* FÃ¼r dunkle HintergrÃ¼nde */
     .acm-logo-watermark.dark-bg {
       filter: grayscale(100%) opacity(0.15);
       mix-blend-mode: screen;
@@ -1834,7 +1834,7 @@
       padding: 2rem;
     }
     
-    /* Scrollbar Styling für Modal */
+    /* Scrollbar Styling fÃ¼r Modal */
     .modal-content::-webkit-scrollbar {
       width: 8px;
     }
@@ -1852,7 +1852,7 @@
       background: rgba(0, 0, 0, 0.25);
     }
     
-    /* Starlink Pop-up - ACM Authorized Reseller (Clay Lacy–inspired) */
+    /* Starlink Pop-up - ACM Authorized Reseller (Clay Lacyâ€“inspired) */
     .starlink-popup-content {
       background: linear-gradient(135deg, #2c2419 0%, #1a1510 50%, #0f0d0a 100%);
       color: #fff;
@@ -1981,7 +1981,7 @@
     }
     
     .language-btn.active {
-      color: var(--color-olive) !important; /* ACM Navy für aktive Sprache */
+      color: var(--color-olive) !important; /* ACM Navy fÃ¼r aktive Sprache */
       font-weight: 600;
       background: transparent;
     }
@@ -2035,7 +2035,7 @@
       top: 0 !important;
     }
 
-    /* KOMMENTAR: Für Produktion - Google Fonts einbinden:
+    /* KOMMENTAR: FÃ¼r Produktion - Google Fonts einbinden:
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
     Dann font-serif durch 'Cormorant Garamond' ersetzen
     Und font-sans durch 'Inter' ersetzen
@@ -2049,15 +2049,15 @@
        ============================================ -->
 <header class="fixed top-0 left-0 right-0 z-50 w-full" id="header">
 <div class="w-full px-6 sm:px-8 lg:px-10">
-<!-- Logo Row - Mittig, mit Burger-Menü links wenn gescrollt, rechts Sprachauswahl + CTA -->
+<!-- Logo Row - Mittig, mit Burger-MenÃ¼ links wenn gescrollt, rechts Sprachauswahl + CTA -->
 <div class="flex items-center justify-center h-16 lg:h-20 header-logo-row relative transition-all duration-400">
-<!-- Desktop Burger Menu Button - Ganz oben links in Logo-Höhe (nur wenn gescrollt) -->
+<!-- Desktop Burger Menu Button - Ganz oben links in Logo-HÃ¶he (nur wenn gescrollt) -->
 <button aria-expanded="false" aria-label="Open menu" class="hidden lg:block absolute left-0 p-2 header-desktop-menu-btn" id="desktop-menu-btn">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
 <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
 </button>
-<!-- Rechtsbündig: Sprachauswahl + Telefon-CTA (gleiche Höhe wie Logo) -->
+<!-- RechtsbÃ¼ndig: Sprachauswahl + Telefon-CTA (gleiche HÃ¶he wie Logo) -->
 <div class="header-top-right hidden lg:flex absolute right-0 items-center gap-6">
 <div class="header-lang-switcher flex items-center gap-1 text-sm">
 <a class="header-lang-link" data-lang="de" href="../index.html">DE</a>
@@ -2089,7 +2089,7 @@
 </div>
 </div>
 </a>
-<!-- Mobile Menu Button – rechts in der Logo-Zeile (nur Mobile, sichtbar beim Scrollen) -->
+<!-- Mobile Menu Button â€“ rechts in der Logo-Zeile (nur Mobile, sichtbar beim Scrollen) -->
 <button aria-expanded="false" aria-label="Open menu" class="lg:hidden absolute right-0 p-2 header-mobile-btn" id="mobile-menu-btn">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
 <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -2139,6 +2139,7 @@
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="aircraft-management.html">Aircraft Management</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="maintenance.html">Maintenance</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="karriere.html">Careers</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="news.html">News</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="kontakt.html">Contact</a>
 </nav>
 </div>
@@ -2156,6 +2157,7 @@
 <a class="mobile-menu-link block py-3" href="aircraft-management.html">Aircraft Management</a>
 <a class="mobile-menu-link block py-3" href="maintenance.html">Maintenance</a>
 <a class="mobile-menu-link block py-3" href="karriere.html">Careers</a>
+<a class="mobile-menu-link block py-3" href="news.html">News</a>
 <a class="mobile-menu-link block py-3" href="kontakt.html">Contact</a>
 <div class="pt-4 mt-2 border-t border-stone-100 flex items-center">
 <a class="text-sm font-semibold text-stone-500 hover:text-olive transition-colors" href="../index.html">DE</a>
@@ -2173,9 +2175,9 @@
 <video autoplay="" class="absolute top-0 left-0 w-full h-full object-cover z-0 hero-video-fadein" id="hero-video" loop="" muted="" playsinline="" poster="../Fotos/Hangar/ACM - Hangar Baden-Baden.jpg" preload="auto">
 <!-- ACM Hero Video -->
 <source src="../Fotos/ACM hero_short.mp4" type="video/mp4"/>
-<!-- Fallback: Poster-Bild wird angezeigt wenn Video nicht lädt -->
+<!-- Fallback: Poster-Bild wird angezeigt wenn Video nicht lÃ¤dt -->
 </video>
-<!-- Overlay - Subtiler für Jumeirah-Look -->
+<!-- Overlay - Subtiler fÃ¼r Jumeirah-Look -->
 <div class="hero-overlay absolute inset-0 z-10"></div>
 <!-- Stromlinien-Effekte -->
 <div class="streamlines-container absolute inset-0 pointer-events-none" style="z-index: 15;">
@@ -2306,7 +2308,7 @@
 </div>
 </section>
 <!-- ============================================
-         6. "THIS IS ACM" (About) – wie Technik & CAMO (Bild in Spalte, nicht volle Höhe)
+         6. "THIS IS ACM" (About) â€“ wie Technik & CAMO (Bild in Spalte, nicht volle HÃ¶he)
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32 bg-white relative overflow-hidden" id="about">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
@@ -2515,7 +2517,7 @@
 </div>
 <!-- View All Button -->
 <div class="text-center mt-12">
-<a class="btn-outline inline-flex items-center gap-2" href="#">
+<a class="btn-outline inline-flex items-center gap-2" href="news.html">
             View all news
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
@@ -2717,7 +2719,7 @@
               Send request
             </button>
 </form>
-<!-- KOMMENTAR: Matomo Event Tracking hier einfügen
+<!-- KOMMENTAR: Matomo Event Tracking hier einfÃ¼gen
           <script>
             // _paq.push(['trackEvent', 'Forms', 'Submit', 'Flight Request']);
           </script>
@@ -2944,7 +2946,7 @@
 <!-- ============================================
        JAVASCRIPT
        ============================================ -->
-<script>    // Desktop Burger Menu Functions (müssen vor updateHeader definiert werden)
+<script>    // Desktop Burger Menu Functions (mÃ¼ssen vor updateHeader definiert werden)
     const desktopMenu = document.getElementById('desktop-menu');
     const desktopMenuBackdrop = document.getElementById('desktop-menu-backdrop');
     const desktopMenuBtn = document.getElementById('desktop-menu-btn');
@@ -3010,12 +3012,12 @@
       const currentScroll = window.pageYOffset;
       
       if (currentScroll > 20) {
-        // Gescrollt: Navigation verstecken, Burger-Menü anzeigen
+        // Gescrollt: Navigation verstecken, Burger-MenÃ¼ anzeigen
         header.classList.add('header-scrolled');
       } else {
-        // Nicht gescrollt: Navigation mittig anzeigen, Burger-Menü verstecken
+        // Nicht gescrollt: Navigation mittig anzeigen, Burger-MenÃ¼ verstecken
         header.classList.remove('header-scrolled');
-        // Desktop Menu schließen wenn zurück nach oben gescrollt wird
+        // Desktop Menu schlieÃŸen wenn zurÃ¼ck nach oben gescrollt wird
         if (desktopMenu && desktopMenu.classList.contains('show')) {
           closeDesktopMenu();
         }
@@ -3044,12 +3046,12 @@
         }
       });
     })();
-// Logo Fallback prüfen nach kurzer Verzögerung
+// Logo Fallback prÃ¼fen nach kurzer VerzÃ¶gerung
     setTimeout(() => {
       const logoImg = document.getElementById('header-logo-img');
       const logoFallback = document.getElementById('header-logo-fallback');
       if (logoImg && logoFallback) {
-        // Prüfe ob Bild geladen wurde
+        // PrÃ¼fe ob Bild geladen wurde
         if (!logoImg.complete || logoImg.naturalHeight === 0) {
           logoImg.style.display = 'none';
           logoFallback.style.display = 'flex';
@@ -3229,7 +3231,7 @@
     }
     
 
-    // Hero Video – nur Startzeit setzen, Loop ausschließlich über HTML-Attribut
+    // Hero Video â€“ nur Startzeit setzen, Loop ausschlieÃŸlich Ã¼ber HTML-Attribut
     const heroVideo = document.getElementById('hero-video');
     const START_TIME = 15;
     let videoInitialized = false;
@@ -3304,7 +3306,7 @@
     }
     
     function showSlide(index) {
-      // Auto-Loop: Wenn am Ende, zurück zum Anfang
+      // Auto-Loop: Wenn am Ende, zurÃ¼ck zum Anfang
       if (index < 0) {
         index = totalSlides - 1;
       } else if (index >= totalSlides) {
@@ -3490,7 +3492,7 @@
     }
     
     // KOMMENTAR: Cookie Consent Banner hier implementieren
-    // KOMMENTAR: Matomo Analytics hier einbinden (ohne Cookies möglich)
+    // KOMMENTAR: Matomo Analytics hier einbinden (ohne Cookies mÃ¶glich)
     /*
     var _paq = window._paq = window._paq || [];
     _paq.push(['trackPageView']);
@@ -3511,6 +3513,6 @@
 <path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
 </button>
-<script defer="" src="../nav-active.js"></script>
+<script defer="" src="../nav-active.js?v=20260319"></script>
 </body>
 </html>

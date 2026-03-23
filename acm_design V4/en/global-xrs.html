@@ -234,7 +234,7 @@
     .seatplan-overlay-night img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
     .seatplan-handle { position: absolute; top: 0; bottom: 0; width: 3px; background: var(--color-olive); cursor: ew-resize; z-index: 10; }
     .seatplan-handle::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 36px; height: 36px; background: var(--color-olive); display: flex; align-items: center; justify-content: center; }
-    .seatplan-handle::after { content: '◀ ▶'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 10px; letter-spacing: 2px; white-space: nowrap; z-index: 11; }
+    .seatplan-handle::after { content: 'â—€ â–¶'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 10px; letter-spacing: 2px; white-space: nowrap; z-index: 11; }
     .seatplan-label { position: absolute; top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; z-index: 5; transition: opacity 0.3s ease; }
     .seatplan-label svg { width: 28px; height: 28px; stroke-width: 2.25; }
     .seatplan-label-day { left: 1rem; color: var(--color-olive); background: #fff; box-shadow: 0 2px 12px rgba(0, 20, 65, 0.15); }
@@ -548,7 +548,7 @@
 <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light" style="text-shadow: 0 2px 20px rgba(0,0,0,0.3);">Tried and tested. Transatlantic. Ready.</h2>
 </div>
 </section>
-<!-- IMAGE GALLERY – CAROUSEL -->
+<!-- IMAGE GALLERY â€“ CAROUSEL -->
 <section class="py-20 sm:py-28 lg:py-32 bg-white">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 mb-12 lg:mb-16">
 <div class="text-center scroll-reveal">
@@ -582,7 +582,7 @@
 </div>
 </div>
 </section>
-<!-- FLOORPLAN – DAY / NIGHT SLIDER -->
+<!-- FLOORPLAN â€“ DAY / NIGHT SLIDER -->
 <section class="py-20 sm:py-28 lg:py-32" style="background-color: rgb(250 248 245);">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="text-center mb-16 lg:mb-20 scroll-reveal">
@@ -790,11 +790,11 @@ const mobileMenuBtn=document.getElementById('mobile-menu-btn');const mobileMenu=
 
     (function(){const video=document.getElementById('video-banner');const fallback=document.getElementById('video-fallback');if(!video||!fallback)return;video.addEventListener('error',function(){video.style.display='none';fallback.style.display='block';});const src=video.querySelector('source');if(src){src.addEventListener('error',function(){video.style.display='none';fallback.style.display='block';});}})();
 
-    (function(){const slides=document.querySelectorAll('.carousel-slide');const dotsContainer=document.getElementById('carousel-dots');const prevBtn=document.getElementById('carousel-prev');const nextBtn=document.getElementById('carousel-next');if(!slides.length||!dotsContainer)return;const total=slides.length;let current=0;let autoplayTimer;slides.forEach((_,i)=>{const dot=document.createElement('span');dot.className='carousel-dot'+(i===0?' active':'');dot.addEventListener('click',()=>goTo(i));dotsContainer.appendChild(dot);});function getPosition(offset){if(offset===0)return'active';if(offset===1||offset===-(total-1))return'next';if(offset===-1||offset===(total-1))return'prev';if(offset===2||offset===-(total-2))return'hidden-right';return'hidden-left';}function update(){slides.forEach((slide,i)=>{slide.classList.remove('active','prev','next','hidden-left','hidden-right');let offset=i-current;if(offset>Math.floor(total/2))offset-=total;if(offset<-Math.floor(total/2))offset+=total;slide.classList.add(getPosition(offset));});dotsContainer.querySelectorAll('.carousel-dot').forEach((dot,i)=>{dot.classList.toggle('active',i===current);});}function goTo(idx){current=((idx%total)+total)%total;update();resetAutoplay();}function resetAutoplay(){clearInterval(autoplayTimer);autoplayTimer=setInterval(()=>goTo(current+1),5000);}if(prevBtn)prevBtn.addEventListener('click',()=>goTo(current-1));if(nextBtn)nextBtn.addEventListener('click',()=>goTo(current+1));let touchStartX=0;const track=document.getElementById('carousel-track');if(track){track.addEventListener('touchstart',(e)=>{touchStartX=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',(e)=>{const diff=touchStartX-e.changedTouches[0].clientX;if(Math.abs(diff)>50)goTo(current+(diff>0?1:-1));});}update();resetAutoplay();slides.forEach((slide)=>{slide.addEventListener('click',()=>{const img=slide.querySelector('img');if(!img)return;const lightbox=document.getElementById('lightbox');const lightboxImg=document.getElementById('lightbox-img');if(!lightbox||!lightboxImg)return;lightboxImg.src=img.src;lightboxImg.alt=img.alt||'Bild in voller Größe';lightbox.classList.add('open');document.body.style.overflow='hidden';});});})();
+    (function(){const slides=document.querySelectorAll('.carousel-slide');const dotsContainer=document.getElementById('carousel-dots');const prevBtn=document.getElementById('carousel-prev');const nextBtn=document.getElementById('carousel-next');if(!slides.length||!dotsContainer)return;const total=slides.length;let current=0;let autoplayTimer;slides.forEach((_,i)=>{const dot=document.createElement('span');dot.className='carousel-dot'+(i===0?' active':'');dot.addEventListener('click',()=>goTo(i));dotsContainer.appendChild(dot);});function getPosition(offset){if(offset===0)return'active';if(offset===1||offset===-(total-1))return'next';if(offset===-1||offset===(total-1))return'prev';if(offset===2||offset===-(total-2))return'hidden-right';return'hidden-left';}function update(){slides.forEach((slide,i)=>{slide.classList.remove('active','prev','next','hidden-left','hidden-right');let offset=i-current;if(offset>Math.floor(total/2))offset-=total;if(offset<-Math.floor(total/2))offset+=total;slide.classList.add(getPosition(offset));});dotsContainer.querySelectorAll('.carousel-dot').forEach((dot,i)=>{dot.classList.toggle('active',i===current);});}function goTo(idx){current=((idx%total)+total)%total;update();resetAutoplay();}function resetAutoplay(){clearInterval(autoplayTimer);autoplayTimer=setInterval(()=>goTo(current+1),5000);}if(prevBtn)prevBtn.addEventListener('click',()=>goTo(current-1));if(nextBtn)nextBtn.addEventListener('click',()=>goTo(current+1));let touchStartX=0;const track=document.getElementById('carousel-track');if(track){track.addEventListener('touchstart',(e)=>{touchStartX=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',(e)=>{const diff=touchStartX-e.changedTouches[0].clientX;if(Math.abs(diff)>50)goTo(current+(diff>0?1:-1));});}update();resetAutoplay();slides.forEach((slide)=>{slide.addEventListener('click',()=>{const img=slide.querySelector('img');if(!img)return;const lightbox=document.getElementById('lightbox');const lightboxImg=document.getElementById('lightbox-img');if(!lightbox||!lightboxImg)return;lightboxImg.src=img.src;lightboxImg.alt=img.alt||'Bild in voller GrÃ¶ÃŸe';lightbox.classList.add('open');document.body.style.overflow='hidden';});});})();
 
     (function(){const lightbox=document.getElementById('lightbox');const lightboxClose=document.getElementById('lightbox-close');if(!lightbox)return;function closeLightbox(){lightbox.classList.remove('open');document.body.style.overflow='';}if(lightboxClose)lightboxClose.addEventListener('click',closeLightbox);lightbox.addEventListener('click',(e)=>{if(e.target===lightbox)closeLightbox();});document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&lightbox.classList.contains('open'))closeLightbox();});})();
   
 </script>
-<script defer="" src="../nav-active.js"></script>
+<script defer="" src="../nav-active.js?v=20260319"></script>
 </body>
 </html>
