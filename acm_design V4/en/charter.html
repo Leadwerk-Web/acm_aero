@@ -205,7 +205,7 @@
     .header-nav-dropdown a:hover { color: var(--color-olive); background: rgba(0, 0, 0, 0.04); }
     .header-nav-dropdown a:first-child { font-weight: 500; color: rgb(28, 25, 23); }
 
-    .header-link-button { color: white; font-weight: 400; font-size: 0.875rem; letter-spacing: 0.02em; position: relative; padding: 0.5rem 1.25rem; border-radius: 0; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); height: auto; display: inline-flex; align-items: center; justify-content: center; }
+    .header-link-button { color: white; font-weight: 400; font-size: 0.875rem; letter-spacing: 0.02em; position: relative; padding: 0.5rem 1.25rem; border-radius: 0; background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); height: auto; display: inline-flex; align-items: center; justify-content: center; }
     .header-link-button:hover { background: rgba(255, 255, 255, 0.18); border-color: rgba(255, 255, 255, 0.25); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); transform: translateY(-1px); }
     .header-scrolled .header-link-button { color: rgba(28, 25, 23, 0.85); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(28, 25, 23, 0.1); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); }
     .header-scrolled .header-link-button:hover { color: rgb(28, 25, 23); background: rgba(255, 255, 255, 0.75); border-color: rgba(28, 25, 23, 0.15); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); transform: translateY(-1px); }
@@ -351,7 +351,7 @@
     }
     @media (max-width: 768px) { .streamline { opacity: 0.6; } }
     .streamlines-dark .streamline {
-      background: linear-gradient(90deg, transparent 0%, rgba(120, 113, 108, 0.25) 10%, rgba(120, 113, 108, 0.45) 50%, rgba(120, 113, 108, 0.25) 90%, transparent 100%);
+      background: linear-gradient(90deg, transparent 0%, rgba(120, 113, 108, 0.06) 10%, rgba(120, 113, 108, 0.1) 50%, rgba(120, 113, 108, 0.06) 90%, transparent 100%);
     }
 
     .hero-proof-bar {
@@ -394,35 +394,8 @@
       white-space: nowrap;
     }
 
-    .process-step {
-      position: relative;
-      padding-left: 3rem;
-    }
-    .process-step::before {
-      content: attr(data-step);
-      position: absolute;
-      left: 0;
-      top: 0.15rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--color-olive);
-    }
-    .process-step::after {
-      content: '';
-      position: absolute;
-      left: 1.5rem;
-      top: 2rem;
-      bottom: -1.5rem;
-      width: 1px;
-      background: rgba(0, 20, 65, 0.1);
-    }
-    .process-step:last-child::after { display: none; }
-
-    /* Punkttitel (Operative Kompetenz) und Prozessschritte: einheitlich 1.5rem */
-    .space-y-6.mb-10 h4.font-serif,
-    .process-step h4 {
+    /* Bullet headings (Operative competence): unified 1.5rem */
+    .space-y-6.mb-10 h4.font-serif {
       font-size: 1.5rem !important;
     }
 
@@ -431,6 +404,32 @@
     }
 
     .bg-section-sand { background-color: rgb(250, 248, 245) !important; }
+
+    /* Image hover zoom (same as homepage Technik & CAMO / Aircraft Management) */
+    .image-zoom-wrap {
+      overflow: hidden;
+    }
+    .image-zoom-wrap img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .image-zoom-wrap:hover img {
+      transform: scale(1.05);
+    }
+    .image-zoom-bleed {
+      overflow: hidden;
+    }
+    .image-zoom-bleed img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .image-zoom-bleed:hover img {
+      transform: scale(1.05);
+    }
+    .acm-banner-zoom > img:first-of-type {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .acm-banner-zoom:hover > img:first-of-type {
+      transform: scale(1.05);
+    }
 
     .fleet-card {
       background: white;
@@ -857,7 +856,7 @@
               For our customers this means: one contact person, clear processes and reliable organization - from the first briefing to safe landing.
             </p>
 </div>
-<div class="scroll-reveal">
+<div class="scroll-reveal image-zoom-wrap">
 <img alt="ACM Pilots in the cockpit - own crews" class="w-full h-[400px] lg:h-[550px] object-cover" loading="lazy" src="../Fotos/D-APLC/70046_04_9905.jpg"/>
 </div>
 </div>
@@ -868,7 +867,7 @@
          ============================================ -->
 <section class="relative overflow-visible bg-section-sand">
 <div class="grid lg:grid-cols-2 min-h-[600px] lg:min-h-[700px]">
-<div class="relative h-[400px] lg:h-auto">
+<div class="relative h-[400px] lg:h-auto image-zoom-bleed">
 <img alt="ACM Operations &ndash; cockpit and flight planning" class="absolute inset-0 w-full h-full object-cover" loading="lazy" src="../Fotos/ACM - Allgemein/Cockpit.jpg"/>
 </div>
 <div class="content-box-outer bg-section-sand py-16 lg:py-20 flex items-center">
@@ -1006,20 +1005,6 @@
 </div>
 </div>
 </div>
-</div>
-</section>
-<!-- Fullwidth Banner -->
-<section class="relative h-[45vh] sm:h-[55vh] overflow-hidden">
-<img alt="ACM Jets &ndash; In use worldwide" class="w-full h-full object-cover" loading="lazy" src="../Fotos/Neu/Charter_Banner.jpg"/>
-<div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
-<div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
-<img alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" height="35" src="../Fotos/Emblem.svg" width="auto"/>
-<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light">
-          ACM Jets. In use worldwide.
-        </h2>
-<a class="btn-overlay-white mt-4 inline-flex" href="#flotte">
-          Discover our fleet
-        </a>
 </div>
 </section>
 <!-- ============================================
@@ -1360,10 +1345,24 @@
 </div>
 </div>
 </section>
+<!-- Fullwidth Banner -->
+<section class="relative h-[45vh] sm:h-[55vh] overflow-hidden acm-banner-zoom">
+<img alt="ACM Jets &ndash; In use worldwide" class="w-full h-full object-cover" loading="lazy" src="../Fotos/Neu/Charter_Banner.jpg"/>
+<div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+<img alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" height="35" src="../Fotos/Emblem.svg" width="auto"/>
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light">
+          ACM Jets. In use worldwide.
+        </h2>
+<a class="btn-overlay-white mt-4 inline-flex" href="#flotte">
+          Discover our fleet
+        </a>
+</div>
+</section>
 <!-- ============================================
          6. SAFETY & CERTIFICATIONS
          ============================================ -->
-<section class="py-20 sm:py-28 lg:py-32 bg-white">
+<section class="py-20 sm:py-28 lg:py-32 bg-section-sand">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="text-center mb-16 lg:mb-20 scroll-reveal">
 <img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="../Fotos/Emblem.svg" width="auto"/>
@@ -1416,52 +1415,12 @@
 </div>
 </section>
 <!-- ============================================
-         7. PROCESS
+         7. DIFFERENTIATION BLOCK
          ============================================ -->
-<section class="py-20 sm:py-28 lg:py-32 bg-section-sand">
+<section class="py-20 sm:py-28 lg:py-32 bg-white">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-<div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem]">
-<div class="scroll-reveal">
-<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">process</span>
-<h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">
-              From inquiry to landing.
-            </h2>
-<p class="text-stone-500 leading-relaxed mb-10">
-              Every charter request follows a structured process. From the initial clarification of needs to follow-up, we work in five phases - with clear responsibilities, binding time windows and a designated contact person.
-            </p>
-<a class="btn-primary" href="kontakt.html#sales-operations">Request a flight</a>
-</div>
-<div class="scroll-reveal space-y-10">
-<div class="process-step" data-step="01">
-<h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.5rem;">Inquiry &amp; clarification of needs</h4>
-<p class="text-stone-500 leading-relaxed">Destination, time frame, number of passengers and special requirements are recorded and evaluated.</p>
-</div>
-<div class="process-step" data-step="02">
-<h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.5rem;">Flight planning &amp; offer</h4>
-<p class="text-stone-500 leading-relaxed">Route planning, aircraft allocation, slot check and binding offer within defined deadlines.</p>
-</div>
-<div class="process-step" data-step="03">
-<h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.5rem;">Operational preparation</h4>
-<p class="text-stone-500 leading-relaxed">Crew briefing, permit handling, fuel planning, catering coordination and ground handling coordination.</p>
-</div>
-<div class="process-step" data-step="04">
-<h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.5rem;">Implementation</h4>
-<p class="text-stone-500 leading-relaxed">Monitoring by 24/7 dispatch. Real-time communication between crew, operations and client.</p>
-</div>
-<div class="process-step" data-step="05">
-<h4 class="font-serif text-stone-800 font-normal mb-2" style="font-size: 1.5rem;">Follow-up</h4>
-<p class="text-stone-500 leading-relaxed">Documentation, billing and feedback &ndash; structured and transparent.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- ============================================
-         8. DIFFERENTIATION BLOCK
-         ============================================ -->
-<section class="relative overflow-visible bg-white">
-<div class="grid lg:grid-cols-2 min-h-[600px] lg:min-h-[700px]">
-<div class="content-box-outer bg-white py-16 lg:py-20 flex items-center order-2 lg:order-1">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center">
+<div class="scroll-reveal order-2 lg:order-1">
 <div class="max-w-xl">
 <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">differentiation</span>
 <h2 class="font-serif text-stone-900 mb-10 leading-tight font-light">
@@ -1478,13 +1437,14 @@
             </p>
 </div>
 </div>
-<div class="relative h-[400px] lg:h-auto order-1 lg:order-2">
-<img alt="ACM &ndash; Why ACM" class="absolute inset-0 w-full h-full object-cover" loading="lazy" src="../Fotos/Neu/Charter_WarumACM.jpg"/>
+<div class="scroll-reveal image-zoom-wrap order-1 lg:order-2">
+<img alt="ACM &ndash; Why ACM" class="w-full h-[400px] lg:h-[550px] object-cover object-[58%_center]" loading="lazy" src="../Fotos/Neu/Charter_WarumACM.jpg"/>
+</div>
 </div>
 </div>
 </section>
 <!-- ============================================
-         9. FINAL CTA
+         8. FINAL CTA
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32 relative overflow-hidden" id="contact" style="background-color: rgb(250 248 245);">
 <div class="streamlines-container streamlines-dark absolute inset-0 pointer-events-none z-0">

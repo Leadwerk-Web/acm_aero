@@ -370,7 +370,7 @@
       position: relative;
       padding: 0.5rem 1.25rem;
       border-radius: 0;
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.35);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.18);
@@ -860,7 +860,33 @@
     }
     /* Stromlinien auf hellem Hintergrund (CTA) â€“ dunklere Linien */
     .streamlines-dark .streamline {
-      background: linear-gradient(90deg, transparent 0%, rgba(120, 113, 108, 0.25) 10%, rgba(120, 113, 108, 0.45) 50%, rgba(120, 113, 108, 0.25) 90%, transparent 100%);
+      background: linear-gradient(90deg, transparent 0%, rgba(120, 113, 108, 0.06) 10%, rgba(120, 113, 108, 0.1) 50%, rgba(120, 113, 108, 0.06) 90%, transparent 100%);
+    }
+
+    /* Bild-Hover-Zoom wie auf der Startseite */
+    .image-zoom-wrap {
+      overflow: hidden;
+    }
+    .image-zoom-wrap img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .image-zoom-wrap:hover img {
+      transform: scale(1.05);
+    }
+    .image-zoom-bleed {
+      overflow: hidden;
+    }
+    .image-zoom-bleed img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .image-zoom-bleed:hover img {
+      transform: scale(1.05);
+    }
+    .acm-banner-zoom > img:first-of-type {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .acm-banner-zoom:hover > img:first-of-type {
+      transform: scale(1.05);
     }
     
     /* â”€â”€ Horizontal Timeline â”€â”€ */
@@ -1172,7 +1198,7 @@
 </div>
 </section>
 <!-- Fullwidth Image Break â€“ Hangar mit CTA -->
-<section class="relative h-[45vh] sm:h-[55vh] overflow-hidden">
+<section class="relative h-[45vh] sm:h-[55vh] overflow-hidden acm-banner-zoom">
 <img alt="ACM &ndash; &Uuml;ber 30 Jahre Business Aviation" class="w-full h-full object-cover" decoding="async" height="1080" loading="lazy" src="Fotos/Neu/thatsacm_banner_30.jpg" width="1920"/>
 <div class="absolute inset-0 opacity-100" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
 <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
@@ -1454,7 +1480,7 @@
 </div>
 </section>
 <!-- Fullwidth Image Break â€“ Sprechen Sie mit uns -->
-<section class="relative h-[45vh] sm:h-[55vh] overflow-hidden">
+<section class="relative h-[45vh] sm:h-[55vh] overflow-hidden acm-banner-zoom">
 <img alt="ACM Piloten im Cockpit w&auml;hrend des Flugbetriebs" class="w-full h-full object-cover" decoding="async" height="1080" loading="lazy" src="Fotos/ACM - Allgemein/MKA1481.jpg" width="1920"/>
 <div class="absolute inset-0 opacity-100" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
 <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
@@ -1480,7 +1506,7 @@
           </h2>
 </div>
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center mb-20 scroll-reveal">
-<div>
+<div class="image-zoom-wrap">
 <img alt="ACM Wartungsbasis am Baden-Airpark" class="img-no-filter w-full h-[400px] lg:h-[550px] object-cover" decoding="async" height="1080" loading="lazy" src="Fotos/Neu/Wartungsbasis.jpg" width="1920"/>
 </div>
 <div>
@@ -1497,8 +1523,8 @@
 </div>
 </div>
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center mb-20 scroll-reveal">
-<div class="lg:order-2">
-<img alt="ACM Line Maintenance" class="img-no-filter w-full h-[400px] lg:h-[550px] object-cover" decoding="async" height="1080" loading="lazy" src="Fotos/Neu/LineMaintenance.jpg" width="1920"/>
+<div class="lg:order-2 image-zoom-wrap">
+<img alt="ACM Line Maintenance" class="img-no-filter w-full h-[400px] lg:h-[550px] object-cover" decoding="async" height="1080" loading="lazy" src="Fotos/Neu/LineMaintenance.png" width="1920"/>
 </div>
 <div class="lg:order-1">
 <span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">LINE MAINTENANCE</span>
@@ -1511,7 +1537,7 @@
 </div>
 </div>
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center mb-20 scroll-reveal">
-<div>
+<div class="image-zoom-wrap">
 <img alt="ACM CAMO &amp; Aufsicht &ndash; Luftt&uuml;chtigkeitsmanagement" class="img-no-filter w-full h-[400px] lg:h-[550px] object-cover" decoding="async" height="1080" loading="lazy" src="Fotos/Neu/Camo_Aufsicht.png" width="1920"/>
 </div>
 <div>
@@ -1528,7 +1554,7 @@
 </div>
 </div>
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center scroll-reveal">
-<div class="lg:order-2">
+<div class="lg:order-2 image-zoom-wrap">
 <img alt="ACM Operations Control &ndash; Dispatch &amp; Koordination" class="img-no-filter w-full h-[400px] lg:h-[550px] object-cover" decoding="async" height="1080" loading="lazy" src="Fotos/Neu/Operations_Control.jpg" width="1920"/>
 </div>
 <div class="lg:order-1">
@@ -1573,7 +1599,7 @@
 </div>
 </div>
 <!-- Image Side â€“ linke HÃ¤lfte -->
-<div class="relative h-[400px] lg:h-auto order-1 lg:order-1">
+<div class="relative h-[400px] lg:h-auto order-1 lg:order-1 image-zoom-bleed">
 <img alt="ACM Heimatbasis am Baden-Airpark" class="img-no-filter absolute inset-0 w-full h-full object-cover" loading="lazy" src="Fotos/Neu/Heimatbasis.jpg"/>
 </div>
 </div>
