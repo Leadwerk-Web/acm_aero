@@ -1,0 +1,3471 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Business Aviation am Baden-Airpark: ACM AIR CHARTER bietet Charter, Aircraft Management, Maintenance (Part-145) und CAMO aus einer Hand." name="description"/><link href="/index.html" rel="canonical"/><link href="/index.html" hreflang="de" rel="alternate"/><link href="/en/index.html" hreflang="en" rel="alternate"/>
+<meta content="index, follow" name="robots"/>
+<title>ACM AIR CHARTER | Privatfl&uuml;ge &amp; Owner-Services aus einer Hand</title>
+<link href="Fotos/Favicon_xs.png" rel="icon" type="image/png"/>
+<!-- Google Fonts: Cormorant Garamond (Jumeirah-Style) + Inter fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Body -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            '6xl': '100rem',
+          },
+          colors: {
+            cream: '#FAF9F7',
+            olive: {
+              DEFAULT: '#001441',
+              dark: '#000d2b',
+              light: '#0a2a5c',
+              lighter: '#E8EEF4'
+            },
+            accent: {
+              DEFAULT: '#001441',
+              hover: '#000d2b',
+              light: '#E8EEF4'
+            },
+            sand: {
+              50: '#FDFCFA',
+              100: '#FAF8F5',
+              200: '#F5F2ED'
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          letterSpacing: {
+            'wider-custom': '0.15em'
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom CSS Variables & Base Styles - Jumeirah Style */
+    :root {
+      --color-accent: #001441;
+      --color-accent-hover: #000d2b;
+      --color-olive: #001441;
+      --color-olive-dark: #000d2b;
+      --color-sand: #FAF8F5;
+      --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.07);
+    }
+    
+    /* Emblem ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ber h2 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ 35px HÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶he, Olive (vorgegebene Farbe) */
+    .section-emblem {
+      height: 35px;
+      width: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+      filter: brightness(0) saturate(100%) invert(9%) sepia(45%) saturate(5000%) hue-rotate(208deg);
+    }
+    .section-emblem-on-dark {
+      filter: brightness(0) invert(1);
+    }
+    .section-emblem-left {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    /* h2 einheitlich 48px, line-height 1 */
+    section h2 {
+      font-size: 48px !important;
+      line-height: 1 !important;
+    }
+    
+    /* Hero Statement ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ eigene SchriftgrÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸e */
+    .hero-statement-section p {
+      font-size: 40px !important;
+    }
+    
+    .max-w-xl {
+      max-width: 56rem;
+      padding: 0;
+      overflow: visible;
+    }
+    
+    .max-w-6xl {
+      max-width: 100rem;
+    }
+    
+    .content-box-outer {
+      padding-left: 7rem;
+      padding-right: 7rem;
+      overflow: visible;
+    }
+    
+    /* Alle Borders auf der gesamten Seite auf 0 (Bilder, Buttons, Cards, Inputs, etc.) */
+    *,
+    *::before,
+    *::after {
+      border-width: 0 !important;
+      border-style: none !important;
+    }
+    img,
+    input,
+    select,
+    textarea,
+    a,
+    .card-hover,
+    [class*="border"] {
+      border: none !important;
+      border-width: 0 !important;
+    }
+    footer { border: none !important; background: linear-gradient(to right, transparent 0%, #e7e5e4 10vw, #e7e5e4 90vw, transparent 100%) no-repeat top / 100% 1px, #ffffff !important; }
+    /* Buttons: nur Standard-Buttons zurÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼cksetzen, CTA-Buttons ausnehmen */
+    button:not(.btn-filled):not(.btn-outline):not(.btn-primary):not(.btn-filled-white):not(.btn-outline-white) {
+      border: none !important;
+      border-width: 0 !important;
+    }
+    
+    /* Alle Abrundungen auf 0 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ keine rounded corners (Bilder, Buttons, Cards, etc.) */
+    *,
+    *::before,
+    *::after,
+    img,
+    button,
+    input,
+    select,
+    textarea,
+    a,
+    .card-hover,
+    .btn-primary,
+    [class*="rounded"] {
+      border-radius: 0 !important;
+    }
+    
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* FlieÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸text: einheitlich Inter 15px, 400, #666666 */
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #777777;
+      letter-spacing: 0.01em;
+      background-color: #FDFCFA;
+    }
+    p {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px !important;
+      font-weight: 400 !important;
+      color: #777777 !important;
+    }
+    
+    /* Jumeirah-Style Headlines */
+    h1, h2, h3, h4, h5, h6,
+    .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+    
+    /* Section Labels - Elegant Uppercase */
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+    }
+    
+    /* Custom Focus States for Accessibility */
+    *:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    
+    /* Hero Video Overlay */
+    .hero-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(28, 25, 23, 0.7) 0%,
+        rgba(28, 25, 23, 0.3) 40%,
+        rgba(28, 25, 23, 0.1) 100%
+      );
+    }
+    
+    /* Jumeirah-Style Header - Minimalistisch & Clean - Fixed Overlay */
+    /* Leichter dunkler Verlauf von oben nach unten fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r bessere Lesbarkeit des Textes */
+    #header {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.12) 60%, transparent 100%);
+      border-bottom: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Hero Section Full Bleed - bis ganz oben */
+    #hero {
+      margin-top: 0;
+      padding-top: 0;
+      position: relative;
+    }
+    
+    /* Sicherstellen dass Hero bis ganz oben geht */
+    main {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    
+    /* Video/Bild muss wirklich bis ganz oben ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ Hero ohne Radius (Full Bleed) */
+    #hero video,
+    #hero img {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0;
+    }
+    
+    /* Hero Video Fade-in Animation */
+    .hero-video-fadein {
+      opacity: 0;
+      transition: opacity 1.5s ease-in;
+    }
+    
+    .hero-video-fadein.loaded {
+      opacity: 1;
+    }
+    
+    /* Santorini-Stil: einheitlicher Filter ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ber alle Bilder (weich, hell, mediterran) */
+    img:not(.acm-logo):not(.section-emblem) {
+      filter: saturate(0.88) brightness(1.06) contrast(0.97);
+    }
+    
+    /* Image Zoom Effect - Subtle Hover Zoom fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r alle Bilder */
+    img:not(.acm-logo):not(svg *) {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
+      will-change: transform;
+    }
+    
+    /* Zoom-Effekt fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Bilder in Containern mit Overflow */
+    .relative img:not(.acm-logo),
+    section img:not(.acm-logo),
+    article img:not(.acm-logo),
+    .card-hover img:not(.acm-logo) {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Container mit Overflow fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Zoom-Effekt */
+    .image-zoom-container {
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .image-zoom-container img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .image-zoom-container:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Spezielle Hover-Effekte fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r verschiedene Bereiche */
+    .aircraft-card:hover .aircraft-card-image {
+      transform: scale(1.08);
+    }
+    
+    /* About Section Images */
+    #about .relative {
+      overflow: hidden;
+    }
+    
+    #about .relative:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Maintenance Section Images */
+    #maintenance .relative {
+      overflow: hidden;
+    }
+    
+    #maintenance .relative:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Aircraft Management Section Images */
+    #management .relative {
+      overflow: hidden;
+    }
+    
+    #management .relative:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Careers Section Images */
+    #careers .relative {
+      overflow: hidden;
+    }
+    
+    #careers .relative:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* News Section Images */
+    .group {
+      overflow: hidden;
+    }
+    
+    .group:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Allgemeine Regel fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r alle Bilder in relative Containern */
+    .relative img:not(.acm-logo) {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Services-Karten: Zoom nur bei Mouse-over ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ber dem jeweiligen Bild */
+    #services img {
+      transition: transform 0.5s ease;
+      transform: none;
+    }
+    #services .relative:hover img,
+    #services article:hover img {
+      transform: none !important;
+    }
+    #services .services-card-img:hover img {
+      transform: scale(1.05) !important;
+    }
+    .relative:not(#services):hover img:not(.acm-logo) {
+      transform: scale(1.05);
+    }
+    
+    /* Modern Card-Based Slider Styles */
+    .aircraft-slider {
+      position: relative;
+      width: 100%;
+      overflow: visible;
+      padding: 0 3rem;
+    }
+    
+    .aircraft-slider-inner {
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    .slider-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    
+    .slider-slide {
+      flex: 0 0 calc(100% - 3rem);
+      min-width: 0;
+      opacity: 0.6;
+      transform: scale(0.95);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: grab;
+    }
+    
+    .slider-slide:active {
+      cursor: grabbing;
+    }
+    
+    .slider-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .aircraft-card {
+      background: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .slider-slide.active .aircraft-card {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+    
+    .aircraft-card-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    
+    .aircraft-card:hover .aircraft-card-image {
+      transform: scale(1.08);
+    }
+    
+    .aircraft-card-content {
+      padding: 1.5rem;
+    }
+    
+    .aircraft-card-title {
+      font-family: serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: rgb(28, 25, 23);
+      margin-bottom: 0.5rem;
+    }
+    
+    .aircraft-card-subtitle {
+      font-size: 0.875rem;
+      color: rgb(120, 113, 108);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    @media (min-width: 640px) {
+      .slider-slide {
+        flex: 0 0 calc(50% - 0.75rem);
+      }
+      
+      .aircraft-card-image {
+        height: 280px;
+      }
+      
+      .aircraft-slider {
+        height: 400px !important;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .slider-slide {
+        flex: 0 0 calc(33.333% - 1rem);
+      }
+      
+      .aircraft-card-image {
+        height: 300px;
+      }
+      
+      .aircraft-slider {
+        height: 450px !important;
+      }
+    }
+    
+    /* Slider Navigation Arrows */
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 30;
+      width: 44px;
+      height: 44px;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    .slider-nav:hover {
+      background: rgb(28, 25, 23);
+      border-color: rgb(28, 25, 23);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .slider-nav.prev {
+      left: 0;
+    }
+    
+    .slider-nav.next {
+      right: 0;
+    }
+    
+    .slider-nav svg {
+      width: 18px;
+      height: 18px;
+      stroke: rgb(28, 25, 23);
+      stroke-width: 2;
+      transition: stroke 0.3s ease;
+    }
+    
+    .slider-nav:hover svg {
+      stroke: white;
+    }
+    
+    /* Slider Dots Navigation */
+    .slider-dots {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(28, 25, 23, 0.2);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0;
+    }
+    
+    .slider-dot.active {
+      background: rgb(28, 25, 23);
+      width: 24px;
+      border-radius: 4px;
+    }
+    
+    .slider-dot:hover {
+      background: rgba(28, 25, 23, 0.5);
+    }
+    
+    @media (max-width: 768px) {
+      .slider-nav {
+        width: 36px;
+        height: 36px;
+      }
+      
+      .slider-nav.prev {
+        left: 0;
+      }
+      
+      .slider-nav.next {
+        right: 0;
+      }
+      
+      .aircraft-slider {
+        padding: 0 2rem;
+      }
+      
+      .slider-nav svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    
+    /* Stromlinien-Container */
+    .streamlines-container {
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* Stromlinien als CSS-Elemente - Dezenter, wie Kondensstreifen */
+    .streamline {
+      position: absolute;
+      width: 120%;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 10%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 255, 255, 0.2) 90%,
+        transparent 100%
+      );
+      filter: blur(1px);
+      transform-origin: left center;
+      opacity: 0;
+    }
+    
+    .streamline-1 {
+      top: 15%;
+      left: -20%;
+      transform: rotate(12deg);
+      animation: streamMove1 25s linear infinite;
+      animation-delay: 0s;
+    }
+    
+    .streamline-2 {
+      top: 30%;
+      left: -20%;
+      transform: rotate(-8deg);
+      animation: streamMove2 28s linear infinite;
+      animation-delay: 5s;
+    }
+    
+    .streamline-3 {
+      top: 50%;
+      left: -20%;
+      transform: rotate(10deg);
+      animation: streamMove3 26s linear infinite;
+      animation-delay: 10s;
+    }
+    
+    .streamline-4 {
+      top: 70%;
+      left: -20%;
+      transform: rotate(-12deg);
+      animation: streamMove4 30s linear infinite;
+      animation-delay: 15s;
+    }
+    
+    .streamline-5 {
+      top: 85%;
+      left: -20%;
+      transform: rotate(6deg);
+      animation: streamMove5 27s linear infinite;
+      animation-delay: 20s;
+    }
+    
+    @keyframes streamMove1 {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+    
+    @keyframes streamMove2 {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+    
+    @keyframes streamMove3 {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+    
+    @keyframes streamMove4 {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+    
+    @keyframes streamMove5 {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+    
+    /* Responsive: Stromlinien auf kleinen Bildschirmen reduzieren */
+    @media (max-width: 768px) {
+      .streamline { opacity: 0.6; }
+    }
+    
+    /* Header beim Scrollen - Sehr subtiler weiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸er Hintergrund + Schmaler */
+    .header-scrolled {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .header-scrolled .border-white\/10 {
+      border-bottom-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Header: RechtsbÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ndig Sprachauswahl + CTA (gleiche HÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶he wie Logo) */
+    .header-top-right {
+      color: rgba(255, 255, 255, 0.95);
+      transition: color 0.4s ease;
+    }
+    .header-scrolled .header-top-right {
+      color: rgba(28, 25, 23, 0.85);
+    }
+    .header-lang-link {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      opacity: 0.85;
+      transition: opacity 0.25s ease, color 0.4s ease;
+    }
+    .header-lang-link.header-lang-active {
+      font-weight: 700;
+      opacity: 1;
+      color: var(--color-olive) !important;
+    }
+    .header-lang-link:hover {
+      opacity: 1;
+    }
+    .header-lang-sep {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    /* DÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼nne Linie zwischen Logo-Zeile und Navigation ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ nach links/rechts transparent */
+    .header-divider-line {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.35) 15%,
+        rgba(255, 255, 255, 0.35) 85%,
+        transparent 100%
+      );
+      transition: background 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    }
+    .header-scrolled .header-divider-line {
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 15%,
+        rgba(0, 0, 0, 0.08) 85%,
+        transparent 100%
+      );
+    }
+    
+    /* Navigation Row und Trennlinie verstecken wenn gescrollt (nur Logo-Zeile bleibt) */
+    #header.header-scrolled .header-nav-row {
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+    }
+    #header.header-scrolled .header-divider-line {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Scroll to Top Button - ACM Style */
+    #scroll-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 3rem;
+      height: 3rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(28, 25, 23, 0.1);
+      border-radius: 0.5rem;
+      color: rgb(28, 25, 23);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1rem);
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  background 0.3s ease,
+                  box-shadow 0.3s ease;
+      z-index: 9999 !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    #scroll-to-top.visible {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+    }
+    
+    #scroll-to-top:hover {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-2px);
+    }
+    
+    #scroll-to-top:active {
+      transform: translateY(0);
+    }
+    
+    #scroll-to-top svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke-width: 2;
+    }
+    
+    @media (max-width: 640px) {
+      #scroll-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 2.75rem;
+        height: 2.75rem;
+      }
+      
+      #scroll-to-top svg {
+        width: 1.125rem;
+        height: 1.125rem;
+      }
+    }
+    
+    /* Footer: Safe Area (Notch/Home-Indicator) + Copyright auf Mobile sichtbar */
+    .footer-safe {
+      padding-bottom: max(2rem, env(safe-area-inset-bottom, 0));
+    }
+    .footer-copyright {
+      display: block;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: rgb(120 113 108); /* stone-500 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ gut lesbar auf hellem Grund */
+      padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0));
+    }
+    @media (max-width: 640px) {
+      .footer-copyright {
+        font-size: 0.9375rem; /* etwas grÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸er auf Mobile */
+        color: rgb(87 83 78); /* stone-600 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ auf Mobile deutlicher sichtbar */
+      }
+    }
+    
+    /* Logo - Clean ohne Box */
+    .header-logo-bg {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    
+    .header-logo-text {
+      color: white;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: color 0.4s ease;
+    }
+    
+    .header-scrolled .header-logo-text {
+      color: rgb(28, 25, 23);
+    }
+    
+    .header-logo-subtext {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      transition: color 0.4s ease;
+    }
+    
+    .header-scrolled .header-logo-subtext {
+      color: rgba(28, 25, 23, 0.7);
+    }
+    
+    /* ACM Logo Styles */
+    .acm-logo {
+      filter: brightness(0) invert(1); /* Logo weiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸ machen fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r transparenten Header */
+      transition: filter 0.4s ease, opacity 0.4s ease;
+    }
+    
+    .header-scrolled .acm-logo {
+      filter: brightness(0) invert(0); /* Logo dunkel machen fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r gescrollten Header */
+    }
+    
+    /* Logo Aspect Ratio schÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼tzen */
+    .acm-logo {
+      object-fit: contain;
+      height: auto;
+      max-height: 64px;
+    }
+    
+    @media (max-width: 1024px) {
+      .acm-logo {
+        max-height: 56px;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .acm-logo {
+        max-height: 48px;
+      }
+    }
+    
+    /* Logo Hover Effect */
+    .acm-logo:hover {
+      opacity: 0.8;
+    }
+    
+    /* Navigation Links - Minimalistisch */
+    .header-nav-link {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+      text-transform: none;
+    }
+    
+    .header-scrolled .header-nav-link {
+      color: rgba(28, 25, 23, 0.8);
+    }
+    
+    .header-nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .header-nav-link:hover {
+      color: white;
+    }
+    
+    .header-scrolled .header-nav-link:hover {
+      color: rgb(28, 25, 23);
+    }
+    
+    .header-nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .header-nav-charter-wrap { position: relative; }
+    .header-nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.5rem; min-width: 11rem; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); border-radius: 6px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; z-index: 50; }
+    .header-nav-charter-wrap:hover .header-nav-dropdown { opacity: 1; visibility: visible; }
+    .header-nav-dropdown a { display: block; padding: 0.5rem 1rem; font-size: 0.8125rem; color: rgba(28, 25, 23, 0.85); transition: color 0.2s ease, background 0.2s ease; white-space: nowrap; }
+    .header-nav-dropdown a:hover { color: var(--color-olive); background: rgba(0, 0, 0, 0.04); }
+    .header-nav-dropdown a:first-child { font-weight: 500; color: rgb(28, 25, 23); }
+    
+    /* Button - Minimalistisch */
+    .header-button {
+      background: white;
+      color: rgb(28, 25, 23);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: none;
+      font-weight: 400;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+      border-radius: 0;
+      padding: 0.5rem 1.25rem;
+      height: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .header-scrolled .header-button {
+      background: rgb(28, 25, 23);
+      color: white;
+      border-color: rgb(28, 25, 23);
+    }
+    
+    .header-button:hover {
+      background: rgba(255, 255, 255, 0.95);
+      transform: none;
+    }
+    
+    .header-scrolled .header-button:hover {
+      background: rgba(28, 25, 23, 0.9);
+    }
+    
+    /* Secondary Link Button - Glossy Glassmorphism im ACM Style wenn nicht sticky */
+    .header-link-button {
+      color: white;
+      font-weight: 400;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      position: relative;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      height: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .header-link-button:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      transform: translateY(-1px);
+    }
+    
+    /* Beim Scrollen - Dezenter Glossy-Effekt fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r gescrollten Header */
+    .header-scrolled .header-link-button {
+      color: rgba(28, 25, 23, 0.85);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(28, 25, 23, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+    
+    .header-scrolled .header-link-button:hover {
+      color: rgb(28, 25, 23);
+      background: rgba(255, 255, 255, 0.75);
+      border-color: rgba(28, 25, 23, 0.15);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transform: translateY(-1px);
+    }
+    
+    /* Desktop Menu Button - Links (versteckt wenn NICHT gescrollt, sichtbar wenn gescrollt) */
+    .header-desktop-menu-btn {
+      color: rgb(28, 25, 23);
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    
+    .header-desktop-menu-btn:hover {
+      background: transparent;
+      box-shadow: none;
+    }
+    
+    /* Burger-MenÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼-Button anzeigen wenn Header sticky wird (gescrollt) */
+    #header.header-scrolled .header-desktop-menu-btn {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    
+    /* Header Logo Row - Schmaler wenn gescrollt */
+    .header-logo-row {
+      transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #header.header-scrolled .header-logo-row {
+      height: 3.5rem !important; /* 56px statt 64-80px - schmaler beim Scrollen */
+    }
+    
+    /* Logo kleiner wenn gescrollt */
+    #header.header-scrolled .acm-logo {
+      height: 2.5rem !important; /* 40px statt 48-56px */
+      max-width: 140px !important;
+    }
+    
+    /* Desktop Navigation - Standard sichtbar mittig (wird versteckt wenn gescrollt) */
+    #desktop-nav {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    
+    /* Navigation verstecken wenn Header sticky wird (gescrollt) */
+    #header.header-scrolled #desktop-nav {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    
+    /* Desktop Menu Styles ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ dezentes Einblenden beim ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œffnen */
+    #desktop-menu {
+      height: 100vh;
+      height: 100dvh; /* Dynamic viewport height fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r mobile Browser */
+      top: 0;
+      left: 0;
+      box-shadow: none !important;
+      border: none !important;
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #desktop-menu.show {
+      transform: translateX(0) !important;
+      opacity: 1;
+    }
+    
+    /* Inhalt des Burger-MenÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼s gestaffelt einblenden */
+    #desktop-menu .desktop-menu-nav .desktop-menu-link {
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.3s ease, transform 0.3s ease, padding-left 0.25s ease;
+    }
+    
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(1) { transition-delay: 0.05s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(2) { transition-delay: 0.1s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(3) { transition-delay: 0.15s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(4) { transition-delay: 0.2s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(5) { transition-delay: 0.25s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(6) { transition-delay: 0.3s; }
+    
+    #desktop-menu-backdrop {
+      pointer-events: none;
+      height: 100vh;
+      height: 100dvh; /* Dynamic viewport height fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r mobile Browser */
+    }
+    
+    #desktop-menu-backdrop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    /* Schrift im Burger-MenÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ dÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼nner, dezenter */
+    #desktop-menu,
+    #desktop-menu .desktop-menu-link {
+      font-weight: 300;
+      letter-spacing: 0.01em;
+    }
+    
+    .desktop-menu-link {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    
+    .desktop-menu-link:hover {
+      padding-left: 0.5rem;
+    }
+    
+    /* Mobile Menu Button ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ vor Scrollen ausgeblendet, beim Scrollen sichtbar mit dunkler Farbe wie Desktop */
+    .header-mobile-btn {
+      color: white;
+      transition: opacity 0.4s ease, visibility 0.4s ease, color 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    
+    #header.header-scrolled .header-mobile-btn {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      color: rgb(28, 25, 23);
+    }
+    
+    /* Mobile Menu Styles ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ dezent Top-to-Down Einblendeffekt beim Aufklappen */
+    #mobile-menu {
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      opacity: 0;
+      transform: translateY(-12px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    #mobile-menu.mobile-menu-open {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .mobile-menu-nav {
+      background: transparent;
+    }
+    
+    /* MenÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼-Links gestaffelt von oben nach unten einblenden */
+    .mobile-menu-nav .mobile-menu-link {
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(1) { transition-delay: 0.04s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(2) { transition-delay: 0.08s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(3) { transition-delay: 0.12s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(4) { transition-delay: 0.16s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(5) { transition-delay: 0.2s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(6) { transition-delay: 0.24s; }
+    
+    .mobile-menu-link {
+      color: rgba(28, 25, 23, 0.8);
+      font-weight: 400;
+      transition: all 0.2s ease;
+    }
+    .mobile-menu-link:hover {
+      color: rgb(28, 25, 23);
+      padding-left: 0.75rem;
+    }
+    
+    /* Modern Card Design */
+    .card-hover {
+      transition: var(--transition-smooth);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: white;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: rgba(0, 0, 0, 0.12);
+    }
+    
+    /* News Article Cards - Konsistenter Border Radius und mehr Padding */
+    #news .card-hover {
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    
+    #news .card-hover a {
+      display: block;
+    }
+    
+    #news .card-hover > a > div:first-child {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    
+    /* Padding fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Meta-Informationen und ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œberschrift */
+    #news .card-hover > a > div:not(:first-child) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    #news .card-hover > a > h3 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    
+    /* Buttons ohne Abrundung */
+    button,
+    .btn-primary,
+    a[class*="btn"],
+    a[class*="button"],
+    .header-button,
+    .header-link-button,
+    .header-desktop-menu-btn,
+    .header-mobile-btn,
+    .language-btn,
+    .modal-close {
+      border-radius: 0 !important;
+    }
+    
+    /* Global: Alle Bilder Border-Radius 0.5rem (wie Buttons) */
+    img:not(.acm-logo):not(svg *) {
+      border-radius: 0.5rem;
+    }
+    
+    /* Hero: kein Radius (Full Bleed) */
+    #hero img {
+      border-radius: 0;
+    }
+    
+    /* Bilder in Cards: nur oben abgerundet */
+    .aircraft-card img,
+    .aircraft-card .aircraft-card-image,
+    #news .card-hover img {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    
+    /* News: Bild-Container oben abrunden */
+    #news .card-hover > a > div:first-child,
+    #news .aspect-\[16\/10\] {
+      border-radius: 0.5rem 0.5rem 0 0;
+      overflow: hidden;
+    }
+    
+    /* Standalone-Bilder in Sektionen */
+    #about img,
+    #maintenance img:not(.aircraft-card-image):not(.acm-logo-watermark img),
+    #management img,
+    #careers img {
+      border-radius: 0.5rem;
+    }
+    
+    /* Image-Zoom-Container mit Radius */
+    .image-zoom-container {
+      border-radius: 0.5rem;
+    }
+    
+    .image-zoom-container img {
+      border-radius: 0.5rem;
+    }
+    
+    /* Relative-Wrapper fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Section-Bilder */
+    #about .relative,
+    #maintenance .relative,
+    #management .relative,
+    #careers .relative {
+      border-radius: 0.5rem;
+    }
+    
+    #about .relative img,
+    #maintenance .relative img,
+    #management .relative img,
+    #careers .relative img {
+      border-radius: 0.5rem;
+    }
+    
+    /* Alle Buttons: nur Rahmen, keine FÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼llung ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ Jumeirah Style */
+    .btn-primary,
+    .btn-outline,
+    .btn-filled {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 14rem;
+      padding: 15px 2rem;
+      background: transparent !important;
+      color: var(--color-olive) !important;
+      border: 1px solid var(--color-olive) !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      box-shadow: none;
+    }
+    .btn-primary:hover,
+    .btn-outline:hover,
+    .btn-filled:hover {
+      background: transparent !important;
+      color: var(--color-olive-dark) !important;
+      border-color: var(--color-olive-dark) !important;
+      opacity: 0.85;
+      box-shadow: 0 4px 14px rgba(0, 20, 65, 0.15);
+    }
+    .btn-primary:active,
+    .btn-outline:active,
+    .btn-filled:active {
+      transform: scale(0.98);
+    }
+    
+    /* WeiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸e Outline-Buttons (auf dunklem Hintergrund) ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ nur Rahmen */
+    .btn-outline-white,
+    .btn-filled-white {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 14rem;
+      padding: 15px 2rem;
+      background: transparent !important;
+      color: white !important;
+      border: 1px solid rgba(255,255,255,0.7) !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      box-shadow: none;
+    }
+    .btn-outline-white:hover,
+    .btn-filled-white:hover {
+      background: transparent !important;
+      color: white !important;
+      border-color: white !important;
+      opacity: 0.88;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Hero/Overlay-Button: Styling wie angegeben */
+    .btn-overlay-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 2rem;
+      background: white !important;
+      color: #292524 !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+    .btn-overlay-white:hover {
+      background: #f5f5f4 !important;
+    }
+    
+    /* Einheitlicher dezenter Hover: weiche ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œbergÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¤nge fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r alle Buttons */
+    .btn-primary,
+    .btn-outline,
+    .btn-filled,
+    .btn-outline-white,
+    .btn-filled-white,
+    a.btn-primary,
+    .link-arrow,
+    .header-link-button {
+      transition: opacity 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    }
+    
+    /* Dezenter CTA ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ Text Link Style */
+    .cta-subtle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: none !important;
+      padding: 0;
+      color: var(--color-olive);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: auto;
+      height: auto;
+    }
+    .cta-subtle:hover {
+      opacity: 0.7;
+      background: none;
+    }
+    
+    /* Text Link Style (Services) */
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-olive);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .link-arrow:hover {
+      opacity: 0.7;
+    }
+    .link-arrow svg {
+      transition: transform 0.3s ease;
+    }
+    .link-arrow:hover svg {
+      transform: translateX(4px);
+    }
+    
+    /* White Text Link (for dark backgrounds) */
+    .link-arrow-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      padding-bottom: 0.25rem;
+      transition: all 0.3s ease;
+    }
+    .link-arrow-white:hover {
+      border-color: white;
+    }
+    .link-arrow-white svg {
+      transition: transform 0.3s ease;
+    }
+    .link-arrow-white:hover svg {
+      transform: translateX(4px);
+    }
+    
+    /* Scroll Animation - Fade In */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+    }
+    
+    .fade-in-up-delay-1 {
+      animation-delay: 0.1s;
+    }
+    
+    .fade-in-up-delay-2 {
+      animation-delay: 0.2s;
+    }
+    
+    .fade-in-up-delay-3 {
+      animation-delay: 0.3s;
+    }
+    
+    /* Intersection Observer fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Scroll-Animationen */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œberschriften: Bressay Display, Old Standard TT, serif */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Bressay Display', 'Old Standard TT', Georgia, serif;
+      letter-spacing: -0.02em;
+      font-feature-settings: "kern" 1;
+    }
+    
+    /* Modern Section Spacing */
+    section {
+      position: relative;
+    }
+    
+    /* Subtle Gradient Overlays */
+    .gradient-overlay {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 100%);
+    }
+    
+    /* ACM Komplettes Logo - Sehr dezente Hintergrund-Dekoration */
+    .acm-logo-watermark {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1), transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+      filter: grayscale(100%) opacity(0.12);
+      mix-blend-mode: multiply;
+    }
+    
+    .acm-logo-watermark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 0;
+    }
+    
+    /* Scroll-basierte Animation fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Logo-Watermark */
+    .acm-logo-watermark.scroll-reveal {
+      opacity: 0;
+      transform: translateY(60px) scale(0.95);
+    }
+    
+    .acm-logo-watermark.scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: grayscale(100%) opacity(0.12);
+    }
+    
+    /* Verschiedene Positionen und GrÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸en fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Logo-Watermarks */
+    .acm-logo-watermark.top-left {
+      top: 5%;
+      left: 5%;
+      width: 300px;
+      height: 120px;
+      max-width: 40%;
+    }
+    
+    .acm-logo-watermark.top-right {
+      top: 5%;
+      right: 5%;
+      width: 300px;
+      height: 120px;
+      max-width: 40%;
+    }
+    
+    .acm-logo-watermark.bottom-left {
+      bottom: 5%;
+      left: 5%;
+      width: 300px;
+      height: 120px;
+      max-width: 40%;
+    }
+    
+    .acm-logo-watermark.bottom-right {
+      bottom: 5%;
+      right: 5%;
+      width: 300px;
+      height: 120px;
+      max-width: 40%;
+    }
+    
+    .acm-logo-watermark.center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 160px;
+      max-width: 50%;
+    }
+    
+    .acm-logo-watermark.center-right {
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 120px;
+      max-width: 35%;
+    }
+    
+    .acm-logo-watermark.center-left {
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 120px;
+      max-width: 35%;
+    }
+    
+    /* Parallax-Effekt beim Scrollen */
+    .acm-logo-watermark.parallax {
+      will-change: transform;
+    }
+    
+    /* FÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r dunkle HintergrÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼nde */
+    .acm-logo-watermark.dark-bg {
+      filter: grayscale(100%) opacity(0.15);
+      mix-blend-mode: screen;
+    }
+    
+    .acm-logo-watermark.dark-bg.scroll-reveal.revealed {
+      filter: grayscale(100%) opacity(0.15);
+    }
+    
+    @media (max-width: 768px) {
+      .acm-logo-watermark {
+        width: 200px !important;
+        height: 80px !important;
+        filter: grayscale(100%) opacity(0.08) !important;
+      }
+      
+      .acm-logo-watermark.scroll-reveal.revealed {
+        opacity: 1 !important;
+        filter: grayscale(100%) opacity(0.08) !important;
+      }
+    }
+    
+    /* Modal Backdrop - Modern ACM Style */
+    .modal-backdrop {
+      background: rgba(28, 25, 23, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: opacity 0.3s ease;
+    }
+    
+    /* Modal Container - Modern ACM Style */
+    .modal-container {
+      position: relative;
+      min-h-screen;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .modal-container {
+        padding: 1.5rem;
+      }
+    }
+    
+    /* Modal Content - Modern ACM Style */
+    .modal-content {
+      position: relative;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 42rem;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: scale(0.95);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .modal-content.show {
+      transform: scale(1);
+      opacity: 1;
+    }
+    
+    /* Modal Header */
+    .modal-header {
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .modal-title {
+      font-family: serif;
+      font-size: 1.75rem;
+      font-weight: 500;
+      color: rgb(28, 25, 23);
+      margin: 0;
+    }
+    
+    .modal-close {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.04);
+      color: rgb(120, 113, 108);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .modal-close:hover {
+      background: rgba(0, 0, 0, 0.08);
+      color: rgb(28, 25, 23);
+    }
+    
+    /* Modal Body */
+    .modal-body {
+      padding: 2rem;
+    }
+    
+    /* Scrollbar Styling fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Modal */
+    .modal-content::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .modal-content::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.02);
+    }
+    
+    .modal-content::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+    }
+    
+    .modal-content::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.25);
+    }
+    
+    /* Starlink Pop-up - ACM Authorized Reseller (Clay LacyÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“inspired) */
+    .starlink-popup-content {
+      background: linear-gradient(135deg, #2c2419 0%, #1a1510 50%, #0f0d0a 100%);
+      color: #fff;
+      max-width: 44rem;
+      padding: 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+      grid-template-areas: "header header" "image body";
+    }
+    @media (max-width: 640px) {
+      .starlink-popup-content {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "image" "body";
+      }
+    }
+    .starlink-popup-content .modal-header {
+      grid-area: header;
+      border-bottom-color: rgba(255,255,255,0.12);
+      padding: 1.75rem 2rem 1.25rem;
+    }
+    .starlink-popup-content .modal-title {
+      color: #fff;
+      font-size: 1.5rem;
+    }
+    .starlink-popup-content .modal-close {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.9);
+    }
+    .starlink-popup-content .modal-close:hover {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .starlink-popup-image {
+      grid-area: image;
+      position: relative;
+      min-height: 12rem;
+      background: #0f0d0a;
+    }
+    .starlink-popup-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .starlink-popup-image {
+        min-height: 10rem;
+      }
+      .starlink-popup-image img {
+        object-position: center 35%;
+      }
+    }
+    .starlink-popup-body {
+      grid-area: body;
+      padding: 1.75rem 2rem 2rem;
+    }
+    .starlink-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 0.5rem;
+    }
+    .starlink-headline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .starlink-teaser {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 1.25rem;
+    }
+    .starlink-cta {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      color: #fff;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255,255,255,0.5);
+      transition: var(--transition-base);
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+    }
+    .starlink-cta:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.8);
+      color: #fff;
+    }
+    .starlink-aircraft {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .starlink-aircraft span:not(:last-child)::after {
+      content: ' | ';
+      margin: 0 0.2rem;
+      color: rgba(255,255,255,0.4);
+    }
+    
+    /* Language Switcher Styles - ACM Style */
+    .language-btn {
+      color: rgb(120, 113, 108); /* stone-500 */
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 0.5rem;
+    }
+    
+    .language-btn:hover {
+      color: var(--color-olive);
+    }
+    
+    .language-btn.active {
+      color: var(--color-olive) !important; /* ACM Navy fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r aktive Sprache */
+      font-weight: 600;
+      background: transparent;
+    }
+    
+    .language-btn:focus-visible {
+      outline: 2px solid var(--color-olive);
+      outline-offset: 2px;
+      border-radius: 0;
+    }
+    
+    /* Scroll Indicator Animation */
+    @keyframes bounce-subtle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+    .scroll-indicator {
+      animation: bounce-subtle 2s ease-in-out infinite;
+    }
+    
+    /* Hide scrollbar for mobile menu */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    /* Utility Bar Styles - Jumeirah Style - Verschwindet beim Scrollen */
+    .utility-bar {
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    /* Utility Bar verstecken beim Scrollen */
+    .utility-bar-hidden {
+      opacity: 0;
+      transform: translateY(-100%);
+      pointer-events: none;
+    }
+    
+    /* Header Position anpassen - nach oben wenn Utility Bar versteckt */
+    #header {
+      transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .header-scrolled {
+      top: 0 !important;
+    }
+
+    /* KOMMENTAR: FÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Produktion - Google Fonts einbinden:
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+    Dann font-serif durch 'Cormorant Garamond' ersetzen
+    Und font-sans durch 'Inter' ersetzen
+    */
+</style>
+<link href="mobile-qa.css" rel="stylesheet"/>
+</head>
+<body class="font-sans text-stone-800 antialiased">
+<!-- ============================================
+       2. HEADER / NAVIGATION (Sticky) - Jumeirah Style - Fixed Overlay
+       ============================================ -->
+<header class="fixed top-0 left-0 right-0 z-50 w-full" id="header">
+<div class="w-full px-6 sm:px-8 lg:px-10">
+<!-- Logo Row - Mittig, mit Burger-MenÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ links wenn gescrollt, rechts Sprachauswahl + CTA -->
+<div class="flex items-center justify-center h-16 lg:h-20 header-logo-row relative transition-all duration-400">
+<!-- Desktop Burger Menu Button - Ganz oben links in Logo-HÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶he (nur wenn gescrollt) -->
+<button aria-expanded="false" aria-label="Men&uuml; &ouml;ffnen" class="hidden lg:block absolute left-0 p-2 header-desktop-menu-btn" id="desktop-menu-btn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- RechtsbÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ndig: Sprachauswahl + Telefon-CTA (gleiche HÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶he wie Logo) -->
+<div class="header-top-right hidden lg:flex absolute right-0 items-center gap-6">
+<div class="header-lang-switcher flex items-center gap-1 text-sm">
+<a class="header-lang-link header-lang-active" data-lang="de" href="index.html">DE</a>
+<span aria-hidden="true" class="header-lang-sep">|</span>
+<a class="header-lang-link" data-lang="en" href="en/index.html">EN</a>
+</div>
+<a class="header-link-button whitespace-nowrap" href="kontakt.html#zentrale">Kontakt aufnehmen</a>
+</div>
+<a aria-label="ACM AIR CHARTER Home" class="acm-logo-link hidden lg:block" href="index.html">
+<img alt="ACM AIR CHARTER Logo" class="acm-logo h-12 lg:h-14 w-auto transition-opacity duration-300" id="header-logo-img" onerror="this.style.display='none'; const fallback = document.getElementById('header-logo-fallback'); if(fallback) fallback.style.display='flex';" onload="this.style.display='block'; const fallback = document.getElementById('header-logo-fallback'); if(fallback) fallback.style.display='none';" src="logo.png" style="object-fit: contain; max-width: 160px;"/>
+<!-- Fallback Text-Logo -->
+<div class="flex items-center gap-2" id="header-logo-fallback" style="display: none;">
+<div class="header-logo-bg w-10 h-10 flex items-center justify-center">
+<span class="header-logo-text font-serif text-2xl">A</span>
+</div>
+<div class="hidden sm:block">
+<span class="header-logo-text font-serif text-lg tracking-wide block leading-tight">ACM</span>
+<span class="header-logo-subtext text-[9px] font-light tracking-wider uppercase block mt-0.5">Air Charter</span>
+</div>
+</div>
+</a>
+<!-- Mobile Logo -->
+<a aria-label="ACM AIR CHARTER Home" class="acm-logo-link lg:hidden" href="index.html">
+<img alt="ACM AIR CHARTER Logo" class="acm-logo h-10 sm:h-12 w-auto transition-opacity duration-300" id="header-logo-img-mobile" onerror="this.style.display='none'; const fallback = document.getElementById('header-logo-fallback-mobile'); if(fallback) fallback.style.display='flex';" onload="this.style.display='block'; const fallback = document.getElementById('header-logo-fallback-mobile'); if(fallback) fallback.style.display='none';" src="logo.png" style="object-fit: contain;"/>
+<!-- Fallback Text-Logo -->
+<div class="flex items-center gap-2" id="header-logo-fallback-mobile" style="display: none;">
+<div class="header-logo-bg w-8 h-8 flex items-center justify-center">
+<span class="header-logo-text font-serif text-xl">A</span>
+</div>
+</div>
+</a>
+<!-- Mobile Menu Button ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ rechts in der Logo-Zeile (nur Mobile, sichtbar beim Scrollen) -->
+<button aria-expanded="false" aria-label="Men&uuml; &ouml;ffnen" class="lg:hidden absolute right-0 p-2 header-mobile-btn" id="mobile-menu-btn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Trennlinie zwischen Logo-Zeile und Navigation (verblasst links/rechts) -->
+<div aria-hidden="true" class="header-divider-line"></div>
+<!-- Navigation Row -->
+<div class="flex items-center justify-center h-14 lg:h-16 relative header-nav-row transition-all duration-400">
+<!-- Desktop Navigation - Mittig (nur wenn nicht gescrollt) -->
+<nav aria-label="Hauptnavigation" class="hidden lg:flex items-center gap-[10rem] justify-center header-nav-visible" id="desktop-nav">
+<a class="header-nav-link" href="thats-acm.html">That's ACM</a>
+<div class="header-nav-charter-wrap">
+<a class="header-nav-link" href="charter.html">Charter</a>
+<div aria-label="Charter Untermen&uuml;" class="header-nav-dropdown">
+<a href="charter.html">Charter</a>
+<a href="global-7500.html">Global 7500</a>
+<a href="global-6000.html">Global 6000</a>
+<a href="global-xrs.html">Global XRS</a>
+</div>
+</div>
+<a class="header-nav-link" href="aircraft-management.html">Aircraft Management</a>
+<a class="header-nav-link" href="maintenance.html">Maintenance</a>
+<a class="header-nav-link" href="karriere.html">Karriere</a>
+<a class="header-nav-link" href="kontakt.html">Kontakt</a>
+</nav>
+</div>
+</div>
+<!-- Desktop Burger Menu - Links aufklappbar - Komplette Seite -->
+<div class="hidden lg:block fixed top-0 left-0 h-screen w-80 bg-white z-[100] transform -translate-x-full" id="desktop-menu">
+<div class="h-screen overflow-y-auto">
+<div class="p-6 flex items-center justify-between">
+<img alt="ACM AIR CHARTER Logo" class="h-10 w-auto" onerror="this.style.display='none'" src="logo.png"/>
+<button aria-label="Men&uuml; schlie&szlig;en" class="p-2 hover:bg-stone-100 rounded-lg transition-colors" id="desktop-menu-close">
+<svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<nav class="p-6 space-y-1 desktop-menu-nav">
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="thats-acm.html">That's ACM</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="charter.html">Charter</a>
+<a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="global-7500.html" style="font-size: 0.85rem;">Bombardier Global 7500</a>
+<a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="global-6000.html" style="font-size: 0.85rem;">Bombardier Global 6000</a>
+<a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="global-xrs.html" style="font-size: 0.85rem;">Bombardier Global XRS</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="aircraft-management.html">Aircraft Management</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="maintenance.html">Maintenance</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="karriere.html">Karriere</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="news.html">News</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="kontakt.html">Kontakt</a>
+</nav>
+</div>
+</div>
+<!-- Desktop Menu Backdrop - Komplette Seite -->
+<div class="hidden lg:block fixed top-0 left-0 right-0 bottom-0 bg-black/20 backdrop-blur-sm z-[99] opacity-0 transition-opacity duration-300" id="desktop-menu-backdrop"></div>
+<!-- Mobile Navigation -->
+<div class="lg:hidden hidden" id="mobile-menu">
+<nav class="max-w-7xl mx-auto px-6 py-6 space-y-1 mobile-menu-nav">
+<a class="mobile-menu-link block py-3" href="thats-acm.html">That's ACM</a>
+<a class="mobile-menu-link block py-3" href="charter.html">Charter</a>
+<a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="global-7500.html" style="font-size: 0.9rem;">Global 7500</a>
+<a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="global-6000.html" style="font-size: 0.9rem;">Global 6000</a>
+<a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="global-xrs.html" style="font-size: 0.9rem;">Global XRS</a>
+<a class="mobile-menu-link block py-3" href="aircraft-management.html">Aircraft Management</a>
+<a class="mobile-menu-link block py-3" href="maintenance.html">Maintenance</a>
+<a class="mobile-menu-link block py-3" href="karriere.html">Karriere</a>
+<a class="mobile-menu-link block py-3" href="news.html">News</a>
+<a class="mobile-menu-link block py-3" href="kontakt.html">Kontakt</a>
+<div class="pt-4 mt-2 border-t border-stone-100 flex items-center">
+<a class="text-sm font-semibold text-stone-500 hover:text-olive transition-colors" href="en/index.html">EN</a>
+</div>
+</nav>
+</div>
+</header>
+<main>
+<!-- ============================================
+         3. HERO SECTION (Video Full-Bleed bis ganz oben) - Jumeirah Style
+         ============================================ -->
+<section class="relative w-full h-screen min-h-[600px] max-h-[950px] overflow-hidden" id="hero">
+<!-- Video Background - Full Bleed bis ganz oben -->
+<!-- ACM Hero Video - Startet bei Sekunde 15, Loop ab Sekunde 15 -->
+<video autoplay="" class="absolute top-0 left-0 w-full h-full object-cover z-0 hero-video-fadein" id="hero-video" loop="" muted="" playsinline="" poster="Fotos/Hangar/ACM - Hangar Baden-Baden.jpg" preload="auto">
+<!-- ACM Hero Video -->
+<source src="Fotos/ACM hero_short.mp4" type="video/mp4"/>
+<!-- Fallback: Poster-Bild wird angezeigt wenn Video nicht lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¤dt -->
+</video>
+<!-- Overlay - Subtiler fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Jumeirah-Look -->
+<div class="hero-overlay absolute inset-0 z-10"></div>
+<!-- Stromlinien-Effekte -->
+<div class="streamlines-container absolute inset-0 pointer-events-none" style="z-index: 15;">
+<div class="streamline streamline-1"></div>
+<div class="streamline streamline-2"></div>
+<div class="streamline streamline-3"></div>
+<div class="streamline streamline-4"></div>
+<div class="streamline streamline-5"></div>
+</div>
+</section>
+<!-- Hero Statement - Jumeirah Style (unterhalb des Videos) -->
+<section class="hero-statement-section py-16 sm:py-20 lg:py-24 bg-sand-50" id="hero-statement">
+<div class="max-w-4xl mx-auto px-6 sm:px-8 text-center">
+<p class="font-serif leading-relaxed font-light italic" style="color: #001441;">
+          &bdquo;Exzellenz in der Luft, Vertrauen am Boden"
+        </p>
+</div>
+</section>
+<!-- ============================================
+         4. SERVICES (3 Tiles) - Jumeirah Style
+         ============================================ -->
+<section class="py-20 sm:py-28 lg:py-32 bg-white relative overflow-hidden" id="services">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+<!-- Section Header - Jumeirah Style -->
+<div class="text-center mb-16 lg:mb-20 scroll-reveal">
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 leading-tight font-light">
+            Business Aviation am Baden-Airpark,<br/>individuell organisiert.</h2>
+</div>
+<!-- 3-Column Grid - Jumeirah Style -->
+<div class="grid md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
+<!-- Charter -->
+<article class="scroll-reveal flex flex-col" id="charter">
+<div class="services-card-img aspect-[4/3] overflow-hidden mb-6">
+<img alt="ACM Charter &ndash; Business Aviation am Baden-Airpark" class="w-full h-full object-cover block" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&amp;q=80'" src="Fotos/Neu/Charter_hero.jpg"/>
+</div>
+<div class="text-center px-2 flex flex-col flex-1 items-center">
+<h3 class="font-serif text-2xl lg:text-[1.7rem] text-stone-800 mb-3 font-normal">Charter-Services</h3>
+<p class="text-stone-500 mb-5 leading-relaxed text-[15px]">
+                Flexible Privatfl&uuml;ge mit h&ouml;chsten Sicherheitsstandards. Individuelle Routenplanung, diskret und zuverl&auml;ssig &ndash; wann und wohin Sie m&ouml;chten.
+              </p>
+<a class="link-arrow mt-auto" href="kontakt.html#sales-operations">
+<span>Charter anfragen</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+</div>
+</article>
+<!-- Aircraft Management -->
+<article class="scroll-reveal flex flex-col">
+<div class="services-card-img aspect-[4/3] overflow-hidden mb-6">
+<img alt="Aircraft Management &ndash; Business Aviation am Baden-Airpark" class="w-full h-full object-cover block" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&amp;q=80'" src="Fotos/Neu/AircraftManagement_Hero.jpg"/>
+</div>
+<div class="text-center px-2 flex flex-col flex-1 items-center">
+<h3 class="font-serif text-2xl lg:text-[1.7rem] text-stone-800 mb-3 font-normal">Aircraft Management</h3>
+<p class="text-stone-500 mb-5 leading-relaxed text-[15px]">
+                Transparente Betreuung Ihres Flugzeugs. Professionelle und effiziente Crewplanung, proaktive Operations und detailliertes Reporting f&uuml;r maximale Kontrolle.
+              </p>
+<a class="link-arrow mt-auto" href="#management">
+<span>Management entdecken</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+</div>
+</article>
+<!-- Maintenance -->
+<article class="scroll-reveal flex flex-col">
+<div class="services-card-img aspect-[4/3] overflow-hidden mb-6">
+<img alt="Maintenance &amp; CAMO &ndash; Business Aviation am Baden-Airpark" class="w-full h-full object-cover block" loading="lazy" onerror="this.onerror=null;this.src='Fotos/D-AMPG-7500/70245%20-%20DELIVERY%20Photos%20-%20IMG_0010.png'" src="Fotos/Neu/Maintenance_CAMO_hero.jpg"/>
+</div>
+<div class="text-center px-2 flex flex-col flex-1 items-center">
+<h3 class="font-serif text-2xl lg:text-[1.7rem] text-stone-800 mb-3 font-normal">Maintenance &amp; CAMO</h3>
+<p class="text-stone-500 mb-5 leading-relaxed text-[15px]">
+                Part-145 zertifizierte Wartung, CAMO-Services und 24/7 AOG-Support. Planbare Turnaround-Zeiten. Individuelle Technikplanung.
+              </p>
+<a class="link-arrow mt-auto" href="kontakt.html#maintenance">
+<span>Maintenance anfragen</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Fullwidth Image Section - Jumeirah Style -->
+<section class="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden" id="services-promo">
+<img alt="Business Aviation am Baden-Airpark &ndash; ACM AIR CHARTER Flotte" class="w-full h-full object-cover" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&amp;q=80'" src="Fotos/D-AMPG-7500/70245%20-%20DELIVERY%20Photos%20-%20IMG_0010.png"/>
+<!-- Subtle Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/15 to-black/10"></div>
+<!-- Centered Text Overlay -->
+<div class="absolute inset-0 flex flex-col items-center justify-center px-6 gap-6 sm:gap-8">
+<img alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white text-center font-light leading-relaxed" style="text-shadow: 0 2px 20px rgba(0,0,0,0.3);">
+          Individuelle Aviation-L&ouml;sungen,<br class="hidden sm:block"/> ganz nach Ihren W&uuml;nschen.</h2>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-white text-stone-800 font-medium text-sm uppercase tracking-wider hover:bg-stone-100 transition-colors duration-300 shadow-lg" href="charter.html" style="text-shadow: none;">
+          Jetzt Ihren Flug buchen
+        </a>
+</div>
+</section>
+<!-- ============================================
+         5. TRUST / PROOF STRIP - Jumeirah Style (Minimal)
+         ============================================ -->
+<section class="py-14 sm:py-16 bg-sand-100" id="trust-kpis">
+<div class="w-[80vw] max-w-[80vw] mx-auto px-4">
+<div class="flex flex-nowrap justify-center items-start gap-6 sm:gap-8 lg:gap-10">
+<!-- KPIs - Zahl hervorgehoben, Spalten in einer Zeile, Text darf umbrechen -->
+<div class="text-center scroll-reveal flex-1 min-w-0">
+<span class="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-800 font-light block">+30 Jahre</span>
+<span class="font-serif text-base sm:text-lg lg:text-xl text-stone-700 font-light mt-1">in der Luftfahrtbranche.</span>
+</div>
+<div aria-hidden="true" class="hidden sm:block w-px min-h-[4rem] bg-stone-300 shrink-0 self-stretch"></div>
+<div class="text-center scroll-reveal flex-1 min-w-0">
+<span class="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-800 font-light block">+50.000</span>
+<span class="font-serif text-base sm:text-lg lg:text-xl text-stone-700 font-light mt-1">geleistete Flugstunden.</span>
+</div>
+<div aria-hidden="true" class="hidden sm:block w-px min-h-[4rem] bg-stone-300 shrink-0 self-stretch"></div>
+<div class="text-center scroll-reveal flex-1 min-w-0">
+<span class="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-800 font-light block">100%</span>
+<span class="font-serif text-base sm:text-lg lg:text-xl text-stone-700 font-light mt-1">individuelle Flugplanung.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================
+         6. "THIS IS ACM" (About) ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ wie Technik & CAMO (Bild in Spalte, nicht volle HÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶he)
+         ============================================ -->
+<section class="py-20 sm:py-28 lg:py-32 bg-white relative overflow-hidden" id="about">
+<div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center">
+<!-- Image -->
+<div class="scroll-reveal">
+<img alt="ACM AIR CHARTER &ndash; Business Aviation am Baden-Airpark" class="w-full h-[400px] lg:h-[550px] object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1559024094-4a1e4495c3c1?w=800&amp;q=80'" src="Fotos/Neu/home_thatsacm.jpg"/>
+</div>
+<!-- Content -->
+<div>
+<span class="text-olive/70 font-medium text-xs tracking-[0.2em] uppercase mb-6 block">That's ACM</span>
+<h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">
+              Boutique Aviation mit technischer Tiefe.</h2>
+<p class="text-stone-700 leading-relaxed mb-10">
+              ACM AIR CHARTER steht f&uuml;r Business Aviation am Baden-Airpark. Unter einem Dach vereinen wir Aircraft Management, Charter, Part-145 Maintenance und CAMO mit klaren Prozessen, direkten Ansprechpartnern und zertifizierten Standards. Sicherheit, Pr&auml;zision und Diskretion sind bei uns gelebte Praxis.
+            </p>
+<div class="flex flex-wrap gap-4">
+<a class="btn-primary inline-flex items-center justify-center" href="thats-acm.html">
+                Mehr &uuml;ber ACM
+              </a>
+<a class="btn-outline inline-flex items-center justify-center" href="kontakt.html#zentrale">
+                Kontakt aufnehmen
+              </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Fullwidth Image Break - Charter (unter That's ACM) -->
+<section class="relative h-[45vh] sm:h-[55vh] overflow-hidden" id="charter-hero">
+<img alt="ACM Flotte" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&amp;q=80'" src="Fotos/Neu/home_banner_flotte.jpg"/>
+<div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+<img alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light">
+          Flotte.</h2>
+<a class="btn-overlay-white mt-4 inline-flex" href="#charter">
+          Mehr erfahren
+        </a>
+</div>
+</section>
+<!-- ============================================
+         7. MAINTENANCE FEATURE - Jumeirah Style (Inverted Split)
+         ============================================ -->
+<section class="relative overflow-visible" id="maintenance">
+<div class="grid lg:grid-cols-2 min-h-[600px] lg:min-h-[700px]">
+<!-- Content Side - White Background -->
+<div class="content-box-outer bg-white py-16 lg:py-20 flex items-center order-2 lg:order-1">
+<div class="max-w-xl">
+<span class="text-olive/70 font-medium text-xs tracking-[0.2em] uppercase mb-6 block">Aircraft Management</span>
+<h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">
+              Ihr Flugzeug in besten H&auml;nden.</h2>
+<p class="text-stone-700 leading-relaxed mb-10">
+              Als Flugzeugeigent&uuml;mer profitieren Sie von einem strukturierten Aircraft Management, das Transparenz, Verf&uuml;gbarkeit und nachhaltigen Werterhalt sichert. Wir &uuml;bernehmen s&auml;mtliche operativen Prozesse, sorgen f&uuml;r klare Kosten&uuml;bersichten, eingespielte Crews und eine vorausschauende, kostenoptimierte Planung.
+            </p>
+<div class="flex flex-wrap gap-4">
+<a class="btn-primary" href="aircraft-management.html">
+                Mehr &uuml;ber Aircraft Management erfahren
+              </a>
+</div>
+</div>
+</div>
+<!-- Image Side -->
+<div class="relative h-[400px] lg:h-auto order-1 lg:order-2">
+<img alt="ACM Aircraft Management &ndash; Ihr Flugzeug in besten H&auml;nden" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.onerror=null;this.src='Fotos/D-AMPG-7500/70245%20-%20DELIVERY%20Photos%20-%20IMG_0010.png'" src="Fotos/Neu/home_besteHaende.jpg"/>
+</div>
+</div>
+</section>
+<!-- ============================================
+         8. OWNER / MANAGEMENT FEATURE - Jumeirah Style (unter Aircraft Management)
+         ============================================ -->
+<section class="py-20 sm:py-28 lg:py-32 bg-sand-50 relative overflow-hidden" id="management">
+<div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center">
+<!-- Content -->
+<div class="lg:order-2">
+<span class="text-olive font-medium text-xs tracking-[0.2em] uppercase mb-6 block">Technik &amp; CAMO</span>
+<h2 class="font-serif text-stone-800 mb-8 leading-tight font-light">
+              Erstklassiger Wartungsservice f&uuml;r Business Jets.</h2>
+<p class="text-stone-500 leading-relaxed mb-10">
+              Unsere Part-145 zertifizierte Werft bietet umfassende Wartungsleistungen f&uuml;r Business Jets. Von Line- und Base-Maintenance &uuml;ber Avionik bis hin zu Cabin-Refurbishment &ndash; mit transparenten SLAs und planbaren Turnaround-Zeiten.
+            </p>
+<div class="flex flex-wrap gap-4">
+<a class="btn-primary" href="maintenance.html">
+                Mehr &uuml;ber Maintenance erfahren
+              </a>
+</div>
+</div>
+<!-- Image -->
+<div class="lg:order-1">
+<img alt="ACM Technik &amp; CAMO" class="w-full h-[400px] lg:h-[550px] object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&amp;q=80'" src="Fotos/Neu/home_technik.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Fullwidth Image Break - Handling -->
+<section class="relative h-[45vh] sm:h-[55vh] overflow-hidden" id="handling">
+<img alt="ACM Handling" class="w-full h-full object-cover object-left" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&amp;q=80'" src="Fotos/Neu/home_Rampmanager.jpg"/>
+<div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+<img alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light">
+          Handling.</h2>
+<a class="btn-overlay-white mt-4 inline-flex" href="https://www.acmhandling.de/" rel="noopener noreferrer" target="_blank">
+          Mehr erfahren
+        </a>
+</div>
+</section>
+<!-- ============================================
+         9. CAREERS / RECRUITING - Jumeirah Style Split
+         ============================================ -->
+<section class="relative overflow-visible" id="careers">
+<div class="grid lg:grid-cols-2 min-h-[600px] lg:min-h-[650px]">
+<!-- Image Side -->
+<div class="relative h-[400px] lg:h-auto">
+<img alt="ACM Karriere &ndash; internationales Premium-Umfeld" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&amp;q=80'" src="Fotos/Neu/home_karriere.jpg"/>
+</div>
+<!-- Content Side -->
+<div class="content-box-outer bg-sand-100 py-16 lg:py-20 flex items-center">
+<div class="max-w-xl">
+<span class="text-olive font-medium text-xs tracking-[0.2em] uppercase mb-6 block">Karriere</span>
+<h2 class="font-serif text-stone-800 mb-8 leading-tight font-light">
+              Arbeiten im internationalen Premium-Umfeld.</h2>
+<p class="text-stone-500 leading-relaxed mb-10">
+              Bei ACM erwarten Sie spannende Aufgaben in der internationalen Business Aviation. Wir investieren in unsere Mitarbeiter &ndash; durch kontinuierliche Weiterbildung, moderne Arbeitsbedingungen und ein kollegiales Team.
+            </p>
+<div class="flex flex-wrap gap-4">
+<a class="btn-primary" href="karriere.html#stellen">
+                Zu unseren Stellenausschreibungen
+              </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================
+         10. NEWS / INSIGHTS - Jumeirah Style (Inspiring Stories)
+         ============================================ -->
+<section class="py-20 sm:py-28 lg:py-32 bg-white relative overflow-hidden" id="news">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+<div class="text-center mb-14 lg:mb-16">
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 font-light">News &amp; Insights.</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8 lg:gap-10">
+<!-- News: nur Beitr&auml;ge mit eigener Artikelseite (wie news.html, data-imported-news) -->
+<article class="group scroll-reveal">
+<a class="block" href="news/is-bah-stage-2-acm-handling.html">
+<div class="aspect-[4/3] overflow-hidden mb-5">
+<img alt="IS-BAH Stage 2 Zertifizierung der ACM Business Aviation Handling GmbH" class="w-full h-full object-cover object-[52%_38%] transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&amp;q=80'" src="Fotos/Neu/home_Rampmanager.jpg"/>
+</div>
+<div class="px-1">
+<div class="flex items-center gap-3 text-xs text-stone-400 mb-3">
+<span class="text-olive uppercase tracking-wider font-medium">Handling</span>
+<span>&bull;</span>
+<time datetime="2025-06-01">1. Juni 2025</time>
+</div>
+<h3 class="font-serif text-xl lg:text-2xl text-stone-800 group-hover:text-olive transition-colors leading-snug font-normal">
+                  IS-BAH Stage 2 Zertifizierung der ACM Business Aviation Handling GmbH
+                </h3>
+</div>
+</a>
+</article>
+<article class="group scroll-reveal">
+<a class="block" href="news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.html">
+<div class="aspect-[4/3] overflow-hidden mb-5">
+<img alt="IS-BAH Stage 2 Zertifizierung der ACM Business Aviation Handling GmbH" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&amp;q=80'" src="Fotos/news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.jpg"/>
+</div>
+<div class="px-1">
+<div class="flex items-center gap-3 text-xs text-stone-400 mb-3">
+<span class="text-olive uppercase tracking-wider font-medium">Handling</span>
+<span>&bull;</span>
+<time datetime="2024-03-19">19. M&auml;rz 2024</time>
+</div>
+<h3 class="font-serif text-xl lg:text-2xl text-stone-800 group-hover:text-olive transition-colors leading-snug font-normal">
+                  IS-BAH Stage 2 Zertifizierung der ACM Business Aviation Handling GmbH
+                </h3>
+</div>
+</a>
+</article>
+<article class="group scroll-reveal">
+<a class="block" href="news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.html">
+<div class="aspect-[4/3] overflow-hidden mb-5">
+<img alt="ACM-Technik schlie&szlig;t erfolgreich die erste 120-Monats-Inspektion eines Bombardier Global Express-Flugzeuges ab" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&amp;q=80'" src="Fotos/news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.jpg"/>
+</div>
+<div class="px-1">
+<div class="flex items-center gap-3 text-xs text-stone-400 mb-3">
+<span class="text-olive uppercase tracking-wider font-medium">Maintenance</span>
+<span>&bull;</span>
+<time datetime="2023-02-20">20. Februar 2023</time>
+</div>
+<h3 class="font-serif text-xl lg:text-2xl text-stone-800 group-hover:text-olive transition-colors leading-snug font-normal">
+                  ACM-Technik schlie&szlig;t erfolgreich die erste 120-Monats-Inspektion eines Bombardier Global Express-Flugzeuges ab
+                </h3>
+</div>
+</a>
+</article>
+</div>
+<!-- View All Button -->
+<div class="text-center mt-12">
+<a class="btn-outline inline-flex items-center gap-2" href="news.html">
+            Alle News ansehen
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+</div>
+</div>
+</section>
+<!-- ============================================
+         11. FINAL CTA BAND - Jumeirah Style
+         ============================================ -->
+<section class="relative py-20 sm:py-24 lg:py-28 bg-sand-100 overflow-hidden" id="home-final-cta">
+<!-- Dezente Stromlinien-Animation -->
+<div class="streamlines-container absolute inset-0 pointer-events-none z-0 opacity-20">
+<div class="streamline streamline-1" style="background: linear-gradient(90deg, transparent, rgba(0,20,65,0.3), transparent);"></div>
+<div class="streamline streamline-2" style="background: linear-gradient(90deg, transparent, rgba(0,20,65,0.2), transparent);"></div>
+<div class="streamline streamline-3" style="background: linear-gradient(90deg, transparent, rgba(0,20,65,0.25), transparent);"></div>
+<div class="streamline streamline-4" style="background: linear-gradient(90deg, transparent, rgba(0,20,65,0.15), transparent);"></div>
+<div class="streamline streamline-5" style="background: linear-gradient(90deg, transparent, rgba(0,20,65,0.2), transparent);"></div>
+</div>
+<div class="max-w-[80rem] mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-900 mb-6 font-light">
+          Bereit f&uuml;r den n&auml;chsten Schritt?
+        </h2>
+<p class="text-stone-600 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
+          Ob Charter-Anfrage, Management-Beratung oder Maintenance-Slot &ndash; wir freuen uns auf Ihre Anfrage.
+        </p>
+<div class="homepage-cta-grid flex flex-nowrap justify-center gap-4 overflow-x-auto">
+<a class="btn-filled inline-flex items-center justify-center" href="charter.html">
+            Flug chartern
+          </a>
+<a class="btn-outline inline-flex items-center justify-center" href="aircraft-management.html">
+            Aircraft Management
+          </a>
+<a class="btn-outline inline-flex items-center justify-center" href="maintenance.html">
+            Maintenance
+          </a>
+<a class="btn-outline inline-flex items-center justify-center" href="karriere.html">
+            Karriere
+          </a>
+</div>
+</div>
+</section>
+</main>
+<!-- ============================================
+       12. FOOTER - Jumeirah Style (Clean & Minimal)
+       ============================================ -->
+<footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+<!-- Top Section: Logo + Newsletter -->
+<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 mb-14 lg:mb-16">
+<!-- Logo & Tagline -->
+<div class="lg:max-w-sm">
+<img alt="ACM AIR CHARTER Logo" class="h-14 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="logo.png"/>
+<div style="display: none;">
+<span class="font-serif text-2xl text-stone-900 tracking-wide">ACM AIR CHARTER</span>
+</div>
+<p class="text-stone-500 text-sm leading-relaxed">
+            Premium Business Aviation aus einer Hand &ndash; Charter, Management, Maintenance.
+          </p>
+</div>
+<!-- Contact Info -->
+<div class="lg:text-right">
+<address class="not-italic text-sm leading-relaxed text-stone-600 mb-4">
+            ACM AIR CHARTER GmbH<br/>
+            Am Flughafen 12, 77836 Rheinm&uuml;nster
+          </address>
+<div class="space-y-1 text-sm">
+<a class="block text-olive hover:text-olive-dark transition-colors" href="tel:+497229304050">+49 7229 30405-0</a>
+<a class="block text-olive hover:text-olive-dark transition-colors" href="mailto:info@acm.aero">info@acm.aero</a>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-12 py-10 border-t border-stone-200">
+<!-- Services -->
+<div>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Services</h4>
+<ul class="space-y-2.5 text-sm">
+<li><a class="hover:text-olive transition-colors" href="charter.html">Charter</a></li>
+<li><a class="hover:text-olive transition-colors" href="#management">Aircraft Management</a></li>
+<li><a class="hover:text-olive transition-colors" href="#maintenance">Maintenance</a></li>
+<li><a class="hover:text-olive transition-colors" href="maintenance.html">CAMO</a></li>
+</ul>
+</div>
+<!-- Unternehmen -->
+<div>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Unternehmen</h4>
+<ul class="space-y-2.5 text-sm">
+<li><a class="hover:text-olive transition-colors" href="#about">That's ACM</a></li>
+<li><a class="hover:text-olive transition-colors" href="karriere.html">Karriere</a></li>
+<li><a class="hover:text-olive transition-colors" href="news.html">News</a></li>
+<li><a class="hover:text-olive transition-colors" href="kontakt.html">Kontakt</a></li>
+</ul>
+</div>
+<!-- Rechtliches -->
+<div>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Rechtliches</h4>
+<ul class="space-y-2.5 text-sm">
+<li><a class="hover:text-olive transition-colors" href="impressum.html">Impressum</a></li>
+<li><a class="hover:text-olive transition-colors" href="datenschutz.html">Datenschutz</a></li>
+<li><a class="hover:text-olive transition-colors" href="#">AGB</a></li>
+</ul>
+</div>
+<!-- Social & Language -->
+<div>
+<h4 class="text-stone-900 font-serif text-lg mb-4">Folgen Sie uns</h4>
+<div class="flex items-center gap-4 mb-6">
+<a aria-label="LinkedIn" class="text-stone-400 hover:text-olive transition-colors" href="https://www.linkedin.com/company/acm-air-charter-luftfahrtgesellschaft-mbh" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+</svg>
+</a>
+<a aria-label="Instagram" class="text-stone-400 hover:text-olive transition-colors" href="https://www.instagram.com/acmaircharter/" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+</svg>
+</a>
+</div>
+<!-- IS-BAO Certification Badge -->
+<div class="mb-6">
+<img alt="IS-BAO Registered Company Stage 3" class="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300" onerror="this.style.display='none';" src="Fotos/is-bao-registered-company-stages3-01.png" title="IS-BAO&trade; Registered Company Stage 3 - International Standard for Business Aircraft Operations"/>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<a aria-label="Deutsche Sprache" class="language-btn px-2 py-1 transition-all duration-200 active" data-lang="de" href="index.html" id="lang-de">
+              DE
+            </a>
+<span class="text-stone-400">|</span>
+<a aria-label="Englische Sprache" class="language-btn px-2 py-1 transition-all duration-200" data-lang="en" href="en/index.html" id="lang-en">
+              EN
+            </a>
+</div>
+</div>
+</div>
+<!-- Copyright -->
+<div class="pt-8 border-t border-stone-200">
+<p class="text-center text-stone-500 text-sm">
+          &copy; 2026 ACM AIR CHARTER GmbH. Alle Rechte vorbehalten.
+        </p>
+</div>
+</div>
+</footer>
+<!-- ============================================
+       MODALS
+       ============================================ -->
+<!-- Flight Request Modal -->
+<div aria-labelledby="flight-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="flight-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('flight-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="flight-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="flight-modal-title">Flug anfragen.</h2>
+<button aria-label="Schlie&szlig;en" class="modal-close" onclick="closeModal('flight-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier w&uuml;rde die Anfrage gesendet werden.');">
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-from">Von *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-from" placeholder="z.B. Frankfurt (FRA)" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-to">Nach *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-to" placeholder="z.B. London (LTN)" required="" type="text"/>
+</div>
+</div>
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-date">Datum *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-date" required="" type="date"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-pax">Passagiere *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-pax" max="19" min="1" placeholder="Anzahl" required="" type="number"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-email" placeholder="ihre@email.de" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-phone">Telefon</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-phone" placeholder="+49 ..." type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-message">Nachricht</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="flight-message" placeholder="Besondere W&uuml;nsche oder Anforderungen..." rows="3"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="flight-privacy" required="" type="checkbox"/>
+<label class="text-sm text-stone-600" for="flight-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="datenschutz.html">Datenschutzerkl&auml;rung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Anfrage senden
+            </button>
+</form>
+<!-- KOMMENTAR: Matomo Event Tracking hier einfÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼gen
+          <script>
+            // _paq.push(['trackEvent', 'Forms', 'Submit', 'Flight Request']);
+          </script>
+          -->
+</div>
+</div>
+</div>
+</div>
+<!-- Maintenance Modal -->
+<div aria-labelledby="maintenance-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="maintenance-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('maintenance-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="maintenance-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="maintenance-modal-title">Maintenance Slot anfragen.</h2>
+<button aria-label="Schlie&szlig;en" class="modal-close" onclick="closeModal('maintenance-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier w&uuml;rde die Anfrage gesendet werden.');">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-aircraft">Flugzeugtyp *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-aircraft" placeholder="z.B. Bombardier Global 6000" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-reg">Registrierung</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-reg" placeholder="z.B. D-ACMA" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-type">Art der Wartung *</label>
+<select class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors bg-white" id="maint-type" required="">
+<option value="">Bitte w&auml;hlen...</option>
+<option value="line">Line Maintenance</option>
+<option value="base">Base Maintenance</option>
+<option value="avionics">Avionik</option>
+<option value="cabin">Cabin Refurbishment</option>
+<option value="aog">AOG Support</option>
+<option value="other">Sonstiges</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-date">Gew&uuml;nschter Zeitraum *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-date" placeholder="z.B. Februar 2026" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-email" placeholder="ihre@email.de" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-message">Details zur Anfrage</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="maint-message" placeholder="Beschreiben Sie den Wartungsbedarf..." rows="3"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="maint-privacy" required="" type="checkbox"/>
+<label class="text-sm text-stone-600" for="maint-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="datenschutz.html">Datenschutzerkl&auml;rung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Slot anfragen
+            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Management Modal -->
+<div aria-labelledby="management-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="management-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('management-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="management-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="management-modal-title">Management-Gespr&auml;ch.</h2>
+<button aria-label="Schlie&szlig;en" class="modal-close" onclick="closeModal('management-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier w&uuml;rde die Anfrage gesendet werden.');">
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-name">Name *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-name" placeholder="Ihr Name" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-company">Unternehmen</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-company" placeholder="Firma (optional)" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-aircraft">Flugzeugtyp</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-aircraft" placeholder="z.B. Cessna Citation XLS+" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-email" placeholder="ihre@email.de" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-phone">Telefon *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-phone" placeholder="+49 ..." required="" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-message">Ihre Anfrage</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="mgmt-message" placeholder="Was m&ouml;chten Sie besprechen?" rows="3"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="mgmt-privacy" required="" type="checkbox"/>
+<label class="text-sm text-stone-600" for="mgmt-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="datenschutz.html">Datenschutzerkl&auml;rung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Gespr&auml;ch vereinbaren
+            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Career Modal -->
+<div aria-labelledby="career-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="career-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('career-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="career-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="career-modal-title">Online Bewerbung.</h2>
+<button aria-label="Schlie&szlig;en" class="modal-close" onclick="closeModal('career-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier w&uuml;rde die Bewerbung gesendet werden.');">
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-firstname">Vorname *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-firstname" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-lastname">Nachname *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-lastname" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-email" placeholder="ihre@email.de" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-phone">Telefon</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-phone" placeholder="+49 ..." type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-position">Gew&uuml;nschte Position *</label>
+<select class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors bg-white" id="career-position" required="">
+<option value="">Bitte w&auml;hlen...</option>
+<option value="mechanic">Flugzeugmechaniker (m/w/d)</option>
+<option value="avionics">Avionik-Techniker (m/w/d)</option>
+<option value="engineer">Ingenieur (m/w/d)</option>
+<option value="pilot">Pilot (m/w/d)</option>
+<option value="ops">Flight Operations (m/w/d)</option>
+<option value="other">Initiativbewerbung</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-message">Anschreiben / Motivation</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="career-message" placeholder="Erz&auml;hlen Sie uns von sich..." rows="4"></textarea>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1">Lebenslauf (PDF)</label>
+<div class="border-2 border-dashed border-stone-300 rounded-lg p-4 text-center hover:border-stone-400 transition-colors cursor-pointer">
+<input accept=".pdf" class="hidden" id="career-cv" type="file"/>
+<label class="cursor-pointer" for="career-cv">
+<svg class="w-8 h-8 mx-auto text-stone-400 mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<span class="text-sm text-stone-600">PDF-Datei ausw&auml;hlen</span>
+</label>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="career-privacy" required="" type="checkbox"/>
+<label class="text-sm text-stone-600" for="career-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="datenschutz.html">Datenschutzerkl&auml;rung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Bewerbung absenden
+            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Starlink Authorized Reseller Pop-up (nach 20 % Scroll) -->
+<div aria-labelledby="starlink-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="starlink-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('starlink-modal')"></div>
+<div class="modal-container">
+<div class="modal-content starlink-popup-content" id="starlink-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="starlink-modal-title">ACM &ndash; Authorized Reseller f&uuml;r Starlink.</h2>
+<button aria-label="Schlie&szlig;en" class="modal-close" onclick="closeModal('starlink-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="starlink-popup-image">
+<img alt="Starlink Antenne auf Business-Jet &ndash; ACM Authorized Reseller" height="280" loading="lazy" src="Fotos/starlink-popup.png" width="400"/>
+</div>
+<div class="starlink-popup-body modal-body">
+<p class="starlink-badge">Starlink Authorized Reseller</p>
+<p class="starlink-headline">Ihr Starlink-Partner f&uuml;r die Business Aviation.</p>
+<p class="starlink-teaser">
+            Starlink ist das Satelliten-Internet von SpaceX speziell f&uuml;r Business Jets: hohe Geschwindigkeit, 4K-Streaming und stabile Verbindung weltweit &ndash; auch &uuml;ber den Polarrouten. ACM ist autorisierter Reseller und Installationspartner.
+          </p>
+<a class="starlink-cta" href="kontakt.html#maintenance">Installation anfragen</a>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
+<script>    // Desktop Burger Menu Functions (mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ssen vor updateHeader definiert werden)
+    const desktopMenu = document.getElementById('desktop-menu');
+    const desktopMenuBackdrop = document.getElementById('desktop-menu-backdrop');
+    const desktopMenuBtn = document.getElementById('desktop-menu-btn');
+    const desktopMenuClose = document.getElementById('desktop-menu-close');
+
+    function openDesktopMenu() {
+      if (desktopMenu && desktopMenuBackdrop) {
+        desktopMenu.classList.add('show');
+        desktopMenuBackdrop.classList.add('show');
+        if (desktopMenuBtn) {
+          desktopMenuBtn.setAttribute('aria-expanded', 'true');
+        }
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeDesktopMenu() {
+      if (desktopMenu && desktopMenuBackdrop) {
+        desktopMenu.classList.remove('show');
+        desktopMenuBackdrop.classList.remove('show');
+        if (desktopMenuBtn) {
+          desktopMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Desktop Menu Event Listeners
+    if (desktopMenuBtn) {
+      desktopMenuBtn.addEventListener('click', openDesktopMenu);
+    }
+
+    if (desktopMenuClose) {
+      desktopMenuClose.addEventListener('click', closeDesktopMenu);
+    }
+
+    if (desktopMenuBackdrop) {
+      desktopMenuBackdrop.addEventListener('click', closeDesktopMenu);
+    }
+
+    // Close desktop menu when clicking a link
+    if (desktopMenu) {
+      desktopMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          closeDesktopMenu();
+        });
+      });
+    }
+
+    // Close desktop menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && desktopMenu && desktopMenu.classList.contains('show')) {
+        closeDesktopMenu();
+      }
+    });
+
+    // Sticky Header Glassmorphism on Scroll + Desktop Menu Toggle
+    const header = document.getElementById('header');
+    const desktopNav = document.getElementById('desktop-nav');
+    let lastScroll = 0;
+
+    function updateHeader() {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 20) {
+        // Gescrollt: Navigation verstecken, Burger-MenÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ anzeigen
+        header.classList.add('header-scrolled');
+      } else {
+        // Nicht gescrollt: Navigation mittig anzeigen, Burger-MenÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ verstecken
+        header.classList.remove('header-scrolled');
+        // Desktop Menu schlieÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸en wenn zurÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ck nach oben gescrollt wird
+        if (desktopMenu && desktopMenu.classList.contains('show')) {
+          closeDesktopMenu();
+        }
+      }
+      
+      lastScroll = currentScroll;
+    }
+
+    window.addEventListener('scroll', updateHeader);
+    
+    // Initial state check
+    updateHeader();
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    (function setActiveLang() {
+      const lang = (document.documentElement.lang || 'de').toLowerCase().startsWith('en') ? 'en' : 'de';
+      document.querySelectorAll('.header-lang-link').forEach(function (a) {
+        if ((a.getAttribute('data-lang') || '').toLowerCase() === lang) {
+          a.classList.add('header-lang-active');
+        } else {
+          a.classList.remove('header-lang-active');
+        }
+      });
+    })();
+// Logo Fallback prÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼fen nach kurzer VerzÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶gerung
+    setTimeout(() => {
+      const logoImg = document.getElementById('header-logo-img');
+      const logoFallback = document.getElementById('header-logo-fallback');
+      if (logoImg && logoFallback) {
+        // PrÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼fe ob Bild geladen wurde
+        if (!logoImg.complete || logoImg.naturalHeight === 0) {
+          logoImg.style.display = 'none';
+          logoFallback.style.display = 'flex';
+        } else {
+          logoImg.style.display = 'block';
+          logoFallback.style.display = 'none';
+        }
+      }
+    }, 500);
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          mobileMenu.classList.remove('mobile-menu-open');
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          }, 300);
+        } else {
+          mobileMenu.classList.remove('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'true');
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              mobileMenu.classList.add('mobile-menu-open');
+            });
+          });
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('mobile-menu-open');
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          }, 300);
+        });
+      });
+    }
+
+    // Modal Functions
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      const modalContent = modal.querySelector('.modal-content');
+      
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      
+      // Trigger animation
+      setTimeout(() => {
+        if (modalContent) {
+          modalContent.classList.add('show');
+        }
+      }, 10);
+      
+      // Focus first input
+      setTimeout(() => {
+        const firstInput = modal.querySelector('input, select, textarea');
+        if (firstInput) firstInput.focus();
+      }, 100);
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      const modalContent = modal.querySelector('.modal-content');
+      
+      // Remove show class for animation
+      if (modalContent) {
+        modalContent.classList.remove('show');
+      }
+      
+      // Wait for animation to complete before hiding
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+          if (!modal.classList.contains('hidden')) {
+            closeModal(modal.id);
+          }
+        });
+      }
+    });
+
+    // Starlink Pop-up: nur beim ersten Laden der Seite, bei 70 % Scrolltiefe
+    (function initStarlinkPopup() {
+      const SCROLL_THRESHOLD = 0.7; // 70 %
+      const STORAGE_KEY = 'starlink-popup-shown';
+      if (sessionStorage.getItem(STORAGE_KEY)) return; // Bereits in dieser Session gezeigt
+      let alreadyShownThisPage = false;
+
+      function checkScrollForStarlinkPopup() {
+        if (alreadyShownThisPage) return;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (maxScroll <= 0) return;
+        if (window.scrollY >= maxScroll * SCROLL_THRESHOLD) {
+          alreadyShownThisPage = true;
+          sessionStorage.setItem(STORAGE_KEY, '1');
+          openModal('starlink-modal');
+          window.removeEventListener('scroll', checkScrollForStarlinkPopup);
+        }
+      }
+
+      window.addEventListener('scroll', checkScrollForStarlinkPopup, { passive: true });
+    })();
+
+// Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const headerHeight = header.offsetHeight;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Lazy load images with IntersectionObserver
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+            }
+            observer.unobserve(img);
+          }
+        });
+      }, {
+        rootMargin: '100px'
+      });
+
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+
+    // Scroll Reveal Animation
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.scroll-reveal').forEach(el => {
+        revealObserver.observe(el);
+      });
+    }
+    
+
+    // Hero Video ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ nur Startzeit setzen, Loop ausschlieÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸lich ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ber HTML-Attribut
+    const heroVideo = document.getElementById('hero-video');
+    const START_TIME = 15;
+    let videoInitialized = false;
+    
+    if (heroVideo) {
+      function initHeroVideo() {
+        if (videoInitialized) return;
+        var d = heroVideo.duration;
+        if (!isFinite(d) || d <= 0) return;
+        
+        videoInitialized = true;
+        heroVideo.classList.add('loaded');
+        heroVideo.currentTime = d >= START_TIME ? START_TIME : 0;
+        heroVideo.play().catch(function() {});
+      }
+      
+      heroVideo.addEventListener('loadedmetadata', function() {
+        var d = heroVideo.duration;
+        if (isFinite(d)) heroVideo.currentTime = d >= START_TIME ? START_TIME : 0;
+      });
+      heroVideo.addEventListener('canplay', initHeroVideo);
+      heroVideo.addEventListener('loadeddata', initHeroVideo);
+      heroVideo.addEventListener('error', function() {
+        heroVideo.style.display = 'none';
+      });
+      
+      setTimeout(function() {
+        if (!videoInitialized && heroVideo.readyState >= 2 && isFinite(heroVideo.duration)) {
+          initHeroVideo();
+        }
+      }, 2000);
+    }
+
+    // Modern Card-Based Aircraft Slider Control
+    let currentSlide = 0;
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    const sliderTrack = document.getElementById('slider-track');
+    const slides = document.querySelectorAll('#aircraft-gallery .slider-slide');
+    const dots = document.querySelectorAll('#aircraft-gallery .slider-dot');
+    const totalSlides = slides.length;
+    let autoSlideInterval = null;
+    const AUTO_SLIDE_DURATION = 3000; // 3 Sekunden pro Slide
+    
+    function updateSlider() {
+      if (!sliderTrack || totalSlides === 0) return;
+
+      const stepWidth = getSliderStepWidth();
+      if (!stepWidth) return;
+      const translateX = -currentSlide * stepWidth;
+      
+      sliderTrack.style.transform = `translateX(${translateX}px)`;
+      
+      // Active State aktualisieren
+      slides.forEach((slide, index) => {
+        if (index === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+      
+      // Dots aktualisieren
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+    
+    function showSlide(index) {
+      // Auto-Loop: Wenn am Ende, zurÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ck zum Anfang
+      if (index < 0) {
+        index = totalSlides - 1;
+      } else if (index >= totalSlides) {
+        index = 0; // Loop zum Anfang
+      }
+      
+      currentSlide = index;
+      updateSlider();
+      resetAutoSlide();
+    }
+    
+    function changeSlide(direction) {
+      const newIndex = currentSlide + direction;
+      showSlide(newIndex);
+    }
+
+    function getSliderStepWidth() {
+      if (!sliderTrack || totalSlides === 0) return 0;
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const trackStyles = window.getComputedStyle(sliderTrack);
+      const gap = parseFloat(trackStyles.columnGap || trackStyles.gap || '0');
+      return slideWidth + gap;
+    }
+    
+    function goToSlide(index) {
+      showSlide(index);
+    }
+    
+    // Touch/Mouse Drag Support
+    if (sliderTrack) {
+      // Mouse Events
+      sliderTrack.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - sliderTrack.offsetLeft;
+        scrollLeft = sliderTrack.scrollLeft;
+        sliderTrack.style.cursor = 'grabbing';
+        e.preventDefault();
+      });
+      
+      sliderTrack.addEventListener('mouseleave', () => {
+        isDragging = false;
+        sliderTrack.style.cursor = 'grab';
+      });
+      
+      sliderTrack.addEventListener('mouseup', () => {
+        isDragging = false;
+        sliderTrack.style.cursor = 'grab';
+      });
+      
+      sliderTrack.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - sliderTrack.offsetLeft;
+        const walk = (x - startX) * 2;
+        
+        // Snap to nearest slide
+        const slideWidth = getSliderStepWidth();
+        const dragDistance = walk;
+        
+        if (Math.abs(dragDistance) > slideWidth / 3) {
+          if (dragDistance > 0) {
+            changeSlide(-1);
+          } else {
+            changeSlide(1);
+          }
+          isDragging = false;
+        }
+      });
+      
+      // Touch Events
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      sliderTrack.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+      
+      sliderTrack.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+      
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0) {
+            changeSlide(1); // Swipe left = next
+          } else {
+            changeSlide(-1); // Swipe right = previous
+          }
+        }
+      }
+    }
+    
+    function startAutoSlide() {
+      if (totalSlides > 0) {
+        autoSlideInterval = setInterval(() => {
+          changeSlide(1);
+        }, AUTO_SLIDE_DURATION);
+      }
+    }
+    
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+    
+    // Initialisierung
+    if (totalSlides > 0) {
+      updateSlider();
+      startAutoSlide();
+      
+      // Pause bei Hover
+      const slider = document.querySelector('#aircraft-gallery .aircraft-slider');
+      if (slider) {
+        slider.addEventListener('mouseenter', () => {
+          clearInterval(autoSlideInterval);
+        });
+        
+        slider.addEventListener('mouseleave', () => {
+          startAutoSlide();
+        });
+      }
+      
+      // Keyboard Navigation
+      document.addEventListener('keydown', (e) => {
+        const sliderSection = document.getElementById('aircraft-gallery');
+        if (sliderSection) {
+          const rect = sliderSection.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+          
+          if (isVisible && e.key === 'ArrowLeft') {
+            e.preventDefault();
+            changeSlide(-1);
+          } else if (isVisible && e.key === 'ArrowRight') {
+            e.preventDefault();
+            changeSlide(1);
+          }
+        }
+      });
+      
+      // Resize Handler
+      window.addEventListener('resize', () => {
+        updateSlider();
+      });
+    }
+
+    // Scroll to Top Button
+    function initScrollToTop() {
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+      
+      if (!scrollToTopBtn) {
+        console.warn('Scroll to Top Button nicht gefunden');
+        return;
+      }
+      
+      function toggleScrollToTop() {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      }
+      
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      window.addEventListener('scroll', toggleScrollToTop, { passive: true });
+      toggleScrollToTop(); // Initial check
+    }
+    
+    // Initialisierung wenn DOM bereit ist
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initScrollToTop);
+    } else {
+      initScrollToTop();
+    }
+    
+    // KOMMENTAR: Cookie Consent Banner hier implementieren
+    // KOMMENTAR: Matomo Analytics hier einbinden (ohne Cookies mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶glich)
+    /*
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//analytics.example.com/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+    */
+  
+</script>
+<!-- Scroll to Top Button -->
+<button aria-label="Nach oben scrollen" id="scroll-to-top" title="Nach oben scrollen">
+<svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<script defer="" src="nav-active.js?v=20260319"></script>
+</body>
+</html>

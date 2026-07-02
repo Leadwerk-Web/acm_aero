@@ -159,16 +159,6 @@ class Leadwerk_Content_Schema {
 					'content'  => self::editor( 'Inhalt' ),
 				),
 			),
-			'agb_page'                    => array(
-				'label'             => 'ACM AGB',
-				'description'       => 'AGB ueber Leadwerk Fields bearbeiten.',
-				'source_keys'       => array( 'acm-agb-v1' ),
-				'sync_post_content' => true,
-				'fields'            => array(
-					'headline' => self::text( 'Seitenueberschrift' ),
-					'content'  => self::editor( 'Inhalt' ),
-				),
-			),
 
 			/* ───────────────────────────────────────────────
 			 * ACM AIR CHARTER — Neue Seitengruppen
@@ -2506,6 +2496,8 @@ class Leadwerk_Content_Schema {
 			'template' => 'acm_aog_callout',
 			'fields'   => array_merge(
 				array(
+					'image'     => self::image( 'Bild (Spalte)' ),
+					'image_alt' => self::text( 'Bild Alt-Text' ),
 					'label'      => self::text( 'Ueberzeile' ),
 					'title'      => self::heading_html( 'Titel' ),
 					'body'       => self::editor( 'Einleitung (Fliesstext)' ),
@@ -2535,9 +2527,19 @@ class Leadwerk_Content_Schema {
 			'template' => 'acm_stellen',
 			'fields'   => array_merge(
 				array(
-					'label' => self::text( 'Ueberzeile' ),
-					'title' => self::heading_html( 'Titel' ),
-					'intro' => self::editor( 'Einleitung (optional unter Kopf)' ),
+					'label'         => self::text( 'Ueberzeile' ),
+					'title'         => self::heading_html( 'Titel' ),
+					'intro'         => self::editor( 'Einleitung (optional unter Kopf)' ),
+					'tasks_heading' => array(
+						'label'   => 'Aufgaben-Ueberschrift',
+						'type'    => 'text',
+						'default' => 'Aufgaben',
+					),
+					'requirements_heading' => array(
+						'label'   => 'Anforderungen-Ueberschrift',
+						'type'    => 'text',
+						'default' => 'Anforderungen',
+					),
 					'items' => self::repeater(
 						'Stellen',
 						array_merge(

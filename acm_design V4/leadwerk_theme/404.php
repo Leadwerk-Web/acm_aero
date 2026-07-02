@@ -10,9 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
-$leadwerk_404_image_url = function_exists( 'leadwerk_theme_get_uploaded_media_url_for_template_ref' )
-	? leadwerk_theme_get_uploaded_media_url_for_template_ref( 'Fotos/Neu/AOG_Support.webp' )
-	: '';
 ?>
 <main class="leadwerk-simple-page">
 	<section class="content-section content-section--white legal-content pt-32 pb-24" style="position:relative;overflow:hidden;background:linear-gradient(135deg,#fdfcfa 0%,#f3f0ea 56%,#e8edf4 100%);">
@@ -34,9 +31,7 @@ $leadwerk_404_image_url = function_exists( 'leadwerk_theme_get_uploaded_media_ur
 				</div>
 			</div>
 			<figure style="margin:0;position:relative;min-height:26rem;box-shadow:0 28px 80px rgba(0,20,65,.16);background:#001441;overflow:hidden;">
-				<?php if ( '' !== $leadwerk_404_image_url ) : ?>
-					<img src="<?php echo esc_url( $leadwerk_404_image_url ); ?>" alt="<?php esc_attr_e( 'ACM Aircraft Support', 'leadwerk-theme' ); ?>" style="width:100%;height:100%;min-height:26rem;object-fit:cover;display:block;filter:saturate(.85) contrast(.96);">
-				<?php endif; ?>
+				<img src="<?php echo esc_url( leadwerk_theme_static_asset_url( 'Fotos/Neu/AOG_Support.jpg' ) ); ?>" alt="<?php esc_attr_e( 'ACM Aircraft Support', 'leadwerk-theme' ); ?>" style="width:100%;height:100%;min-height:26rem;object-fit:cover;display:block;filter:saturate(.85) contrast(.96);">
 				<figcaption style="position:absolute;left:1.25rem;right:1.25rem;bottom:1.25rem;padding:1rem 1.1rem;background:rgba(255,255,255,.88);color:#001441;backdrop-filter:blur(14px);font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;"><?php esc_html_e( 'Operations ready', 'leadwerk-theme' ); ?></figcaption>
 				<div aria-hidden="true" style="position:absolute;right:-.4rem;top:-1.8rem;font-family:Cormorant Garamond,serif;font-size:clamp(7rem,18vw,13rem);line-height:.8;color:rgba(255,255,255,.34);">404</div>
 			</figure>

@@ -164,30 +164,6 @@
             "is_front_page": false
         },
         {
-            "type": "page",
-            "import_key": "de:page:agb",
-            "source": "agb.html",
-            "slug": "agb",
-            "source_key": "acm-agb-v1",
-            "field_name": "agb_page",
-            "title": "AGB",
-            "status": "publish",
-            "update_mode": "replace",
-            "is_front_page": false
-        },
-        {
-            "type": "page",
-            "import_key": "de:page:404",
-            "source": "404.html",
-            "slug": "404",
-            "source_key": "acm-404-v1",
-            "field_name": "impressum_page",
-            "title": "404",
-            "status": "publish",
-            "update_mode": "replace",
-            "is_front_page": false
-        },
-        {
             "import_key": "de:post:news:acm-air-charter-betreibt-vierten-bombardier-global-express",
             "source": "news/acm-air-charter-betreibt-vierten-bombardier-global-express.html",
             "type": "post",
@@ -208,16 +184,6 @@
             "update_mode": "replace"
         },
         {
-            "import_key": "de:post:news:acm-air-charter-erneuert-hoechstmoegliche-is-bao-zertifizierung",
-            "source": "news/acm-air-charter-erneuert-hoechstmoegliche-is-bao-zertifizierung.html",
-            "type": "post",
-            "post_type": "acm_news",
-            "slug": "acm-air-charter-erneuert-hoechstmoegliche-is-bao-zertifizierung",
-            "title": "",
-            "status": "publish",
-            "update_mode": "replace"
-        },
-        {
             "import_key": "de:post:news:acm-air-charter-erhaelt-erweiterung-der-camo-zulassung",
             "source": "news/acm-air-charter-erhaelt-erweiterung-der-camo-zulassung.html",
             "type": "post",
@@ -228,11 +194,11 @@
             "update_mode": "replace"
         },
         {
-            "import_key": "de:post:news:acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel",
-            "source": "news/acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel.html",
+            "import_key": "de:post:news:acm-air-charter-erneuert-hoechstmoegliche-is-bao-zertifizierung",
+            "source": "news/acm-air-charter-erneuert-hoechstmoegliche-is-bao-zertifizierung.html",
             "type": "post",
             "post_type": "acm_news",
-            "slug": "acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel",
+            "slug": "acm-air-charter-erneuert-hoechstmoegliche-is-bao-zertifizierung",
             "title": "",
             "status": "publish",
             "update_mode": "replace"
@@ -243,6 +209,16 @@
             "type": "post",
             "post_type": "acm_news",
             "slug": "acm-air-charter-erweitert-flotte-mit-zwei-boeing-bbj2",
+            "title": "",
+            "status": "publish",
+            "update_mode": "replace"
+        },
+        {
+            "import_key": "de:post:news:acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel",
+            "source": "news/acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel.html",
+            "type": "post",
+            "post_type": "acm_news",
+            "slug": "acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel",
             "title": "",
             "status": "publish",
             "update_mode": "replace"
@@ -278,21 +254,11 @@
             "update_mode": "replace"
         },
         {
-            "import_key": "de:post:news:zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte",
-            "source": "news/zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte.html",
+            "import_key": "de:post:news:falcon-2000lx-erweitert-die-charter-flotte",
+            "source": "news/falcon-2000lx-erweitert-die-charter-flotte.html",
             "type": "post",
             "post_type": "acm_news",
-            "slug": "zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte",
-            "title": "",
-            "status": "publish",
-            "update_mode": "replace"
-        },
-        {
-            "import_key": "de:post:news:is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh",
-            "source": "news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.html",
-            "type": "post",
-            "post_type": "acm_news",
-            "slug": "is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh",
+            "slug": "falcon-2000lx-erweitert-die-charter-flotte",
             "title": "",
             "status": "publish",
             "update_mode": "replace"
@@ -308,21 +274,31 @@
             "update_mode": "replace"
         },
         {
-            "import_key": "de:post:news:falcon-2000lx-erweitert-die-charter-flotte",
-            "source": "news/falcon-2000lx-erweitert-die-charter-flotte.html",
+            "import_key": "de:post:news:is-bah-stage-2-acm-handling",
+            "source": "news/is-bah-stage-2-acm-handling.html",
             "type": "post",
             "post_type": "acm_news",
-            "slug": "falcon-2000lx-erweitert-die-charter-flotte",
+            "slug": "is-bah-stage-2-acm-handling",
             "title": "",
             "status": "publish",
             "update_mode": "replace"
         },
         {
-            "import_key": "de:post:news:acm-air-charter-nimmt-dritte-bombardier-global-7500-in-ihre-weltweit-gemanagte-flotte-auf",
-            "source": "news/acm-air-charter-nimmt-dritte-bombardier-global-7500-in-ihre-weltweit-gemanagte-flotte-auf.html",
+            "import_key": "de:post:news:is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh",
+            "source": "news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.html",
             "type": "post",
             "post_type": "acm_news",
-            "slug": "acm-air-charter-nimmt-dritte-bombardier-global-7500-in-ihre-weltweit-gemanagte-flotte-auf",
+            "slug": "is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh",
+            "title": "",
+            "status": "publish",
+            "update_mode": "replace"
+        },
+        {
+            "import_key": "de:post:news:zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte",
+            "source": "news/zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte.html",
+            "type": "post",
+            "post_type": "acm_news",
+            "slug": "zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte",
             "title": "",
             "status": "publish",
             "update_mode": "replace"

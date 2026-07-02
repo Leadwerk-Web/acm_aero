@@ -469,7 +469,7 @@ class Leadwerk_ACF_Filler {
 				'services'     => array( 'label', 'title', 'items' ),
 				'promo_banner' => array( 'title', 'image' ),
 				'process'      => array( 'title', 'intro', 'steps', 'cta_label' ),
-				'aog'          => array( 'label', 'title', 'body', 'highlights', 'phone', 'cta_label' ),
+				'aog'          => array( 'label', 'title', 'body', 'highlights', 'phone', 'image', 'cta_label' ),
 				'facility'     => array( 'title', 'intro', 'image', 'items' ),
 				'contact_cta'  => array( 'title', 'body', 'cta_label', 'secondary_label' ),
 			);
@@ -713,16 +713,6 @@ class Leadwerk_ACF_Filler {
 				return Leadwerk_Content_Schema::sanitize_heading_html( (string) $value );
 			case 'image':
 				return absint( $value );
-			case 'video':
-			case 'file':
-				if ( is_numeric( $value ) ) {
-					return absint( $value );
-				}
-				// String path from legacy import → attempt attachment resolution.
-				$resolved = $this->get_attachment_id_by_source(
-					$this->resolve_asset_source_path( (string) $value )
-				);
-				return $resolved > 0 ? $resolved : 0;
 			case 'checkbox':
 				return ! empty( $value );
 			case 'repeater':
@@ -2560,28 +2550,6 @@ class Leadwerk_ACF_Filler {
 	}
 
 	/**
-	 * Resolve any media source path to an attachment ID.
-	 *
-	 * @param string $src Raw src.
-	 * @return int
-	 */
-	protected function resolve_media_field_id( $src ) {
-		$path = $this->resolve_asset_source_path( $src );
-		return $this->get_attachment_id_by_source( $path );
-	}
-
-	/**
-	 * Public helper for the importer to resolve a legacy string path to an attachment ID.
-	 *
-	 * @param string $raw Raw string path stored in a media field.
-	 * @return int Attachment ID or 0.
-	 */
-	public function resolve_legacy_media_path( $raw ) {
-		$path = $this->resolve_asset_source_path( (string) $raw );
-		return $this->get_attachment_id_by_source( $path );
-	}
-
-	/**
 	 * Resolve a background image from inline style.
 	 *
 	 * @param string $style Style string.
@@ -2647,54 +2615,6 @@ class Leadwerk_ACF_Filler {
 			'page_key' => $this->map_href_to_source_key( $href ),
 			'url'      => $this->is_internal_html_link( $href ) ? '' : trim( (string) $href ),
 		);
-	}
-
-	/**
-	 * Resolve a PDF link into the imported attachment ID when possible.
-	 *
-	 * Some live career links keep the real PDF filename in the download
-	 * attribute while href points at index.html. Prefer the local Fotos copy so
-	 * the file field stores a media ID after the media import step.
-	 *
-	 * @param string $href     Raw href.
-	 * @param string $download Raw download attribute.
-	 * @return int|string Attachment ID, source path, or raw href fallback.
-	 */
-	protected function resolve_file_field_from_link( $href, $download = '' ) {
-		$candidates = array();
-		$href_path  = $this->resolve_asset_source_path( $href );
-		if ( '' !== $href_path && preg_match( '/\.pdf$/i', $href_path ) ) {
-			$candidates[] = $href_path;
-		}
-
-		$download = trim( html_entity_decode( (string) $download, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
-		if ( '' !== $download ) {
-			$download_path = $this->resolve_asset_source_path( $download );
-			if ( '' !== $download_path && preg_match( '/\.pdf$/i', $download_path ) ) {
-				$candidates[] = $download_path;
-			}
-
-			$basename = basename( str_replace( '\\', '/', '' !== $download_path ? $download_path : $download ) );
-			if ( '' !== $basename && preg_match( '/\.pdf$/i', $basename ) ) {
-				$candidates[] = 'Fotos/' . $basename;
-				$candidates[] = 'assets/images/' . $basename;
-				$candidates[] = $basename;
-			}
-		}
-
-		$candidates = array_values( array_unique( array_filter( array_map( 'trim', $candidates ) ) ) );
-		foreach ( $candidates as $candidate ) {
-			$id = $this->get_attachment_id_by_source( $candidate );
-			if ( $id ) {
-				return (int) $id;
-			}
-		}
-
-		if ( ! empty( $candidates ) ) {
-			return (string) $candidates[0];
-		}
-
-		return trim( (string) $href );
 	}
 
 	/**
@@ -2767,87 +2687,13 @@ class Leadwerk_ACF_Filler {
 	 */
 	protected function resolve_asset_source_path( $raw ) {
 		$raw = trim( html_entity_decode( (string) $raw, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
-		if ( '' === $raw || preg_match( '#^(?:mailto:|tel:|data:|javascript:|#)#i', $raw ) ) {
+		if ( '' === $raw || preg_match( '#^(?:https?:)?//#i', $raw ) || preg_match( '#^(?:mailto:|tel:|data:|javascript:|#)#i', $raw ) ) {
 			return '';
 		}
 
-		if ( preg_match( '#^(?:https?:)?//#i', $raw ) ) {
-			$url  = 0 === strpos( $raw, '//' ) ? 'https:' . $raw : $raw;
-			$path = wp_parse_url( $url, PHP_URL_PATH );
-			if ( ! is_string( $path ) || '' === $path ) {
-				// #region agent log
-				if ( function_exists( 'leadwerk_debug_ndjson' ) ) {
-					leadwerk_debug_ndjson(
-						array(
-							'hypothesisId' => 'H1',
-							'location'     => 'Leadwerk_ACF_Filler::resolve_asset_source_path',
-							'message'      => 'url parse yielded empty path',
-							'data'         => array( 'url_trunc' => substr( $url, 0, 160 ) ),
-						)
-					);
-				}
-				// #endregion
-				return '';
-			}
-			$raw = $path;
-		}
-
 		$raw = str_replace( '\\', '/', $raw );
-		$raw = rawurldecode( $raw );
-		$raw = preg_replace( '#[?#].*$#', '', $raw );
 		$raw = preg_replace( '#^\./#', '', $raw );
-
-		$markers = array(
-			'/wp-content/uploads/'              => 'Fotos/uploads/',
-			'/Fotos/'                           => 'Fotos/',
-			'/fotos/'                           => 'Fotos/',
-			'/assets/images/'                   => 'assets/images/',
-			'/leadwerk_importer/source_assets/' => '',
-			'/leadwerk_theme/'                  => '',
-		);
-		foreach ( $markers as $marker => $prefix ) {
-			$pos = stripos( $raw, $marker );
-			if ( false !== $pos ) {
-				return trim( $prefix . ltrim( substr( $raw, $pos + strlen( $marker ) ), '/' ), '/' );
-			}
-		}
-
-		$raw = ltrim( (string) $raw, '/' );
-		if ( 0 === stripos( $raw, 'wp-content/uploads/' ) ) {
-			return 'Fotos/uploads/' . substr( $raw, strlen( 'wp-content/uploads/' ) );
-		}
-		if ( 0 === stripos( $raw, 'uploads/' ) ) {
-			return 'Fotos/' . $raw;
-		}
-
 		return ltrim( (string) $raw, '/' );
-	}
-
-	/**
-	 * Build source path candidates across the image extensions used before/after WebP conversion.
-	 *
-	 * @param string $path Relative source path.
-	 * @return array<int,string>
-	 */
-	protected function get_source_path_lookup_candidates( $path ) {
-		$path = trim( str_replace( '\\', '/', (string) $path ), '/' );
-		if ( '' === $path ) {
-			return array();
-		}
-
-		$candidates = array( $path );
-		$ext        = strtolower( pathinfo( $path, PATHINFO_EXTENSION ) );
-		if ( in_array( $ext, array( 'webp', 'jpg', 'jpeg', 'png' ), true ) ) {
-			$dir  = trim( str_replace( '\\', '/', pathinfo( $path, PATHINFO_DIRNAME ) ), './' );
-			$stem = pathinfo( $path, PATHINFO_FILENAME );
-			if ( '' !== $stem ) {
-				foreach ( array( 'webp', 'jpg', 'jpeg', 'png' ) as $candidate_ext ) {
-					$candidates[] = ( '' !== $dir ? $dir . '/' : '' ) . $stem . '.' . $candidate_ext;
-				}
-			}
-		}
-
-		return array_values( array_unique( array_filter( array_map( 'trim', $candidates ) ) ) );
 	}
 
 	/**
@@ -2866,114 +2712,32 @@ class Leadwerk_ACF_Filler {
 			return $this->attachment_cache[ $path ];
 		}
 
-		$has_mi = $this->media_importer instanceof Leadwerk_Media_Importer;
-		Leadwerk_Logger::log( "ACF-Filler lookup: path='$path' media_importer=" . ( $has_mi ? 'yes' : 'NULL' ) );
-
 		$id = 0;
-		foreach ( $this->get_source_path_lookup_candidates( $path ) as $candidate ) {
-			if ( $this->media_importer ) {
-				$id = (int) $this->media_importer->get_attachment_id_by_source( $candidate );
-				Leadwerk_Logger::log( "  media_importer->get_attachment_id_by_source('$candidate') => $id" );
-			}
-			if ( $id ) {
-				break;
-			}
-			global $wpdb;
-			$id = (int) $wpdb->get_var(
-				$wpdb->prepare(
-					"SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = 'leadwerk_source_path' AND meta_value = %s LIMIT 1",
-					$candidate
-				)
-			);
-			Leadwerk_Logger::log( "  wpdb leadwerk_source_path='$candidate' => $id" );
-			if ( $id ) {
-				// Verify the physical file still exists on disk before using the stale record.
-				$attached_file = get_attached_file( $id );
-				$exists        = class_exists( 'Leadwerk_Media_Importer', false )
-					? Leadwerk_Media_Importer::attachment_resolves_for_import( (int) $id )
-					: ( is_string( $attached_file ) && '' !== $attached_file && file_exists( $attached_file ) );
-				Leadwerk_Logger::log( "  file_exists check: attached_file='$attached_file' exists=" . ( $exists ? 'true' : 'false' ) );
-				if ( ! $exists ) {
-					// #region agent log
-					if ( function_exists( 'leadwerk_debug_ndjson' ) ) {
-						leadwerk_debug_ndjson(
-							array(
-								'hypothesisId' => 'H2',
-								'location'     => 'Leadwerk_ACF_Filler::get_attachment_id_by_source',
-								'message'      => 'meta hit but physical file missing',
-								'data'         => array(
-									'lookup_path'    => $path,
-									'candidate'      => $candidate,
-									'attachment_id'  => (int) $id,
-									'attached_trunc' => is_string( $attached_file ) ? substr( $attached_file, 0, 200 ) : '',
-									'resolves_helper' => false,
-								),
-								'runId'        => 'post-fix',
-							)
-						);
-					}
-					// #endregion
-					$id = 0;
-					// Fall through to import_file() below.
-				} else {
-					$this->attachment_cache[ $candidate ] = $id;
-					break;
-				}
-			}
-
-			$src_exists = $this->media_importer && $this->source_file_exists( $candidate );
-			Leadwerk_Logger::log( "  source_file_exists('$candidate') => " . ( $src_exists ? 'true' : 'false' ) );
-			if ( $src_exists ) {
-				$id = (int) $this->media_importer->import_file( $candidate );
-				Leadwerk_Logger::log( "  import_file('$candidate') => $id" );
-				if ( $id ) {
-					$this->attachment_cache[ $candidate ] = $id;
-					break;
-				}
-			}
+		if ( $this->media_importer ) {
+			$id = (int) $this->media_importer->get_attachment_id_by_source( $path );
 		}
 
-		Leadwerk_Logger::log( "ACF-Filler lookup RESULT: path='$path' => id=$id" );
-		// #region agent log
-		static $lw_agent_h4_logged = 0;
-		$looks_like_media = (bool) preg_match( '#\\.(jpe?g|png|webp|svg|gif|ico)$#i', $path )
-			|| 0 === stripos( $path, 'Fotos/' )
-			|| 0 === stripos( $path, 'assets/' );
-		if ( function_exists( 'leadwerk_debug_ndjson' ) && 0 === $id && '' !== $path && $looks_like_media && $lw_agent_h4_logged < 60 ) {
-			++$lw_agent_h4_logged;
-			leadwerk_debug_ndjson(
+		if ( ! $id ) {
+			$query = new WP_Query(
 				array(
-					'hypothesisId' => 'H4',
-					'location'     => 'Leadwerk_ACF_Filler::get_attachment_id_by_source',
-					'message'      => 'lookup returned zero',
-					'data'         => array(
-						'path'               => $path,
-						'source_root_empty'  => '' === $this->source_root,
-						'has_media_importer' => $this->media_importer instanceof Leadwerk_Media_Importer,
-						'sample'             => $lw_agent_h4_logged,
+					'post_type'      => 'attachment',
+					'post_status'    => 'any',
+					'fields'         => 'ids',
+					'posts_per_page' => 1,
+					'meta_query'     => array(
+						array(
+							'key'   => 'leadwerk_source_path',
+							'value' => $path,
+						),
 					),
-					'runId'        => 'post-fix',
 				)
 			);
+			$ids = $query->get_posts();
+			$id  = ! empty( $ids ) ? (int) $ids[0] : 0;
 		}
-		// #endregion
+
 		$this->attachment_cache[ $path ] = $id;
 		return $id;
-	}
-
-	/**
-	 * Whether a source-relative media file exists.
-	 *
-	 * @param string $relative_path Relative source path.
-	 * @return bool
-	 */
-	protected function source_file_exists( $relative_path ) {
-		if ( '' === $this->source_root ) {
-			return false;
-		}
-
-		$full_path = $this->source_root . DIRECTORY_SEPARATOR . str_replace( array( '/', '\\' ), DIRECTORY_SEPARATOR, trim( (string) $relative_path, '/' ) );
-		return is_file( $full_path );
 	}
 
 	/**
@@ -3014,12 +2778,25 @@ class Leadwerk_ACF_Filler {
 		$poster     = $this->parse_image_fields( $node, './/video[1]' );
 		$poster_src = $this->attr( $node, './/video[1]', 'poster' );
 
-		$video_id = $this->resolve_media_field_id( $video );
+		// #region agent log
+		$log_path = dirname( __DIR__, 2 ) . DIRECTORY_SEPARATOR . 'debug-eeb156.log';
+		$payload  = array(
+			'sessionId'    => 'eeb156',
+			'hypothesisId' => 'H_import_hero_video',
+			'location'     => 'class-leadwerk-acf-filler.php:parse_acm_hero_video',
+			'message'      => 'Parsed shell hero video fields for index import',
+			'data'         => array(
+				'video_src' => is_string( $video ) ? $video : '',
+			),
+			'timestamp'    => (int) round( microtime( true ) * 1000 ),
+		);
+		@file_put_contents( $log_path, ( function_exists( 'wp_json_encode' ) ? wp_json_encode( $payload ) : json_encode( $payload ) ) . "\n", FILE_APPEND );
+		// #endregion
 
 		return array(
 			'title'      => $title,
 			'subtitle'   => $subtitle,
-			'video'      => $video_id,
+			'video'      => urldecode( $video ),
 			'poster'     => $poster_src !== '' ? $this->resolve_image_field( $poster_src )['id'] : 0,
 			'poster_alt' => 'ACM AIR CHARTER Hero',
 		);
@@ -4159,6 +3936,11 @@ class Leadwerk_ACF_Filler {
 	 * @return array<string,mixed>
 	 */
 	protected function parse_acm_aog_callout( $node ) {
+		$img = $this->parse_image_fields(
+			$node,
+			'.//div[contains(@class,"image-zoom-bleed")]//img[not(contains(@class,"section-emblem"))][1] | .//div[contains(@class,"grid")]//img[not(contains(@class,"section-emblem"))][not(ancestor::div[contains(@class,"max-w-xl")])][1]'
+		);
+
 		$box = $this->first_node( $node, './/div[contains(@class,"content-box-outer")]//div[contains(@class,"max-w-xl")][1] | .//div[contains(@class,"max-w-xl")][1]' );
 		$ctx = $box instanceof DOMNode ? $box : $node;
 
@@ -4229,6 +4011,8 @@ class Leadwerk_ACF_Filler {
 
 		return array_merge(
 			array(
+				'image'      => (int) ( $img['id'] ?? 0 ),
+				'image_alt'  => (string) ( $img['alt'] ?? '' ),
 				'label'      => $label,
 				'title'      => $title,
 				'body'       => $body,
@@ -4344,7 +4128,9 @@ class Leadwerk_ACF_Filler {
 			$intro = trim( $intro_el->ownerDocument->saveHTML( $intro_el ) );
 		}
 
-		$items = array();
+		$items                = array();
+		$tasks_heading        = 'Aufgaben';
+		$requirements_heading = 'Anforderungen';
 
 		foreach ( $this->query_nodes( $node, './/details[contains(@class,"job-card")]' ) as $card ) {
 			$meta = $this->query_nodes( $card, './/summary//span[contains(@class,"job-meta-tag")]' );
@@ -4366,8 +4152,10 @@ class Leadwerk_ACF_Filler {
 						}
 						$html = trim( $ul->ownerDocument->saveHTML( $ul ) );
 						if ( false !== stripos( $h4t, 'Aufgaben' ) ) {
+							$tasks_heading = trim( $h4t ) ?: $tasks_heading;
 							$tasks = $html;
 						} elseif ( false !== stripos( $h4t, 'Anforderungen' ) ) {
+							$requirements_heading = trim( $h4t ) ?: $requirements_heading;
 							$req = $html;
 						}
 					}
@@ -4379,7 +4167,8 @@ class Leadwerk_ACF_Filler {
 			$pdf_a     = $detail instanceof DOMNode ? $this->first_node( $detail, './/a[contains(@class,"link-arrow")][1]' ) : null;
 			if ( $pdf_a instanceof DOMElement ) {
 				$href_raw = (string) $pdf_a->getAttribute( 'href' );
-				$pdf_url  = $this->resolve_file_field_from_link( $href_raw, (string) $pdf_a->getAttribute( 'download' ) );
+				$pt       = $this->parse_link_target( $href_raw );
+				$pdf_url  = '' !== (string) $pt['url'] ? (string) $pt['url'] : $href_raw;
 				$pdf_label = trim( preg_replace( '/\s+/', ' ', $pdf_a->textContent ) );
 			}
 
@@ -4429,11 +4218,13 @@ class Leadwerk_ACF_Filler {
 
 		return array_merge(
 			array(
-				'label'       => $label,
-				'title'       => $title,
-				'intro'       => $intro,
-				'items'       => $items,
-				'footer_text' => $footer_text,
+				'label'                => $label,
+				'title'                => $title,
+				'intro'                => $intro,
+				'tasks_heading'        => $tasks_heading,
+				'requirements_heading' => $requirements_heading,
+				'items'                => $items,
+				'footer_text'          => $footer_text,
 			),
 			$this->prefix_button_fields( $footer_btn, 'footer' )
 		);

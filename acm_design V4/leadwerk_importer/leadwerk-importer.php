@@ -21,23 +21,6 @@ define( 'LEADWERK_IMPORTER_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LEADWERK_IMPORTER_URL', plugin_dir_url( __FILE__ ) );
 define( 'LEADWERK_IMPORTER_OPTION_POST_STEPS_NOTICE', 'leadwerk_import_needs_post_steps' );
 
-/**
- * Agent debug: append one NDJSON line (session c85077).
- *
- * @param array<string,mixed> $payload Row data (sessionId/timestamp added if missing).
- * @return void
- */
-function leadwerk_debug_ndjson( array $payload ) {
-	$payload['sessionId'] = 'c85077';
-	if ( ! isset( $payload['timestamp'] ) ) {
-		$payload['timestamp'] = (int) round( microtime( true ) * 1000 );
-	}
-	$dir  = dirname( rtrim( (string) LEADWERK_IMPORTER_PATH, '/\\' ) );
-	$file = $dir . DIRECTORY_SEPARATOR . 'debug-c85077.log';
-	// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_file_put_contents
-	@file_put_contents( $file, wp_json_encode( $payload ) . "\n", FILE_APPEND | LOCK_EX );
-}
-
 require_once LEADWERK_IMPORTER_PATH . 'includes/class-leadwerk-news-cpt.php';
 
 /**
@@ -106,6 +89,13 @@ require_once LEADWERK_IMPORTER_PATH . 'includes/class-leadwerk-importer.php';
 require_once LEADWERK_IMPORTER_PATH . 'includes/class-leadwerk-media-importer.php';
 require_once LEADWERK_IMPORTER_PATH . 'includes/class-leadwerk-logger.php';
 require_once LEADWERK_IMPORTER_PATH . 'includes/class-leadwerk-acf-filler.php';
+require_once LEADWERK_IMPORTER_PATH . 'includes/class-leadwerk-orphan-media-admin.php';
+require_once LEADWERK_IMPORTER_PATH . 'includes/class-leadwerk-webp-body-tool.php';
+require_once LEADWERK_IMPORTER_PATH . 'includes/class-leadwerk-auto-webp-upload.php';
+
+Leadwerk_Orphan_Media_Admin::register_menu();
+Leadwerk_Webp_Body_Tool::register();
+Leadwerk_Auto_Webp_On_Upload::register();
 
 /**
  * Admin menu entry.
@@ -260,6 +250,7 @@ add_action( 'admin_enqueue_scripts', 'leadwerk_importer_admin_assets' );
 function leadwerk_importer_admin_page() {
 	$run      = isset( $_GET['run'] ) && '1' === $_GET['run'] && current_user_can( 'manage_options' );
 	$dry_run  = isset( $_GET['dry_run'] ) && '1' === $_GET['dry_run'];
+	$options_only = isset( $_GET['options_only'] ) && '1' === (string) $_GET['options_only'] && current_user_can( 'manage_options' );
 	$repair_structured_de = isset( $_GET['repair_structured_de'] ) && '1' === (string) $_GET['repair_structured_de'] && current_user_can( 'manage_options' );
 	$repair_source_key = isset( $_GET['repair_source_key'] ) && current_user_can( 'manage_options' )
 		? sanitize_key( wp_unslash( $_GET['repair_source_key'] ) )
@@ -267,12 +258,6 @@ function leadwerk_importer_admin_page() {
 	$force_canonical_source_key = isset( $_GET['force_canonical_source_key'] ) && current_user_can( 'manage_options' )
 		? sanitize_key( wp_unslash( $_GET['force_canonical_source_key'] ) )
 		: '';
-	$import_404 = isset( $_GET['import_404'] ) && '1' === (string) $_GET['import_404'] && current_user_can( 'manage_options' );
-	$fill_options_only = isset( $_GET['fill_options_only'] ) && '1' === (string) $_GET['fill_options_only'] && current_user_can( 'manage_options' );
-	$repair_media_ids = isset( $_GET['repair_media_ids'] ) && '1' === (string) $_GET['repair_media_ids'] && current_user_can( 'manage_options' );
-	$cleanup_upload_orphans = isset( $_GET['cleanup_upload_orphans'] ) && '1' === (string) $_GET['cleanup_upload_orphans'] && current_user_can( 'manage_options' );
-	$cleanup_upload_orphans_delete = isset( $_GET['delete_orphans'] ) && '1' === (string) $_GET['delete_orphans'];
-	$not_found_source_key = 'acm-404-v1';
 	$state = Leadwerk_Logger::get_state();
 
 	if ( $run && wp_verify_nonce( $_GET['_wpnonce'] ?? '', 'leadwerk_import_run' ) ) {
@@ -282,29 +267,14 @@ function leadwerk_importer_admin_page() {
 		echo '<div class="notice notice-success"><p>Synchroner Import ausgefuehrt. Fuer kuenftige Laeufe bitte die Live-Progress-Oberflaeche unten verwenden.</p></div>';
 	}
 
-	if ( $import_404 && wp_verify_nonce( $_GET['_wpnonce'] ?? '', 'leadwerk_import_404' ) ) {
-		$importer     = new Leadwerk_Importer( true );
-		$repair_state = $importer->repair_page_by_source_key( $not_found_source_key );
-		$state        = Leadwerk_Logger::get_state();
-
-		if ( is_wp_error( $repair_state ) ) {
-			echo '<div class="notice notice-error"><p>' . esc_html( $repair_state->get_error_message() ) . '</p></div>';
-		} elseif ( 'failed' === (string) ( $repair_state['status'] ?? '' ) ) {
-			echo '<div class="notice notice-error"><p>404 Import fehlgeschlagen. Bitte Live Log und Summary unten pruefen.</p></div>';
-		} else {
-			echo '<div class="notice notice-success"><p>404 Import abgeschlossen fuer <code>' . esc_html( $not_found_source_key ) . '</code>.</p></div>';
-		}
-	}
-
-	if ( $fill_options_only && wp_verify_nonce( $_GET['_wpnonce'] ?? '', 'leadwerk_fill_options_only' ) ) {
+	if ( $options_only && wp_verify_nonce( $_GET['_wpnonce'] ?? '', 'leadwerk_options_only' ) ) {
 		$importer = new Leadwerk_Importer( true );
-		$result   = $importer->fill_options_only();
+		$result   = $importer->run_options_only();
 		$state    = Leadwerk_Logger::get_state();
-
-		if ( is_wp_error( $result ) ) {
-			echo '<div class="notice notice-error"><p>' . esc_html( $result->get_error_message() ) . '</p></div>';
+		if ( 'skipped' === (string) ( $result['status'] ?? '' ) ) {
+			echo '<div class="notice notice-warning"><p>Options-Import uebersprungen (Dry-Run nicht unterstuetzt fuer diesen Button).</p></div>';
 		} else {
-			echo '<div class="notice notice-success"><p>Theme-Optionen wurden gefuellt. Seiten, Medien und News wurden nicht importiert.</p></div>';
+			echo '<div class="notice notice-success"><p>Nur Optionen importiert (Site-Titel/Tagline, Leadwerk-Felder, Site-Icon wo anwendbar).</p></div>';
 		}
 	}
 
@@ -359,48 +329,6 @@ function leadwerk_importer_admin_page() {
 		}
 	}
 
-	if ( $cleanup_upload_orphans && wp_verify_nonce( $_GET['_wpnonce'] ?? '', 'leadwerk_cleanup_upload_orphans' ) ) {
-		$importer       = new Leadwerk_Importer( true );
-		$cleanup_report = $importer->cleanup_orphan_upload_files( $cleanup_upload_orphans_delete );
-		if ( ! empty( $cleanup_report['error'] ) ) {
-			echo '<div class="notice notice-error"><p>' . esc_html( (string) $cleanup_report['error'] ) . '</p></div>';
-		} else {
-			$message = sprintf(
-				'Uploads-Orphan-Scan: %1$d Dateien gescannt, %2$d Attachment-Dateien geschuetzt, %3$d noch referenziert, %4$d orphan gefunden%5$s.',
-				(int) ( $cleanup_report['scanned'] ?? 0 ),
-				(int) ( $cleanup_report['attachment_protected'] ?? 0 ),
-				(int) ( $cleanup_report['referenced'] ?? 0 ),
-				(int) ( $cleanup_report['orphan_count'] ?? 0 ),
-				$cleanup_upload_orphans_delete ? ', ' . (int) ( $cleanup_report['deleted_count'] ?? 0 ) . ' geloescht' : ''
-			);
-			$notice_class = ! empty( $cleanup_report['failed_count'] ) ? 'notice-warning' : 'notice-success';
-			echo '<div class="notice ' . esc_attr( $notice_class ) . '"><p>' . esc_html( $message ) . '</p>';
-			if ( ! empty( $cleanup_report['orphans'] ) ) {
-				echo '<details style="margin:0 0 10px;"><summary>Gefundene Dateien anzeigen</summary><pre style="white-space:pre-wrap;max-height:220px;overflow:auto;">' . esc_html( implode( "\n", array_slice( (array) $cleanup_report['orphans'], 0, 80 ) ) ) . '</pre></details>';
-			}
-			echo '</div>';
-		}
-	}
-
-	if ( $repair_media_ids && wp_verify_nonce( $_GET['_wpnonce'] ?? '', 'leadwerk_repair_media_ids' ) ) {
-		$importer      = new Leadwerk_Importer( true );
-		$repair_report = $importer->repair_structured_media_ids();
-		if ( is_wp_error( $repair_report ) ) {
-			echo '<div class="notice notice-error"><p>' . esc_html( $repair_report->get_error_message() ) . '</p></div>';
-		} else {
-			$message = sprintf(
-				'Media-ID Reparatur abgeschlossen: %1$d Seiten gescannt, %2$d Seiten aktualisiert, %3$d Media-Felder gesetzt, %4$d uebersprungen, %5$d Fehler.',
-				(int) ( $repair_report['scanned'] ?? 0 ),
-				(int) ( $repair_report['updated_pages'] ?? 0 ),
-				(int) ( $repair_report['updated_fields'] ?? 0 ),
-				(int) ( $repair_report['skipped'] ?? 0 ),
-				(int) ( $repair_report['failed'] ?? 0 )
-			);
-			$notice_class = ! empty( $repair_report['failed'] ) ? 'notice-warning' : 'notice-success';
-			echo '<div class="notice ' . esc_attr( $notice_class ) . '"><p>' . esc_html( $message ) . '</p></div>';
-		}
-	}
-
 	$importer_for_tools       = new Leadwerk_Importer( false );
 	$structured_page_options  = $importer_for_tools->get_structured_page_options();
 	?>
@@ -410,7 +338,7 @@ function leadwerk_importer_admin_page() {
 		<details class="leadwerk-importer-checklist" style="margin:12px 0;padding:12px 14px;background:#f6f7f7;border:1px solid #c3c4c7;border-radius:4px;max-width:920px;">
 			<summary><strong>Ablauf-Checkliste (Hosting)</strong></summary>
 			<ol style="margin:10px 0 0 1.2em;line-height:1.55;">
-				<li>Plugins <code>leadwerk-fields</code>, <code>leadwerk-wpml-clone</code>, <code>leadwerk_importer</code> als Geschwister unter <code>wp-content/plugins/</code> (Ordner mit Bindestrich sind fuer WordPress-6.5-Plugin-Abhaengigkeiten erforderlich; Legacy-Namen <code>leadwerk_fields</code> / <code>leadwerk_wpml_clone</code> werden beim Laden weiter erkannt). Theme <code>leadwerk_theme</code> aktiv (CPT <code>acm_news</code> registriert der Importer bei Bedarf auch ohne Theme).</li>
+				<li>Plugins <code>leadwerk-fields</code>, <code>leadwerk-wpml-clone</code>, <code>leadwerk_importer</code> als Geschwister unter <code>wp-content/plugins/</code> (Ordner mit Bindestrich sind fuer WordPress-6.5-Plugin-Abhaengigkeiten erforderlich; Legacy-Namen <code>leadwerk_fields</code> / <code>leadwerk_wpml_clone</code> werden beim Laden weiter erkannt). Theme <code>leadwerk_theme</code> aktiv (CPT <code>acm_news</code> registriert der Importer bei Bedarf auch ohne Theme). Statische Shell-Medien: ein Kanon <code>leadwerk_importer/source_assets</code>; Theme-URLs dafuer siehe <code>leadwerk_importer/DEPLOY-ASSETS.md</code> und Filter <code>leadwerk_theme_static_source_base</code>.</li>
 				<li><strong>Aktivierung empfohlen:</strong> zuerst <code>leadwerk-wpml-clone</code> (legt DB-Tabellen an), dann <code>leadwerk-fields</code>, dann <code>leadwerk_importer</code>. <strong>Kein echtes WPML</strong> parallel betreiben (URL- und Locale-Konflikte mit Leadwerk WPML Clone).</li>
 				<li><strong>Advanced Custom Fields</strong> (Free/Pro) muss deaktiviert sein; sonst schlägt der Preflight fehl und kollidiert das Meta-Format mit Leadwerk Fields. Keine anderen Plugins, die eine eigene <code>get_field()</code> bereitstellen, solange Leadwerk Fields die API liefern soll.</li>
 				<li>Struktur im Repo prüfen: <code>php scripts/verify-leadwerk-deployment.php</code> (Projektroot) — prüft u. a. HTML-Dateien, Drift, und ob jede <code>field_name</code> aus <code>mapping.json</code> in <code>Leadwerk_Content_Schema</code> existiert. Optional strikt: <code>--strict-drift</code>. HTML spiegeln (Kanon = <code>leadwerk_importer/source_assets</code>): <code>php scripts/sync-html-sources.php</code>. Abgeleitetes <code>import-manifest.json</code>: <code>php scripts/build-import-manifest.php</code> (Importer liest nur <code>mapping.json</code>).</li>
@@ -427,21 +355,10 @@ function leadwerk_importer_admin_page() {
 		<div class="leadwerk-importer-toolbar">
 			<button type="button" class="button" data-leadwerk-start-import="dry-run">Dry-Run starten</button>
 			<button type="button" class="button button-primary" data-leadwerk-start-import="apply">Import mit Live-Progress starten</button>
-			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( 'fill_options_only' => '1' ), admin_url( 'admin.php?page=leadwerk-import' ) ), 'leadwerk_fill_options_only' ) ); ?>" class="button">Nur Optionen fuellen</a>
-			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( 'repair_media_ids' => '1' ), admin_url( 'admin.php?page=leadwerk-import' ) ), 'leadwerk_repair_media_ids' ) ); ?>" class="button">Media-IDs reparieren</a>
+			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( 'options_only' => '1' ), admin_url( 'tools.php?page=leadwerk-import' ) ), 'leadwerk_options_only' ) ); ?>" class="button">Nur Optionen importieren</a>
 			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( 'repair_structured_de' => '1' ), admin_url( 'admin.php?page=leadwerk-import' ) ), 'leadwerk_repair_structured_de' ) ); ?>" class="button">DE Structured Content reparieren</a>
-			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( 'import_404' => '1' ), admin_url( 'admin.php?page=leadwerk-import' ) ), 'leadwerk_import_404' ) ); ?>" class="button">Nur 404 importieren</a>
 			<button type="button" class="button" data-leadwerk-reset-progress>Ansicht zuruecksetzen</button>
 		</div>
-
-		<form method="get" class="leadwerk-importer-upload-cleanup" style="margin:16px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-			<input type="hidden" name="page" value="leadwerk-import" />
-			<input type="hidden" name="cleanup_upload_orphans" value="1" />
-			<label><input type="checkbox" name="delete_orphans" value="1" /> Gefundene orphan Upload-Dateien direkt loeschen</label>
-			<?php wp_nonce_field( 'leadwerk_cleanup_upload_orphans' ); ?>
-			<button type="submit" class="button">Uploads-Orphans scannen / bereinigen</button>
-			<p style="margin:0;max-width:760px;">Prueft <code>wp-content/uploads</code>: Attachment-Dateien und referenzierte Dateien bleiben erhalten; nur Dateien ohne Attachment-ID und ohne Referenz in Posts, Meta oder Options werden als orphan gemeldet.</p>
-		</form>
 
 		<form method="get" class="leadwerk-importer-repair-one" style="margin:16px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
 			<input type="hidden" name="page" value="leadwerk-import" />
@@ -663,3 +580,4 @@ function leadwerk_importer_ajax_reset() {
 	wp_send_json_success( array( 'state' => array() ) );
 }
 add_action( 'wp_ajax_leadwerk_import_reset', 'leadwerk_importer_ajax_reset' );
+

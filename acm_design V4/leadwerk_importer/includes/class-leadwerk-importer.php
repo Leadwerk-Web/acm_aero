@@ -83,24 +83,6 @@ class Leadwerk_Importer {
 			$this->media_importer = new Leadwerk_Media_Importer( $this->source_root, $this->dry_run );
 		}
 
-		// #region agent log
-		if ( function_exists( 'leadwerk_debug_ndjson' ) ) {
-			leadwerk_debug_ndjson(
-				array(
-					'hypothesisId' => 'H3',
-					'location'     => 'Leadwerk_Importer::__construct',
-					'message'      => 'importer runtime init',
-					'data'         => array(
-						'source_root_nonempty' => '' !== $this->source_root,
-						'source_root_is_dir'   => '' !== $this->source_root && is_dir( $this->source_root ),
-						'has_media_importer'   => $this->media_importer instanceof Leadwerk_Media_Importer,
-						'dry_run'              => $this->dry_run,
-					),
-					'runId'        => 'post-fix',
-				)
-			);
-		}
-		// #endregion
 	}
 
 	/**
@@ -162,31 +144,6 @@ class Leadwerk_Importer {
 		}
 
 		Leadwerk_Logger::save();
-	}
-
-	/**
-	 * Fill only shared theme options without running media/page/news import steps.
-	 *
-	 * @return array<string,mixed>|WP_Error
-	 */
-	public function fill_options_only() {
-		if ( ! class_exists( 'Leadwerk_Fields_API' ) && ! function_exists( 'update_field' ) ) {
-			return new WP_Error( 'leadwerk_import_missing_fields_api', 'Leadwerk Fields API ist nicht aktiv.' );
-		}
-
-		if ( Leadwerk_Logger::has_active_job() ) {
-			return new WP_Error( 'leadwerk_import_active_job', 'Es laeuft bereits ein Import-Job.' );
-		}
-
-		Leadwerk_Logger::log( '--- Nur Optionen fuellen ---' );
-		$this->fill_options();
-		Leadwerk_Logger::record_result( 'success', 'Theme-Optionen wurden verarbeitet.', 'options-only' );
-		Leadwerk_Logger::save();
-
-		return array(
-			'status'  => 'completed',
-			'message' => 'Theme-Optionen wurden verarbeitet.',
-		);
 	}
 
 	/**
@@ -580,177 +537,6 @@ class Leadwerk_Importer {
 	}
 
 	/**
-	 * Repair media attachment IDs inside existing DE structured fields without changing text fields.
-	 *
-	 * @return array<string,mixed>|WP_Error
-	 */
-	public function repair_structured_media_ids() {
-		if ( ! class_exists( 'Leadwerk_Content_Schema' ) ) {
-			return new WP_Error( 'leadwerk_media_repair_missing_schema', 'Leadwerk_Content_Schema ist nicht geladen.' );
-		}
-		if ( ! function_exists( 'get_field' ) || ! function_exists( 'update_field' ) ) {
-			return new WP_Error( 'leadwerk_media_repair_missing_fields', 'Leadwerk Fields Funktionen sind nicht verfuegbar.' );
-		}
-		if ( Leadwerk_Logger::has_active_job() ) {
-			return new WP_Error( 'leadwerk_import_active_job', 'Es laeuft bereits ein Import-Job.' );
-		}
-
-		$report = array(
-			'scanned'        => 0,
-			'updated_pages'  => 0,
-			'updated_fields' => 0,
-			'skipped'        => 0,
-			'failed'         => 0,
-			'pages'          => array(),
-		);
-
-		foreach ( $this->get_structured_repair_page_configs() as $page_config ) {
-			$page_config = is_array( $page_config ) ? $page_config : array();
-			$source_key  = sanitize_key( (string) ( $page_config['source_key'] ?? '' ) );
-			$field_name  = (string) ( $page_config['field_name'] ?? '' );
-			$group       = Leadwerk_Content_Schema::get_group( $field_name );
-			$de_id       = $this->find_page_by_source_key_and_lang( $source_key, 'de', (string) ( $page_config['target_type'] ?? 'page' ) );
-			++$report['scanned'];
-
-			if ( ! $de_id || ! is_array( $group ) || empty( $group['layouts'] ) ) {
-				++$report['skipped'];
-				continue;
-			}
-
-			$current = get_field( $field_name, $de_id );
-			$payload = $this->build_canonical_shell_payload( $page_config, 'de' );
-			$source  = $payload['value'] ?? array();
-			$changed = 0;
-			$merged  = $this->merge_media_ids_for_group( $current, $source, $group, $changed );
-
-			if ( $changed <= 0 ) {
-				++$report['skipped'];
-				continue;
-			}
-
-			update_field( $field_name, $merged, $de_id );
-			$readback = get_field( $field_name, $de_id );
-			$validation = $this->get_filler()->validate_group_value( $field_name, $readback );
-			if ( ! empty( $validation['has_visible_content'] ) ) {
-				$this->save_last_good_snapshot( $de_id, $field_name, $readback, $validation, 'media_id_repair' );
-				$this->save_imported_field_state( $de_id, $field_name, $readback, 'media_id_repair' );
-				++$report['updated_pages'];
-				$report['updated_fields'] += $changed;
-				$report['pages'][ $source_key ] = array(
-					'post_id'        => $de_id,
-					'updated_fields' => $changed,
-				);
-			} else {
-				update_field( $field_name, $current, $de_id );
-				++$report['failed'];
-			}
-		}
-
-		return $report;
-	}
-
-	/**
-	 * Merge media IDs from a canonical group value into an existing group value.
-	 *
-	 * @param mixed               $current Current value.
-	 * @param mixed               $source  Canonical value.
-	 * @param array<string,mixed> $group   Group schema.
-	 * @param int                 $changed Change counter.
-	 * @return mixed
-	 */
-	protected function merge_media_ids_for_group( $current, $source, $group, &$changed ) {
-		$current_rows = is_array( $current ) ? array_values( $current ) : array();
-		$source_rows  = is_array( $source ) ? array_values( $source ) : array();
-		$layouts      = array_values( (array) ( $group['layouts'] ?? array() ) );
-
-		foreach ( $layouts as $index => $layout_schema ) {
-			if ( ! isset( $source_rows[ $index ] ) || ! is_array( $source_rows[ $index ] ) ) {
-				continue;
-			}
-			if ( ! isset( $current_rows[ $index ] ) || ! is_array( $current_rows[ $index ] ) ) {
-				$current_rows[ $index ] = array(
-					'acf_fc_layout' => (string) ( $source_rows[ $index ]['acf_fc_layout'] ?? '' ),
-				);
-			}
-			$current_rows[ $index ] = $this->merge_media_ids_for_fields(
-				$current_rows[ $index ],
-				$source_rows[ $index ],
-				(array) ( $layout_schema['fields'] ?? array() ),
-				$changed
-			);
-		}
-
-		return $current_rows;
-	}
-
-	/**
-	 * Merge media IDs for a field definition map.
-	 *
-	 * @param array<string,mixed> $current Current row.
-	 * @param array<string,mixed> $source  Canonical row.
-	 * @param array<string,mixed> $fields  Field definitions.
-	 * @param int                 $changed Change counter.
-	 * @return array<string,mixed>
-	 */
-	protected function merge_media_ids_for_fields( $current, $source, $fields, &$changed ) {
-		foreach ( $fields as $field_key => $definition ) {
-			$field_key  = (string) $field_key;
-			$definition = is_array( $definition ) ? $definition : array();
-			$type       = (string) ( $definition['type'] ?? '' );
-
-			if ( in_array( $type, array( 'image', 'video', 'file' ), true ) ) {
-				$next = isset( $source[ $field_key ] ) ? (int) $source[ $field_key ] : 0;
-				// Current value might be a legacy string path from a previous import.
-				$old_raw = isset( $current[ $field_key ] ) ? $current[ $field_key ] : 0;
-				$old     = is_numeric( $old_raw ) ? (int) $old_raw : 0;
-				$is_legacy_string = ! is_numeric( $old_raw ) && is_string( $old_raw ) && '' !== trim( $old_raw );
-
-				if ( $next > 0 && $next !== $old ) {
-					$current[ $field_key ] = $next;
-					++$changed;
-				} elseif ( $is_legacy_string && $next > 0 ) {
-					// Legacy string path → replace with canonical attachment ID.
-					$current[ $field_key ] = $next;
-					++$changed;
-				} elseif ( $is_legacy_string && 0 === $next ) {
-					// Both sides lack a numeric ID — try resolving the string path.
-					$filler   = $this->get_filler();
-					$resolved = method_exists( $filler, 'resolve_legacy_media_path' )
-						? (int) $filler->resolve_legacy_media_path( $old_raw )
-						: 0;
-					if ( $resolved > 0 ) {
-						$current[ $field_key ] = $resolved;
-						++$changed;
-					}
-				}
-				continue;
-			}
-
-			if ( 'repeater' === $type && ! empty( $definition['fields'] ) && is_array( $definition['fields'] ) ) {
-				$current_items = isset( $current[ $field_key ] ) && is_array( $current[ $field_key ] ) ? array_values( $current[ $field_key ] ) : array();
-				$source_items  = isset( $source[ $field_key ] ) && is_array( $source[ $field_key ] ) ? array_values( $source[ $field_key ] ) : array();
-				foreach ( $source_items as $idx => $source_item ) {
-					if ( ! is_array( $source_item ) ) {
-						continue;
-					}
-					if ( ! isset( $current_items[ $idx ] ) || ! is_array( $current_items[ $idx ] ) ) {
-						$current_items[ $idx ] = array();
-					}
-					$current_items[ $idx ] = $this->merge_media_ids_for_fields(
-						$current_items[ $idx ],
-						$source_item,
-						(array) $definition['fields'],
-						$changed
-					);
-				}
-				$current[ $field_key ] = $current_items;
-			}
-		}
-
-		return $current;
-	}
-
-	/**
 	 * Run the next importer batch.
 	 *
 	 * @param array<string,mixed> $job_state   Current state.
@@ -1126,7 +912,7 @@ class Leadwerk_Importer {
 
 		if ( '' !== trim( $html ) ) {
 			$payload           = $filler->build_page_payload_from_html( $page_config, $html, $lang );
-			$payload['source'] = 'source_assets';
+			$payload['source'] = 'theme_shell';
 			return $payload;
 		}
 
@@ -1142,17 +928,28 @@ class Leadwerk_Importer {
 	 * @return string
 	 */
 	protected function get_canonical_shell_html( $page_config ) {
-		$source_file = (string) ( $page_config['source_file'] ?? '' );
-		if ( '' === trim( $source_file ) ) {
+		$file_name = basename( (string) ( $page_config['source_file'] ?? '' ) );
+		if ( '' === $file_name ) {
 			return '';
 		}
 
-		$file_path = $this->resolve_source_path( $source_file );
-		if ( is_file( $file_path ) ) {
-			$html = file_get_contents( $file_path );
-			if ( false !== $html ) {
-				return (string) $html;
+		$candidates = array();
+		if ( defined( 'LEADWERK_THEME_DIR' ) ) {
+			$candidates[] = trailingslashit( LEADWERK_THEME_DIR ) . 'source_shells/' . $file_name;
+		}
+		$candidates[] = dirname( LEADWERK_IMPORTER_PATH ) . '/leadwerk_theme/source_shells/' . $file_name;
+
+		foreach ( array_unique( $candidates ) as $file_path ) {
+			if ( is_file( $file_path ) ) {
+				$html = file_get_contents( $file_path );
+				if ( false !== $html ) {
+					return (string) $html;
+				}
 			}
+		}
+
+		if ( function_exists( 'leadwerk_theme_get_source_template_html' ) ) {
+			return (string) leadwerk_theme_get_source_template_html( (string) ( $page_config['source_key'] ?? '' ) );
 		}
 
 		return '';
@@ -1607,20 +1404,19 @@ class Leadwerk_Importer {
 			);
 		}
 
-		$logo = $root . DIRECTORY_SEPARATOR . 'logo.webp';
+		$logo = $root . DIRECTORY_SEPARATOR . 'logo.png';
 		if ( ! is_file( $logo ) ) {
 			Leadwerk_Logger::record_result(
 				'warning',
-				'logo.webp fehlt im Quellroot — Header/Footer-Logos im statischen HTML koennen nicht importiert werden.',
+				'logo.png fehlt im Quellroot — Header/Footer-Logos im statischen HTML koennen nicht importiert werden.',
 				'preflight'
 			);
 		}
 
 		$theme_option_assets = array(
 			'assets/images/Logo-final-weiss-rz_svg.svg',
-			'assets/images/Logo-final-weiss-rz.webp',
+			'assets/images/Logo-final-weiss-rz.png',
 			'assets/images/Schriftzug.svg',
-			'assets/images/starlink-popup.webp',
 		);
 		foreach ( $theme_option_assets as $rel ) {
 			$full = $root . DIRECTORY_SEPARATOR . str_replace( '/', DIRECTORY_SEPARATOR, $rel );
@@ -2318,6 +2114,25 @@ class Leadwerk_Importer {
 	}
 
 	/**
+	 * Run only the options step (site identity, Leadwerk options, site icon) without preflight or other import steps.
+	 *
+	 * @return array<string,string>
+	 */
+	public function run_options_only() {
+		if ( $this->dry_run ) {
+			return array( 'status' => 'skipped' );
+		}
+
+		$this->apply_site_identity();
+		$this->fill_options();
+		$this->set_site_icon();
+
+		Leadwerk_Logger::record_result( 'success', 'Nur Optionen importiert (Site-Identity, Felder, Site-Icon).', 'options-only' );
+
+		return array( 'status' => 'completed' );
+	}
+
+	/**
 	 * Final render-safety pass.
 	 *
 	 * @param array<string,mixed> $job_state State.
@@ -2881,77 +2696,69 @@ class Leadwerk_Importer {
 	 * @return array<string,mixed>
 	 */
 	protected function resolve_import_write_guard( $post_id, $field_name, $current_value, $current_validation, $payload_value, $payload_validation ) {
-		// Write guard disabled — always allow import writes.
-		// Previous logic was preventing reimport after uploads/pages were wiped.
+		$current_has_data = ! empty( $current_validation['has_visible_content'] );
+		$payload_has_data = ! empty( $payload_validation['has_visible_content'] );
+		$current_sig      = $current_has_data ? $this->build_field_signature( $current_value ) : '';
+		$payload_sig      = $payload_has_data ? $this->build_field_signature( $payload_value ) : '';
+		$import_state     = $this->get_imported_field_state( $post_id, $field_name );
+		$import_sig       = (string) ( $import_state['signature'] ?? '' );
+
+		if ( ! $current_has_data || ! $payload_has_data ) {
+			return array(
+				'skip_write'           => false,
+				'reason'               => '',
+				'message'              => '',
+				'state_source'         => '',
+				'has_import_state'     => ! empty( $import_sig ),
+				'persist_import_state' => false,
+			);
+		}
+
+		if ( '' !== $current_sig && '' !== $payload_sig && $current_sig === $payload_sig ) {
+			return array(
+				'skip_write'           => true,
+				'reason'               => 'already_synced',
+				'message'              => 'Structured Inhalt ist bereits aktuell; kein Re-Import noetig.',
+				'state_source'         => 'existing_synced',
+				'has_import_state'     => ! empty( $import_sig ),
+				'persist_import_state' => ( '' === $import_sig || $import_sig !== $current_sig ),
+			);
+		}
+
+		if ( '' !== $import_sig && '' !== $current_sig && $current_sig !== $import_sig ) {
+			return array(
+				'skip_write'           => true,
+				'reason'               => 'manual_edit_preserved',
+				'message'              => 'Manuell bearbeiteter Structured Inhalt wurde beibehalten; Import fuer dieses Feld uebersprungen.',
+				'state_source'         => (string) ( $import_state['source'] ?? '' ),
+				'has_import_state'     => true,
+				'persist_import_state' => false,
+			);
+		}
+
+		if ( '' === $import_sig && '' !== $current_sig && '' !== $payload_sig && $current_sig !== $payload_sig ) {
+			$current_ne = (int) ( $current_validation['non_empty_layout_count'] ?? 0 );
+			$payload_ne = (int) ( $payload_validation['non_empty_layout_count'] ?? 0 );
+			if ( $payload_ne <= $current_ne ) {
+				return array(
+					'skip_write'           => true,
+					'reason'               => 'manual_edit_preserved_legacy',
+					'message'              => 'Bestehender Structured Inhalt weicht vom bisherigen Import-Stand ab und wurde beibehalten.',
+					'state_source'         => '',
+					'has_import_state'     => false,
+					'persist_import_state' => false,
+				);
+			}
+		}
+
 		return array(
 			'skip_write'           => false,
 			'reason'               => '',
 			'message'              => '',
-			'state_source'         => '',
-			'has_import_state'     => false,
+			'state_source'         => (string) ( $import_state['source'] ?? '' ),
+			'has_import_state'     => ! empty( $import_sig ),
 			'persist_import_state' => false,
 		);
-	}
-
-	/**
-	 * Check whether the structured value contains media attachment IDs whose files are missing on disk.
-	 *
-	 * @param mixed  $value      Current field value (array of layout rows).
-	 * @param string $field_name Field group name.
-	 * @return bool True when at least one referenced media file is missing.
-	 */
-	protected function has_broken_media_in_value( $value, $field_name ) {
-		if ( ! is_array( $value ) || ! class_exists( 'Leadwerk_Content_Schema' ) ) {
-			return false;
-		}
-
-		$group   = Leadwerk_Content_Schema::get_group( $field_name );
-		$layouts = is_array( $group ) ? array_values( (array) ( $group['layouts'] ?? array() ) ) : array();
-		$rows    = array_values( $value );
-
-		foreach ( $layouts as $index => $layout_schema ) {
-			if ( ! isset( $rows[ $index ] ) || ! is_array( $rows[ $index ] ) ) {
-				continue;
-			}
-			foreach ( (array) ( $layout_schema['fields'] ?? array() ) as $field_key => $definition ) {
-				$type = (string) ( $definition['type'] ?? '' );
-				if ( in_array( $type, array( 'image', 'video', 'file' ), true ) ) {
-					$att_id = isset( $rows[ $index ][ $field_key ] ) ? (int) $rows[ $index ][ $field_key ] : 0;
-					if ( $att_id > 0 && ! $this->attachment_file_exists( $att_id ) ) {
-						return true;
-					}
-				}
-				if ( 'repeater' === $type && ! empty( $definition['fields'] ) ) {
-					$items = isset( $rows[ $index ][ $field_key ] ) && is_array( $rows[ $index ][ $field_key ] ) ? $rows[ $index ][ $field_key ] : array();
-					foreach ( $items as $item ) {
-						if ( ! is_array( $item ) ) {
-							continue;
-						}
-						foreach ( (array) $definition['fields'] as $sub_key => $sub_def ) {
-							if ( in_array( (string) ( $sub_def['type'] ?? '' ), array( 'image', 'video', 'file' ), true ) ) {
-								$att_id = isset( $item[ $sub_key ] ) ? (int) $item[ $sub_key ] : 0;
-								if ( $att_id > 0 && ! $this->attachment_file_exists( $att_id ) ) {
-									return true;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		return false;
-	}
-
-	/**
-	 * Check whether the physical file for an attachment still exists on disk.
-	 *
-	 * @param int $attachment_id Attachment post ID.
-	 * @return bool
-	 */
-	protected function attachment_file_exists( $attachment_id ) {
-		return class_exists( 'Leadwerk_Media_Importer' )
-			&& Leadwerk_Media_Importer::attachment_resolves_for_import( (int) $attachment_id );
 	}
 
 	/**
@@ -2961,14 +2768,12 @@ class Leadwerk_Importer {
 	 * @return string
 	 */
 	protected function build_field_signature( $value ) {
-		// Version salt — bump to force a full re-import of all structured fields.
-		$salt    = 'leadwerk_sig_v2';
 		$encoded = wp_json_encode(
 			$this->normalize_value_for_signature( $value ),
 			JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
 		);
 
-		return is_string( $encoded ) ? sha1( $salt . $encoded ) : '';
+		return is_string( $encoded ) ? sha1( $encoded ) : '';
 	}
 
 	/**
@@ -3144,39 +2949,6 @@ class Leadwerk_Importer {
 	}
 
 	/**
-	 * Runtime template option key shared with the theme.
-	 *
-	 * @param string $source_key Source key.
-	 * @return string
-	 */
-	protected function source_template_option_name( $source_key ) {
-		return 'leadwerk_source_template_html_' . sanitize_key( (string) $source_key );
-	}
-
-	/**
-	 * Store canonical source_assets HTML for theme runtime rendering.
-	 *
-	 * @param int                 $post_id     Post ID.
-	 * @param array<string,mixed> $page_config Page config.
-	 * @return void
-	 */
-	protected function persist_source_template_html_for_post( $post_id, $page_config ) {
-		$post_id    = (int) $post_id;
-		$source_key = sanitize_key( (string) ( $page_config['source_key'] ?? '' ) );
-		if ( $post_id <= 0 || '' === $source_key ) {
-			return;
-		}
-
-		$html = $this->get_canonical_shell_html( $page_config );
-		if ( '' === trim( $html ) ) {
-			return;
-		}
-
-		update_post_meta( $post_id, 'leadwerk_source_template_html', wp_slash( $html ) );
-		update_option( $this->source_template_option_name( $source_key ), $html, false );
-	}
-
-	/**
 	 * Create or update a page for one language.
 	 *
 	 * @param array<string,mixed> $page_config Page config.
@@ -3215,10 +2987,6 @@ class Leadwerk_Importer {
 			$post_data['post_title'] = $title;
 		}
 
-		if ( 'en' === $lang && $existing ) {
-			unset( $post_data['post_name'] );
-		}
-
 		if ( $existing ) {
 			$post_data['ID']  = $existing;
 			$result['post_id'] = (int) $existing;
@@ -3227,7 +2995,6 @@ class Leadwerk_Importer {
 				wp_update_post( $post_data );
 				update_post_meta( $existing, 'leadwerk_source_key', $source_key );
 				update_post_meta( $existing, 'leadwerk_lang', $lang );
-				$this->persist_source_template_html_for_post( (int) $existing, $page_config );
 				if ( 'de' === $lang && ! empty( $page_config['is_front_page'] ) ) {
 					update_option( 'show_on_front', 'page' );
 					update_option( 'page_on_front', (int) $existing );
@@ -3255,7 +3022,6 @@ class Leadwerk_Importer {
 
 		update_post_meta( $id, 'leadwerk_source_key', $source_key );
 		update_post_meta( $id, 'leadwerk_lang', $lang );
-		$this->persist_source_template_html_for_post( (int) $id, $page_config );
 
 		if ( 'de' === $lang && ! empty( $page_config['is_front_page'] ) ) {
 			update_option( 'show_on_front', 'page' );
@@ -3329,22 +3095,12 @@ class Leadwerk_Importer {
 		}
 
 		if ( ! empty( $payload['meta_description'] ) ) {
-			$this->update_import_managed_meta(
-				$post_id,
-				'_yoast_wpseo_metadesc',
-				sanitize_text_field( $payload['meta_description'] ),
-				'_leadwerk_importer_last_yoast_metadesc'
-			);
+			update_post_meta( $post_id, '_yoast_wpseo_metadesc', sanitize_text_field( $payload['meta_description'] ) );
 		}
 
 		if ( ! empty( $payload['document_title'] ) ) {
 			$seo_title = $this->truncate_seo_title_for_yoast( (string) $payload['document_title'] );
-			$this->update_import_managed_meta(
-				$post_id,
-				'_yoast_wpseo_title',
-				sanitize_text_field( $seo_title ),
-				'_leadwerk_importer_last_yoast_title'
-			);
+			update_post_meta( $post_id, '_yoast_wpseo_title', sanitize_text_field( $seo_title ) );
 		}
 
 		$focus = '';
@@ -3355,12 +3111,7 @@ class Leadwerk_Importer {
 			$focus = trim( (string) ( $page_config['focus_keyphrase'] ?? '' ) );
 		}
 		if ( '' !== $focus ) {
-			$this->update_import_managed_meta(
-				$post_id,
-				'_yoast_wpseo_focuskw',
-				sanitize_text_field( $focus ),
-				'_leadwerk_importer_last_yoast_focuskw'
-			);
+			update_post_meta( $post_id, '_yoast_wpseo_focuskw', sanitize_text_field( $focus ) );
 		}
 
 		if ( ! $this->dry_run ) {
@@ -3371,48 +3122,6 @@ class Leadwerk_Importer {
 			'body_class'        => $body_class,
 			'body_class_source' => $body_class_source,
 		);
-	}
-
-	/**
-	 * Update importer-managed meta without overwriting manual WP edits.
-	 *
-	 * Empty values are filled. Values still matching the last importer write are
-	 * updated. Different non-empty values are treated as manual edits and kept.
-	 *
-	 * @param int    $post_id    Post ID.
-	 * @param string $meta_key   Target meta key.
-	 * @param string $next_value New importer value.
-	 * @param string $state_key  Last importer value meta key.
-	 * @return bool True when target meta was updated.
-	 */
-	protected function update_import_managed_meta( $post_id, $meta_key, $next_value, $state_key ) {
-		$post_id    = (int) $post_id;
-		$meta_key   = (string) $meta_key;
-		$state_key  = (string) $state_key;
-		$next_value = (string) $next_value;
-
-		if ( $post_id <= 0 || '' === $meta_key || '' === $state_key || '' === trim( $next_value ) ) {
-			return false;
-		}
-
-		$current       = (string) get_post_meta( $post_id, $meta_key, true );
-		$last_imported = (string) get_post_meta( $post_id, $state_key, true );
-		$current_trim  = trim( $current );
-		$last_trim     = trim( $last_imported );
-
-		if ( '' !== $current_trim ) {
-			if ( '' !== $last_trim && $current !== $last_imported ) {
-				return false;
-			}
-			if ( '' === $last_trim && $current !== $next_value ) {
-				return false;
-			}
-		}
-
-		update_post_meta( $post_id, $meta_key, $next_value );
-		update_post_meta( $post_id, $state_key, $next_value );
-
-		return true;
 	}
 
 	/**
@@ -3493,169 +3202,6 @@ class Leadwerk_Importer {
 	}
 
 	/**
-	 * Scan or delete files in wp-content/uploads that are neither attachment files nor referenced.
-	 *
-	 * @param bool $delete Whether to delete detected orphan files.
-	 * @param int  $limit  Max files to inspect.
-	 * @return array<string,mixed>
-	 */
-	public function cleanup_orphan_upload_files( $delete = false, $limit = 5000 ) {
-		$uploads = wp_get_upload_dir();
-		$base    = ! empty( $uploads['basedir'] ) ? wp_normalize_path( (string) $uploads['basedir'] ) : '';
-		if ( '' === $base || ! is_dir( $base ) ) {
-			return array(
-				'error' => 'Uploads directory not found.',
-			);
-		}
-
-		$protected = $this->collect_attachment_upload_paths();
-		$allowed   = array( 'jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'pdf', 'mp4', 'webm', 'mov', 'mp3', 'wav', 'ico' );
-		$report    = array(
-			'scanned'              => 0,
-			'attachment_protected' => 0,
-			'referenced'           => 0,
-			'orphan_count'         => 0,
-			'deleted_count'        => 0,
-			'failed_count'         => 0,
-			'delete'               => (bool) $delete,
-			'orphans'              => array(),
-			'deleted'              => array(),
-			'failed'               => array(),
-		);
-
-		$iterator = new RecursiveIteratorIterator(
-			new RecursiveDirectoryIterator( $base, FilesystemIterator::SKIP_DOTS ),
-			RecursiveIteratorIterator::LEAVES_ONLY
-		);
-
-		foreach ( $iterator as $file ) {
-			if ( ! $file instanceof SplFileInfo || ! $file->isFile() ) {
-				continue;
-			}
-			if ( $report['scanned'] >= $limit ) {
-				break;
-			}
-
-			$ext = strtolower( pathinfo( $file->getFilename(), PATHINFO_EXTENSION ) );
-			if ( ! in_array( $ext, $allowed, true ) ) {
-				continue;
-			}
-
-			$full = wp_normalize_path( $file->getPathname() );
-			$rel  = ltrim( substr( $full, strlen( trailingslashit( $base ) ) ), '/' );
-			$rel  = str_replace( '\\', '/', $rel );
-			++$report['scanned'];
-
-			if ( isset( $protected[ $rel ] ) ) {
-				++$report['attachment_protected'];
-				continue;
-			}
-
-			if ( $this->upload_file_is_referenced( $rel, $file->getFilename() ) ) {
-				++$report['referenced'];
-				continue;
-			}
-
-			$report['orphans'][] = $rel;
-			++$report['orphan_count'];
-
-			if ( $delete ) {
-				if ( 0 === strpos( $full, trailingslashit( $base ) ) && wp_delete_file( $full ) ) {
-					$report['deleted'][] = $rel;
-					++$report['deleted_count'];
-				} else {
-					$report['failed'][] = $rel;
-					++$report['failed_count'];
-				}
-			}
-		}
-
-		$report['orphans'] = array_slice( $report['orphans'], 0, 200 );
-		$report['deleted'] = array_slice( $report['deleted'], 0, 200 );
-		$report['failed']  = array_slice( $report['failed'], 0, 200 );
-
-		return $report;
-	}
-
-	/**
-	 * Collect upload-relative files protected by attachment metadata.
-	 *
-	 * @return array<string,bool>
-	 */
-	protected function collect_attachment_upload_paths() {
-		$protected = array();
-		$query     = new WP_Query(
-			array(
-				'post_type'              => 'attachment',
-				'post_status'            => 'any',
-				'fields'                 => 'ids',
-				'posts_per_page'         => -1,
-				'no_found_rows'          => true,
-				'update_post_meta_cache' => true,
-				'update_post_term_cache' => false,
-			)
-		);
-
-		foreach ( $query->get_posts() as $attachment_id ) {
-			$main = str_replace( '\\', '/', (string) get_post_meta( (int) $attachment_id, '_wp_attached_file', true ) );
-			if ( '' === $main ) {
-				continue;
-			}
-			$protected[ ltrim( $main, '/' ) ] = true;
-			$meta = wp_get_attachment_metadata( (int) $attachment_id );
-			if ( ! is_array( $meta ) || empty( $meta['sizes'] ) || ! is_array( $meta['sizes'] ) ) {
-				continue;
-			}
-			$dir = trim( str_replace( '\\', '/', pathinfo( $main, PATHINFO_DIRNAME ) ), './' );
-			foreach ( $meta['sizes'] as $size ) {
-				if ( empty( $size['file'] ) ) {
-					continue;
-				}
-				$rel = ( '' !== $dir ? $dir . '/' : '' ) . str_replace( '\\', '/', (string) $size['file'] );
-				$protected[ ltrim( $rel, '/' ) ] = true;
-			}
-		}
-
-		return $protected;
-	}
-
-	/**
-	 * Check whether an upload file path is still referenced in posts, meta, or options.
-	 *
-	 * @param string $relative Relative upload path.
-	 * @param string $basename File basename.
-	 * @return bool
-	 */
-	protected function upload_file_is_referenced( $relative, $basename ) {
-		global $wpdb;
-
-		$relative = str_replace( '\\', '/', trim( (string) $relative, '/' ) );
-		$basename = trim( (string) $basename );
-		if ( '' === $relative || '' === $basename ) {
-			return false;
-		}
-
-		$needles = array_values( array_unique( array_filter( array( $relative, rawurlencode( $relative ), $basename, rawurlencode( $basename ) ) ) ) );
-		foreach ( $needles as $needle ) {
-			$like = '%' . $wpdb->esc_like( $needle ) . '%';
-			$posts = (int) $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE post_content LIKE %s LIMIT 1", $like ) );
-			if ( $posts > 0 ) {
-				return true;
-			}
-			$postmeta = (int) $wpdb->get_var( $wpdb->prepare( "SELECT meta_id FROM {$wpdb->postmeta} WHERE meta_value LIKE %s LIMIT 1", $like ) );
-			if ( $postmeta > 0 ) {
-				return true;
-			}
-			$options = (int) $wpdb->get_var( $wpdb->prepare( "SELECT option_id FROM {$wpdb->options} WHERE option_value LIKE %s LIMIT 1", $like ) );
-			if ( $options > 0 ) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	/**
 	 * Fill theme options.
 	 *
 	 * @return void
@@ -3666,10 +3212,9 @@ class Leadwerk_Importer {
 		}
 
 		$option_map = array(
-			'header_logo'          => 'assets/images/Logo-final-weiss-rz_svg.svg',
-			'footer_logo'          => 'assets/images/Logo-final-weiss-rz.webp',
-			'footer_wordmark'      => 'assets/images/Schriftzug.svg',
-			'starlink_popup_image' => 'assets/images/starlink-popup.webp',
+			'header_logo'     => 'assets/images/Logo-final-weiss-rz_svg.svg',
+			'footer_logo'     => 'assets/images/Logo-final-weiss-rz.png',
+			'footer_wordmark' => 'assets/images/Schriftzug.svg',
 		);
 
 		foreach ( $option_map as $field_name => $source_path ) {
@@ -3677,26 +3222,6 @@ class Leadwerk_Importer {
 			if ( $attachment_id && ! $this->leadwerk_get_option( $field_name ) ) {
 				$this->leadwerk_update_option( $field_name, $attachment_id );
 			}
-		}
-
-		$starlink_popup_defaults = array(
-			'starlink_popup_image_alt' => html_entity_decode( 'Starlink Antenne auf Business-Jet &ndash; ACM Authorized Reseller', ENT_QUOTES | ENT_HTML5, 'UTF-8' ),
-			'starlink_popup_title'     => html_entity_decode( 'ACM &ndash; Authorized Reseller f&uuml;r Starlink.', ENT_QUOTES | ENT_HTML5, 'UTF-8' ),
-			'starlink_popup_badge'     => 'Starlink Authorized Reseller',
-			'starlink_popup_headline'  => html_entity_decode( 'Ihr Starlink-Partner f&uuml;r die Business Aviation.', ENT_QUOTES | ENT_HTML5, 'UTF-8' ),
-			'starlink_popup_teaser'    => html_entity_decode( 'Starlink ist das Satelliten-Internet von SpaceX speziell f&uuml;r Business Jets: hohe Geschwindigkeit, 4K-Streaming und stabile Verbindung weltweit &ndash; auch &uuml;ber den Polarrouten. ACM ist autorisierter Reseller und Installationspartner.', ENT_QUOTES | ENT_HTML5, 'UTF-8' ),
-			'starlink_popup_cta_label' => 'Installation anfragen',
-			'starlink_popup_cta_url'   => 'kontakt.html#maintenance',
-		);
-
-		foreach ( $starlink_popup_defaults as $field_name => $value ) {
-			if ( ! $this->leadwerk_get_option( $field_name ) ) {
-				$this->leadwerk_update_option( $field_name, $value );
-			}
-		}
-
-		if ( ! $this->leadwerk_get_option( 'footer_agb_source_key' ) ) {
-			$this->leadwerk_update_option( 'footer_agb_source_key', 'acm-agb-v1' );
 		}
 
 		if ( ! $this->leadwerk_get_option( 'company_address' ) ) {
@@ -3730,6 +3255,77 @@ class Leadwerk_Importer {
 		if ( ! $this->leadwerk_get_option( 'theme_strings_en' ) ) {
 			$this->leadwerk_update_option( 'theme_strings_en', wp_json_encode( $this->get_default_theme_strings( 'en' ), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) );
 		}
+
+		$this->fill_starlink_modal_options_if_empty();
+	}
+
+	/**
+	 * Seed Leadwerk Optionen „Starlink Modal“ when empty (dedicated fields + optional image attachment).
+	 * Texte: zuerst aus theme_strings_de (gleiche Keys wie im Theme), sonst Shell-Defaults.
+	 *
+	 * @return void
+	 */
+	protected function fill_starlink_modal_options_if_empty() {
+		$defaults = array(
+			'starlink_modal_title'     => 'ACM – Authorized Reseller für Starlink.',
+			'starlink_modal_image_alt' => 'Starlink Antenne auf Business-Jet – ACM Authorized Reseller',
+			'starlink_modal_badge'     => 'Starlink Authorized Reseller',
+			'starlink_modal_headline'  => 'Ihr Starlink-Partner für die Business Aviation.',
+			'starlink_modal_teaser'    => 'Starlink ist das Satelliten-Internet von SpaceX speziell für Business Jets: hohe Geschwindigkeit, 4K-Streaming und stabile Verbindung weltweit – auch über den Polarrouten. ACM ist autorisierter Reseller und Installationspartner.',
+			'starlink_modal_cta_label' => 'Installation anfragen',
+		);
+
+		$from_strings = array(
+			'starlink_modal_title'     => 'starlink_modal_title',
+			'starlink_modal_image_alt' => 'starlink_image_alt',
+			'starlink_modal_badge'     => 'starlink_badge',
+			'starlink_modal_headline'  => 'starlink_headline',
+			'starlink_modal_teaser'    => 'starlink_teaser',
+			'starlink_modal_cta_label' => 'starlink_cta_label',
+		);
+
+		foreach ( $from_strings as $option_name => $theme_string_key ) {
+			if ( '' !== trim( (string) $this->leadwerk_get_option( $option_name ) ) ) {
+				continue;
+			}
+			$candidate = $this->get_theme_string_value_from_stored_json( 'de', $theme_string_key );
+			if ( '' !== $candidate ) {
+				$this->leadwerk_update_option( $option_name, $candidate );
+				continue;
+			}
+			if ( isset( $defaults[ $option_name ] ) ) {
+				$this->leadwerk_update_option( $option_name, $defaults[ $option_name ] );
+			}
+		}
+
+		$img = $this->leadwerk_get_option( 'starlink_modal_image' );
+		if ( null === $img || '' === $img || ( is_numeric( $img ) && (int) $img <= 0 ) ) {
+			$attachment_id = $this->resolve_attachment( 'Fotos/starlink-popup.png' );
+			if ( $attachment_id ) {
+				$this->leadwerk_update_option( 'starlink_modal_image', $attachment_id );
+			}
+		}
+	}
+
+	/**
+	 * Read a single key from stored theme_strings_de / theme_strings_en JSON option.
+	 *
+	 * @param string $lang         'de' or 'en'.
+	 * @param string $string_key   Key inside the JSON object.
+	 * @return string
+	 */
+	protected function get_theme_string_value_from_stored_json( $lang, $string_key ) {
+		$opt_name = ( 'en' === $lang ) ? 'theme_strings_en' : 'theme_strings_de';
+		$raw      = $this->leadwerk_get_option( $opt_name );
+		if ( ! is_string( $raw ) || '' === trim( $raw ) ) {
+			return '';
+		}
+		$decoded = json_decode( $raw, true );
+		if ( ! is_array( $decoded ) || ! isset( $decoded[ $string_key ] ) ) {
+			return '';
+		}
+		$val = $decoded[ $string_key ];
+		return is_string( $val ) ? $val : ( is_scalar( $val ) ? (string) $val : '' );
 	}
 
 	/**
@@ -3953,7 +3549,7 @@ class Leadwerk_Importer {
 			return;
 		}
 
-		$attachment_id = $this->resolve_attachment( 'favicon-192x192.webp' );
+		$attachment_id = $this->resolve_attachment( 'favicon-192x192.png' );
 		if ( $attachment_id ) {
 			update_option( 'site_icon', $attachment_id );
 		}
@@ -3989,15 +3585,7 @@ class Leadwerk_Importer {
 		);
 
 		$ids = $query->get_posts();
-		$id  = ! empty( $ids ) ? (int) $ids[0] : 0;
-		// Verify physical file exists — stale records from wiped uploads must be ignored.
-		if ( $id > 0 ) {
-			$file = get_attached_file( $id );
-			if ( ! is_string( $file ) || '' === $file || ! file_exists( $file ) ) {
-				return 0;
-			}
-		}
-		return $id;
+		return ! empty( $ids ) ? (int) $ids[0] : 0;
 	}
 
 	/**
@@ -4069,7 +3657,7 @@ class Leadwerk_Importer {
 	 * @return bool
 	 */
 	protected function is_legal_page( $page_config ) {
-		return in_array( $page_config['field_name'] ?? '', array( 'impressum_page', 'datenschutz_page', 'agb_page' ), true );
+		return in_array( $page_config['field_name'] ?? '', array( 'impressum_page', 'datenschutz_page' ), true );
 	}
 
 	/**

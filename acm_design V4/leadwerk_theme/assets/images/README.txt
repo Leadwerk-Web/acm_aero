@@ -1,0 +1,1 @@
+Grosse Shell-Bilder liegen nur noch unter wp-content/plugins/leadwerk_importer/source_assets/ (siehe leadwerk_importer/DEPLOY-ASSETS.md). Dieser Ordner bleibt im Git leer (.gitkeep); URLs baut das Theme ueber leadwerk_theme_get_static_source_base().

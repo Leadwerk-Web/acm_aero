@@ -49,24 +49,28 @@ class Leadwerk_Fields_Metabox {
 			),
 		),
 		array(
-			'title'       => 'Starlink Pop-up',
-			'description' => 'Steuert das Starlink-Pop-up auf der Startseite. Leere Textfelder lassen den bestehenden statischen Text unveraendert.',
-			'fields'      => array(
-				'starlink_popup_image'     => array( 'label' => 'Pop-up Bild', 'type' => 'image' ),
-				'starlink_popup_image_alt' => array( 'label' => 'Bild-Alt-Text', 'type' => 'text' ),
-				'starlink_popup_title'     => array( 'label' => 'Titel', 'type' => 'text' ),
-				'starlink_popup_badge'     => array( 'label' => 'Badge / Label', 'type' => 'text' ),
-				'starlink_popup_headline'  => array( 'label' => 'Headline', 'type' => 'text' ),
-				'starlink_popup_teaser'    => array( 'label' => 'Beschreibung', 'type' => 'textarea' ),
-				'starlink_popup_cta_label' => array( 'label' => 'Button-Text', 'type' => 'text' ),
-				'starlink_popup_cta_url'   => array( 'label' => 'Button-Link', 'type' => 'url', 'help' => 'Zum Beispiel kontakt.html#maintenance oder eine vollstaendige URL.' ),
-			),
-		),
-		array(
 			'title' => 'Formulare',
 			'fields'  => array(
 				'wpforms_form_id_de' => array( 'label' => 'WPForms Form ID / Shortcode (DE)', 'type' => 'text' ),
 				'wpforms_form_id_en' => array( 'label' => 'WPForms Form ID / Shortcode (EN)', 'type' => 'text' ),
+			),
+		),
+		array(
+			'title'       => 'Starlink Modal',
+			'description' => 'Inhalte fuer das Starlink-Reseller-Popup (erscheint auf der Startseite ab 20% Scroll). Bild und Texte ueberschreiben den Theme-Default.',
+			'fields'      => array(
+				'starlink_modal_image'     => array( 'label' => 'Bild', 'type' => 'image' ),
+				'starlink_modal_image_alt' => array( 'label' => 'Bild Alt-Text', 'type' => 'text' ),
+				'starlink_modal_title'     => array( 'label' => 'Titel (H2)', 'type' => 'text' ),
+				'starlink_modal_badge'     => array( 'label' => 'Badge-Text', 'type' => 'text' ),
+				'starlink_modal_headline'  => array( 'label' => 'Headline', 'type' => 'text' ),
+				'starlink_modal_teaser'    => array( 'label' => 'Teaser-Text', 'type' => 'textarea' ),
+				'starlink_modal_cta_label' => array( 'label' => 'CTA-Button Text', 'type' => 'text' ),
+				'starlink_modal_cta_url'   => array(
+					'label' => 'CTA-Button Link (optional Override)',
+					'type'  => 'url',
+					'help'  => 'Leer = Standard: Kontaktseite #maintenance.',
+				),
 			),
 		),
 		array(
@@ -182,10 +186,12 @@ class Leadwerk_Fields_Metabox {
 	public static function enqueue_admin_assets( $hook ) {
 		$screens = array( 'post.php', 'post-new.php', 'toplevel_page_leadwerk-options' );
 		$found   = false;
+		$is_options_page = false;
 
 		foreach ( $screens as $screen ) {
 			if ( false !== strpos( $hook, $screen ) || $hook === $screen ) {
 				$found = true;
+				$is_options_page = 'toplevel_page_leadwerk-options' === $screen;
 				break;
 			}
 		}
@@ -195,8 +201,14 @@ class Leadwerk_Fields_Metabox {
 		}
 
 		wp_enqueue_style( 'dashicons' );
-		wp_enqueue_media();
-		wp_add_inline_script( 'media-editor', self::get_inline_js() );
+		wp_enqueue_script( 'jquery' );
+		$load_media = ! $is_options_page || ! empty( $_GET['leadwerk_media'] );
+		if ( $load_media ) {
+			wp_enqueue_media();
+			wp_add_inline_script( 'media-editor', self::get_inline_js() );
+		} else {
+			wp_add_inline_script( 'jquery', self::get_inline_js() );
+		}
 		wp_add_inline_style( 'wp-admin', self::get_inline_css() );
 	}
 
@@ -377,15 +389,51 @@ class Leadwerk_Fields_Metabox {
 			self::save_options();
 			echo '<div class="notice notice-success"><p>Optionen gespeichert.</p></div>';
 		}
+		$show_theme_strings = ! empty( $_GET['leadwerk_show_strings'] );
+		$media_loaded       = ! empty( $_GET['leadwerk_media'] );
+		$page_url           = menu_page_url( 'leadwerk-options', false );
+		$media_url          = add_query_arg(
+			array_filter(
+				array(
+					'leadwerk_media'        => '1',
+					'leadwerk_show_strings' => $show_theme_strings ? '1' : '',
+				)
+			),
+			$page_url
+		);
+		$theme_strings_url  = add_query_arg(
+			array_filter(
+				array(
+					'leadwerk_show_strings' => '1',
+					'leadwerk_media'        => $media_loaded ? '1' : '',
+				)
+			),
+			$page_url
+		);
 		?>
 		<div class="wrap">
 			<h1><?php esc_html_e( 'Leadwerk Optionen', 'leadwerk-fields' ); ?></h1>
+			<?php if ( ! $media_loaded ) : ?>
+			<div class="notice notice-info inline leadwerk-options-lazy-notice">
+				<p>
+					<?php esc_html_e( 'Schnellmodus aktiv: Die WordPress-Mediathek wird erst geladen, wenn sie gebraucht wird.', 'leadwerk-fields' ); ?>
+					<a class="button button-small" href="<?php echo esc_url( $media_url ); ?>"><?php esc_html_e( 'Medienauswahl laden', 'leadwerk-fields' ); ?></a>
+				</p>
+			</div>
+			<?php endif; ?>
 			<form method="post" enctype="multipart/form-data">
 				<?php wp_nonce_field( 'leadwerk_save_options', 'leadwerk_options_nonce' ); ?>
 				<?php foreach ( self::$options_sections as $section ) : ?>
 				<h2 class="leadwerk-options-section-title"><?php echo esc_html( $section['title'] ); ?></h2>
 				<?php if ( ! empty( $section['description'] ) ) : ?>
 				<p class="description"><?php echo esc_html( $section['description'] ); ?></p>
+				<?php endif; ?>
+				<?php if ( self::is_lazy_options_section( $section ) && ! $show_theme_strings ) : ?>
+				<div class="leadwerk-options-lazy-section">
+					<p><?php esc_html_e( 'Dieser Bereich enthaelt grosse JSON-Felder und wird fuer einen schnelleren Seitenaufruf nicht automatisch geladen.', 'leadwerk-fields' ); ?></p>
+					<p><a class="button" href="<?php echo esc_url( $theme_strings_url ); ?>"><?php esc_html_e( 'Theme Strings bearbeiten', 'leadwerk-fields' ); ?></a></p>
+				</div>
+				<?php continue; ?>
 				<?php endif; ?>
 				<table class="form-table leadwerk-options-table">
 					<?php foreach ( $section['fields'] as $key => $definition ) : ?>
@@ -406,6 +454,16 @@ class Leadwerk_Fields_Metabox {
 			</form>
 		</div>
 		<?php
+	}
+
+	private static function is_lazy_options_section( $section ) {
+		foreach ( (array) ( $section['fields'] ?? array() ) as $key => $definition ) {
+			if ( 0 === strpos( (string) $key, 'theme_strings_' ) || ! empty( $definition['lazy'] ) ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	private static function save_options() {
@@ -769,12 +827,38 @@ class Leadwerk_Fields_Metabox {
 .leadwerk-options-table .leadwerk-field > label { display: none; }
 h2.leadwerk-options-section-title { margin: 1.75em 0 0.35em; padding: 0; font-size: 1.3em; }
 .wrap h2.leadwerk-options-section-title:first-of-type { margin-top: 0.5em; }
-';
+.leadwerk-options-lazy-section { max-width: 760px; padding: 14px 16px; background: #fff; border: 1px solid #dcdcde; border-radius: 4px; }
+.leadwerk-options-lazy-section p { margin: 0 0 10px; }
+.leadwerk-options-lazy-section p:last-child { margin-bottom: 0; }
+.leadwerk-options-lazy-notice p { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+	';
 	}
 
 	private static function get_inline_js() {
 		return "
 jQuery(function($){
+	function reloadWithLeadwerkParam(name, value){
+		var href = window.location.href;
+		try {
+			var url = new URL(href);
+			url.searchParams.set(name, value);
+			window.location.href = url.toString();
+			return;
+		} catch (err) {}
+		window.location.href = href + (href.indexOf('?') === -1 ? '?' : '&') + encodeURIComponent(name) + '=' + encodeURIComponent(value);
+	}
+
+	function ensureWpMedia(){
+		if (window.wp && wp.media) {
+			return true;
+		}
+		if (!window.confirm('Die Medienauswahl wird nachgeladen. Nicht gespeicherte Aenderungen auf dieser Seite gehen verloren. Fortfahren?')) {
+			return false;
+		}
+		reloadWithLeadwerkParam('leadwerk_media', '1');
+		return false;
+	}
+
 	function updateRepeaterTitles(container){
 		container.find('.leadwerk-repeater-item').each(function(index){
 			$(this).find('.leadwerk-repeater-item-title').text('Eintrag ' + (index + 1));
@@ -783,6 +867,7 @@ jQuery(function($){
 
 	$(document).on('click','.leadwerk-image-select',function(e){
 		e.preventDefault();
+		if (!ensureWpMedia()) return;
 		var wrap = $(this).closest('.leadwerk-image-field');
 		var frame = wp.media({title:'Bild waehlen',button:{text:'Auswaehlen'},multiple:false});
 		frame.on('select',function(){
@@ -803,6 +888,7 @@ jQuery(function($){
 
 	$(document).on('click','.leadwerk-video-select',function(e){
 		e.preventDefault();
+		if (!ensureWpMedia()) return;
 		var wrap = $(this).closest('.leadwerk-video-field');
 		var frame = wp.media({title:'Video waehlen',button:{text:'Auswaehlen'},library:{type:'video'},multiple:false});
 		frame.on('select',function(){
@@ -824,6 +910,7 @@ jQuery(function($){
 
 	$(document).on('click','.leadwerk-file-select',function(e){
 		e.preventDefault();
+		if (!ensureWpMedia()) return;
 		var wrap = $(this).closest('.leadwerk-file-field');
 		var mime = wrap.attr('data-mime') || 'application/pdf';
 		var frame = wp.media({title:'PDF waehlen',button:{text:'Auswaehlen'},library:{type:mime},multiple:false});

@@ -35,7 +35,7 @@ function leadwerk_theme_render_exact_page_group( $group, $value, $post_id = 0 ) 
 	}
 
 	$source_key        = (string) get_post_meta( $post_id, 'leadwerk_source_key', true );
-	$template_sections = leadwerk_theme_get_source_template_sections( $source_key, $post_id );
+	$template_sections = leadwerk_theme_get_source_template_sections( $source_key );
 	$sections          = is_array( $value ) ? array_values( $value ) : array();
 	$output            = '';
 	$index             = 0;
@@ -45,7 +45,7 @@ function leadwerk_theme_render_exact_page_group( $group, $value, $post_id = 0 ) 
 	if ( $actual_shells !== $expected_shells && $post_id && current_user_can( 'edit_post', $post_id ) ) {
 		$output .= leadwerk_theme_render_exact_runtime_notice(
 			sprintf(
-				'Exact shell mismatch: %1$d stored HTML section(s) vs %2$d schema layout(s). Source key: %3$s. Re-run the importer so source_assets HTML is stored in WordPress.',
+				'Exact shell mismatch: %1$d HTML section(s) in theme source_shells vs %2$d schema layout(s). Source key: %3$s. Update theme source_shells or schema so counts match (missing sections produce empty output).',
 				$actual_shells,
 				$expected_shells,
 				$source_key ? $source_key : '(none)'
@@ -68,7 +68,7 @@ function leadwerk_theme_render_exact_page_group( $group, $value, $post_id = 0 ) 
 
 	if ( '' === trim( wp_strip_all_tags( $output ) ) ) {
 		return leadwerk_theme_render_exact_runtime_notice(
-			'Exact shell rendering produced no visible content for "' . (string) ( $group['label'] ?? 'page' ) . '". Check stored source template HTML and Leadwerk field data.',
+			'Exact shell rendering produced no visible content for "' . (string) ( $group['label'] ?? 'page' ) . '". Check source_shells and Leadwerk field data.',
 			$post_id
 		);
 	}
@@ -86,7 +86,7 @@ function leadwerk_theme_render_exact_runtime_notice( $message, $post_id = 0 ) {
 
 function leadwerk_theme_render_exact_legal_group( $group, $value, $post_id = 0 ) {
 	$source_key = (string) get_post_meta( $post_id, 'leadwerk_source_key', true );
-	$sections   = leadwerk_theme_get_source_template_sections( $source_key, $post_id );
+	$sections   = leadwerk_theme_get_source_template_sections( $source_key );
 
 	if ( empty( $sections[0] ) || ! is_array( $value ) ) {
 		return leadwerk_theme_render_exact_runtime_notice(
@@ -108,8 +108,6 @@ function leadwerk_theme_render_exact_legal_group( $group, $value, $post_id = 0 )
 		leadwerk_theme_dom_first( $xpath, './/*[contains(@class,"legal-body")][1] | .//*[contains(@class,"legal-copy")][1]', $section_node ),
 		(string) ( $value['content'] ?? '' )
 	);
-
-	leadwerk_theme_normalize_template_urls( $xpath, $section_node );
 
 	return leadwerk_theme_dom_outer_html( $section_node );
 }
@@ -298,7 +296,6 @@ function leadwerk_theme_get_source_template_map() {
 		'acm-news-v1'        => 'news.html',
 		'acm-impressum-v1'   => 'impressum.html',
 		'acm-datenschutz-v1' => 'datenschutz.html',
-		'acm-agb-v1'         => 'agb.html',
 		'acm-404-v1'         => '404.html',
 		// Legacy aliases.
 		'acm-home-v1'        => 'index.html',
@@ -321,7 +318,6 @@ function leadwerk_theme_get_source_template_body_class_map() {
 		'acm-news-v1'        => 'page-news',
 		'acm-impressum-v1'   => 'page-impressum',
 		'acm-datenschutz-v1' => 'page-datenschutz',
-		'acm-agb-v1'         => 'page-agb',
 		'acm-404-v1'         => 'page-404 header-scrolled',
 		'acm-home-v1'        => 'page-home',
 		'acm-about-v1'       => 'page-thats-acm',
@@ -336,15 +332,14 @@ function leadwerk_theme_normalize_body_class_string( $body_class ) {
 	return implode( ' ', $classes );
 }
 
-function leadwerk_theme_get_source_template_body_class( $source_key, $post_id = 0 ) {
+function leadwerk_theme_get_source_template_body_class( $source_key ) {
 	static $cache = array();
 	$source_key = (string) $source_key;
-	$cache_key  = $source_key . '|' . (int) $post_id;
-	if ( isset( $cache[ $cache_key ] ) ) {
-		return $cache[ $cache_key ];
+	if ( isset( $cache[ $source_key ] ) ) {
+		return $cache[ $source_key ];
 	}
 	$body_class = '';
-	$html       = leadwerk_theme_get_source_template_html( $source_key, $post_id );
+	$html       = leadwerk_theme_get_source_template_html( $source_key );
 	if ( '' !== $html && preg_match( '/<body[^>]*class="([^"]+)"/i', $html, $matches ) ) {
 		$body_class = leadwerk_theme_normalize_body_class_string( $matches[1] ?? '' );
 	}
@@ -352,71 +347,68 @@ function leadwerk_theme_get_source_template_body_class( $source_key, $post_id = 
 		$fallback_map = leadwerk_theme_get_source_template_body_class_map();
 		$body_class   = leadwerk_theme_normalize_body_class_string( $fallback_map[ $source_key ] ?? '' );
 	}
-	$cache[ $cache_key ] = $body_class;
-	return $cache[ $cache_key ];
+	$cache[ $source_key ] = $body_class;
+	return $cache[ $source_key ];
 }
 
 /* ══════════════════════════════════════════════════════════════
  * 3. SOURCE TEMPLATE LOADERS
  * ══════════════════════════════════════════════════════════════ */
 
-function leadwerk_theme_get_source_template_sections( $source_key, $post_id = 0 ) {
+function leadwerk_theme_get_source_template_sections( $source_key ) {
 	static $cache = array();
 	$source_key = (string) $source_key;
-	$cache_key  = $source_key . '|' . (int) $post_id;
-	if ( isset( $cache[ $cache_key ] ) ) {
-		return $cache[ $cache_key ];
-	}
-	$html = leadwerk_theme_get_source_template_html( $source_key, $post_id );
-	if ( '' === $html ) {
-		$cache[ $cache_key ] = array();
-		return $cache[ $cache_key ];
-	}
-	$cache[ $cache_key ] = leadwerk_theme_extract_body_sections_from_html( (string) $html );
-	return $cache[ $cache_key ];
-}
-
-function leadwerk_theme_source_template_option_name( $source_key ) {
-	return 'leadwerk_source_template_html_' . sanitize_key( (string) $source_key );
-}
-
-function leadwerk_theme_get_source_template_html( $source_key, $post_id = 0 ) {
-	static $cache = array();
-	$source_key = (string) $source_key;
-	$cache_key  = $source_key . '|' . (int) $post_id;
-	if ( isset( $cache[ $cache_key ] ) ) {
-		return $cache[ $cache_key ];
+	if ( isset( $cache[ $source_key ] ) ) {
+		return $cache[ $source_key ];
 	}
 	$file_map  = leadwerk_theme_get_source_template_map();
-	if ( ! isset( $file_map[ $source_key ] ) ) {
-		$cache[ $cache_key ] = '';
+	$file_name = $file_map[ $source_key ] ?? '';
+	if ( '' === $file_name ) {
+		$cache[ $source_key ] = array();
+		return $cache[ $source_key ];
+	}
+	$file_path = function_exists( 'leadwerk_theme_resolve_exact_shell_file' )
+		? leadwerk_theme_resolve_exact_shell_file( $file_name )
+		: '';
+	if ( '' === $file_path || ! is_file( $file_path ) ) {
+		$cache[ $source_key ] = array();
+		return $cache[ $source_key ];
+	}
+	$html = file_get_contents( $file_path );
+	if ( false === $html ) {
+		$cache[ $source_key ] = array();
+		return $cache[ $source_key ];
+	}
+	$cache[ $source_key ] = leadwerk_theme_extract_body_sections_from_html( (string) $html );
+	return $cache[ $source_key ];
+}
+
+function leadwerk_theme_get_source_template_html( $source_key ) {
+	static $cache = array();
+	$source_key = (string) $source_key;
+	if ( isset( $cache[ $source_key ] ) ) {
+		return $cache[ $source_key ];
+	}
+	$file_map  = leadwerk_theme_get_source_template_map();
+	$file_name = $file_map[ $source_key ] ?? '';
+	if ( '' === $file_name ) {
+		$cache[ $source_key ] = '';
 		return '';
 	}
-
-	$post_id = (int) $post_id;
-	if ( $post_id <= 0 && function_exists( 'get_queried_object_id' ) ) {
-		$queried_id = (int) get_queried_object_id();
-		if ( $queried_id > 0 && $source_key === (string) get_post_meta( $queried_id, 'leadwerk_source_key', true ) ) {
-			$post_id = $queried_id;
-		}
+	$file_path = function_exists( 'leadwerk_theme_resolve_exact_shell_file' )
+		? leadwerk_theme_resolve_exact_shell_file( $file_name )
+		: '';
+	if ( '' === $file_path || ! is_file( $file_path ) ) {
+		$cache[ $source_key ] = '';
+		return '';
 	}
-
-	if ( $post_id > 0 ) {
-		$html = (string) get_post_meta( $post_id, 'leadwerk_source_template_html', true );
-		if ( '' !== trim( $html ) ) {
-			$cache[ $cache_key ] = $html;
-			return $cache[ $cache_key ];
-		}
+	$html = file_get_contents( $file_path );
+	if ( false === $html ) {
+		$cache[ $source_key ] = '';
+		return '';
 	}
-
-	$html = (string) get_option( leadwerk_theme_source_template_option_name( $source_key ), '' );
-	if ( '' !== trim( $html ) ) {
-		$cache[ $cache_key ] = $html;
-		return $cache[ $cache_key ];
-	}
-
-	$cache[ $cache_key ] = '';
-	return '';
+	$cache[ $source_key ] = (string) $html;
+	return $cache[ $source_key ];
 }
 
 function leadwerk_theme_get_exact_shell_source_key( $source_key = '' ) {
@@ -741,11 +733,7 @@ function leadwerk_theme_get_exact_image_url( $image_id, $fallback = '' ) {
 			return $url;
 		}
 	}
-	$fallback = (string) $fallback;
-	if ( '' !== trim( $fallback ) && function_exists( 'leadwerk_theme_map_template_href_to_url' ) ) {
-		return leadwerk_theme_map_template_href_to_url( $fallback );
-	}
-	return $fallback;
+	return (string) $fallback;
 }
 
 /**
@@ -1025,252 +1013,10 @@ function leadwerk_theme_get_prefixed_button_data( $item, $prefix ) {
  * 6. URL NORMALIZER (with fragment hash fix)
  * ══════════════════════════════════════════════════════════════ */
 
-function leadwerk_theme_normalize_template_media_source_path( $value ) {
-	$value = trim( html_entity_decode( (string) $value, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
-	if ( '' === $value || preg_match( '#^(?:mailto|tel|data|javascript):#i', $value ) || 0 === strpos( $value, '#' ) ) {
-		return '';
-	}
-
-	$raw = $value;
-	if ( preg_match( '#^(?:https?:)?//#i', $raw ) ) {
-		$url  = 0 === strpos( $raw, '//' ) ? 'https:' . $raw : $raw;
-		$path = wp_parse_url( $url, PHP_URL_PATH );
-		if ( ! is_string( $path ) || '' === $path ) {
-			return '';
-		}
-		$raw = $path;
-	}
-
-	$raw = str_replace( '\\', '/', rawurldecode( $raw ) );
-	$raw = preg_replace( '#[?#].*$#', '', $raw );
-	$raw = preg_replace( '#^\./#', '', $raw );
-
-	$markers = array(
-		'/wp-content/uploads/'              => 'Fotos/uploads/',
-		'/Fotos/'                           => 'Fotos/',
-		'/fotos/'                           => 'Fotos/',
-		'/assets/images/'                   => 'assets/images/',
-		'/leadwerk_importer/source_assets/' => '',
-		'/leadwerk_theme/'                  => '',
-	);
-	foreach ( $markers as $marker => $prefix ) {
-		$pos = stripos( $raw, $marker );
-		if ( false !== $pos ) {
-			return trim( $prefix . ltrim( substr( $raw, $pos + strlen( $marker ) ), '/' ), '/' );
-		}
-	}
-
-	$raw = ltrim( $raw, '/' );
-	if ( 0 === stripos( $raw, 'wp-content/uploads/' ) ) {
-		return 'Fotos/uploads/' . substr( $raw, strlen( 'wp-content/uploads/' ) );
-	}
-	if ( 0 === stripos( $raw, 'uploads/' ) ) {
-		return 'Fotos/' . $raw;
-	}
-
-	return trim( $raw, '/' );
-}
-
-function leadwerk_theme_template_media_source_candidates( $value ) {
-	$path = leadwerk_theme_normalize_template_media_source_path( $value );
-	if ( '' === $path || ! preg_match( '/\.(?:webp|jpe?g|png|gif|svg|ico|pdf|mp4|webm|mov)$/i', $path ) ) {
-		return array();
-	}
-
-	$candidates = array( $path );
-	$ext        = strtolower( pathinfo( $path, PATHINFO_EXTENSION ) );
-	$dir        = trim( str_replace( '\\', '/', pathinfo( $path, PATHINFO_DIRNAME ) ), './' );
-	$stem       = pathinfo( $path, PATHINFO_FILENAME );
-	if ( in_array( $ext, array( 'webp', 'jpg', 'jpeg', 'png' ), true ) && '' !== $stem ) {
-		foreach ( array( 'webp', 'jpg', 'jpeg', 'png' ) as $sibling_ext ) {
-			$candidates[] = ( '' !== $dir ? $dir . '/' : '' ) . $stem . '.' . $sibling_ext;
-		}
-	}
-
-	if ( false === strpos( $path, '/' ) ) {
-		foreach ( array( 'Fotos/', 'assets/images/' ) as $prefix ) {
-			$candidates[] = $prefix . $path;
-			if ( in_array( $ext, array( 'webp', 'jpg', 'jpeg', 'png' ), true ) && '' !== $stem ) {
-				foreach ( array( 'webp', 'jpg', 'jpeg', 'png' ) as $sibling_ext ) {
-					$candidates[] = $prefix . $stem . '.' . $sibling_ext;
-				}
-			}
-		}
-	}
-
-	return array_values( array_unique( array_filter( array_map( 'trim', $candidates ) ) ) );
-}
-
-function leadwerk_theme_get_attachment_id_by_source_path( $value ) {
-	$key = trim( (string) $value );
-	if ( '' === $key || ! function_exists( 'get_posts' ) ) {
-		return 0;
-	}
-
-	static $cache = array();
-	if ( array_key_exists( $key, $cache ) ) {
-		return (int) $cache[ $key ];
-	}
-
-	$id = 0;
-	foreach ( leadwerk_theme_template_media_source_candidates( $value ) as $candidate ) {
-		if ( isset( $cache[ $candidate ] ) && $cache[ $candidate ] ) {
-			$id = (int) $cache[ $candidate ];
-			break;
-		}
-		$ids = get_posts(
-			array(
-				'post_type'              => 'attachment',
-				'post_status'            => 'any',
-				'posts_per_page'         => 1,
-				'fields'                 => 'ids',
-				'no_found_rows'          => true,
-				'update_post_meta_cache' => false,
-				'update_post_term_cache' => false,
-				'meta_query'             => array(
-					array(
-						'key'   => 'leadwerk_source_path',
-						'value' => $candidate,
-					),
-				),
-			)
-		);
-		$id = ! empty( $ids ) ? (int) $ids[0] : 0;
-		$cache[ $candidate ] = $id;
-		if ( $id ) {
-			break;
-		}
-	}
-
-	if ( ! $id ) {
-		$id = leadwerk_theme_get_attachment_id_by_upload_file_path( $value );
-	}
-
-	$cache[ $key ] = $id;
-	return $id;
-}
-
-function leadwerk_theme_get_attachment_id_by_upload_file_path( $value ) {
-	if ( ! function_exists( 'get_posts' ) ) {
-		return 0;
-	}
-
-	static $cache = array();
-	$key = trim( (string) $value );
-	if ( '' === $key ) {
-		return 0;
-	}
-	if ( array_key_exists( $key, $cache ) ) {
-		return (int) $cache[ $key ];
-	}
-
-	foreach ( leadwerk_theme_template_upload_file_candidates( $value ) as $candidate ) {
-		if ( '' === $candidate || false === strpos( $candidate, '/' ) ) {
-			continue;
-		}
-		$ids = get_posts(
-			array(
-				'post_type'              => 'attachment',
-				'post_status'            => 'any',
-				'posts_per_page'         => 1,
-				'fields'                 => 'ids',
-				'no_found_rows'          => true,
-				'update_post_meta_cache' => false,
-				'update_post_term_cache' => false,
-				'meta_query'             => array(
-					array(
-						'key'   => '_wp_attached_file',
-						'value' => $candidate,
-					),
-				),
-			)
-		);
-		if ( ! empty( $ids ) ) {
-			$cache[ $key ] = (int) $ids[0];
-			return (int) $ids[0];
-		}
-	}
-
-	$path     = leadwerk_theme_normalize_template_media_source_path( $value );
-	$basename = basename( str_replace( '\\', '/', $path ) );
-	if ( '' !== $basename ) {
-		$ids = get_posts(
-			array(
-				'post_type'              => 'attachment',
-				'post_status'            => 'any',
-				'posts_per_page'         => 10,
-				'fields'                 => 'ids',
-				'no_found_rows'          => true,
-				'update_post_meta_cache' => false,
-				'update_post_term_cache' => false,
-				'meta_query'             => array(
-					array(
-						'key'     => '_wp_attached_file',
-						'value'   => $basename,
-						'compare' => 'LIKE',
-					),
-				),
-			)
-		);
-		foreach ( (array) $ids as $id ) {
-			$file = (string) get_post_meta( (int) $id, '_wp_attached_file', true );
-			if ( $basename === basename( str_replace( '\\', '/', $file ) ) ) {
-				$cache[ $key ] = (int) $id;
-				return (int) $id;
-			}
-		}
-	}
-
-	$cache[ $key ] = 0;
-	return 0;
-}
-
-function leadwerk_theme_template_upload_file_candidates( $value ) {
-	$path = leadwerk_theme_normalize_template_media_source_path( $value );
-	if ( '' === $path ) {
-		return array();
-	}
-
-	$candidates = array( $path );
-	if ( 0 === stripos( $path, 'Fotos/uploads/' ) ) {
-		$candidates[] = substr( $path, strlen( 'Fotos/uploads/' ) );
-	}
-	if ( 0 === stripos( $path, 'uploads/' ) ) {
-		$candidates[] = substr( $path, strlen( 'uploads/' ) );
-	}
-	if ( preg_match( '#(?:^|/)uploads/(\d{4}/\d{2}/.+)$#i', $path, $m ) ) {
-		$candidates[] = (string) $m[1];
-	}
-
-	return array_values( array_unique( array_filter( array_map( 'trim', $candidates ) ) ) );
-}
-
-function leadwerk_theme_get_uploaded_media_url_for_template_ref( $value ) {
-	$id = leadwerk_theme_get_attachment_id_by_source_path( $value );
-	if ( ! $id ) {
-		return '';
-	}
-
-	$path = leadwerk_theme_normalize_template_media_source_path( $value );
-	if ( preg_match( '/\.(?:webp|jpe?g|png|gif|svg|ico)$/i', $path ) ) {
-		$image_url = wp_get_attachment_image_url( $id, 'full' );
-		if ( $image_url ) {
-			return $image_url;
-		}
-	}
-
-	$url = wp_get_attachment_url( $id );
-	return $url ? $url : '';
-}
-
 function leadwerk_theme_map_template_href_to_url( $href ) {
 	$href = trim( (string) $href );
 	if ( '' === $href || '#' === $href || 0 === strpos( $href, '#' ) ) {
 		return $href;
-	}
-	$uploaded_url = leadwerk_theme_get_uploaded_media_url_for_template_ref( $href );
-	if ( '' !== $uploaded_url ) {
-		return $uploaded_url;
 	}
 	if ( preg_match( '#^(?:https?:)?//#i', $href ) || preg_match( '#^(?:mailto|tel):#i', $href ) ) {
 		return $href;
@@ -1278,44 +1024,20 @@ function leadwerk_theme_map_template_href_to_url( $href ) {
 
 	$normalized = str_replace( '\\', '/', $href );
 	$lang       = leadwerk_theme_get_current_lang();
-	$uploaded_url = leadwerk_theme_get_uploaded_media_url_for_template_ref( $normalized );
-	if ( '' !== $uploaded_url ) {
-		return $uploaded_url;
-	}
+
+	$static_base = trailingslashit( leadwerk_theme_get_static_source_base()['url'] );
 
 	if ( 0 === strpos( $normalized, 'assets/' ) ) {
-		return trailingslashit( LEADWERK_THEME_URI ) . ltrim( $normalized, '/' );
+		return $static_base . ltrim( $normalized, '/' );
 	}
 
-	// Imported media is resolved through Media Library attachments; only theme-native symbols stay in assets/.
+	// Static site folders (shells reference Fotos/...); Emblem: assets/images oder Fotos unter source_assets.
 	if ( preg_match( '#^(?:Fotos|fotos)/#i', $normalized ) ) {
 		$rel = str_replace( '\\', '/', $normalized );
 		if ( preg_match( '#^(?:Fotos|fotos)/Emblem\.svg$#i', $rel ) ) {
-			return trailingslashit( LEADWERK_THEME_URI ) . 'assets/images/Emblem.svg';
+			return leadwerk_theme_get_emblem_asset_url();
 		}
-
-		// Always try attachment lookup first (decoded) — covers both Fotos/uploads/ and Fotos/subfolder/.
-		$decoded_rel = rawurldecode( $rel );
-		$decoded_url = leadwerk_theme_get_uploaded_media_url_for_template_ref( $decoded_rel );
-		if ( '' !== $decoded_url ) {
-			return $decoded_url;
-		}
-		// Basename-based upload path fallback.
-		$fotos_att_id = leadwerk_theme_get_attachment_id_by_upload_file_path( $decoded_rel );
-		if ( $fotos_att_id > 0 ) {
-			$fotos_att_url = wp_get_attachment_url( $fotos_att_id );
-			if ( $fotos_att_url ) {
-				return $fotos_att_url;
-			}
-		}
-		// No attachment found — do not construct a direct URL that would hardcode stale month directories.
-		return '';
-	}
-
-	if ( preg_match( '#^[^/]+\.(?:jpe?g|png|webp|gif|svg|ico)$#i', $normalized ) ) {
-		if ( is_file( trailingslashit( LEADWERK_THEME_DIR ) . $normalized ) ) {
-			return trailingslashit( LEADWERK_THEME_URI ) . rawurlencode( $normalized );
-		}
+		return $static_base . $rel;
 	}
 
 	if ( 0 === strpos( $normalized, 'en/' ) ) {
@@ -1599,15 +1321,6 @@ function leadwerk_theme_normalize_template_urls( $xpath, $section_node ) {
 	}
 	leadwerk_theme_normalize_footer_section_links( $xpath, $section_node );
 	leadwerk_theme_hydrate_acm_news_card_thumbnails_from_links( $xpath, $section_node );
-	// Strip onerror attributes that reference raw Fotos/ paths — they are no longer valid in WP context.
-	foreach ( leadwerk_theme_dom_query( $xpath, './/*[@onerror]', $section_node ) as $node ) {
-		if ( $node instanceof DOMElement ) {
-			$onerror = (string) $node->getAttribute( 'onerror' );
-			if ( preg_match( '#Fotos/#i', $onerror ) ) {
-				$node->removeAttribute( 'onerror' );
-			}
-		}
-	}
 }
 
 /**
@@ -1664,96 +1377,6 @@ function leadwerk_theme_get_acm_partial_raw( $basename ) {
 }
 
 /**
- * Apply Leadwerk option overrides to the Starlink modal partial.
- *
- * Empty text options intentionally leave the partial/localized text unchanged.
- *
- * @param string $html Modal HTML fragment.
- * @return string
- */
-function leadwerk_theme_hydrate_starlink_modal_from_options( $html ) {
-	$html = (string) $html;
-	if ( '' === trim( $html ) || false === strpos( $html, 'id="starlink-modal"' ) ) {
-		return $html;
-	}
-
-	$wrapped = '<?xml encoding="utf-8" ?><html><body><div id="leadwerk-modal-root">' . $html . '</div></body></html>';
-	$dom     = new DOMDocument( '1.0', 'UTF-8' );
-	libxml_use_internal_errors( true );
-	$dom->loadHTML( $wrapped );
-	libxml_clear_errors();
-
-	$xpath = new DOMXPath( $dom );
-	$root  = $xpath->query( '//div[@id="leadwerk-modal-root"]' )->item( 0 );
-	if ( ! $root instanceof DOMElement ) {
-		return $html;
-	}
-	$modal = $xpath->query( './/*[@id="starlink-modal"]', $root )->item( 0 );
-	if ( ! $modal instanceof DOMElement ) {
-		return $html;
-	}
-
-	$get_option = static function ( $field_name ) {
-		if ( ! function_exists( 'leadwerk_theme_get_option_value' ) ) {
-			return '';
-		}
-		return trim( (string) leadwerk_theme_get_option_value( $field_name, '' ) );
-	};
-
-	$set_text_from_option = static function ( $query, $field_name ) use ( $xpath, $modal, $get_option ) {
-		$value = $get_option( $field_name );
-		if ( '' === $value ) {
-			return;
-		}
-		$node = $xpath->query( $query, $modal )->item( 0 );
-		if ( $node instanceof DOMNode ) {
-			leadwerk_theme_dom_set_text( $node, $value );
-		}
-	};
-
-	$set_text_from_option( './/*[@id="starlink-modal-title"]', 'starlink_popup_title' );
-	$set_text_from_option( './/*[contains(concat(" ", normalize-space(@class), " "), " starlink-badge ")]', 'starlink_popup_badge' );
-	$set_text_from_option( './/*[contains(concat(" ", normalize-space(@class), " "), " starlink-headline ")]', 'starlink_popup_headline' );
-	$set_text_from_option( './/*[contains(concat(" ", normalize-space(@class), " "), " starlink-teaser ")]', 'starlink_popup_teaser' );
-	$set_text_from_option( './/*[contains(concat(" ", normalize-space(@class), " "), " starlink-cta ")]', 'starlink_popup_cta_label' );
-
-	$cta_url = $get_option( 'starlink_popup_cta_url' );
-	if ( '' !== $cta_url ) {
-		$cta = $xpath->query( './/*[contains(concat(" ", normalize-space(@class), " "), " starlink-cta ")]', $modal )->item( 0 );
-		if ( $cta instanceof DOMElement ) {
-			leadwerk_theme_dom_set_attr( $cta, 'href', $cta_url );
-		}
-	}
-
-	$img = $xpath->query( './/*[contains(concat(" ", normalize-space(@class), " "), " starlink-popup-image ")]//img[1]', $modal )->item( 0 );
-	if ( $img instanceof DOMElement ) {
-		$image_id = function_exists( 'leadwerk_theme_get_option_image_id' ) ? leadwerk_theme_get_option_image_id( 'starlink_popup_image' ) : 0;
-		if ( $image_id > 0 ) {
-			$fallback = (string) $img->getAttribute( 'src' );
-			leadwerk_theme_dom_set_attr( $img, 'src', leadwerk_theme_get_exact_image_url( $image_id, $fallback ) );
-
-			$meta = wp_get_attachment_metadata( $image_id );
-			if ( is_array( $meta ) && ! empty( $meta['width'] ) && ! empty( $meta['height'] ) ) {
-				leadwerk_theme_dom_set_attr( $img, 'width', (string) absint( $meta['width'] ) );
-				leadwerk_theme_dom_set_attr( $img, 'height', (string) absint( $meta['height'] ) );
-			}
-		}
-
-		$alt = $get_option( 'starlink_popup_image_alt' );
-		if ( '' !== $alt ) {
-			leadwerk_theme_dom_set_attr( $img, 'alt', $alt );
-		}
-	}
-
-	$out = '';
-	foreach ( $root->childNodes as $child ) {
-		$out .= $dom->saveHTML( $child );
-	}
-
-	return $out;
-}
-
-/**
  * Scroll-to-Top-Button direkt nach dem Footer-Block (footer.php), vor Modals/Lightbox.
  * Quelle: partials/acm-scroll-top.html; Override: Filter leadwerk_theme_acm_scroll_html.
  *
@@ -1783,9 +1406,6 @@ function leadwerk_theme_render_footer_acm_chrome_markup() {
 	}
 	if ( '' !== trim( $modals ) && class_exists( 'Leadwerk_Shared_Translation_Packages' ) ) {
 		$modals = Leadwerk_Shared_Translation_Packages::localize_modals_html( $modals, leadwerk_theme_get_current_lang() );
-	}
-	if ( '' !== trim( $modals ) ) {
-		$modals = leadwerk_theme_hydrate_starlink_modal_from_options( $modals );
 	}
 	if ( '' !== trim( $modals ) ) {
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Theme-Partial, URLs normalisiert.
@@ -3451,6 +3071,14 @@ function leadwerk_theme_bind_exact_acm_betriebsmodelle( $xpath, $section, $value
 }
 
 function leadwerk_theme_bind_exact_acm_aog_callout( $xpath, $section, $value ) {
+	leadwerk_theme_bind_exact_image(
+		$xpath,
+		$section,
+		'.//div[contains(@class,"image-zoom-bleed")]//img[not(contains(@class,"section-emblem"))][1] | .//div[contains(@class,"grid")]//img[not(contains(@class,"section-emblem"))][not(ancestor::div[contains(@class,"max-w-xl")])][1]',
+		(int) ( $value['image'] ?? 0 ),
+		(string) ( $value['image_alt'] ?? '' )
+	);
+
 	$box = leadwerk_theme_dom_first( $xpath, './/div[contains(@class,"content-box-outer")]//div[contains(@class,"max-w-xl")][1]', $section );
 	if ( ! $box instanceof DOMElement ) {
 		$box = leadwerk_theme_dom_first( $xpath, './/div[contains(@class,"max-w-xl")][1]', $section );
@@ -3583,40 +3211,6 @@ function leadwerk_theme_bind_exact_acm_split_highlights( $xpath, $section, $valu
 	}
 }
 
-function leadwerk_theme_career_pdf_value_with_legacy_fallback( $value, $item ) {
-	$raw = trim( (string) $value );
-	if ( '' !== $raw && ! in_array( strtolower( $raw ), array( 'index.html', './index.html', '/', home_url( '/' ) ), true ) ) {
-		return $value;
-	}
-
-	$haystack = strtolower(
-		wp_strip_all_tags(
-			(string) ( $item['title'] ?? '' ) . ' ' .
-			(string) ( $item['department'] ?? '' ) . ' ' .
-			(string) ( $item['type'] ?? '' )
-		)
-	);
-
-	$map = array(
-		'first officer'     => 'Fotos/Stellenanzeige_Pilot_Bombardier-Global-7500_First-Officer_eng_2026.pdf',
-		'cabin attendant'   => 'Fotos/Stellenanzeige_Cabin-Attendant_2025.pdf',
-		'camo'              => 'Fotos/Stellenanzeige_CAMO.pdf',
-		'lager'             => 'Fotos/Stellenanzeige_Lagerlogistik_2026.pdf',
-		'logistik'          => 'Fotos/Stellenanzeige_Lagerlogistik_2026.pdf',
-		'planning'          => 'Fotos/Stellenanzeige_Planning-2.pdf',
-		'pic'               => 'Fotos/Stellenanzeige_Pilot_Bombardier-Global-7500_PIC_eng_2026.pdf',
-		'pilot in command'  => 'Fotos/Stellenanzeige_Pilot_Bombardier-Global-7500_PIC_eng_2026.pdf',
-	);
-
-	foreach ( $map as $needle => $candidate ) {
-		if ( false !== strpos( $haystack, $needle ) ) {
-			return $candidate;
-		}
-	}
-
-	return $value;
-}
-
 function leadwerk_theme_bind_exact_acm_stellen( $xpath, $section, $value ) {
 	$label_node = leadwerk_theme_dom_first( $xpath, './/div[contains(@class,"text-center")][1]//*[contains(@class,"section-label")][1]', $section );
 	if ( ! $label_node instanceof DOMElement ) {
@@ -3627,6 +3221,16 @@ function leadwerk_theme_bind_exact_acm_stellen( $xpath, $section, $value ) {
 	$intro_el = leadwerk_theme_dom_first( $xpath, './/div[contains(@class,"text-center")][contains(@class,"mb-16")][1]//p[1]', $section );
 	if ( $intro_el instanceof DOMElement ) {
 		leadwerk_theme_dom_set_inner_html( $intro_el, (string) ( $value['intro'] ?? '' ) );
+	}
+
+	$current_lang = function_exists( 'leadwerk_theme_get_current_lang' ) ? leadwerk_theme_get_current_lang() : 'de';
+	$tasks_heading = trim( (string) ( $value['tasks_heading'] ?? '' ) );
+	if ( '' === $tasks_heading ) {
+		$tasks_heading = 'en' === $current_lang ? 'Tasks' : 'Aufgaben';
+	}
+	$requirements_heading = trim( (string) ( $value['requirements_heading'] ?? '' ) );
+	if ( '' === $requirements_heading ) {
+		$requirements_heading = 'en' === $current_lang ? 'Requirements' : 'Anforderungen';
 	}
 
 	$items = isset( $value['items'] ) && is_array( $value['items'] ) ? array_values( $value['items'] ) : array();
@@ -3658,7 +3262,7 @@ function leadwerk_theme_bind_exact_acm_stellen( $xpath, $section, $value ) {
 		if ( $detail instanceof DOMElement ) {
 			$grid = leadwerk_theme_dom_first( $xpath, './/div[contains(@class,"grid")][1]', $detail );
 			if ( $grid instanceof DOMElement ) {
-				foreach ( leadwerk_theme_dom_query( $xpath, './div', $grid ) as $col ) {
+				foreach ( leadwerk_theme_dom_query( $xpath, './div', $grid ) as $col_index => $col ) {
 					if ( ! $col instanceof DOMElement ) {
 						continue;
 					}
@@ -3671,9 +3275,11 @@ function leadwerk_theme_bind_exact_acm_stellen( $xpath, $section, $value ) {
 					if ( ! $ul instanceof DOMElement ) {
 						continue;
 					}
-					if ( false !== strpos( $h4t, 'aufgaben' ) ) {
+					if ( false !== strpos( $h4t, 'aufgaben' ) || false !== strpos( $h4t, 'tasks' ) || 0 === (int) $col_index ) {
+						leadwerk_theme_dom_set_text( $h4, $tasks_heading );
 						leadwerk_theme_dom_set_inner_html( $ul, (string) ( $item['tasks'] ?? '' ) );
-					} elseif ( false !== strpos( $h4t, 'anforderungen' ) ) {
+					} elseif ( false !== strpos( $h4t, 'anforderungen' ) || false !== strpos( $h4t, 'requirements' ) || 1 === (int) $col_index ) {
+						leadwerk_theme_dom_set_text( $h4, $requirements_heading );
 						leadwerk_theme_dom_set_inner_html( $ul, (string) ( $item['requirements'] ?? '' ) );
 					}
 				}
@@ -3686,11 +3292,10 @@ function leadwerk_theme_bind_exact_acm_stellen( $xpath, $section, $value ) {
 				(string) ( $item['apply_page_key'] ?? '' ),
 				(string) ( $item['apply_url'] ?? '' )
 			);
-			$pdf_value = leadwerk_theme_career_pdf_value_with_legacy_fallback( $item['pdf_url'] ?? '', $item );
 			if ( function_exists( 'leadwerk_theme_career_pdf_link_parts' ) ) {
-				list( $pdf_href, $pdf_download ) = leadwerk_theme_career_pdf_link_parts( $pdf_value );
+				list( $pdf_href, $pdf_download ) = leadwerk_theme_career_pdf_link_parts( $item['pdf_url'] ?? '' );
 			} else {
-				$pdf_href     = leadwerk_theme_resolve_media_url( $pdf_value );
+				$pdf_href     = leadwerk_theme_resolve_media_url( $item['pdf_url'] ?? '' );
 				$pdf_download = true;
 			}
 			leadwerk_theme_bind_exact_anchor_keep_svg(

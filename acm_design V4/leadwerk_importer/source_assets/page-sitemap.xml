@@ -1,124 +1,203 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//www.acm.aero/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	<url>
-		<loc>https://www.acm.aero/</loc>
-		<lastmod>2026-04-20T16:48:32+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/aircraft-management/</loc>
-		<lastmod>2026-04-21T08:09:09+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/aircraft-management/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/aircraft-management/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/thats-acm/</loc>
-		<lastmod>2026-04-21T08:28:15+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/thats-acm/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/thats-acm/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/news/</loc>
-		<lastmod>2026-04-21T08:38:47+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/news/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/news/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/maintenance/</loc>
-		<lastmod>2026-04-21T08:41:47+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/maintenance/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/maintenance/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/en/</loc>
-		<lastmod>2026-04-21T09:02:19+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/en/aircraft-management/</loc>
-		<lastmod>2026-04-21T09:04:41+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/en/global-7500/</loc>
-		<lastmod>2026-04-21T09:06:48+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/en/maintenance/</loc>
-		<lastmod>2026-04-21T09:20:48+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/en/news/</loc>
-		<lastmod>2026-04-21T09:22:13+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/en/thats-acm/</loc>
-		<lastmod>2026-04-21T09:24:24+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/kontakt/</loc>
-		<lastmod>2026-04-21T10:01:35+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/kontakt/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/contact/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/en/contact/</loc>
-		<lastmod>2026-04-21T10:28:04+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/global-7500/</loc>
-		<lastmod>2026-04-21T18:35:39+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/global-7500/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/global-7500/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/charter/</loc>
-		<lastmod>2026-04-21T21:54:14+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/charter/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/charter/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/en/charter/</loc>
-		<lastmod>2026-04-21T21:55:44+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/en/career/</loc>
-		<lastmod>2026-04-22T10:34:50+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/en/global-6000/</loc>
-		<lastmod>2026-04-22T11:29:26+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/en/global-xrs/</loc>
-		<lastmod>2026-04-22T11:29:32+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/global-xrs/</loc>
-		<lastmod>2026-04-22T11:32:36+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/global-xrs/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/global-xrs/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/global-6000/</loc>
-		<lastmod>2026-04-22T11:33:57+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/global-6000/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/global-6000/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/agb/</loc>
-		<lastmod>2026-04-27T15:17:38+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/agb/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/terms-conditions/" />
-</url>
-	<url>
-		<loc>https://www.acm.aero/en/terms-conditions/</loc>
-		<lastmod>2026-04-27T15:19:48+00:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.acm.aero/karriere/</loc>
-		<lastmod>2026-05-05T13:57:58+00:00</lastmod>
-		<xhtml:link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/karriere/" />
-	<xhtml:link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/career/" />
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.acm.aero/index.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/index.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/charter.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/charter.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/aircraft-management.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/aircraft-management.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/maintenance.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/maintenance.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/thats-acm.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/thats-acm.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/karriere.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/karriere.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/kontakt.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/kontakt.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/global-7500.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/global-7500.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/global-6000.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/global-6000.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/global-xrs.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/global-xrs.html</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/is-bah-stage-2-acm-handling.html</loc>
+    <lastmod>2025-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/is-bah-stage-2-acm-handling.html</loc>
+    <lastmod>2025-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.html</loc>
+    <lastmod>2024-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.html</loc>
+    <lastmod>2024-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.html</loc>
+    <lastmod>2023-02-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.html</loc>
+    <lastmod>2023-02-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte.html</loc>
+    <lastmod>2023-01-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte.html</loc>
+    <lastmod>2023-01-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/global-7500-erweitert-die-acm-air-charter-flotte.html</loc>
+    <lastmod>2021-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/global-7500-erweitert-die-acm-air-charter-flotte.html</loc>
+    <lastmod>2021-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel.html</loc>
+    <lastmod>2020-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel.html</loc>
+    <lastmod>2020-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/acm-air-charter-erhaelt-erneut-die-bestaetigung-der-is-bao-stufe-3.html</loc>
+    <lastmod>2020-01-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/acm-air-charter-erhaelt-erneut-die-bestaetigung-der-is-bao-stufe-3.html</loc>
+    <lastmod>2020-01-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/acm-air-charter-betreibt-vierten-bombardier-global-express.html</loc>
+    <lastmod>2018-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/acm-air-charter-betreibt-vierten-bombardier-global-express.html</loc>
+    <lastmod>2018-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/acm-air-charter-erhaelt-erweiterung-der-camo-zulassung.html</loc>
+    <lastmod>2018-05-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/acm-air-charter-erhaelt-erweiterung-der-camo-zulassung.html</loc>
+    <lastmod>2018-05-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/falcon-2000lx-erweitert-die-charter-flotte.html</loc>
+    <lastmod>2018-02-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/falcon-2000lx-erweitert-die-charter-flotte.html</loc>
+    <lastmod>2018-02-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/acm-air-charter-uebernimmt-weiteres-luftfahrzeug-im-rahmen-der-neuen-part-ncc-verordnung.html</loc>
+    <lastmod>2017-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/acm-air-charter-uebernimmt-weiteres-luftfahrzeug-im-rahmen-der-neuen-part-ncc-verordnung.html</loc>
+    <lastmod>2017-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/acm-air-charter-erneuert-hoechstmoegliche-is-bao-zertifizierung.html</loc>
+    <lastmod>2016-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/acm-air-charter-erneuert-hoechstmoegliche-is-bao-zertifizierung.html</loc>
+    <lastmod>2016-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/extremer-langstreckenflug-mit-bbj-2.html</loc>
+    <lastmod>2014-12-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/extremer-langstreckenflug-mit-bbj-2.html</loc>
+    <lastmod>2014-12-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/news/acm-air-charter-erweitert-flotte-mit-zwei-boeing-bbj2.html</loc>
+    <lastmod>2014-05-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.acm.aero/en/news/acm-air-charter-erweitert-flotte-mit-zwei-boeing-bbj2.html</loc>
+    <lastmod>2014-05-15</lastmod>
+  </url>
 </urlset>
-<!-- XML Sitemap generated by Yoast SEO -->

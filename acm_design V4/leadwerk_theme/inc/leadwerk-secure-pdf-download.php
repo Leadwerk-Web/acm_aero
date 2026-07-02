@@ -144,145 +144,23 @@ function leadwerk_theme_get_secure_pdf_download_url( $attachment_id ) {
 }
 
 /**
- * Candidate source paths for a career PDF value.
- *
- * @param mixed $value Attachment ID, source path, filename, or URL.
- * @return string[]
- */
-function leadwerk_theme_career_pdf_candidate_paths( $value ) {
-	$raw = trim( html_entity_decode( (string) $value, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
-	if ( '' === $raw || is_numeric( $raw ) ) {
-		return array();
-	}
-
-	$path = $raw;
-	if ( preg_match( '#^(?:https?:)?//#i', $raw ) ) {
-		$url_path = parse_url( $raw, PHP_URL_PATH );
-		$path     = is_string( $url_path ) ? rawurldecode( $url_path ) : '';
-	}
-
-	$path = str_replace( '\\', '/', $path );
-	$path = preg_replace( '#^\./#', '', $path );
-	$path = preg_replace( '#^/?wp-content/uploads/#i', '', (string) $path );
-	$path = ltrim( (string) $path, '/' );
-
-	$candidates = array();
-	if ( '' !== $path && preg_match( '/\.pdf$/i', $path ) ) {
-		$candidates[] = $path;
-	}
-
-	$basename = basename( $path );
-	if ( '' !== $basename && preg_match( '/\.pdf$/i', $basename ) ) {
-		$candidates[] = 'Fotos/' . $basename;
-		$candidates[] = 'assets/images/' . $basename;
-		$candidates[] = $basename;
-	}
-
-	return array_values( array_unique( array_filter( array_map( 'trim', $candidates ) ) ) );
-}
-
-/**
- * Find an imported PDF attachment from source path or filename.
- *
- * @param mixed $value Attachment ID, source path, filename, or URL.
- * @return int Attachment ID or 0.
- */
-function leadwerk_theme_find_career_pdf_attachment_id( $value ) {
-	if ( is_int( $value ) || ( is_string( $value ) && '' !== $value && is_numeric( trim( $value ) ) ) ) {
-		$id = absint( $value );
-		return $id && wp_get_attachment_url( $id ) ? $id : 0;
-	}
-
-	$candidates = leadwerk_theme_career_pdf_candidate_paths( $value );
-	foreach ( $candidates as $candidate ) {
-		$query = new WP_Query(
-			array(
-				'post_type'      => 'attachment',
-				'post_status'    => 'any',
-				'post_mime_type' => 'application/pdf',
-				'fields'         => 'ids',
-				'posts_per_page' => 1,
-				'meta_query'     => array(
-					array(
-						'key'   => 'leadwerk_source_path',
-						'value' => $candidate,
-					),
-				),
-			)
-		);
-		$ids = $query->get_posts();
-		if ( ! empty( $ids[0] ) ) {
-			return (int) $ids[0];
-		}
-	}
-
-	foreach ( $candidates as $candidate ) {
-		$basename = sanitize_file_name( basename( $candidate ) );
-		if ( '' === $basename ) {
-			continue;
-		}
-		$query = new WP_Query(
-			array(
-				'post_type'      => 'attachment',
-				'post_status'    => 'any',
-				'post_mime_type' => 'application/pdf',
-				'fields'         => 'ids',
-				'posts_per_page' => 3,
-				'meta_query'     => array(
-					array(
-						'key'     => '_wp_attached_file',
-						'value'   => $basename,
-						'compare' => 'LIKE',
-					),
-				),
-			)
-		);
-		foreach ( $query->get_posts() as $id ) {
-			$path = get_attached_file( (int) $id );
-			if ( $path && sanitize_file_name( basename( $path ) ) === $basename ) {
-				return (int) $id;
-			}
-		}
-	}
-
-	return 0;
-}
-
-/**
- * Theme URL for a packaged fallback PDF.
- *
- * @param string $relative Relative theme path.
- * @return string
- */
-function leadwerk_theme_career_pdf_theme_url( $relative ) {
-	$relative = trim( str_replace( '\\', '/', (string) $relative ), '/' );
-	if ( '' === $relative || ! defined( 'LEADWERK_THEME_DIR' ) || ! defined( 'LEADWERK_THEME_URI' ) ) {
-		return '';
-	}
-	$path = LEADWERK_THEME_DIR . '/' . $relative;
-	if ( ! is_file( $path ) ) {
-		return '';
-	}
-	$parts = array_map( 'rawurlencode', explode( '/', $relative ) );
-	return LEADWERK_THEME_URI . '/' . implode( '/', $parts );
-}
-
-/**
  * href fuer Karriere-PDF: signierte URL bei Mediathek-ID, sonst Legacy-URL.
  *
  * @param mixed $value Anhang-ID oder URL-String.
  * @return string
  */
 function leadwerk_theme_resolve_career_pdf_href( $value ) {
-	$id = leadwerk_theme_find_career_pdf_attachment_id( $value );
-	if ( $id > 0 ) {
-		$secure = leadwerk_theme_get_secure_pdf_download_url( $id );
-		if ( '' !== $secure ) {
-			return $secure;
-		}
-		$url = wp_get_attachment_url( $id );
+	if ( is_int( $value ) || ( is_string( $value ) && '' !== $value && is_numeric( trim( $value ) ) ) ) {
+		$id = (int) $value;
+		if ( $id > 0 ) {
+			$secure = leadwerk_theme_get_secure_pdf_download_url( $id );
+			if ( '' !== $secure ) {
+				return $secure;
+			}
+			$url = wp_get_attachment_url( $id );
 
-		return $url ? $url : '';
+			return $url ? $url : '';
+		}
 	}
 
 	return trim( (string) $value );
@@ -300,18 +178,12 @@ function leadwerk_theme_career_pdf_link_parts( $value ) {
 		return array( $href, null );
 	}
 	$fname = '';
-	$id = leadwerk_theme_find_career_pdf_attachment_id( $value );
-	if ( $id > 0 ) {
-		$path = get_attached_file( $id );
-		if ( $path ) {
-			$fname = sanitize_file_name( basename( $path ) );
-		}
-	}
-	if ( '' === $fname ) {
-		foreach ( leadwerk_theme_career_pdf_candidate_paths( $value ) as $candidate ) {
-			$fname = sanitize_file_name( basename( $candidate ) );
-			if ( '' !== $fname ) {
-				break;
+	if ( is_int( $value ) || ( is_string( $value ) && '' !== $value && is_numeric( trim( $value ) ) ) ) {
+		$id = (int) $value;
+		if ( $id > 0 ) {
+			$path = get_attached_file( $id );
+			if ( $path ) {
+				$fname = sanitize_file_name( basename( $path ) );
 			}
 		}
 	}

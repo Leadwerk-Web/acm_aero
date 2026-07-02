@@ -19,6 +19,8 @@ define( 'LEADWERK_THEME_ACM_NEWS_PUBLICATION_DATE_META', 'acm_news_publication_d
 define( 'LEADWERK_THEME_SIMPLE_HEADER_META', 'leadwerk_simple_header' );
 define( 'LEADWERK_THEME_SIMPLE_PAGE_TEMPLATE', 'template-acm-simple-page.php' );
 
+require_once LEADWERK_THEME_DIR . '/inc/static-source.php';
+
 $leadwerk_structured_render_file = LEADWERK_THEME_DIR . '/inc/structured-acm-render.php';
 $leadwerk_structured_render_alt  = LEADWERK_THEME_DIR . '/inc/structured-finora-render.php';
 if ( is_file( $leadwerk_structured_render_file ) ) {
@@ -38,6 +40,20 @@ if ( is_file( $leadwerk_exact_render_file ) ) {
 	require_once $leadwerk_exact_render_file;
 } elseif ( is_file( $leadwerk_exact_render_alt ) ) {
 	require_once $leadwerk_exact_render_alt;
+}
+
+$leadwerk_acm_modals_file = LEADWERK_THEME_DIR . '/inc/acm-modals-render.php';
+if ( is_file( $leadwerk_acm_modals_file ) ) {
+	require_once $leadwerk_acm_modals_file;
+	add_filter(
+		'leadwerk_theme_acm_modals_html',
+		static function ( $html ) {
+			if ( '' !== trim( (string) $html ) ) {
+				return $html;
+			}
+			return leadwerk_theme_get_acm_modals_markup();
+		}
+	);
 }
 
 /**
@@ -784,9 +800,9 @@ function leadwerk_theme_favicon() {
 		return;
 	}
 
-	echo '<link rel="icon" type="image/webp" href="' . esc_url( LEADWERK_THEME_URI . '/favicon-32x32.webp' ) . '" sizes="32x32">' . "\n";
-	echo '<link rel="icon" type="image/webp" href="' . esc_url( LEADWERK_THEME_URI . '/favicon-192x192.webp' ) . '" sizes="192x192">' . "\n";
-	echo '<link rel="apple-touch-icon" href="' . esc_url( LEADWERK_THEME_URI . '/apple-touch-icon.webp' ) . '">' . "\n";
+	echo '<link rel="icon" type="image/png" href="' . esc_url( LEADWERK_THEME_URI . '/favicon-32x32.png' ) . '" sizes="32x32">' . "\n";
+	echo '<link rel="icon" type="image/png" href="' . esc_url( LEADWERK_THEME_URI . '/favicon-192x192.png' ) . '" sizes="192x192">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . esc_url( LEADWERK_THEME_URI . '/apple-touch-icon.png' ) . '">' . "\n";
 }
 add_action( 'wp_head', 'leadwerk_theme_favicon', 1 );
 
@@ -858,7 +874,10 @@ function leadwerk_theme_render_page_block() {
 				)
 				: '';
 		}
-		if ( '' !== trim( wp_strip_all_tags( $exact_html ) ) || false !== strpos( $exact_html, '<section' ) || false !== strpos( $exact_html, 'runtime-notice' ) ) {
+		if ( false !== strpos( $exact_html, '<section' )
+			|| false !== strpos( $exact_html, 'runtime-notice' )
+			|| '' !== trim( wp_strip_all_tags( $exact_html ) )
+		) {
 			return $exact_html;
 		}
 	}
@@ -901,7 +920,11 @@ function leadwerk_theme_render_current_page_content( $post_id = 0 ) {
 					)
 					: '';
 			}
-			if ( false !== strpos( $exact_html, '<section' ) || false !== strpos( $exact_html, '<div class="runtime-notice"' ) ) {
+			if ( false !== strpos( $exact_html, '<section' )
+				|| false !== strpos( $exact_html, '<div class="runtime-notice"' )
+				|| false !== strpos( $exact_html, 'runtime-notice--exact' )
+				|| '' !== trim( wp_strip_all_tags( $exact_html ) )
+			) {
 				return $exact_html;
 			}
 
@@ -1214,7 +1237,7 @@ function leadwerk_theme_render_footer_block() {
 	<footer class="site-footer">
 		<div class="footer-main">
 			<div class="footer-col">
-				<img src="<?php echo esc_url( leadwerk_theme_get_option_image_url( 'footer_logo', 'assets/images/Logo-final-weiss-rz.webp' ) ); ?>" alt="<?php echo esc_attr( $footer_logo_alt ); ?>" class="footer-logo" width="922" height="212" loading="lazy">
+				<img src="<?php echo esc_url( leadwerk_theme_get_option_image_url( 'footer_logo', 'assets/images/Logo-final-weiss-rz.png' ) ); ?>" alt="<?php echo esc_attr( $footer_logo_alt ); ?>" class="footer-logo" width="922" height="212" loading="lazy">
 				<p class="footer-desc"><?php echo esc_html( $footer_desc_text ); ?></p>
 			</div>
 			<div class="footer-col">
@@ -1405,7 +1428,7 @@ function leadwerk_theme_is_service_page() {
  * @return bool
  */
 function leadwerk_theme_is_legal_source_key( $source_key ) {
-	return in_array( $source_key, array( 'acm-impressum-v1', 'acm-datenschutz-v1', 'acm-agb-v1' ), true );
+	return in_array( $source_key, array( 'acm-impressum-v1', 'acm-datenschutz-v1' ), true );
 }
 
 /**
@@ -1599,14 +1622,7 @@ function leadwerk_theme_get_option_image_url( $field_name, $default_path ) {
 		}
 	}
 
-	if ( function_exists( 'leadwerk_theme_get_uploaded_media_url_for_template_ref' ) ) {
-		$url = leadwerk_theme_get_uploaded_media_url_for_template_ref( $default_path );
-		if ( '' !== $url ) {
-			return $url;
-		}
-	}
-
-	return LEADWERK_THEME_URI . '/' . ltrim( $default_path, '/' );
+	return leadwerk_theme_static_asset_url( $default_path );
 }
 
 /**

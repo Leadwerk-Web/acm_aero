@@ -1,15 +1,9 @@
-# START WPFORMS BLOCK
-# ---------------------------
 User-agent: *
-Disallow: /wp-content/uploads/wpforms/
-# ---------------------------
-# END WPFORMS BLOCK
+# Alle Unterordner ausschließen - nicht indexieren
+Disallow: /Fotos/
+Disallow: /BILDER-ANLEITUNG.md
 
-# START YOAST BLOCK
-# ---------------------------
-User-agent: *
-Disallow:
-
-Sitemap: https://www.acm.aero/sitemap_index.xml
-# ---------------------------
-# END YOAST BLOCK
+# Hauptseite erlauben
+Allow: /index.html
+Allow: /
+Sitemap: https://www.acm.aero/page-sitemap.xml

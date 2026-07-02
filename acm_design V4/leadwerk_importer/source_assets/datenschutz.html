@@ -1,100 +1,504 @@
 <!DOCTYPE html>
-<html lang="de-DE">
+
+<html lang="de">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-	<meta name='robots' content='noindex, follow' />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ACM AIR CHARTER Datenschutz mit Informationen zur Verarbeitung personenbezogener Daten und zu Ihren Rechten." name="description"/><link href="/datenschutz.html" rel="canonical"/><link href="/datenschutz.html" hreflang="de" rel="alternate"/><link href="/en/datenschutz.html" hreflang="en" rel="alternate"/>
+<meta content="index, follow" name="robots"/>
+<title>Datenschutz | ACM AIR CHARTER</title>
+<link href="Fotos/Favicon_xs.webp" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: { '6xl': '100rem' },
+          colors: {
+            cream: '#FAF9F7',
+            olive: { DEFAULT: '#001441', dark: '#000d2b', light: '#0a2a5c', lighter: '#E8EEF4' },
+            accent: { DEFAULT: '#001441', hover: '#000d2b', light: '#E8EEF4' },
+            sand: { 50: '#FDFCFA', 100: '#FAF8F5', 200: '#F5F2ED' }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          letterSpacing: { 'wider-custom': '0.15em' }
+        }
+      }
+    }
+  </script>
+<style>
+    :root {
+      --color-accent: #001441;
+      --color-accent-hover: #000d2b;
+      --color-olive: #001441;
+      --color-olive-dark: #000d2b;
+      --color-sand: #FAF8F5;
+      --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.07);
+    }
 
-<link rel="alternate" hreflang="de-DE" href="datenschutz.html" />
-<link rel="alternate" hreflang="x-default" href="datenschutz.html" />
-<link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/privacy-policy/" />
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 20, 65, 0.35) #f5f5f4;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f5f5f4; }
+    ::-webkit-scrollbar-thumb { background: rgba(0, 20, 65, 0.35); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(0, 20, 65, 0.5); }
+    ::-webkit-scrollbar-thumb:active { background: var(--color-olive); }
 
-	<!-- This site is optimized with the Yoast SEO plugin v27.1.1 - https://yoast.com/product/yoast-seo-wordpress/ -->
-	<title>Datenschutz | ACM AIR CHARTER</title>
-	<meta name="description" content="ACM AIR CHARTER Datenschutz mit Informationen zur Verarbeitung personenbezogener Daten und zu Ihren Rechten." />
-	<meta property="og:locale" content="de_DE" />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Datenschutz | ACM AIR CHARTER" />
-	<meta property="og:description" content="ACM AIR CHARTER Datenschutz mit Informationen zur Verarbeitung personenbezogener Daten und zu Ihren Rechten." />
-	<meta property="og:url" content="datenschutz.html" />
-	<meta property="og:site_name" content="ACM AIR CHARTER" />
-	<meta property="article:modified_time" content="2026-04-22T10:12:57+00:00" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:label1" content="Geschätzte Lesezeit" />
-	<meta name="twitter:data1" content="8 Minuten" />
-	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.acm.aero/datenschutz/","url":"https://www.acm.aero/datenschutz/","name":"Datenschutz | ACM AIR CHARTER","isPartOf":{"@id":"https://www.acm.aero/#website"},"datePublished":"2026-04-07T13:37:15+00:00","dateModified":"2026-04-22T10:12:57+00:00","description":"ACM AIR CHARTER Datenschutz mit Informationen zur Verarbeitung personenbezogener Daten und zu Ihren Rechten.","breadcrumb":{"@id":"https://www.acm.aero/datenschutz/#breadcrumb"},"inLanguage":"de","potentialAction":[{"@type":"ReadAction","target":["https://www.acm.aero/datenschutz/"]}]},{"@type":"BreadcrumbList","@id":"https://www.acm.aero/datenschutz/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.acm.aero/"},{"@type":"ListItem","position":2,"name":"Datenschutz"}]},{"@type":"WebSite","@id":"https://www.acm.aero/#website","url":"https://www.acm.aero/","name":"ACM AIR CHARTER","description":"Premium Business Aviation: Charter, Aircraft Management, Maintenance &amp; CAMO aus einer Hand.","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.acm.aero/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"de"}]}</script>
-	<!-- / Yoast SEO plugin. -->
+    .section-emblem {
+      height: 35px; width: auto; display: block;
+      margin-left: auto; margin-right: auto; margin-bottom: 1rem;
+      filter: brightness(0) saturate(100%) invert(9%) sepia(45%) saturate(5000%) hue-rotate(208deg);
+    }
+    .section-emblem-on-dark { filter: brightness(0) invert(1); }
+    .section-emblem-left { margin-left: 0; margin-right: 0; }
 
+    section h2 { font-size: 48px !important; line-height: 1 !important; }
+    h3 { font-size: 2.3rem; }
+    .heading-23rem { font-size: 2.3rem !important; }
+    .section-number { font-size: 1.3rem !important; }
+    .section-label { font-size: 12px !important; }
+    .cert-title { font-size: 1.5rem !important; line-height: 1.2 !important; margin-bottom: 16px !important; }
 
-<link rel='dns-prefetch' href='//cdn.tailwindcss.com' />
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.acm.aero/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.acm.aero%2Fdatenschutz%2F" />
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.acm.aero/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.acm.aero%2Fdatenschutz%2F&#038;format=xml" />
-<meta name="description" content="ACM AIR CHARTER Datenschutz mit Informationen zur Verarbeitung personenbezogener Daten und zu Ihren Rechten.">
-<meta name="robots" content="noindex, follow">
-<link rel="canonical" href="datenschutz.html">
-<link rel="alternate" hreflang="de" href="datenschutz.html">
-<link rel="alternate" hreflang="en" href="https://www.acm.aero/en/privacy-policy/">
-<link rel="alternate" hreflang="x-default" href="datenschutz.html">
-<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
-img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
-/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+    .max-w-xl { max-width: 56rem; padding: 0; overflow: visible; }
+    .content-box-outer { padding-left: 7rem; padding-right: 7rem; overflow: visible; }
+
+    *, *::before, *::after { border-width: 0 !important; border-style: none !important; }
+    img, input, select, textarea, a, .card-hover, [class*="border"] { border: none !important; border-width: 0 !important; }
+    footer { border: none !important; background: linear-gradient(to right, transparent 0%, #e7e5e4 10vw, #e7e5e4 90vw, transparent 100%) no-repeat top / 100% 1px, #ffffff !important; }
+    button:not(.btn-filled):not(.btn-outline):not(.btn-primary):not(.btn-filled-white):not(.btn-outline-white):not(.anchor-pill) { border: none !important; border-width: 0 !important; }
+    *, *::before, *::after, img, button, input, select, textarea, a, .card-hover, .btn-primary, [class*="rounded"] { border-radius: 0 !important; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px; font-weight: 400; color: #777777;
+      letter-spacing: 0.01em; background-color: #FDFCFA;
+    }
+    p {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px !important; font-weight: 400 !important; color: #777777 !important;
+    }
+    h1, h2, h3, h4, h5, h6, .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400; letter-spacing: 0.02em;
+    }
+    .section-label {
+      font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-olive);
+    }
+    *:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+    #header {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.12) 60%, transparent 100%);
+      border-bottom: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    main { margin-top: 0; padding-top: 0; }
+
+    img:not(.acm-logo):not(.section-emblem) { filter: saturate(0.88) brightness(1.06) contrast(0.97); }
+    img:not(.acm-logo):not(svg *) { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease; will-change: transform; }
+
+    .header-scrolled {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .header-top-right { color: rgba(255, 255, 255, 0.95); transition: color 0.4s ease; }
+    .header-scrolled .header-top-right { color: rgba(28, 25, 23, 0.85); }
+    .header-lang-link { color: inherit; text-decoration: none; font-weight: 400; letter-spacing: 0.02em; opacity: 0.85; transition: opacity 0.25s ease, color 0.4s ease; }
+    .header-lang-link.header-lang-active { font-weight: 700; opacity: 1; color: var(--color-olive) !important; }
+    .header-lang-link:hover { opacity: 1; }
+    .header-lang-sep { opacity: 0.5; pointer-events: none; }
+    .header-divider-line { height: 1px; width: 100%; transition: background 0.4s ease, height 0.4s ease, opacity 0.4s ease; }
+    .header-scrolled .header-divider-line { background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.08) 15%, rgba(0, 0, 0, 0.08) 85%, transparent 100%); }
+    #header.header-scrolled .header-nav-row { height: 0; overflow: hidden; opacity: 0; visibility: hidden; }
+    #header.header-scrolled .header-divider-line { height: 0; opacity: 0; overflow: hidden; margin: 0; padding: 0; }
+
+    .header-nav-link { color: rgba(255, 255, 255, 0.9); font-weight: 400; font-size: 0.875rem; letter-spacing: 0.02em; position: relative; padding: 0.5rem 0; transition: color 0.3s ease; text-transform: none; }
+    .header-scrolled .header-nav-link { color: rgba(28, 25, 23, 0.8); }
+    .header-nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .header-nav-link:hover { color: white; }
+    .header-scrolled .header-nav-link:hover { color: rgb(28, 25, 23); }
+    .header-nav-link:hover::after { width: 100%; }
+
+    .header-nav-charter-wrap { position: relative; }
+    .header-nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.5rem; min-width: 11rem; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); border-radius: 6px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; z-index: 50; }
+    .header-nav-charter-wrap:hover .header-nav-dropdown { opacity: 1; visibility: visible; }
+    .header-nav-dropdown a { display: block; padding: 0.5rem 1rem; font-size: 0.8125rem; color: rgba(28, 25, 23, 0.85); transition: color 0.2s ease, background 0.2s ease; white-space: nowrap; }
+    .header-nav-dropdown a:hover { color: var(--color-olive); background: rgba(0, 0, 0, 0.04); }
+    .header-nav-dropdown a:first-child { font-weight: 500; color: rgb(28, 25, 23); }
+
+    .header-link-button { color: white; font-weight: 400; font-size: 0.875rem; letter-spacing: 0.02em; position: relative; padding: 0.5rem 1.25rem; border-radius: 0; background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18) !important; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); height: auto; display: inline-flex; align-items: center; justify-content: center; }
+    .header-link-button:hover { background: rgba(255, 255, 255, 0.18); border-color: rgba(255, 255, 255, 0.25) !important; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); transform: translateY(-1px); }
+    .header-scrolled .header-link-button { color: rgba(28, 25, 23, 0.85); background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(28, 25, 23, 0.1) !important; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); }
+    .header-scrolled .header-link-button:hover { color: rgb(28, 25, 23); background: rgba(255, 255, 255, 0.75); border-color: rgba(28, 25, 23, 0.15) !important; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); transform: translateY(-1px); }
+
+    .header-desktop-menu-btn { color: rgb(28, 25, 23); background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; border-radius: 0; border: none; box-shadow: none; transition: opacity 0.4s ease, visibility 0.4s ease; opacity: 0; visibility: hidden; pointer-events: none; }
+    .header-desktop-menu-btn:hover { background: transparent; box-shadow: none; }
+    #header.header-scrolled .header-desktop-menu-btn { opacity: 1; visibility: visible; pointer-events: auto; }
+
+    .header-logo-row { transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    #header.header-scrolled .header-logo-row { height: 3.5rem !important; }
+    #header.header-scrolled .acm-logo { height: 2.5rem !important; max-width: 140px !important; }
+    #desktop-nav { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 0.4s ease, visibility 0.4s ease; }
+    #header.header-scrolled #desktop-nav { opacity: 0; visibility: hidden; pointer-events: none; }
+
+    #desktop-menu { height: 100vh; height: 100dvh; top: 0; left: 0; box-shadow: none !important; border: none !important; opacity: 0; transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+    #desktop-menu.show { transform: translateX(0) !important; opacity: 1; }
+    #desktop-menu .desktop-menu-nav .desktop-menu-link { opacity: 0; transform: translateX(-8px); transition: opacity 0.3s ease, transform 0.3s ease, padding-left 0.25s ease; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link { opacity: 1; transform: translateX(0); }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(1) { transition-delay: 0.05s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(2) { transition-delay: 0.1s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(3) { transition-delay: 0.15s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(4) { transition-delay: 0.2s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(5) { transition-delay: 0.25s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(6) { transition-delay: 0.3s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(7) { transition-delay: 0.35s; }
+    #desktop-menu-backdrop { pointer-events: none; height: 100vh; height: 100dvh; }
+    #desktop-menu-backdrop.show { opacity: 1; pointer-events: auto; }
+    #desktop-menu .desktop-menu-link { font-weight: 300; letter-spacing: 0.01em; font-size: 1rem; }
+    .desktop-menu-link:hover { padding-left: 0.5rem; }
+
+    .header-mobile-btn { color: white; transition: opacity 0.4s ease, visibility 0.4s ease, color 0.4s ease; opacity: 0; visibility: hidden; pointer-events: none; }
+    #header.header-scrolled .header-mobile-btn { opacity: 1; visibility: visible; pointer-events: auto; color: rgb(28, 25, 23); }
+
+    #mobile-menu { border-top: 1px solid rgba(0, 0, 0, 0.05); background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); opacity: 0; transform: translateY(-12px); transition: opacity 0.3s ease, transform 0.3s ease; }
+    #mobile-menu.mobile-menu-open { opacity: 1; transform: translateY(0); }
+    .mobile-menu-nav .mobile-menu-link { opacity: 0; transform: translateY(-8px); transition: opacity 0.25s ease, transform 0.25s ease; color: rgba(28, 25, 23, 0.8); font-weight: 400; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link { opacity: 1; transform: translateY(0); }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(1) { transition-delay: 0.04s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(2) { transition-delay: 0.08s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(3) { transition-delay: 0.12s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(4) { transition-delay: 0.16s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(5) { transition-delay: 0.2s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(6) { transition-delay: 0.24s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(7) { transition-delay: 0.28s; }
+    .mobile-menu-link:hover { color: rgb(28, 25, 23); padding-left: 0.75rem; }
+
+    .acm-logo { filter: brightness(0) invert(1); transition: filter 0.4s ease, opacity 0.4s ease; object-fit: contain; height: auto; max-height: 64px; }
+    .header-scrolled .acm-logo { filter: brightness(0) invert(0); }
+    @media (max-width: 1024px) { .acm-logo { max-height: 56px; } }
+    @media (max-width: 640px) { .acm-logo { max-height: 48px; } }
+    .acm-logo:hover { opacity: 0.8; }
+
+    .header-logo-text { color: white; font-weight: 400; letter-spacing: 0.02em; transition: color 0.4s ease; }
+    .header-scrolled .header-logo-text { color: rgb(28, 25, 23); }
+    .header-logo-subtext { color: rgba(255, 255, 255, 0.85); font-weight: 300; letter-spacing: 0.05em; transition: color 0.4s ease; }
+    .header-scrolled .header-logo-subtext { color: rgba(28, 25, 23, 0.7); }
+    .header-logo-bg { background: transparent; border: none; box-shadow: none; }
+
+    #scroll-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 3rem; height: 3rem; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(28, 25, 23, 0.1); border-radius: 0.5rem; color: rgb(28, 25, 23); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(1rem); transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, box-shadow 0.3s ease; z-index: 9999 !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+    #scroll-to-top.visible { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
+    #scroll-to-top:hover { background: rgba(255, 255, 255, 1); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); transform: translateY(-2px); }
+    #scroll-to-top svg { width: 1.25rem; height: 1.25rem; stroke-width: 2; }
+
+    .footer-safe { padding-bottom: max(2rem, env(safe-area-inset-bottom, 0)); }
+
+    button, .btn-primary, a[class*="btn"], a[class*="button"], .header-button, .header-link-button, .header-desktop-menu-btn, .header-mobile-btn, .language-btn { border-radius: 0 !important; }
+
+    img:not(.acm-logo):not(svg *) { border-radius: 0.5rem; }
+
+    .btn-primary, .btn-outline, .btn-filled {
+      display: inline-flex; justify-content: center; align-items: center; min-width: 14rem; padding: 15px 2rem;
+      background: transparent !important; color: var(--color-olive) !important; border: 1px solid var(--color-olive) !important;
+      font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.075rem; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; transition: all 0.5s ease; box-shadow: none;
+    }
+    .btn-primary:hover, .btn-outline:hover, .btn-filled:hover {
+      background: transparent !important; color: var(--color-olive-dark) !important; border-color: var(--color-olive-dark) !important;
+      opacity: 0.85; box-shadow: 0 4px 14px rgba(0, 20, 65, 0.15);
+    }
+    .btn-primary:active, .btn-outline:active, .btn-filled:active { transform: scale(0.98); }
+
+    .btn-outline-white, .btn-filled-white {
+      display: inline-flex; justify-content: center; align-items: center; min-width: 14rem; padding: 15px 2rem;
+      background: transparent !important; color: white !important; border: 1px solid rgba(255,255,255,0.7) !important;
+      font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.075rem; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; transition: all 0.5s ease; box-shadow: none;
+    }
+    .btn-outline-white:hover, .btn-filled-white:hover {
+      background: transparent !important; color: white !important; border-color: white !important;
+      opacity: 0.88; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .link-arrow { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-olive); font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.075rem; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; }
+    .link-arrow:hover { opacity: 0.7; }
+    .link-arrow svg { transition: transform 0.3s ease; }
+    .link-arrow:hover svg { transform: translateX(4px); }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; opacity: 0; }
+    .fade-in-up-delay-1 { animation-delay: 0.1s; }
+    .fade-in-up-delay-2 { animation-delay: 0.2s; }
+    .fade-in-up-delay-3 { animation-delay: 0.3s; }
+
+    .scroll-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+    .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    h1, h2, h3, h4, h5, h6 { font-family: 'Bressay Display', 'Old Standard TT', Georgia, serif; letter-spacing: -0.02em; font-feature-settings: "kern" 1; }
+    section { position: relative; }
+
+    .language-btn { color: rgb(120, 113, 108); background: transparent; border: none; cursor: pointer; transition: all 0.2s ease; border-radius: 0.5rem; }
+    .language-btn:hover { color: var(--color-olive); }
+    .language-btn.active { color: var(--color-olive) !important; font-weight: 600; background: transparent; }
+
+    .header-scrolled { top: 0 !important; }
+    #header { transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    .streamlines-container { opacity: 1; width: 100%; height: 100%; }
+    .streamline { position: absolute; width: 120%; height: 2px; background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.2) 90%, transparent 100%); filter: blur(1px); transform-origin: left center; opacity: 0; }
+    .streamline-1 { top: 15%; left: -20%; transform: rotate(12deg); animation: streamMove 25s linear infinite; animation-delay: 0s; }
+    .streamline-2 { top: 30%; left: -20%; transform: rotate(-8deg); animation: streamMove 28s linear infinite; animation-delay: 5s; }
+    .streamline-3 { top: 50%; left: -20%; transform: rotate(10deg); animation: streamMove 26s linear infinite; animation-delay: 10s; }
+    .streamline-4 { top: 70%; left: -20%; transform: rotate(-12deg); animation: streamMove 30s linear infinite; animation-delay: 15s; }
+    .streamline-5 { top: 85%; left: -20%; transform: rotate(6deg); animation: streamMove 27s linear infinite; animation-delay: 20s; }
+    @keyframes streamMove {
+      0% { left: -20%; opacity: 0; }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% { left: 120%; opacity: 0; }
+    }
+    @media (max-width: 768px) { .streamline { opacity: 0.6; } }
+
+    .bg-section-sand { background-color: rgb(250, 248, 245) !important; }
+
+    @media (max-width: 768px) {
+      .content-box-outer { padding-left: 2rem; padding-right: 2rem; }
+    }
+
+    /* ===== CONTACT PAGE SPECIFIC ===== */
+
+    .hero-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(28, 25, 23, 0.75) 0%,
+        rgba(28, 25, 23, 0.45) 40%,
+        rgba(28, 25, 23, 0.25) 100%
+      );
+    }
+    #hero { margin-top: 0; padding-top: 0; position: relative; }
+    #hero img { top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 0; }
+
+    .command-card {
+      background: white;
+      padding: 1.75rem 2rem;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      position: relative;
+    }
+    .command-card:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+    .command-card:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    .command-card-arrow {
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.3;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .command-card:hover .command-card-arrow {
+      opacity: 0.7;
+      transform: translateY(-50%) translateX(3px);
+    }
+
+    .profile-card {
+      background: white;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .profile-card:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      transform: translateY(-1px);
+    }
+    .profile-card-image-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.5rem 0.5rem 0 0;
+      line-height: 0;
+    }
+    /* Dezenter ACM-Blau-Verlauf von unten nach transparent */
+    .profile-card-image-wrap::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 58%;
+      pointer-events: none;
+      background: linear-gradient(
+        to top,
+        rgba(0, 20, 65, 0.38) 0%,
+        rgba(0, 20, 65, 0.16) 38%,
+        rgba(0, 20, 65, 0.04) 72%,
+        rgba(0, 20, 65, 0) 100%
+      );
+    }
+    .profile-card-image {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      background: rgba(0, 20, 65, 0.04);
+    }
+    .profile-card-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      background: rgba(0, 20, 65, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Kontakt-Karten: Name & Positionszeile größer als Tel / Fax / E-Mail */
+    .profile-card .p-5 > h3 {
+      font-size: 1.4rem !important;
+    }
+    .profile-card .p-5 > h3 + span.block {
+      font-size: 13px !important;
+      margin-bottom: 20px !important;
+    }
+    .profile-card .p-5 .space-y-1\.5 a.contact-link,
+    .profile-card .p-5 .space-y-1\.5 > span.block {
+      font-size: 12px !important;
+    }
+
+    .contact-link {
+      color: var(--color-olive);
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+      font-size: 15px !important;
+    }
+    .contact-link:hover { opacity: 0.7; }
+
+    /* Sticky Anchor Nav */
+    .anchor-nav {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      z-index: 45;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.3s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .anchor-nav.visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .anchor-nav.has-shadow {
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Scroll Progress Bar â€“ oberer Rand der Ankernavigation */
+    .scroll-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: var(--color-olive);
+      transition: width 0.1s linear;
+    }
+    .anchor-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(28, 25, 23, 0.5);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.3s ease, background 0.2s ease;
+      cursor: pointer;
+      background: transparent;
+      border: none !important;
+    }
+    .anchor-pill:hover { color: var(--color-olive); background: rgba(0, 20, 65, 0.03); }
+    .anchor-pill.active {
+      color: var(--color-olive);
+    }
+    .anchor-pill:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: -2px;
+    }
+    .anchor-nav-inner {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      gap: 0;
+      justify-content: stretch;
+    }
+    .anchor-nav-inner::-webkit-scrollbar { display: none; }
+    .anchor-pill { flex: 1; text-align: center; justify-content: center; }
+
+    .dept-section {
+      scroll-margin-top: 110px;
+    }
+
+    .anchor-nav-spacer {
+      display: none;
+    }
+
+    .map-placeholder {
+      background: rgba(0, 20, 65, 0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+      position: relative;
+    }
+    .map-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(0, 20, 65, 0.015) 10px,
+        rgba(0, 20, 65, 0.015) 20px
+      );
+    }
 </style>
-<style id='wp-emoji-styles-inline-css' type='text/css'>
-
-	img.wp-smiley, img.emoji {
-		display: inline !important;
-		border: none !important;
-		box-shadow: none !important;
-		height: 1em !important;
-		width: 1em !important;
-		margin: 0 0.07em !important;
-		vertical-align: -0.1em !important;
-		background: none !important;
-		padding: 0 !important;
-	}
-/*# sourceURL=wp-emoji-styles-inline-css */
-</style>
-<style id='wp-block-library-inline-css' type='text/css'>
-:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
-
-/*# sourceURL=wp-block-library-inline-css */
-</style>
-<style id='global-styles-inline-css' type='text/css'>
-:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);--wp--custom--layout--content-size: 100%;}:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){margin-left: auto !important;margin-right: auto !important;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
-/*# sourceURL=global-styles-inline-css */
-</style>
-
-<link rel='stylesheet' id='cmplz-general-css' href='https://www.acm.aero/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css?ver=1773664334' type='text/css' media='all' />
-<link rel='stylesheet' id='leadwerk-theme-core-css' href='https://www.acm.aero/wp-content/themes/leadwerk_theme/style.css?ver=1.0.12' type='text/css' media='all' />
-<link rel='stylesheet' id='leadwerk-theme-fonts-css' href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&#038;family=Inter:wght@300;400;500;600&#038;display=swap' type='text/css' media='all' />
-<link rel='stylesheet' id='leadwerk-theme-base-css' href='https://www.acm.aero/wp-content/themes/leadwerk_theme/css/base.css?ver=1.0.12' type='text/css' media='all' />
-<link rel='stylesheet' id='leadwerk-page-news-article-css' href='https://www.acm.aero/wp-content/themes/leadwerk_theme/css/page-news-article.css?ver=1.0.12' type='text/css' media='all' />
-<link rel='stylesheet' id='leadwerk-theme-mobile-qa-css' href='https://www.acm.aero/wp-content/themes/leadwerk_theme/css/mobile-qa.css?ver=1777463153' type='text/css' media='all' />
-<script type="text/javascript" src="https://cdn.tailwindcss.com" id="tailwindcss-js"></script>
-<script type="text/javascript" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/js/tailwind-config.js?ver=1.0.12" id="leadwerk-tailwind-config-js"></script>
-<link rel="https://api.w.org/" href="https://www.acm.aero/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.acm.aero/wp-json/wp/v2/pages/1247" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.acm.aero/xmlrpc.php?rsd" />
-<meta name="generator" content="WordPress 6.9.4" />
-<link rel='shortlink' href='index.html' />
-			<style>.cmplz-hidden {
-					display: none !important;
-				}</style><link rel="icon" href="Fotos/uploads/2026/04/cropped-Favicon_xs-2-32x32.webp" sizes="32x32" />
-<link rel="icon" href="Fotos/uploads/2026/04/cropped-Favicon_xs-2-192x192.webp" sizes="192x192" />
-<link rel="apple-touch-icon" href="Fotos/uploads/2026/04/cropped-Favicon_xs-2-180x180.webp" />
-<meta name="msapplication-TileImage" content="Fotos/uploads/2026/04/cropped-Favicon_xs-2-270x270.webp" />
-		<style id="lang-switcher-css">
-		.lang-switcher{position:fixed;bottom:24px;right:24px;z-index:99999;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,sans-serif}
-		.lang-switcher__current{display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:linear-gradient(135deg,#1e3a5f,#2563eb);color:#fff;border-radius:50%;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.35);transition:transform .2s,box-shadow .2s}
-		.lang-switcher__current:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(37,99,235,.45)}
-		.lang-switcher__dropdown{position:absolute;bottom:56px;right:0;min-width:140px;background:#fff;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.15);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s;overflow:hidden}
-		.lang-switcher:hover .lang-switcher__dropdown,.lang-switcher:focus-within .lang-switcher__dropdown{opacity:1;visibility:visible;transform:translateY(0)}
-		.lang-switcher__link{display:block;padding:10px 16px;color:#1e293b;text-decoration:none;font-size:14px;font-weight:500;transition:background .15s,color .15s}
-		.lang-switcher__link:hover{background:#f0f5ff;color:#2563eb}
-		.lang-switcher__link--active{color:#2563eb;font-weight:700}
-		@media(max-width:480px){.lang-switcher{bottom:16px;right:16px}.lang-switcher__current{width:40px;height:40px;font-size:11px}}
-		</style>
-		</head>
-<body data-cmplz=1 class="wp-singular page-template-default page page-id-1247 lang-de page-simple-header font-sans text-stone-800 antialiased">
+<link href="mobile-qa.css" rel="stylesheet"/>
+</head>
+<body class="font-sans text-stone-800 antialiased">
+<!-- HEADER -->
 <header class="fixed top-0 left-0 right-0 z-50 w-full" id="header">
 <div class="w-full px-6 sm:px-8 lg:px-10">
 <div class="flex items-center justify-center h-16 lg:h-20 header-logo-row relative transition-all duration-400">
@@ -105,14 +509,14 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </button>
 <div class="header-top-right hidden lg:flex absolute right-0 items-center gap-6">
 <div class="header-lang-switcher flex items-center gap-1 text-sm">
-<a class="header-lang-link header-lang-active" data-lang="de" href="datenschutz.html">DE</a>
+<a class="header-lang-link header-lang-active" data-lang="de" href="kontakt.html">DE</a>
 <span aria-hidden="true" class="header-lang-sep">|</span>
-<a class="header-lang-link" data-lang="en" href="https://www.acm.aero/en/privacy-policy/">EN</a>
+<a class="header-lang-link" data-lang="en" href="en/kontakt.html">EN</a>
 </div>
-<a class="header-link-button whitespace-nowrap" href="kontakt.html#zentrale">Kontakt aufnehmen</a>
+<a class="header-link-button whitespace-nowrap" href="kontakt.html#sales-operations">Flug anfragen</a>
 </div>
-<a aria-label="ACM AIR CHARTER Startseite" class="acm-logo-link hidden lg:block" href="index.html">
-<img alt="ACM AIR CHARTER Logo" class="acm-logo h-12 lg:h-14 w-auto transition-opacity duration-300" id="header-logo-img" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback'); if(f) f.style.display='flex';" src="Fotos/uploads/2026/04/Logo-final-weiss-rz_svg.svg" style="object-fit: contain; max-width: 160px;">
+<a aria-label="ACM AIR CHARTER Home" class="acm-logo-link hidden lg:block" href="index.html">
+<img alt="ACM AIR CHARTER Logo" class="acm-logo h-12 lg:h-14 w-auto transition-opacity duration-300" id="header-logo-img" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback'); if(f) f.style.display='flex';" src="logo.png" style="object-fit: contain; max-width: 160px;"/>
 <div class="flex items-center gap-2" id="header-logo-fallback" style="display: none;">
 <div class="header-logo-bg w-10 h-10 flex items-center justify-center">
 <span class="header-logo-text font-serif text-2xl">A</span>
@@ -123,8 +527,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 </div>
 </a>
-<a aria-label="ACM AIR CHARTER Startseite" class="acm-logo-link lg:hidden" href="index.html">
-<img alt="ACM AIR CHARTER Logo" class="acm-logo h-10 sm:h-12 w-auto transition-opacity duration-300" id="header-logo-img-mobile" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback-mobile'); if(f) f.style.display='flex';" src="Fotos/uploads/2026/04/Logo-final-weiss-rz_svg.svg" style="object-fit: contain;">
+<a aria-label="ACM AIR CHARTER Home" class="acm-logo-link lg:hidden" href="index.html">
+<img alt="ACM AIR CHARTER Logo" class="acm-logo h-10 sm:h-12 w-auto transition-opacity duration-300" id="header-logo-img-mobile" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback-mobile'); if(f) f.style.display='flex';" src="logo.png" style="object-fit: contain;"/>
 <div class="flex items-center gap-2" id="header-logo-fallback-mobile" style="display: none;">
 <div class="header-logo-bg w-8 h-8 flex items-center justify-center">
 <span class="header-logo-text font-serif text-xl">A</span>
@@ -140,14 +544,14 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div aria-hidden="true" class="header-divider-line"></div>
 <div class="flex items-center justify-center h-14 lg:h-16 relative header-nav-row transition-all duration-400">
 <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-[10rem] justify-center header-nav-visible" id="desktop-nav">
-<a class="header-nav-link" href="thats-acm.html">That’s ACM</a>
+<a class="header-nav-link" href="thats-acm.html">That's ACM</a>
 <div class="header-nav-charter-wrap">
 <a class="header-nav-link" href="charter.html">Charter</a>
-<div aria-label="Charter Untermenü" class="header-nav-dropdown">
+<div aria-label="Charter Untermen&uuml;" class="header-nav-dropdown">
 <a href="charter.html">Charter</a>
-<a href="global-7500.html">Bombardier Global 7500</a>
-<a href="global-6000.html">Bombardier Global 6000</a>
-<a href="global-xrs.html">Bombardier Global XRS</a>
+<a href="global-7500.html">Global 7500</a>
+<a href="global-6000.html">Global 6000</a>
+<a href="global-xrs.html">Global XRS</a>
 </div>
 </div>
 <a class="header-nav-link" href="aircraft-management.html">Aircraft Management</a>
@@ -160,7 +564,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="hidden lg:block fixed top-0 left-0 h-screen w-80 bg-white z-[100] transform -translate-x-full" id="desktop-menu">
 <div class="h-screen overflow-y-auto">
 <div class="p-6 flex items-center justify-between">
-<img alt="ACM AIR CHARTER Logo" class="h-10 w-auto" onerror="this.style.display='none'" src="Fotos/uploads/2026/04/Logo-final-weiss-rz_svg.svg">
+<img alt="ACM AIR CHARTER Logo" class="h-10 w-auto" onerror="this.style.display='none'" src="logo.png"/>
 <button aria-label="Close menu" class="p-2 hover:bg-stone-100 rounded-lg transition-colors" id="desktop-menu-close">
 <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
 <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -168,7 +572,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </button>
 </div>
 <nav class="p-6 space-y-1 desktop-menu-nav">
-<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="thats-acm.html">That’s ACM</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="thats-acm.html">That's ACM</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="charter.html">Charter</a>
 <a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="global-7500.html" style="font-size: 0.85rem;">Bombardier Global 7500</a>
 <a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="global-6000.html" style="font-size: 0.85rem;">Bombardier Global 6000</a>
@@ -184,27 +588,35 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="hidden lg:block fixed top-0 left-0 right-0 bottom-0 bg-black/20 backdrop-blur-sm z-[99] opacity-0 transition-opacity duration-300" id="desktop-menu-backdrop"></div>
 <div class="lg:hidden hidden" id="mobile-menu">
 <nav class="max-w-7xl mx-auto px-6 py-6 space-y-1 mobile-menu-nav">
-<a class="mobile-menu-link block py-3" href="thats-acm.html">That’s ACM</a>
+<a class="mobile-menu-link block py-3" href="thats-acm.html">That's ACM</a>
 <a class="mobile-menu-link block py-3" href="charter.html">Charter</a>
-<a class="mobile-menu-link block py-3" href="global-7500.html">Bombardier Global 7500</a>
-<a class="mobile-menu-link block py-3" href="global-6000.html">Bombardier Global 6000</a>
-<a class="mobile-menu-link block py-3" href="global-xrs.html">Bombardier Global XRS</a>
 <a class="mobile-menu-link block py-3" href="aircraft-management.html">Aircraft Management</a>
 <a class="mobile-menu-link block py-3" href="maintenance.html">Maintenance</a>
+<a class="mobile-menu-link block py-3" href="karriere.html">Karriere</a>
+<a class="mobile-menu-link block py-3" href="news.html">News</a>
+<a class="mobile-menu-link block py-3" href="kontakt.html">Kontakt</a>
 <div class="pt-4 mt-2 border-t border-stone-100 flex items-center">
-<a class="text-sm font-semibold text-stone-500 hover:text-olive transition-colors" href="https://www.acm.aero/en/privacy-policy/">EN</a>
+<a class="text-sm font-semibold text-stone-500 hover:text-olive transition-colors" href="en/kontakt.html">EN</a>
 </div>
 </nav>
 </div>
-</header><section class="content-section content-section--white legal-content pt-32 pb-24">
+</header>
+<!-- Scroll to Top -->
+<button aria-label="Nach oben scrollen" id="scroll-to-top">
+<svg fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 15l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+<main>
+<section class="content-section content-section--white legal-content pt-32 pb-24">
 <div class="max-w-3xl mx-auto px-6">
 <h1 class="legal-title font-serif text-4xl text-stone-900 mb-8">Datenschutz</h1>
-<div class="legal-body text-stone-600 leading-relaxed prose prose-stone max-w-none"><div class="row  fadeInUp fadeUp">
-<p>Wir freuen uns über den Besuch unserer Webseiten und Ihr Interesse an unserem Unternehmen und unseren Dienstleistungen. Der Schutz Ihrer persönlicher Daten ist für uns von großer Wichtigkeit. Unsere Datenschutzpraxis steht im Einklang mit den Bestimmungen der EU Datenschutz-Grundverordnung (EU-DSGVO) sowie weiterer Vorschriften des Datenschutzes im Internet.<br><br></p>
-<p>Sofern Sie uns persönliche Daten mitteilen, werden wir diese entsprechend der datenschutzrechtlichen Bestimmungen behandeln. Daten, die Sie uns per E-Mail senden, werden über unseren E-Mail-Provider in einer gesicherten Umgebung an uns weitergeleitet und nach Beantwortung umgehend gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.<br><br></p>
-<p>Bitte beachten Sie bei der Korrespondenz über E-Mail, dass dies keine sichere Kommunikationsform darstellt und die Inhalte nicht vor dem unbefugten Zugriff Dritter geschützt sind. Für vertrauliche Nachrichten empfehlen wir den Postweg.<br><br><br></p>
+<div class="legal-body text-stone-600 leading-relaxed prose prose-stone max-w-none">
+  <div class="row  fadeInUp fadeUp" style="visibility: visible;">
+		<h2>Datenschutzerklärung.</h2>
+<p>Wir freuen uns über den Besuch unserer Webseiten und Ihr Interesse an unserem Unternehmen und unseren Dienstleistungen. Der Schutz Ihrer persönlicher Daten ist für uns von großer Wichtigkeit. Unsere Datenschutzpraxis steht im Einklang mit den Bestimmungen der EU Datenschutz-Grundverordnung (EU-DSGVO) sowie weiterer Vorschriften des Datenschutzes im Internet.</p>
+<p>Sofern Sie uns persönliche Daten mitteilen, werden wir diese entsprechend der datenschutzrechtlichen Bestimmungen behandeln. Daten, die Sie uns per E-Mail senden, werden über unseren E-Mail-Provider in einer gesicherten Umgebung an uns weitergeleitet und nach Beantwortung umgehend gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+<p>Bitte beachten Sie bei der Korrespondenz über E-Mail, dass dies keine sichere Kommunikationsform darstellt und die Inhalte nicht vor dem unbefugten Zugriff Dritter geschützt sind. Für vertrauliche Nachrichten empfehlen wir den Postweg.</p>
 <p><strong>Personenbezogene Daten</strong></p>
-<p>Personenbezogene Daten sind Informationen, die Rückschlüsse auf Ihre Identität ermöglichen. Darunter fallen Informationen wie Ihr richtiger Name, Ihre Adresse, Postanschrift oder Telefonnummer.<br><br><br></p>
+<p>Personenbezogene Daten sind Informationen, die Rückschlüsse auf Ihre Identität ermöglichen. Darunter fallen Informationen wie Ihr richtiger Name, Ihre Adresse, Postanschrift oder Telefonnummer.</p>
 <p><strong>Erhebung und Verarbeitung persönlicher Daten</strong></p>
 <p>In der Regel können Sie unsere Webseiten besuchen, ohne dass wir persönliche Daten von Ihnen benötigen.</p>
 <p>Aus technischen Gründen übermittelt Ihr Internet-Browser bei jedem Zugriff auf unsere Webseiten folgende Daten an unseren Webserver:</p>
@@ -214,33 +626,39 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <li>die Webseiten, die Sie innerhalb unseres Internetangebots besuchen sowie Datum und Uhrzeit Ihres Besuches</li>
 <li>das von Ihnen verwendete Betriebssystem, der Browsername und die Browserversion.</li>
 </ul>
-<p>Diese Daten werden anonym gespeichert und dienen ausschließlich statistischen Zwecken (z. B. zur Auswertung, wie häufig die einzelnen Seiten unseres Angebots besucht werden) oder der technischen Netzwerk- und Systemüberwachung, um Störungen im Serverbetrieb feststellen zu können (Logfiles).<br><br><br></p>
+<p>Diese Daten werden anonym gespeichert und dienen ausschließlich statistischen Zwecken (z. B. zur Auswertung, wie häufig die einzelnen Seiten unseres Angebots besucht werden) oder der technischen Netzwerk- und Systemüberwachung, um Störungen im Serverbetrieb feststellen zu können (Logfiles).</p>
 <p><strong>Einwilligungsvorbehalt</strong></p>
-<p>Sofern wir personenbezogene Daten zu anderen als den oben genannten Zwecken erheben, verarbeiten oder übermitteln wollen, so werden wir zuvor Ihre ausdrückliche und freiwillige Einwilligung einholen. Die Nutzung unseres Angebots wird nicht von der Erteilung Ihrer Einwilligung abhängig sein, soweit dies rechtlich und technisch möglich ist.<br><br></p>
-<p>Eine einmal erteilte Einwilligung zur weitergehenden Nutzung Ihrer personenbezogenen Daten können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Den Widerruf richten Sie bitte an:<br><br></p>
-<p>Per Post:<br>ACM AIR CHARTER Luftfahrtgesellschaft mbH<br>Montreal Avenue D 415<br>77836 Rheinmünster<br>Deutschland<br><br></p>
-<p>Per Email:<br><a href="mailto:info@acm.aero">info@acm.aero</a><br><br><br></p>
+<p>Sofern wir personenbezogene Daten zu anderen als den oben genannten Zwecken erheben, verarbeiten oder übermitteln wollen, so werden wir zuvor Ihre ausdrückliche und freiwillige Einwilligung einholen. Die Nutzung unseres Angebots wird nicht von der Erteilung Ihrer Einwilligung abhängig sein, soweit dies rechtlich und technisch möglich ist.</p>
+<p>Eine einmal erteilte Einwilligung zur weitergehenden Nutzung Ihrer personenbezogenen Daten können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Den Widerruf richten Sie bitte an:</p>
+<p>Per Post:<br>
+ACM AIR CHARTER Luftfahrtgesellschaft mbH<br>
+Montreal Avenue D 415<br>
+77836 Rheinmünster<br>
+Deutschland</p>
+<p>Per Email:<br>
+<a href="mailto:info@acm.aero">info@acm.aero</a></p>
 <p><strong>Weitergabe personenbezogener Daten an Dritte</strong></p>
-<p>Entsprechend den jeweils geltenden Gesetzen und Vorschriften zum Schutz personenbezogener Daten werden alle im Rahmen unserer Dienstleistungen anfallenden und erhobenen personenbezogenen Daten nur zum Zweck der Vertragsabwicklung erhoben, verarbeitet und genutzt.<br><br></p>
-<p>Wenn wir Dritte zur Unterstützung unserer Geschäftsabwicklung mit der Datenverarbeitung beauftragen, müssen sich diese verpflichten, sich nach unseren Datenschutzstandards zu richten und uns ein Recht einräumen, die Einhaltung dieser Standards und der gesetzlichen Vorgaben zu überprüfen. Rechtlich verantwortlich für die Einhaltung der gesetzlichen Datenschutzvorschriften bleibt auch in diesem Fall die ACM AIR CHARTER Luftfahrtgesellschaft mbH („Auftragsdatenverarbeitung“).<br><br></p>
-<p>Erhebungen und Übermittlung von personenbezogenen Daten an staatliche Einrichtungen, Behörden und zur Abwicklung des Luftbeförderungsvertrages erforderlichen Dritten erfolgen nur im Rahmen zwingender Rechtsvorschriften unter Beachtung des Datenschutzes.<br><br><br></p>
+<p>Entsprechend den jeweils geltenden Gesetzen und Vorschriften zum Schutz personenbezogener Daten werden alle im Rahmen unserer Dienstleistungen anfallenden und erhobenen personenbezogenen Daten nur zum Zweck der Vertragsabwicklung erhoben, verarbeitet und genutzt.</p>
+<p>Wenn wir Dritte zur Unterstützung unserer Geschäftsabwicklung mit der Datenverarbeitung beauftragen, müssen sich diese verpflichten, sich nach unseren Datenschutzstandards zu richten und uns ein Recht einräumen, die Einhaltung dieser Standards und der gesetzlichen Vorgaben zu überprüfen. Rechtlich verantwortlich für die Einhaltung der gesetzlichen Datenschutzvorschriften bleibt auch in diesem Fall die ACM AIR CHARTER Luftfahrtgesellschaft mbH („Auftragsdatenverarbeitung“).</p>
+<p>Erhebungen und Übermittlung von personenbezogenen Daten an staatliche Einrichtungen, Behörden und zur Abwicklung des Luftbeförderungsvertrages erforderlichen Dritten erfolgen nur im Rahmen zwingender Rechtsvorschriften unter Beachtung des Datenschutzes.</p>
 <p><strong>Sicherheitsmaßnahmen</strong></p>
-<p>ACM AIR CHARTER Luftfahrtges. mbH hat spezifische Sicherheitsmaßnahmen im technischen und organisatorischen Bereich getroffen, um Ihre persönlichen Daten vor Manipulationen, Verlust, Zerstörung oder Zugriff unberechtigter Personen zu schützen. Die Sicherheitsmaßnahmen entsprechen dem Stand der Technik und erfahren eine fortlaufende Anpassung an neue Entwicklungen. Alle unsere Mitarbeiter, die mit personenbezogenen Daten in Berührung kommen können, sind auf die Einhaltung der Datenschutzvorschriften verpflichtet und über die rechtlichen Vorgaben belehrt.<br><br><br></p>
+<p>ACM AIR CHARTER Luftfahrtges. mbH hat spezifische Sicherheitsmaßnahmen im technischen und organisatorischen Bereich getroffen, um Ihre persönlichen Daten vor Manipulationen, Verlust, Zerstörung oder Zugriff unberechtigter Personen zu schützen. Die Sicherheitsmaßnahmen entsprechen dem Stand der Technik und erfahren eine fortlaufende Anpassung an neue Entwicklungen. Alle unsere Mitarbeiter, die mit personenbezogenen Daten in Berührung kommen können, sind auf die Einhaltung der Datenschutzvorschriften verpflichtet und über die rechtlichen Vorgaben belehrt.</p>
 <p><strong>Aufbewahrung und Löschung personenbezogener Daten</strong></p>
-<p>Sämtliche Ihrer bei uns gespeicherten personenbezogenen Daten werden – sobald sie für die Zwecke, für die Sie erhoben wurden, nicht mehr benötigt werden – unmittelbar und unwiederbringlich gelöscht, sofern wir nicht aufgrund gesetzlicher Vorschriften zur Aufbewahrung verpflichtet sind. Sind wir zur Aufbewahrung verpflichtet, so werden die Daten mit Ablauf der gesetzlichen vorgeschriebenen Aufbewahrungspflichten unwiederbringlich gelöscht.<br><br><br></p>
+<p>Sämtliche Ihrer bei uns gespeicherten personenbezogenen Daten werden – sobald sie für die Zwecke, für die Sie erhoben wurden, nicht mehr benötigt werden – unmittelbar und unwiederbringlich gelöscht, sofern wir nicht aufgrund gesetzlicher Vorschriften zur Aufbewahrung verpflichtet sind. Sind wir zur Aufbewahrung verpflichtet, so werden die Daten mit Ablauf der gesetzlichen vorgeschriebenen Aufbewahrungspflichten unwiederbringlich gelöscht.</p>
 <p><strong>Cookies</strong></p>
-<p>Teilweise können auf unseren Webseiten sog. „Cookies“ zum Einsatz kommen. Dies sind kleine Textdateien, die von unserem Webserver auf Ihren Arbeitsplatzrechner übertragen werden. Cookies dienen dazu, den genutzten Arbeitsplatzrechner beim nächsten Besuch wiederzuerkennen und dem Server mitzuteilen, wann Sie zuletzt, welche Seiten unserer Homepage besucht haben. Personenbezogene Daten sind in den Cookies nicht enthalten und die Cookies werden auch nicht mit anderen bei uns gespeicherten personenbezogenen Daten verknüpft. Cookies können lediglich den verwendeten Arbeitsplatzrechner, nicht aber die Person des Nutzers identifizieren.<br><br></p>
-<p>Sollten Sie dennoch keine Cookies annehmen wollen, erfahren Sie in der Hilfe Ihres Browsers, wie Sie die Cookie-Funktion deaktivieren können (z. B. in Mozilla Firefox unter „Extras à Einstellungen à Datenschutz à Cookies anzeigen). Eine Einschränkung der Nutzbarkeit unseres Angebotes ist damit nicht verbunden.<br><br><br></p>
+<p>Teilweise können auf unseren Webseiten sog. „Cookies“ zum Einsatz kommen. Dies sind kleine Textdateien, die von unserem Webserver auf Ihren Arbeitsplatzrechner übertragen werden. Cookies dienen dazu, den genutzten Arbeitsplatzrechner beim nächsten Besuch wiederzuerkennen und dem Server mitzuteilen, wann Sie zuletzt, welche Seiten unserer Homepage besucht haben. Personenbezogene Daten sind in den Cookies nicht enthalten und die Cookies werden auch nicht mit anderen bei uns gespeicherten personenbezogenen Daten verknüpft. Cookies können lediglich den verwendeten Arbeitsplatzrechner, nicht aber die Person des Nutzers identifizieren.</p>
+<p>Sollten Sie dennoch keine Cookies annehmen wollen, erfahren Sie in der Hilfe Ihres Browsers, wie Sie die Cookie-Funktion deaktivieren können (z. B. in Mozilla Firefox unter „Extras à Einstellungen à Datenschutz à Cookies anzeigen). Eine Einschränkung der Nutzbarkeit unseres Angebotes ist damit nicht verbunden.</p>
 <p><strong>Nutzung von Microsoft 365</strong></p>
-<p>Wir verwenden Microsoft 365, eine Produktivitäts- und Cloud-Softwarelösung der Microsoft Corporation, One Microsoft Way, Redmond, WA 98052-6399, USA („Microsoft“), zur Durchführung und Verwaltung unserer internen und externen Kommunikation sowie zur Verarbeitung und Speicherung von Daten. Dazu zählen insbesondere die Dienste Microsoft Outlook (E-Mail und Kalender), Microsoft Teams (Kommunikation und Videokonferenzen) sowie Microsoft OneDrive (Cloud-Speicherlösung).<br><br></p>
-<p>Die Verarbeitung personenbezogener Daten im Rahmen der Nutzung von Microsoft 365 erfolgt auf Grundlage unseres berechtigten Interesses an einer effizienten und sicheren Gestaltung unserer Arbeitsprozesse gem. Art. 6 Abs. 1 lit. f DSGVO bzw. – sofern die Nutzung zur Vertragserfüllung erforderlich ist – gem. Art. 6 Abs. 1 lit. b DSGVO.<br><br></p>
-<p>Die Speicherdauer richtet sich nach den jeweiligen gesetzlichen Aufbewahrungsfristen sowie unseren internen Löschkonzepten.<br><br></p>
-<p>Microsoft verarbeitet personenbezogene Daten auch in unserem Auftrag gemäß Art. 28 DSGVO. Wir haben mit Microsoft einen entsprechenden Auftragsverarbeitungsvertrag abgeschlossen, der die datenschutzkonforme Verarbeitung sicherstellt. Die Datenverarbeitung erfolgt in Rechenzentren innerhalb der EU. Eine Übermittlung in Drittländer (z. B. USA) kann nicht ausgeschlossen werden, erfolgt jedoch auf Basis von EU-Standardvertragsklauseln gemäß Art. 46 DSGVO. Weitere Informationen dazu finden Sie unter:<br><a href="https://www.microsoft.com/trust-center/privacy">https://www.microsoft.com/trust-center/privacy</a><br><br><br></p>
+<p>Wir verwenden Microsoft 365, eine Produktivitäts- und Cloud-Softwarelösung der Microsoft Corporation, One Microsoft Way, Redmond, WA 98052-6399, USA („Microsoft“), zur Durchführung und Verwaltung unserer internen und externen Kommunikation sowie zur Verarbeitung und Speicherung von Daten. Dazu zählen insbesondere die Dienste Microsoft Outlook (E-Mail und Kalender), Microsoft Teams (Kommunikation und Videokonferenzen) sowie Microsoft OneDrive (Cloud-Speicherlösung).</p>
+<p>Die Verarbeitung personenbezogener Daten im Rahmen der Nutzung von Microsoft 365 erfolgt auf Grundlage unseres berechtigten Interesses an einer effizienten und sicheren Gestaltung unserer Arbeitsprozesse gem. Art. 6 Abs. 1 lit. f DSGVO bzw. – sofern die Nutzung zur Vertragserfüllung erforderlich ist – gem. Art. 6 Abs. 1 lit. b DSGVO.</p>
+<p>Die Speicherdauer richtet sich nach den jeweiligen gesetzlichen Aufbewahrungsfristen sowie unseren internen Löschkonzepten.</p>
+<p>Microsoft verarbeitet personenbezogene Daten auch in unserem Auftrag gemäß Art. 28 DSGVO. Wir haben mit Microsoft einen entsprechenden Auftragsverarbeitungsvertrag abgeschlossen, der die datenschutzkonforme Verarbeitung sicherstellt. Die Datenverarbeitung erfolgt in Rechenzentren innerhalb der EU. Eine Übermittlung in Drittländer (z. B. USA) kann nicht ausgeschlossen werden, erfolgt jedoch auf Basis von EU-Standardvertragsklauseln gemäß Art. 46 DSGVO. Weitere Informationen dazu finden Sie unter:<br>
+<a href="https://www.microsoft.com/trust-center/privacy">https://www.microsoft.com/trust-center/privacy</a></p>
 <p><strong>Verwendung Ihrer Bewerbungsdaten</strong></p>
-<p>Ihre persönlichen Bewerbungsdaten werden ausschließlich zweckgebunden und nur für das ausgeschriebene Bewerbungsverfahren verarbeitet. Eine darüber hinausgehende Nutzung oder Weitergabe an Dritte erfolgt nicht. Auch bei Initiativbewerbungen können Ihre Daten nur von der Personalabteilung und den in den Bewerbungsprozess eingebundenen Mitarbeitern der Fachabteilungen eingesehen werden, um Ihr Profil für passende Stellenangebote zu prüfen.<br><br></p>
-<p>Eine Löschung Ihrer persönlichen Bewerbungsdaten erfolgt grundsätzlich automatisch drei Monate nach Abschluss des Bewerbungsverfahrens bzw. drei Monate nach Bewerbungseingang einer Initiativbewerbung, es sei denn, Sie stimmen einer längeren Speicherung ausdrücklich zu.<br><br><br></p>
+<p>Ihre persönlichen Bewerbungsdaten werden ausschließlich zweckgebunden und nur für das ausgeschriebene Bewerbungsverfahren verarbeitet. Eine darüber hinausgehende Nutzung oder Weitergabe an Dritte erfolgt nicht. Auch bei Initiativbewerbungen können Ihre Daten nur von der Personalabteilung und den in den Bewerbungsprozess eingebundenen Mitarbeitern der Fachabteilungen eingesehen werden, um Ihr Profil für passende Stellenangebote zu prüfen.</p>
+<p>Eine Löschung Ihrer persönlichen Bewerbungsdaten erfolgt grundsätzlich automatisch drei Monate nach Abschluss des Bewerbungsverfahrens bzw. drei Monate nach Bewerbungseingang einer Initiativbewerbung, es sei denn, Sie stimmen einer längeren Speicherung ausdrücklich zu.</p>
 <p><strong>Einsatz und Verwendung eines Chatbots für Bewerber</strong></p>
-<p>Durch die Nutzung der Chatbot-Funktionen wird eine direkte Verbindung zu den Servern der Firma BeSocial GmbH, Springorumallee 2, 44795 Bochum, hergestellt. Durch Ihre Eingabe im Chat werden Daten an die Server von BeSocial übermittelt.<br><br></p>
+<p>Durch die Nutzung der Chatbot-Funktionen wird eine direkte Verbindung zu den Servern der Firma BeSocial GmbH, Springorumallee 2, 44795 Bochum, hergestellt. Durch Ihre Eingabe im Chat werden Daten an die Server von BeSocial übermittelt.</p>
 <p>Über den Chatbot werden die wichtigsten Fragen zur Bewerbung zum Zweck der Bearbeitung Ihrer Bewerbung geklärt. Folgende Kategorien personenbezogener Daten werden dabei verarbeitet und gespeichert:</p>
 <ul>
 <li>Chatverlauf (enthält Name und Kontaktdaten des Bewerbers sowie relevante Stelle und Arbeitserfahrung)</li>
@@ -248,42 +666,58 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <li>Datum und Uhrzeit des Zugriffs</li>
 <li>Website, von der aus zugegriffen wurde</li>
 </ul>
-<p>Die Daten werden zur Bearbeitung des Bewerbungsverfahrens und zu statistischen Zwecken maximal sechs Monate gespeichert und danach automatisch gelöscht.<br><br></p>
-<p>Rechtsgrundlage für die Verarbeitung sind §26 Abs. 1 BDSG bzw. Art. 6 Abs. 1 S.2b DSGVO.<br><br><br></p>
+<p>Die Daten werden zur Bearbeitung des Bewerbungsverfahrens und zu statistischen Zwecken maximal sechs Monate gespeichert und danach automatisch gelöscht.</p>
+<p>Rechtsgrundlage für die Verarbeitung sind §26 Abs. 1 BDSG bzw. Art. 6 Abs. 1 S.2b DSGVO.</p>
 <p><strong>Ansprechpartner, Recht auf Auskunft und Korrektur</strong></p>
-<p>Entsprechend der gesetzlichen Bestimmungen haben wir einen Datenschutzbeauftragten bestellt. Wenn Sie Fragen hinsichtlich der Verarbeitung Ihrer persönlichen Daten haben, können Sie sich direkt an unten stehenden Kontakt wenden:<br><br></p>
-<p><a href="mailto:datenschutz@acm.aero">datenschutz@acm.aero</a><br><br></p>
-<p>oder<br><br></p>
-<p>ACM AIR CHARTER Luftfahrtgesellschaft mbH<br>Stefanie Matz<br>Datenschutzbeauftragte<br>Montreal Avenue D415<br>77836 Rheinmünster<br><br></p>
-<p>Telefon +49 7229 3022-199<br>Telefax +49 7229 3022-180<br><br></p>
-<p>Ihnen steht auch jederzeit ein Auskunftsanspruch darüber zu, ob und welche personenbezogenen Daten wir über Sie gespeichert haben. Auf Ihren Wunsch kann die Auskunft auch elektronisch erteilt werden. Sie haben ein Recht auf Löschung/Sperrung unzulässiger oder Korrektur unrichtiger Daten. Auf Anfrage werden wir Ihnen auch hierzu jederzeit gerne Auskunft erteilen.<br><br><br></p>
+<p>Entsprechend der gesetzlichen Bestimmungen haben wir einen Datenschutzbeauftragten bestellt. Wenn Sie Fragen hinsichtlich der Verarbeitung Ihrer persönlichen Daten haben, können Sie sich direkt an unten stehenden Kontakt wenden:</p>
+<p><a href="mailto:datenschutz@acm.aero">datenschutz@acm.aero</a></p>
+<p>oder</p>
+<p>ACM AIR CHARTER Luftfahrtgesellschaft mbH<br>
+Stefanie Matz<br>
+Datenschutzbeauftragte<br>
+Montreal Avenue D415<br>
+77836 Rheinmünster</p>
+<p>Telefon +49 7229 3022-199<br>
+Telefax +49 7229 3022-180</p>
+<p>Ihnen steht auch jederzeit ein Auskunftsanspruch darüber zu, ob und welche personenbezogenen Daten wir über Sie gespeichert haben. Auf Ihren Wunsch kann die Auskunft auch elektronisch erteilt werden. Sie haben ein Recht auf Löschung/Sperrung unzulässiger oder Korrektur unrichtiger Daten. Auf Anfrage werden wir Ihnen auch hierzu jederzeit gerne Auskunft erteilen.</p>
 <p><strong>Beschwerderecht bei der zuständigen Aufsichtsbehörde</strong></p>
 <p>Im Falle datenschutzrechtlicher Verstöße steht dem Betroffenen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
 <p>Zuständige Aufsichtsbehörde in datenschutzrechtlichen Fragen ist der Landesdatenschutzbeauftragte von Baden-Württemberg. Die Kontaktdaten können folgendem Link entnommen werden:</p>
-<p><a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_li%20nks-node.html">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_li nks-node.html</a><br><br><br>​<strong>Aktualisierung dieser Datenschutzerklärung</strong></p>
-<p>ACM AIR CHARTER Luftfahrtgesellschaft mbH behält sich vor, diese Datenschutzerklärung bei Bedarf zur Anpassung an technische Entwicklungen oder im Zusammenhang mit dem Angebot neuer Dienstleistungen oder Produkte zu aktualisieren. Die aktuelle Version können Sie stets auf der Internetseite <a href="datenschutz.html">https://www.acm.aero/datenschutz</a> einsehen.</p>
-</div></div>
+<p><a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_li%20nks-node.html">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_li nks-node.html</a>​</p>
+<p><strong>Aktualisierung dieser Datenschutzerklärung</strong></p>
+<p>ACM AIR CHARTER Luftfahrtgesellschaft mbH behält sich vor, diese Datenschutzerklärung bei Bedarf zur Anpassung an technische Entwicklungen oder im Zusammenhang mit dem Angebot neuer Dienstleistungen oder Produkte zu aktualisieren. Die aktuelle Version können Sie stets auf der Internetseite <a href="https://www.acm.aero/datenschutz">https://www.acm.aero/datenschutz</a> einsehen.</p>
+		</div>
 </div>
-</section><footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe">
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe">
 <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 mb-14 lg:mb-16">
 <div class="lg:max-w-sm">
-<img alt="ACM Logo" class="h-14 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="Fotos/uploads/2026/04/logo.webp">
+<img alt="ACM AIR CHARTER Logo" class="h-14 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="logo.png"/>
 <div style="display: none;">
 <span class="font-serif text-2xl text-stone-900 tracking-wide">ACM AIR CHARTER</span>
 </div>
-<p class="text-stone-500 text-sm leading-relaxed">Premium Business Aviation aus einer Hand – Charter, Management, Maintenance.</p>
+<p class="text-stone-500 text-sm leading-relaxed">
+            Integrierte Business Aviation &ndash; Charter, Management, Wartung unter einem Dach.
+          </p>
 </div>
 <div class="lg:text-right">
-<address class="not-italic text-sm leading-relaxed text-stone-600 mb-4"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Montreal%20Ave.%20D415%2C%2077836%20Rheinm%C3%BCnster%2C%20Deutschland" target="_blank" rel="noopener noreferrer">ACM AIR CHARTER Luftfahrtgesellschaft mbH<br>Montreal Ave. D415<br>77836 Rheinmünster</a></address>
+<address class="not-italic text-sm leading-relaxed text-stone-600 mb-4">
+            ACM AIR CHARTER Luftfahrtgesellschaft mbH<br/>
+            Montreal Ave. D415<br/>
+            77836 Rheinm&uuml;nster
+          </address>
 <div class="space-y-1 text-sm">
-<a class="block text-olive hover:text-olive-dark transition-colors" href="tel:+4972293022-0">+49 7229 3022-0</a>
+<a class="block text-olive hover:text-olive-dark transition-colors" href="tel:+49722930220">+49 7229 3022-0</a>
 <a class="block text-olive hover:text-olive-dark transition-colors" href="mailto:info@acm.aero">info@acm.aero</a>
 </div>
 </div>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-12 py-10 border-t border-stone-200">
-<div data-leadwerk-footer-col="services">
+<div>
 <h4 class="text-stone-900 font-serif text-lg mb-4">Leistungen</h4>
 <ul class="space-y-2.5 text-sm">
 <li><a class="hover:text-olive transition-colors" href="charter.html">Charter</a></li>
@@ -291,523 +725,196 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <li><a class="hover:text-olive transition-colors" href="maintenance.html">Maintenance</a></li>
 </ul>
 </div>
-<div data-leadwerk-footer-col="company">
+<div>
 <h4 class="text-stone-900 font-serif text-lg mb-4">Unternehmen</h4>
 <ul class="space-y-2.5 text-sm">
-<li><a class="hover:text-olive transition-colors" href="thats-acm.html">That’s ACM</a></li>
+<li><a class="hover:text-olive transition-colors" href="thats-acm.html">Das ist ACM</a></li>
 <li><a class="hover:text-olive transition-colors" href="karriere.html">Karriere</a></li>
 <li><a class="hover:text-olive transition-colors" href="news.html">News</a></li>
 <li><a class="hover:text-olive transition-colors" href="kontakt.html">Kontakt</a></li>
 </ul>
 </div>
-<div data-leadwerk-footer-col="legal">
+<div>
 <h4 class="text-stone-900 font-serif text-lg mb-4">Rechtliches</h4>
 <ul class="space-y-2.5 text-sm">
 <li><a class="hover:text-olive transition-colors" href="impressum.html">Impressum</a></li>
 <li><a class="hover:text-olive transition-colors" href="datenschutz.html">Datenschutz</a></li>
-<li><a class="hover:text-olive transition-colors" href="agb.html">AGB</a></li>
+<li><a class="hover:text-olive transition-colors" href="#">AGB</a></li>
 </ul>
 </div>
-<div data-leadwerk-footer-col="social">
+<div>
 <h4 class="text-stone-900 font-serif text-lg mb-4">Folgen Sie uns</h4>
 <div class="flex items-center gap-4 mb-6">
-<a aria-label="LinkedIn" class="text-stone-400 hover:text-olive transition-colors" href="https://www.linkedin.com/company/acm-air-charter-luftfahrtgesellschaft-mbh" target="_blank" rel="noopener noreferrer">
+<a aria-label="LinkedIn" class="text-stone-400 hover:text-olive transition-colors" href="#">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
 </a>
-<a aria-label="Instagram" class="text-stone-400 hover:text-olive transition-colors" href="https://www.instagram.com/acmaircharter/" target="_blank" rel="noopener noreferrer">
+<a aria-label="Instagram" class="text-stone-400 hover:text-olive transition-colors" href="#">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
 </a>
 </div>
 <div class="mb-6">
-<img alt="IS-BAO Registered Company Stage 3" class="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300" onerror="this.style.display='none';" src="is-bao-registered-company-stages3-01.webp" title="IS-BAO Registered Company Stage 3">
+<img alt="IS-BAO Registered Company Stage 3" class="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300" onerror="this.style.display='none';" src="is-bao-registered-company-stages3-01.webp" title="IS-BAO Registered Company Stage 3"/>
 </div>
 <div class="flex items-center gap-2 text-sm">
-<a aria-label="Deutsche Sprache" class="language-btn px-2 py-1 transition-all duration-200 active" data-lang="de" href="datenschutz.html" id="lang-de">DE</a>
+<a aria-label="Deutsche Sprache" class="language-btn px-2 py-1 transition-all duration-200 active" data-lang="de" href="kontakt.html" id="lang-de">DE</a>
 <span class="text-stone-400">|</span>
-<a aria-label="Englische Sprache" class="language-btn px-2 py-1 transition-all duration-200" data-lang="en" href="https://www.acm.aero/en/privacy-policy/" id="lang-en">EN</a>
+<a aria-label="Englische Sprache" class="language-btn px-2 py-1 transition-all duration-200" data-lang="en" href="en/kontakt.html" id="lang-en">EN</a>
 </div>
 </div>
 </div>
 <div class="pt-8 border-t border-stone-200">
-<p class="text-center text-stone-500 text-sm">© 2026 ACM AIR CHARTER GmbH. Alle Rechte vorbehalten.</p>
+<p class="text-center text-stone-500 text-sm">
+          &copy; 2026 ACM AIR CHARTER GmbH. Alle Rechte vorbehalten.
+        </p>
 </div>
 </div>
-</footer>﻿<!-- Scroll to Top Button -->
-<button aria-label="Nach oben scrollen" id="scroll-to-top" title="Nach oben scrollen">
-<svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</button><!-- ============================================
-       MODALS
-       ============================================ -->
-<!-- Flight Request Modal -->
-<div aria-labelledby="flight-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="flight-modal" role="dialog">
-<div class="modal-backdrop absolute inset-0" onclick="closeModal('flight-modal')"></div>
-<div class="modal-container">
-<div class="modal-content" id="flight-modal-content">
-<div class="modal-header">
-<h2 class="modal-title" id="flight-modal-title">Flug anfragen.</h2>
-<button aria-label="Schließen" class="modal-close" onclick="closeModal('flight-modal')">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-</div>
-<div class="modal-body">
-<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier würde die Anfrage gesendet werden.');">
-<div class="grid sm:grid-cols-2 gap-4">
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-from">Von *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-from" placeholder="z.B. Frankfurt (FRA)" required="" type="text">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-to">Nach *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-to" placeholder="z.B. London (LTN)" required="" type="text">
-</div>
-</div>
-<div class="grid sm:grid-cols-2 gap-4">
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-date">Datum *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-date" required="" type="date">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-pax">Passagiere *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-pax" max="19" min="1" placeholder="Anzahl" required="" type="number">
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-email">E-Mail *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-email" placeholder="ihre@email.de" required="" type="email">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-phone">Telefon</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-phone" placeholder="+49 ..." type="tel">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-message">Nachricht</label>
-<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="flight-message" placeholder="Besondere Wünsche oder Anforderungen..." rows="3"></textarea>
-</div>
-<div class="flex items-start gap-3">
-<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="flight-privacy" required="" type="checkbox">
-<label class="text-sm text-stone-600" for="flight-privacy">
-                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
-              </label>
-</div>
-<button class="w-full btn-filled" type="submit">
-              Anfrage senden
-            </button>
-</form>
-<!-- KOMMENTAR: Matomo Event Tracking hier einfÃƒÂ¼gen
-          <script>
-            // _paq.push(['trackEvent', 'Forms', 'Submit', 'Flight Request']);
-          </script>
-          -->
-</div>
-</div>
-</div>
-</div>
-<!-- Maintenance Modal -->
-<div aria-labelledby="maintenance-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="maintenance-modal" role="dialog">
-<div class="modal-backdrop absolute inset-0" onclick="closeModal('maintenance-modal')"></div>
-<div class="modal-container">
-<div class="modal-content" id="maintenance-modal-content">
-<div class="modal-header">
-<h2 class="modal-title" id="maintenance-modal-title">Maintenance Slot anfragen.</h2>
-<button aria-label="Schließen" class="modal-close" onclick="closeModal('maintenance-modal')">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-</div>
-<div class="modal-body">
-<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier würde die Anfrage gesendet werden.');">
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-aircraft">Flugzeugtyp *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-aircraft" placeholder="z.B. Bombardier Global 6000" required="" type="text">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-reg">Registrierung</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-reg" placeholder="z.B. D-ACMA" type="text">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-type">Art der Wartung *</label>
-<select class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors bg-white" id="maint-type" required="">
-<option value="">Bitte wählen...</option>
-<option value="line">Line Maintenance</option>
-<option value="base">Base Maintenance</option>
-<option value="avionics">Avionik</option>
-<option value="cabin">Cabin Refurbishment</option>
-<option value="aog">AOG Support</option>
-<option value="other">Sonstiges</option>
-</select>
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-date">Gewünschter Zeitraum *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-date" placeholder="z.B. Februar 2026" required="" type="text">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-email">E-Mail *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-email" placeholder="ihre@email.de" required="" type="email">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-message">Details zur Anfrage</label>
-<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="maint-message" placeholder="Beschreiben Sie den Wartungsbedarf..." rows="3"></textarea>
-</div>
-<div class="flex items-start gap-3">
-<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="maint-privacy" required="" type="checkbox">
-<label class="text-sm text-stone-600" for="maint-privacy">
-                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
-              </label>
-</div>
-<button class="w-full btn-filled" type="submit">
-              Slot anfragen
-            </button>
-</form>
-</div>
-</div>
-</div>
-</div>
-<!-- Management Modal -->
-<div aria-labelledby="management-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="management-modal" role="dialog">
-<div class="modal-backdrop absolute inset-0" onclick="closeModal('management-modal')"></div>
-<div class="modal-container">
-<div class="modal-content" id="management-modal-content">
-<div class="modal-header">
-<h2 class="modal-title" id="management-modal-title">Management-Gespräch.</h2>
-<button aria-label="Schließen" class="modal-close" onclick="closeModal('management-modal')">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-</div>
-<div class="modal-body">
-<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier würde die Anfrage gesendet werden.');">
-<div class="grid sm:grid-cols-2 gap-4">
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-name">Name *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-name" placeholder="Ihr Name" required="" type="text">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-company">Unternehmen</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-company" placeholder="Firma (optional)" type="text">
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-aircraft">Flugzeugtyp</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-aircraft" placeholder="z.B. Cessna Citation XLS+" type="text">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-email">E-Mail *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-email" placeholder="ihre@email.de" required="" type="email">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-phone">Telefon *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-phone" placeholder="+49 ..." required="" type="tel">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-message">Ihre Anfrage</label>
-<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="mgmt-message" placeholder="Was möchten Sie besprechen?" rows="3"></textarea>
-</div>
-<div class="flex items-start gap-3">
-<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="mgmt-privacy" required="" type="checkbox">
-<label class="text-sm text-stone-600" for="mgmt-privacy">
-                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
-              </label>
-</div>
-<button class="w-full btn-filled" type="submit">
-              Gespräch vereinbaren
-            </button>
-</form>
-</div>
-</div>
-</div>
-</div>
-<!-- Career Modal -->
-<div aria-labelledby="career-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="career-modal" role="dialog">
-<div class="modal-backdrop absolute inset-0" onclick="closeModal('career-modal')"></div>
-<div class="modal-container">
-<div class="modal-content" id="career-modal-content">
-<div class="modal-header">
-<h2 class="modal-title" id="career-modal-title">Online Bewerbung.</h2>
-<button aria-label="Schließen" class="modal-close" onclick="closeModal('career-modal')">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-</div>
-<div class="modal-body">
-<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier würde die Bewerbung gesendet werden.');">
-<div class="grid sm:grid-cols-2 gap-4">
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="career-firstname">Vorname *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-firstname" required="" type="text">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="career-lastname">Nachname *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-lastname" required="" type="text">
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="career-email">E-Mail *</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-email" placeholder="ihre@email.de" required="" type="email">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="career-phone">Telefon</label>
-<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-phone" placeholder="+49 ..." type="tel">
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="career-position">Gewünschte Position *</label>
-<select class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors bg-white" id="career-position" required="">
-<option value="">Bitte wählen...</option>
-<option value="mechanic">Flugzeugmechaniker (m/w/d)</option>
-<option value="avionics">Avionik-Techniker (m/w/d)</option>
-<option value="engineer">Ingenieur (m/w/d)</option>
-<option value="pilot">Pilot (m/w/d)</option>
-<option value="ops">Flight Operations (m/w/d)</option>
-<option value="other">Initiativbewerbung</option>
-</select>
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1" for="career-message">Anschreiben / Motivation</label>
-<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="career-message" placeholder="Erzählen Sie uns von sich..." rows="4"></textarea>
-</div>
-<div>
-<label class="block text-sm font-medium text-stone-700 mb-1">Lebenslauf (PDF)</label>
-<div class="border-2 border-dashed border-stone-300 rounded-lg p-4 text-center hover:border-stone-400 transition-colors cursor-pointer">
-<input accept=".pdf" class="hidden" id="career-cv" type="file">
-<label class="cursor-pointer" for="career-cv">
-<svg class="w-8 h-8 mx-auto text-stone-400 mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</svg>
-<span class="text-sm text-stone-600">PDF-Datei auswählen</span>
-</label>
-</div>
-</div>
-<div class="flex items-start gap-3">
-<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="career-privacy" required="" type="checkbox">
-<label class="text-sm text-stone-600" for="career-privacy">
-                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
-              </label>
-</div>
-<button class="w-full btn-filled" type="submit">
-              Bewerbung absenden
-            </button>
-</form>
-</div>
-</div>
-</div>
-</div>
-<!-- Starlink Authorized Reseller Pop-up (nach 20 % Scroll) -->
-<div aria-labelledby="starlink-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="starlink-modal" role="dialog">
-<div class="modal-backdrop absolute inset-0" onclick="closeModal('starlink-modal')"></div>
-<div class="modal-container">
-<div class="modal-content starlink-popup-content" id="starlink-modal-content">
-<div class="modal-header">
-<h2 class="modal-title" id="starlink-modal-title">ACM – Authorized Reseller für Starlink.</h2>
-<button aria-label="Schließen" class="modal-close" onclick="closeModal('starlink-modal')">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-</div>
-<div class="starlink-popup-image">
-<img alt="Starlink Antenne auf Business-Jet – ACM Authorized Reseller" height="280" loading="lazy" src="Fotos/starlink-popup.webp" width="400">
-</div>
-<div class="starlink-popup-body modal-body">
-<p class="starlink-badge">Starlink Authorized Reseller</p>
-<p class="starlink-headline">Ihr Starlink-Partner für die Business Aviation.</p>
-<p class="starlink-teaser">
-            Starlink ist das Satelliten-Internet von SpaceX speziell für Business Jets: hohe Geschwindigkeit, 4K-Streaming und stabile Verbindung weltweit – auch über den Polarrouten. ACM ist autorisierter Reseller und Installationspartner.
-          </p>
-<a class="starlink-cta" href="kontakt.html#maintenance">Installation anfragen</a>
-</div>
-</div>
-</div>
-</div><script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/leadwerk_theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</footer>
+<script>    const desktopMenuBtn = document.getElementById('desktop-menu-btn');
+    const desktopMenuClose = document.getElementById('desktop-menu-close');
+    const desktopMenu = document.getElementById('desktop-menu');
+    const desktopMenuBackdrop = document.getElementById('desktop-menu-backdrop');
+
+    function openDesktopMenu() {
+      if (!desktopMenu || !desktopMenuBackdrop) return;
+      desktopMenu.classList.remove('hidden');
+      desktopMenuBackdrop.classList.remove('hidden');
+      requestAnimationFrame(() => { requestAnimationFrame(() => { desktopMenu.classList.add('show'); desktopMenuBackdrop.classList.add('show'); }); });
+      desktopMenuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDesktopMenu() {
+      if (!desktopMenu || !desktopMenuBackdrop) return;
+      desktopMenu.classList.remove('show'); desktopMenuBackdrop.classList.remove('show');
+      desktopMenuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      setTimeout(() => { desktopMenu.classList.add('hidden'); desktopMenuBackdrop.classList.add('hidden'); }, 350);
+    }
+    if (desktopMenuBtn) desktopMenuBtn.addEventListener('click', openDesktopMenu);
+    if (desktopMenuClose) desktopMenuClose.addEventListener('click', closeDesktopMenu);
+    if (desktopMenuBackdrop) desktopMenuBackdrop.addEventListener('click', closeDesktopMenu);
+    if (desktopMenu) { desktopMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => closeDesktopMenu()); }); }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && desktopMenu && desktopMenu.classList.contains('show')) closeDesktopMenu(); });
+
+    const header = document.getElementById('header');
+    function updateHeader() {
+      if (window.pageYOffset > 20) { header.classList.add('header-scrolled'); } else { header.classList.remove('header-scrolled'); if (desktopMenu && desktopMenu.classList.contains('show')) closeDesktopMenu(); }
+    }
+    window.addEventListener('scroll', updateHeader);
+    updateHeader();
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    // Language switcher state follows the rendered locale.
+    (function setActiveLang() {
+      const lang = (document.documentElement.lang || 'de').toLowerCase().startsWith('en') ? 'en' : 'de';
+      document.querySelectorAll('.header-lang-link').forEach(function (a) {
+        if ((a.getAttribute('data-lang') || '').toLowerCase() === lang) {
+          a.classList.add('header-lang-active');
+        } else {
+          a.classList.remove('header-lang-active');
+        }
+      });
+    })();
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          mobileMenu.classList.remove('mobile-menu-open');
+          setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenuBtn.setAttribute('aria-expanded', 'false'); }, 300);
+        } else {
+          mobileMenu.classList.remove('hidden'); mobileMenuBtn.setAttribute('aria-expanded', 'true');
+          requestAnimationFrame(() => { requestAnimationFrame(() => { mobileMenu.classList.add('mobile-menu-open'); }); });
+        }
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.remove('mobile-menu-open'); setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenuBtn.setAttribute('aria-expanded', 'false'); }, 300); }); });
+    }
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href'); if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const navEl = document.getElementById('anchor-nav');
+          const navHeight = navEl && navEl.classList.contains('visible') ? navEl.offsetHeight : 0;
+          const headerHeight = header.classList.contains('header-scrolled') ? header.offsetHeight : 0;
+          const offset = headerHeight + navHeight + 20;
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+        }
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+    }
+
+    function initScrollToTop() {
+      const scrollToTopBtn = document.getElementById('scroll-to-top'); if (!scrollToTopBtn) return;
+      function toggleScrollToTop() { if (window.scrollY > 300) { scrollToTopBtn.classList.add('visible'); } else { scrollToTopBtn.classList.remove('visible'); } }
+      scrollToTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      window.addEventListener('scroll', toggleScrollToTop, { passive: true }); toggleScrollToTop();
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initScrollToTop); } else { initScrollToTop(); }
+
+    // Fixed anchor nav: show/hide, highlight active section, progress bar
+    (function() {
+      const anchorNav = document.getElementById('anchor-nav');
+      const progressBar = document.getElementById('scroll-progress');
+      const pills = document.querySelectorAll('.anchor-pill[data-section]');
+      const sections = [];
+
+      pills.forEach(pill => {
+        const id = pill.getAttribute('data-section');
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, pill });
+      });
+
+      if (!sections.length || !anchorNav) return;
+
+      const firstSection = sections[0].el;
+      const lastSection = sections[sections.length - 1].el;
+
+      function updateAnchorNav() {
+        const firstSectionTop = firstSection.getBoundingClientRect().top;
+        const triggerPoint = 120;
+        const showNav = firstSectionTop <= triggerPoint;
+
+        if (showNav) {
+          anchorNav.classList.add('visible', 'has-shadow');
+        } else {
+          anchorNav.classList.remove('visible', 'has-shadow');
+        }
+
+        const stickyOffset = 56 + anchorNav.offsetHeight + 40;
+        let current = sections[0];
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= stickyOffset) {
+            current = s;
+          }
+        }
+
+        pills.forEach(p => p.classList.remove('active'));
+        if (current) current.pill.classList.add('active');
+
+        if (progressBar && sections.length) {
+          const contentStart = firstSection.offsetTop;
+          const contentEnd = lastSection.offsetTop + lastSection.offsetHeight;
+          const contentHeight = contentEnd - contentStart;
+          const scrolled = window.scrollY - contentStart + window.innerHeight * 0.5;
+          const progress = Math.max(0, Math.min(100, (scrolled / contentHeight) * 100));
+          progressBar.style.width = progress + '%';
+        }
+      }
+
+      window.addEventListener('scroll', updateAnchorNav, { passive: true });
+      updateAnchorNav();
+    })();
+  
 </script>
-<!-- Matomo --><script type="text/javascript">
-/* <![CDATA[ */
-(function () {
-function initTracking() {
-var _paq = window._paq = window._paq || [];
-_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);_paq.push(['alwaysUseSendBeacon']);_paq.push(['setTrackerUrl', "\/\/www.acm.aero\/wp-content\/plugins\/matomo\/app\/matomo.php"]);_paq.push(['setSiteId', '1']);var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-g.type='text/javascript'; g.async=true; g.src="\/\/www.acm.aero\/wp-content\/uploads\/matomo\/matomo.js"; s.parentNode.insertBefore(g,s);
-}
-if (document.prerendering) {
-	document.addEventListener('prerenderingchange', initTracking, {once: true});
-} else {
-	initTracking();
-}
-})();
-/* ]]> */
-</script>
-<!-- End Matomo Code -->
-<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
-<div id="cmplz-cookiebanner-container"><div class="cmplz-cookiebanner cmplz-hidden banner-1 banner-a optin cmplz-center cmplz-categories-type-view-preferences" aria-modal="true" data-nosnippet="true" role="dialog" aria-live="polite" aria-labelledby="cmplz-header-1-optin" aria-describedby="cmplz-message-1-optin">
-	<div class="cmplz-header">
-		<div class="cmplz-logo"></div>
-		<div class="cmplz-title" id="cmplz-header-1-optin">Zustimmung verwalten</div>
-		<div class="cmplz-close" tabindex="0" role="button" aria-label="Dialog schließen">
-			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
-		</div>
-	</div>
-
-	<div class="cmplz-divider cmplz-divider-header"></div>
-	<div class="cmplz-body">
-		<div class="cmplz-message" id="cmplz-message-1-optin"><p>Um dir ein optimales Erlebnis zu bieten, verwenden wir Technologien wie Cookies, um Geräteinformationen zu speichern und/oder darauf zuzugreifen. Wenn du diesen Technologien zustimmst, können wir Daten wie das Surfverhalten oder eindeutige IDs auf dieser Website verarbeiten. Wenn du deine Zustimmung nicht erteilst oder zurückziehst, können bestimmte Merkmale und Funktionen beeinträchtigt werden.</p></div>
-		<!-- categories start -->
-		<div class="cmplz-categories">
-			<details class="cmplz-category cmplz-functional" >
-				<summary>
-						<span class="cmplz-category-header">
-							<span class="cmplz-category-title">Funktional</span>
-							<span class='cmplz-always-active'>
-								<span class="cmplz-banner-checkbox">
-									<input type="checkbox"
-										   id="cmplz-functional-optin"
-										   data-category="cmplz_functional"
-										   class="cmplz-consent-checkbox cmplz-functional"
-										   size="40"
-										   value="1"/>
-									<label class="cmplz-label" for="cmplz-functional-optin"><span class="screen-reader-text">Funktional</span></label>
-								</span>
-								Immer aktiv							</span>
-							<span class="cmplz-icon cmplz-open">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
-							</span>
-						</span>
-				</summary>
-				<div class="cmplz-description">
-					<span class="cmplz-description-functional">Die technische Speicherung oder der Zugang ist unbedingt erforderlich für den rechtmäßigen Zweck, die Nutzung eines bestimmten Dienstes zu ermöglichen, der vom Teilnehmer oder Nutzer ausdrücklich gewünscht wird, oder für den alleinigen Zweck, die Übertragung einer Nachricht über ein elektronisches Kommunikationsnetz durchzuführen.</span>
-				</div>
-			</details>
-
-			<details class="cmplz-category cmplz-preferences" >
-				<summary>
-						<span class="cmplz-category-header">
-							<span class="cmplz-category-title">Preferences</span>
-							<span class="cmplz-banner-checkbox">
-								<input type="checkbox"
-									   id="cmplz-preferences-optin"
-									   data-category="cmplz_preferences"
-									   class="cmplz-consent-checkbox cmplz-preferences"
-									   size="40"
-									   value="1"/>
-								<label class="cmplz-label" for="cmplz-preferences-optin"><span class="screen-reader-text">Preferences</span></label>
-							</span>
-							<span class="cmplz-icon cmplz-open">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
-							</span>
-						</span>
-				</summary>
-				<div class="cmplz-description">
-					<span class="cmplz-description-preferences">The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.</span>
-				</div>
-			</details>
-
-			<details class="cmplz-category cmplz-statistics" >
-				<summary>
-						<span class="cmplz-category-header">
-							<span class="cmplz-category-title">Statistiken</span>
-							<span class="cmplz-banner-checkbox">
-								<input type="checkbox"
-									   id="cmplz-statistics-optin"
-									   data-category="cmplz_statistics"
-									   class="cmplz-consent-checkbox cmplz-statistics"
-									   size="40"
-									   value="1"/>
-								<label class="cmplz-label" for="cmplz-statistics-optin"><span class="screen-reader-text">Statistiken</span></label>
-							</span>
-							<span class="cmplz-icon cmplz-open">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
-							</span>
-						</span>
-				</summary>
-				<div class="cmplz-description">
-					<span class="cmplz-description-statistics">The technical storage or access that is used exclusively for statistical purposes.</span>
-					<span class="cmplz-description-statistics-anonymous">Die technische Speicherung oder der Zugriff, der ausschließlich zu anonymen statistischen Zwecken verwendet wird. Ohne eine Vorladung, die freiwillige Zustimmung deines Internetdienstanbieters oder zusätzliche Aufzeichnungen von Dritten können die zu diesem Zweck gespeicherten oder abgerufenen Informationen allein in der Regel nicht dazu verwendet werden, dich zu identifizieren.</span>
-				</div>
-			</details>
-			<details class="cmplz-category cmplz-marketing" >
-				<summary>
-						<span class="cmplz-category-header">
-							<span class="cmplz-category-title">Marketing</span>
-							<span class="cmplz-banner-checkbox">
-								<input type="checkbox"
-									   id="cmplz-marketing-optin"
-									   data-category="cmplz_marketing"
-									   class="cmplz-consent-checkbox cmplz-marketing"
-									   size="40"
-									   value="1"/>
-								<label class="cmplz-label" for="cmplz-marketing-optin"><span class="screen-reader-text">Marketing</span></label>
-							</span>
-							<span class="cmplz-icon cmplz-open">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
-							</span>
-						</span>
-				</summary>
-				<div class="cmplz-description">
-					<span class="cmplz-description-marketing">Die technische Speicherung oder der Zugriff ist erforderlich, um Nutzerprofile zu erstellen, um Werbung zu versenden oder um den Nutzer auf einer Website oder über mehrere Websites hinweg zu ähnlichen Marketingzwecken zu verfolgen.</span>
-				</div>
-			</details>
-		</div><!-- categories end -->
-			</div>
-
-	<div class="cmplz-links cmplz-information">
-		<ul>
-			<li><a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Optionen verwalten</a></li>
-			<li><a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Dienste verwalten</a></li>
-			<li><a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Verwalten von {vendor_count}-Lieferanten</a></li>
-			<li><a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/" aria-label="Weitere Informationen zu den Zwecken von TCF findest du in der Cookie-Datenbank.">Lese mehr über diese Zwecke</a></li>
-		</ul>
-			</div>
-
-	<div class="cmplz-divider cmplz-footer"></div>
-
-	<div class="cmplz-buttons">
-		<button class="cmplz-btn cmplz-accept">Akzeptieren</button>
-		<button class="cmplz-btn cmplz-deny">Ablehnen</button>
-		<button class="cmplz-btn cmplz-view-preferences">Einstellungen ansehen</button>
-		<button class="cmplz-btn cmplz-save-preferences">Einstellungen speichern</button>
-		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Einstellungen ansehen</a>
-			</div>
-
-	
-	<div class="cmplz-documents cmplz-links">
-		<ul>
-			<li><a class="cmplz-link cookie-statement" href="#" data-relative_url="">{title}</a></li>
-			<li><a class="cmplz-link privacy-statement" href="#" data-relative_url="">{title}</a></li>
-			<li><a class="cmplz-link impressum" href="#" data-relative_url="">{title}</a></li>
-		</ul>
-			</div>
-</div>
-</div>
-					<div id="cmplz-manage-consent" data-nosnippet="true"><button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Zustimmung verwalten</button>
-
-</div><script type="text/javascript" id="leadwerk-theme-main-js-extra">
-/* <![CDATA[ */
-var leadwerkThemeData = {"locale":"de","defaultLang":"de","wpformsTranslations":[]};
-//# sourceURL=leadwerk-theme-main-js-extra
-/* ]]> */
-</script>
-<script type="text/javascript" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/js/main.js?ver=1.0.12" id="leadwerk-theme-main-js"></script>
-<script type="text/javascript" id="cmplz-cookiebanner-js-extra">
-/* <![CDATA[ */
-var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"4239","version":"7.4.5","store_consent":"","do_not_track_enabled":"","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"https://www.acm.aero/wp-json/complianz/v1/","locale":"lang=de&locale=de_DE","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"34","cookie_path":"/","categories":{"statistics":"Statistiken","marketing":"Marketing"},"tcf_active":"","placeholdertext":"Klicke hier, um {category}-Cookies zu akzeptieren und diesen Inhalt zu aktivieren","css_file":"https://www.acm.aero/wp-content/uploads/complianz/css/banner-{banner_id}-{type}.css?v=4239","page_links":{"eu":{"cookie-statement":{"title":"","url":"https://www.acm.aero/news/acm-air-charter-nimmt-dritte-bombardier-global-7500-in-ihre-weltweit-gemanagte-flotte-auf/"}}},"tm_categories":"1","forceEnableStats":"","preview":"","clean_cookies":"","aria_label":"Klicke hier, um {category}-Cookies zu akzeptieren und diesen Inhalt zu aktivieren"};
-//# sourceURL=cmplz-cookiebanner-js-extra
-/* ]]> */
-</script>
-<script defer type="text/javascript" src="https://www.acm.aero/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1773664336" id="cmplz-cookiebanner-js"></script>
-<script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://www.acm.aero/wp-includes/js/wp-emoji-release.min.js?ver=6.9.4"}}
-</script>
-<script type="module">
-/* <![CDATA[ */
-/*! This file is auto-generated */
-const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
-//# sourceURL=https://www.acm.aero/wp-includes/js/wp-emoji-loader.min.js
-/* ]]> */
-</script>
+<script defer="" src="nav-active.js?v=20260319"></script>
 </body>
 </html>
