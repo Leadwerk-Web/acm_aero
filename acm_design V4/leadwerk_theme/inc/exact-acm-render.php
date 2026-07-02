@@ -37,6 +37,7 @@ function leadwerk_theme_render_exact_page_group( $group, $value, $post_id = 0 ) 
 	$source_key        = (string) get_post_meta( $post_id, 'leadwerk_source_key', true );
 	$template_sections = leadwerk_theme_get_source_template_sections( $source_key );
 	$sections          = is_array( $value ) ? array_values( $value ) : array();
+	$sections_by_layout = leadwerk_theme_index_exact_sections_by_layout( $sections );
 	$output            = '';
 	$index             = 0;
 
@@ -55,7 +56,13 @@ function leadwerk_theme_render_exact_page_group( $group, $value, $post_id = 0 ) 
 	}
 
 	foreach ( (array) $group['layouts'] as $layout_key => $layout_schema ) {
-		$section_value = isset( $sections[ $index ] ) && is_array( $sections[ $index ] ) ? $sections[ $index ] : array();
+		if ( isset( $sections_by_layout[ $layout_key ] ) ) {
+			$section_value = $sections_by_layout[ $layout_key ];
+		} elseif ( empty( $sections_by_layout ) && isset( $sections[ $index ] ) && is_array( $sections[ $index ] ) ) {
+			$section_value = $sections[ $index ];
+		} else {
+			$section_value = null;
+		}
 		$template_html = isset( $template_sections[ $index ] ) ? $template_sections[ $index ] : '';
 		$output       .= leadwerk_theme_render_exact_layout_section( $layout_key, $layout_schema, $section_value, $template_html );
 		$is_contact_page = ( 'acm-contact-v1' === $source_key )
@@ -74,6 +81,22 @@ function leadwerk_theme_render_exact_page_group( $group, $value, $post_id = 0 ) 
 	}
 
 	return $output;
+}
+
+function leadwerk_theme_index_exact_sections_by_layout( $sections ) {
+	$indexed = array();
+	foreach ( (array) $sections as $section ) {
+		if ( ! is_array( $section ) ) {
+			continue;
+		}
+		$layout_key = sanitize_key( (string) ( $section['acf_fc_layout'] ?? $section['layout'] ?? '' ) );
+		if ( '' === $layout_key || isset( $indexed[ $layout_key ] ) ) {
+			continue;
+		}
+		$indexed[ $layout_key ] = $section;
+	}
+
+	return $indexed;
 }
 
 function leadwerk_theme_render_exact_runtime_notice( $message, $post_id = 0 ) {
@@ -123,6 +146,10 @@ function leadwerk_theme_render_exact_layout_section( $layout_key, $layout_schema
 	}
 
 	leadwerk_theme_normalize_template_urls( $xpath, $section_node );
+
+	if ( ! is_array( $section ) ) {
+		return leadwerk_theme_dom_outer_html( $section_node );
+	}
 
 	$template = (string) ( $layout_schema['template'] ?? $layout_key );
 
@@ -472,6 +499,7 @@ function leadwerk_theme_get_acm_contact_anchor_nav_markup() {
 <div class="anchor-nav-inner py-1">
 <a class="anchor-pill" data-section="zentrale" href="#zentrale">Zentrale</a>
 <a class="anchor-pill" data-section="geschaeftsfuehrung" href="#geschaeftsfuehrung">Gesch&auml;ftsf&uuml;hrung</a>
+<a class="anchor-pill" data-section="flugbetrieb" href="#flugbetrieb">Flugbetrieb</a>
 <a class="anchor-pill" data-section="sales-operations" href="#sales-operations">Sales &amp; Operations</a>
 <a class="anchor-pill" data-section="camo" href="#camo">CAMO</a>
 <a class="anchor-pill" data-section="ground-operations" href="#ground-operations">Ground Ops</a>

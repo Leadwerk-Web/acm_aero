@@ -935,6 +935,7 @@ class Leadwerk_ACF_Filler {
 				'quick_links'             => '#kon-bereiche',
 				'dept_zentrale'           => '#zentrale',
 				'dept_geschaeftsfuehrung' => '#geschaeftsfuehrung',
+				'dept_flugbetrieb'        => '#flugbetrieb',
 				'dept_sales_operations'   => '#sales-operations',
 				'dept_camo'               => '#camo',
 				'dept_ground_operations'  => '#ground-operations',
@@ -2734,6 +2735,10 @@ class Leadwerk_ACF_Filler {
 			);
 			$ids = $query->get_posts();
 			$id  = ! empty( $ids ) ? (int) $ids[0] : 0;
+		}
+
+		if ( ! $id && $this->media_importer ) {
+			$id = (int) $this->media_importer->import_file( $path );
 		}
 
 		$this->attachment_cache[ $path ] = $id;

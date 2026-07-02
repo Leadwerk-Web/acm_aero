@@ -325,6 +325,7 @@ class Leadwerk_Content_Schema {
 					'quick_links'             => self::layout_acm_contact_command_grid(),
 					'dept_zentrale'           => self::layout_acm_contact_dept_section_layout( 'Zentrale' ),
 					'dept_geschaeftsfuehrung' => self::layout_acm_contact_dept_section_layout( 'Geschaeftsfuehrung' ),
+					'dept_flugbetrieb'        => self::layout_acm_contact_dept_section_layout( 'Flugbetrieb' ),
 					'dept_sales_operations'   => self::layout_acm_contact_dept_section_layout( 'Sales Operations' ),
 					'dept_camo'               => self::layout_acm_contact_dept_section_layout( 'CAMO' ),
 					'dept_ground_operations'  => self::layout_acm_contact_dept_section_layout( 'Ground Operations' ),
