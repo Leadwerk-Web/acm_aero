@@ -1585,7 +1585,7 @@ class Leadwerk_Importer {
 						'source_key'         => $page_config['source_key'],
 						'source_public_slug' => $this->get_public_slug( $page_config ),
 						'source_is_home'     => ! empty( $page_config['is_front_page'] ),
-						'public_slug'        => $this->get_public_slug( $page_config ),
+						'public_slug'        => $this->get_translation_public_slug_for_link( $page_config, (int) $en_result['post_id'], 'en' ),
 						'status'             => $this->get_translation_record_status( (int) $en_result['post_id'], 'en' ),
 						'is_home'            => ! empty( $page_config['is_front_page'] ),
 					)
@@ -2977,11 +2977,16 @@ class Leadwerk_Importer {
 		$post_data = array(
 			'post_type'    => $page_config['target_type'] ?? 'page',
 			'post_status'  => $status,
-			'post_name'    => $slug,
 			'post_parent'  => 0,
 			'post_content' => $this->get_default_block_content(),
 			'menu_order'   => isset( $page_config['menu_order'] ) ? (int) $page_config['menu_order'] : 0,
 		);
+
+		if ( ! $existing || 'en' !== $lang ) {
+			$post_data['post_name'] = $slug;
+		} else {
+			$result['preserved_slug'] = (string) get_post_field( 'post_name', $existing );
+		}
 
 		if ( 'de' === $lang || ! $existing ) {
 			$post_data['post_title'] = $title;
@@ -3672,6 +3677,63 @@ class Leadwerk_Importer {
 		}
 
 		return trim( (string) ( $page_config['slug'] ?? '' ), '/' );
+	}
+
+	/**
+	 * Resolve the translated public slug without overwriting an existing EN slug.
+	 *
+	 * Existing translated pages may have manually curated slugs (for example
+	 * /en/contact/ instead of /en/kontakt/). Import, single-page repair and
+	 * force-canonical sync should keep those values stable.
+	 *
+	 * @param array<string,mixed> $page_config Page config.
+	 * @param int                 $post_id     Translated post ID.
+	 * @param string              $lang        Language code.
+	 * @return string
+	 */
+	protected function get_translation_public_slug_for_link( $page_config, $post_id, $lang ) {
+		if ( ! empty( $page_config['is_front_page'] ) ) {
+			return '';
+		}
+
+		$fallback = sanitize_title( $this->get_public_slug( $page_config ) );
+		$post_id  = (int) $post_id;
+		$lang     = sanitize_key( (string) $lang );
+		if ( $post_id < 1 ) {
+			return $fallback;
+		}
+
+		$post = get_post( $post_id );
+		if ( ! $post instanceof WP_Post ) {
+			return $fallback;
+		}
+
+		$meta_key           = class_exists( 'Leadwerk_Translation_API' ) ? Leadwerk_Translation_API::META_PUBLIC_SLUG : 'leadwerk_public_slug';
+		$stored_public_slug = sanitize_title( trim( (string) get_post_meta( $post_id, $meta_key, true ), '/' ) );
+		$current_post_slug  = sanitize_title( trim( (string) $post->post_name, '/' ) );
+		$post_public_slug   = $current_post_slug;
+		$suffix             = '' !== $lang ? '-' . $lang : '';
+		if ( '' !== $suffix && strlen( $post_public_slug ) > strlen( $suffix ) && $suffix === substr( $post_public_slug, -strlen( $suffix ) ) ) {
+			$post_public_slug = substr( $post_public_slug, 0, -strlen( $suffix ) );
+		}
+
+		$default_internal_slug = sanitize_title( $this->build_internal_slug( $page_config, $lang, (string) $post->post_title ) );
+		if ( 'en' === $lang && '' !== $post_public_slug && $current_post_slug !== $default_internal_slug && $post_public_slug !== $fallback ) {
+			return $post_public_slug;
+		}
+
+		if ( '' !== $stored_public_slug ) {
+			return $stored_public_slug;
+		}
+
+		if ( class_exists( 'Leadwerk_Translation_API' ) && method_exists( 'Leadwerk_Translation_API', 'get_post_public_slug' ) ) {
+			$api_public_slug = sanitize_title( trim( (string) Leadwerk_Translation_API::get_post_public_slug( $post_id ), '/' ) );
+			if ( '' !== $api_public_slug ) {
+				return $api_public_slug;
+			}
+		}
+
+		return '' !== $post_public_slug ? $post_public_slug : $fallback;
 	}
 
 	/**
