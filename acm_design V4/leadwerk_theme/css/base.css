@@ -1,0 +1,1962 @@
+/* ==========================================================================
+   ACM AIR CHARTER - Base Styles
+   Extracted from canonical source HTML inline CSS for WordPress theme enqueue.
+   Includes: CSS variables, typography, hero, header/footer, buttons,
+            streamlines, image-zoom, slider, scroll-to-top, navigation.
+   ========================================================================== */
+
+
+    /* Custom CSS Variables & Base Styles - Jumeirah Style */
+    :root {
+      --color-accent: #001441;
+      --color-accent-hover: #000d2b;
+      --color-olive: #001441;
+      --color-olive-dark: #000d2b;
+      --color-sand: #FAF8F5;
+      --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.07);
+    }
+    
+    /* Emblem Ã¼ber h2 â€“ 35px HÃ¶he, Olive (vorgegebene Farbe) */
+    .section-emblem {
+      height: 35px;
+      width: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+      filter: brightness(0) saturate(100%) invert(9%) sepia(45%) saturate(5000%) hue-rotate(208deg);
+    }
+    .section-emblem-on-dark {
+      filter: brightness(0) invert(1);
+    }
+    .section-emblem-left {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    /* h2 einheitlich 48px, line-height 1 */
+    section h2 {
+      font-size: 48px !important;
+      line-height: 1 !important;
+    }
+    
+    /* Hero Statement â€“ eigene SchriftgrÃ¶ÃŸe */
+    .hero-statement-section p {
+      font-size: 40px !important;
+    }
+    
+    .max-w-xl {
+      max-width: 56rem;
+      padding: 0;
+      overflow: visible;
+    }
+    
+    .max-w-6xl {
+      max-width: 100rem;
+    }
+    
+    .content-box-outer {
+      padding-left: 7rem;
+      padding-right: 7rem;
+      overflow: visible;
+    }
+    
+    /* Alle Borders auf der gesamten Seite auf 0 (Bilder, Buttons, Cards, Inputs, etc.) */
+    *,
+    *::before,
+    *::after {
+      border-width: 0 !important;
+      border-style: none !important;
+    }
+    img,
+    input,
+    select,
+    textarea,
+    a,
+    .card-hover,
+    [class*="border"] {
+      border: none !important;
+      border-width: 0 !important;
+    }
+    footer { border: none !important; background: linear-gradient(to right, transparent 0%, #e7e5e4 10vw, #e7e5e4 90vw, transparent 100%) no-repeat top / 100% 1px, #ffffff !important; }
+    /* Buttons: nur Standard-Buttons zurÃ¼cksetzen, CTA-Buttons ausnehmen */
+    button:not(.btn-filled):not(.btn-outline):not(.btn-primary):not(.btn-filled-white):not(.btn-outline-white) {
+      border: none !important;
+      border-width: 0 !important;
+    }
+    
+    /* Alle Abrundungen auf 0 â€“ keine rounded corners (Bilder, Buttons, Cards, etc.) */
+    *,
+    *::before,
+    *::after,
+    img,
+    button,
+    input,
+    select,
+    textarea,
+    a,
+    .card-hover,
+    .btn-primary,
+    [class*="rounded"] {
+      border-radius: 0 !important;
+    }
+    
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* FlieÃŸtext: einheitlich Inter 15px, 400, #666666 */
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #777777;
+      letter-spacing: 0.01em;
+      background-color: #FDFCFA;
+    }
+    p {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px !important;
+      font-weight: 400 !important;
+      color: #777777 !important;
+    }
+    
+    /* Jumeirah-Style Headlines */
+    h1, h2, h3, h4, h5, h6,
+    .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+    
+    /* Section Labels - Elegant Uppercase */
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+    }
+    
+    /* Custom Focus States for Accessibility */
+    *:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    
+    /* Hero Video Overlay */
+    .hero-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(28, 25, 23, 0.7) 0%,
+        rgba(28, 25, 23, 0.3) 40%,
+        rgba(28, 25, 23, 0.1) 100%
+      );
+    }
+    
+    /* Jumeirah-Style Header - Minimalistisch & Clean - Fixed Overlay */
+    /* Leichter dunkler Verlauf von oben nach unten fÃ¼r bessere Lesbarkeit des Textes */
+    #header {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.12) 60%, transparent 100%);
+      border-bottom: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Hero Section Full Bleed - bis ganz oben */
+    #hero {
+      margin-top: 0;
+      padding-top: 0;
+      position: relative;
+    }
+    
+    /* Sicherstellen dass Hero bis ganz oben geht */
+    main {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    
+    /* Video/Bild muss wirklich bis ganz oben â€“ Hero ohne Radius (Full Bleed) */
+    #hero video,
+    #hero img {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0;
+    }
+    
+    /* Hero Video Fade-in Animation */
+    .hero-video-fadein {
+      opacity: 0;
+      transition: opacity 1.5s ease-in;
+    }
+    
+    .hero-video-fadein.loaded {
+      opacity: 1;
+    }
+    
+    /* Santorini-Stil: einheitlicher Filter Ã¼ber alle Bilder (weich, hell, mediterran) */
+    img:not(.acm-logo):not(.section-emblem) {
+      filter: saturate(0.88) brightness(1.06) contrast(0.97);
+    }
+    
+    /* Image Zoom Effect - Subtle Hover Zoom fÃ¼r alle Bilder */
+    img:not(.acm-logo):not(svg *) {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
+      will-change: transform;
+    }
+    
+    /* Zoom-Effekt fÃ¼r Bilder in Containern mit Overflow */
+    .relative img:not(.acm-logo),
+    section img:not(.acm-logo),
+    article img:not(.acm-logo),
+    .card-hover img:not(.acm-logo) {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Container mit Overflow fÃ¼r Zoom-Effekt */
+    .image-zoom-container {
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .image-zoom-container img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .image-zoom-container:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Spezielle Hover-Effekte fÃ¼r verschiedene Bereiche */
+    .aircraft-card:hover .aircraft-card-image {
+      transform: scale(1.08);
+    }
+    
+    /* About Section Images */
+    #about .relative {
+      overflow: hidden;
+    }
+    
+    #about .relative:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Maintenance Section Images */
+    #maintenance .relative {
+      overflow: hidden;
+    }
+    
+    #maintenance .relative:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Aircraft Management Section Images */
+    #management .relative {
+      overflow: hidden;
+    }
+    
+    #management .relative:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Careers Section Images */
+    #careers .relative {
+      overflow: hidden;
+    }
+    
+    #careers .relative:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* News Section Images */
+    .group {
+      overflow: hidden;
+    }
+    
+    .group:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Allgemeine Regel fÃ¼r alle Bilder in relative Containern */
+    .relative img:not(.acm-logo) {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Services-Karten: Zoom nur bei Mouse-over Ã¼ber dem jeweiligen Bild */
+    #services img {
+      transition: transform 0.5s ease;
+      transform: none;
+    }
+    #services .relative:hover img,
+    #services article:hover img {
+      transform: none !important;
+    }
+    #services .services-card-img:hover img {
+      transform: scale(1.05) !important;
+    }
+    .relative:not(#services):hover img:not(.acm-logo) {
+      transform: scale(1.05);
+    }
+    
+    /* Modern Card-Based Slider Styles */
+    .aircraft-slider {
+      position: relative;
+      width: 100%;
+      overflow: visible;
+      padding: 0 3rem;
+    }
+    
+    .aircraft-slider-inner {
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    .slider-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    
+    .slider-slide {
+      flex: 0 0 calc(100% - 3rem);
+      min-width: 0;
+      opacity: 0.6;
+      transform: scale(0.95);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: grab;
+    }
+    
+    .slider-slide:active {
+      cursor: grabbing;
+    }
+    
+    .slider-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .aircraft-card {
+      background: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .slider-slide.active .aircraft-card {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+    
+    .aircraft-card-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    
+    .aircraft-card:hover .aircraft-card-image {
+      transform: scale(1.08);
+    }
+    
+    .aircraft-card-content {
+      padding: 1.5rem;
+    }
+    
+    .aircraft-card-title {
+      font-family: serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: rgb(28, 25, 23);
+      margin-bottom: 0.5rem;
+    }
+    
+    .aircraft-card-subtitle {
+      font-size: 0.875rem;
+      color: rgb(120, 113, 108);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    @media (min-width: 640px) {
+      .slider-slide {
+        flex: 0 0 calc(50% - 0.75rem);
+      }
+      
+      .aircraft-card-image {
+        height: 280px;
+      }
+      
+      .aircraft-slider {
+        height: 400px !important;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .slider-slide {
+        flex: 0 0 calc(33.333% - 1rem);
+      }
+      
+      .aircraft-card-image {
+        height: 300px;
+      }
+      
+      .aircraft-slider {
+        height: 450px !important;
+      }
+    }
+    
+    /* Slider Navigation Arrows */
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 30;
+      width: 44px;
+      height: 44px;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    .slider-nav:hover {
+      background: rgb(28, 25, 23);
+      border-color: rgb(28, 25, 23);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .slider-nav.prev {
+      left: 0;
+    }
+    
+    .slider-nav.next {
+      right: 0;
+    }
+    
+    .slider-nav svg {
+      width: 18px;
+      height: 18px;
+      stroke: rgb(28, 25, 23);
+      stroke-width: 2;
+      transition: stroke 0.3s ease;
+    }
+    
+    .slider-nav:hover svg {
+      stroke: white;
+    }
+    
+    /* Slider Dots Navigation */
+    .slider-dots {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(28, 25, 23, 0.2);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0;
+    }
+    
+    .slider-dot.active {
+      background: rgb(28, 25, 23);
+      width: 24px;
+      border-radius: 4px;
+    }
+    
+    .slider-dot:hover {
+      background: rgba(28, 25, 23, 0.5);
+    }
+    
+    @media (max-width: 768px) {
+      .slider-nav {
+        width: 36px;
+        height: 36px;
+      }
+      
+      .slider-nav.prev {
+        left: 0;
+      }
+      
+      .slider-nav.next {
+        right: 0;
+      }
+      
+      .aircraft-slider {
+        padding: 0 2rem;
+      }
+      
+      .slider-nav svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    
+    /* Stromlinien-Container */
+    .streamlines-container {
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* Stromlinien als CSS-Elemente - Dezenter, wie Kondensstreifen */
+    .streamline {
+      position: absolute;
+      width: 120%;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 10%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 255, 255, 0.2) 90%,
+        transparent 100%
+      );
+      filter: blur(1px);
+      transform-origin: left center;
+      opacity: 0;
+    }
+    
+    .streamline-1 {
+      top: 15%;
+      left: -20%;
+      transform: rotate(12deg);
+      animation: streamMove1 25s linear infinite;
+      animation-delay: 0s;
+    }
+    
+    .streamline-2 {
+      top: 30%;
+      left: -20%;
+      transform: rotate(-8deg);
+      animation: streamMove2 28s linear infinite;
+      animation-delay: 5s;
+    }
+    
+    .streamline-3 {
+      top: 50%;
+      left: -20%;
+      transform: rotate(10deg);
+      animation: streamMove3 26s linear infinite;
+      animation-delay: 10s;
+    }
+    
+    .streamline-4 {
+      top: 70%;
+      left: -20%;
+      transform: rotate(-12deg);
+      animation: streamMove4 30s linear infinite;
+      animation-delay: 15s;
+    }
+    
+    .streamline-5 {
+      top: 85%;
+      left: -20%;
+      transform: rotate(6deg);
+      animation: streamMove5 27s linear infinite;
+      animation-delay: 20s;
+    }
+    
+    @keyframes streamMove1 {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+    
+    @keyframes streamMove2 {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+    
+    @keyframes streamMove3 {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+    
+    @keyframes streamMove4 {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+    
+    @keyframes streamMove5 {
+      0% {
+        left: -20%;
+        opacity: 0;
+      }
+      3% { opacity: 0.7; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      97% { opacity: 0.6; }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+    
+    /* Responsive: Stromlinien auf kleinen Bildschirmen reduzieren */
+    @media (max-width: 768px) {
+      .streamline { opacity: 0.6; }
+    }
+    
+    /* Header beim Scrollen - Sehr subtiler weiÃŸer Hintergrund + Schmaler */
+    .header-scrolled {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .header-scrolled .border-white\/10 {
+      border-bottom-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Header: RechtsbÃ¼ndig Sprachauswahl + CTA (gleiche HÃ¶he wie Logo) */
+    .header-top-right {
+      color: rgba(255, 255, 255, 0.95);
+      transition: color 0.4s ease;
+    }
+    .header-scrolled .header-top-right {
+      color: rgba(28, 25, 23, 0.85);
+    }
+    .header-lang-link {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      opacity: 0.85;
+      transition: opacity 0.25s ease, color 0.4s ease;
+    }
+    .header-lang-link.header-lang-active {
+      font-weight: 700;
+      opacity: 1;
+      color: var(--color-olive) !important;
+    }
+    .header-lang-link:hover {
+      opacity: 1;
+    }
+    .header-lang-sep {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    /* DÃ¼nne Linie zwischen Logo-Zeile und Navigation â€“ nach links/rechts transparent */
+    .header-divider-line {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.35) 15%,
+        rgba(255, 255, 255, 0.35) 85%,
+        transparent 100%
+      );
+      transition: background 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    }
+    .header-scrolled .header-divider-line {
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 15%,
+        rgba(0, 0, 0, 0.08) 85%,
+        transparent 100%
+      );
+    }
+    
+    /* Navigation Row und Trennlinie verstecken wenn gescrollt (nur Logo-Zeile bleibt) */
+    #header.header-scrolled .header-nav-row {
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Nav-Zeile ist nur für lg+ Desktop-Menü; auf schmalen Viewports Platz/Flex-Zeile vermeiden (#desktop-nav ist dort ohnehin hidden). */
+    @media (max-width: 1023px) {
+      #header .header-nav-row {
+        display: none !important;
+      }
+    }
+
+    #header.header-scrolled .header-divider-line {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Scroll to Top Button - ACM Style */
+    #scroll-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 3rem;
+      height: 3rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(28, 25, 23, 0.1);
+      border-radius: 0.5rem;
+      color: rgb(28, 25, 23);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1rem);
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  background 0.3s ease,
+                  box-shadow 0.3s ease;
+      z-index: 9999 !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    #scroll-to-top.visible {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+    }
+    
+    #scroll-to-top:hover {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-2px);
+    }
+    
+    #scroll-to-top:active {
+      transform: translateY(0);
+    }
+    
+    #scroll-to-top svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke-width: 2;
+    }
+    
+    @media (max-width: 640px) {
+      #scroll-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 2.75rem;
+        height: 2.75rem;
+      }
+      
+      #scroll-to-top svg {
+        width: 1.125rem;
+        height: 1.125rem;
+      }
+    }
+    
+    /* Footer: Safe Area (Notch/Home-Indicator) + Copyright auf Mobile sichtbar */
+    .footer-safe {
+      padding-bottom: max(2rem, env(safe-area-inset-bottom, 0));
+    }
+    .footer-copyright {
+      display: block;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: rgb(120 113 108); /* stone-500 â€“ gut lesbar auf hellem Grund */
+      padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0));
+    }
+    @media (max-width: 640px) {
+      .footer-copyright {
+        font-size: 0.9375rem; /* etwas grÃ¶ÃŸer auf Mobile */
+        color: rgb(87 83 78); /* stone-600 â€“ auf Mobile deutlicher sichtbar */
+      }
+    }
+    
+    /* Logo - Clean ohne Box */
+    .header-logo-bg {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    
+    .header-logo-text {
+      color: white;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: color 0.4s ease;
+    }
+    
+    .header-scrolled .header-logo-text {
+      color: rgb(28, 25, 23);
+    }
+    
+    .header-logo-subtext {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      transition: color 0.4s ease;
+    }
+    
+    .header-scrolled .header-logo-subtext {
+      color: rgba(28, 25, 23, 0.7);
+    }
+    
+    /* ACM Logo Styles */
+    .acm-logo {
+      filter: brightness(0) invert(1); /* Logo weiÃŸ machen fÃ¼r transparenten Header */
+      transition: filter 0.4s ease, opacity 0.4s ease;
+    }
+    
+    .header-scrolled .acm-logo {
+      filter: brightness(0) invert(0); /* Logo dunkel machen fÃ¼r gescrollten Header */
+    }
+    
+    /* Logo Aspect Ratio schÃ¼tzen */
+    .acm-logo {
+      object-fit: contain;
+      height: auto;
+      max-height: 64px;
+    }
+    
+    @media (max-width: 1024px) {
+      .acm-logo {
+        max-height: 56px;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .acm-logo {
+        max-height: 48px;
+      }
+    }
+    
+    /* Logo Hover Effect */
+    .acm-logo:hover {
+      opacity: 0.8;
+    }
+    
+    /* Navigation Links - Minimalistisch */
+    .header-nav-link {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+      text-transform: none;
+    }
+    
+    .header-scrolled .header-nav-link {
+      color: rgba(28, 25, 23, 0.8);
+    }
+    
+    .header-nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .header-nav-link:hover {
+      color: white;
+    }
+    
+    .header-scrolled .header-nav-link:hover {
+      color: rgb(28, 25, 23);
+    }
+    
+    .header-nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .header-nav-charter-wrap { position: relative; }
+    .header-nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.5rem; min-width: 11rem; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); border-radius: 6px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; z-index: 50; }
+    .header-nav-charter-wrap:hover .header-nav-dropdown { opacity: 1; visibility: visible; }
+    .header-nav-dropdown a { display: block; padding: 0.5rem 1rem; font-size: 0.8125rem; color: rgba(28, 25, 23, 0.85); transition: color 0.2s ease, background 0.2s ease; white-space: nowrap; }
+    .header-nav-dropdown a:hover { color: var(--color-olive); background: rgba(0, 0, 0, 0.04); }
+    .header-nav-dropdown a:first-child { font-weight: 500; color: rgb(28, 25, 23); }
+    
+    /* Button - Minimalistisch */
+    .header-button {
+      background: white;
+      color: rgb(28, 25, 23);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: none;
+      font-weight: 400;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+      border-radius: 0;
+      padding: 0.5rem 1.25rem;
+      height: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .header-scrolled .header-button {
+      background: rgb(28, 25, 23);
+      color: white;
+      border-color: rgb(28, 25, 23);
+    }
+    
+    .header-button:hover {
+      background: rgba(255, 255, 255, 0.95);
+      transform: none;
+    }
+    
+    .header-scrolled .header-button:hover {
+      background: rgba(28, 25, 23, 0.9);
+    }
+    
+    /* Secondary Link Button - Glossy Glassmorphism im ACM Style wenn nicht sticky */
+    .header-link-button {
+      color: white;
+      font-weight: 400;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      position: relative;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      height: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .header-link-button:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      transform: translateY(-1px);
+    }
+    
+    /* Beim Scrollen - Dezenter Glossy-Effekt fÃ¼r gescrollten Header */
+    .header-scrolled .header-link-button {
+      color: rgba(28, 25, 23, 0.85);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(28, 25, 23, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+    
+    .header-scrolled .header-link-button:hover {
+      color: rgb(28, 25, 23);
+      background: rgba(255, 255, 255, 0.75);
+      border-color: rgba(28, 25, 23, 0.15);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transform: translateY(-1px);
+    }
+    
+    /* Desktop Menu Button - Links (versteckt wenn NICHT gescrollt, sichtbar wenn gescrollt) */
+    .header-desktop-menu-btn {
+      color: rgb(28, 25, 23);
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    
+    .header-desktop-menu-btn:hover {
+      background: transparent;
+      box-shadow: none;
+    }
+    
+    /* Burger-MenÃ¼-Button anzeigen wenn Header sticky wird (gescrollt) */
+    #header.header-scrolled .header-desktop-menu-btn {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    
+    /* Header Logo Row - Schmaler wenn gescrollt */
+    .header-logo-row {
+      transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #header.header-scrolled .header-logo-row {
+      height: 3.5rem !important; /* 56px statt 64-80px - schmaler beim Scrollen */
+    }
+    
+    /* Logo kleiner wenn gescrollt */
+    #header.header-scrolled .acm-logo {
+      height: 2.5rem !important; /* 40px statt 48-56px */
+      max-width: 140px !important;
+    }
+    
+    /* Desktop Navigation - Standard sichtbar mittig (wird versteckt wenn gescrollt) */
+    #desktop-nav {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    
+    /* Navigation verstecken wenn Header sticky wird (gescrollt) */
+    #header.header-scrolled #desktop-nav {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    
+    /* Desktop Menu Styles â€“ dezentes Einblenden beim Ã–ffnen */
+    #desktop-menu {
+      height: 100vh;
+      height: 100dvh; /* Dynamic viewport height fÃ¼r mobile Browser */
+      top: 0;
+      left: 0;
+      box-shadow: none !important;
+      border: none !important;
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #desktop-menu.show {
+      transform: translateX(0) !important;
+      opacity: 1;
+    }
+    
+    /* Inhalt des Burger-MenÃ¼s gestaffelt einblenden */
+    #desktop-menu .desktop-menu-nav .desktop-menu-link {
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.3s ease, transform 0.3s ease, padding-left 0.25s ease;
+    }
+    
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(1) { transition-delay: 0.05s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(2) { transition-delay: 0.1s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(3) { transition-delay: 0.15s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(4) { transition-delay: 0.2s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(5) { transition-delay: 0.25s; }
+    #desktop-menu.show .desktop-menu-nav .desktop-menu-link:nth-child(6) { transition-delay: 0.3s; }
+    
+    #desktop-menu-backdrop {
+      pointer-events: none;
+      height: 100vh;
+      height: 100dvh; /* Dynamic viewport height fÃ¼r mobile Browser */
+    }
+    
+    #desktop-menu-backdrop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    /* Schrift im Burger-MenÃ¼ dÃ¼nner, dezenter */
+    #desktop-menu,
+    #desktop-menu .desktop-menu-link {
+      font-weight: 300;
+      letter-spacing: 0.01em;
+    }
+    
+    .desktop-menu-link {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    
+    .desktop-menu-link:hover {
+      padding-left: 0.5rem;
+    }
+    
+    /* Mobile Menu Button â€“ vor Scrollen ausgeblendet, beim Scrollen sichtbar mit dunkler Farbe wie Desktop */
+    .header-mobile-btn {
+      color: white;
+      transition: opacity 0.4s ease, visibility 0.4s ease, color 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    
+    #header.header-scrolled .header-mobile-btn {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      color: rgb(28, 25, 23);
+    }
+    
+    /* Mobile Menu Styles â€“ dezent Top-to-Down Einblendeffekt beim Aufklappen */
+    #mobile-menu {
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      opacity: 0;
+      transform: translateY(-12px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    #mobile-menu.mobile-menu-open {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .mobile-menu-nav {
+      background: transparent;
+    }
+    
+    /* MenÃ¼-Links gestaffelt von oben nach unten einblenden */
+    .mobile-menu-nav .mobile-menu-link {
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(1) { transition-delay: 0.04s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(2) { transition-delay: 0.08s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(3) { transition-delay: 0.12s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(4) { transition-delay: 0.16s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(5) { transition-delay: 0.2s; }
+    #mobile-menu.mobile-menu-open .mobile-menu-nav .mobile-menu-link:nth-child(6) { transition-delay: 0.24s; }
+    
+    .mobile-menu-link {
+      color: rgba(28, 25, 23, 0.8);
+      font-weight: 400;
+      transition: all 0.2s ease;
+    }
+    .mobile-menu-link:hover {
+      color: rgb(28, 25, 23);
+      padding-left: 0.75rem;
+    }
+    
+    /* Modern Card Design */
+    .card-hover {
+      transition: var(--transition-smooth);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: white;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: rgba(0, 0, 0, 0.12);
+    }
+    
+    /* News Article Cards - Konsistenter Border Radius und mehr Padding */
+    #news .card-hover {
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    
+    #news .card-hover a {
+      display: block;
+    }
+    
+    #news .card-hover > a > div:first-child {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    
+    /* Padding fÃ¼r Meta-Informationen und Ãœberschrift */
+    #news .card-hover > a > div:not(:first-child) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    #news .card-hover > a > h3 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    
+    /* Buttons ohne Abrundung */
+    button,
+    .btn-primary,
+    a[class*="btn"],
+    a[class*="button"],
+    .header-button,
+    .header-link-button,
+    .header-desktop-menu-btn,
+    .header-mobile-btn,
+    .language-btn,
+    .modal-close {
+      border-radius: 0 !important;
+    }
+    
+    /* Global: Alle Bilder Border-Radius 0.5rem (wie Buttons) */
+    img:not(.acm-logo):not(svg *) {
+      border-radius: 0.5rem;
+    }
+    
+    /* Hero: kein Radius (Full Bleed) */
+    #hero img {
+      border-radius: 0;
+    }
+    
+    /* Bilder in Cards: nur oben abgerundet */
+    .aircraft-card img,
+    .aircraft-card .aircraft-card-image,
+    #news .card-hover img {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    
+    /* News: Bild-Container oben abrunden */
+    #news .card-hover > a > div:first-child,
+    #news .aspect-\[16\/10\] {
+      border-radius: 0.5rem 0.5rem 0 0;
+      overflow: hidden;
+    }
+
+    /* Standalone-Bilder in Sektionen */
+    #about img,
+    #maintenance img:not(.aircraft-card-image):not(.acm-logo-watermark img),
+    #management img,
+    #careers img {
+      border-radius: 0.5rem;
+    }
+    
+    /* Image-Zoom-Container mit Radius */
+    .image-zoom-container {
+      border-radius: 0.5rem;
+    }
+    
+    .image-zoom-container img {
+      border-radius: 0.5rem;
+    }
+    
+    /* Relative-Wrapper fÃ¼r Section-Bilder */
+    #about .relative,
+    #maintenance .relative,
+    #management .relative,
+    #careers .relative {
+      border-radius: 0.5rem;
+    }
+    
+    #about .relative img,
+    #maintenance .relative img,
+    #management .relative img,
+    #careers .relative img {
+      border-radius: 0.5rem;
+    }
+    
+    /* Alle Buttons: nur Rahmen, keine FÃ¼llung â€“ Jumeirah Style */
+    .btn-primary,
+    .btn-outline,
+    .btn-filled {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 14rem;
+      padding: 15px 2rem;
+      background: transparent !important;
+      color: var(--color-olive) !important;
+      border: 1px solid var(--color-olive) !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      box-shadow: none;
+    }
+    .btn-primary:hover,
+    .btn-outline:hover,
+    .btn-filled:hover {
+      background: transparent !important;
+      color: var(--color-olive-dark) !important;
+      border-color: var(--color-olive-dark) !important;
+      opacity: 0.85;
+      box-shadow: 0 4px 14px rgba(0, 20, 65, 0.15);
+    }
+    .btn-primary:active,
+    .btn-outline:active,
+    .btn-filled:active {
+      transform: scale(0.98);
+    }
+    
+    /* WeiÃŸe Outline-Buttons (auf dunklem Hintergrund) â€“ nur Rahmen */
+    .btn-outline-white,
+    .btn-filled-white {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 14rem;
+      padding: 15px 2rem;
+      background: transparent !important;
+      color: white !important;
+      border: 1px solid rgba(255,255,255,0.7) !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      box-shadow: none;
+    }
+    .btn-outline-white:hover,
+    .btn-filled-white:hover {
+      background: transparent !important;
+      color: white !important;
+      border-color: white !important;
+      opacity: 0.88;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Hero/Overlay-Button: Styling wie angegeben */
+    .btn-overlay-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 2rem;
+      background: white !important;
+      color: #292524 !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+    .btn-overlay-white:hover {
+      background: #f5f5f4 !important;
+    }
+    
+    /* Einheitlicher dezenter Hover: weiche ÃœbergÃ¤nge fÃ¼r alle Buttons */
+    .btn-primary,
+    .btn-outline,
+    .btn-filled,
+    .btn-outline-white,
+    .btn-filled-white,
+    a.btn-primary,
+    .link-arrow,
+    .header-link-button {
+      transition: opacity 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    }
+    
+    /* Dezenter CTA â€“ Text Link Style */
+    .cta-subtle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: none !important;
+      padding: 0;
+      color: var(--color-olive);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: auto;
+      height: auto;
+    }
+    .cta-subtle:hover {
+      opacity: 0.7;
+      background: none;
+    }
+    
+    /* Text Link Style (Services) */
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-olive);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .link-arrow:hover {
+      opacity: 0.7;
+    }
+    .link-arrow svg {
+      transition: transform 0.3s ease;
+    }
+    .link-arrow:hover svg {
+      transform: translateX(4px);
+    }
+    
+    /* White Text Link (for dark backgrounds) */
+    .link-arrow-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.075rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      padding-bottom: 0.25rem;
+      transition: all 0.3s ease;
+    }
+    .link-arrow-white:hover {
+      border-color: white;
+    }
+    .link-arrow-white svg {
+      transition: transform 0.3s ease;
+    }
+    .link-arrow-white:hover svg {
+      transform: translateX(4px);
+    }
+    
+    /* Scroll Animation - Fade In */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+    }
+    
+    .fade-in-up-delay-1 {
+      animation-delay: 0.1s;
+    }
+    
+    .fade-in-up-delay-2 {
+      animation-delay: 0.2s;
+    }
+    
+    .fade-in-up-delay-3 {
+      animation-delay: 0.3s;
+    }
+    
+    /* Intersection Observer fÃ¼r Scroll-Animationen */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Ãœberschriften: Bressay Display, Old Standard TT, serif */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Bressay Display', 'Old Standard TT', Georgia, serif;
+      letter-spacing: -0.02em;
+      font-feature-settings: "kern" 1;
+    }
+    
+    /* Modern Section Spacing */
+    section {
+      position: relative;
+    }
+    
+    /* Subtle Gradient Overlays */
+    .gradient-overlay {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 100%);
+    }
+    
+    /* ACM Komplettes Logo - Sehr dezente Hintergrund-Dekoration */
+    .acm-logo-watermark {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1), transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+      filter: grayscale(100%) opacity(0.12);
+      mix-blend-mode: multiply;
+    }
+    
+    .acm-logo-watermark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 0;
+    }
+    
+    /* Scroll-basierte Animation fÃ¼r Logo-Watermark */
+    .acm-logo-watermark.scroll-reveal {
+      opacity: 0;
+      transform: translateY(60px) scale(0.95);
+    }
+    
+    .acm-logo-watermark.scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: grayscale(100%) opacity(0.12);
+    }
+    
+    /* Verschiedene Positionen und GrÃ¶ÃŸen fÃ¼r Logo-Watermarks */
+    .acm-logo-watermark.top-left {
+      top: 5%;
+      left: 5%;
+      width: 300px;
+      height: 120px;
+      max-width: 40%;
+    }
+    
+    .acm-logo-watermark.top-right {
+      top: 5%;
+      right: 5%;
+      width: 300px;
+      height: 120px;
+      max-width: 40%;
+    }
+    
+    .acm-logo-watermark.bottom-left {
+      bottom: 5%;
+      left: 5%;
+      width: 300px;
+      height: 120px;
+      max-width: 40%;
+    }
+    
+    .acm-logo-watermark.bottom-right {
+      bottom: 5%;
+      right: 5%;
+      width: 300px;
+      height: 120px;
+      max-width: 40%;
+    }
+    
+    .acm-logo-watermark.center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 160px;
+      max-width: 50%;
+    }
+    
+    .acm-logo-watermark.center-right {
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 120px;
+      max-width: 35%;
+    }
+    
+    .acm-logo-watermark.center-left {
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 120px;
+      max-width: 35%;
+    }
+    
+    /* Parallax-Effekt beim Scrollen */
+    .acm-logo-watermark.parallax {
+      will-change: transform;
+    }
+    
+    /* FÃ¼r dunkle HintergrÃ¼nde */
+    .acm-logo-watermark.dark-bg {
+      filter: grayscale(100%) opacity(0.15);
+      mix-blend-mode: screen;
+    }
+    
+    .acm-logo-watermark.dark-bg.scroll-reveal.revealed {
+      filter: grayscale(100%) opacity(0.15);
+    }
+    
+    @media (max-width: 768px) {
+      .acm-logo-watermark {
+        width: 200px !important;
+        height: 80px !important;
+        filter: grayscale(100%) opacity(0.08) !important;
+      }
+      
+      .acm-logo-watermark.scroll-reveal.revealed {
+        opacity: 1 !important;
+        filter: grayscale(100%) opacity(0.08) !important;
+      }
+    }
+    
+    /* Modal Backdrop - Modern ACM Style */
+    .modal-backdrop {
+      background: rgba(28, 25, 23, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: opacity 0.3s ease;
+    }
+    
+    /* Modal Container - Modern ACM Style */
+    .modal-container {
+      position: relative;
+      min-h-screen;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .modal-container {
+        padding: 1.5rem;
+      }
+    }
+    
+    /* Modal Content - Modern ACM Style */
+    .modal-content {
+      position: relative;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 42rem;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: scale(0.95);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .modal-content.show {
+      transform: scale(1);
+      opacity: 1;
+    }
+    
+    /* Modal Header */
+    .modal-header {
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .modal-title {
+      font-family: serif;
+      font-size: 1.75rem;
+      font-weight: 500;
+      color: rgb(28, 25, 23);
+      margin: 0;
+    }
+    
+    .modal-close {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.04);
+      color: rgb(120, 113, 108);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .modal-close:hover {
+      background: rgba(0, 0, 0, 0.08);
+      color: rgb(28, 25, 23);
+    }
+    
+    /* Modal Body */
+    .modal-body {
+      padding: 2rem;
+    }
+    
+    /* Scrollbar Styling fÃ¼r Modal */
+    .modal-content::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .modal-content::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.02);
+    }
+    
+    .modal-content::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+    }
+    
+    .modal-content::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.25);
+    }
+    
+    /* Starlink Pop-up - ACM Authorized Reseller (Clay Lacyâ€“inspired) */
+    .starlink-popup-content {
+      background: linear-gradient(135deg, #2c2419 0%, #1a1510 50%, #0f0d0a 100%);
+      color: #fff;
+      max-width: 44rem;
+      padding: 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+      grid-template-areas: "header header" "image body";
+    }
+    @media (max-width: 640px) {
+      .starlink-popup-content {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "image" "body";
+      }
+    }
+    .starlink-popup-content .modal-header {
+      grid-area: header;
+      border-bottom-color: rgba(255,255,255,0.12);
+      padding: 1.75rem 2rem 1.25rem;
+    }
+    .starlink-popup-content .modal-title {
+      color: #fff;
+      font-size: 1.5rem;
+    }
+    .starlink-popup-content .modal-close {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.9);
+    }
+    .starlink-popup-content .modal-close:hover {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .starlink-popup-image {
+      grid-area: image;
+      position: relative;
+      min-height: 12rem;
+      background: #0f0d0a;
+    }
+    .starlink-popup-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .starlink-popup-image {
+        min-height: 10rem;
+      }
+      .starlink-popup-image img {
+        object-position: center 35%;
+      }
+    }
+    .starlink-popup-body {
+      grid-area: body;
+      padding: 1.75rem 2rem 2rem;
+    }
+    .starlink-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 0.5rem;
+    }
+    .starlink-headline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .starlink-teaser {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 1.25rem;
+    }
+    .starlink-cta {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      color: #fff;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255,255,255,0.5);
+      transition: var(--transition-base);
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+    }
+    .starlink-cta:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.8);
+      color: #fff;
+    }
+    .starlink-aircraft {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .starlink-aircraft span:not(:last-child)::after {
+      content: ' | ';
+      margin: 0 0.2rem;
+      color: rgba(255,255,255,0.4);
+    }
+    
+    /* Language Switcher Styles - ACM Style */
+    .language-btn {
+      color: rgb(120, 113, 108); /* stone-500 */
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 0.5rem;
+    }
+    
+    .language-btn:hover {
+      color: var(--color-olive);
+    }
+    
+    .language-btn.active {
+      color: var(--color-olive) !important; /* ACM Navy fÃ¼r aktive Sprache */
+      font-weight: 600;
+      background: transparent;
+    }
+    
+    .language-btn:focus-visible {
+      outline: 2px solid var(--color-olive);
+      outline-offset: 2px;
+      border-radius: 0;
+    }
+    
+    /* Scroll Indicator Animation */
+    @keyframes bounce-subtle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+    .scroll-indicator {
+      animation: bounce-subtle 2s ease-in-out infinite;
+    }
+    
+    /* Hide scrollbar for mobile menu */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    /* Utility Bar Styles - Jumeirah Style - Verschwindet beim Scrollen */
+    .utility-bar {
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    /* Utility Bar verstecken beim Scrollen */
+    .utility-bar-hidden {
+      opacity: 0;
+      transform: translateY(-100%);
+      pointer-events: none;
+    }
+    
+    /* Header Position anpassen - nach oben wenn Utility Bar versteckt */
+    #header {
+      transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .header-scrolled {
+      top: 0 !important;
+    }
+
+    /* KOMMENTAR: FÃ¼r Produktion - Google Fonts einbinden:
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+    Dann font-serif durch 'Cormorant Garamond' ersetzen
+    Und font-sans durch 'Inter' ersetzen
+    */

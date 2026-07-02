@@ -1,0 +1,37 @@
+Manifest-Audit: mapping.json vs. erwartete Staging-URLs (DE)
+Erwartete Basis: https://b4451i.myrdbx.io/ (Pretty Permalinks)
+
+Seiten (12) — alles in mapping.json; Navigation deckt dieselben Pfade ab:
+  index.html               -> /
+  thats-acm.html           -> /thats-acm/
+  charter.html             -> /charter/
+  global-7500.html         -> /global-7500/
+  global-6000.html         -> /global-6000/
+  global-xrs.html          -> /global-xrs/
+  aircraft-management.html -> /aircraft-management/
+  maintenance.html         -> /maintenance/
+  karriere.html            -> /karriere/
+  kontakt.html             -> /kontakt/
+  news.html                -> /news/
+  impressum.html           -> /impressum/
+  datenschutz.html         -> /datenschutz/
+
+News (15): /news/<slug>/ mit slug = Dateiname ohne .html
+
+Hinweis: Nur mapping.json-Eintraege werden importiert.
+
+---
+
+Drift-Check (scripts/snapshot-live-and-compare.php, Section-Text):
+- Live rendert Startseite oft OHNE <main>; Vergleich nutzt /html/body/section wie WP-Ausgabe.
+- Wenn Live leere Sektionen zeigt, Root-HTML aber voll: Quelle source_assets nach
+  sync-static-to-importer.ps1 erneut importieren (Leadwerk Importer Live-Log pruefen).
+
+Nacharbeit auf Staging (manuell):
+- WP-Admin: Tools -> Leadwerk Import, vollstaendigen Import erneut ausfuehren (kein Dry-Run).
+- Permalinks speichern; Live-Log auf Sektions-/Validierungs-Warnungen pruefen.
+
+News-Artikel: Live liefert oft weniger direkte body-Sektionen als statische news/*.html;
+das ist erwartbar (Theme-Template). Vergleich dient v. a. den Hauptseiten.
+
+Letztes Triaging (automatisch): scripts/live-snapshot-triage-latest.txt

@@ -1,0 +1,27 @@
+/*
+ * Theme wrapper for the shared mobile QA overrides.
+ * Keep the canonical rule set in the importer asset and load it theme-wide.
+ */
+@import url("../../../plugins/leadwerk_importer/source_assets/mobile-qa.css");
+
+/* page-simple-header: News-Single, Impressum, Datenschutz, leadwerk_simple_header=1 — Logo wie .header-scrolled .acm-logo, alle Viewports. */
+body.page-simple-header #header .acm-logo,
+body.page-simple-header .acm-logo {
+  filter: brightness(0) invert(0) !important;
+}
+
+/* Mobil: mobile-qa erzwingt weißen Burger — hier zurück auf dunkel. */
+@media (max-width: 1023px) {
+  body.page-simple-header .header-mobile-btn {
+    color: rgb(28, 25, 23) !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Let the That's ACM timeline span full mobile width instead of inheriting px-[5rem] gutters. */
+  #htl-section,
+  #htl-section.px-\[5rem\] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

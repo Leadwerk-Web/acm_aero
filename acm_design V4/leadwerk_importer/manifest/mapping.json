@@ -1,0 +1,201 @@
+{
+  "version": "3",
+  "site_title": "ACM AIR CHARTER",
+  "site_tagline": "Premium Business Aviation: Charter, Aircraft Management, Maintenance & CAMO aus einer Hand.",
+  "pages": [
+    {
+      "source_key": "acm-index-v1",
+      "field_name": "acm_index_sections",
+      "source_file": "index.html",
+      "title": "ACM AIR CHARTER",
+      "slug": "home",
+      "target_type": "page",
+      "post_status": "publish",
+      "is_front_page": true
+    },
+    {
+      "source_key": "acm-thats-acm-v1",
+      "field_name": "acm_thats_acm_sections",
+      "source_file": "thats-acm.html",
+      "title": "That's ACM",
+      "slug": "thats-acm",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-charter-v1",
+      "field_name": "acm_charter_sections",
+      "source_file": "charter.html",
+      "title": "Charter",
+      "slug": "charter",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-global-7500-v1",
+      "field_name": "acm_global7500_sections",
+      "source_file": "global-7500.html",
+      "title": "Bombardier Global 7500",
+      "slug": "global-7500",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-global-6000-v1",
+      "field_name": "acm_global6000_sections",
+      "source_file": "global-6000.html",
+      "title": "Bombardier Global 6000",
+      "slug": "global-6000",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-global-xrs-v1",
+      "field_name": "acm_globalxrs_sections",
+      "source_file": "global-xrs.html",
+      "title": "Bombardier Global XRS",
+      "slug": "global-xrs",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-aircraft-v1",
+      "field_name": "acm_aircraft_sections",
+      "source_file": "aircraft-management.html",
+      "title": "Aircraft Management",
+      "slug": "aircraft-management",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-maintenance-v1",
+      "field_name": "acm_maintenance_sections",
+      "source_file": "maintenance.html",
+      "title": "Maintenance",
+      "slug": "maintenance",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-careers-v1",
+      "field_name": "acm_careers_sections",
+      "source_file": "karriere.html",
+      "title": "Karriere",
+      "slug": "karriere",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-contact-v1",
+      "field_name": "acm_contact_sections",
+      "source_file": "kontakt.html",
+      "title": "Kontakt",
+      "slug": "kontakt",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-news-v1",
+      "field_name": "acm_news_sections",
+      "source_file": "news.html",
+      "title": "News",
+      "slug": "news",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-impressum-v1",
+      "field_name": "impressum_page",
+      "source_file": "impressum.html",
+      "title": "Impressum",
+      "slug": "impressum",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-datenschutz-v1",
+      "field_name": "datenschutz_page",
+      "source_file": "datenschutz.html",
+      "title": "Datenschutz",
+      "slug": "datenschutz",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-agb-v1",
+      "field_name": "agb_page",
+      "source_file": "agb.html",
+      "title": "AGB",
+      "slug": "agb",
+      "target_type": "page",
+      "post_status": "publish"
+    },
+    {
+      "source_key": "acm-404-v1",
+      "field_name": "impressum_page",
+      "source_file": "404.html",
+      "title": "404",
+      "slug": "404",
+      "target_type": "page",
+      "post_status": "publish"
+    }
+  ],
+  "news_articles": [
+    {
+      "source_file": "news/acm-air-charter-betreibt-vierten-bombardier-global-express.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/acm-air-charter-erhaelt-erneut-die-bestaetigung-der-is-bao-stufe-3.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/acm-air-charter-erneuert-hoechstmoegliche-is-bao-zertifizierung.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/acm-air-charter-erhaelt-erweiterung-der-camo-zulassung.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/acm-air-charter-erweitert-flotte-mit-zwei-boeing-bbj2.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/acm-air-charter-uebernimmt-weiteres-luftfahrzeug-im-rahmen-der-neuen-part-ncc-verordnung.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/extremer-langstreckenflug-mit-bbj-2.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/global-7500-erweitert-die-acm-air-charter-flotte.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/falcon-2000lx-erweitert-die-charter-flotte.html",
+      "target_type": "acm_news"
+    },
+    {
+      "source_file": "news/acm-air-charter-nimmt-dritte-bombardier-global-7500-in-ihre-weltweit-gemanagte-flotte-auf.html",
+      "target_type": "acm_news"
+    }
+  ]
+}

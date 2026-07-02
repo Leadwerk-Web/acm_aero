@@ -1,0 +1,14 @@
+/*
+Theme Name: Leadwerk Theme - ACM
+Theme URI: https://acm.aero
+Description: WordPress Theme for ACM AIR CHARTER.
+Version: 1.0.12
+Author: Leadwerk
+Text Domain: leadwerk-theme
+Requires at least: 6.0
+Requires PHP: 7.4
+*/
+
+body {
+	margin: 0;
+}

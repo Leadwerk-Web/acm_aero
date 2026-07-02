@@ -1,0 +1,67 @@
+# ACM Design V4 – lokales WordPress + MySQL
+# Voraussetzung: Docker Desktop (Windows)
+#
+# Start:  docker compose up -d
+# Setup:  powershell -ExecutionPolicy Bypass -File .\tools\wp-docker-bootstrap.ps1
+# URL:    http://localhost:8080  | Admin: http://localhost:8080/wp-admin
+#
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: rootwordpress
+    volumes:
+      - acm_wp_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root", "-prootwordpress"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  wordpress:
+    image: wordpress:latest
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'ACM_IMPORT_SOURCE_ROOT', '/var/acm-site' );
+    volumes:
+      - ./wordpress-core:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - .:/var/acm-site:ro
+    depends_on:
+      db:
+        condition: service_healthy
+
+  wpcli:
+    image: wordpress:cli
+    user: "0:0"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'ACM_IMPORT_SOURCE_ROOT', '/var/acm-site' );
+    volumes:
+      - ./wordpress-core:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - .:/var/acm-site:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      wordpress:
+        condition: service_started
+
+volumes:
+  acm_wp_db:

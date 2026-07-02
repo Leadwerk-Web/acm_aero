@@ -1,0 +1,12 @@
+# Von Docker/Setup erzeugter WordPress-Core (Bind-Mount)
+/wordpress-core/
+
+# Nicht ins WordPress-Deploy-Paket übernehmen
+node_modules/
+*.zip
+
+# Lokale IDE (optional)
+.cursor/
+
+# Live-Snapshots / Crawl-Artefakte (scripts/snapshot-live-and-compare.php)
+_snapshots/

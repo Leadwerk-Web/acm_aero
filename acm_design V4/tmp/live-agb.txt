@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<link rel="alternate" hreflang="de-DE" href="https://www.acm.aero/" />
+<link rel="alternate" hreflang="x-default" href="https://www.acm.aero/" />
+<link rel="alternate" hreflang="en-US" href="https://www.acm.aero/en/" />
+
+	<!-- This site is optimized with the Yoast SEO plugin v27.1.1 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>ACM AIR CHARTER | Privatflüge &amp; Owner-Services aus einer…</title>
+	<meta name="description" content="Business Aviation am Baden-Airpark: ACM AIR CHARTER bietet Charter, Aircraft Management, Maintenance (Part-145) und CAMO aus einer Hand." />
+	<link rel="canonical" href="https://www.acm.aero/" />
+	<meta property="og:locale" content="de_DE" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="ACM AIR CHARTER | Privatflüge &amp; Owner-Services aus einer…" />
+	<meta property="og:description" content="Business Aviation am Baden-Airpark: ACM AIR CHARTER bietet Charter, Aircraft Management, Maintenance (Part-145) und CAMO aus einer Hand." />
+	<meta property="og:url" content="https://www.acm.aero/" />
+	<meta property="og:site_name" content="ACM AIR CHARTER" />
+	<meta property="article:modified_time" content="2026-04-20T16:48:32+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.acm.aero/","url":"https://www.acm.aero/","name":"ACM AIR CHARTER | Privatflüge & Owner-Services aus einer…","isPartOf":{"@id":"https://www.acm.aero/#website"},"datePublished":"2026-04-07T13:36:56+00:00","dateModified":"2026-04-20T16:48:32+00:00","description":"Business Aviation am Baden-Airpark: ACM AIR CHARTER bietet Charter, Aircraft Management, Maintenance (Part-145) und CAMO aus einer Hand.","breadcrumb":{"@id":"https://www.acm.aero/#breadcrumb"},"inLanguage":"de","potentialAction":[{"@type":"ReadAction","target":["https://www.acm.aero/"]}]},{"@type":"BreadcrumbList","@id":"https://www.acm.aero/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.acm.aero/#website","url":"https://www.acm.aero/","name":"ACM AIR CHARTER","description":"Premium Business Aviation: Charter, Aircraft Management, Maintenance &amp; CAMO aus einer Hand.","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.acm.aero/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"de"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.tailwindcss.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.acm.aero/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.acm.aero%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.acm.aero/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.acm.aero%2F&#038;format=xml" />
+<meta name="description" content="Business Aviation am Baden-Airpark: ACM AIR CHARTER bietet Charter, Aircraft Management, Maintenance (Part-145) und CAMO aus einer Hand.">
+<link rel="canonical" href="https://www.acm.aero/">
+<link rel="alternate" hreflang="de" href="https://www.acm.aero/">
+<link rel="alternate" hreflang="en" href="https://www.acm.aero/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.acm.aero/">
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id='wp-block-library-inline-css' type='text/css'>
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=wp-block-library-inline-css */
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);--wp--custom--layout--content-size: 100%;}:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){margin-left: auto !important;margin-right: auto !important;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='cmplz-general-css' href='https://www.acm.aero/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css?ver=1773664334' type='text/css' media='all' />
+<link rel='stylesheet' id='leadwerk-theme-core-css' href='https://www.acm.aero/wp-content/themes/leadwerk_theme/style.css?ver=1.0.11' type='text/css' media='all' />
+<link rel='stylesheet' id='leadwerk-theme-fonts-css' href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&#038;family=Inter:wght@300;400;500;600&#038;display=swap' type='text/css' media='all' />
+<link rel='stylesheet' id='leadwerk-theme-base-css' href='https://www.acm.aero/wp-content/themes/leadwerk_theme/css/base.css?ver=1.0.11' type='text/css' media='all' />
+<link rel='stylesheet' id='leadwerk-theme-mobile-qa-css' href='https://www.acm.aero/wp-content/themes/leadwerk_theme/css/mobile-qa.css?ver=1776855392' type='text/css' media='all' />
+<script type="text/javascript" src="https://cdn.tailwindcss.com" id="tailwindcss-js"></script>
+<script type="text/javascript" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/js/tailwind-config.js?ver=1.0.11" id="leadwerk-tailwind-config-js"></script>
+<link rel="https://api.w.org/" href="https://www.acm.aero/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.acm.aero/wp-json/wp/v2/pages/1223" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.acm.aero/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9.4" />
+<link rel='shortlink' href='https://www.acm.aero/' />
+			<style>.cmplz-hidden {
+					display: none !important;
+				}</style><link rel="icon" href="https://www.acm.aero/wp-content/uploads/2026/04/cropped-Favicon_xs-2-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.acm.aero/wp-content/uploads/2026/04/cropped-Favicon_xs-2-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.acm.aero/wp-content/uploads/2026/04/cropped-Favicon_xs-2-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.acm.aero/wp-content/uploads/2026/04/cropped-Favicon_xs-2-270x270.png" />
+		<style id="lang-switcher-css">
+		.lang-switcher{position:fixed;bottom:24px;right:24px;z-index:99999;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,sans-serif}
+		.lang-switcher__current{display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:linear-gradient(135deg,#1e3a5f,#2563eb);color:#fff;border-radius:50%;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.35);transition:transform .2s,box-shadow .2s}
+		.lang-switcher__current:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(37,99,235,.45)}
+		.lang-switcher__dropdown{position:absolute;bottom:56px;right:0;min-width:140px;background:#fff;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.15);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s;overflow:hidden}
+		.lang-switcher:hover .lang-switcher__dropdown,.lang-switcher:focus-within .lang-switcher__dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+		.lang-switcher__link{display:block;padding:10px 16px;color:#1e293b;text-decoration:none;font-size:14px;font-weight:500;transition:background .15s,color .15s}
+		.lang-switcher__link:hover{background:#f0f5ff;color:#2563eb}
+		.lang-switcher__link--active{color:#2563eb;font-weight:700}
+		@media(max-width:480px){.lang-switcher{bottom:16px;right:16px}.lang-switcher__current{width:40px;height:40px;font-size:11px}}
+		</style>
+		</head>
+<body data-cmplz=1 class="home wp-singular page-template-default page page-id-1223 lang-de font-sans text-stone-800 antialiased">
+<header class="fixed top-0 left-0 right-0 z-50 w-full" id="header">
+<div class="w-full px-6 sm:px-8 lg:px-10">
+<!-- Logo Row - Mittig, mit Burger-MenÃƒÆ’Ã‚Â¼ links wenn gescrollt, rechts Sprachauswahl + CTA -->
+<div class="flex items-center justify-center h-16 lg:h-20 header-logo-row relative transition-all duration-400">
+<!-- Desktop Burger Menu Button - Ganz oben links in Logo-HÃƒÆ’Ã‚Â¶he (nur wenn gescrollt) -->
+<button aria-expanded="false" aria-label="Menü öffnen" class="hidden lg:block absolute left-0 p-2 header-desktop-menu-btn" id="desktop-menu-btn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- RechtsbÃƒÆ’Ã‚Â¼ndig: Sprachauswahl + Telefon-CTA (gleiche HÃƒÆ’Ã‚Â¶he wie Logo) -->
+<div class="header-top-right hidden lg:flex absolute right-0 items-center gap-6">
+<div class="header-lang-switcher flex items-center gap-1 text-sm">
+<a class="header-lang-link header-lang-active" data-lang="de" href="https://www.acm.aero/">DE</a>
+<span aria-hidden="true" class="header-lang-sep">|</span>
+<a class="header-lang-link" data-lang="en" href="https://www.acm.aero/en/">EN</a>
+</div>
+<a class="header-link-button whitespace-nowrap" href="https://www.acm.aero/kontakt/#zentrale">Kontakt aufnehmen</a>
+</div>
+<a aria-label="ACM AIR CHARTER Startseite" class="acm-logo-link hidden lg:block" href="https://www.acm.aero/">
+<img alt="ACM AIR CHARTER Logo" class="acm-logo h-12 lg:h-14 w-auto transition-opacity duration-300" id="header-logo-img" onerror="this.style.display='none'; const fallback = document.getElementById('header-logo-fallback'); if(fallback) fallback.style.display='flex';" onload="this.style.display='block'; const fallback = document.getElementById('header-logo-fallback'); if(fallback) fallback.style.display='none';" src="https://www.acm.aero/wp-content/uploads/2026/04/Logo-final-weiss-rz_svg.svg" style="object-fit: contain; max-width: 160px;">
+<!-- Fallback Text-Logo -->
+<div class="flex items-center gap-2" id="header-logo-fallback" style="display: none;">
+<div class="header-logo-bg w-10 h-10 flex items-center justify-center">
+<span class="header-logo-text font-serif text-2xl">A</span>
+</div>
+<div class="hidden sm:block">
+<span class="header-logo-text font-serif text-lg tracking-wide block leading-tight">ACM</span>
+<span class="header-logo-subtext text-[9px] font-light tracking-wider uppercase block mt-0.5">Air Charter</span>
+</div>
+</div>
+</a>
+<!-- Mobile Logo -->
+<a aria-label="ACM AIR CHARTER Startseite" class="acm-logo-link lg:hidden" href="https://www.acm.aero/">
+<img alt="ACM AIR CHARTER Logo" class="acm-logo h-10 sm:h-12 w-auto transition-opacity duration-300" id="header-logo-img-mobile" onerror="this.style.display='none'; const fallback = document.getElementById('header-logo-fallback-mobile'); if(fallback) fallback.style.display='flex';" onload="this.style.display='block'; const fallback = document.getElementById('header-logo-fallback-mobile'); if(fallback) fallback.style.display='none';" src="https://www.acm.aero/wp-content/uploads/2026/04/Logo-final-weiss-rz_svg.svg" style="object-fit: contain;">
+<!-- Fallback Text-Logo -->
+<div class="flex items-center gap-2" id="header-logo-fallback-mobile" style="display: none;">
+<div class="header-logo-bg w-8 h-8 flex items-center justify-center">
+<span class="header-logo-text font-serif text-xl">A</span>
+</div>
+</div>
+</a>
+<!-- Mobile Menu Button ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ rechts in der Logo-Zeile (nur Mobile, sichtbar beim Scrollen) -->
+<button aria-expanded="false" aria-label="Menü öffnen" class="lg:hidden absolute right-0 p-2 header-mobile-btn" id="mobile-menu-btn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Trennlinie zwischen Logo-Zeile und Navigation (verblasst links/rechts) -->
+<div aria-hidden="true" class="header-divider-line"></div>
+<!-- Navigation Row -->
+<div class="flex items-center justify-center h-14 lg:h-16 relative header-nav-row transition-all duration-400">
+<!-- Desktop Navigation - Mittig (nur wenn nicht gescrollt) -->
+<nav aria-label="Hauptnavigation" class="hidden lg:flex items-center gap-[10rem] justify-center header-nav-visible" id="desktop-nav">
+<a class="header-nav-link" href="https://www.acm.aero/thats-acm/">That’s ACM</a>
+<div class="header-nav-charter-wrap">
+<a class="header-nav-link" href="https://www.acm.aero/charter/">Charter</a>
+<div aria-label="Charter Untermenü" class="header-nav-dropdown">
+<a href="https://www.acm.aero/charter/">Charter</a>
+<a href="https://www.acm.aero/global-7500/">Bombardier Global 7500</a>
+<a href="https://www.acm.aero/global-6000/">Bombardier Global 6000</a>
+<a href="https://www.acm.aero/global-xrs/">Bombardier Global XRS</a>
+</div>
+</div>
+<a class="header-nav-link" href="https://www.acm.aero/aircraft-management/">Aircraft Management</a>
+<a class="header-nav-link" href="https://www.acm.aero/maintenance/">Maintenance</a>
+<a class="header-nav-link" href="https://www.acm.aero/karriere/">Karriere</a>
+<a class="header-nav-link" href="https://www.acm.aero/kontakt/">Kontakt</a>
+</nav>
+</div>
+</div>
+<!-- Desktop Burger Menu - Links aufklappbar - Komplette Seite -->
+<div class="hidden lg:block fixed top-0 left-0 h-screen w-80 bg-white z-[100] transform -translate-x-full" id="desktop-menu">
+<div class="h-screen overflow-y-auto">
+<div class="p-6 flex items-center justify-between">
+<img alt="ACM AIR CHARTER Logo" class="h-10 w-auto" onerror="this.style.display='none'" src="https://www.acm.aero/wp-content/uploads/2026/04/Logo-final-weiss-rz_svg.svg">
+<button aria-label="Menü schließen" class="p-2 hover:bg-stone-100 rounded-lg transition-colors" id="desktop-menu-close">
+<svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<nav class="p-6 space-y-1 desktop-menu-nav">
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="https://www.acm.aero/thats-acm/">That’s ACM</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="https://www.acm.aero/charter/">Charter</a>
+<a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="https://www.acm.aero/global-7500/" style="font-size: 0.85rem;">Bombardier Global 7500</a>
+<a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="https://www.acm.aero/global-6000/" style="font-size: 0.85rem;">Bombardier Global 6000</a>
+<a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="https://www.acm.aero/global-xrs/" style="font-size: 0.85rem;">Bombardier Global XRS</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="https://www.acm.aero/aircraft-management/">Aircraft Management</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="https://www.acm.aero/maintenance/">Maintenance</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="https://www.acm.aero/karriere/">Karriere</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="https://www.acm.aero/news/">News</a>
+<a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="https://www.acm.aero/kontakt/">Kontakt</a>
+</nav>
+</div>
+</div>
+<!-- Desktop Menu Backdrop - Komplette Seite -->
+<div class="hidden lg:block fixed top-0 left-0 right-0 bottom-0 bg-black/20 backdrop-blur-sm z-[99] opacity-0 transition-opacity duration-300" id="desktop-menu-backdrop"></div>
+<!-- Mobile Navigation -->
+<div class="lg:hidden hidden" id="mobile-menu">
+<nav class="max-w-7xl mx-auto px-6 py-6 space-y-1 mobile-menu-nav">
+<a class="mobile-menu-link block py-3" href="https://www.acm.aero/thats-acm/">That’s ACM</a>
+<a class="mobile-menu-link block py-3" href="https://www.acm.aero/charter/">Charter</a>
+<a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="https://www.acm.aero/global-7500/" style="font-size: 0.9rem;">Bombardier Global 7500</a>
+<a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="https://www.acm.aero/global-6000/" style="font-size: 0.9rem;">Bombardier Global 6000</a>
+<a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="https://www.acm.aero/global-xrs/" style="font-size: 0.9rem;">Bombardier Global XRS</a>
+<a class="mobile-menu-link block py-3" href="https://www.acm.aero/aircraft-management/">Aircraft Management</a>
+<a class="mobile-menu-link block py-3" href="https://www.acm.aero/maintenance/">Maintenance</a>
+<a class="mobile-menu-link block py-3" href="https://www.acm.aero/karriere/">Karriere</a>
+<a class="mobile-menu-link block py-3" href="https://www.acm.aero/news/">News</a>
+<a class="mobile-menu-link block py-3" href="https://www.acm.aero/kontakt/">Kontakt</a>
+<div class="pt-4 mt-2 border-t border-stone-100 flex items-center">
+<a class="text-sm font-semibold text-stone-500 hover:text-olive transition-colors" href="https://www.acm.aero/en/">EN</a>
+</div>
+</nav>
+</div>
+</header><section class="relative w-full h-screen min-h-[600px] max-h-[950px] overflow-hidden" id="hero">
+<!-- Video Background - Full Bleed bis ganz oben -->
+<!-- ACM Hero Video - Startet bei Sekunde 15, Loop ab Sekunde 15 -->
+<video autoplay="" class="absolute top-0 left-0 w-full h-full object-cover z-0 hero-video-fadein" id="hero-video" loop="" muted="" playsinline="" poster="https://www.acm.aero/wp-content/uploads/2026/04/ACM-Hangar-Baden-Baden.jpg" preload="auto">
+<!-- ACM Hero Video -->
+<source src="https://www.acm.aero/wp-content/uploads/2026/04/ACM-Website.mp4" type="video/mp4"></source>
+<!-- Fallback: Poster-Bild wird angezeigt wenn Video nicht lÃƒÆ’Ã‚Â¤dt -->
+</video>
+<!-- Overlay - Subtiler fÃƒÆ’Ã‚Â¼r Jumeirah-Look -->
+<div class="hero-overlay absolute inset-0 z-10"></div>
+<!-- Stromlinien-Effekte -->
+<div class="streamlines-container absolute inset-0 pointer-events-none" style="z-index: 15;">
+<div class="streamline streamline-1"></div>
+<div class="streamline streamline-2"></div>
+<div class="streamline streamline-3"></div>
+<div class="streamline streamline-4"></div>
+<div class="streamline streamline-5"></div>
+</div>
+</section><section class="hero-statement-section py-16 sm:py-20 lg:py-24 bg-sand-50" id="hero-statement">
+<div class="max-w-4xl mx-auto px-6 sm:px-8 text-center">
+<p class="font-serif leading-relaxed font-light italic" style="color: #001441;">„Exzellenz in der Luft, Vertrauen am Boden"</p>
+</div>
+</section><section class="py-20 sm:py-28 lg:py-32 bg-white relative overflow-hidden" id="services">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+<!-- Section Header - Jumeirah Style -->
+<div class="text-center mb-16 lg:mb-20 scroll-reveal">
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/assets/images/Emblem.svg" width="auto">
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 leading-tight font-light">Individuelle Aviation-Lösungen,<br>ganz nach Ihren Wünschen</h2>
+</div>
+<!-- 3-Column Grid - Jumeirah Style -->
+<div class="grid md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
+<!-- Charter -->
+<article class="scroll-reveal flex flex-col" id="charter">
+<div class="services-card-img aspect-[4/3] overflow-hidden mb-6">
+<img alt="ACM Charter" class="w-full h-full object-cover block" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&amp;q=80'" src="https://www.acm.aero/wp-content/uploads/2026/04/Charter_hero.jpg">
+</div>
+<div class="text-center px-2 flex flex-col flex-1 items-center">
+<h3 class="font-serif text-2xl lg:text-[1.7rem] text-stone-800 mb-3 font-normal">Charter-Services</h3>
+<p class="text-stone-500 mb-5 leading-relaxed text-[15px]">Flexible Privatflüge mit höchsten Sicherheitsstandards. Individuelle Routenplanung, diskret und zuverlässig – wann und wohin Sie möchten.</p>
+<a class="link-arrow mt-auto" href="https://www.acm.aero/kontakt/">Charter anfragen <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+</div>
+</article>
+<!-- Aircraft Management -->
+<article class="scroll-reveal flex flex-col">
+<div class="services-card-img aspect-[4/3] overflow-hidden mb-6">
+<img alt="ACM Aircraft Management" class="w-full h-full object-cover block" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&amp;q=80'" src="https://www.acm.aero/wp-content/uploads/2026/04/AircraftManagement_Hero.jpg">
+</div>
+<div class="text-center px-2 flex flex-col flex-1 items-center">
+<h3 class="font-serif text-2xl lg:text-[1.7rem] text-stone-800 mb-3 font-normal">Aircraft Management</h3>
+<p class="text-stone-500 mb-5 leading-relaxed text-[15px]">Transparente Betreuung Ihres Flugzeugs. Professionelle und effiziente Crewplanung, proaktive Operations und detailliertes Reporting für maximale Kontrolle.</p>
+<a class="link-arrow mt-auto" href="#management">Management entdecken <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+</div>
+</article>
+<!-- Maintenance -->
+<article class="scroll-reveal flex flex-col">
+<div class="services-card-img aspect-[4/3] overflow-hidden mb-6">
+<img alt="ACM Maintenance &amp; CAMO" class="w-full h-full object-cover block" loading="lazy" onerror="this.onerror=null;this.src='Fotos/D-AMPG-7500/70245%20-%20DELIVERY%20Photos%20-%20IMG_0010.png'" src="https://www.acm.aero/wp-content/uploads/2026/04/Maintenance_CAMO_hero.jpg">
+</div>
+<div class="text-center px-2 flex flex-col flex-1 items-center">
+<h3 class="font-serif text-2xl lg:text-[1.7rem] text-stone-800 mb-3 font-normal">Maintenance &amp; CAMO</h3>
+<p class="text-stone-500 mb-5 leading-relaxed text-[15px]">Part-145 zertifizierte Wartung, CAMO-Services und 24/7 AOG-Support. Planbare Turnaround-Zeiten. Individuelle Technikplanung.</p>
+<a class="link-arrow mt-auto" href="https://www.acm.aero/kontakt/">Maintenance anfragen <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section><section class="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden" id="services-promo">
+<img alt="ACM Aircraft Delivery" class="w-full h-full object-cover" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&amp;q=80'" src="https://www.acm.aero/wp-content/uploads/2026/04/70245-DELIVERY-Photos-IMG_0010-3.jpg">
+<!-- Subtle Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/15 to-black/10"></div>
+<!-- Centered Text Overlay -->
+<div class="absolute inset-0 flex flex-col items-center justify-center px-6 gap-6 sm:gap-8">
+<img alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" height="35" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/assets/images/Emblem.svg" width="auto">
+<h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white text-center font-light leading-relaxed" style="text-shadow: 0 2px 20px rgba(0,0,0,0.3);">Individuelle Aviation-Lösungen,<br>ganz nach Ihren Wünschen</h2>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-white text-stone-800 font-medium text-sm uppercase tracking-wider hover:bg-stone-100 transition-colors duration-300 shadow-lg" href="https://www.acm.aero/charter/" style="text-shadow: none;">Jetzt Ihren Flug buchen</a>
+</div>
+</section><section class="py-14 sm:py-16 bg-sand-100" id="trust-kpis">
+<div class="w-[80vw] max-w-[80vw] mx-auto px-4">
+<div class="flex flex-nowrap justify-center items-start gap-6 sm:gap-8 lg:gap-10">
+<!-- KPIs - Zahl hervorgehoben, Spalten in einer Zeile, Text darf umbrechen -->
+<div class="text-center scroll-reveal flex-1 min-w-0">
+<span class="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-800 font-light block">+30 Jahre</span>
+<span class="font-serif text-base sm:text-lg lg:text-xl text-stone-700 font-light mt-1">in der Luftfahrtbranche.</span>
+</div>
+<div aria-hidden="true" class="hidden sm:block w-px min-h-[4rem] bg-stone-300 shrink-0 self-stretch"></div>
+<div class="text-center scroll-reveal flex-1 min-w-0">
+<span class="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-800 font-light block">+80.000</span>
+<span class="font-serif text-base sm:text-lg lg:text-xl text-stone-700 font-light mt-1">geleistete Flugstunden.</span>
+</div>
+<div aria-hidden="true" class="hidden sm:block w-px min-h-[4rem] bg-stone-300 shrink-0 self-stretch"></div>
+<div class="text-center scroll-reveal flex-1 min-w-0">
+<span class="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-800 font-light block">100%</span>
+<span class="font-serif text-base sm:text-lg lg:text-xl text-stone-700 font-light mt-1">individuelle Flugplanung.</span>
+</div>
+</div>
+</div>
+</section><section class="py-20 sm:py-28 lg:py-32 bg-white relative overflow-hidden" id="about">
+<div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center">
+<!-- Image -->
+<div class="scroll-reveal lg:order-1">
+<img alt="ACM – That's ACM" class="w-full h-[400px] lg:h-[550px] object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1559024094-4a1e4495c3c1?w=800&amp;q=80'" src="https://www.acm.aero/wp-content/uploads/2026/04/home_thatsacm.jpg">
+</div>
+<!-- Content -->
+<div class="lg:order-2">
+<span class="text-olive/70 font-medium text-xs tracking-[0.2em] uppercase mb-6 block">That's ACM</span>
+<h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">Boutique Aviation mit technischer Tiefe</h2><p class="text-stone-700 leading-relaxed mb-10">ACM AIR CHARTER steht für integrierte Business Aviation am Baden Airpark. Unter einem Dach vereinen wir Aircraft Management, Charter, Part-145 Maintenance und CAMO mit klaren Prozessen, direkten Ansprechpartnern und zertifizierten Standards. Sicherheit, Präzision und Diskretion sind bei uns gelebte Praxis.</p>
+
+<div class="flex flex-wrap gap-4">
+<a class="btn-primary inline-flex items-center justify-center" href="https://www.acm.aero/thats-acm/">Mehr über ACM</a>
+<a class="btn-outline inline-flex items-center justify-center" href="https://www.acm.aero/kontakt/#zentrale">
+                Kontakt aufnehmen
+              </a>
+</div>
+</div>
+</div>
+</div>
+</section><section class="relative h-[45vh] sm:h-[55vh] overflow-hidden" id="charter-hero">
+<img alt="ACM Flotte" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&amp;q=80'" src="https://www.acm.aero/wp-content/uploads/2026/04/home_banner_flotte.jpg">
+<div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+<img alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" height="35" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/assets/images/Emblem.svg" width="auto">
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light">Flotte</h2>
+<a class="btn-overlay-white mt-4 inline-flex" href="https://www.acm.aero/charter/">Mehr erfahren</a>
+</div>
+</section><section class="relative overflow-visible" id="maintenance">
+<div class="grid lg:grid-cols-2 min-h-[600px] lg:min-h-[700px]">
+<!-- Content Side - White Background -->
+<div class="content-box-outer bg-white py-16 lg:py-20 flex items-center order-2 lg:order-1">
+<div class="max-w-xl">
+<span class="text-olive/70 font-medium text-xs tracking-[0.2em] uppercase mb-6 block">Aircraft Management</span>
+<h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">Ihr Flugzeug in besten Händen</h2>
+<p class="text-stone-700 leading-relaxed mb-10">Als Flugzeugeigentümer profitieren Sie von einem strukturierten Aircraft Management, das Transparenz, Verfügbarkeit und nachhaltigen Werterhalt sichert. Wir übernehmen sämtliche operativen Prozesse, sorgen für klare Kostenübersichten, eingespielte Crews und eine vorausschauende, kostenoptimierte Planung.</p>
+<div class="flex flex-wrap gap-4">
+<a class="btn-primary" href="https://www.acm.aero/aircraft-management/">Mehr über Aircraft Management erfahren</a>
+</div>
+</div>
+</div>
+<!-- Image Side -->
+<div class="relative h-[400px] lg:h-auto order-1 lg:order-2">
+<img alt="ACM Aircraft Management – Ihr Flugzeug in besten Händen" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.onerror=null;this.src='Fotos/D-AMPG-7500/70245%20-%20DELIVERY%20Photos%20-%20IMG_0010.png'" src="https://www.acm.aero/wp-content/uploads/2026/04/home_besteHaende.jpg">
+</div>
+</div>
+</section><section class="py-20 sm:py-28 lg:py-32 bg-sand-50 relative overflow-hidden" id="management">
+<div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-[7rem] items-center">
+<!-- Content -->
+<div class="lg:order-2">
+<span class="text-olive font-medium text-xs tracking-[0.2em] uppercase mb-6 block">Technik &amp; CAMO</span>
+<h2 class="font-serif text-stone-800 mb-8 leading-tight font-light">Erstklassiger Wartungsservice für Business Jets</h2>
+<p class="text-stone-500 leading-relaxed mb-10">Unsere Part-145 zertifizierte Werft bietet umfassende Wartungsleistungen für Business Jets. Von Line- und Base-Maintenance über Avionik bis hin zu Cabin-Refurbishment – mit transparenten SLAs und planbaren Turnaround-Zeiten.</p>
+<div class="flex flex-wrap gap-4">
+<a class="btn-primary" href="https://www.acm.aero/maintenance/">Mehr über Maintenance erfahren</a>
+</div>
+</div>
+<!-- Image -->
+<div class="lg:order-1">
+<img alt="ACM Technik &amp; CAMO" class="w-full h-[400px] lg:h-[550px] object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&amp;q=80'" src="https://www.acm.aero/wp-content/uploads/2026/04/home_technik.jpg">
+</div>
+</div>
+</div>
+</section><section class="relative h-[45vh] sm:h-[55vh] overflow-hidden" id="handling">
+<img alt="ACM Handling" class="w-full h-full object-cover object-left" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&amp;q=80'" src="https://www.acm.aero/wp-content/uploads/2026/04/home_Rampmanager.jpg">
+<div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.4) 0%, rgba(0, 20, 65, 0.55) 50%, rgba(0, 13, 43, 0.65) 100%);"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+<img alt="" class="section-emblem section-emblem-on-dark h-[35px] w-auto mx-auto mb-2" height="35" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/assets/images/Emblem.svg" width="auto">
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light">Handling</h2>
+<a class="btn-overlay-white mt-4 inline-flex" href="https://www.acmhandling.de/" rel="noopener noreferrer" target="_blank">Mehr erfahren</a>
+</div>
+</section><section class="relative overflow-visible" id="careers">
+<div class="grid lg:grid-cols-2 min-h-[600px] lg:min-h-[650px]">
+<!-- Image Side -->
+<div class="relative h-[400px] lg:h-auto">
+<img alt="ACM Karriere – internationales Premium-Umfeld" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&amp;q=80'" src="https://www.acm.aero/wp-content/uploads/2026/04/home_karriere.jpg">
+</div>
+<!-- Content Side -->
+<div class="content-box-outer bg-sand-100 py-16 lg:py-20 flex items-center">
+<div class="max-w-xl">
+<span class="text-olive font-medium text-xs tracking-[0.2em] uppercase mb-6 block">Karriere</span>
+<h2 class="font-serif text-stone-800 mb-8 leading-tight font-light">Arbeiten im internationalen Premium-Umfeld</h2>
+<p class="text-stone-500 leading-relaxed mb-10">Bei ACM erwarten Sie spannende Aufgaben in der internationalen Business Aviation. Wir investieren in unsere Mitarbeiter – durch kontinuierliche Weiterbildung, moderne Arbeitsbedingungen und ein kollegiales Team.</p>
+<div class="flex flex-wrap gap-4">
+<a class="btn-primary" href="https://www.acm.aero/karriere/">Zu unseren Stellenausschreibungen</a>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-20 sm:py-28 lg:py-32 bg-white relative overflow-hidden" id="news">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+<div class="text-center mb-14 lg:mb-16">
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/assets/images/Emblem.svg" width="auto">
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 font-light">News &amp; Insights</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8 lg:gap-10">
+<!-- News: nur Beitr&auml;ge mit eigener Artikelseite (wie news.html, data-imported-news) -->
+
+
+
+<article class="group scroll-reveal" data-home-news="true"><a class="block" href="https://www.acm.aero/news/acm-air-charter-nimmt-dritte-bombardier-global-7500-in-ihre-weltweit-gemanagte-flotte-auf/"><div class="aspect-[4/3] overflow-hidden mb-5"><img class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://www.acm.aero/wp-content/uploads/2026/04/I7A2251-1-1024x683.jpg" alt="ACM AIR CHARTER nimmt dritte Bombardier Global 7500 in ihre weltweit gemanagte Flotte auf"></div><div class="px-1"><div class="flex items-center gap-3 text-xs text-stone-400 mb-3"><span class="text-olive uppercase tracking-wider font-medium">Unternehmen</span><span>•</span><time datetime="2026-02-20">20. Februar 2026</time></div><h3 class="font-serif text-xl lg:text-2xl text-stone-800 group-hover:text-olive transition-colors leading-snug font-normal">ACM AIR CHARTER nimmt dritte Bombardier Global 7500 in ihre weltweit gemanagte Flotte auf</h3></div></a></article><article class="group scroll-reveal" data-home-news="true"><a class="block" href="https://www.acm.aero/news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh/"><div class="aspect-[4/3] overflow-hidden mb-5"><img class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://www.acm.aero/wp-content/uploads/2026/04/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.jpg" alt="IS-BAH Stage 2 Zertifizierung der ACM Business Aviation Handling GmbH"></div><div class="px-1"><div class="flex items-center gap-3 text-xs text-stone-400 mb-3"><span class="text-olive uppercase tracking-wider font-medium">Unternehmen</span><span>•</span><time datetime="2024-03-19">19. März 2024</time></div><h3 class="font-serif text-xl lg:text-2xl text-stone-800 group-hover:text-olive transition-colors leading-snug font-normal">IS-BAH Stage 2 Zertifizierung der ACM Business Aviation Handling GmbH</h3></div></a></article><article class="group scroll-reveal" data-home-news="true"><a class="block" href="https://www.acm.aero/news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab/"><div class="aspect-[4/3] overflow-hidden mb-5"><img class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://www.acm.aero/wp-content/uploads/2026/04/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab-1024x576.jpg" alt="ACM-Technik schließt erfolgreich die erste 120-Monats-Inspektion eines Bombardier Global Express-Flugzeuges ab"></div><div class="px-1"><div class="flex items-center gap-3 text-xs text-stone-400 mb-3"><span class="text-olive uppercase tracking-wider font-medium">Unternehmen</span><span>•</span><time datetime="2023-02-20">20. Februar 2023</time></div><h3 class="font-serif text-xl lg:text-2xl text-stone-800 group-hover:text-olive transition-colors leading-snug font-normal">ACM-Technik schließt erfolgreich die erste 120-Monats-Inspektion eines Bombardier Global Express-Flugzeuges ab</h3></div></a></article><article class="group scroll-reveal" data-home-news="true"><a class="block" href="https://www.acm.aero/news/zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte/"><div class="aspect-[4/3] overflow-hidden mb-5"><img class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://www.acm.aero/wp-content/uploads/2026/04/zweiter-bombardier-global-7500-erweitert-die-acm-air-charter-flotte-1024x516.jpg" alt="Zweiter Bombardier Global 7500 erweitert die ACM AIR CHARTER Flotte"></div><div class="px-1"><div class="flex items-center gap-3 text-xs text-stone-400 mb-3"><span class="text-olive uppercase tracking-wider font-medium">Unternehmen</span><span>•</span><time datetime="2023-01-20">20. Januar 2023</time></div><h3 class="font-serif text-xl lg:text-2xl text-stone-800 group-hover:text-olive transition-colors leading-snug font-normal">Zweiter Bombardier Global 7500 erweitert die ACM AIR CHARTER Flotte</h3></div></a></article><article class="group scroll-reveal" data-home-news="true"><a class="block" href="https://www.acm.aero/news/global-7500-erweitert-die-acm-air-charter-flotte/"><div class="aspect-[4/3] overflow-hidden mb-5"><img class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://www.acm.aero/wp-content/uploads/2026/04/global-7500-erweitert-die-acm-air-charter-flotte-1024x516.png" alt="Global 7500 erweitert die ACM AIR CHARTER-Flotte"></div><div class="px-1"><div class="flex items-center gap-3 text-xs text-stone-400 mb-3"><span class="text-olive uppercase tracking-wider font-medium">Unternehmen</span><span>•</span><time datetime="2021-03-19">19. März 2021</time></div><h3 class="font-serif text-xl lg:text-2xl text-stone-800 group-hover:text-olive transition-colors leading-snug font-normal">Global 7500 erweitert die ACM AIR CHARTER-Flotte</h3></div></a></article><article class="group scroll-reveal" data-home-news="true"><a class="block" href="https://www.acm.aero/news/acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel/"><div class="aspect-[4/3] overflow-hidden mb-5"><img class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://www.acm.aero/wp-content/uploads/2026/04/acm-air-charter-fliegt-seit-10-jahren-mit-dem-is-bao-qualitaetssiegel-1024x783.jpg" alt="ACM AIR CHARTER fliegt seit 10 Jahren mit dem IS-BAO™ Qualitätssiegel"></div><div class="px-1"><div class="flex items-center gap-3 text-xs text-stone-400 mb-3"><span class="text-olive uppercase tracking-wider font-medium">Unternehmen</span><span>•</span><time datetime="2020-10-01">1. Oktober 2020</time></div><h3 class="font-serif text-xl lg:text-2xl text-stone-800 group-hover:text-olive transition-colors leading-snug font-normal">ACM AIR CHARTER fliegt seit 10 Jahren mit dem IS-BAO™ Qualitätssiegel</h3></div></a></article></div>
+<!-- View All Button -->
+<div class="text-center mt-12">
+<a class="btn-outline inline-flex items-center gap-2" href="https://www.acm.aero/news/">Alle News ansehen</a>
+</div>
+</div>
+</section><section class="relative py-20 sm:py-24 lg:py-28 bg-sand-100 overflow-hidden" id="home-final-cta">
+<!-- Dezente Stromlinien-Animation -->
+<div class="streamlines-container absolute inset-0 pointer-events-none z-0 opacity-20">
+<div class="streamline streamline-1" style="background: linear-gradient(90deg, transparent, rgba(0,20,65,0.3), transparent);"></div>
+<div class="streamline streamline-2" style="background: linear-gradient(90deg, transparent, rgba(0,20,65,0.2), transparent);"></div>
+<div class="streamline streamline-3" style="background: linear-gradient(90deg, transparent, rgba(0,20,65,0.25), transparent);"></div>
+<div class="streamline streamline-4" style="background: linear-gradient(90deg, transparent, rgba(0,20,65,0.15), transparent);"></div>
+<div class="streamline streamline-5" style="background: linear-gradient(90deg, transparent, rgba(0,20,65,0.2), transparent);"></div>
+</div>
+<div class="max-w-[80rem] mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/assets/images/Emblem.svg" width="auto">
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-900 mb-6 font-light">Bereit für den nächsten Schritt?</h2>
+<p class="text-stone-600 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">Ob Charter-Anfrage, Management-Beratung oder Maintenance-Slot – wir freuen uns auf Ihre Anfrage.</p>
+<div class="homepage-cta-grid flex flex-nowrap justify-center gap-4 overflow-x-auto">
+<a class="btn-filled inline-flex items-center justify-center" href="https://www.acm.aero/charter/">Flug chartern</a>
+<a class="btn-outline inline-flex items-center justify-center" href="https://www.acm.aero/aircraft-management/">Aircraft Management</a>
+<a class="btn-outline inline-flex items-center justify-center" href="https://www.acm.aero/maintenance/">Maintenance</a>
+<a class="btn-outline inline-flex items-center justify-center" href="https://www.acm.aero/karriere/">Karriere</a>
+</div>
+</div>
+</section><footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+<!-- Top Section: Logo + Newsletter -->
+<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 mb-14 lg:mb-16">
+<!-- Logo & Tagline -->
+<div class="lg:max-w-sm">
+<img alt="ACM Logo" class="h-14 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="https://www.acm.aero/wp-content/uploads/2026/04/logo.png">
+<div style="display: none;">
+<span class="font-serif text-2xl text-stone-900 tracking-wide">ACM AIR CHARTER</span>
+</div>
+<p class="text-stone-500 text-sm leading-relaxed">Premium Business Aviation aus einer Hand – Charter, Management, Maintenance.</p>
+</div>
+<!-- Contact Info -->
+<div class="lg:text-right">
+<address class="not-italic text-sm leading-relaxed text-stone-600 mb-4"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Montreal%20Ave.%20D415%2C%2077836%20Rheinm%C3%BCnster%2C%20Deutschland" target="_blank" rel="noopener noreferrer">ACM AIR CHARTER Luftfahrtgesellschaft mbH<br>Montreal Ave. D415<br>77836 Rheinmünster</a></address>
+<div class="space-y-1 text-sm">
+<a class="block text-olive hover:text-olive-dark transition-colors" href="tel:+4972293022-0">+49 7229 3022-0</a>
+<a class="block text-olive hover:text-olive-dark transition-colors" href="mailto:info@acm.aero">info@acm.aero</a>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-12 py-10 border-t border-stone-200">
+<!-- Services -->
+<div data-leadwerk-footer-col="services">
+<h4 class="text-stone-900 font-serif text-lg mb-4">Leistungen</h4>
+<ul class="space-y-2.5 text-sm">
+<li><a class="hover:text-olive transition-colors" href="https://www.acm.aero/charter/">Charter</a></li>
+<li><a class="hover:text-olive transition-colors" href="https://www.acm.aero/aircraft-management/">Aircraft Management</a></li>
+<li><a class="hover:text-olive transition-colors" href="https://www.acm.aero/maintenance/">Maintenance</a></li>
+
+</ul>
+</div>
+<!-- Unternehmen -->
+<div data-leadwerk-footer-col="company">
+<h4 class="text-stone-900 font-serif text-lg mb-4">Unternehmen</h4>
+<ul class="space-y-2.5 text-sm">
+<li><a class="hover:text-olive transition-colors" href="https://www.acm.aero/thats-acm/">That’s ACM</a></li>
+<li><a class="hover:text-olive transition-colors" href="https://www.acm.aero/karriere/">Karriere</a></li>
+<li><a class="hover:text-olive transition-colors" href="https://www.acm.aero/news/">News</a></li>
+<li><a class="hover:text-olive transition-colors" href="https://www.acm.aero/kontakt/">Kontakt</a></li>
+</ul>
+</div>
+<!-- Rechtliches -->
+<div data-leadwerk-footer-col="legal">
+<h4 class="text-stone-900 font-serif text-lg mb-4">Rechtliches</h4>
+<ul class="space-y-2.5 text-sm">
+<li><a class="hover:text-olive transition-colors" href="https://www.acm.aero/impressum/">Impressum</a></li>
+<li><a class="hover:text-olive transition-colors" href="https://www.acm.aero/datenschutz/">Datenschutz</a></li>
+<li><a class="hover:text-olive transition-colors" href="https://www.acm.aero/agbz/">AGB</a></li>
+</ul>
+</div>
+<!-- Social & Language -->
+<div data-leadwerk-footer-col="social">
+<h4 class="text-stone-900 font-serif text-lg mb-4">Folgen Sie uns</h4>
+<div class="flex items-center gap-4 mb-6">
+<a aria-label="LinkedIn" class="text-stone-400 hover:text-olive transition-colors" href="https://www.linkedin.com/company/acm-air-charter-luftfahrtgesellschaft-mbh" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+</svg>
+</a>
+<a aria-label="Instagram" class="text-stone-400 hover:text-olive transition-colors" href="https://www.instagram.com/acmaircharter/" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+</svg>
+</a>
+</div>
+<!-- IS-BAO Certification Badge -->
+<div class="mb-6">
+<img alt="IS-BAO Registered Company Stage 3" class="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300" onerror="this.style.display='none';" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/Fotos/is-bao-registered-company-stages3-01.png" title="IS-BAO™ Registered Company Stage 3 - International Standard for Business Aircraft Operations">
+</div>
+<div class="flex items-center gap-2 text-sm">
+<a aria-label="Deutsche Sprache" class="language-btn px-2 py-1 transition-all duration-200 active" data-lang="de" href="https://www.acm.aero/" id="lang-de">
+              DE
+            </a>
+<span class="text-stone-400">|</span>
+<a aria-label="Englische Sprache" class="language-btn px-2 py-1 transition-all duration-200" data-lang="en" href="https://www.acm.aero/en/" id="lang-en">
+              EN
+            </a>
+</div>
+</div>
+</div>
+<!-- Copyright -->
+<div class="pt-8 border-t border-stone-200">
+<p class="text-center text-stone-500 text-sm">© 2026 ACM AIR CHARTER GmbH. Alle Rechte vorbehalten.</p>
+</div>
+</div>
+</footer>﻿<!-- Scroll to Top Button -->
+<button aria-label="Nach oben scrollen" id="scroll-to-top" title="Nach oben scrollen">
+<svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button><!-- ============================================
+       MODALS
+       ============================================ -->
+<!-- Flight Request Modal -->
+<div aria-labelledby="flight-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="flight-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('flight-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="flight-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="flight-modal-title">Flug anfragen.</h2>
+<button aria-label="Schließen" class="modal-close" onclick="closeModal('flight-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier würde die Anfrage gesendet werden.');">
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-from">Von *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-from" placeholder="z.B. Frankfurt (FRA)" required="" type="text">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-to">Nach *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-to" placeholder="z.B. London (LTN)" required="" type="text">
+</div>
+</div>
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-date">Datum *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-date" required="" type="date">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-pax">Passagiere *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-pax" max="19" min="1" placeholder="Anzahl" required="" type="number">
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-email" placeholder="ihre@email.de" required="" type="email">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-phone">Telefon</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-phone" placeholder="+49 ..." type="tel">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-message">Nachricht</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="flight-message" placeholder="Besondere Wünsche oder Anforderungen..." rows="3"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="flight-privacy" required="" type="checkbox">
+<label class="text-sm text-stone-600" for="flight-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Anfrage senden
+            </button>
+</form>
+<!-- KOMMENTAR: Matomo Event Tracking hier einfÃƒÂ¼gen
+          <script>
+            // _paq.push(['trackEvent', 'Forms', 'Submit', 'Flight Request']);
+          </script>
+          -->
+</div>
+</div>
+</div>
+</div>
+<!-- Maintenance Modal -->
+<div aria-labelledby="maintenance-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="maintenance-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('maintenance-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="maintenance-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="maintenance-modal-title">Maintenance Slot anfragen.</h2>
+<button aria-label="Schließen" class="modal-close" onclick="closeModal('maintenance-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier würde die Anfrage gesendet werden.');">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-aircraft">Flugzeugtyp *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-aircraft" placeholder="z.B. Bombardier Global 6000" required="" type="text">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-reg">Registrierung</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-reg" placeholder="z.B. D-ACMA" type="text">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-type">Art der Wartung *</label>
+<select class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors bg-white" id="maint-type" required="">
+<option value="">Bitte wählen...</option>
+<option value="line">Line Maintenance</option>
+<option value="base">Base Maintenance</option>
+<option value="avionics">Avionik</option>
+<option value="cabin">Cabin Refurbishment</option>
+<option value="aog">AOG Support</option>
+<option value="other">Sonstiges</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-date">Gewünschter Zeitraum *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-date" placeholder="z.B. Februar 2026" required="" type="text">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-email" placeholder="ihre@email.de" required="" type="email">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-message">Details zur Anfrage</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="maint-message" placeholder="Beschreiben Sie den Wartungsbedarf..." rows="3"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="maint-privacy" required="" type="checkbox">
+<label class="text-sm text-stone-600" for="maint-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Slot anfragen
+            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Management Modal -->
+<div aria-labelledby="management-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="management-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('management-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="management-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="management-modal-title">Management-Gespräch.</h2>
+<button aria-label="Schließen" class="modal-close" onclick="closeModal('management-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier würde die Anfrage gesendet werden.');">
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-name">Name *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-name" placeholder="Ihr Name" required="" type="text">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-company">Unternehmen</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-company" placeholder="Firma (optional)" type="text">
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-aircraft">Flugzeugtyp</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-aircraft" placeholder="z.B. Cessna Citation XLS+" type="text">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-email" placeholder="ihre@email.de" required="" type="email">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-phone">Telefon *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-phone" placeholder="+49 ..." required="" type="tel">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-message">Ihre Anfrage</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="mgmt-message" placeholder="Was möchten Sie besprechen?" rows="3"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="mgmt-privacy" required="" type="checkbox">
+<label class="text-sm text-stone-600" for="mgmt-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Gespräch vereinbaren
+            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Career Modal -->
+<div aria-labelledby="career-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="career-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('career-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="career-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="career-modal-title">Online Bewerbung.</h2>
+<button aria-label="Schließen" class="modal-close" onclick="closeModal('career-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier würde die Bewerbung gesendet werden.');">
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-firstname">Vorname *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-firstname" required="" type="text">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-lastname">Nachname *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-lastname" required="" type="text">
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-email" placeholder="ihre@email.de" required="" type="email">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-phone">Telefon</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-phone" placeholder="+49 ..." type="tel">
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-position">Gewünschte Position *</label>
+<select class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors bg-white" id="career-position" required="">
+<option value="">Bitte wählen...</option>
+<option value="mechanic">Flugzeugmechaniker (m/w/d)</option>
+<option value="avionics">Avionik-Techniker (m/w/d)</option>
+<option value="engineer">Ingenieur (m/w/d)</option>
+<option value="pilot">Pilot (m/w/d)</option>
+<option value="ops">Flight Operations (m/w/d)</option>
+<option value="other">Initiativbewerbung</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-message">Anschreiben / Motivation</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="career-message" placeholder="Erzählen Sie uns von sich..." rows="4"></textarea>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1">Lebenslauf (PDF)</label>
+<div class="border-2 border-dashed border-stone-300 rounded-lg p-4 text-center hover:border-stone-400 transition-colors cursor-pointer">
+<input accept=".pdf" class="hidden" id="career-cv" type="file">
+<label class="cursor-pointer" for="career-cv">
+<svg class="w-8 h-8 mx-auto text-stone-400 mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<span class="text-sm text-stone-600">PDF-Datei auswählen</span>
+</label>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="career-privacy" required="" type="checkbox">
+<label class="text-sm text-stone-600" for="career-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Bewerbung absenden
+            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Starlink Authorized Reseller Pop-up (nach 20 % Scroll) -->
+<div aria-labelledby="starlink-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="starlink-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('starlink-modal')"></div>
+<div class="modal-container">
+<div class="modal-content starlink-popup-content" id="starlink-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="starlink-modal-title">ACM – Authorized Reseller für Starlink.</h2>
+<button aria-label="Schließen" class="modal-close" onclick="closeModal('starlink-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="starlink-popup-image">
+<img alt="Starlink Antenne auf Business-Jet – ACM Authorized Reseller" height="280" loading="lazy" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/Fotos/starlink-popup.png" width="400">
+</div>
+<div class="starlink-popup-body modal-body">
+<p class="starlink-badge">Starlink Authorized Reseller</p>
+<p class="starlink-headline">Ihr Starlink-Partner für die Business Aviation.</p>
+<p class="starlink-teaser">
+            Starlink ist das Satelliten-Internet von SpaceX speziell für Business Jets: hohe Geschwindigkeit, 4K-Streaming und stabile Verbindung weltweit – auch über den Polarrouten. ACM ist autorisierter Reseller und Installationspartner.
+          </p>
+<a class="starlink-cta" href="https://www.acm.aero/kontakt/#maintenance">Installation anfragen</a>
+</div>
+</div>
+</div>
+</div><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/leadwerk_theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- Matomo --><script type="text/javascript">
+/* <![CDATA[ */
+(function () {
+function initTracking() {
+var _paq = window._paq = window._paq || [];
+_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);_paq.push(['alwaysUseSendBeacon']);_paq.push(['setTrackerUrl', "\/\/www.acm.aero\/wp-content\/plugins\/matomo\/app\/matomo.php"]);_paq.push(['setSiteId', '1']);var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+g.type='text/javascript'; g.async=true; g.src="\/\/www.acm.aero\/wp-content\/uploads\/matomo\/matomo.js"; s.parentNode.insertBefore(g,s);
+}
+if (document.prerendering) {
+	document.addEventListener('prerenderingchange', initTracking, {once: true});
+} else {
+	initTracking();
+}
+})();
+/* ]]> */
+</script>
+<!-- End Matomo Code -->
+<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
+<div id="cmplz-cookiebanner-container"><div class="cmplz-cookiebanner cmplz-hidden banner-1 banner-a optin cmplz-center cmplz-categories-type-view-preferences" aria-modal="true" data-nosnippet="true" role="dialog" aria-live="polite" aria-labelledby="cmplz-header-1-optin" aria-describedby="cmplz-message-1-optin">
+	<div class="cmplz-header">
+		<div class="cmplz-logo"></div>
+		<div class="cmplz-title" id="cmplz-header-1-optin">Zustimmung verwalten</div>
+		<div class="cmplz-close" tabindex="0" role="button" aria-label="Dialog schließen">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+		</div>
+	</div>
+
+	<div class="cmplz-divider cmplz-divider-header"></div>
+	<div class="cmplz-body">
+		<div class="cmplz-message" id="cmplz-message-1-optin"><p>Um dir ein optimales Erlebnis zu bieten, verwenden wir Technologien wie Cookies, um Geräteinformationen zu speichern und/oder darauf zuzugreifen. Wenn du diesen Technologien zustimmst, können wir Daten wie das Surfverhalten oder eindeutige IDs auf dieser Website verarbeiten. Wenn du deine Zustimmung nicht erteilst oder zurückziehst, können bestimmte Merkmale und Funktionen beeinträchtigt werden.</p></div>
+		<!-- categories start -->
+		<div class="cmplz-categories">
+			<details class="cmplz-category cmplz-functional" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Funktional</span>
+							<span class='cmplz-always-active'>
+								<span class="cmplz-banner-checkbox">
+									<input type="checkbox"
+										   id="cmplz-functional-optin"
+										   data-category="cmplz_functional"
+										   class="cmplz-consent-checkbox cmplz-functional"
+										   size="40"
+										   value="1"/>
+									<label class="cmplz-label" for="cmplz-functional-optin"><span class="screen-reader-text">Funktional</span></label>
+								</span>
+								Immer aktiv							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-functional">Die technische Speicherung oder der Zugang ist unbedingt erforderlich für den rechtmäßigen Zweck, die Nutzung eines bestimmten Dienstes zu ermöglichen, der vom Teilnehmer oder Nutzer ausdrücklich gewünscht wird, oder für den alleinigen Zweck, die Übertragung einer Nachricht über ein elektronisches Kommunikationsnetz durchzuführen.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-preferences" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Preferences</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox"
+									   id="cmplz-preferences-optin"
+									   data-category="cmplz_preferences"
+									   class="cmplz-consent-checkbox cmplz-preferences"
+									   size="40"
+									   value="1"/>
+								<label class="cmplz-label" for="cmplz-preferences-optin"><span class="screen-reader-text">Preferences</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-preferences">The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-statistics" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Statistiken</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox"
+									   id="cmplz-statistics-optin"
+									   data-category="cmplz_statistics"
+									   class="cmplz-consent-checkbox cmplz-statistics"
+									   size="40"
+									   value="1"/>
+								<label class="cmplz-label" for="cmplz-statistics-optin"><span class="screen-reader-text">Statistiken</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-statistics">The technical storage or access that is used exclusively for statistical purposes.</span>
+					<span class="cmplz-description-statistics-anonymous">Die technische Speicherung oder der Zugriff, der ausschließlich zu anonymen statistischen Zwecken verwendet wird. Ohne eine Vorladung, die freiwillige Zustimmung deines Internetdienstanbieters oder zusätzliche Aufzeichnungen von Dritten können die zu diesem Zweck gespeicherten oder abgerufenen Informationen allein in der Regel nicht dazu verwendet werden, dich zu identifizieren.</span>
+				</div>
+			</details>
+			<details class="cmplz-category cmplz-marketing" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Marketing</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox"
+									   id="cmplz-marketing-optin"
+									   data-category="cmplz_marketing"
+									   class="cmplz-consent-checkbox cmplz-marketing"
+									   size="40"
+									   value="1"/>
+								<label class="cmplz-label" for="cmplz-marketing-optin"><span class="screen-reader-text">Marketing</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-marketing">Die technische Speicherung oder der Zugriff ist erforderlich, um Nutzerprofile zu erstellen, um Werbung zu versenden oder um den Nutzer auf einer Website oder über mehrere Websites hinweg zu ähnlichen Marketingzwecken zu verfolgen.</span>
+				</div>
+			</details>
+		</div><!-- categories end -->
+			</div>
+
+	<div class="cmplz-links cmplz-information">
+		<ul>
+			<li><a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Optionen verwalten</a></li>
+			<li><a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Dienste verwalten</a></li>
+			<li><a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Verwalten von {vendor_count}-Lieferanten</a></li>
+			<li><a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/" aria-label="Weitere Informationen zu den Zwecken von TCF findest du in der Cookie-Datenbank.">Lese mehr über diese Zwecke</a></li>
+		</ul>
+			</div>
+
+	<div class="cmplz-divider cmplz-footer"></div>
+
+	<div class="cmplz-buttons">
+		<button class="cmplz-btn cmplz-accept">Akzeptieren</button>
+		<button class="cmplz-btn cmplz-deny">Ablehnen</button>
+		<button class="cmplz-btn cmplz-view-preferences">Einstellungen ansehen</button>
+		<button class="cmplz-btn cmplz-save-preferences">Einstellungen speichern</button>
+		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Einstellungen ansehen</a>
+			</div>
+
+	
+	<div class="cmplz-documents cmplz-links">
+		<ul>
+			<li><a class="cmplz-link cookie-statement" href="#" data-relative_url="">{title}</a></li>
+			<li><a class="cmplz-link privacy-statement" href="#" data-relative_url="">{title}</a></li>
+			<li><a class="cmplz-link impressum" href="#" data-relative_url="">{title}</a></li>
+		</ul>
+			</div>
+</div>
+</div>
+					<div id="cmplz-manage-consent" data-nosnippet="true"><button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Zustimmung verwalten</button>
+
+</div><script type="text/javascript" id="leadwerk-theme-main-js-extra">
+/* <![CDATA[ */
+var leadwerkThemeData = {"locale":"de","defaultLang":"de","wpformsTranslations":[]};
+//# sourceURL=leadwerk-theme-main-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.acm.aero/wp-content/themes/leadwerk_theme/js/main.js?ver=1.0.11" id="leadwerk-theme-main-js"></script>
+<script type="text/javascript" id="cmplz-cookiebanner-js-extra">
+/* <![CDATA[ */
+var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"4032","version":"7.4.5","store_consent":"","do_not_track_enabled":"","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"https://www.acm.aero/wp-json/complianz/v1/","locale":"lang=de&locale=de_DE","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"34","cookie_path":"/","categories":{"statistics":"Statistiken","marketing":"Marketing"},"tcf_active":"","placeholdertext":"Klicke hier, um {category}-Cookies zu akzeptieren und diesen Inhalt zu aktivieren","css_file":"https://www.acm.aero/wp-content/uploads/complianz/css/banner-{banner_id}-{type}.css?v=4032","page_links":{"eu":{"cookie-statement":{"title":"","url":"https://www.acm.aero/impressum/"}}},"tm_categories":"1","forceEnableStats":"","preview":"","clean_cookies":"","aria_label":"Klicke hier, um {category}-Cookies zu akzeptieren und diesen Inhalt zu aktivieren"};
+//# sourceURL=cmplz-cookiebanner-js-extra
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="https://www.acm.aero/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1773664336" id="cmplz-cookiebanner-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://www.acm.aero/wp-includes/js/wp-emoji-release.min.js?ver=6.9.4"}}
+</script>
+<script type="module">
+/* <![CDATA[ */
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://www.acm.aero/wp-includes/js/wp-emoji-loader.min.js
+/* ]]> */
+</script>
+</body>
+</html>

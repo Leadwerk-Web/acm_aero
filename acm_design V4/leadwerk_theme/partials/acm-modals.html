@@ -1,0 +1,287 @@
+<!-- ============================================
+       MODALS
+       ============================================ -->
+<!-- Flight Request Modal -->
+<div aria-labelledby="flight-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="flight-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('flight-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="flight-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="flight-modal-title">Flug anfragen.</h2>
+<button aria-label="Schlie&szlig;en" class="modal-close" onclick="closeModal('flight-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier w&uuml;rde die Anfrage gesendet werden.');">
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-from">Von *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-from" placeholder="z.B. Frankfurt (FRA)" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-to">Nach *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-to" placeholder="z.B. London (LTN)" required="" type="text"/>
+</div>
+</div>
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-date">Datum *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-date" required="" type="date"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-pax">Passagiere *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-pax" max="19" min="1" placeholder="Anzahl" required="" type="number"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-email" placeholder="ihre@email.de" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-phone">Telefon</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="flight-phone" placeholder="+49 ..." type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="flight-message">Nachricht</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="flight-message" placeholder="Besondere W&uuml;nsche oder Anforderungen..." rows="3"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="flight-privacy" required="" type="checkbox"/>
+<label class="text-sm text-stone-600" for="flight-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerkl&auml;rung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Anfrage senden
+            </button>
+</form>
+<!-- KOMMENTAR: Matomo Event Tracking hier einfÃƒÂ¼gen
+          <script>
+            // _paq.push(['trackEvent', 'Forms', 'Submit', 'Flight Request']);
+          </script>
+          -->
+</div>
+</div>
+</div>
+</div>
+<!-- Maintenance Modal -->
+<div aria-labelledby="maintenance-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="maintenance-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('maintenance-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="maintenance-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="maintenance-modal-title">Maintenance Slot anfragen.</h2>
+<button aria-label="Schlie&szlig;en" class="modal-close" onclick="closeModal('maintenance-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier w&uuml;rde die Anfrage gesendet werden.');">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-aircraft">Flugzeugtyp *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-aircraft" placeholder="z.B. Bombardier Global 6000" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-reg">Registrierung</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-reg" placeholder="z.B. D-ACMA" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-type">Art der Wartung *</label>
+<select class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors bg-white" id="maint-type" required="">
+<option value="">Bitte w&auml;hlen...</option>
+<option value="line">Line Maintenance</option>
+<option value="base">Base Maintenance</option>
+<option value="avionics">Avionik</option>
+<option value="cabin">Cabin Refurbishment</option>
+<option value="aog">AOG Support</option>
+<option value="other">Sonstiges</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-date">Gew&uuml;nschter Zeitraum *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-date" placeholder="z.B. Februar 2026" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="maint-email" placeholder="ihre@email.de" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="maint-message">Details zur Anfrage</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="maint-message" placeholder="Beschreiben Sie den Wartungsbedarf..." rows="3"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="maint-privacy" required="" type="checkbox"/>
+<label class="text-sm text-stone-600" for="maint-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerkl&auml;rung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Slot anfragen
+            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Management Modal -->
+<div aria-labelledby="management-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="management-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('management-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="management-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="management-modal-title">Management-Gespr&auml;ch.</h2>
+<button aria-label="Schlie&szlig;en" class="modal-close" onclick="closeModal('management-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier w&uuml;rde die Anfrage gesendet werden.');">
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-name">Name *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-name" placeholder="Ihr Name" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-company">Unternehmen</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-company" placeholder="Firma (optional)" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-aircraft">Flugzeugtyp</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-aircraft" placeholder="z.B. Cessna Citation XLS+" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-email" placeholder="ihre@email.de" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-phone">Telefon *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="mgmt-phone" placeholder="+49 ..." required="" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="mgmt-message">Ihre Anfrage</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="mgmt-message" placeholder="Was m&ouml;chten Sie besprechen?" rows="3"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="mgmt-privacy" required="" type="checkbox"/>
+<label class="text-sm text-stone-600" for="mgmt-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerkl&auml;rung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Gespr&auml;ch vereinbaren
+            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Career Modal -->
+<div aria-labelledby="career-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="career-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('career-modal')"></div>
+<div class="modal-container">
+<div class="modal-content" id="career-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="career-modal-title">Online Bewerbung.</h2>
+<button aria-label="Schlie&szlig;en" class="modal-close" onclick="closeModal('career-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="modal-body">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Form-Stub: Hier w&uuml;rde die Bewerbung gesendet werden.');">
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-firstname">Vorname *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-firstname" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-lastname">Nachname *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-lastname" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-email">E-Mail *</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-email" placeholder="ihre@email.de" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-phone">Telefon</label>
+<input class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors" id="career-phone" placeholder="+49 ..." type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-position">Gew&uuml;nschte Position *</label>
+<select class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors bg-white" id="career-position" required="">
+<option value="">Bitte w&auml;hlen...</option>
+<option value="mechanic">Flugzeugmechaniker (m/w/d)</option>
+<option value="avionics">Avionik-Techniker (m/w/d)</option>
+<option value="engineer">Ingenieur (m/w/d)</option>
+<option value="pilot">Pilot (m/w/d)</option>
+<option value="ops">Flight Operations (m/w/d)</option>
+<option value="other">Initiativbewerbung</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1" for="career-message">Anschreiben / Motivation</label>
+<textarea class="w-full px-4 py-2.5 border border-stone-300 rounded focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none" id="career-message" placeholder="Erz&auml;hlen Sie uns von sich..." rows="4"></textarea>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-700 mb-1">Lebenslauf (PDF)</label>
+<div class="border-2 border-dashed border-stone-300 rounded-lg p-4 text-center hover:border-stone-400 transition-colors cursor-pointer">
+<input accept=".pdf" class="hidden" id="career-cv" type="file"/>
+<label class="cursor-pointer" for="career-cv">
+<svg class="w-8 h-8 mx-auto text-stone-400 mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<span class="text-sm text-stone-600">PDF-Datei ausw&auml;hlen</span>
+</label>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 border-stone-300 rounded text-accent focus:ring-accent" id="career-privacy" required="" type="checkbox"/>
+<label class="text-sm text-stone-600" for="career-privacy">
+                Ich habe die <a class="text-accent hover:underline" href="#">Datenschutzerkl&auml;rung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+              </label>
+</div>
+<button class="w-full btn-filled" type="submit">
+              Bewerbung absenden
+            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Starlink Authorized Reseller Pop-up (nach 20 % Scroll) -->
+<div aria-labelledby="starlink-modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="starlink-modal" role="dialog">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal('starlink-modal')"></div>
+<div class="modal-container">
+<div class="modal-content starlink-popup-content" id="starlink-modal-content">
+<div class="modal-header">
+<h2 class="modal-title" id="starlink-modal-title">ACM &ndash; Authorized Reseller f&uuml;r Starlink.</h2>
+<button aria-label="Schlie&szlig;en" class="modal-close" onclick="closeModal('starlink-modal')">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="starlink-popup-image">
+<img alt="Starlink Antenne auf Business-Jet &ndash; ACM Authorized Reseller" height="280" loading="lazy" src="Fotos/starlink-popup.webp" width="400"/>
+</div>
+<div class="starlink-popup-body modal-body">
+<p class="starlink-badge">Starlink Authorized Reseller</p>
+<p class="starlink-headline">Ihr Starlink-Partner f&uuml;r die Business Aviation.</p>
+<p class="starlink-teaser">
+            Starlink ist das Satelliten-Internet von SpaceX speziell f&uuml;r Business Jets: hohe Geschwindigkeit, 4K-Streaming und stabile Verbindung weltweit &ndash; auch &uuml;ber den Polarrouten. ACM ist autorisierter Reseller und Installationspartner.
+          </p>
+<a class="starlink-cta" href="kontakt.html#maintenance">Installation anfragen</a>
+</div>
+</div>
+</div>
+</div>

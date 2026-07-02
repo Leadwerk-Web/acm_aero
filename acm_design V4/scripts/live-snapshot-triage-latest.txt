@@ -1,0 +1,44 @@
+Live-Snapshot-Triage (automatisch, Stand: letzter Lauf snapshot-live-fetch + compare-only)
+Basis-URL: https://b4451i.myrdbx.io/
+Report: _snapshots/myrdbx/compare-report.txt (gitignored)
+
+Zusammenfassung compare-report: mismatch_events=79, missing_local=0
+
+1) index.html — SECTION_DIFF bei Index 7–10 (live Textlaenge 0)
+   Schema acm_index_sections: Layouts 7–10 = maintenance, management, handling, careers (acm_content_block).
+   Live-HTML zeigt weiterhin ausgehoehlte #maintenance / #management (nur Rest-Markup).
+   Einordnung:
+   a) Theme noch nicht 1.0.8 auf Staging: alter exact-acm-render leert u.a. h2 bei leerem body
+      (XPath contains(@class,"text") trifft Tailwind text-* auf Ueberschriften).
+   b) Nach Theme-Deploy: wenn weiter leer, Leadwerk-Import erneut + Live-Log
+      (Sektions-/Validierungs-Warnungen).
+   Kleine Diff Index 3, 5: typisch Whitespace/Entities, unkritisch.
+
+2) charter.html — SECTION_DIFF Index 4 (fleet_overview): Live deutlich kuerzer als Root.
+   Einordnung: ACF-Inhalt auf WP weicht ab oder Parser/Repeater nicht voll; Importer-Log pruefen.
+   Kein blindes Ueberschreiben der Shell noetig, wenn DB nach Re-Import voll ist.
+
+3) thats-acm.html / global-xrs.html — geringfuegige Textlaengen-Unterschiede.
+   Einordnung: meist Encoding/Whitespace oder minimale Content-Drift; bei Bedarf Re-Import.
+
+4) news/*.html — SECTION_COUNT live=3 vs local=6 hauefig.
+   Einordnung: erwartbar (WP-Single-Template vs. statische Mehr-Sektions-Shells);
+   Vergleich dient Hauptseiten; Artikel-Inhalt gezielt im Backend pruefen.
+
+5) Repo-Bundle (lokal ausgefuehrt)
+   - sync-static-to-importer.ps1: OK
+   - sync-html-sources.php: OK
+   - verify-leadwerk-deployment.php --strict-drift: OK
+
+WordPress (manuell auf Staging)
+   - Tools > Leadwerk Import: vollstaendiger Lauf ohne Dry-Run nach Upload aktueller Plugins + source_assets.
+   - Permalinks speichern.
+   - Live-Log im Importer; optional DB-Option leadwerk_import_log (?php get_option).
+   - Checkliste: php scripts/post-import-checklist.php
+
+Theme-Deploy
+   - Repo: leadwerk_theme 1.0.9+ (exact-acm-render: Repeater "items" leer darf NICHT
+     dom_ensure_count(...,0) auf XPath mit contains(@class,"item") ausloesen — trifft
+     Tailwind "items-center" und zerstoert Spalten). Vorherige 1.0.8-Fix: Body nur auf <p>.
+   - Staging: Theme-Bundle deployen, ggf. erneut Leadwerk-Import fuer Label-Felder
+     (Importer: parse_acm_content_block Eyebrow-Span als label).
