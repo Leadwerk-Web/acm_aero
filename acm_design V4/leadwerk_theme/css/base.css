@@ -173,6 +173,8 @@
       margin-top: 0;
       padding-top: 0;
       position: relative;
+      background-color: #0a1428;
+      overflow: hidden;
     }
     
     /* Sicherstellen dass Hero bis ganz oben geht */
@@ -193,13 +195,13 @@
       border-radius: 0;
     }
     
-    /* Hero Video Fade-in Animation */
+    /* Hero video: poster sofort sichtbar, sanfter Übergang beim Abspielen */
     .hero-video-fadein {
-      opacity: 0;
-      transition: opacity 1.5s ease-in;
+      opacity: 1;
+      transition: opacity 0.45s ease;
     }
-    
-    .hero-video-fadein.loaded {
+
+    .hero-video-fadein.is-playing {
       opacity: 1;
     }
     

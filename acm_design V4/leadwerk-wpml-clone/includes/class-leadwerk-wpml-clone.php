@@ -1860,7 +1860,7 @@ class Leadwerk_WPML_Clone {
 			if (!item || !item.targetField || !item.sourceField || !item.targetField.matches('textarea')) {
 				return total;
 			}
-			return isFilledField(item.targetField) ? total : total + 1;
+			return isBulkItemEligibleForDeepL(item) ? total + 1 : total;
 		}, 0);
 	}
 
@@ -2087,6 +2087,30 @@ class Leadwerk_WPML_Clone {
 
 	function isFilledField(field){
 		return !!field && (field.value || '').trim() !== '';
+	}
+
+	function getBulkItemStatusBadge(item){
+		if (item && item.segment) {
+			return item.segment.querySelector('.leadwerk-status-badge');
+		}
+		if (item && item.row) {
+			return item.row.querySelector('.leadwerk-status-badge');
+		}
+		return null;
+	}
+
+	function isNeedsUpdateBadge(badge){
+		return !!badge && (
+			badge.classList.contains('leadwerk-status-badge--needs_update')
+			|| badge.classList.contains('leadwerk-status-badge--outdated')
+		);
+	}
+
+	function isBulkItemEligibleForDeepL(item){
+		if (!item || !item.targetField || !item.sourceField || !item.targetField.matches('textarea')) {
+			return false;
+		}
+		return !isFilledField(item.targetField) || isNeedsUpdateBadge(getBulkItemStatusBadge(item));
 	}
 
 	function normalizeValue(value){
@@ -3058,6 +3082,16 @@ class Leadwerk_WPML_Clone {
 
 	function applyBulkCopy(item){
 		if (!item || !item.sourceField || !item.targetField) return;
+		if (item.needsUpdate && isFilledField(item.targetField)) {
+			item.targetField.value = '';
+			triggerFieldUpdate(item.targetField);
+			if (item.segment) {
+				updateBadge(item.segment, item.targetField.value);
+			}
+			if (item.row) {
+				updateStringBadge(item.row, item.targetField.value);
+			}
+		}
 		item.targetField.value = item.sourceField.value || '';
 		triggerFieldUpdate(item.targetField);
 		if (item.segment) {
@@ -3184,12 +3218,17 @@ class Leadwerk_WPML_Clone {
 		}
 
 		var allItems = target === 'strings' ? buildStringBatchItems(form) : buildTranslationBatchItems(form);
-		var items = allItems.filter(function(item){
-			return !!item && !!item.targetField && !!item.sourceField && item.targetField.matches('textarea') && !isFilledField(item.targetField);
+		var validItems = allItems.filter(function(item){
+			return !!item && !!item.targetField && !!item.sourceField && item.targetField.matches('textarea');
+		});
+		var items = validItems.filter(function(item){
+			item.needsUpdate = isNeedsUpdateBadge(getBulkItemStatusBadge(item));
+			return !isFilledField(item.targetField) || item.needsUpdate;
 		});
 		var counts = createEmptyBulkCounts();
+		counts.skipped_filled = Math.max(0, validItems.length - items.length);
 		if (!items.length) {
-			setBulkControls(form, target, false, 'No empty eligible textareas found.');
+			setBulkControls(form, target, false, 'No empty or needs-update eligible textareas found.');
 			return;
 		}
 

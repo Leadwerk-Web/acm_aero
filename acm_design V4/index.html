@@ -8,6 +8,8 @@
 <meta content="index, follow" name="robots"/>
 <title>ACM AIR CHARTER | Privatfl&uuml;ge &amp; Owner-Services aus einer Hand</title>
 <link href="Fotos/Favicon_xs.webp" rel="icon" type="image/png"/>
+<link rel="preload" as="image" href="Fotos/Neu/hero_video_poster.webp" fetchpriority="high"/>
+<link rel="preload" as="video" href="Fotos/ACM%20hero_short.mp4" type="video/mp4" fetchpriority="high"/>
 <!-- Google Fonts: Cormorant Garamond (Jumeirah-Style) + Inter fÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼r Body -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -219,6 +221,8 @@
       margin-top: 0;
       padding-top: 0;
       position: relative;
+      background-color: #0a1428;
+      overflow: hidden;
     }
     
     /* Sicherstellen dass Hero bis ganz oben geht */
@@ -239,13 +243,13 @@
       border-radius: 0;
     }
     
-    /* Hero Video Fade-in Animation */
+    /* Hero video: poster sofort sichtbar */
     .hero-video-fadein {
-      opacity: 0;
-      transition: opacity 1.5s ease-in;
+      opacity: 1;
+      transition: opacity 0.45s ease;
     }
-    
-    .hero-video-fadein.loaded {
+
+    .hero-video-fadein.is-playing {
       opacity: 1;
     }
     
@@ -2130,7 +2134,7 @@
 <section class="relative w-full h-screen min-h-[600px] max-h-[950px] overflow-hidden" id="hero">
 <!-- Video Background - Full Bleed bis ganz oben -->
 <!-- ACM Hero Video - Startet bei Sekunde 15, Loop ab Sekunde 15 -->
-<video autoplay="" class="absolute top-0 left-0 w-full h-full object-cover z-0 hero-video-fadein" id="hero-video" loop="" muted="" playsinline="" poster="Fotos/Hangar/ACM - Hangar Baden-Baden.webp" preload="auto">
+<video autoplay="" class="absolute top-0 left-0 w-full h-full object-cover z-0 hero-video-fadein" fetchpriority="high" id="hero-video" loop="" muted="" playsinline="" poster="Fotos/Neu/hero_video_poster.webp" preload="auto">
 <!-- ACM Hero Video -->
 <source src="Fotos/ACM hero_short.mp4" type="video/mp4"/>
 <!-- Fallback: Poster-Bild wird angezeigt wenn Video nicht lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¤dt -->
@@ -2163,7 +2167,7 @@
 <div class="text-center mb-16 lg:mb-20 scroll-reveal">
 <img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
 <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 leading-tight font-light">
-            Business Aviation am Baden-Airpark,<br/>individuell organisiert.</h2>
+            Individuelle Aviation-L&ouml;sungen,<br class="hidden sm:block"/> ganz nach Ihren W&uuml;nschen</h2>
 </div>
 <!-- 3-Column Grid - Jumeirah Style -->
 <div class="grid md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
@@ -2252,7 +2256,7 @@
 </div>
 <div aria-hidden="true" class="hidden sm:block w-px min-h-[4rem] bg-stone-300 shrink-0 self-stretch"></div>
 <div class="text-center scroll-reveal flex-1 min-w-0">
-<span class="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-800 font-light block">+50.000</span>
+<span class="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-800 font-light block">+80.000</span>
 <span class="font-serif text-base sm:text-lg lg:text-xl text-stone-700 font-light mt-1">geleistete Flugstunden.</span>
 </div>
 <div aria-hidden="true" class="hidden sm:block w-px min-h-[4rem] bg-stone-300 shrink-0 self-stretch"></div>
@@ -2277,9 +2281,9 @@
 <div>
 <span class="text-olive/70 font-medium text-xs tracking-[0.2em] uppercase mb-6 block">That's ACM</span>
 <h2 class="font-serif text-stone-900 mb-8 leading-tight font-light">
-              Boutique Aviation mit technischer Tiefe.</h2>
+              Boutique Aviation mit technischer Tiefe</h2>
 <p class="text-stone-700 leading-relaxed mb-10">
-              ACM AIR CHARTER steht f&uuml;r Business Aviation am Baden-Airpark. Unter einem Dach vereinen wir Aircraft Management, Charter, Part-145 Maintenance und CAMO mit klaren Prozessen, direkten Ansprechpartnern und zertifizierten Standards. Sicherheit, Pr&auml;zision und Diskretion sind bei uns gelebte Praxis.
+              ACM AIR CHARTER steht f&uuml;r integrierte Business Aviation am Baden Airpark. Unter einem Dach vereinen wir Aircraft Management, Charter, Part-145 Maintenance und CAMO mit klaren Prozessen, direkten Ansprechpartnern und zertifizierten Standards. Sicherheit, Pr&auml;zision und Diskretion sind bei uns gelebte Praxis.
             </p>
 <div class="flex flex-wrap gap-4">
 <a class="btn-primary inline-flex items-center justify-center" href="thats-acm.html">
@@ -2407,35 +2411,35 @@
 <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
 <div class="text-center mb-14 lg:mb-16">
 <img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
-<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 font-light">News &amp; Insights.</h2>
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-800 font-light">News &amp; Insights</h2>
 </div>
 <div class="grid md:grid-cols-3 gap-8 lg:gap-10">
 <!-- News: nur Beitr&auml;ge mit eigener Artikelseite (wie news.html, data-imported-news) -->
-<article class="group scroll-reveal">
-<a class="block" href="news/is-bah-stage-2-acm-handling.html">
+<article class="group scroll-reveal" data-home-news="true">
+<a class="block" href="news/acm-air-charter-nimmt-dritte-bombardier-global-7500-in-ihre-weltweit-gemanagte-flotte-auf.html">
 <div class="aspect-[4/3] overflow-hidden mb-5">
-<img alt="IS-BAH Stage 2 Zertifizierung der ACM Business Aviation Handling GmbH" class="w-full h-full object-cover object-[52%_38%] transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&amp;q=80'" src="Fotos/Neu/home_Rampmanager.webp"/>
+<img alt="ACM AIR CHARTER nimmt dritte Bombardier Global 7500 in ihre weltweit gemanagte Flotte auf" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&amp;q=80'" src="Fotos/news/acm-air-charter-nimmt-dritte-bombardier-global-7500-in-ihre-weltweit-gemanagte-flotte-auf.webp"/>
 </div>
 <div class="px-1">
 <div class="flex items-center gap-3 text-xs text-stone-400 mb-3">
-<span class="text-olive uppercase tracking-wider font-medium">Handling</span>
+<span class="text-olive uppercase tracking-wider font-medium">Unternehmen</span>
 <span>&bull;</span>
-<time datetime="2025-06-01">1. Juni 2025</time>
+<time datetime="2026-02-20">20. Februar 2026</time>
 </div>
 <h3 class="font-serif text-xl lg:text-2xl text-stone-800 group-hover:text-olive transition-colors leading-snug font-normal">
-                  IS-BAH Stage 2 Zertifizierung der ACM Business Aviation Handling GmbH
+                  ACM AIR CHARTER nimmt dritte Bombardier Global 7500 in ihre weltweit gemanagte Flotte auf
                 </h3>
 </div>
 </a>
 </article>
-<article class="group scroll-reveal">
+<article class="group scroll-reveal" data-home-news="true">
 <a class="block" href="news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.html">
 <div class="aspect-[4/3] overflow-hidden mb-5">
-<img alt="IS-BAH Stage 2 Zertifizierung der ACM Business Aviation Handling GmbH" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&amp;q=80'" src="Fotos/news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.webp"/>
+<img alt="IS-BAH Stage 2 Zertifizierung der ACM Business Aviation Handling GmbH" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&amp;q=80'" src="Fotos/news/is-bah-stage-2-zertifizierung-der-acm-business-aviation-handling-gmbh.webp"/>
 </div>
 <div class="px-1">
 <div class="flex items-center gap-3 text-xs text-stone-400 mb-3">
-<span class="text-olive uppercase tracking-wider font-medium">Handling</span>
+<span class="text-olive uppercase tracking-wider font-medium">Unternehmen</span>
 <span>&bull;</span>
 <time datetime="2024-03-19">19. M&auml;rz 2024</time>
 </div>
@@ -2445,14 +2449,14 @@
 </div>
 </a>
 </article>
-<article class="group scroll-reveal">
+<article class="group scroll-reveal" data-home-news="true">
 <a class="block" href="news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.html">
 <div class="aspect-[4/3] overflow-hidden mb-5">
-<img alt="ACM-Technik schlie&szlig;t erfolgreich die erste 120-Monats-Inspektion eines Bombardier Global Express-Flugzeuges ab" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&amp;q=80'" src="Fotos/news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.webp"/>
+<img alt="ACM-Technik schlie&szlig;t erfolgreich die erste 120-Monats-Inspektion eines Bombardier Global Express-Flugzeuges ab" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&amp;q=80'" src="Fotos/news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.webp"/>
 </div>
 <div class="px-1">
 <div class="flex items-center gap-3 text-xs text-stone-400 mb-3">
-<span class="text-olive uppercase tracking-wider font-medium">Maintenance</span>
+<span class="text-olive uppercase tracking-wider font-medium">Unternehmen</span>
 <span>&bull;</span>
 <time datetime="2023-02-20">20. Februar 2023</time>
 </div>
@@ -3184,38 +3188,32 @@
     }
     
 
-    // Hero Video ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ nur Startzeit setzen, Loop ausschlieÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸lich ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ber HTML-Attribut
+    // Hero Video — poster sofort, Wiedergabe ab 0 s
     const heroVideo = document.getElementById('hero-video');
-    const START_TIME = 15;
-    let videoInitialized = false;
-    
+
     if (heroVideo) {
-      function initHeroVideo() {
-        if (videoInitialized) return;
-        var d = heroVideo.duration;
-        if (!isFinite(d) || d <= 0) return;
-        
-        videoInitialized = true;
-        heroVideo.classList.add('loaded');
-        heroVideo.currentTime = d >= START_TIME ? START_TIME : 0;
-        heroVideo.play().catch(function() {});
+      let heroBooted = false;
+
+      function bootHeroVideo() {
+        if (heroBooted) return;
+        heroBooted = true;
+        heroVideo.classList.add('loaded', 'is-playing');
+
+        const playPromise = heroVideo.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(function () {});
+        }
       }
-      
-      heroVideo.addEventListener('loadedmetadata', function() {
-        var d = heroVideo.duration;
-        if (isFinite(d)) heroVideo.currentTime = d >= START_TIME ? START_TIME : 0;
-      });
-      heroVideo.addEventListener('canplay', initHeroVideo);
-      heroVideo.addEventListener('loadeddata', initHeroVideo);
-      heroVideo.addEventListener('error', function() {
+
+      heroVideo.addEventListener('loadeddata', bootHeroVideo, { once: true });
+      heroVideo.addEventListener('playing', bootHeroVideo, { once: true });
+      heroVideo.addEventListener('error', function () {
         heroVideo.style.display = 'none';
       });
-      
-      setTimeout(function() {
-        if (!videoInitialized && heroVideo.readyState >= 2 && isFinite(heroVideo.duration)) {
-          initHeroVideo();
-        }
-      }, 2000);
+
+      if (heroVideo.readyState >= 2) {
+        bootHeroVideo();
+      }
     }
 
     // Modern Card-Based Aircraft Slider Control

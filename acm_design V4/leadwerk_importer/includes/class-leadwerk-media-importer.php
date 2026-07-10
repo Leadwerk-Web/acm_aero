@@ -108,8 +108,66 @@ class Leadwerk_Media_Importer {
 		$id = $this->find_attachment_by_source_path( $norm );
 		if ( $id ) {
 			$this->attachment_map[ $norm ] = $id;
+			return $id;
+		}
+		$id = $this->find_attachment_by_basename( $norm );
+		if ( $id ) {
+			update_post_meta( $id, 'leadwerk_source_path', $norm );
+			$this->attachment_map[ $norm ] = $id;
 		}
 		return $id;
+	}
+
+	/**
+	 * Find an existing upload by filename when leadwerk_source_path was never set.
+	 *
+	 * @param string $relative_path Source-relative path.
+	 * @return int Attachment ID or 0.
+	 */
+	public function find_attachment_by_basename( $relative_path ) {
+		$basename = wp_basename( (string) $relative_path );
+		if ( '' === $basename ) {
+			return 0;
+		}
+
+		global $wpdb;
+
+		$candidates = array( $basename );
+		$filename   = pathinfo( $basename, PATHINFO_FILENAME );
+		$extension  = pathinfo( $basename, PATHINFO_EXTENSION );
+		if ( is_string( $filename ) && '' !== $filename && is_string( $extension ) && '' !== $extension ) {
+			$candidates[] = $filename . '.' . $extension;
+		}
+
+		foreach ( array_unique( $candidates ) as $candidate ) {
+			$like = '%' . $wpdb->esc_like( $candidate );
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$found = $wpdb->get_var(
+				$wpdb->prepare(
+					"SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND meta_value LIKE %s ORDER BY post_id DESC LIMIT 1",
+					$like
+				)
+			);
+			if ( $found ) {
+				return (int) $found;
+			}
+		}
+
+		if ( is_string( $filename ) && '' !== $filename && is_string( $extension ) && '' !== $extension ) {
+			$stem_like = '%/' . $wpdb->esc_like( $filename ) . '%.' . $wpdb->esc_like( $extension );
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$found = $wpdb->get_var(
+				$wpdb->prepare(
+					"SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND meta_value LIKE %s ORDER BY post_id DESC LIMIT 1",
+					$stem_like
+				)
+			);
+			if ( $found ) {
+				return (int) $found;
+			}
+		}
+
+		return 0;
 	}
 
 	protected function normalize_path( $path ) {

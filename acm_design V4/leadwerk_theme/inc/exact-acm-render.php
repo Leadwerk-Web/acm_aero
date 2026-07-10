@@ -1964,12 +1964,19 @@ function leadwerk_theme_bind_exact_acm_hero_video( $xpath, $section, $value ) {
 	}
 	$video = leadwerk_theme_dom_first( $xpath, './/video[1]', $section );
 	$src   = leadwerk_theme_resolve_acm_hero_video_src( $value['video'] ?? '' );
-	if ( $video instanceof DOMElement && '' !== $src ) {
-		$source = leadwerk_theme_dom_first( $xpath, './/source[1]', $video );
-		if ( $source instanceof DOMElement ) {
-			leadwerk_theme_dom_set_attr( $source, 'src', $src );
-		} else {
-			leadwerk_theme_dom_set_attr( $video, 'src', $src );
+	if ( $video instanceof DOMElement ) {
+		$video->setAttribute( 'preload', 'auto' );
+		$video->setAttribute( 'fetchpriority', 'high' );
+		if ( '' !== $src ) {
+			$src = function_exists( 'leadwerk_theme_hero_video_src_with_start' )
+				? leadwerk_theme_hero_video_src_with_start( $src )
+				: $src;
+			$source = leadwerk_theme_dom_first( $xpath, './/source[1]', $video );
+			if ( $source instanceof DOMElement ) {
+				leadwerk_theme_dom_set_attr( $source, 'src', $src );
+			} else {
+				leadwerk_theme_dom_set_attr( $video, 'src', $src );
+			}
 		}
 	}
 	leadwerk_theme_bind_exact_image( $xpath, $section, './/video/@poster | .//img[1]', (int) ( $value['poster'] ?? 0 ), (string) ( $value['poster_alt'] ?? '' ) );

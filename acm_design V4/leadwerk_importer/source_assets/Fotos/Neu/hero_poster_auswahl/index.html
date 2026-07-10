@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero-Poster Auswahl (0–3 s)</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 1.5rem; background: #0a1428; color: #f5f5f4; }
+    h1 { font-size: 1.25rem; font-weight: 500; margin: 0 0 0.5rem; }
+    p { color: #a8a29e; margin: 0 0 1rem; font-size: 0.9rem; }
+    .preview { margin: 0 0 1.5rem; background: #111827; border-radius: 8px; overflow: hidden; max-width: 960px; }
+    .preview video { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #000; }
+    .preview figcaption { padding: 0.75rem 1rem; font-size: 0.85rem; color: #d6d3d1; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+    figure { margin: 0; background: #111827; border-radius: 8px; overflow: hidden; border: 2px solid transparent; cursor: pointer; transition: border-color 0.2s; }
+    figure:hover, figure.selected { border-color: #60a5fa; }
+    img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+    figcaption { padding: 0.6rem 0.75rem; font-size: 0.85rem; }
+    figcaption code { color: #93c5fd; }
+    #pick { position: sticky; bottom: 0; margin-top: 1.5rem; padding: 1rem; background: #1e293b; border-radius: 8px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Hero-Poster — Frames 0,00 s bis 3,00 s</h1>
+  <p>Quelle: <code>ACM hero_short.mp4</code> (geschnitten &amp; encodiert, ~35 s, Start bei 0 s)</p>
+  <figure class="preview">
+    <video src="ACM hero_short.mp4" controls muted loop playsinline preload="metadata" poster="../hero_video_poster.webp"></video>
+    <figcaption>Aktuelles Hero-Video — Wiedergabe ab 0 s (kein 15-Sekunden-Offset)</figcaption>
+  </figure>
+  <p>Schritt: 25 ms · Klick = Dateiname für Poster-Auswahl</p>
+  <div class="grid" id="grid"></div>
+  <div id="pick">Klicke ein Bild, um den Dateinamen zu sehen.</div>
+  <script>
+    const grid = document.getElementById('grid');
+    const pick = document.getElementById('pick');
+    for (let ms = 0; ms <= 3000; ms += 25) {
+      const label = String(ms).padStart(4, '0');
+      const sec = (ms / 1000).toFixed(2);
+      const name = `frame_${label}ms.webp`;
+      const fig = document.createElement('figure');
+      fig.innerHTML = `<img src="${name}" alt="${sec}s" loading="lazy"><figcaption><code>${name}</code><br>${sec} s</figcaption>`;
+      fig.addEventListener('click', () => {
+        document.querySelectorAll('figure.grid-item, figure:not(.preview)').forEach(f => f.classList.remove('selected'));
+        fig.classList.add('selected');
+        pick.textContent = `Gewählt: ${name} (${sec} s) — sag mir Bescheid, dann setze ich es als Poster.`;
+      });
+      grid.appendChild(fig);
+    }
+  </script>
+</body>
+</html>

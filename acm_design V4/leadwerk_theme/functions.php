@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LEADWERK_THEME_VERSION', '1.0.12' );
+define( 'LEADWERK_THEME_VERSION', '1.0.17' );
 define( 'LEADWERK_THEME_DIR', get_template_directory() );
 define( 'LEADWERK_THEME_URI', get_template_directory_uri() );
 define( 'LEADWERK_THEME_ACM_NEWS_FILTER_SLUG_META', 'acm_news_filter_slug' );
@@ -20,6 +20,9 @@ define( 'LEADWERK_THEME_SIMPLE_HEADER_META', 'leadwerk_simple_header' );
 define( 'LEADWERK_THEME_SIMPLE_PAGE_TEMPLATE', 'template-acm-simple-page.php' );
 
 require_once LEADWERK_THEME_DIR . '/inc/static-source.php';
+require_once LEADWERK_THEME_DIR . '/inc/open-graph.php';
+require_once LEADWERK_THEME_DIR . '/inc/structured-data.php';
+require_once LEADWERK_THEME_DIR . '/inc/hero-video.php';
 
 $leadwerk_structured_render_file = LEADWERK_THEME_DIR . '/inc/structured-acm-render.php';
 $leadwerk_structured_render_alt  = LEADWERK_THEME_DIR . '/inc/structured-finora-render.php';

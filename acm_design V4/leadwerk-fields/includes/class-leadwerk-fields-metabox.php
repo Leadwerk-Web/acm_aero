@@ -12,6 +12,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Leadwerk_Fields_Metabox {
 
 	/**
+	 * Shell-relative image paths for admin previews (homepage hydrate).
+	 *
+	 * @var array<string,string>
+	 */
+	private static $admin_image_preview_paths = array();
+
+	/**
 	 * Options page sections (title + fields).
 	 *
 	 * @var array<int,array{title:string,description?:string,fields:array<string,array<string,mixed>>}>
@@ -270,6 +277,38 @@ class Leadwerk_Fields_Metabox {
 		$sections = self::storage_get_field( $field_name, $post->ID );
 		$sections = is_array( $sections ) ? array_values( $sections ) : array();
 
+		if ( 'acm_index_sections' === $field_name ) {
+			$sections = self::hydrate_missing_media_ids_for_index( $sections, $post->ID );
+		}
+
+		// #region agent log
+		$source_key = (string) get_post_meta( $post->ID, 'leadwerk_source_key', true );
+		$alt_index  = self::storage_get_field( 'acm_index_sections', $post->ID );
+		$alt_finora = self::storage_get_field( 'finora_home_sections', $post->ID );
+		self::debug_log_4f15f6(
+			'H1',
+			'class-leadwerk-fields-metabox.php:render_sections_metabox',
+			'Metabox loaded flexible sections',
+			array(
+				'post_id'              => (int) $post->ID,
+				'source_key'           => $source_key,
+				'resolved_field_name'  => $field_name,
+				'section_count'        => count( $sections ),
+				'layouts'              => array_map(
+					static function ( $section ) {
+						return is_array( $section ) && isset( $section['acf_fc_layout'] ) ? (string) $section['acf_fc_layout'] : '';
+					},
+					$sections
+				),
+				'image_summary'        => self::debug_summarize_section_images( $sections ),
+				'acm_index_has_data'   => is_array( $alt_index ) && ! empty( $alt_index ),
+				'acm_index_count'      => is_array( $alt_index ) ? count( $alt_index ) : 0,
+				'finora_home_has_data' => is_array( $alt_finora ) && ! empty( $alt_finora ),
+				'finora_home_count'    => is_array( $alt_finora ) ? count( $alt_finora ) : 0,
+			)
+		);
+		// #endregion
+
 		if ( empty( $sections ) ) {
 			echo '<p><em>Keine Sektionen vorhanden. Bitte zuerst den Leadwerk-Import ausfuehren.</em></p>';
 			echo '</div>';
@@ -280,6 +319,23 @@ class Leadwerk_Fields_Metabox {
 			$layout = isset( $section['acf_fc_layout'] ) ? sanitize_key( $section['acf_fc_layout'] ) : '';
 			$schema = Leadwerk_Content_Schema::get_layout( $field_name, $layout );
 			$label  = $schema['label'] ?? ucfirst( $layout );
+
+			// #region agent log
+			if ( 'acm_index_sections' === $field_name || 'finora_home_sections' === $field_name ) {
+				self::debug_log_4f15f6(
+					'H3',
+					'class-leadwerk-fields-metabox.php:render_sections_metabox:layout',
+					'Layout schema resolution',
+					array(
+						'post_id'       => (int) $post->ID,
+						'field_name'    => $field_name,
+						'layout'        => $layout,
+						'schema_found'  => is_array( $schema ),
+						'field_keys'    => is_array( $schema ) && isset( $schema['fields'] ) ? array_keys( $schema['fields'] ) : array(),
+					)
+				);
+			}
+			// #endregion
 
 			echo '<div class="leadwerk-section-box">';
 			echo '<h3 class="leadwerk-section-title">';
@@ -475,6 +531,438 @@ class Leadwerk_Fields_Metabox {
 		}
 	}
 
+	/**
+	 * Debug session logging (homepage image preview investigation).
+	 *
+	 * @param string              $hypothesis_id Hypothesis id.
+	 * @param string              $location      Code location.
+	 * @param string              $message       Log message.
+	 * @param array<string,mixed> $data          Payload.
+	 */
+	private static function debug_log_4f15f6( $hypothesis_id, $location, $message, $data = array() ) {
+		// #region agent log
+		$run_id = isset( $data['runId'] ) ? (string) $data['runId'] : 'pre-fix';
+		unset( $data['runId'] );
+		$entry = wp_json_encode(
+			array(
+				'sessionId'    => '4f15f6',
+				'hypothesisId' => (string) $hypothesis_id,
+				'location'     => (string) $location,
+				'message'      => (string) $message,
+				'data'         => $data,
+				'timestamp'    => (int) round( microtime( true ) * 1000 ),
+				'runId'        => $run_id,
+			)
+		);
+		if ( ! is_string( $entry ) ) {
+			return;
+		}
+		$paths = array(
+			'/Users/atlas/Documents/Github/acm_aero/acm_design V4/.cursor/debug-4f15f6.log',
+		);
+		if ( defined( 'WP_CONTENT_DIR' ) ) {
+			$paths[] = trailingslashit( (string) WP_CONTENT_DIR ) . 'debug-4f15f6.log';
+		}
+		foreach ( $paths as $path ) {
+			@file_put_contents( $path, $entry . "\n", FILE_APPEND | LOCK_EX );
+		}
+		// #endregion
+	}
+
+	/**
+	 * Summarize image-like values inside flexible sections for debug logs.
+	 *
+	 * @param array<int,array<string,mixed>> $sections Sections payload.
+	 * @return array<int,array<string,mixed>>
+	 */
+	private static function debug_summarize_section_images( $sections ) {
+		$out = array();
+		if ( ! is_array( $sections ) ) {
+			return $out;
+		}
+		foreach ( $sections as $index => $section ) {
+			if ( ! is_array( $section ) ) {
+				continue;
+			}
+			$layout = isset( $section['acf_fc_layout'] ) ? (string) $section['acf_fc_layout'] : '';
+			$images = array();
+			foreach ( $section as $key => $val ) {
+				if ( ! is_string( $key ) ) {
+					continue;
+				}
+				if ( 'image' === $key || 'poster' === $key || 'background_image' === $key ) {
+					$images[ $key ] = array(
+						'type' => gettype( $val ),
+						'raw'  => is_scalar( $val ) ? (string) $val : ( is_array( $val ) ? array_keys( $val ) : '' ),
+					);
+				}
+				if ( 'items' === $key && is_array( $val ) ) {
+					foreach ( $val as $item_index => $item ) {
+						if ( is_array( $item ) && array_key_exists( 'image', $item ) ) {
+							$img_val = $item['image'];
+							$images[ 'items.' . $item_index . '.image' ] = array(
+								'type' => gettype( $img_val ),
+								'raw'  => is_scalar( $img_val ) ? (string) $img_val : ( is_array( $img_val ) ? array_keys( $img_val ) : '' ),
+							);
+						}
+					}
+				}
+			}
+			if ( ! empty( $images ) ) {
+				$out[] = array(
+					'index'  => (int) $index,
+					'layout' => $layout,
+					'images' => $images,
+				);
+			}
+		}
+		return $out;
+	}
+
+	/**
+	 * Merge missing attachment IDs from a freshly parsed shell payload.
+	 *
+	 * @param array<int,array<string,mixed>> $stored Stored sections.
+	 * @param array<int,array<string,mixed>> $fresh  Parsed shell sections.
+	 * @return array<int,array<string,mixed>>
+	 */
+	private static function merge_media_ids_into_sections( $stored, $fresh ) {
+		if ( ! is_array( $stored ) || ! is_array( $fresh ) ) {
+			return is_array( $stored ) ? $stored : array();
+		}
+
+		foreach ( $stored as $index => $section ) {
+			if ( ! is_array( $section ) || ! isset( $fresh[ $index ] ) || ! is_array( $fresh[ $index ] ) ) {
+				continue;
+			}
+			$stored[ $index ] = self::merge_media_ids_into_section( $section, $fresh[ $index ] );
+		}
+
+		return $stored;
+	}
+
+	/**
+	 * @param array<string,mixed> $stored Section row.
+	 * @param array<string,mixed> $fresh  Parsed section row.
+	 * @return array<string,mixed>
+	 */
+	private static function merge_media_ids_into_section( $stored, $fresh ) {
+		if ( ! is_array( $stored ) || ! is_array( $fresh ) ) {
+			return is_array( $stored ) ? $stored : array();
+		}
+
+		foreach ( $fresh as $key => $fresh_val ) {
+			if ( ! array_key_exists( $key, $stored ) ) {
+				continue;
+			}
+			if ( in_array( $key, array( 'image', 'poster', 'background_image' ), true ) ) {
+				$stored_id = self::resolve_attachment_id( $stored[ $key ] );
+				$fresh_id  = self::resolve_attachment_id( $fresh_val );
+				if ( 0 === $stored_id && $fresh_id > 0 ) {
+					$stored[ $key ] = $fresh_id;
+				}
+				continue;
+			}
+			if ( 'items' === $key && is_array( $stored[ $key ] ) && is_array( $fresh_val ) ) {
+				foreach ( $stored[ $key ] as $item_index => $item ) {
+					if ( ! is_array( $item ) || ! isset( $fresh_val[ $item_index ] ) || ! is_array( $fresh_val[ $item_index ] ) ) {
+						continue;
+					}
+					$stored[ $key ][ $item_index ] = self::merge_media_ids_into_section( $item, $fresh_val[ $item_index ] );
+				}
+			}
+		}
+
+		return $stored;
+	}
+
+	/**
+	 * Extract homepage image src paths from canonical index shell HTML.
+	 *
+	 * @param string $html Shell HTML.
+	 * @return array<string,string> Field name => relative asset path or absolute URL.
+	 */
+	private static function build_index_shell_preview_path_map( $html ) {
+		$map = array();
+		if ( '' === trim( $html ) ) {
+			return $map;
+		}
+
+		libxml_use_internal_errors( true );
+		$dom = new DOMDocument();
+		if ( ! $dom->loadHTML( '<?xml encoding="UTF-8">' . $html, LIBXML_NOWARNING | LIBXML_NOERROR ) ) {
+			return $map;
+		}
+
+		$xpath = new DOMXPath( $dom );
+		$queries = array(
+			'leadwerk_sections[2][items][0][image]' => '//*[@id="services"]//article[1]//img[not(contains(@class,"section-emblem"))][1]',
+			'leadwerk_sections[2][items][1][image]' => '//*[@id="services"]//article[2]//img[not(contains(@class,"section-emblem"))][1]',
+			'leadwerk_sections[2][items][2][image]' => '//*[@id="services"]//article[3]//img[not(contains(@class,"section-emblem"))][1]',
+			'leadwerk_sections[3][image]'           => '//*[@id="services-promo"]//img[not(contains(@class,"section-emblem"))][1]',
+			'leadwerk_sections[5][image]'           => '//*[@id="about"]//img[not(contains(@class,"section-emblem"))][1]',
+			'leadwerk_sections[6][image]'           => '//*[@id="charter-hero"]//img[not(contains(@class,"section-emblem"))][1]',
+			'leadwerk_sections[7][image]'           => '//*[@id="maintenance"]//img[not(contains(@class,"section-emblem"))][1]',
+			'leadwerk_sections[8][image]'           => '//*[@id="management"]//img[not(contains(@class,"section-emblem"))][1]',
+			'leadwerk_sections[9][image]'           => '//*[@id="handling"]//img[not(contains(@class,"section-emblem"))][1]',
+			'leadwerk_sections[10][image]'          => '//*[@id="careers"]//img[not(contains(@class,"section-emblem"))][1]',
+		);
+
+		foreach ( $queries as $field_name => $query ) {
+			$nodes = $xpath->query( $query );
+			if ( ! $nodes || ! $nodes->length ) {
+				continue;
+			}
+			$node = $nodes->item( 0 );
+			if ( ! $node instanceof DOMElement ) {
+				continue;
+			}
+			$src = html_entity_decode( trim( (string) $node->getAttribute( 'src' ) ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+			if ( '' === $src ) {
+				continue;
+			}
+			$src = rawurldecode( $src );
+			if ( preg_match( '#^https?://#i', $src ) ) {
+				$map[ $field_name ] = $src;
+				continue;
+			}
+			$map[ $field_name ] = ltrim( str_replace( '\\', '/', $src ), '/' );
+		}
+
+		return $map;
+	}
+
+	/**
+	 * Assign one attachment ID into nested section field structure.
+	 *
+	 * @param array<int,array<string,mixed>> $sections       Sections (by reference).
+	 * @param string                         $field_name     e.g. leadwerk_sections[2][items][0][image].
+	 * @param int                            $attachment_id  Attachment ID.
+	 */
+	private static function assign_media_id_by_field_name( &$sections, $field_name, $attachment_id ) {
+		$attachment_id = (int) $attachment_id;
+		if ( $attachment_id < 1 || ! preg_match( '/^leadwerk_sections\[(\d+)\](?:\[items\]\[(\d+)\])?\[([a-z_]+)\]$/', $field_name, $matches ) ) {
+			return;
+		}
+
+		$section_index = (int) $matches[1];
+		$field_key     = (string) $matches[3];
+		if ( ! isset( $sections[ $section_index ] ) || ! is_array( $sections[ $section_index ] ) ) {
+			return;
+		}
+
+		if ( '' !== (string) $matches[2] ) {
+			$item_index = (int) $matches[2];
+			if ( ! isset( $sections[ $section_index ]['items'][ $item_index ] ) || ! is_array( $sections[ $section_index ]['items'][ $item_index ] ) ) {
+				return;
+			}
+			$sections[ $section_index ]['items'][ $item_index ][ $field_key ] = $attachment_id;
+			return;
+		}
+
+		$sections[ $section_index ][ $field_key ] = $attachment_id;
+	}
+
+	/**
+	 * Resolve attachment ID for a shell-relative media path.
+	 *
+	 * @param Leadwerk_Media_Importer $media Media importer.
+	 * @param string                  $path  Relative source path or URL.
+	 * @return int
+	 */
+	private static function resolve_attachment_id_for_source_path( Leadwerk_Media_Importer $media, $path ) {
+		$path = trim( (string) $path );
+		if ( '' === $path || preg_match( '#^https?://#i', $path ) ) {
+			return 0;
+		}
+
+		$id = (int) $media->get_attachment_id_by_source( $path );
+		if ( $id ) {
+			return $id;
+		}
+
+		return (int) $media->import_file( $path );
+	}
+
+	/**
+	 * Hydrate homepage image IDs from canonical shell + media library fallbacks.
+	 *
+	 * @param array<int,array<string,mixed>> $sections Stored sections.
+	 * @param int                            $post_id  Post ID.
+	 * @return array<int,array<string,mixed>>
+	 */
+	private static function hydrate_missing_media_ids_for_index( $sections, $post_id ) {
+		static $cache = array();
+		$post_id      = (int) $post_id;
+		if ( isset( $cache[ $post_id ] ) ) {
+			return $cache[ $post_id ];
+		}
+
+		if ( ! class_exists( 'Leadwerk_ACF_Filler' ) || ! class_exists( 'Leadwerk_Media_Importer' ) || ! defined( 'LEADWERK_IMPORTER_PATH' ) ) {
+			$cache[ $post_id ] = $sections;
+			return $sections;
+		}
+
+		$source_root = trailingslashit( (string) apply_filters( 'leadwerk_import_source_root', LEADWERK_IMPORTER_PATH . 'source_assets' ) );
+		if ( ! is_dir( $source_root ) ) {
+			$cache[ $post_id ] = $sections;
+			return $sections;
+		}
+
+		$html = '';
+		if ( function_exists( 'leadwerk_theme_resolve_exact_shell_file' ) ) {
+			$shell_file = leadwerk_theme_resolve_exact_shell_file( 'index.html' );
+			if ( is_string( $shell_file ) && is_file( $shell_file ) ) {
+				$html = (string) file_get_contents( $shell_file );
+			}
+		}
+		if ( '' === trim( $html ) && is_file( $source_root . 'index.html' ) ) {
+			$html = (string) file_get_contents( $source_root . 'index.html' );
+		}
+		if ( '' === trim( $html ) ) {
+			$cache[ $post_id ] = $sections;
+			return $sections;
+		}
+
+		$media  = new Leadwerk_Media_Importer( $source_root, false );
+		$filler = new Leadwerk_ACF_Filler( $source_root, $media, array() );
+		$payload = $filler->build_page_payload_from_html(
+			array(
+				'source_key'  => 'acm-index-v1',
+				'field_name'  => 'acm_index_sections',
+				'source_file' => 'index.html',
+			),
+			$html,
+			'de'
+		);
+		$fresh   = is_array( $payload['value'] ?? null ) ? $payload['value'] : array();
+		$merged  = self::merge_media_ids_into_sections( $sections, $fresh );
+
+		self::$admin_image_preview_paths = self::build_index_shell_preview_path_map( $html );
+		$resolved_from_paths             = 0;
+		foreach ( self::$admin_image_preview_paths as $field_name => $source_path ) {
+			$attachment_id = self::resolve_attachment_id_for_source_path( $media, $source_path );
+			if ( $attachment_id > 0 ) {
+				self::assign_media_id_by_field_name( $merged, $field_name, $attachment_id );
+				++$resolved_from_paths;
+			}
+		}
+
+		// #region agent log
+		self::debug_log_4f15f6(
+			'H2-fix',
+			'class-leadwerk-fields-metabox.php:hydrate_missing_media_ids_for_index',
+			'Hydrated homepage media IDs from shell',
+			array(
+				'post_id'              => $post_id,
+				'fresh_images'         => self::debug_summarize_section_images( $fresh ),
+				'shell_path_map'       => self::$admin_image_preview_paths,
+				'resolved_from_paths'  => $resolved_from_paths,
+				'merged_images'        => self::debug_summarize_section_images( $merged ),
+				'runId'                => 'post-fix-v2',
+			)
+		);
+		// #endregion
+
+		$cache[ $post_id ] = $merged;
+		return $merged;
+	}
+
+	/**
+	 * Normalize image field values (int ID, ACF array, legacy path).
+	 *
+	 * @param mixed $value Raw field value.
+	 * @return int Attachment ID or 0.
+	 */
+	private static function resolve_attachment_id( $value ) {
+		if ( is_numeric( $value ) ) {
+			return (int) $value;
+		}
+
+		if ( is_array( $value ) ) {
+			foreach ( array( 'ID', 'id', 'attachment_id' ) as $key ) {
+				if ( isset( $value[ $key ] ) && is_numeric( $value[ $key ] ) ) {
+					return (int) $value[ $key ];
+				}
+			}
+		}
+
+		return 0;
+	}
+
+	/**
+	 * Preview URL for admin image fields (thumbnail, full size, static fallback).
+	 *
+	 * @param mixed $value Raw field value.
+	 * @return string
+	 */
+	private static function resolve_image_preview_url( $value ) {
+		if ( is_array( $value ) && ! empty( $value['url'] ) && is_string( $value['url'] ) ) {
+			return (string) $value['url'];
+		}
+
+		$attachment_id = self::resolve_attachment_id( $value );
+		if ( $attachment_id > 0 ) {
+			foreach ( array( 'thumbnail', 'medium', 'large', 'full' ) as $size ) {
+				$url = wp_get_attachment_image_url( $attachment_id, $size );
+				if ( $url ) {
+					return (string) $url;
+				}
+			}
+
+			$url = wp_get_attachment_url( $attachment_id );
+			if ( $url ) {
+				return (string) $url;
+			}
+
+			$source_path = (string) get_post_meta( $attachment_id, 'leadwerk_source_path', true );
+			if ( '' !== $source_path ) {
+				return self::resolve_static_asset_preview_url( $source_path );
+			}
+		}
+
+		if ( is_string( $value ) && '' !== trim( $value ) && ! is_numeric( $value ) ) {
+			return self::resolve_static_asset_preview_url( trim( $value ) );
+		}
+
+		return '';
+	}
+
+	/**
+	 * Resolve bundled source_assets URL for admin previews.
+	 *
+	 * @param string $relative_path Relative asset path or absolute URL.
+	 * @return string
+	 */
+	private static function resolve_static_asset_preview_url( $relative_path ) {
+		$relative_path = trim( (string) $relative_path );
+		if ( '' === $relative_path ) {
+			return '';
+		}
+
+		if ( preg_match( '#^https?://#i', $relative_path ) ) {
+			return $relative_path;
+		}
+
+		if ( function_exists( 'leadwerk_theme_static_asset_url' ) ) {
+			return (string) leadwerk_theme_static_asset_url( $relative_path );
+		}
+
+		if ( defined( 'WP_CONTENT_DIR' ) ) {
+			$plugins_dir = trailingslashit( wp_normalize_path( (string) WP_CONTENT_DIR ) ) . 'plugins';
+			foreach ( array( 'leadwerk_importer', 'leadwerk-importer' ) as $slug ) {
+				$bootstrap = $plugins_dir . '/' . $slug . '/leadwerk-importer.php';
+				$assets    = $plugins_dir . '/' . $slug . '/source_assets';
+				if ( is_file( $bootstrap ) && is_dir( $assets ) ) {
+					$rel = ltrim( str_replace( '\\', '/', $relative_path ), '/' );
+					return trailingslashit( esc_url_raw( plugins_url( 'source_assets', $bootstrap ) ) ) . $rel;
+				}
+			}
+		}
+
+		return '';
+	}
+
 	private static function render_field( $name, $definition, $value, $id = '' ) {
 		$type  = $definition['type'] ?? 'text';
 		$label = $definition['label'] ?? $name;
@@ -562,13 +1050,39 @@ class Leadwerk_Fields_Metabox {
 				break;
 
 			case 'image':
-				$img_id  = is_numeric( $value ) ? (int) $value : 0;
-				$img_url = $img_id ? wp_get_attachment_image_url( $img_id, 'thumbnail' ) : '';
+				$img_id  = self::resolve_attachment_id( $value );
+				$img_url = self::resolve_image_preview_url( $value );
+				if ( ! $img_url && isset( self::$admin_image_preview_paths[ $name ] ) ) {
+					$img_url = self::resolve_image_preview_url( self::$admin_image_preview_paths[ $name ] );
+				}
+				// #region agent log
+				if ( false !== strpos( (string) $name, 'leadwerk_sections' ) ) {
+					self::debug_log_4f15f6(
+						'H2',
+						'class-leadwerk-fields-metabox.php:render_field:image',
+						'Image field preview resolution',
+						array(
+							'field_name'        => (string) $name,
+							'value_type'        => gettype( $value ),
+							'value_scalar'      => is_scalar( $value ) ? (string) $value : '',
+							'value_array_keys'  => is_array( $value ) ? array_keys( $value ) : array(),
+							'resolved_id'       => (int) $img_id,
+							'preview_url'       => (string) $img_url,
+							'shell_source_path' => (string) ( self::$admin_image_preview_paths[ $name ] ?? '' ),
+							'attachment_exists' => $img_id > 0 ? (bool) get_post( $img_id ) : false,
+							'source_path'       => $img_id > 0 ? (string) get_post_meta( $img_id, 'leadwerk_source_path', true ) : '',
+							'runId'             => 'post-fix-v2',
+						)
+					);
+				}
+				// #endregion
 				echo '<div class="leadwerk-image-field" data-target="' . esc_attr( $id ) . '">';
 				echo '<input type="hidden" id="' . esc_attr( $id ) . '" name="' . esc_attr( $name ) . '" value="' . esc_attr( (string) $img_id ) . '">';
 				echo '<div class="leadwerk-image-preview">';
 				if ( $img_url ) {
 					echo '<img src="' . esc_url( $img_url ) . '" alt="" style="max-width:150px;height:auto;">';
+				} elseif ( $img_id > 0 ) {
+					echo '<p class="description">' . esc_html__( 'Anhang vorhanden, aber keine Vorschau-URL (ID ', 'leadwerk-fields' ) . (int) $img_id . ').</p>';
 				}
 				echo '</div>';
 				echo '<button type="button" class="button leadwerk-image-select">Bild waehlen</button> ';
@@ -711,7 +1225,7 @@ class Leadwerk_Fields_Metabox {
 				return trim( (string) wp_unslash( is_null( $value ) ? '' : $value ) );
 
 			case 'image':
-				return absint( $value );
+				return self::resolve_attachment_id( $value );
 
 			case 'video':
 				$raw = wp_unslash( is_null( $value ) ? '' : $value );

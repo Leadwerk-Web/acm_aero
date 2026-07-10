@@ -2741,6 +2741,13 @@ class Leadwerk_ACF_Filler {
 			$id = (int) $this->media_importer->import_file( $path );
 		}
 
+		if ( ! $id && $this->media_importer && method_exists( $this->media_importer, 'find_attachment_by_basename' ) ) {
+			$id = (int) $this->media_importer->find_attachment_by_basename( $path );
+			if ( $id ) {
+				update_post_meta( $id, 'leadwerk_source_path', $path );
+			}
+		}
+
 		$this->attachment_cache[ $path ] = $id;
 		return $id;
 	}

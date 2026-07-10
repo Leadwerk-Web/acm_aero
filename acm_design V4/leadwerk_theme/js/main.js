@@ -303,38 +303,32 @@
     }
     
 
-    // Hero Video â€“ nur Startzeit setzen, Loop ausschlieÃŸlich Ã¼ber HTML-Attribut
+    // Hero Video — poster sofort, Wiedergabe ab 0 s
     const heroVideo = document.getElementById('hero-video');
-    const START_TIME = 15;
-    let videoInitialized = false;
-    
+
     if (heroVideo) {
-      function initHeroVideo() {
-        if (videoInitialized) return;
-        var d = heroVideo.duration;
-        if (!isFinite(d) || d <= 0) return;
-        
-        videoInitialized = true;
-        heroVideo.classList.add('loaded');
-        heroVideo.currentTime = d >= START_TIME ? START_TIME : 0;
-        heroVideo.play().catch(function() {});
+      let heroBooted = false;
+
+      function bootHeroVideo() {
+        if (heroBooted) return;
+        heroBooted = true;
+        heroVideo.classList.add('loaded', 'is-playing');
+
+        const playPromise = heroVideo.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(function () {});
+        }
       }
-      
-      heroVideo.addEventListener('loadedmetadata', function() {
-        var d = heroVideo.duration;
-        if (isFinite(d)) heroVideo.currentTime = d >= START_TIME ? START_TIME : 0;
-      });
-      heroVideo.addEventListener('canplay', initHeroVideo);
-      heroVideo.addEventListener('loadeddata', initHeroVideo);
-      heroVideo.addEventListener('error', function() {
+
+      heroVideo.addEventListener('loadeddata', bootHeroVideo, { once: true });
+      heroVideo.addEventListener('playing', bootHeroVideo, { once: true });
+      heroVideo.addEventListener('error', function () {
         heroVideo.style.display = 'none';
       });
-      
-      setTimeout(function() {
-        if (!videoInitialized && heroVideo.readyState >= 2 && isFinite(heroVideo.duration)) {
-          initHeroVideo();
-        }
-      }, 2000);
+
+      if (heroVideo.readyState >= 2) {
+        bootHeroVideo();
+      }
     }
 
     // Modern Card-Based Aircraft Slider Control
