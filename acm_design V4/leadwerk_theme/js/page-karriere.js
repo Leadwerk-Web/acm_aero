@@ -95,4 +95,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       toggleStickyCta();
     })();
 
+    // #region agent log
+    (function initPdfDownloadDebug() {
+      document.querySelectorAll('a[href*="leadwerk_pdf"], a[download][href*=".pdf"], a.link-arrow').forEach(function (a) {
+        if (!/pdf|herunterladen|download/i.test((a.textContent || '') + ' ' + (a.getAttribute('href') || '') + ' ' + (a.getAttribute('download') || ''))) return;
+        a.addEventListener('click', function () {
+          var href = a.href;
+          var tokMatch = href.match(/leadwerk_pdf=([^&]+)/);
+          var data = { href: href, downloadAttr: a.getAttribute('download') };
+          if (tokMatch) {
+            try {
+              var t = tokMatch[1].replace(/-/g, '+').replace(/_/g, '/');
+              while (t.length % 4) t += '=';
+              var parts = atob(t).split('|');
+              data.tokenId = parts[1];
+              data.tokenExp = parseInt(parts[2], 10);
+              data.tokenExpired = data.tokenExp < (Date.now() / 1000);
+            } catch (e) { data.decodeError = String(e); }
+          }
+          fetch(href, { method: 'GET', credentials: 'same-origin' }).then(function (r) {
+            data.status = r.status;
+            data.contentType = r.headers.get('content-type');
+            fetch('http://127.0.0.1:7561/ingest/f96997b2-48a5-4fbd-b7ad-372007f369ca', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '884c52' }, body: JSON.stringify({ sessionId: '884c52', runId: 'pre-fix', hypothesisId: data.tokenExpired ? 'A' : 'D', location: 'page-karriere.js:pdf-click', message: 'PDF link click probe', data: data, timestamp: Date.now() }) }).catch(function () {});
+          }).catch(function (e) {
+            data.fetchError = String(e);
+            fetch('http://127.0.0.1:7561/ingest/f96997b2-48a5-4fbd-b7ad-372007f369ca', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '884c52' }, body: JSON.stringify({ sessionId: '884c52', runId: 'pre-fix', hypothesisId: 'D', location: 'page-karriere.js:pdf-click-error', message: 'PDF fetch failed', data: data, timestamp: Date.now() }) }).catch(function () {});
+          });
+        }, true);
+      });
+    })();
+    // #endregion
+
 

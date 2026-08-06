@@ -1,6 +1,10 @@
 <?php
 /**
- * Signierte, zeitlich begrenzte PDF-Download-URLs (Karriere / Stellenanzeigen).
+ * Signierte PDF-Download-URLs (Karriere / Stellenanzeigen).
+ *
+ * v2-Tokens sind cache-sicher (kein Ablaufdatum): Page-Cache (Hummingbird/Varnish)
+ * kann HTML laenger halten als die fruehere 7-Tage-TTL von v1.
+ * v1-Tokens werden weiter akzeptiert (inkl. abgelaufener), solange die Signatur stimmt.
  *
  * @package Leadwerk_Theme
  */
@@ -24,7 +28,7 @@ function leadwerk_theme_secure_pdf_hmac_key() {
 }
 
 /**
- * Gueltigkeitsdauer eines Tokens in Sekunden.
+ * Legacy TTL (nur noch fuer Filter-Kompatibilitaet; neue Tokens nutzen v2 ohne Ablauf).
  *
  * @return int
  */
@@ -41,8 +45,8 @@ function leadwerk_theme_build_secure_pdf_token( $attachment_id ) {
 	if ( ! $attachment_id ) {
 		return '';
 	}
-	$exp   = time() + leadwerk_theme_secure_pdf_ttl();
-	$data  = '1|' . $attachment_id . '|' . $exp;
+	// v2: 2|id|sig — kein Expiry, kompatibel mit langfristigem Full-Page-Cache.
+	$data  = '2|' . $attachment_id;
 	$sig   = hash_hmac( 'sha256', $data, leadwerk_theme_secure_pdf_hmac_key() );
 	$token = $data . '|' . $sig;
 
@@ -63,7 +67,36 @@ function leadwerk_theme_parse_secure_pdf_token( $token_raw ) {
 		$token_raw .= str_repeat( '=', 4 - $pad );
 	}
 	$decoded = base64_decode( strtr( $token_raw, '-_', '+/' ), true );
-	if ( false === $decoded || substr_count( $decoded, '|' ) !== 3 ) {
+	if ( false === $decoded || '' === $decoded ) {
+		return 0;
+	}
+	$pipe_count = substr_count( $decoded, '|' );
+
+	// v2: 2|id|sig
+	if ( 2 === $pipe_count ) {
+		$parts = explode( '|', $decoded, 3 );
+		if ( count( $parts ) !== 3 ) {
+			return 0;
+		}
+		list( $ver, $id, $sig ) = $parts;
+		if ( '2' !== (string) $ver ) {
+			return 0;
+		}
+		$id = absint( $id );
+		if ( ! $id ) {
+			return 0;
+		}
+		$data     = $ver . '|' . $id;
+		$expected = hash_hmac( 'sha256', $data, leadwerk_theme_secure_pdf_hmac_key() );
+		if ( ! is_string( $sig ) || ! hash_equals( $expected, $sig ) ) {
+			return 0;
+		}
+
+		return $id;
+	}
+
+	// v1: 1|id|exp|sig — Expiry wird ignoriert (gecachte HTML-Seiten).
+	if ( 3 !== $pipe_count ) {
 		return 0;
 	}
 	$parts = explode( '|', $decoded, 4 );
@@ -74,16 +107,19 @@ function leadwerk_theme_parse_secure_pdf_token( $token_raw ) {
 	if ( '1' !== (string) $ver ) {
 		return 0;
 	}
-	$id  = absint( $id );
-	$exp = (int) $exp;
-	if ( ! $id || $exp < time() ) {
+	$id = absint( $id );
+	if ( ! $id ) {
 		return 0;
 	}
-	$data     = $ver . '|' . $id . '|' . $exp;
+	$data     = $ver . '|' . $id . '|' . (int) $exp;
 	$expected = hash_hmac( 'sha256', $data, leadwerk_theme_secure_pdf_hmac_key() );
 	if ( ! is_string( $sig ) || ! hash_equals( $expected, $sig ) ) {
 		return 0;
 	}
+
+	// #region agent log
+	@file_put_contents( '/Users/atlas/Documents/Github/acm_aero/acm_design V4/.cursor/debug-884c52.log', wp_json_encode( array( 'sessionId' => '884c52', 'runId' => 'post-fix', 'hypothesisId' => 'A', 'location' => 'leadwerk-secure-pdf-download.php:v1-accept', 'message' => 'Accepted v1 token (expiry ignored for cache compat)', 'data' => array( 'id' => $id, 'exp' => (int) $exp, 'expired' => ( (int) $exp < time() ), 'now' => time() ), 'timestamp' => (int) round( microtime( true ) * 1000 ) ) ) . "\n", FILE_APPEND );
+	// #endregion
 
 	return $id;
 }
@@ -205,11 +241,21 @@ function leadwerk_theme_serve_secure_pdf_download() {
 	}
 	$raw = wp_unslash( $_GET[ LEADWERK_THEME_SECURE_PDF_QUERY ] );
 	if ( ! is_string( $raw ) || '' === $raw ) {
+		// #region agent log
+		@file_put_contents( '/Users/atlas/Documents/Github/acm_aero/acm_design V4/.cursor/debug-884c52.log', wp_json_encode( array( 'sessionId' => '884c52', 'runId' => 'local', 'hypothesisId' => 'C', 'location' => 'leadwerk-secure-pdf-download.php:empty-token', 'message' => 'Empty leadwerk_pdf token', 'data' => array( 'rawType' => gettype( $raw ) ), 'timestamp' => (int) round( microtime( true ) * 1000 ) ) ) . "\n", FILE_APPEND );
+		// #endregion
 		status_header( 400 );
 		exit;
 	}
 	$id = leadwerk_theme_parse_secure_pdf_token( $raw );
 	if ( ! $id || ! leadwerk_theme_attachment_is_allowed_pdf( $id ) ) {
+		// #region agent log
+		$pad  = strlen( (string) $raw ) % 4;
+		$tok  = (string) $raw . ( $pad ? str_repeat( '=', 4 - $pad ) : '' );
+		$dec  = base64_decode( strtr( $tok, '-_', '+/' ), true );
+		$bits = ( is_string( $dec ) && '' !== $dec ) ? explode( '|', $dec, 4 ) : array();
+		@file_put_contents( '/Users/atlas/Documents/Github/acm_aero/acm_design V4/.cursor/debug-884c52.log', wp_json_encode( array( 'sessionId' => '884c52', 'runId' => 'local', 'hypothesisId' => 'A', 'location' => 'leadwerk-secure-pdf-download.php:reject', 'message' => 'Secure PDF rejected', 'data' => array( 'parsedId' => (int) $id, 'allowed' => $id ? leadwerk_theme_attachment_is_allowed_pdf( $id ) : false, 'tokenParts' => $bits, 'now' => time(), 'exp' => isset( $bits[2] ) ? (int) $bits[2] : null, 'expired' => isset( $bits[2] ) ? ( (int) $bits[2] < time() ) : null ), 'timestamp' => (int) round( microtime( true ) * 1000 ) ) ) . "\n", FILE_APPEND );
+		// #endregion
 		status_header( 403 );
 		exit;
 	}
