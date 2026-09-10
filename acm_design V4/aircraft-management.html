@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Aircraft Management f&uuml;r Business Jets: ACM AIR CHARTER steuert Betrieb, Crew, Wartung und Compliance effizient, transparent und werterhaltend." name="description"/><link href="/aircraft-management.html" rel="canonical"/><link href="/aircraft-management.html" hreflang="de" rel="alternate"/><link href="/en/aircraft-management.html" hreflang="en" rel="alternate"/>
+<meta content="Aircraft Management unter eigenem AOC, mit CAMO und Part-145-Werft am Baden-Airpark. Ein Ansprechpartner für Betrieb, Technik und Crew Ihres Business Jets." name="description"/><link href="/aircraft-management.html" rel="canonical"/><link href="/aircraft-management.html" hreflang="de" rel="alternate"/><link href="/en/aircraft-management.html" hreflang="en" rel="alternate"/>
 <meta content="index, follow" name="robots"/>
-<title>Aircraft Management | ACM AIR CHARTER</title>
+<title>Aircraft Management für Business Jets in Deutschland | ACM AIR CHARTER</title>
 <link href="Fotos/Favicon_xs.webp" rel="icon" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -429,8 +429,133 @@
     @media (max-width: 768px) {
       .content-box-outer { padding-left: 2rem; padding-right: 2rem; }
     }
+
+    details.faq-item {
+      background: white;
+      transition: box-shadow 0.3s ease;
+    }
+    details.faq-item + details.faq-item {
+      margin-top: 1px;
+    }
+    details.faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: background 0.2s ease;
+    }
+    details.faq-item summary:hover {
+      background: rgba(0, 20, 65, 0.02);
+    }
+    details.faq-item summary::-webkit-details-marker,
+    details.faq-item summary::marker {
+      display: none;
+      content: '';
+    }
+    details.faq-item summary h3 {
+      font-size: 1.3rem !important;
+      margin: 0;
+      line-height: 1.3;
+    }
+    details.faq-item .faq-answer {
+      padding: 0 2rem 1.75rem;
+    }
+    details.faq-item .faq-expand-icon {
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    details.faq-item[open] .faq-expand-icon {
+      transform: rotate(45deg);
+    }
+
+    .acm-inline-link {
+      color: #001441 !important;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity 0.2s ease;
+    }
+    .acm-inline-link:hover {
+      opacity: 0.65;
+    }
+
+    .acm-table {
+      border-collapse: collapse;
+      min-width: 640px;
+    }
+    .acm-table thead tr {
+      box-shadow: inset 0 -1px 0 rgba(0, 20, 65, 0.15);
+    }
+    .acm-table tbody tr {
+      box-shadow: inset 0 -1px 0 rgba(0, 20, 65, 0.07);
+    }
+    .acm-table td:nth-child(2) {
+      color: #001441 !important;
+      font-weight: 500;
+    }
 </style>
 <link href="mobile-qa.css" rel="stylesheet"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.acm.aero/aircraft-management/#faq",
+  "inLanguage": "de-DE",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was umfasst Aircraft Management bei einem Business Jet konkret?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aircraft Management umfasst den gesamten Betrieb Ihres Flugzeugs außerhalb Ihrer eigenen Nutzungsentscheidung. Dazu gehören Flugplanung und Überflug- sowie Landegenehmigungen, Crew-Auswahl, Training und Dienstplanung, die Überwachung der Lufttüchtigkeit durch eine CAMO, die Planung und Durchführung der Wartung, Versicherung, Behördenkontakt sowie die vollständige kaufmännische Abrechnung. Bei ACM kommt die Abfertigung am eigenen Terminal hinzu. Sie entscheiden über Einsatz und Verfügbarkeit, alles Übrige liegt beim Betreiber."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann lohnt sich Aircraft Management statt Eigenbetrieb eines Flugzeugs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sobald der Betrieb eines Flugzeugs mehr Struktur verlangt, als sich nebenher führen lässt. Das ist in der Regel der Fall bei regelmäßiger internationaler Nutzung, bei mehreren Crews oder wenn das Flugzeug in ungenutzten Zeiten Erträge erwirtschaften soll. Der Eigenbetrieb bleibt sinnvoll, wenn bereits eine eigene Betriebsorganisation mit Personal und Instandhaltungsprogramm besteht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Vorteile bietet Aircraft Management für Flugzeugeigentümer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Drei Vorteile stehen im Vordergrund. Erstens planbare Kosten, weil feste und variable Positionen sowie Wartungsrücklagen getrennt ausgewiesen werden. Zweitens Werterhalt, weil ein eingehaltenes Instandhaltungsprogramm und eine lückenlose Dokumentation den Wiederverkaufswert sichern. Drittens Entlastung, weil Betriebsgenehmigung, Meldewesen und Behördenkontakt beim Betreiber liegen. Im gewerblichen Betrieb kommen Chartererträge hinzu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Fragen sollten Eigentümer vor der Vergabe eines Aircraft-Management-Mandats stellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sinnvoll sind sechs Fragen. Betreiben Sie mein Flugzeug unter eigenem AOC oder unter einem fremden? Liegt die CAMO im eigenen Haus? Gibt es eine eigene Part-145-Werft oder wird die Wartung vergeben? Welche Kostenpositionen sind im Managementhonorar enthalten und welche nicht? Wie oft und in welcher Tiefe wird berichtet? Und wer ist mein fester Ansprechpartner, auch außerhalb der Bürozeiten? Wer auf alle sechs Fragen eine klare Antwort bekommt, kann Angebote wirklich vergleichen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Worin unterscheiden sich Charter, Aircraft Management und Maintenance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Charter bedeutet, dass Sie einen Flug auf einem fremden Flugzeug kaufen. Aircraft Management bedeutet, dass Ihr eigenes Flugzeug von einem Betreiber geführt wird. Maintenance ist die technische Instandhaltung, also die Arbeit am Flugzeug selbst. Die drei Bereiche greifen ineinander: Ein gemanagtes Flugzeug kann im Charter vermarktet werden, und die Wartung ist Teil des Managements. Bei ACM liegen alle drei Bereiche in einer Unternehmensgruppe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bleibt mein Flugzeug bei einem gewerblichen Betrieb für mich verfügbar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Ihre Nutzung hat Vorrang. Die Charter-Vermarktung findet in den Zeiten statt, die Sie freigeben, und folgt den Regeln, die im Managementvertrag festgelegt werden. Wie viel Vorlauf für Ihre eigenen Flüge nötig ist, wird im Vertrag verbindlich vereinbart."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="font-sans text-stone-800 antialiased">
 <!-- HEADER -->
@@ -514,6 +639,7 @@
 <a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="global-xrs.html" style="font-size: 0.85rem;">Bombardier Global XRS</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="aircraft-management.html">Aircraft Management</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="maintenance.html">Maintenance</a>
+<a class="desktop-menu-link block py-2 pl-4 text-stone-500 hover:text-accent transition-colors" href="camo.html" style="font-size: 0.85rem;">CAMO</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="karriere.html">Karriere</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="news.html">News</a>
 <a class="desktop-menu-link block py-4 text-stone-900 hover:text-accent transition-colors" href="kontakt.html">Kontakt</a>
@@ -530,6 +656,7 @@
 <a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="global-xrs.html" style="font-size: 0.9rem;">Global XRS</a>
 <a class="mobile-menu-link block py-3" href="aircraft-management.html">Aircraft Management</a>
 <a class="mobile-menu-link block py-3" href="maintenance.html">Maintenance</a>
+<a class="mobile-menu-link block py-2 pl-4 text-stone-500" href="camo.html" style="font-size: 0.9rem;">CAMO</a>
 <a class="mobile-menu-link block py-3" href="karriere.html">Karriere</a>
 <a class="mobile-menu-link block py-3" href="news.html">News</a>
 <a class="mobile-menu-link block py-3" href="kontakt.html">Kontakt</a>
@@ -559,10 +686,10 @@
 </div>
 <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20" style="padding-bottom: 5rem;">
 <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light mb-6 fade-in-up fade-in-up-delay-1" style="text-shadow: 0 2px 16px rgba(0,0,0,0.45), 0 0 40px rgba(0,0,0,0.2);">
-          Aircraft Management
+          Aircraft Management für Business Jets
         </h1>
 <p class="text-white/80 text-lg max-w-2xl mx-auto mb-10 leading-relaxed fade-in-up fade-in-up-delay-1" style="font-size: 17px !important; color: rgba(255,255,255,0.85) !important; text-shadow: 0 1px 10px rgba(0,0,0,0.4), 0 0 30px rgba(0,0,0,0.15);">
-          Strukturiertes Management f&uuml;r Ihren Business Jet &ndash; von der operativen Steuerung bis zum nachhaltigen Werterhalt.
+          Betrieb, Crew, Technik und Behördenkoordination aus einer Hand, unter eigenem AOC und mit eigener Werft am Baden-Airpark.
         </p>
 <div class="flex flex-wrap justify-center gap-4 fade-in-up fade-in-up-delay-2">
 <a class="btn-overlay-white" href="kontakt.html#zentrale">
@@ -600,7 +727,20 @@
 </div>
 </div>
 </section>
+
 <!-- ============================================
+         1b. EINSTIEG
+         ============================================ -->
+<section class="py-20 sm:py-24 bg-white" id="am-einstieg">
+<div class="max-w-3xl mx-auto px-6 sm:px-8 lg:px-12 scroll-reveal">
+<p class="text-stone-500 leading-relaxed mb-6">
+            ACM betreibt Business Jets für ihre Eigentümer, vollständig und unter eigener Verantwortung. Flugbetrieb, Crew, Technik und Behördenkoordination laufen bei uns zusammen, an einem Standort und mit einem festen Ansprechpartner. Sie entscheiden, wann und wohin Ihr Flugzeug fliegt. Alles davor und danach übernehmen wir.
+          </p>
+<p class="text-stone-500 leading-relaxed">
+            Wir sind Betreiber, nicht Vermittler. Ihr Flugzeug fliegt unter dem Air Operator Certificate der ACM AIR CHARTER (AOC D-057) oder im privaten Betrieb nach Part-NCC. Die Lufttüchtigkeit überwacht unsere eigene CAMO, gewartet wird in der eigenen <a class="acm-inline-link" href="maintenance.html">Part-145-Werft am Baden-Airpark</a>. Zwischen Ihrem Flugzeug und der Werkbank steht kein Dienstleister, den wir erst beauftragen müssen.
+          </p>
+</div>
+</section><!-- ============================================
          2. OWNER VALUE PROPOSITION
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32 bg-white" id="am-owner">
@@ -627,8 +767,54 @@
 </div>
 </div>
 </section>
+
 <!-- ============================================
-         3. BETRIEBSMODELLE Ã¢â‚¬â€œ GEWERBLICH VS. PRIVAT
+         2b. WANN SICH AIRCRAFT MANAGEMENT RECHNET
+         ============================================ -->
+<section class="py-20 sm:py-28 lg:py-32" id="am-rechnet" style="background-color: rgb(250 248 245);">
+<div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+<div class="text-center mb-16 lg:mb-20 scroll-reveal">
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Entscheidungshilfe</span>
+<h2 class="font-serif text-stone-900 font-light">
+            Wann sich Aircraft Management rechnet, und wann nicht</h2>
+</div>
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+<div class="scroll-reveal">
+<p class="text-stone-500 leading-relaxed mb-6">
+            Ein Business Jet im Eigenbetrieb bindet mehr als Kapital. Er braucht eine Betriebsgenehmigung oder eine saubere Part-NCC-Struktur, geschultes Personal, ein Instandhaltungsprogramm, eine Lufttüchtigkeitsüberwachung und jemanden, der nachts um zwei den Slot organisiert, wenn ein Bauteil ausfällt. Das ist ein eigener kleiner Betrieb.
+          </p>
+<p class="text-stone-500 leading-relaxed mb-6">
+            Aircraft Management lohnt sich, wenn Sie fliegen wollen, ohne diesen Betrieb selbst zu führen. Typisch ist der Fall bei international geplanten Flügen und immer dann, wenn das Flugzeug in Zeiten, in denen Sie es nicht brauchen, Erträge erwirtschaften soll.
+          </p>
+<p class="text-stone-500 leading-relaxed">
+            Weniger sinnvoll ist es, wenn Sie ein Flugzeug fast ausschließlich lokal und selten fliegen und dafür bereits eigenes Personal beschäftigen. In dem Fall sagen wir das im Erstgespräch auch. Wir stellen jedes Mandat individuell auf und übernehmen keines, das für Sie rechnerisch nicht aufgeht.
+          </p>
+</div>
+<div class="scroll-reveal space-y-10">
+<div>
+<h4 class="font-serif text-stone-800 mb-2" style="font-size: 1.5rem;">Kostenseite</h4>
+<p class="text-stone-500 leading-relaxed">
+                Feste und variable Kosten werden getrennt ausgewiesen, inklusive Rücklagen für die Wartung. Sie sehen, was der Betrieb kostet, bevor er beginnt.
+              </p>
+</div>
+<div>
+<h4 class="font-serif text-stone-800 mb-2" style="font-size: 1.5rem;">Ertragsseite</h4>
+<p class="text-stone-500 leading-relaxed">
+                Im gewerblichen Betrieb unter unserem AOC vermarkten wir freie Zeiten im <a class="acm-inline-link" href="charter.html">Charter auf unserer Flotte</a>. Die Erträge fließen in Ihre Betriebsrechnung.
+              </p>
+</div>
+<div>
+<h4 class="font-serif text-stone-800 mb-2" style="font-size: 1.5rem;">Werterhalt</h4>
+<p class="text-stone-500 leading-relaxed">
+                Lückenlose Dokumentation und ein eingehaltenes Instandhaltungsprogramm sind beim späteren Verkauf bares Geld. Wer hier spart, zahlt beim Gutachten.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section><!-- ============================================
+         3. BETRIEBSMODELLE -¢-¬-€- GEWERBLICH VS. PRIVAT
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32" id="betriebsmodelle" style="background-color: rgb(250 248 245);">
 <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -666,6 +852,9 @@
 <span class="text-stone-600 text-sm leading-relaxed">Definierte SLAs, strukturiertes Reporting und Sicherheitsaudits</span>
 </li>
 </ul>
+<p class="text-stone-500 leading-relaxed">
+              Kurz gesagt: mehr Regularien, dafür Erträge aus dem Charter und ein zertifiziertes Sicherheitsframework, das auch Ihre eigene Nutzung mit abdeckt.
+            </p>
 </div>
 <!-- B) Privater Flugbetrieb -->
 <div class="scroll-reveal bg-white p-10 lg:p-12">
@@ -694,6 +883,9 @@
 <span class="text-stone-600 text-sm leading-relaxed">Minimierung der administrativen Last bei voller Verf&uuml;gungskontrolle</span>
 </li>
 </ul>
+<p class="text-stone-500 leading-relaxed">
+              Kurz gesagt: maximale Verfügungsfreiheit über Ihr Flugzeug, ohne dass Sie sich um Lufttüchtigkeit, Meldewesen und Behördenkontakt kümmern müssen.
+            </p>
 </div>
 </div>
 </div>
@@ -787,13 +979,13 @@
 <div>
 <h4 class="font-serif text-stone-800 mb-2" style="font-size: 1.5rem;">CAMO</h4>
 <p class="text-stone-500 leading-relaxed">
-                  Fortlaufende Luftt&uuml;chtigkeits&uuml;berwachung, Wartungsplanung und Dokumentenmanagement.
+                  <a class="acm-inline-link" href="camo.html">Lufttüchtigkeitsmanagement durch die eigene CAMO</a>: fortlaufende Überwachung, Wartungsplanung und Dokumentenmanagement.
                 </p>
 </div>
 <div>
 <h4 class="font-serif text-stone-800 mb-2" style="font-size: 1.5rem;">Inhouse Maintenance (Part-145)</h4>
 <p class="text-stone-500 leading-relaxed">
-                  Line- und Base-Maintenance in eigener Werft. Direkte Koordination ohne externe Zwischenstellen.
+                  Line- und Base-Maintenance in der eigenen <a class="acm-inline-link" href="maintenance.html">Part-145-Werft am Baden-Airpark</a>. Direkte Koordination ohne externe Zwischenstellen.
                 </p>
 </div>
 <div>
@@ -807,7 +999,63 @@
 </div>
 </div>
 </section>
+
 <!-- ============================================
+         5b. EIN ANBIETER STATT EINER KETTE
+         ============================================ -->
+<section class="py-20 sm:py-28 lg:py-32 bg-white" id="am-kette">
+<div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+<div class="text-center mb-16 lg:mb-20 scroll-reveal">
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Unterschied</span>
+<h2 class="font-serif text-stone-900 font-light">
+            Ein Anbieter statt einer Kette von Dienstleistern</h2>
+</div>
+<div class="scroll-reveal mb-12">
+<p class="text-stone-500 leading-relaxed">
+            Die meisten Managementgesellschaften verwalten. Sie planen den Flug, buchen die Crew und beauftragen für die Technik eine fremde Werft, für die Lufttüchtigkeit ein fremdes CAMO und für die Abfertigung einen fremden Handling-Agenten. Jede Schnittstelle kostet Zeit, und im Zweifel schiebt eine Stelle die Verantwortung zur nächsten.
+          </p>
+</div>
+<div class="scroll-reveal overflow-x-auto">
+<table class="w-full text-left acm-table">
+<thead>
+<tr>
+<th class="text-stone-900 font-serif text-lg py-4 pr-6">Funktion</th>
+<th class="text-stone-900 font-serif text-lg py-4 pr-6">Bei ACM</th>
+<th class="text-stone-900 font-serif text-lg py-4 pr-6">Was das für Sie bedeutet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Flugbetrieb</td>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Eigenes AOC (D-057) und Part-NCC</td>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Ein Betreiber, eine Verantwortung</td>
+</tr>
+<tr>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Lufttüchtigkeit</td>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Eigene <a class="acm-inline-link" href="camo.html">CAMO</a></td>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Befund und Planung ohne Übergabeverlust</td>
+</tr>
+<tr>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Wartung</td>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Eigene <a class="acm-inline-link" href="maintenance.html">EASA-Part-145-Werft</a></td>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Slot aus derselben Organisation</td>
+</tr>
+<tr>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Abfertigung</td>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Eigenes Terminal am Baden-Airpark, IS-BAH Stage 2 registriert</td>
+<td class="text-stone-500 text-sm leading-relaxed py-4 pr-6 align-top">Kein fremder Handling-Agent</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="scroll-reveal mt-12">
+<p class="text-stone-500 leading-relaxed">
+            Der praktische Effekt zeigt sich, wenn etwas nicht nach Plan läuft. Ein technischer Befund geht bei uns nicht als Ticket an einen externen Partner, sondern in dieselbe Organisation, die den nächsten Flug plant. Wie weit das trägt, zeigt die <a class="acm-inline-link" href="news/acm-technik-schliesst-erfolgreich-die-erste-120-monats-inspektion-eines-bombardier-global-express-flugzeuges-ab.html">120-Monats-Inspektion an einer Bombardier Global Express in der eigenen Werft</a>.
+          </p>
+</div>
+</div>
+</section><!-- ============================================
          6. TRANSPARENCY / REPORTING
          ============================================ -->
 <section class="py-20 sm:py-28 lg:py-32 bg-white" id="am-transparency">
@@ -907,6 +1155,76 @@
 </div>
 </div>
 </section>
+
+<!-- ============================================
+         FAQ
+         ============================================ -->
+<section class="py-20 sm:py-28 lg:py-32" id="faq" style="background-color: rgb(250 248 245);">
+<div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+<div class="text-center mb-16 lg:mb-20 scroll-reveal">
+<img alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" height="35" src="Fotos/Emblem.svg" width="auto"/>
+<span class="section-label text-olive font-medium tracking-[0.2em] uppercase mb-6 block">Häufige Fragen</span>
+<h2 class="font-serif text-stone-900 font-light">
+            Häufige Fragen zum Aircraft Management.</h2>
+</div>
+<div class="scroll-reveal">
+<details class="faq-item">
+<summary>
+<h3 class="font-serif text-stone-900 font-light">Was umfasst Aircraft Management bei einem Business Jet konkret?</h3>
+<svg class="faq-expand-icon w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</summary>
+<div class="faq-answer">
+<p class="text-stone-500 leading-relaxed">Aircraft Management umfasst den gesamten Betrieb Ihres Flugzeugs außerhalb Ihrer eigenen Nutzungsentscheidung. Dazu gehören Flugplanung und Überflug- sowie Landegenehmigungen, Crew-Auswahl, Training und Dienstplanung, die Überwachung der Lufttüchtigkeit durch eine CAMO, die Planung und Durchführung der Wartung, Versicherung, Behördenkontakt sowie die vollständige kaufmännische Abrechnung. Bei ACM kommt die Abfertigung am eigenen Terminal hinzu. Sie entscheiden über Einsatz und Verfügbarkeit, alles Übrige liegt beim Betreiber.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>
+<h3 class="font-serif text-stone-900 font-light">Wann lohnt sich Aircraft Management statt Eigenbetrieb eines Flugzeugs?</h3>
+<svg class="faq-expand-icon w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</summary>
+<div class="faq-answer">
+<p class="text-stone-500 leading-relaxed">Sobald der Betrieb eines Flugzeugs mehr Struktur verlangt, als sich nebenher führen lässt. Das ist in der Regel der Fall bei regelmäßiger internationaler Nutzung, bei mehreren Crews oder wenn das Flugzeug in ungenutzten Zeiten Erträge erwirtschaften soll. Der Eigenbetrieb bleibt sinnvoll, wenn bereits eine eigene Betriebsorganisation mit Personal und Instandhaltungsprogramm besteht.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>
+<h3 class="font-serif text-stone-900 font-light">Welche Vorteile bietet Aircraft Management für Flugzeugeigentümer?</h3>
+<svg class="faq-expand-icon w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</summary>
+<div class="faq-answer">
+<p class="text-stone-500 leading-relaxed">Drei Vorteile stehen im Vordergrund. Erstens planbare Kosten, weil feste und variable Positionen sowie Wartungsrücklagen getrennt ausgewiesen werden. Zweitens Werterhalt, weil ein eingehaltenes Instandhaltungsprogramm und eine lückenlose Dokumentation den Wiederverkaufswert sichern. Drittens Entlastung, weil Betriebsgenehmigung, Meldewesen und Behördenkontakt beim Betreiber liegen. Im gewerblichen Betrieb kommen Chartererträge hinzu.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>
+<h3 class="font-serif text-stone-900 font-light">Welche Fragen sollten Eigentümer vor der Vergabe eines Aircraft-Management-Mandats stellen?</h3>
+<svg class="faq-expand-icon w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</summary>
+<div class="faq-answer">
+<p class="text-stone-500 leading-relaxed">Sinnvoll sind sechs Fragen. Betreiben Sie mein Flugzeug unter eigenem AOC oder unter einem fremden? Liegt die CAMO im eigenen Haus? Gibt es eine eigene Part-145-Werft oder wird die Wartung vergeben? Welche Kostenpositionen sind im Managementhonorar enthalten und welche nicht? Wie oft und in welcher Tiefe wird berichtet? Und wer ist mein fester Ansprechpartner, auch außerhalb der Bürozeiten? Wer auf alle sechs Fragen eine klare Antwort bekommt, kann Angebote wirklich vergleichen.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>
+<h3 class="font-serif text-stone-900 font-light">Worin unterscheiden sich Charter, Aircraft Management und Maintenance?</h3>
+<svg class="faq-expand-icon w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</summary>
+<div class="faq-answer">
+<p class="text-stone-500 leading-relaxed">Charter bedeutet, dass Sie einen Flug auf einem fremden Flugzeug kaufen. Aircraft Management bedeutet, dass Ihr eigenes Flugzeug von einem Betreiber geführt wird. Maintenance ist die technische Instandhaltung, also die Arbeit am Flugzeug selbst. Die drei Bereiche greifen ineinander: Ein gemanagtes Flugzeug kann im Charter vermarktet werden, und die Wartung ist Teil des Managements. Bei ACM liegen alle drei Bereiche in einer Unternehmensgruppe.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>
+<h3 class="font-serif text-stone-900 font-light">Bleibt mein Flugzeug bei einem gewerblichen Betrieb für mich verfügbar?</h3>
+<svg class="faq-expand-icon w-6 h-6 text-olive" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</summary>
+<div class="faq-answer">
+<p class="text-stone-500 leading-relaxed">Ja. Ihre Nutzung hat Vorrang. Die Charter-Vermarktung findet in den Zeiten statt, die Sie freigeben, und folgt den Regeln, die im Managementvertrag festgelegt werden. Wie viel Vorlauf für Ihre eigenen Flüge nötig ist, wird im Vertrag verbindlich vereinbart.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
 <!-- ============================================
          8. FINAL CTA
          ============================================ -->
@@ -924,7 +1242,7 @@
           Lassen Sie uns &uuml;ber Ihr Flugzeug sprechen.
         </h2>
 <p class="text-stone-600 mb-10 max-w-2xl mx-auto text-lg leading-relaxed scroll-reveal">
-          Ob Erstberatung, Betriebsmodellwechsel oder konkretes Management-Angebot &ndash; wir stehen f&uuml;r ein direktes Gespr&auml;ch zur Verf&uuml;gung.
+          Ein Management-Mandat beginnt nicht mit einem Angebot, sondern mit einem Blick auf Ihr Flugzeug und Ihr Einsatzprofil. Nennen Sie uns Muster, Baujahr und die ungefähre Nutzung im Jahr, dann sagen wir Ihnen, welches Betriebsmodell zu Ihnen passt und was es kostet. Auch dann, wenn die Antwort lautet, dass sich ein Mandat für Sie nicht lohnt.
         </p>
 <div class="flex flex-wrap justify-center gap-4 scroll-reveal">
 <a class="btn-primary" href="kontakt.html#zentrale">
@@ -960,6 +1278,7 @@
 <li><a class="hover:text-olive transition-colors" href="charter.html">Charter</a></li>
 <li><a class="hover:text-olive transition-colors" href="aircraft-management.html">Aircraft Management</a></li>
 <li><a class="hover:text-olive transition-colors" href="maintenance.html">Maintenance</a></li>
+<li><a class="hover:text-olive transition-colors" href="camo.html">CAMO</a></li>
 </ul>
 </div>
 <div>
