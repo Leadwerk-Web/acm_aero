@@ -117,10 +117,6 @@ function leadwerk_theme_parse_secure_pdf_token( $token_raw ) {
 		return 0;
 	}
 
-	// #region agent log
-	@file_put_contents( '/Users/atlas/Documents/Github/acm_aero/acm_design V4/.cursor/debug-884c52.log', wp_json_encode( array( 'sessionId' => '884c52', 'runId' => 'post-fix', 'hypothesisId' => 'A', 'location' => 'leadwerk-secure-pdf-download.php:v1-accept', 'message' => 'Accepted v1 token (expiry ignored for cache compat)', 'data' => array( 'id' => $id, 'exp' => (int) $exp, 'expired' => ( (int) $exp < time() ), 'now' => time() ), 'timestamp' => (int) round( microtime( true ) * 1000 ) ) ) . "\n", FILE_APPEND );
-	// #endregion
-
 	return $id;
 }
 
@@ -241,21 +237,11 @@ function leadwerk_theme_serve_secure_pdf_download() {
 	}
 	$raw = wp_unslash( $_GET[ LEADWERK_THEME_SECURE_PDF_QUERY ] );
 	if ( ! is_string( $raw ) || '' === $raw ) {
-		// #region agent log
-		@file_put_contents( '/Users/atlas/Documents/Github/acm_aero/acm_design V4/.cursor/debug-884c52.log', wp_json_encode( array( 'sessionId' => '884c52', 'runId' => 'local', 'hypothesisId' => 'C', 'location' => 'leadwerk-secure-pdf-download.php:empty-token', 'message' => 'Empty leadwerk_pdf token', 'data' => array( 'rawType' => gettype( $raw ) ), 'timestamp' => (int) round( microtime( true ) * 1000 ) ) ) . "\n", FILE_APPEND );
-		// #endregion
 		status_header( 400 );
 		exit;
 	}
 	$id = leadwerk_theme_parse_secure_pdf_token( $raw );
 	if ( ! $id || ! leadwerk_theme_attachment_is_allowed_pdf( $id ) ) {
-		// #region agent log
-		$pad  = strlen( (string) $raw ) % 4;
-		$tok  = (string) $raw . ( $pad ? str_repeat( '=', 4 - $pad ) : '' );
-		$dec  = base64_decode( strtr( $tok, '-_', '+/' ), true );
-		$bits = ( is_string( $dec ) && '' !== $dec ) ? explode( '|', $dec, 4 ) : array();
-		@file_put_contents( '/Users/atlas/Documents/Github/acm_aero/acm_design V4/.cursor/debug-884c52.log', wp_json_encode( array( 'sessionId' => '884c52', 'runId' => 'local', 'hypothesisId' => 'A', 'location' => 'leadwerk-secure-pdf-download.php:reject', 'message' => 'Secure PDF rejected', 'data' => array( 'parsedId' => (int) $id, 'allowed' => $id ? leadwerk_theme_attachment_is_allowed_pdf( $id ) : false, 'tokenParts' => $bits, 'now' => time(), 'exp' => isset( $bits[2] ) ? (int) $bits[2] : null, 'expired' => isset( $bits[2] ) ? ( (int) $bits[2] < time() ) : null ), 'timestamp' => (int) round( microtime( true ) * 1000 ) ) ) . "\n", FILE_APPEND );
-		// #endregion
 		status_header( 403 );
 		exit;
 	}

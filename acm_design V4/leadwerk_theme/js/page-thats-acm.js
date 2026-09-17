@@ -267,14 +267,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       });
     }
     updateSectionJumpState();
-    // #region agent log
-    (function htlSectionNavDbg() {
-      try {
-        var secs = getTimelinePageSections();
-        fetch('http://127.0.0.1:7345/ingest/b1195c55-d6eb-488c-93f3-5ea6ddc2460c', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': 'eeb156' }, body: JSON.stringify({ sessionId: 'eeb156', location: 'page-thats-acm.js:init', message: 'timeline section-nav context', data: { hasMain: !!document.querySelector('main'), sectionsCount: secs.length, timelineIndex: secs.indexOf(section) }, timestamp: Date.now(), hypothesisId: 'WP_NO_MAIN' }) }).catch(function() {});
-      } catch (e) {}
-    })();
-    // #endregion
     window.addEventListener('scroll', function() { updateSectionJumpState(); }, { passive: true });
 
     var resizeTimer;

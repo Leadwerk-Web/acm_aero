@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LEADWERK_THEME_VERSION', '1.0.17' );
+define( 'LEADWERK_THEME_VERSION', '1.0.18' );
 define( 'LEADWERK_THEME_DIR', get_template_directory() );
 define( 'LEADWERK_THEME_URI', get_template_directory_uri() );
 define( 'LEADWERK_THEME_ACM_NEWS_FILTER_SLUG_META', 'acm_news_filter_slug' );

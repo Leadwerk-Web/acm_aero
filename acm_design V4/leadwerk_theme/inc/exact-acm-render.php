@@ -2566,25 +2566,6 @@ function leadwerk_theme_bind_exact_acm_horizontal_timeline( $xpath, $section, $v
 	// Nur echte Timeline-Karten (article.htl-card). contains(@class,"htl-card") matcht fälschlich z. B. htl-card-title / htl-card-year und zerstört das DOM bei dom_ensure_count().
 	$htl_card_xpath = './/article[contains(concat(\' \', normalize-space(@class), \' \'), \' htl-card \')] | .//*[contains(concat(\' \', normalize-space(@class), \' \'), \' timeline-item \')] | .//*[contains(concat(\' \', normalize-space(@class), \' \'), \' milestone \')]';
 	$nodes          = leadwerk_theme_dom_ensure_count( leadwerk_theme_dom_query( $xpath, $htl_card_xpath, $section ), count( $items ) );
-	// #region agent log
-	$log_file = dirname( LEADWERK_THEME_DIR ) . DIRECTORY_SEPARATOR . 'debug-eeb156.log';
-	$log_payload = array(
-		'sessionId'    => 'eeb156',
-		'hypothesisId' => 'H_htl_xpath',
-		'location'     => 'exact-acm-render.php:leadwerk_theme_bind_exact_acm_horizontal_timeline',
-		'message'      => 'Timeline card nodes vs items',
-		'data'         => array(
-			'items_count' => count( $items ),
-			'nodes_count' => is_array( $nodes ) ? count( $nodes ) : 0,
-		),
-		'timestamp'    => (int) round( microtime( true ) * 1000 ),
-	);
-	@file_put_contents(
-		$log_file,
-		( function_exists( 'wp_json_encode' ) ? wp_json_encode( $log_payload ) : json_encode( $log_payload ) ) . "\n",
-		FILE_APPEND
-	);
-	// #endregion
 	foreach ( $nodes as $idx => $node ) {
 		$item = $items[ $idx ] ?? array();
 		if ( ! is_array( $item ) ) continue;
@@ -3487,69 +3468,9 @@ function leadwerk_theme_bind_exact_acm_contact_dept_section( $xpath, $section, $
 
 	$profiles = isset( $value['profiles'] ) && is_array( $value['profiles'] ) ? array_values( $value['profiles'] ) : array();
 	if ( count( $profiles ) > 0 ) {
-		// #region agent log
-		$broad_cards  = leadwerk_theme_dom_query( $xpath, './/*[contains(@class,"profile-card")]', $section );
-		$strict_cards = leadwerk_theme_dom_query( $xpath, './/div[contains(concat(\' \', normalize-space(@class), \' \'), \' profile-card \')]', $section );
-		$sample       = array();
-		foreach ( array_slice( $broad_cards, 0, 6 ) as $bn ) {
-			if ( $bn instanceof DOMElement ) {
-				$sample[] = $bn->tagName . ':' . (string) $bn->getAttribute( 'class' );
-			}
-		}
-		$empty_profiles = 0;
-		foreach ( $profiles as $pr ) {
-			if ( ! is_array( $pr ) ) {
-				continue;
-			}
-			$nm = trim( wp_strip_all_tags( (string) ( $pr['name'] ?? '' ) ) );
-			$im = (int) ( $pr['image'] ?? 0 );
-			if ( '' === $nm && 0 === $im ) {
-				++$empty_profiles;
-			}
-		}
-		$log_file    = dirname( LEADWERK_THEME_DIR ) . DIRECTORY_SEPARATOR . 'debug-42b553.log';
-		$log_payload = array(
-			'sessionId'     => '42b553',
-			'hypothesisId'  => 'H1_xpath_profile_card',
-			'location'      => 'exact-acm-render.php:leadwerk_theme_bind_exact_acm_contact_dept_section',
-			'message'       => 'Profile card xpath: broad vs strict vs profiles',
-			'data'          => array(
-				'profiles_count'   => count( $profiles ),
-				'broad_node_count' => is_array( $broad_cards ) ? count( $broad_cards ) : 0,
-				'strict_count'     => is_array( $strict_cards ) ? count( $strict_cards ) : 0,
-				'empty_profiles'   => $empty_profiles,
-				'broad_sample'     => $sample,
-			),
-			'timestamp'     => (int) round( microtime( true ) * 1000 ),
-		);
-		@file_put_contents(
-			$log_file,
-			( function_exists( 'wp_json_encode' ) ? wp_json_encode( $log_payload ) : json_encode( $log_payload ) ) . "\n",
-			FILE_APPEND
-		);
-		// #endregion
 		// Nur echte Karten (div.profile-card). contains(@class,"profile-card") matcht zusaetzlich profile-card-image-wrap / profile-card-image und zerstoert dom_ensure_count (3:1-Verhaeltnis im Shell-HTML).
-		$cards  = $strict_cards;
+		$cards  = leadwerk_theme_dom_query( $xpath, './/div[contains(concat(\' \', normalize-space(@class), \' \'), \' profile-card \')]', $section );
 		$pnodes = leadwerk_theme_dom_ensure_count( $cards, count( $profiles ) );
-		// #region agent log
-		$verify = array(
-			'sessionId'    => '42b553',
-			'runId'        => 'post-fix',
-			'hypothesisId' => 'H1_verify',
-			'location'     => 'exact-acm-render.php:leadwerk_theme_bind_exact_acm_contact_dept_section:after_ensure',
-			'message'      => 'After dom_ensure_count with strict xpath',
-			'data'         => array(
-				'profiles_count' => count( $profiles ),
-				'pnodes_count'   => is_array( $pnodes ) ? count( $pnodes ) : 0,
-			),
-			'timestamp'    => (int) round( microtime( true ) * 1000 ),
-		);
-		@file_put_contents(
-			$log_file,
-			( function_exists( 'wp_json_encode' ) ? wp_json_encode( $verify ) : json_encode( $verify ) ) . "\n",
-			FILE_APPEND
-		);
-		// #endregion
 		foreach ( $pnodes as $pi => $card ) {
 			$p = $profiles[ $pi ] ?? array();
 			if ( ! is_array( $p ) || ! $card instanceof DOMElement ) {
