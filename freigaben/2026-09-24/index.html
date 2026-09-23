@@ -12,45 +12,101 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--sand);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.55}
 header{background:var(--navy);color:#fff;padding:40px 24px}
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 h1{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:38px;margin:0 0 6px}
-h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:28px;margin:48px 0 12px;color:var(--navy)}
-h3{font-size:15px;font-weight:600;margin:0 0 6px}
+h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:30px;margin:52px 0 12px;color:var(--navy)}
+h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:24px;margin:4px 0 6px;color:var(--navy)}
 p{margin:0 0 10px}
 .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C9A45C;margin-bottom:8px}
 .muted{color:var(--stone)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.card img,.card video{display:block;width:100%;height:auto;background:#000}
-.card .body{padding:16px 18px}
-.card .txt{white-space:pre-line;font-size:14px;color:var(--ink);border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
-.tag{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--navy);color:#fff;border-radius:999px;padding:3px 10px;margin-right:6px}
+.tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--navy);color:#fff;border-radius:999px;padding:3px 10px;margin:0 6px 6px 0}
+.tag.alt{background:#fff;color:var(--navy);border:1px solid var(--navy)}
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:14px}
 th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);font-weight:600}
 a{color:var(--navy)}
 footer{margin:60px 0 30px;font-size:12px;color:var(--stone)}
-details summary{cursor:pointer;font-weight:600;margin:10px 0}
+details summary{cursor:pointer;font-weight:600;margin:12px 0 6px;color:var(--navy)}
+pre.copy{white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:Inter,system-ui,sans-serif;font-size:14px;margin:0}
+.post-block{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin:18px 0}
+.post-kopf{margin-bottom:14px}
+.post-nr{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9A45C;font-weight:600}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;align-items:start}
+.lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);font-weight:600;margin-bottom:8px}
+img.motiv{display:block;width:100%;height:auto;border-radius:6px;border:1px solid var(--line)}
+.mock{border:1px solid #dcdcdc;border-radius:10px;overflow:hidden;background:#fff;font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px;color:#191919}
+.mock img{display:block;width:100%;height:auto}
+.li-head{display:flex;gap:10px;padding:12px 14px;align-items:flex-start}
+.li-avatar{width:48px;height:48px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;border-radius:2px;flex:none}
+.li-name{font-weight:600;font-size:14px}.li-sub{font-size:12px;color:#666}
+.li-text{padding:0 14px 12px;font-size:13.5px;line-height:1.45}
+.li-tags{color:#0a66c2;font-weight:600}
+.li-react{display:flex;justify-content:space-between;padding:8px 14px;font-size:12px;color:#666;border-bottom:1px solid #e6e6e6}
+.li-actions{display:flex;justify-content:space-around;padding:10px 6px;font-size:12.5px;font-weight:600;color:#555}
+.ig-head{display:flex;gap:10px;padding:10px 12px;align-items:center}
+.ig-avatar{width:34px;height:34px;border-radius:50%;padding:2px;background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);flex:none}
+.ig-avatar span{display:flex;width:100%;height:100%;border-radius:50%;background:var(--navy);color:#fff;font-size:9px;font-weight:700;align-items:center;justify-content:center;border:2px solid #fff}
+.ig-name{font-weight:600;font-size:13px}.ig-sub{font-size:11px;color:#666}.ig-more{margin-left:auto;font-weight:700}
+.ig-icons{display:flex;gap:16px;padding:10px 12px;font-size:20px}.ig-save{margin-left:auto}
+.ig-cap{padding:0 12px 14px;font-size:13px;line-height:1.45}
+.ig-tags{color:#00376b}
+.reel{border:none;background:transparent}
+.phone{position:relative;width:270px;aspect-ratio:9/19.5;background:#000;border-radius:34px;padding:10px;border:6px solid #1a1a1a;margin:0 auto;overflow:hidden}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:24px;display:block}
+.reel-ui{position:absolute;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.7);font-size:12px}
+.reel-ui.top{top:26px;left:24px;right:24px;display:flex;justify-content:space-between;font-weight:600;font-size:15px}
+.reel-ui.right{right:22px;bottom:150px;display:flex;flex-direction:column;gap:14px;text-align:center;font-size:20px}
+.reel-ui.right small{font-size:10px}
+.reel-ui.bottom{left:24px;right:80px;bottom:46px;line-height:1.4}
+.safe{position:absolute;left:10px;right:10px;background:repeating-linear-gradient(45deg,rgba(255,0,0,.28) 0 6px,rgba(255,0,0,.08) 6px 12px);pointer-events:none}
+.safe.top{top:10px;height:13%}.safe.bottom{bottom:10px;height:22%}.safe.right{top:10px;bottom:10px;left:auto;width:11%;right:10px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;align-items:start}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card video{display:block;width:100%;height:auto;background:#000}
+.card .body{padding:14px 16px}
+@media print{.phone video{display:none}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
   <div class="eyebrow">ACM AIR CHARTER · zur Freigabe</div>
-  <h1>Social Media: die ersten drei Beiträge, und das neue Startseiten-Video</h1>
-  <p class="muted" style="color:#C6CFDA">Stand 24.09.2026. Alles auf dieser Seite ist ein Vorschlag. Nichts davon ist veröffentlicht.</p>
+  <h1>Social Media: neun Beiträge, zwei Clips, sechs Wochen Plan</h1>
+  <p style="color:#C6CFDA">Stand 24.09.2026. Alles auf dieser Seite ist ein Vorschlag, nichts davon ist veröffentlicht. Jeder Beitrag zeigt das Motiv, dazu die Ansicht auf LinkedIn und auf Instagram, dann Text und Hashtags zum Kopieren.</p>
 </div></header>
 
 <div class="wrap">
 
-<h2>Die drei Beiträge</h2>
-<p>Format 1080 × 1350 Pixel (Hochformat 4:5), damit der Beitrag bei LinkedIn und Instagram im Feed vollständig angezeigt wird. Die Motive sind ausschließlich Fotos von ACM. Bilder und Texte lassen sich jederzeit anpassen, die Vorlagen liegen in Canva.</p>
+<h2>Der Plan für die ersten sechs Wochen</h2>
+<p>Zwei feste Slots pro Woche: Dienstag früh die Recruiting-Strecke auf LinkedIn, Donnerstag die Fach- und Flottenbeiträge. Instagram bekommt die Bild- und Videobeiträge, LinkedIn zusätzlich die Fachfragen. Start nach eurer Freigabe, die Daten verschieben sich dann entsprechend.</p>
+<table>
+  <thead><tr><th>Woche</th><th>Termin</th><th>Kanal</th><th>Format</th><th>Beitrag</th><th>Zielseite</th><th>Nr.</th></tr></thead>
+  <tbody><tr><td>1</td><td>Do 01.10.2026, 17:00</td><td>Instagram / LinkedIn</td><td>Flotte im Einsatz</td><td>Drei Global 7500 am Baden-Airpark</td><td>acm.aero</td><td>Beitrag 3</td></tr><tr><td>1</td><td>Di 29.09.2026, 08:30</td><td>LinkedIn</td><td>Stelle des Monats</td><td>Pilot in Command (m/w/d), Global 7500</td><td>acm.aero/karriere</td><td>Beitrag 1</td></tr><tr><td>2</td><td>Di 06.10.2026, 08:30</td><td>LinkedIn / Instagram</td><td>Stelle des Monats</td><td>VIP Cabin Attendant (m/w/d)</td><td>acm.aero/karriere</td><td>Beitrag 2</td></tr><tr><td>2</td><td>Do 08.10.2026, 11:00</td><td>LinkedIn</td><td>Fachfrage kurz beantwortet</td><td>Warum Part-145 bei der Wartung entscheidet</td><td>acm.aero/maintenance</td><td>Beitrag 4</td></tr><tr><td>3</td><td>Di 13.10.2026, 08:30</td><td>LinkedIn</td><td>Stelle des Monats</td><td>First Officer (m/w/d), Global 6000</td><td>acm.aero/karriere</td><td>Beitrag 7</td></tr><tr><td>3</td><td>Do 15.10.2026, 17:00</td><td>Instagram / LinkedIn</td><td>Flotte im Einsatz</td><td>Global 6000: über 11.000 km nonstop</td><td>acm.aero/global-6000</td><td>Beitrag 9</td></tr><tr><td>4</td><td>Di 20.10.2026, 17:00</td><td>Instagram / LinkedIn</td><td>Kurzformat aus dem Videomaterial</td><td>20 Sekunden Ankunft (Feed)</td><td>acm.aero</td><td>Clip</td></tr><tr><td>4</td><td>Di 20.10.2026, 17:00</td><td>Instagram Reels / Stories</td><td>Kurzformat aus dem Videomaterial</td><td>20 Sekunden Ankunft (Reel)</td><td>acm.aero</td><td>Clip</td></tr><tr><td>4</td><td>Do 22.10.2026, 11:00</td><td>LinkedIn</td><td>Fachfrage kurz beantwortet</td><td>CAMO plant. Part-145 führt aus.</td><td>acm.aero/camo</td><td>Beitrag 5</td></tr><tr><td>5</td><td>Di 27.10.2026, 12:00</td><td>Instagram / LinkedIn</td><td>Arbeitgeber ACM</td><td>Ein Standort. Alle Gewerke.</td><td>acm.aero/karriere</td><td>Beitrag 8</td></tr><tr><td>6</td><td>Do 05.11.2026, 11:00</td><td>LinkedIn</td><td>Fachfrage kurz beantwortet</td><td>Ihr Flugzeug. Unser Betrieb.</td><td>acm.aero/aircraft-management</td><td>Beitrag 6</td></tr></tbody>
+</table>
+<p class="muted" style="margin-top:8px">Die Recruiting-Beiträge führen vorerst auf die bestehende Karriereseite und nach dem Livegang auf die jeweilige Stellenseite. Die Fachbeiträge zu Maintenance, CAMO und Aircraft Management gehen erst online, wenn die zugehörigen Fachseiten freigegeben sind.</p>
 
-<div class="grid">
-  <div class="card">
-    <img src="01_pilot-in-command_feed_1080x1350.png" alt="Beitrag 1: Pilot in Command">
-    <div class="body">
-      <span class="tag">LinkedIn</span><span class="tag">Stelle des Monats</span>
-      <div class="txt">Wir suchen einen Pilot in Command (m/w/d) für die Bombardier Global 7500.
+<h2>Die Beiträge im Einzelnen</h2>
+
+<section class="post-block" id="beitrag-1">
+  <div class="post-kopf"><span class="post-nr">Beitrag 1</span><h3>Pilot in Command (m/w/d), Global 7500</h3><div><span class="tag">LinkedIn</span><span class="tag alt">Stelle des Monats</span></div><div class="muted">geplant Di 29.09.2026, 08:30 Uhr · Ziel acm.aero/karriere</div></div>
+  <div class="post-grid">
+    <div><div class="lbl">Motiv, 1080 × 1350</div><a href="01_pilot-in-command_feed_1080x1350.png" target="_blank" rel="noopener"><img class="motiv" src="01_pilot-in-command_feed_1080x1350.png" alt="Pilot in Command (m/w/d), Global 7500"></a></div>
+    <div><div class="lbl">So sieht es auf LinkedIn aus</div>
+<div class="mock li">
+  <div class="li-head"><div class="li-avatar">ACM</div><div><div class="li-name">ACM AIR CHARTER</div><div class="li-sub">2.488 Follower · Gesponsert? Nein, organisch</div><div class="li-sub">Di 29.09.2026 · <span class="li-globe">Öffentlich</span></div></div></div>
+  <div class="li-text">Wir suchen einen Pilot in Command (m/w/d) für die Bombardier Global 7500.<br><br>Am Baden-Airpark tragen Sie bei ACM AIR CHARTER die Verantwortung für Passagiere, Flugzeug, Crew und Unternehmen, auf internationalen Langstrecken und in einem Team, das hohe Standards gemeinsam lebt.<br><br>Was Sie mitbringen: 5.000 Flugstunden, davon 3.500 auf CS-25-Flugzeugen, dazu 1.000 Stunden als PIC auf der BD700 oder 1.500 Stunden als PIC auf Flugzeugen über 30.000 kg MTOM. Ein Type Rating für die Global 7500 oder die BD700 mit Global Vision Flight Deck ist ein Vorteil. Deutsch und Englisch mindestens auf ICAO Level 5.<br><br>Alle Details und der Weg zur Bewerbung: acm.aero/karriere<br><span class="li-tags">#BusinessAviation #Global7500 #PilotJobs #Pilotenjobs #BadenAirpark #Karlsruhe #ACMAirCharter #Aviation #Hiring</span></div>
+  <img src="01_pilot-in-command_feed_1080x1350.png" alt="Pilot in Command (m/w/d), Global 7500">
+  <div class="li-react"><span>👍 ❤ 💡</span><span>Reaktionen · Kommentare · Reposts</span></div>
+  <div class="li-actions"><span>Gefällt mir</span><span>Kommentieren</span><span>Reposten</span><span>Senden</span></div>
+</div></div>
+    <div><div class="lbl">So sieht es auf Instagram aus</div>
+<div class="mock ig">
+  <div class="ig-head"><div class="ig-avatar"><span>ACM</span></div><div><div class="ig-name">acmaircharter</div><div class="ig-sub">Baden-Airpark</div></div><div class="ig-more">···</div></div>
+  <img src="01_pilot-in-command_feed_1080x1350.png" alt="Pilot in Command (m/w/d), Global 7500">
+  <div class="ig-icons"><span>♡</span><span>◯</span><span>➤</span><span class="ig-save">⌂</span></div>
+  <div class="ig-cap"><b>acmaircharter</b> Wir suchen einen Pilot in Command (m/w/d) für die Bombardier Global 7500.<br><br>Am Baden-Airpark tragen Sie bei ACM AIR CHARTER die Verantwortung für Passagiere, Flugzeug, Crew und Unternehmen, auf internationalen Langstrecken und in einem Team, das hohe Standards gemeinsam lebt.<br><br>Was Sie mitbringen: 5.000 Flugstunden, davon 3.500 auf CS-25-Flugzeugen, dazu 1.000 Stunden als PIC auf der BD700 oder 1.500 Stunden als PIC auf Flugzeugen über 30.000 kg MTOM. Ein Type Rating für die Global 7500 oder die BD700 mit Global Vision Flight Deck ist ein Vorteil. Deutsch und Englisch mindestens auf ICAO Level 5.<br><br>Alle Details und der Weg zur Bewerbung: acm.aero/karriere<br><span class="ig-tags">#BusinessAviation #Global7500 #PilotJobs #Pilotenjobs #BadenAirpark #Karlsruhe #ACMAirCharter #Aviation #Hiring</span></div>
+</div></div>
+  </div>
+  <details><summary>Text und Hashtags zum Kopieren</summary><pre class="copy">Wir suchen einen Pilot in Command (m/w/d) für die Bombardier Global 7500.
 
 Am Baden-Airpark tragen Sie bei ACM AIR CHARTER die Verantwortung für Passagiere, Flugzeug, Crew und Unternehmen, auf internationalen Langstrecken und in einem Team, das hohe Standards gemeinsam lebt.
 
@@ -58,14 +114,29 @@ Was Sie mitbringen: 5.000 Flugstunden, davon 3.500 auf CS-25-Flugzeugen, dazu 1.
 
 Alle Details und der Weg zur Bewerbung: acm.aero/karriere
 
-#BusinessAviation #Global7500 #Pilotenjobs #BadenAirpark</div>
-    </div>
+#BusinessAviation #Global7500 #PilotJobs #Pilotenjobs #BadenAirpark #Karlsruhe #ACMAirCharter #Aviation #Hiring</pre></details>
+</section>
+<section class="post-block" id="beitrag-2">
+  <div class="post-kopf"><span class="post-nr">Beitrag 2</span><h3>VIP Cabin Attendant (m/w/d)</h3><div><span class="tag">LinkedIn</span><span class="tag">Instagram</span><span class="tag alt">Stelle des Monats</span></div><div class="muted">geplant Di 06.10.2026, 08:30 Uhr · Ziel acm.aero/karriere</div></div>
+  <div class="post-grid">
+    <div><div class="lbl">Motiv, 1080 × 1350</div><a href="02_vip-cabin-attendant_feed_1080x1350.png" target="_blank" rel="noopener"><img class="motiv" src="02_vip-cabin-attendant_feed_1080x1350.png" alt="VIP Cabin Attendant (m/w/d)"></a></div>
+    <div><div class="lbl">So sieht es auf LinkedIn aus</div>
+<div class="mock li">
+  <div class="li-head"><div class="li-avatar">ACM</div><div><div class="li-name">ACM AIR CHARTER</div><div class="li-sub">2.488 Follower · Gesponsert? Nein, organisch</div><div class="li-sub">Di 06.10.2026 · <span class="li-globe">Öffentlich</span></div></div></div>
+  <div class="li-text">VIP Cabin Attendant (m/w/d) am Baden-Airpark gesucht.<br><br>Bei ACM AIR CHARTER betreuen Sie unsere Passagiere persönlich, organisieren Catering und individuelle Wünsche eigenständig und sorgen dafür, dass in der Kabine jeder Sicherheitsstandard sitzt.<br><br>Sie haben Erfahrung in der Business Aviation, sprechen fließend Deutsch und Englisch und bleiben auch an langen Tagen verlässlich. Ein EU-Führerschein Klasse B gehört dazu.<br><br>Mehr zur Stelle: acm.aero/karriere<br><span class="li-tags">#BusinessAviation #CabinAttendant #CabinCrew #VIPService #Karriere #BadenAirpark #ACMAirCharter #Hiring</span></div>
+  <img src="02_vip-cabin-attendant_feed_1080x1350.png" alt="VIP Cabin Attendant (m/w/d)">
+  <div class="li-react"><span>👍 ❤ 💡</span><span>Reaktionen · Kommentare · Reposts</span></div>
+  <div class="li-actions"><span>Gefällt mir</span><span>Kommentieren</span><span>Reposten</span><span>Senden</span></div>
+</div></div>
+    <div><div class="lbl">So sieht es auf Instagram aus</div>
+<div class="mock ig">
+  <div class="ig-head"><div class="ig-avatar"><span>ACM</span></div><div><div class="ig-name">acmaircharter</div><div class="ig-sub">Baden-Airpark</div></div><div class="ig-more">···</div></div>
+  <img src="02_vip-cabin-attendant_feed_1080x1350.png" alt="VIP Cabin Attendant (m/w/d)">
+  <div class="ig-icons"><span>♡</span><span>◯</span><span>➤</span><span class="ig-save">⌂</span></div>
+  <div class="ig-cap"><b>acmaircharter</b> VIP Cabin Attendant (m/w/d) am Baden-Airpark gesucht.<br><br>Bei ACM AIR CHARTER betreuen Sie unsere Passagiere persönlich, organisieren Catering und individuelle Wünsche eigenständig und sorgen dafür, dass in der Kabine jeder Sicherheitsstandard sitzt.<br><br>Sie haben Erfahrung in der Business Aviation, sprechen fließend Deutsch und Englisch und bleiben auch an langen Tagen verlässlich. Ein EU-Führerschein Klasse B gehört dazu.<br><br>Mehr zur Stelle: acm.aero/karriere<br><span class="ig-tags">#BusinessAviation #CabinAttendant #CabinCrew #VIPService #Karriere #BadenAirpark #ACMAirCharter #Hiring</span></div>
+</div></div>
   </div>
-  <div class="card">
-    <img src="02_vip-cabin-attendant_feed_1080x1350.png" alt="Beitrag 2: VIP Cabin Attendant">
-    <div class="body">
-      <span class="tag">LinkedIn</span><span class="tag">Stelle des Monats</span>
-      <div class="txt">VIP Cabin Attendant (m/w/d) am Baden-Airpark gesucht.
+  <details><summary>Text und Hashtags zum Kopieren</summary><pre class="copy">VIP Cabin Attendant (m/w/d) am Baden-Airpark gesucht.
 
 Bei ACM AIR CHARTER betreuen Sie unsere Passagiere persönlich, organisieren Catering und individuelle Wünsche eigenständig und sorgen dafür, dass in der Kabine jeder Sicherheitsstandard sitzt.
 
@@ -73,60 +144,252 @@ Sie haben Erfahrung in der Business Aviation, sprechen fließend Deutsch und Eng
 
 Mehr zur Stelle: acm.aero/karriere
 
-#BusinessAviation #CabinCrew #Karriere #BadenAirpark</div>
-    </div>
+#BusinessAviation #CabinAttendant #CabinCrew #VIPService #Karriere #BadenAirpark #ACMAirCharter #Hiring</pre></details>
+</section>
+<section class="post-block" id="beitrag-3">
+  <div class="post-kopf"><span class="post-nr">Beitrag 3</span><h3>Drei Global 7500 am Baden-Airpark</h3><div><span class="tag">Instagram</span><span class="tag">LinkedIn</span><span class="tag alt">Flotte im Einsatz</span></div><div class="muted">geplant Do 01.10.2026, 17:00 Uhr · Ziel acm.aero</div></div>
+  <div class="post-grid">
+    <div><div class="lbl">Motiv, 1080 × 1350</div><a href="03_flotte-global-7500_feed_1080x1350.png" target="_blank" rel="noopener"><img class="motiv" src="03_flotte-global-7500_feed_1080x1350.png" alt="Drei Global 7500 am Baden-Airpark"></a></div>
+    <div><div class="lbl">So sieht es auf LinkedIn aus</div>
+<div class="mock li">
+  <div class="li-head"><div class="li-avatar">ACM</div><div><div class="li-name">ACM AIR CHARTER</div><div class="li-sub">2.488 Follower · Gesponsert? Nein, organisch</div><div class="li-sub">Do 01.10.2026 · <span class="li-globe">Öffentlich</span></div></div></div>
+  <div class="li-text">Drei Bombardier Global 7500 betreibt ACM AIR CHARTER inzwischen vom Baden-Airpark aus.<br><br>Mit 14.200 Kilometern Reichweite ist die Global 7500 das Flaggschiff unserer gemanagten Flotte, gebaut für Strecken, auf denen andere zwischenlanden müssen.<br><br>Betrieb, Crew und Technik liegen dabei in einer Hand, bei uns am Standort.<br><span class="li-tags">#Global7500 #Bombardier #BusinessAviation #AircraftManagement #PrivateJet #BadenAirpark #ACMAirCharter #BizAv</span></div>
+  <img src="03_flotte-global-7500_feed_1080x1350.png" alt="Drei Global 7500 am Baden-Airpark">
+  <div class="li-react"><span>👍 ❤ 💡</span><span>Reaktionen · Kommentare · Reposts</span></div>
+  <div class="li-actions"><span>Gefällt mir</span><span>Kommentieren</span><span>Reposten</span><span>Senden</span></div>
+</div></div>
+    <div><div class="lbl">So sieht es auf Instagram aus</div>
+<div class="mock ig">
+  <div class="ig-head"><div class="ig-avatar"><span>ACM</span></div><div><div class="ig-name">acmaircharter</div><div class="ig-sub">Baden-Airpark</div></div><div class="ig-more">···</div></div>
+  <img src="03_flotte-global-7500_feed_1080x1350.png" alt="Drei Global 7500 am Baden-Airpark">
+  <div class="ig-icons"><span>♡</span><span>◯</span><span>➤</span><span class="ig-save">⌂</span></div>
+  <div class="ig-cap"><b>acmaircharter</b> Drei Bombardier Global 7500 betreibt ACM AIR CHARTER inzwischen vom Baden-Airpark aus.<br><br>Mit 14.200 Kilometern Reichweite ist die Global 7500 das Flaggschiff unserer gemanagten Flotte, gebaut für Strecken, auf denen andere zwischenlanden müssen.<br><br>Betrieb, Crew und Technik liegen dabei in einer Hand, bei uns am Standort.<br><span class="ig-tags">#Global7500 #Bombardier #BusinessAviation #AircraftManagement #PrivateJet #BadenAirpark #ACMAirCharter #BizAv</span></div>
+</div></div>
   </div>
-  <div class="card">
-    <img src="03_flotte-global-7500_feed_1080x1350.png" alt="Beitrag 3: Drei Global 7500">
-    <div class="body">
-      <span class="tag">Instagram</span><span class="tag">LinkedIn</span><span class="tag">Flotte im Einsatz</span>
-      <div class="txt">Drei Bombardier Global 7500 betreibt ACM AIR CHARTER inzwischen vom Baden-Airpark aus.
+  <details><summary>Text und Hashtags zum Kopieren</summary><pre class="copy">Drei Bombardier Global 7500 betreibt ACM AIR CHARTER inzwischen vom Baden-Airpark aus.
 
 Mit 14.200 Kilometern Reichweite ist die Global 7500 das Flaggschiff unserer gemanagten Flotte, gebaut für Strecken, auf denen andere zwischenlanden müssen.
 
 Betrieb, Crew und Technik liegen dabei in einer Hand, bei uns am Standort.
 
-#Global7500 #BusinessAviation #AircraftManagement #BadenAirpark</div>
-    </div>
+#Global7500 #Bombardier #BusinessAviation #AircraftManagement #PrivateJet #BadenAirpark #ACMAirCharter #BizAv</pre></details>
+</section>
+<section class="post-block" id="beitrag-4">
+  <div class="post-kopf"><span class="post-nr">Beitrag 4</span><h3>Warum Part-145 bei der Wartung entscheidet</h3><div><span class="tag">LinkedIn</span><span class="tag alt">Fachfrage kurz beantwortet</span></div><div class="muted">geplant Do 08.10.2026, 11:00 Uhr · Ziel acm.aero/maintenance</div></div>
+  <div class="post-grid">
+    <div><div class="lbl">Motiv, 1080 × 1350</div><a href="04_fachfrage-part-145_feed_1080x1350.png" target="_blank" rel="noopener"><img class="motiv" src="04_fachfrage-part-145_feed_1080x1350.png" alt="Warum Part-145 bei der Wartung entscheidet"></a></div>
+    <div><div class="lbl">So sieht es auf LinkedIn aus</div>
+<div class="mock li">
+  <div class="li-head"><div class="li-avatar">ACM</div><div><div class="li-name">ACM AIR CHARTER</div><div class="li-sub">2.488 Follower · Gesponsert? Nein, organisch</div><div class="li-sub">Do 08.10.2026 · <span class="li-globe">Öffentlich</span></div></div></div>
+  <div class="li-text">Welche Rolle spielt Part-145 bei der Wartung von Business Jets?<br><br>EASA Part-145 ist die europäische Zulassung für Instandhaltungsbetriebe. Nur ein Part-145-Betrieb darf Wartungsarbeiten an gewerblich genutzten Luftfahrzeugen durchführen und anschließend die Freigabe zum Flug erteilen. Die Zulassung stellt Anforderungen an Personal, Werkzeuge, Räumlichkeiten, Material und Dokumentation.<br><br>Für einen Eigentümer heißt das: Wer sein Flugzeug in eine Part-145-Werft gibt, bekommt nicht nur die Arbeit, sondern auch die Freigabe, die es wieder in die Luft bringt.<br><br>ACM betreibt am Baden-Airpark eine eigene Part-145-Werft mit direktem Vorfeldzugang. Mehr dazu: acm.aero/maintenance<br><span class="li-tags">#Part145 #AircraftMaintenance #BusinessAviation #EASA #MRO #BadenAirpark #ACMAirCharter #BizAv</span></div>
+  <img src="04_fachfrage-part-145_feed_1080x1350.png" alt="Warum Part-145 bei der Wartung entscheidet">
+  <div class="li-react"><span>👍 ❤ 💡</span><span>Reaktionen · Kommentare · Reposts</span></div>
+  <div class="li-actions"><span>Gefällt mir</span><span>Kommentieren</span><span>Reposten</span><span>Senden</span></div>
+</div></div>
+    <div><div class="lbl">So sieht es auf Instagram aus</div>
+<div class="mock ig">
+  <div class="ig-head"><div class="ig-avatar"><span>ACM</span></div><div><div class="ig-name">acmaircharter</div><div class="ig-sub">Baden-Airpark</div></div><div class="ig-more">···</div></div>
+  <img src="04_fachfrage-part-145_feed_1080x1350.png" alt="Warum Part-145 bei der Wartung entscheidet">
+  <div class="ig-icons"><span>♡</span><span>◯</span><span>➤</span><span class="ig-save">⌂</span></div>
+  <div class="ig-cap"><b>acmaircharter</b> Welche Rolle spielt Part-145 bei der Wartung von Business Jets?<br><br>EASA Part-145 ist die europäische Zulassung für Instandhaltungsbetriebe. Nur ein Part-145-Betrieb darf Wartungsarbeiten an gewerblich genutzten Luftfahrzeugen durchführen und anschließend die Freigabe zum Flug erteilen. Die Zulassung stellt Anforderungen an Personal, Werkzeuge, Räumlichkeiten, Material und Dokumentation.<br><br>Für einen Eigentümer heißt das: Wer sein Flugzeug in eine Part-145-Werft gibt, bekommt nicht nur die Arbeit, sondern auch die Freigabe, die es wieder in die Luft bringt.<br><br>ACM betreibt am Baden-Airpark eine eigene Part-145-Werft mit direktem Vorfeldzugang. Mehr dazu: acm.aero/maintenance<br><span class="ig-tags">#Part145 #AircraftMaintenance #BusinessAviation #EASA #MRO #BadenAirpark #ACMAirCharter #BizAv</span></div>
+</div></div>
   </div>
-</div>
+  <details><summary>Text und Hashtags zum Kopieren</summary><pre class="copy">Welche Rolle spielt Part-145 bei der Wartung von Business Jets?
 
-<h2>Kurzformat aus dem Videomaterial: 20 Sekunden Ankunft</h2>
-<p>Aus dem vorhandenen Rohmaterial geschnitten: Terminal, Hangar im Abendlicht, Einstieg. Ohne Ton, für die Wiedergabe ohne Ton gedacht. Zwei Zuschnitte, einmal für den Feed und einmal für Reels und Stories.</p>
-<div class="grid">
-  <div class="card">
-    <video controls muted playsinline preload="metadata" src="acm_ankunft_20s_4x5.mp4"></video>
-    <div class="body"><h3>Feed, 1080 × 1350 (4:5)</h3><p class="muted">LinkedIn und Instagram Feed. Wird vollständig angezeigt.</p></div>
+EASA Part-145 ist die europäische Zulassung für Instandhaltungsbetriebe. Nur ein Part-145-Betrieb darf Wartungsarbeiten an gewerblich genutzten Luftfahrzeugen durchführen und anschließend die Freigabe zum Flug erteilen. Die Zulassung stellt Anforderungen an Personal, Werkzeuge, Räumlichkeiten, Material und Dokumentation.
+
+Für einen Eigentümer heißt das: Wer sein Flugzeug in eine Part-145-Werft gibt, bekommt nicht nur die Arbeit, sondern auch die Freigabe, die es wieder in die Luft bringt.
+
+ACM betreibt am Baden-Airpark eine eigene Part-145-Werft mit direktem Vorfeldzugang. Mehr dazu: acm.aero/maintenance
+
+#Part145 #AircraftMaintenance #BusinessAviation #EASA #MRO #BadenAirpark #ACMAirCharter #BizAv</pre></details>
+</section>
+<section class="post-block" id="beitrag-5">
+  <div class="post-kopf"><span class="post-nr">Beitrag 5</span><h3>CAMO plant. Part-145 führt aus.</h3><div><span class="tag">LinkedIn</span><span class="tag alt">Fachfrage kurz beantwortet</span></div><div class="muted">geplant Do 22.10.2026, 11:00 Uhr · Ziel acm.aero/camo</div></div>
+  <div class="post-grid">
+    <div><div class="lbl">Motiv, 1080 × 1350</div><a href="05_fachfrage-camo_feed_1080x1350.png" target="_blank" rel="noopener"><img class="motiv" src="05_fachfrage-camo_feed_1080x1350.png" alt="CAMO plant. Part-145 führt aus."></a></div>
+    <div><div class="lbl">So sieht es auf LinkedIn aus</div>
+<div class="mock li">
+  <div class="li-head"><div class="li-avatar">ACM</div><div><div class="li-name">ACM AIR CHARTER</div><div class="li-sub">2.488 Follower · Gesponsert? Nein, organisch</div><div class="li-sub">Do 22.10.2026 · <span class="li-globe">Öffentlich</span></div></div></div>
+  <div class="li-text">Was ist der Unterschied zwischen CAMO und Part-145?<br><br>Die CAMO plant und verantwortet, der Part-145-Betrieb führt aus. Die CAMO legt fest, was wann fällig ist und wer es machen soll. Der Instandhaltungsbetrieb führt die Arbeit durch und erteilt anschließend die Freigabe zum Flug.<br><br>Beide Zulassungen sind getrennt, können aber im selben Unternehmen liegen. Bei ACM ist das der Fall: CAMO und Part-145-Werft arbeiten am Baden-Airpark unter einem Dach, mit kurzen Wegen zwischen Planung und Hangar.<br><br>Mehr dazu: acm.aero/camo<br><span class="li-tags">#CAMO #Part145 #Airworthiness #ContinuingAirworthiness #BusinessAviation #EASA #ACMAirCharter #BizAv</span></div>
+  <img src="05_fachfrage-camo_feed_1080x1350.png" alt="CAMO plant. Part-145 führt aus.">
+  <div class="li-react"><span>👍 ❤ 💡</span><span>Reaktionen · Kommentare · Reposts</span></div>
+  <div class="li-actions"><span>Gefällt mir</span><span>Kommentieren</span><span>Reposten</span><span>Senden</span></div>
+</div></div>
+    <div><div class="lbl">So sieht es auf Instagram aus</div>
+<div class="mock ig">
+  <div class="ig-head"><div class="ig-avatar"><span>ACM</span></div><div><div class="ig-name">acmaircharter</div><div class="ig-sub">Baden-Airpark</div></div><div class="ig-more">···</div></div>
+  <img src="05_fachfrage-camo_feed_1080x1350.png" alt="CAMO plant. Part-145 führt aus.">
+  <div class="ig-icons"><span>♡</span><span>◯</span><span>➤</span><span class="ig-save">⌂</span></div>
+  <div class="ig-cap"><b>acmaircharter</b> Was ist der Unterschied zwischen CAMO und Part-145?<br><br>Die CAMO plant und verantwortet, der Part-145-Betrieb führt aus. Die CAMO legt fest, was wann fällig ist und wer es machen soll. Der Instandhaltungsbetrieb führt die Arbeit durch und erteilt anschließend die Freigabe zum Flug.<br><br>Beide Zulassungen sind getrennt, können aber im selben Unternehmen liegen. Bei ACM ist das der Fall: CAMO und Part-145-Werft arbeiten am Baden-Airpark unter einem Dach, mit kurzen Wegen zwischen Planung und Hangar.<br><br>Mehr dazu: acm.aero/camo<br><span class="ig-tags">#CAMO #Part145 #Airworthiness #ContinuingAirworthiness #BusinessAviation #EASA #ACMAirCharter #BizAv</span></div>
+</div></div>
   </div>
-  <div class="card">
-    <video controls muted playsinline preload="metadata" src="acm_ankunft_20s_9x16.mp4"></video>
-    <div class="body"><h3>Reels und Stories, 1080 × 1920 (9:16)</h3><p class="muted">Instagram Reels, Stories, auch LinkedIn Video im Hochformat.</p></div>
+  <details><summary>Text und Hashtags zum Kopieren</summary><pre class="copy">Was ist der Unterschied zwischen CAMO und Part-145?
+
+Die CAMO plant und verantwortet, der Part-145-Betrieb führt aus. Die CAMO legt fest, was wann fällig ist und wer es machen soll. Der Instandhaltungsbetrieb führt die Arbeit durch und erteilt anschließend die Freigabe zum Flug.
+
+Beide Zulassungen sind getrennt, können aber im selben Unternehmen liegen. Bei ACM ist das der Fall: CAMO und Part-145-Werft arbeiten am Baden-Airpark unter einem Dach, mit kurzen Wegen zwischen Planung und Hangar.
+
+Mehr dazu: acm.aero/camo
+
+#CAMO #Part145 #Airworthiness #ContinuingAirworthiness #BusinessAviation #EASA #ACMAirCharter #BizAv</pre></details>
+</section>
+<section class="post-block" id="beitrag-6">
+  <div class="post-kopf"><span class="post-nr">Beitrag 6</span><h3>Ihr Flugzeug. Unser Betrieb.</h3><div><span class="tag">LinkedIn</span><span class="tag alt">Fachfrage kurz beantwortet</span></div><div class="muted">geplant Do 05.11.2026, 11:00 Uhr · Ziel acm.aero/aircraft-management</div></div>
+  <div class="post-grid">
+    <div><div class="lbl">Motiv, 1080 × 1350</div><a href="06_aircraft-management_feed_1080x1350.png" target="_blank" rel="noopener"><img class="motiv" src="06_aircraft-management_feed_1080x1350.png" alt="Ihr Flugzeug. Unser Betrieb."></a></div>
+    <div><div class="lbl">So sieht es auf LinkedIn aus</div>
+<div class="mock li">
+  <div class="li-head"><div class="li-avatar">ACM</div><div><div class="li-name">ACM AIR CHARTER</div><div class="li-sub">2.488 Follower · Gesponsert? Nein, organisch</div><div class="li-sub">Do 05.11.2026 · <span class="li-globe">Öffentlich</span></div></div></div>
+  <div class="li-text">Was umfasst Aircraft Management bei einem Business Jet konkret?<br><br>Den gesamten Betrieb Ihres Flugzeugs außerhalb Ihrer eigenen Nutzungsentscheidung: Flugplanung und Genehmigungen, Crew-Auswahl, Training und Dienstplanung, die Überwachung der Lufttüchtigkeit durch eine CAMO, Planung und Durchführung der Wartung, Versicherung und Behördenkontakt.<br><br>Und Ihre Nutzung hat Vorrang. Die Charter-Vermarktung findet nur in den Zeiten statt, die Sie freigeben, nach den Regeln des Managementvertrags.<br><br>Bei ACM liegen AOC, CAMO und Part-145-Werft im eigenen Haus, am Baden-Airpark. Mehr dazu: acm.aero/aircraft-management<br><span class="li-tags">#AircraftManagement #BusinessAviation #AircraftOwner #PrivateJet #BizAv #BadenAirpark #ACMAirCharter</span></div>
+  <img src="06_aircraft-management_feed_1080x1350.png" alt="Ihr Flugzeug. Unser Betrieb.">
+  <div class="li-react"><span>👍 ❤ 💡</span><span>Reaktionen · Kommentare · Reposts</span></div>
+  <div class="li-actions"><span>Gefällt mir</span><span>Kommentieren</span><span>Reposten</span><span>Senden</span></div>
+</div></div>
+    <div><div class="lbl">So sieht es auf Instagram aus</div>
+<div class="mock ig">
+  <div class="ig-head"><div class="ig-avatar"><span>ACM</span></div><div><div class="ig-name">acmaircharter</div><div class="ig-sub">Baden-Airpark</div></div><div class="ig-more">···</div></div>
+  <img src="06_aircraft-management_feed_1080x1350.png" alt="Ihr Flugzeug. Unser Betrieb.">
+  <div class="ig-icons"><span>♡</span><span>◯</span><span>➤</span><span class="ig-save">⌂</span></div>
+  <div class="ig-cap"><b>acmaircharter</b> Was umfasst Aircraft Management bei einem Business Jet konkret?<br><br>Den gesamten Betrieb Ihres Flugzeugs außerhalb Ihrer eigenen Nutzungsentscheidung: Flugplanung und Genehmigungen, Crew-Auswahl, Training und Dienstplanung, die Überwachung der Lufttüchtigkeit durch eine CAMO, Planung und Durchführung der Wartung, Versicherung und Behördenkontakt.<br><br>Und Ihre Nutzung hat Vorrang. Die Charter-Vermarktung findet nur in den Zeiten statt, die Sie freigeben, nach den Regeln des Managementvertrags.<br><br>Bei ACM liegen AOC, CAMO und Part-145-Werft im eigenen Haus, am Baden-Airpark. Mehr dazu: acm.aero/aircraft-management<br><span class="ig-tags">#AircraftManagement #BusinessAviation #AircraftOwner #PrivateJet #BizAv #BadenAirpark #ACMAirCharter</span></div>
+</div></div>
   </div>
+  <details><summary>Text und Hashtags zum Kopieren</summary><pre class="copy">Was umfasst Aircraft Management bei einem Business Jet konkret?
+
+Den gesamten Betrieb Ihres Flugzeugs außerhalb Ihrer eigenen Nutzungsentscheidung: Flugplanung und Genehmigungen, Crew-Auswahl, Training und Dienstplanung, die Überwachung der Lufttüchtigkeit durch eine CAMO, Planung und Durchführung der Wartung, Versicherung und Behördenkontakt.
+
+Und Ihre Nutzung hat Vorrang. Die Charter-Vermarktung findet nur in den Zeiten statt, die Sie freigeben, nach den Regeln des Managementvertrags.
+
+Bei ACM liegen AOC, CAMO und Part-145-Werft im eigenen Haus, am Baden-Airpark. Mehr dazu: acm.aero/aircraft-management
+
+#AircraftManagement #BusinessAviation #AircraftOwner #PrivateJet #BizAv #BadenAirpark #ACMAirCharter</pre></details>
+</section>
+<section class="post-block" id="beitrag-7">
+  <div class="post-kopf"><span class="post-nr">Beitrag 7</span><h3>First Officer (m/w/d), Global 6000</h3><div><span class="tag">LinkedIn</span><span class="tag alt">Stelle des Monats</span></div><div class="muted">geplant Di 13.10.2026, 08:30 Uhr · Ziel acm.aero/karriere</div></div>
+  <div class="post-grid">
+    <div><div class="lbl">Motiv, 1080 × 1350</div><a href="07_first-officer-global-6000_feed_1080x1350.png" target="_blank" rel="noopener"><img class="motiv" src="07_first-officer-global-6000_feed_1080x1350.png" alt="First Officer (m/w/d), Global 6000"></a></div>
+    <div><div class="lbl">So sieht es auf LinkedIn aus</div>
+<div class="mock li">
+  <div class="li-head"><div class="li-avatar">ACM</div><div><div class="li-name">ACM AIR CHARTER</div><div class="li-sub">2.488 Follower · Gesponsert? Nein, organisch</div><div class="li-sub">Di 13.10.2026 · <span class="li-globe">Öffentlich</span></div></div></div>
+  <div class="li-text">First Officer (m/w/d) für die Bombardier Global 6000 gesucht.<br><br>Bei ACM AIR CHARTER fliegen Sie auf einem der bewährtesten Langstreckenjets der Business Aviation, von Europa nonstop nach Nordamerika, in den Nahen Osten oder nach Asien. Betrieb unter eigenem AOC, eigene Crews, eigene Wartung am Baden-Airpark.<br><br>Die vollständigen Anforderungen und der Weg zur Bewerbung: acm.aero/karriere<br><span class="li-tags">#BusinessAviation #Global6000 #FirstOfficer #PilotJobs #Pilotenjobs #BadenAirpark #ACMAirCharter #Hiring</span></div>
+  <img src="07_first-officer-global-6000_feed_1080x1350.png" alt="First Officer (m/w/d), Global 6000">
+  <div class="li-react"><span>👍 ❤ 💡</span><span>Reaktionen · Kommentare · Reposts</span></div>
+  <div class="li-actions"><span>Gefällt mir</span><span>Kommentieren</span><span>Reposten</span><span>Senden</span></div>
+</div></div>
+    <div><div class="lbl">So sieht es auf Instagram aus</div>
+<div class="mock ig">
+  <div class="ig-head"><div class="ig-avatar"><span>ACM</span></div><div><div class="ig-name">acmaircharter</div><div class="ig-sub">Baden-Airpark</div></div><div class="ig-more">···</div></div>
+  <img src="07_first-officer-global-6000_feed_1080x1350.png" alt="First Officer (m/w/d), Global 6000">
+  <div class="ig-icons"><span>♡</span><span>◯</span><span>➤</span><span class="ig-save">⌂</span></div>
+  <div class="ig-cap"><b>acmaircharter</b> First Officer (m/w/d) für die Bombardier Global 6000 gesucht.<br><br>Bei ACM AIR CHARTER fliegen Sie auf einem der bewährtesten Langstreckenjets der Business Aviation, von Europa nonstop nach Nordamerika, in den Nahen Osten oder nach Asien. Betrieb unter eigenem AOC, eigene Crews, eigene Wartung am Baden-Airpark.<br><br>Die vollständigen Anforderungen und der Weg zur Bewerbung: acm.aero/karriere<br><span class="ig-tags">#BusinessAviation #Global6000 #FirstOfficer #PilotJobs #Pilotenjobs #BadenAirpark #ACMAirCharter #Hiring</span></div>
+</div></div>
+  </div>
+  <details><summary>Text und Hashtags zum Kopieren</summary><pre class="copy">First Officer (m/w/d) für die Bombardier Global 6000 gesucht.
+
+Bei ACM AIR CHARTER fliegen Sie auf einem der bewährtesten Langstreckenjets der Business Aviation, von Europa nonstop nach Nordamerika, in den Nahen Osten oder nach Asien. Betrieb unter eigenem AOC, eigene Crews, eigene Wartung am Baden-Airpark.
+
+Die vollständigen Anforderungen und der Weg zur Bewerbung: acm.aero/karriere
+
+#BusinessAviation #Global6000 #FirstOfficer #PilotJobs #Pilotenjobs #BadenAirpark #ACMAirCharter #Hiring</pre></details>
+</section>
+<section class="post-block" id="beitrag-8">
+  <div class="post-kopf"><span class="post-nr">Beitrag 8</span><h3>Ein Standort. Alle Gewerke.</h3><div><span class="tag">Instagram</span><span class="tag">LinkedIn</span><span class="tag alt">Arbeitgeber ACM</span></div><div class="muted">geplant Di 27.10.2026, 12:00 Uhr · Ziel acm.aero/karriere</div></div>
+  <div class="post-grid">
+    <div><div class="lbl">Motiv, 1080 × 1350</div><a href="08_arbeitgeber-standort_feed_1080x1350.png" target="_blank" rel="noopener"><img class="motiv" src="08_arbeitgeber-standort_feed_1080x1350.png" alt="Ein Standort. Alle Gewerke."></a></div>
+    <div><div class="lbl">So sieht es auf LinkedIn aus</div>
+<div class="mock li">
+  <div class="li-head"><div class="li-avatar">ACM</div><div><div class="li-name">ACM AIR CHARTER</div><div class="li-sub">2.488 Follower · Gesponsert? Nein, organisch</div><div class="li-sub">Di 27.10.2026 · <span class="li-globe">Öffentlich</span></div></div></div>
+  <div class="li-text">Ein Standort. Alle Gewerke.<br><br>Flight Operations, Technik, CAMO und Handling arbeiten bei ACM AIR CHARTER am Baden-Airpark Tür an Tür. Wer hier anfängt, lernt das ganze Flugzeug kennen, nicht nur einen Ausschnitt.<br><br>Offene Stellen: acm.aero/karriere<br><span class="li-tags">#Karriere #Arbeitgeber #BusinessAviation #Luftfahrtjobs #BadenAirpark #Karlsruhe #BadenBaden #ACMAirCharter</span></div>
+  <img src="08_arbeitgeber-standort_feed_1080x1350.png" alt="Ein Standort. Alle Gewerke.">
+  <div class="li-react"><span>👍 ❤ 💡</span><span>Reaktionen · Kommentare · Reposts</span></div>
+  <div class="li-actions"><span>Gefällt mir</span><span>Kommentieren</span><span>Reposten</span><span>Senden</span></div>
+</div></div>
+    <div><div class="lbl">So sieht es auf Instagram aus</div>
+<div class="mock ig">
+  <div class="ig-head"><div class="ig-avatar"><span>ACM</span></div><div><div class="ig-name">acmaircharter</div><div class="ig-sub">Baden-Airpark</div></div><div class="ig-more">···</div></div>
+  <img src="08_arbeitgeber-standort_feed_1080x1350.png" alt="Ein Standort. Alle Gewerke.">
+  <div class="ig-icons"><span>♡</span><span>◯</span><span>➤</span><span class="ig-save">⌂</span></div>
+  <div class="ig-cap"><b>acmaircharter</b> Ein Standort. Alle Gewerke.<br><br>Flight Operations, Technik, CAMO und Handling arbeiten bei ACM AIR CHARTER am Baden-Airpark Tür an Tür. Wer hier anfängt, lernt das ganze Flugzeug kennen, nicht nur einen Ausschnitt.<br><br>Offene Stellen: acm.aero/karriere<br><span class="ig-tags">#Karriere #Arbeitgeber #BusinessAviation #Luftfahrtjobs #BadenAirpark #Karlsruhe #BadenBaden #ACMAirCharter</span></div>
+</div></div>
+  </div>
+  <details><summary>Text und Hashtags zum Kopieren</summary><pre class="copy">Ein Standort. Alle Gewerke.
+
+Flight Operations, Technik, CAMO und Handling arbeiten bei ACM AIR CHARTER am Baden-Airpark Tür an Tür. Wer hier anfängt, lernt das ganze Flugzeug kennen, nicht nur einen Ausschnitt.
+
+Offene Stellen: acm.aero/karriere
+
+#Karriere #Arbeitgeber #BusinessAviation #Luftfahrtjobs #BadenAirpark #Karlsruhe #BadenBaden #ACMAirCharter</pre></details>
+</section>
+<section class="post-block" id="beitrag-9">
+  <div class="post-kopf"><span class="post-nr">Beitrag 9</span><h3>Global 6000: über 11.000 km nonstop</h3><div><span class="tag">Instagram</span><span class="tag">LinkedIn</span><span class="tag alt">Flotte im Einsatz</span></div><div class="muted">geplant Do 15.10.2026, 17:00 Uhr · Ziel acm.aero/global-6000</div></div>
+  <div class="post-grid">
+    <div><div class="lbl">Motiv, 1080 × 1350</div><a href="09_flotte-global-6000_feed_1080x1350.png" target="_blank" rel="noopener"><img class="motiv" src="09_flotte-global-6000_feed_1080x1350.png" alt="Global 6000: über 11.000 km nonstop"></a></div>
+    <div><div class="lbl">So sieht es auf LinkedIn aus</div>
+<div class="mock li">
+  <div class="li-head"><div class="li-avatar">ACM</div><div><div class="li-name">ACM AIR CHARTER</div><div class="li-sub">2.488 Follower · Gesponsert? Nein, organisch</div><div class="li-sub">Do 15.10.2026 · <span class="li-globe">Öffentlich</span></div></div></div>
+  <div class="li-text">Global 6000: über 11.000 Kilometer nonstop.<br><br>Europa nach Nordamerika, in den Nahen Osten oder nach Asien ohne Zwischenstopp, mit Mach 0.89 und bis zu 13 Passagieren in drei Kabinenzonen. ACM operiert den Global 6000 unter eigenem AOC, mit eigenen Crews und eigener Wartung.<br><br>Mehr zum Flugzeug: acm.aero/global-6000<br><span class="li-tags">#Global6000 #Bombardier #BusinessAviation #PrivateJet #LongRange #BadenAirpark #ACMAirCharter #BizAv</span></div>
+  <img src="09_flotte-global-6000_feed_1080x1350.png" alt="Global 6000: über 11.000 km nonstop">
+  <div class="li-react"><span>👍 ❤ 💡</span><span>Reaktionen · Kommentare · Reposts</span></div>
+  <div class="li-actions"><span>Gefällt mir</span><span>Kommentieren</span><span>Reposten</span><span>Senden</span></div>
+</div></div>
+    <div><div class="lbl">So sieht es auf Instagram aus</div>
+<div class="mock ig">
+  <div class="ig-head"><div class="ig-avatar"><span>ACM</span></div><div><div class="ig-name">acmaircharter</div><div class="ig-sub">Baden-Airpark</div></div><div class="ig-more">···</div></div>
+  <img src="09_flotte-global-6000_feed_1080x1350.png" alt="Global 6000: über 11.000 km nonstop">
+  <div class="ig-icons"><span>♡</span><span>◯</span><span>➤</span><span class="ig-save">⌂</span></div>
+  <div class="ig-cap"><b>acmaircharter</b> Global 6000: über 11.000 Kilometer nonstop.<br><br>Europa nach Nordamerika, in den Nahen Osten oder nach Asien ohne Zwischenstopp, mit Mach 0.89 und bis zu 13 Passagieren in drei Kabinenzonen. ACM operiert den Global 6000 unter eigenem AOC, mit eigenen Crews und eigener Wartung.<br><br>Mehr zum Flugzeug: acm.aero/global-6000<br><span class="ig-tags">#Global6000 #Bombardier #BusinessAviation #PrivateJet #LongRange #BadenAirpark #ACMAirCharter #BizAv</span></div>
+</div></div>
+  </div>
+  <details><summary>Text und Hashtags zum Kopieren</summary><pre class="copy">Global 6000: über 11.000 Kilometer nonstop.
+
+Europa nach Nordamerika, in den Nahen Osten oder nach Asien ohne Zwischenstopp, mit Mach 0.89 und bis zu 13 Passagieren in drei Kabinenzonen. ACM operiert den Global 6000 unter eigenem AOC, mit eigenen Crews und eigener Wartung.
+
+Mehr zum Flugzeug: acm.aero/global-6000
+
+#Global6000 #Bombardier #BusinessAviation #PrivateJet #LongRange #BadenAirpark #ACMAirCharter #BizAv</pre></details>
+</section>
+
+<h2>Kurzformat aus dem Videomaterial</h2>
+<p>20 Sekunden Ankunft, geschnitten aus eurem Rohmaterial: Terminal, Hangar im Abendlicht, Einstieg. Ohne Ton, für die Wiedergabe ohne Ton gedacht.</p>
+<div class="two">
+  <div class="card"><video controls muted playsinline preload="metadata" src="acm_ankunft_20s_4x5.mp4"></video><div class="body"><b>Feed, 1080 × 1350</b><br><span class="muted">LinkedIn und Instagram Feed, wird vollständig gezeigt.</span><details><summary>Text und Hashtags</summary><pre class="copy">Ankunft am Baden-Airpark: eigenes Terminal, eigener Hangar, kurze Wege bis zum Einstieg.
+
+So sieht der Boden aus, bevor es in die Luft geht.
+
+#BusinessAviation #BadenAirpark #PrivateJet #ACMAirCharter #BizAv</pre></details></div></div>
+  <div><div class="lbl">So sieht es als Reel aus</div>
+<div class="mock reel">
+  <div class="phone">
+    <video autoplay muted loop playsinline src="acm_ankunft_20s_9x16.mp4"></video>
+    <div class="reel-ui top"><span>Reels</span><span>⌕</span></div>
+    <div class="reel-ui right"><span>♡<br><small>1.204</small></span><span>◯<br><small>38</small></span><span>➤</span><span>···</span></div>
+    <div class="reel-ui bottom"><b>acmaircharter</b><br>Ankunft am Baden-Airpark. Eigenes Terminal, eigener Hangar, kurze Wege.<br><small>♫ Originalton</small></div>
+    <div class="safe top"></div><div class="safe bottom"></div><div class="safe right"></div>
+  </div>
+  <p class="muted" style="font-size:12px;margin-top:8px">Rot schraffiert: Bereiche, die Instagram mit Bedienelementen belegt. Der Clip trägt deshalb keinen Text im Bild.</p>
+</div></div>
 </div>
 
 <h2>Neues Startseiten-Video, ohne die Aufnahmen aus dem Technik-Hangar</h2>
-<p>Der Wunsch vom 30.07.: die Sequenz im Technik-Hangar herausnehmen. Das Video ist von 35 auf 24 Sekunden gekürzt, die beiden Hangar-Szenen mit Werkstattwagen sind draußen, der Übergang ist weich geblendet. Es liegt bereits in der Vorschau der Website und geht mit dem nächsten Livegang auf die Startseite.</p>
-<div class="grid">
-  <div class="card">
-    <video controls muted playsinline preload="metadata" src="../../acm_design%20V4/Fotos/ACM%20hero_short.mp4"></video>
-    <div class="body"><h3>Startseiten-Video, neue Fassung (24 s)</h3><p class="muted"><a href="../../acm_design%20V4/index.html" target="_blank" rel="noopener">In der Vorschau der Startseite ansehen</a></p></div>
-  </div>
+<p>Der Wunsch vom 30.07.: die Sequenz im Technik-Hangar herausnehmen. Das Video ist von 35 auf 24 Sekunden gekürzt, die beiden Hangar-Szenen mit Werkstattwagen sind draußen, der Übergang ist weich geblendet. Es liegt in der Vorschau der Website und geht mit dem nächsten Livegang auf die Startseite.</p>
+<div class="two">
+  <div class="card"><video controls muted playsinline preload="metadata" src="../../acm_design%20V4/Fotos/ACM%20hero_short.mp4"></video><div class="body"><b>Startseiten-Video, neue Fassung (24 s)</b><br><a href="../../acm_design%20V4/index.html" target="_blank" rel="noopener">In der Vorschau der Startseite ansehen</a></div></div>
 </div>
 
 <h2>Worauf wir bei den Formaten achten</h2>
-<p>Jeder Kanal blendet Teile eines Beitrags ab oder legt Bedienelemente darüber. Deshalb sind alle drei Beiträge so gebaut:</p>
 <table>
   <thead><tr><th>Kanal und Platzierung</th><th>Format</th><th>Sicherheitsbereich</th><th>So umgesetzt</th></tr></thead>
   <tbody>
-    <tr><td>Instagram Feed</td><td>1080 × 1350 (4:5)</td><td>Im Profilraster wird auf 1:1 beschnitten, also oben und unten je 135 Pixel. Die Bildunterschrift steht unter dem Bild.</td><td>Headline, Unterzeile und Bildmotiv liegen im mittleren Quadrat. Nur die kleine Abschlusszeile darf im Raster wegfallen.</td></tr>
-    <tr><td>Instagram Reels und Stories</td><td>1080 × 1920 (9:16)</td><td>Oben rund 250 Pixel (Profil, Ton), unten rund 420 Pixel (Bildunterschrift, Bedienleiste), rechts rund 120 Pixel (Symbole) frei halten.</td><td>Das Video kommt ohne eingebrannten Text, der Text steht in der Bildunterschrift. Später eingeblendete Texte kommen in die Mitte.</td></tr>
-    <tr><td>LinkedIn Feed, Bild</td><td>1080 × 1350 (4:5) oder 1200 × 1200</td><td>Wird vollständig gezeigt, auf dem Handy leicht verkleinert. Rand von 80 Pixeln für Lesbarkeit.</td><td>Alle Texte mindestens 80 Pixel vom Rand entfernt, Schriftgröße Headline 54 bis 90 Pixel.</td></tr>
-    <tr><td>LinkedIn Feed, Video</td><td>4:5 oder 1:1, bis 10 Minuten</td><td>Startet ohne Ton. Unten legt LinkedIn die Abspielleiste darüber.</td><td>Ohne Ton geschnitten, keine Information in den unteren 120 Pixeln.</td></tr>
+    <tr><td>Instagram Feed</td><td>1080 × 1350 (4:5)</td><td>Im Profilraster wird auf 1:1 beschnitten, also oben und unten je 135 Pixel.</td><td>Headline, Unterzeile und Motiv liegen im mittleren Quadrat. Nur die kleine Abschlusszeile darf im Raster wegfallen.</td></tr>
+    <tr><td>Instagram Reels und Stories</td><td>1080 × 1920 (9:16)</td><td>Oben rund 250 Pixel, unten rund 420 Pixel, rechts rund 120 Pixel frei halten.</td><td>Der Clip trägt keinen Text im Bild, der Text steht in der Bildunterschrift. Siehe Reel-Ansicht oben.</td></tr>
+    <tr><td>LinkedIn Feed, Bild</td><td>1080 × 1350 (4:5)</td><td>Wird vollständig gezeigt. Rand von 80 Pixeln für Lesbarkeit.</td><td>Alle Texte mindestens 80 Pixel vom Rand, Headline 54 bis 90 Pixel Schriftgröße.</td></tr>
+    <tr><td>LinkedIn Feed, Text</td><td>bis 3.000 Zeichen, „mehr“ nach rund 210 Zeichen</td><td>Der erste Satz entscheidet, ob jemand aufklappt.</td><td>Jeder Beitrag beginnt mit der Kernaussage oder der Frage, Hashtags stehen am Ende, drei bis neun je Beitrag.</td></tr>
+    <tr><td>Instagram, Text</td><td>bis 2.200 Zeichen, „mehr“ nach zwei Zeilen</td><td>Links im Text sind nicht klickbar.</td><td>Kurze erste Zeile, Website-Adresse als Text, Link zusätzlich im Profil.</td></tr>
   </tbody>
 </table>
 
 <h2>Was wir von euch brauchen</h2>
-<p>Ein kurzes Okay oder eure Änderungen zu den drei Texten und Motiven, den Freigabeweg für die nächsten Beiträge (Dennis oder Jonas, wie bei den Texten) und eine Rolle in der Seitenverwaltung von LinkedIn und Instagram, damit wir veröffentlichen und auswerten können.</p>
+<p>Ein Okay oder eure Änderungen zu Motiven und Texten, den Freigabeweg für die laufenden Beiträge (Dennis oder Jonas, wie bei den Texten) und eine Rolle in der Seitenverwaltung von LinkedIn und Instagram, damit wir einplanen, veröffentlichen und auswerten können. Wer bei euch ein Foto oder einen Anlass hat, schickt ihn in den freigegebenen Ordner, daraus wird der nächste Beitrag.</p>
 
 <footer>ACM AIR CHARTER · Freigabeseite von Leadwerk · Stand 24.09.2026 · nicht für Suchmaschinen freigegeben</footer>
 </div>
